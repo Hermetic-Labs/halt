@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "Isikali se-AVPU",
+  "category": "neurological",
+  "description": "Uvavanyo olukhawulezayo lwenqanaba lesi-4. Ngokukhawuleza kune-GCS yovavanyo lokuqala.",
+  "instructions": "Vavanya inqanaba eliphezulu lempendulo isigulane esibonisa.",
+  "scoring": [
+    {
+      "code": "A",
+      "label": "Isilumkiso",
+      "description": "Isigulana sivukile, siyazi, kwaye siphendula ngokuqhelekileyo"
+    },
+    {
+      "code": "V",
+      "label": "Ilizwi",
+      "description": "Isigulana siphendula kuphela ekuvuseleleni ngomlomo"
+    },
+    {
+      "code": "P",
+      "label": "Iintlungu",
+      "description": "Isigulana siphendula kuphela kwizivuseleli ezibuhlungu (i-rab yangaphandle, uxinzelelo lwebhedi yeenzipho)"
+    },
+    {
+      "code": "U",
+      "label": "Ukungaphenduli",
+      "description": "Akukho mpendulo kuyo nayiphi na i-stimuli -- ungenelelo olukhawulezileyo lomoya ofunekayo"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "A",
+      "triage": "Izinzile -- qhubeka novavanyo"
+    },
+    {
+      "code": "V",
+      "triage": "Ngokuphathelele -- jonga indlela yomoya"
+    },
+    {
+      "code": "P",
+      "triage": "Okubalulekileyo -- indlela yomoya esemngciphekweni, i-GCS iqhelekile <= 8"
+    },
+    {
+      "code": "U",
+      "triage": "Ngoko nangoko -- lawula indlela yomoya ngoku"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

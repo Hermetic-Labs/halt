@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s82144e",
+    "icd10":  "S82144E",
+    "name":  "Nondisplaced bicondylar fracture of right tibia, subsequent encounter for open fracture type I or II with routine healing",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced bicondylar fracture of right tibia, subsequent encounter for open fracture type I or II with routine healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

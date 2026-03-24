@@ -1,0 +1,22 @@
+{
+  "id": "s0005xa",
+  "icd10": "S0005XA",
+  "name": "टाळूचे वरवरचे विदेशी शरीर, प्रारंभिक सामना",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "स्कॅल्पचे वरवरचे विदेशी शरीर, प्रारंभिक चकमक",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

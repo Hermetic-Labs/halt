@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t23369s",
+    "icd10":  "T23369S",
+    "name":  "Burn of third degree of back of unspecified hand, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Burn of third degree of back of unspecified hand, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

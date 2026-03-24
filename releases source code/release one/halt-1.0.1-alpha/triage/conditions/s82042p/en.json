@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s82042p",
+    "icd10":  "S82042P",
+    "name":  "Displaced comminuted fracture of left patella, subsequent encounter for closed fracture with malunion",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Displaced comminuted fracture of left patella, subsequent encounter for closed fracture with malunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

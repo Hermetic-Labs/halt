@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s1184xs",
+    "icd10":  "S1184XS",
+    "name":  "Puncture wound with foreign body of other specified part of neck, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Puncture wound with foreign body of other specified part of neck, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

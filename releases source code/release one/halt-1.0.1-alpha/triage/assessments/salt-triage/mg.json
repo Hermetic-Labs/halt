@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "SALT Triage (Soritana, Tombanana, Fidirana Mamonjy Aina, Fitsaboana/Fitaterana)",
+  "category": "mass-casualty",
+  "description": "Protocol de triage faobe. Fenitra ho an'ny trangan-javatra maro nahafaty olona amin'ny toerana miaramila sy sivily.",
+  "instructions": "Dingana 1: Karazana maneran-tany (mandeha, manofahofa, mbola). Dingana 2: Tombanana amin'ny filaharana laharam-pahamehana. Dingana 3: Manaova fitsabahana mamonjy aina (fehezo ny fandehanan-dra be, ny lalan-drivotra misokatra, ny famotsorana ny fanjaitra, ny auto-injecteur). Dingana 4: Asio sokajy.",
+  "categories": [
+    {
+      "color": "mainty",
+      "label": "Mpiandry / maty",
+      "description": "Azo inoana fa tsy ho tafavoaka velona raha omena loharanon-karena misy, na voamarina fa maty"
+    },
+    {
+      "color": "mena",
+      "label": "Avy hatrany (T1)",
+      "description": "Ny ratra mahafaty, ho tafavoaka velona amin'ny fandraisana andraikitra avy hatrany"
+    },
+    {
+      "color": "mavo",
+      "label": "Tara (T2)",
+      "description": "Maratra mafy nefa tsy miova, afaka miandry fitsaboana"
+    },
+    {
+      "color": "maitso",
+      "label": "Minitra (T3)",
+      "description": "Naratra kely -- nandeha naratra"
+    },
+    {
+      "color": "volondavenona",
+      "label": "Miandry",
+      "description": "Faharatrana tsy azo iainana noho ny loharanon-karena ankehitriny -- fikarakarana fampiononana ihany"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Ny algorithm triage JumpSTART dia manova ny SALT ho an'ny marary ankizy. Tsy mitovy ny fetran'ny taham-pisefoana sy ny dingana fanombanana ho an'ny ankizy latsaky ny 8 taona."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

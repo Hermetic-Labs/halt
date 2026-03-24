@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s748x9a",
+    "icd10":  "S748X9A",
+    "name":  "Injury of other nerves at hip and thigh level, unspecified leg, initial encounter",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Injury of other nerves at hip and thigh level, unspecified leg, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "I-Glasgow Coma Scale (GCS)",
+  "category": "neurological",
+  "description": "Ukulinganisa okujwayelekile kwe-neurological scories of consciousness ngezimpendulo zamehlo, zomlomo, nezemoto. Ibanga lamaphuzu 3-15.",
+  "instructions": "Thola isizinda ngasinye kwezintathu ngokuzimela. Hlanganisa wonke amaphuzu amathathu engqikithi ye-GCS.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Kuyazenzekela"
+        },
+        {
+          "score": 3,
+          "label": "Ukuze izwi"
+        },
+        {
+          "score": 2,
+          "label": "Ezinhlungwini"
+        },
+        {
+          "score": 1,
+          "label": "Lutho"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "Iqondiswe"
+        },
+        {
+          "score": 4,
+          "label": "Edidekile"
+        },
+        {
+          "score": 3,
+          "label": "Amagama angalungile"
+        },
+        {
+          "score": 2,
+          "label": "Imisindo engaqondakali"
+        },
+        {
+          "score": 1,
+          "label": "Lutho"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "Ilalela imiyalo"
+        },
+        {
+          "score": 5,
+          "label": "Ibeka ubuhlungu"
+        },
+        {
+          "score": 4,
+          "label": "Ihoxisa ezinhlungwini"
+        },
+        {
+          "score": 3,
+          "label": "I-flexion engavamile (decorticate)"
+        },
+        {
+          "score": 2,
+          "label": "Isandiso (decerebrate)"
+        },
+        {
+          "score": 1,
+          "label": "Lutho"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "I-TBI emnene -- qapha ngokucophelela"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "I-TBI emaphakathi -- lungisa indlela yomoya"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "I-TBI enzima -- indlela yokuphefumula engozini esheshayo, intubate uma kungenzeka"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Sebenzisa i-GCS Yezingane (pGCS) ezinganeni ezingaphansi kweminyaka engu-2. Amaphuzu omlomo alungiselwe izingane zangaphambi kwamazwi."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

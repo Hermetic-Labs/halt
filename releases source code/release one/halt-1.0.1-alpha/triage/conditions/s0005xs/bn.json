@@ -1,0 +1,22 @@
+{
+  "id": "s0005xs",
+  "icd10": "S0005XS",
+  "name": "মাথার ত্বকের উপরিভাগের বিদেশী দেহ, সিক্যুলা",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "মাথার ত্বকের উপরিভাগের বিদেশী শরীর, সিক্যুলা",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

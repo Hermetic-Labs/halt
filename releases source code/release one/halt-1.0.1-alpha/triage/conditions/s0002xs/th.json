@@ -1,0 +1,22 @@
+{
+  "id": "s0002xs",
+  "icd10": "S0002XS",
+  "name": "ตุ่ม (ไม่ใช้ความร้อน) ของหนังศีรษะ ผลที่ตามมา",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "แผลพุพอง (ไม่ใช้ความร้อน) ของหนังศีรษะ ผลที่ตามมา",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

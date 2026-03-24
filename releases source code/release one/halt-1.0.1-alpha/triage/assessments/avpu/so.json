@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "Miisaanka AVPU",
+  "category": "neurological",
+  "description": "Qiimaynta miyir-qabka ee 4-heer degdeg ah. Ka dhaqso badan GCS kala soocidda hore.",
+  "instructions": "Qiimee heerka ugu sarreeya ee jawaabta uu bukaanku muujiyo.",
+  "scoring": [
+    {
+      "code": "A",
+      "label": "Digniin",
+      "description": "Bukaanku waa soo jeedaa, ogsoon, oo si caadi ah ugu jawaabay"
+    },
+    {
+      "code": "V",
+      "label": "Codka",
+      "description": "Bukaanku waxa uu ka jawaabaa kicinta afka kaliya"
+    },
+    {
+      "code": "P",
+      "label": "Xanuun",
+      "description": "Bukaanku wuxuu ka jawaabaa kaliya kicinta xanuunka leh (sternal xoqid, cadaadiska sariirta cidiyaha)"
+    },
+    {
+      "code": "U",
+      "label": "Aan laga jawaabin",
+      "description": "Wax jawaab ah looma hayo wax kicinaya -- faragelin dariiq-haweed degdeg ah ayaa loo baahan yahay"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "A",
+      "triage": "Deggan -- sii wad qiimeynta"
+    },
+    {
+      "code": "V",
+      "triage": "Ku saabsan -- la soco marin-haweedka"
+    },
+    {
+      "code": "P",
+      "triage": "Halis ah -- hawo mareen halis ah, GCS caadi ahaan <= 8"
+    },
+    {
+      "code": "U",
+      "triage": "Isla markiiba -- maamul marin-haweedka hadda"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

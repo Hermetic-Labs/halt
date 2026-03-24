@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Igbelewọn gbígbẹ",
+  "category": "circulation",
+  "description": "Iwadi aaye fun gbigbẹ ati iwuwo aisan ooru. Awọ ito jẹ afihan aaye ti o wulo julọ. Ṣe ayẹwo ipo opolo bi aami fun gbigbẹ gbigbẹ lile ti nlọsiwaju si ikọlu ooru.",
+  "instructions": "Ṣayẹwo awọ ito, turgor ara, ipo opolo, ati awọn ami pataki. Ito dudu, awọn membran mucous ti o gbẹ, ati tachycardia tọkasi gbigbẹ pataki ti o nilo isọdọtun lọwọ.",
+  "categories": [
+    {
+      "color": "ko o-bia",
+      "label": "Daradara Hydted",
+      "description": "Bia ofeefee lati ko ito. Ko si ilowosi nilo."
+    },
+    {
+      "color": "ofeefee",
+      "label": "Ìwọnba gbígbẹ",
+      "description": "Ito dudu dudu, ongbẹ. Imu omi ẹnu ẹnu. Gba omi 250-500 milimita fun wakati kan."
+    },
+    {
+      "color": "amber-brown",
+      "label": "Iwọntunwọnsi-Àdánù gbígbẹ",
+      "description": "ito Amber, HR ga, turgor awọ dinku, ẹnu gbẹ. Awọn fifa IV/IO ti ẹnu ko ba faramọ. 1-2L LR tabi NS."
+    },
+    {
+      "color": "pupa",
+      "label": "Ewu -- Heat Stroke / Àìdá",
+      "description": "Ijade ito ti o kere ju, LOC ti o yipada, awọ gbigbẹ gbigbona. Pajawiri iṣoogun -- itutu agbaiye iyara + Awọn omi IV + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Awọn ọmọde yara yara gbẹ ju awọn agbalagba lọ. Sunken fontanelle (awọn ọmọ ikoko), awọn omije ti ko wa, ati aibalẹ jẹ awọn ami pataki. Iwọn-orisun IV: 20 milimita / kg LR bolus."
+    },
+    "obstetric": {
+      "note": "Awọn obinrin ti o loyun nilo gbigbe omi ti o pọ si. Gbígbẹgbẹ le fa awọn ihamọ iṣaaju. Ibinu atunse ẹnu akọkọ; IV ti ko ba fi aaye gba ẹnu."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

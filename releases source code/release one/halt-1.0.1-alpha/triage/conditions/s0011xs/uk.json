@@ -1,0 +1,22 @@
+{
+  "id": "s0011xs",
+  "icd10": "S0011XS",
+  "name": "Забій правої повіки та навколоочної ділянки, наслідки",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Забій правої повіки та навколоочної ділянки, наслідки",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

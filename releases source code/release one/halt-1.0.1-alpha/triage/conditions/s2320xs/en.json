@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s2320xs",
+    "icd10":  "S2320XS",
+    "name":  "Dislocation of unspecified part of thorax, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Dislocation of unspecified part of thorax, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

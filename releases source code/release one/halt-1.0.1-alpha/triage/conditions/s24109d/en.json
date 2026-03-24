@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s24109d",
+    "icd10":  "S24109D",
+    "name":  "Unspecified injury at unspecified level of thoracic spinal cord, subsequent encounter",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified injury at unspecified level of thoracic spinal cord, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t372x2s",
+    "icd10":  "T372X2S",
+    "name":  "Poisoning by antimalarials and drugs acting on other blood protozoa, intentional self-harm, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Poisoning by antimalarials and drugs acting on other blood protozoa, intentional self-harm, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

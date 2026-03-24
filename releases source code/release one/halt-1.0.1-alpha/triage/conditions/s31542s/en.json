@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s31542s",
+    "icd10":  "S31542S",
+    "name":  "Puncture wound with foreign body of unspecified external genital organs, female, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Puncture wound with foreign body of unspecified external genital organs, female, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

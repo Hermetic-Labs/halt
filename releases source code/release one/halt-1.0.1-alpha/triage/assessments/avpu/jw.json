@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "Skala AVPU",
+  "category": "neurological",
+  "description": "Assessment kesadaran 4-tingkat cepet. Luwih cepet tinimbang GCS kanggo triase awal.",
+  "instructions": "Evaluasi tingkat respon paling dhuwur sing dituduhake pasien.",
+  "scoring": [
+    {
+      "code": "A",
+      "label": "Tandha",
+      "description": "Pasien tangi, sadar, lan nanggapi kanthi normal"
+    },
+    {
+      "code": "V",
+      "label": "Swara",
+      "description": "Pasien mung nanggapi stimulasi lisan"
+    },
+    {
+      "code": "P",
+      "label": "nyeri",
+      "description": "Pasien mung nanggapi rangsangan nyeri (gosok sternum, tekanan kuku)"
+    },
+    {
+      "code": "U",
+      "label": "Ora tanggap",
+      "description": "Ora ana respon kanggo rangsangan apa wae - intervensi saluran napas langsung dibutuhake"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "A",
+      "triage": "Stabil - terus evaluasi"
+    },
+    {
+      "code": "V",
+      "triage": "Babagan - monitor saluran napas"
+    },
+    {
+      "code": "P",
+      "triage": "Kritis - risiko saluran napas, GCS biasane <= 8"
+    },
+    {
+      "code": "U",
+      "triage": "Langsung - ngatur saluran napas saiki"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

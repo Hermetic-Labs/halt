@@ -1,0 +1,22 @@
+{
+  "id": "s0003xs",
+  "icd10": "S0003XS",
+  "name": "Contusion ng anit, sequela",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Contusion ng anit, sequela",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

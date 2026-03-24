@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Qiimaynta fuuq-baxa",
+  "category": "circulation",
+  "description": "Qiimaynta goobta ee fuuq-baxa iyo darnaanta jirrada kulaylka. Midabka kaadidu waa tusaha goobta ugu waxtarka badan. Qiimee heerka maskaxeed ee calaamad u ah fuuq-baxa ba'an ee u socda kulaylka istaroogga.",
+  "instructions": "Hubi midabka kaadida, maqaarka maqaarka, heerka maskaxeed, iyo calaamadaha muhiimka ah. Kaadi madow, xuub-xabeedka engegan, iyo tachycardia waxay muujinayaan fuuqbax weyn oo u baahan fuuq-celin firfircoon.",
+  "categories": [
+    {
+      "color": "cirro cad",
+      "label": "Biyo Wanaagsan",
+      "description": "Midab huruud ah si ay u nadiifiso kaadida. Looma baahna faragelin"
+    },
+    {
+      "color": "jaalle",
+      "label": "Fuuqbax fudud",
+      "description": "Kaadi huruud ah, oon. Fuuqcelinta afka. Ku dhiiri geli 250-500 ml oo biyo ah saacaddii."
+    },
+    {
+      "color": "amber-brown",
+      "label": "Fuuqbax daran oo dhexdhexaad ah",
+      "description": "Kaadida Amber, HR oo kor u kacday, maqaarka maqaarka oo yaraada, af qalalan. Dheecaannada IV/IO haddii aan afka loo dulqaadan. 1-2L LR ama NS."
+    },
+    {
+      "color": "cas",
+      "label": "Khatarta -- Heat Stroke / Daran",
+      "description": "Soo saarista kaadida ugu yar, LOC oo beddeshay, maqaar qallalan oo kulul. Xaalad degdeg ah oo caafimaad -- qaboojin degdeg ah + dareerayaasha faleebbaha + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Carruurtu waxay fuuqbaxaan si ka dhaqso badan dadka waaweyn. fontanelle (ilmaha yaryar), ilmada maqan, iyo caajisnimada ayaa ah calaamadaha muhiimka ah. IV: 20 ml/kg LR bolus."
+    },
+    "obstetric": {
+      "note": "Haweenka uurka leh waxay u baahan yihiin in la kordhiyo qaadashada dareeraha. Fuuqbaxa ayaa kicin kara foosha kahor. Fuuqbaxa afka ee degdega ah marka hore; IV haddii aan loo dulqaadan karin afka."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

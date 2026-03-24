@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s63075a",
+    "icd10":  "S63075A",
+    "name":  "Dislocation of distal end of left ulna, initial encounter",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Dislocation of distal end of left ulna, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

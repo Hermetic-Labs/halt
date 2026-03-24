@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Avaliação da desidratação",
+  "category": "circulation",
+  "description": "Avaliação de campo para desidratação e gravidade da doença provocada pelo calor. A cor da urina é o indicador de campo mais prático. Avalie o estado mental como um marcador de desidratação grave que progride para insolação.",
+  "instructions": "Verifique a cor da urina, o turgor da pele, o estado mental e os sinais vitais. Urina escura, membranas mucosas secas e taquicardia indicam desidratação significativa que requer reidratação ativa.",
+  "categories": [
+    {
+      "color": "claro-pálido",
+      "label": "Bem Hidratado",
+      "description": "Amarelo pálido a urina clara. Nenhuma intervenção necessária."
+    },
+    {
+      "color": "amarelo",
+      "label": "Desidratação Leve",
+      "description": "Urina amarela escura, com sede. Reidratação oral. Incentive 250-500 mL de água por hora."
+    },
+    {
+      "color": "marrom-âmbar",
+      "label": "Desidratação Moderada-Grave",
+      "description": "Urina âmbar, FC elevada, turgor cutâneo diminuído, boca seca. Fluidos IV/IO se orais não forem tolerados. 1-2L LR ou NS."
+    },
+    {
+      "color": "vermelho",
+      "label": "Perigo -- Insolação / Grave",
+      "description": "Débito mínimo de urina, LOC alterado, pele quente e seca. Emergência médica – resfriamento rápido + fluidos intravenosos + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "As crianças desidratam mais rápido que os adultos. Fontanela afundada (bebês), ausência de lágrimas e letargia são sinais críticos. IV com base no peso: bolus LR de 20 mL/kg."
+    },
+    "obstetric": {
+      "note": "As mulheres grávidas precisam de maior ingestão de líquidos. A desidratação pode desencadear contrações prematuras. Reidratação oral agressiva primeiro; IV se não tolerar oral."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s52559e",
+    "icd10":  "S52559E",
+    "name":  "Other extraarticular fracture of lower end of unspecified radius, subsequent encounter for open fracture type I or II with routine healing",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Other extraarticular fracture of lower end of unspecified radius, subsequent encounter for open fracture type I or II with routine healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

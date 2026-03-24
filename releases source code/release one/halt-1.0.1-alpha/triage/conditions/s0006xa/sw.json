@@ -1,0 +1,22 @@
+{
+  "id": "s0006xa",
+  "icd10": "S0006XA",
+  "name": "Kuumwa na wadudu (isiyo na sumu) ya ngozi ya kichwa, tukio la awali",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Kuumwa kwa wadudu (isiyo na sumu) ya ngozi ya kichwa, kukutana kwa awali",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

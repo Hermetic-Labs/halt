@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Isalathiso Sokothuka",
+  "category": "circulatory",
+  "description": "Isalathisi senani elikhawulezayo le-hemodynamic stability. Ibalwe njenge-HR / SBP. Eqhelekileyo yi-0.5-0.7.",
+  "instructions": "Yahlula izinga lentliziyo ngoxinzelelo lwegazi lwe-systolic. Ukunyuka kwesalathiso somothuko kubonisa ukuwohloka.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Ngesiqhelo -- uzinzile hemodynamically"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Umothuko omncinci -- jonga ngokusondeleyo"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Umothuko ophakathi -- ukufikelela kwi-IV, ulwelo"
+    },
+    {
+      "range": ">1.4",
+      "label": "Umothuko omkhulu--ukuvuselela ngokukhawuleza, iimveliso zegazi"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Obstetric Shock Index (OSI) isebenzisa ifomula efanayo. SI> 0.9 kwizigulane ezikhulelweyo zibalulekile. I-HR eqhelekileyo iphezulu ekukhulelweni (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

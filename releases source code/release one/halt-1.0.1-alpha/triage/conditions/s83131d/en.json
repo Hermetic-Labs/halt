@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s83131d",
+    "icd10":  "S83131D",
+    "name":  "Medial subluxation of proximal end of tibia, right knee, subsequent encounter",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Medial subluxation of proximal end of tibia, right knee, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

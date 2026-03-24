@@ -1,0 +1,22 @@
+{
+  "id": "s00202s",
+  "icd10": "S00202S",
+  "name": "Birîndarbûna rûberî ya nenaskirî ya çakê çepê û devera peryokuler, paşguhkirin",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Zirara rûkalî ya nenaskirî ya keviya çavê çepê û devera peryocular, sequela",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

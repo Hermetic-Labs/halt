@@ -1,0 +1,22 @@
+{
+  "id": "s0005xd",
+  "icd10": "S0005XD",
+  "name": "உச்சந்தலையின் மேலோட்டமான வெளிநாட்டு உடல், அடுத்தடுத்த சந்திப்பு",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "உச்சந்தலையின் மேலோட்டமான வெளிநாட்டு உடல், அடுத்தடுத்த சந்திப்பு",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

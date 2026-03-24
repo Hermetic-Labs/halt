@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t387x1s",
+    "icd10":  "T387X1S",
+    "name":  "Poisoning by androgens and anabolic congeners, accidental (unintentional), sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Poisoning by androgens and anabolic congeners, accidental (unintentional), sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

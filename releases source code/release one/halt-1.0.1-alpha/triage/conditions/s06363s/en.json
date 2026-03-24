@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s06363s",
+    "icd10":  "S06363S",
+    "name":  "Traumatic hemorrhage of cerebrum, unspecified, with loss of consciousness of 1 hours to 5 hours 59 minutes, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Traumatic hemorrhage of cerebrum, unspecified, with loss of consciousness of 1 hours to 5 hours 59 minutes, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

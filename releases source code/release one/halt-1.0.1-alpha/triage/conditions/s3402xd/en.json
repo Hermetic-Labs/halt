@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s3402xd",
+    "icd10":  "S3402XD",
+    "name":  "Concussion and edema of sacral spinal cord, subsequent encounter",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Concussion and edema of sacral spinal cord, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

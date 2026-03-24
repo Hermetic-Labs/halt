@@ -1,0 +1,22 @@
+{
+  "id": "s0002xd",
+  "icd10": "S0002XD",
+  "name": "頭皮の水疱（非熱性）、その後の発生",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "頭皮の水疱（非熱性）、その後の発生",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

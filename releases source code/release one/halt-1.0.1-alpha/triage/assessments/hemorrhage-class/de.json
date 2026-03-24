@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Blutungsklassifizierung (Klasse I-IV)",
+  "category": "circulatory",
+  "description": "ATLS-Blutungsklassifizierung anhand des geschätzten Blutverlusts und der physiologischen Reaktion.",
+  "instructions": "Schätzen Sie den Blutverlust und ordnen Sie die physiologischen Anzeichen der Klasse zu. Die Dringlichkeit einer Behandlung steigt mit der Klasse.",
+  "scoring": [
+    {
+      "class": "Ich",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15 %",
+      "hr": "<100",
+      "sbp": "Normal",
+      "rr": "14-20",
+      "mental_status": "Normal",
+      "treatment": "Beachten Sie, PO-Flüssigkeiten, wenn möglich"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30 %",
+      "hr": "100-120",
+      "sbp": "Normal",
+      "rr": "20-30",
+      "mental_status": "Ängstlich",
+      "treatment": "IV-Zugang, isotonisches Kristalloid"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40 %",
+      "hr": "120-140",
+      "sbp": "Verringert",
+      "rr": "30-40",
+      "mental_status": "Verwirrt",
+      "treatment": "Infusionen + Blutprodukte, sofortige Blutungskontrolle"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40 %",
+      "hr": ">140",
+      "sbp": "Sehr niedrig",
+      "rr": ">40",
+      "mental_status": "Lethargisch/bewusstlos",
+      "treatment": "Sofortige chirurgische Blutungskontrolle – lebensbedrohlich"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Kinder kompensieren länger, bevor sie dekompensieren. Klasse III/IV kann bis zum plötzlichen Zusammenbruch einen nahezu normalen Blutdruck aufweisen. Vertrauen Sie Tachykardie und Geisteszustand über Blutdruck."
+    },
+    "obstetric": {
+      "note": "Bei schwangeren Patienten ist das Blutvolumen um 40–50 % erhöht. Kann größere Verluste tolerieren, bevor Anzeichen auftreten. Fetale Beschwerden können mütterlichen Anzeichen vorausgehen."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

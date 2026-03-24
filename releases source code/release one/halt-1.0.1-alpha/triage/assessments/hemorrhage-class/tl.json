@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Pag-uuri ng Pagdurugo (Class I-IV)",
+  "category": "circulatory",
+  "description": "Pag-uuri ng pagdurugo ng ATLS sa pamamagitan ng tinantyang pagkawala ng dugo at tugon ng pisyolohikal.",
+  "instructions": "Tantyahin ang pagkawala ng dugo at itugma ang mga physiological sign sa klase. Ang pagkaapurahan ng paggamot ay tumataas sa klase.",
+  "scoring": [
+    {
+      "class": "ako",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Normal",
+      "rr": "14-20",
+      "mental_status": "Normal",
+      "treatment": "Obserbahan, PO fluids kung magagawa"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Normal",
+      "rr": "20-30",
+      "mental_status": "Nababalisa",
+      "treatment": "IV access, isotonic crystalloid"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Nabawasan",
+      "rr": "30-40",
+      "mental_status": "Nalilito",
+      "treatment": "Mga IV fluid + mga produkto ng dugo, agarang kontrol sa pagdurugo"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Napakababa",
+      "rr": ">40",
+      "mental_status": "Matamlay/walang malay",
+      "treatment": "Agarang surgical hemorrhage control -- nagbabanta sa buhay"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Ang mga bata ay nagbabayad nang mas matagal bago mag-decompensate. Ang Class III/IV ay maaaring magpakita ng halos normal na BP hanggang sa biglaang pagbagsak. Pagkatiwalaan ang tachycardia at mental na kalagayan sa BP."
+    },
+    "obstetric": {
+      "note": "Ang mga buntis na pasyente ay may 40-50% na pagtaas ng dami ng dugo. Maaaring tiisin ang mas malaking pagkawala bago magpakita ng mga palatandaan. Maaaring mauna ang fetal distress sa mga palatandaan ng ina."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

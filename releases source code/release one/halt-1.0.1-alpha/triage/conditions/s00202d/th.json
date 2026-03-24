@@ -1,0 +1,22 @@
+{
+  "id": "s00202d",
+  "icd10": "S00202D",
+  "name": "การบาดเจ็บผิวเผินที่ไม่ระบุรายละเอียดที่เปลือกตาซ้ายและบริเวณรอบตา พบในภายหลัง",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "การบาดเจ็บผิวเผินที่ไม่ระบุรายละเอียดที่เปลือกตาซ้ายและบริเวณรอบตา ภายหลังการเผชิญหน้า",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

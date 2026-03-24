@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s82014c",
+    "icd10":  "S82014C",
+    "name":  "Nondisplaced osteochondral fracture of right patella, initial encounter for open fracture type IIIA, IIIB, or IIIC",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced osteochondral fracture of right patella, initial encounter for open fracture type IIIA, IIIB, or IIIC",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

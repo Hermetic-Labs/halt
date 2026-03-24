@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t378x6a",
+    "icd10":  "T378X6A",
+    "name":  "Underdosing of other specified systemic anti-infectives and antiparasitics, initial encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Underdosing of other specified systemic anti-infectives and antiparasitics, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s20314a",
+    "icd10":  "S20314A",
+    "name":  "Abrasion of middle front wall of thorax, initial encounter",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Abrasion of middle front wall of thorax, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

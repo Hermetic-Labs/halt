@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t1491xa",
+    "icd10":  "T1491XA",
+    "name":  "Suicide attempt, initial encounter",
+    "category":  "unspecified-injury",
+    "triage_priority":  "",
+    "description":  "Suicide attempt, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

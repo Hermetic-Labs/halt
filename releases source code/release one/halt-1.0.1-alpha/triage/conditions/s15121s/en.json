@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s15121s",
+    "icd10":  "S15121S",
+    "name":  "Major laceration of right vertebral artery, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Major laceration of right vertebral artery, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

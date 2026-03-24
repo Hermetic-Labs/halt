@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Isọdi Ẹjẹ (Klaasi I-IV)",
+  "category": "circulatory",
+  "description": "Iyasọtọ idajẹ ẹjẹ ATLS nipasẹ isonu ẹjẹ ti a pinnu ati idahun ti ẹkọ iṣe-ara.",
+  "instructions": "Ṣe iṣiro ipadanu ẹjẹ ati ki o baramu awọn ami ti ẹkọ iṣe-ara si kilasi. Ikanju itọju pọ si pẹlu kilasi.",
+  "scoring": [
+    {
+      "class": "I",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Deede",
+      "rr": "14-20",
+      "mental_status": "Deede",
+      "treatment": "Ṣe akiyesi, awọn fifa PO ti o ba le"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Deede",
+      "rr": "20-30",
+      "mental_status": "Ibanujẹ",
+      "treatment": "IV wiwọle, isotonic crystalloid"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Dinku",
+      "rr": "30-40",
+      "mental_status": "Ìdàrúdàpọ̀",
+      "treatment": "Awọn fifa IV + awọn ọja ẹjẹ, iṣakoso ẹjẹ lẹsẹkẹsẹ"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": "> 2000",
+      "blood_loss_pct": "> 40%",
+      "hr": ">140",
+      "sbp": "O kere pupọ",
+      "rr": ">40",
+      "mental_status": "Lethargic/daku",
+      "treatment": "Lẹsẹkẹsẹ iṣakoso iṣọn-ẹjẹ abẹ-abẹ-ẹwu-aye"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Awọn ọmọde san isanpada to gun ṣaaju ki o to decompensating. Kilasi III/IV le wa pẹlu BP ti o sunmọ-deede titi di iṣubu lojiji. Gbẹkẹle tachycardia ati ipo ọpọlọ lori BP."
+    },
+    "obstetric": {
+      "note": "Awọn alaisan ti o loyun ni iwọn 40-50% ti o pọ si ninu ẹjẹ. Le fi aaye gba pipadanu nla ṣaaju iṣafihan awọn ami. Ibanujẹ ọmọ inu oyun le ṣaju awọn ami iya."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

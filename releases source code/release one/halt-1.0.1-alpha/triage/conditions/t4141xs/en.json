@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t4141xs",
+    "icd10":  "T4141XS",
+    "name":  "Poisoning by unspecified anesthetic, accidental (unintentional), sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Poisoning by unspecified anesthetic, accidental (unintentional), sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

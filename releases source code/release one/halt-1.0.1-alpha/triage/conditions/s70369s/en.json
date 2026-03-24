@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s70369s",
+    "icd10":  "S70369S",
+    "name":  "Insect bite (nonvenomous), unspecified thigh, sequela",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Insect bite (nonvenomous), unspecified thigh, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s34102a",
+    "icd10":  "S34102A",
+    "name":  "Unspecified injury to L2 level of lumbar spinal cord, initial encounter",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified injury to L2 level of lumbar spinal cord, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

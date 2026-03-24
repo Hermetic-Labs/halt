@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Ukuhlukaniswa Kokopha (Ikilasi I-IV)",
+  "category": "circulatory",
+  "description": "Ukuhlukaniswa kwegazi kwe-ATLS ngokulahleka kwegazi okulinganiselwe kanye nokusabela komzimba.",
+  "instructions": "Linganisela ukulahleka kwegazi futhi uqondanise izimpawu zomzimba nekilasi. Ukuphuthuma kokwelashwa kukhuphuka nekilasi.",
+  "scoring": [
+    {
+      "class": "Mina",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Okuvamile",
+      "rr": "14-20",
+      "mental_status": "Okuvamile",
+      "treatment": "Qaphela, uketshezi lwe-PO uma ukwazi"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Okuvamile",
+      "rr": "20-30",
+      "mental_status": "Ukukhathazeka",
+      "treatment": "IV ukufinyelela, isotonic crystalloid"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Kwehlisiwe",
+      "rr": "30-40",
+      "mental_status": "Udidekile",
+      "treatment": "Uketshezi lwe-IV + imikhiqizo yegazi, ukulawula ukopha ngokushesha"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Phansi kakhulu",
+      "rr": ">40",
+      "mental_status": "I-Lethargic/uqulekile",
+      "treatment": "Ukulawula ukopha kokuhlinzwa ngokushesha -- okusongela ukuphila"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Izingane zinxephezela isikhathi eside ngaphambi kokudilizwa. Ikilasi III/IV lingase libe ne-BP ecishe ibe evamile kuze kube ukuwa kungazelelwe. Themba i-tachycardia nesimo sengqondo phezu kwe-BP."
+    },
+    "obstetric": {
+      "note": "Iziguli ezikhulelwe ziye zanda ngo-40-50% umthamo wegazi. Ingabekezelela ukulahlekelwa okukhulu ngaphambi kokubonisa izimpawu. Ukucindezeleka kwengane kungase kwandulele izimpawu zomama."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

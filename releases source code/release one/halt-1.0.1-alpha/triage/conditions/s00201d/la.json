@@ -1,0 +1,22 @@
+{
+  "id": "s00201d",
+  "icd10": "S00201D",
+  "name": "Laesio superficialis non specificata, area palpebrae recti et periocularis, occursus sequens",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Laesio superficialis non specificata, area palpebrae recti et periocularis, occursus sequens",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

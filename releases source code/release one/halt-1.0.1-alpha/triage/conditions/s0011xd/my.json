@@ -1,0 +1,22 @@
+{
+  "id": "s0011xd",
+  "icd10": "S0011XD",
+  "name": "ညာဘက်မျက်ခွံနှင့် အတွင်းပိုင်း ဧရိယာ ပေါက်ခြင်း ၊ နောက်ဆက်တွဲ ကြုံတွေ့ရမှု",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "ညာဘက်မျက်ခွံနှင့် အတွင်းပိုင်း နေရာကို ပေါက်ခြင်း ၊ နောက်ဆက်တွဲ ကြုံတွေ့ရတတ်ပါသည်။",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

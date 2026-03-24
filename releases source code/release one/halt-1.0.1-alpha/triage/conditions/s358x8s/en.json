@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s358x8s",
+    "icd10":  "S358X8S",
+    "name":  "Other specified injury of other blood vessels at abdomen, lower back and pelvis level, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Other specified injury of other blood vessels at abdomen, lower back and pelvis level, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

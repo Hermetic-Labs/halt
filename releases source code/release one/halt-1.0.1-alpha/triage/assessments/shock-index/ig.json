@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Ndekọ ujo",
+  "category": "circulatory",
+  "description": "Ngosipụta otu ọnụọgụ ngwa ngwa nke nkwụsi ike hemodynamic. Gbakọọ dị ka HR / SBP. Nkịtị bụ 0.5-0.7.",
+  "instructions": "Kewaa ọnụọgụ obi site na systolic ọbara mgbali. Ndekọ ujo na-arị elu na-egosi mbelata.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Nkịtị -- hemodynamically kwụsiri ike"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Ujo dị nro -- nyochaa anya"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Ujo na-agafeghị oke -- ohere IV, mmiri mmiri"
+    },
+    {
+      "range": ">1.4",
+      "label": "Oke ujo -- mweghachi ozugbo, ngwaahịa ọbara"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Index Shock Obstetric (OSI) na-eji otu usoro. SI> 0.9 n'ime ndị ọrịa dị ime dị mkpa. Nkịtị HR dị elu n'ime ime (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

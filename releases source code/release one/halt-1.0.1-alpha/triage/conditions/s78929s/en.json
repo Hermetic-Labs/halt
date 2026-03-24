@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s78929s",
+    "icd10":  "S78929S",
+    "name":  "Partial traumatic amputation of unspecified hip and thigh, level unspecified, sequela",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Partial traumatic amputation of unspecified hip and thigh, level unspecified, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

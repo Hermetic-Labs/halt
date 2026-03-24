@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s344xxs",
+    "icd10":  "S344XXS",
+    "name":  "Injury of lumbosacral plexus, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Injury of lumbosacral plexus, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

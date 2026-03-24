@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s338xxs",
+    "icd10":  "S338XXS",
+    "name":  "Sprain of other parts of lumbar spine and pelvis, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Sprain of other parts of lumbar spine and pelvis, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

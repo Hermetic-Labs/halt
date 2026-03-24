@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t1501xs",
+    "icd10":  "T1501XS",
+    "name":  "Foreign body in cornea, right eye, sequela",
+    "category":  "foreign-body",
+    "triage_priority":  "",
+    "description":  "Foreign body in cornea, right eye, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

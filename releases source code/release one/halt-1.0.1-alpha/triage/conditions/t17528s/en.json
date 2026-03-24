@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t17528s",
+    "icd10":  "T17528S",
+    "name":  "Food in bronchus causing other injury, sequela",
+    "category":  "foreign-body",
+    "triage_priority":  "",
+    "description":  "Food in bronchus causing other injury, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

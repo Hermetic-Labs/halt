@@ -1,0 +1,22 @@
+{
+  "id": "s0012xd",
+  "icd10": "S0012XD",
+  "name": "左眼睑和眼周区域挫伤，随后遭遇",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "左眼睑和眼周区域挫伤，随后遭遇",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Evaluación de deshidratación",
+  "category": "circulation",
+  "description": "Evaluación de campo para detectar la gravedad de la deshidratación y las enfermedades causadas por el calor. El color de la orina es el indicador de campo más práctico. Evaluar el estado mental como marcador de deshidratación grave que progresa a insolación.",
+  "instructions": "Compruebe el color de la orina, la turgencia de la piel, el estado mental y los signos vitales. La orina oscura, las membranas mucosas secas y la taquicardia indican una deshidratación significativa que requiere rehidratación activa.",
+  "categories": [
+    {
+      "color": "pálido claro",
+      "label": "Bien hidratado",
+      "description": "Amarillo pálido para aclarar la orina. No se necesita intervención."
+    },
+    {
+      "color": "amarillo",
+      "label": "Deshidratación leve",
+      "description": "Orina de color amarillo oscuro, sediento. Rehidratación oral. Recomendar 250-500 ml de agua por hora."
+    },
+    {
+      "color": "marrón ámbar",
+      "label": "Deshidratación moderada-grave",
+      "description": "Orina de color ámbar, frecuencia cardíaca elevada, turgencia cutánea disminuida, boca seca. Líquidos IV/IO si no se toleran por vía oral. 1-2L LR o NS."
+    },
+    {
+      "color": "rojo",
+      "label": "Peligro: insolación/grave",
+      "description": "Diuresis mínima, LOC alterada, piel seca y caliente. Emergencia médica: enfriamiento rápido + líquidos intravenosos + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Los niños se deshidratan más rápido que los adultos. Fontanela hundida (bebés), ausencia de lágrimas y letargo son signos críticos. IV según el peso: bolo LR de 20 ml/kg."
+    },
+    "obstetric": {
+      "note": "Las mujeres embarazadas necesitan una mayor ingesta de líquidos. La deshidratación puede desencadenar contracciones prematuras. Rehidratación oral agresiva primero; IV si no se tolera la vía oral."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

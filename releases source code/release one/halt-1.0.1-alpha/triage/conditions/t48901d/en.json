@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t48901d",
+    "icd10":  "T48901D",
+    "name":  "Poisoning by unspecified agents primarily acting on the respiratory system, accidental (unintentional), subsequent encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Poisoning by unspecified agents primarily acting on the respiratory system, accidental (unintentional), subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

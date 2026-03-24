@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "Escala de coma de Glasgow (GCS)",
+  "category": "neurological",
+  "description": "Puntuación neurológica estandarizada de la conciencia a través de respuestas oculares, verbales y motoras. Rango de puntuación 3-15.",
+  "instructions": "Califique cada uno de los tres dominios de forma independiente. Sume los tres puntajes para obtener el GCS total.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Espontáneo"
+        },
+        {
+          "score": 3,
+          "label": "A la voz"
+        },
+        {
+          "score": 2,
+          "label": "Al dolor"
+        },
+        {
+          "score": 1,
+          "label": "Ninguno"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "Orientado"
+        },
+        {
+          "score": 4,
+          "label": "Confundido"
+        },
+        {
+          "score": 3,
+          "label": "Palabras inapropiadas"
+        },
+        {
+          "score": 2,
+          "label": "Sonidos incomprensibles"
+        },
+        {
+          "score": 1,
+          "label": "Ninguno"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "Obedece órdenes"
+        },
+        {
+          "score": 5,
+          "label": "Localiza el dolor"
+        },
+        {
+          "score": 4,
+          "label": "Se retira del dolor"
+        },
+        {
+          "score": 3,
+          "label": "Flexión anormal (decorticación)"
+        },
+        {
+          "score": 2,
+          "label": "Extensión (descerebración)"
+        },
+        {
+          "score": 1,
+          "label": "Ninguno"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "TBI leve: controle de cerca"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "TBI moderado: prepare la vía aérea"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "TBI grave: vía aérea en riesgo inmediato, intubar si es posible"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Utilice GCS pediátrico (pGCS) para niños menores de 2 años. Puntuación verbal ajustada para niños preverbales."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

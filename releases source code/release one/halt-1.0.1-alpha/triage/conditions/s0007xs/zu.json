@@ -1,0 +1,22 @@
+{
+  "id": "s0007xs",
+  "icd10": "S0007XS",
+  "name": "Okunye ukuluma okukha phezulu kwekhanda, sequela",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Okunye ukulunywa okukha phezulu kwe-scalp, i-sequela",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

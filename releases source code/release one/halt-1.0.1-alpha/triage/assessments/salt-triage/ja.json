@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "SALT トリアージ (分類、評価、救命処置、治療/輸送)",
+  "category": "mass-casualty",
+  "description": "大量死傷者のトリアージプロトコル。軍事および民間環境における複数の犠牲者が発生するイベントの標準。",
+  "instructions": "ステップ 1: グローバルソート (歩く、手を振る、静止する)。ステップ 2: 優先順位に従って評価します。ステップ 3: 救命処置を実行します (大量出血の制御、気道確保、針の減圧、自動注射器)。ステップ 4: カテゴリを割り当てます。",
+  "categories": [
+    {
+      "color": "黒",
+      "label": "妊娠中/死亡",
+      "description": "利用可能な資源を考慮すると生存の可能性は低い、または死亡が確認されている"
+    },
+    {
+      "color": "赤",
+      "label": "即時 (T1)",
+      "description": "生命を脅かす怪我、即時介入すれば助かる"
+    },
+    {
+      "color": "黄色",
+      "label": "遅延 (T2)",
+      "description": "重篤だが安定した怪我、治療を待つことができる"
+    },
+    {
+      "color": "緑",
+      "label": "最小 (T3)",
+      "description": "軽傷 - 歩行中の負傷"
+    },
+    {
+      "color": "灰色",
+      "label": "妊娠中",
+      "description": "現在のリソースを考慮すると助からない怪我 -- 快適なケアのみ"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "JumpSTART トリアージ アルゴリズムは、小児患者向けの SALT を変更します。 8 歳未満の子供では、呼吸数の閾値と評価手順が異なります。"
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

@@ -1,0 +1,58 @@
+﻿{
+    "id":  "hemorrhage-class",
+    "name":  "Hemorrhage Classification (Class I-IV)",
+    "category":  "circulatory",
+    "description":  "ATLS hemorrhage classification by estimated blood loss and physiological response.",
+    "instructions":  "Estimate blood loss and match physiological signs to class. Treatment urgency escalates with class.",
+    "scoring":  [
+                    {
+                        "class":  "I",
+                        "blood_loss_ml":  "\u003c750",
+                        "blood_loss_pct":  "\u003c15%",
+                        "hr":  "\u003c100",
+                        "sbp":  "Normal",
+                        "rr":  "14-20",
+                        "mental_status":  "Normal",
+                        "treatment":  "Observe, PO fluids if able"
+                    },
+                    {
+                        "class":  "II",
+                        "blood_loss_ml":  "750-1500",
+                        "blood_loss_pct":  "15-30%",
+                        "hr":  "100-120",
+                        "sbp":  "Normal",
+                        "rr":  "20-30",
+                        "mental_status":  "Anxious",
+                        "treatment":  "IV access, isotonic crystalloid"
+                    },
+                    {
+                        "class":  "III",
+                        "blood_loss_ml":  "1500-2000",
+                        "blood_loss_pct":  "30-40%",
+                        "hr":  "120-140",
+                        "sbp":  "Decreased",
+                        "rr":  "30-40",
+                        "mental_status":  "Confused",
+                        "treatment":  "IV fluids + blood products, immediate hemorrhage control"
+                    },
+                    {
+                        "class":  "IV",
+                        "blood_loss_ml":  "\u003e2000",
+                        "blood_loss_pct":  "\u003e40%",
+                        "hr":  "\u003e140",
+                        "sbp":  "Very low",
+                        "rr":  "\u003e40",
+                        "mental_status":  "Lethargic/unconscious",
+                        "treatment":  "Immediate surgical hemorrhage control -- life-threatening"
+                    }
+                ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  "Children compensate longer before decompensating. Class III/IV may present with near-normal BP until sudden collapse. Trust tachycardia and mental status over BP."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Pregnant patients have 40-50% increased blood volume. May tolerate greater loss before showing signs. Fetal distress may precede maternal signs."
+                                    }
+                  },
+    "source":  "ATLS / JTS CPG / PHTLS"
+}

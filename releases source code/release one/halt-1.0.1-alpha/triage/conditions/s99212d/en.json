@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s99212d",
+    "icd10":  "S99212D",
+    "name":  "Salter-Harris Type I physeal fracture of phalanx of left toe, subsequent encounter for fracture with routine healing",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Salter-Harris Type I physeal fracture of phalanx of left toe, subsequent encounter for fracture with routine healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

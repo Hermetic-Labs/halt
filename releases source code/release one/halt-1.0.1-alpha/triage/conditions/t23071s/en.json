@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t23071s",
+    "icd10":  "T23071S",
+    "name":  "Burn of unspecified degree of right wrist, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Burn of unspecified degree of right wrist, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

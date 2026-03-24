@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s8256xj",
+    "icd10":  "S8256XJ",
+    "name":  "Nondisplaced fracture of medial malleolus of unspecified tibia, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with delayed healing",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of medial malleolus of unspecified tibia, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with delayed healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

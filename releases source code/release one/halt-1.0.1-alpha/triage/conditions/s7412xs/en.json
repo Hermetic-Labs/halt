@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s7412xs",
+    "icd10":  "S7412XS",
+    "name":  "Injury of femoral nerve at hip and thigh level, left leg, sequela",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Injury of femoral nerve at hip and thigh level, left leg, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

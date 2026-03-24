@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s2501xa",
+    "icd10":  "S2501XA",
+    "name":  "Minor laceration of thoracic aorta, initial encounter",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Minor laceration of thoracic aorta, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

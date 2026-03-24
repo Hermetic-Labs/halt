@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s31130s",
+    "icd10":  "S31130S",
+    "name":  "Puncture wound of abdominal wall without foreign body, right upper quadrant without penetration into peritoneal cavity, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Puncture wound of abdominal wall without foreign body, right upper quadrant without penetration into peritoneal cavity, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

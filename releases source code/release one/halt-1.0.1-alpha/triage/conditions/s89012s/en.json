@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s89012s",
+    "icd10":  "S89012S",
+    "name":  "Salter-Harris Type I physeal fracture of upper end of left tibia, sequela",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Salter-Harris Type I physeal fracture of upper end of left tibia, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

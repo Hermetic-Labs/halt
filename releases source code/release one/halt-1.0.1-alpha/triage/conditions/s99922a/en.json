@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s99922a",
+    "icd10":  "S99922A",
+    "name":  "Unspecified injury of left foot, initial encounter",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified injury of left foot, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "s0007xd",
+  "icd10": "S0007XD",
+  "name": "Outra mordida superficial no couro cabeludo, encontro subsequente",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Outra mordida superficial no couro cabeludo, encontro subsequente",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

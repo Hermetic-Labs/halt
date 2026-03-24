@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s99222p",
+    "icd10":  "S99222P",
+    "name":  "Salter-Harris Type II physeal fracture of phalanx of left toe, subsequent encounter for fracture with malunion",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Salter-Harris Type II physeal fracture of phalanx of left toe, subsequent encounter for fracture with malunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

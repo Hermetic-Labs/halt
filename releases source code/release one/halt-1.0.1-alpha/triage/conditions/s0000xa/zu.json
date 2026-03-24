@@ -1,0 +1,22 @@
+{
+  "id": "s0000xa",
+  "icd10": "S0000XA",
+  "name": "Ukulimala okungaphezulu okungashiwongo kwesikhumba sekhanda, ukuhlangana kokuqala",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Ukulimala okungaphezulu okungacacisiwe kwesikhumba sekhanda, ukuhlangana kokuqala",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

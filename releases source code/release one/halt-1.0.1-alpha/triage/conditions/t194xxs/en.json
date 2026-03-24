@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t194xxs",
+    "icd10":  "T194XXS",
+    "name":  "Foreign body in penis, sequela",
+    "category":  "foreign-body",
+    "triage_priority":  "",
+    "description":  "Foreign body in penis, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

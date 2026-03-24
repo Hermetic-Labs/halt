@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s56329a",
+    "icd10":  "S56329A",
+    "name":  "Laceration of extensor or abductor muscles, fascia and tendons of unspecified thumb at forearm level, initial encounter",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Laceration of extensor or abductor muscles, fascia and tendons of unspecified thumb at forearm level, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

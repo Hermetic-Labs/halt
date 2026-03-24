@@ -1,0 +1,22 @@
+{
+  "id": "s0012xd",
+  "icd10": "S0012XD",
+  "name": "Mkpuchi nkuchianaya aka ekpe na mpaghara periocular, nhụta na-esote",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Contusion nke nkuchianaya ekpe na periocular mpaghara, na-esote nhụta",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

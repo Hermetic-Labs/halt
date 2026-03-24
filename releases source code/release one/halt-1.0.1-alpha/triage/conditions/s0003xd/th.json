@@ -1,0 +1,22 @@
+{
+  "id": "s0003xd",
+  "icd10": "S0003XD",
+  "name": "การฟกช้ำที่หนังศีรษะ การเผชิญหน้าภายหลัง",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "การฟกช้ำที่หนังศีรษะ การเผชิญหน้าในภายหลัง",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

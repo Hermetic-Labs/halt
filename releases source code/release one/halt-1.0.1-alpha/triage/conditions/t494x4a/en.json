@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t494x4a",
+    "icd10":  "T494X4A",
+    "name":  "Poisoning by keratolytics, keratoplastics, and other hair treatment drugs and preparations, undetermined, initial encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Poisoning by keratolytics, keratoplastics, and other hair treatment drugs and preparations, undetermined, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

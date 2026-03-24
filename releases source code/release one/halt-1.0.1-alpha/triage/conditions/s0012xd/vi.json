@@ -1,0 +1,22 @@
+{
+  "id": "s0012xd",
+  "icd10": "S0012XD",
+  "name": "Giập mí mắt trái và vùng quanh mắt, lần gặp tiếp theo",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Giập mí mắt trái và vùng quanh mắt, lần gặp tiếp theo",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

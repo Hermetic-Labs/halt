@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s2222xs",
+    "icd10":  "S2222XS",
+    "name":  "Fracture of body of sternum, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Fracture of body of sternum, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

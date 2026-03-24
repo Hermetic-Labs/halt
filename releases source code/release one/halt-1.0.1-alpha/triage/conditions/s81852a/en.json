@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s81852a",
+    "icd10":  "S81852A",
+    "name":  "Open bite, left lower leg, initial encounter",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Open bite, left lower leg, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

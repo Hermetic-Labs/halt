@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Hemorrhage Classification (Class I-IV)",
+  "category": "circulatory",
+  "description": "ATLS haemorrhagiae classificationis per damna sanguinis aestimata et responsio physiologica.",
+  "instructions": "Damnum sanguinis aestimare et signa physiologica classi aequare. Curatio necessitatis escalate cum classe.",
+  "scoring": [
+    {
+      "class": "I",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Normal",
+      "rr": "14-20",
+      "mental_status": "Normal",
+      "treatment": "Vide, PO humores si possunt"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Normal",
+      "rr": "20-30",
+      "mental_status": "Anxius",
+      "treatment": "IV accessum, crystalloideum isotonic"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "decrevit",
+      "rr": "30-40",
+      "mental_status": "Confused",
+      "treatment": "IV humores + sanguinem products, sanguinis immediatum imperium"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Valde humilis",
+      "rr": ">40",
+      "mental_status": "Lethargicis / inscium",
+      "treatment": "Immediatus haemorrhagia chirurgica moderatio - minax vitalis"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Pueri longiores compensant antequam decompensatio. Classis III/IV praesens cum BP prope normale potest usque ad ruinam repentinam. Fiducia tachycardia et status mentalis super BP."
+    },
+    "obstetric": {
+      "note": "Aegris gravidae 40-50% auctum sanguinem volumen habent. Maius damnum ferat antequam signa ostendat. Dolor foetus signa materna praecedere potest."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "s0005xd",
+  "icd10": "S0005XD",
+  "name": "ဦးရေပြား၏ အပေါ်ယံ ပြင်ပ ကိုယ်ခန္ဓာ၏ နောက်ဆက်တွဲ ကြုံတွေ့ရမှု",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "ဦးရေပြား၏ အပေါ်ယံ ပြင်ပကိုယ်ခန္ဓာတွင် နောက်ဆက်တွဲ ကြုံတွေ့ရသည်။",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

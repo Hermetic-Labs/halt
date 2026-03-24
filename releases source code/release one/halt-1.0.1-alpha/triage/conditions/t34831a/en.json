@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t34831a",
+    "icd10":  "T34831A",
+    "name":  "Frostbite with tissue necrosis of right toe(s), initial encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Frostbite with tissue necrosis of right toe(s), initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s37042s",
+    "icd10":  "S37042S",
+    "name":  "Minor laceration of left kidney, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Minor laceration of left kidney, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

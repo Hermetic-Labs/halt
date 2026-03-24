@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s70341s",
+    "icd10":  "S70341S",
+    "name":  "External constriction, right thigh, sequela",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "External constriction, right thigh, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s52223s",
+    "icd10":  "S52223S",
+    "name":  "Displaced transverse fracture of shaft of unspecified ulna, sequela",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Displaced transverse fracture of shaft of unspecified ulna, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

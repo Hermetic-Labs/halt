@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s80219s",
+    "icd10":  "S80219S",
+    "name":  "Abrasion, unspecified knee, sequela",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Abrasion, unspecified knee, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

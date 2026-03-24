@@ -1,0 +1,22 @@
+{
+  "id": "s0011xa",
+  "icd10": "S0011XA",
+  "name": "Kuvimba kwa kope la kulia na eneo la pembeni, kukutana kwa mara ya kwanza",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Kuvimba kwa kope la kulia na eneo la periocular, mkutano wa awali",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

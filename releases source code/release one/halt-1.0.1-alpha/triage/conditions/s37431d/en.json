@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s37431d",
+    "icd10":  "S37431D",
+    "name":  "Laceration of ovary, unilateral, subsequent encounter",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Laceration of ovary, unilateral, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

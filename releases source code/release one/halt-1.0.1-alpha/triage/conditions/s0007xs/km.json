@@ -1,0 +1,22 @@
+{
+  "id": "s0007xs",
+  "icd10": "S0007XS",
+  "name": "ផ្សេងទៀត ស្បែកក្បាលខាំ, ស៊ែរ",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "ការ​ខាំ​ស្បែក​ក្បាល​ផ្នែក​ខាង​លើ​ផ្សេង​ទៀត​, sequela",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

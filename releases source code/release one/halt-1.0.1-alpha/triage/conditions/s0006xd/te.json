@@ -1,0 +1,22 @@
+{
+  "id": "s0006xd",
+  "icd10": "S0006XD",
+  "name": "నెత్తిమీద కీటకాల కాటు (విషరహితం), తదుపరి ఎన్‌కౌంటర్",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "నెత్తిమీద కీటకాల కాటు (విషరహితం), తదుపరి ఎన్‌కౌంటర్",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s82864m",
+    "icd10":  "S82864M",
+    "name":  "Nondisplaced Maisonneuve\u0027s fracture of right leg, subsequent encounter for open fracture type I or II with nonunion",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced Maisonneuve\u0027s fracture of right leg, subsequent encounter for open fracture type I or II with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

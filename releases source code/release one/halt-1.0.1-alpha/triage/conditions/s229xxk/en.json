@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s229xxk",
+    "icd10":  "S229XXK",
+    "name":  "Fracture of bony thorax, part unspecified, subsequent encounter for fracture with nonunion",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Fracture of bony thorax, part unspecified, subsequent encounter for fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

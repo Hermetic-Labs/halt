@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s84802a",
+    "icd10":  "S84802A",
+    "name":  "Injury of other nerves at lower leg level, left leg, initial encounter",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Injury of other nerves at lower leg level, left leg, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

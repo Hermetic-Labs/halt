@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s72125d",
+    "icd10":  "S72125D",
+    "name":  "Nondisplaced fracture of lesser trochanter of left femur, subsequent encounter for closed fracture with routine healing",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of lesser trochanter of left femur, subsequent encounter for closed fracture with routine healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

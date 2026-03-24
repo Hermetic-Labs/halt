@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s76119a",
+    "icd10":  "S76119A",
+    "name":  "Strain of unspecified quadriceps muscle, fascia and tendon, initial encounter",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Strain of unspecified quadriceps muscle, fascia and tendon, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

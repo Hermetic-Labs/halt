@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s2090xs",
+    "icd10":  "S2090XS",
+    "name":  "Unspecified superficial injury of unspecified parts of thorax, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified superficial injury of unspecified parts of thorax, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "s0012xa",
+  "icd10": "S0012XA",
+  "name": "كدمة في الجفن الأيسر والمنطقة المحيطة بالعين، مواجهة أولية",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "كدمة في الجفن الأيسر والمنطقة المحيطة بالعين، مواجهة أولية",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t24099a",
+    "icd10":  "T24099A",
+    "name":  "Burn of unspecified degree of multiple sites of unspecified lower limb, except ankle and foot, initial encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Burn of unspecified degree of multiple sites of unspecified lower limb, except ankle and foot, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

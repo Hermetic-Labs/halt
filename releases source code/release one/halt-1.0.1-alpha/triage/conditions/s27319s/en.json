@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s27319s",
+    "icd10":  "S27319S",
+    "name":  "Primary blast injury of lung, unspecified, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Primary blast injury of lung, unspecified, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

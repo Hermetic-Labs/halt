@@ -1,0 +1,22 @@
+{
+  "id": "s0000xd",
+  "icd10": "S0000XD",
+  "name": "Laesio superficialis non specificata in capillo, subsequens occursus",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Laesio levis superficialis cutis, concursus sequens",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

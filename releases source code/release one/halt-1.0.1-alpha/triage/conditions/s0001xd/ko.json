@@ -1,0 +1,22 @@
+{
+  "id": "s0001xd",
+  "icd10": "S0001XD",
+  "name": "두피 찰과상, 이후의 만남",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "두피 찰과상, 이후 발생",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

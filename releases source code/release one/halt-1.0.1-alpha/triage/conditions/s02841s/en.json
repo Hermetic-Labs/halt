@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s02841s",
+    "icd10":  "S02841S",
+    "name":  "Fracture of lateral orbital wall, right side, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Fracture of lateral orbital wall, right side, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

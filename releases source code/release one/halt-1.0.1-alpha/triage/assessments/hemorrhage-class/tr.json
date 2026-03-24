@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Kanama Sınıflaması (Sınıf I-IV)",
+  "category": "circulatory",
+  "description": "Tahmini kan kaybı ve fizyolojik tepkiye göre ATLS kanama sınıflandırması.",
+  "instructions": "Kan kaybını tahmin edin ve fizyolojik belirtileri sınıfla eşleştirin. Tedavi aciliyeti sınıfla birlikte artar.",
+  "scoring": [
+    {
+      "class": "ben",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<%15",
+      "hr": "<100",
+      "sbp": "Normal",
+      "rr": "14-20",
+      "mental_status": "Normal",
+      "treatment": "Mümkünse PO sıvılarını gözlemleyin"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "%15-30",
+      "hr": "100-120",
+      "sbp": "Normal",
+      "rr": "20-30",
+      "mental_status": "Endişeli",
+      "treatment": "IV erişimi, izotonik kristaloid"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "%30-40",
+      "hr": "120-140",
+      "sbp": "Azaldı",
+      "rr": "30-40",
+      "mental_status": "Kafam karıştı",
+      "treatment": "IV sıvılar + kan ürünleri, acil kanama kontrolü"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">%40",
+      "hr": ">140",
+      "sbp": "Çok düşük",
+      "rr": ">40",
+      "mental_status": "Uyuşuk/bilinçsiz",
+      "treatment": "Acil cerrahi kanama kontrolü -- yaşamı tehdit eden"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Çocuklar dekompanse olmadan önce daha uzun süre telafi ederler. Sınıf III/IV, ani çöküşe kadar normale yakın kan basıncı ile ortaya çıkabilir. Kan basıncından ziyade taşikardi ve zihinsel duruma güvenin."
+    },
+    "obstetric": {
+      "note": "Hamile hastalarda kan hacmi %40-50 oranında artar. Belirtileri göstermeden önce daha büyük kayıpları tolere edebilir. Fetal sıkıntı annedeki belirtilerden önce gelebilir."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

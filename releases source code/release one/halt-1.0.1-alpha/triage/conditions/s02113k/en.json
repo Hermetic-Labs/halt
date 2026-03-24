@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s02113k",
+    "icd10":  "S02113K",
+    "name":  "Unspecified occipital condyle fracture, subsequent encounter for fracture with nonunion",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified occipital condyle fracture, subsequent encounter for fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

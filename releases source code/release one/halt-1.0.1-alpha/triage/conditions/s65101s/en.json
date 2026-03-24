@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s65101s",
+    "icd10":  "S65101S",
+    "name":  "Unspecified injury of radial artery at wrist and hand level of right arm, sequela",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified injury of radial artery at wrist and hand level of right arm, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

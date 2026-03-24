@@ -1,0 +1,22 @@
+{
+  "id": "s0010xs",
+  "icd10": "S0010XS",
+  "name": "Rushewar fatar ido da ba a fayyace ba da kuma yanki na gefe, ci gaba",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Rushewar fatar ido da ba a fayyace ba da kuma yanki na periocular, na gaba",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

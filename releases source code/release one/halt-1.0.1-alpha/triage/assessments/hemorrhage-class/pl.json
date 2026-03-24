@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Klasyfikacja krwotoku (klasa I-IV)",
+  "category": "circulatory",
+  "description": "Klasyfikacja krwotoku ATLS na podstawie szacunkowej utraty krwi i reakcji fizjologicznej.",
+  "instructions": "Oszacuj utratę krwi i dopasuj objawy fizjologiczne do klasy. Pilność leczenia wzrasta wraz z klasą.",
+  "scoring": [
+    {
+      "class": "ja",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Normalne",
+      "rr": "14-20",
+      "mental_status": "Normalne",
+      "treatment": "Obserwuj, jeśli to możliwe, płyny PO"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Normalne",
+      "rr": "20-30",
+      "mental_status": "Niespokojny",
+      "treatment": "Dostęp IV, izotoniczny krystaloid"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Zmniejszone",
+      "rr": "30-40",
+      "mental_status": "Zdezorientowany",
+      "treatment": "Płyny dożylne + produkty krwiopochodne, natychmiastowa tamacja krwotoku"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Bardzo niski",
+      "rr": ">40",
+      "mental_status": "Letarg/nieświadomość",
+      "treatment": "Natychmiastowe chirurgiczne zaopatrzenie krwotoku – zagrożenie życia"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Dzieci kompensują dłużej, zanim dokonają dekompensacji. Klasa III/IV może objawiać się ciśnieniem prawie prawidłowym, aż do nagłego załamania. Zaufaj tachykardii i stanowi psychicznemu ponad BP."
+    },
+    "obstetric": {
+      "note": "U kobiet w ciąży objętość krwi jest zwiększona o 40–50%. Może tolerować większe straty, zanim pojawią się objawy. Niepokój płodu może poprzedzać objawy matczyne."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

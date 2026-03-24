@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s22051s",
+    "icd10":  "S22051S",
+    "name":  "Stable burst fracture of T5-T6 vertebra, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Stable burst fracture of T5-T6 vertebra, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

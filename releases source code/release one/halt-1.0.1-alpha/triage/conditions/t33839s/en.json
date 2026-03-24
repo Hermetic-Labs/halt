@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t33839s",
+    "icd10":  "T33839S",
+    "name":  "Superficial frostbite of unspecified toe(s), sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Superficial frostbite of unspecified toe(s), sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

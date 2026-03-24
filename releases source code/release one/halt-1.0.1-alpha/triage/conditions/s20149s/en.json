@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s20149s",
+    "icd10":  "S20149S",
+    "name":  "External constriction of part of breast, unspecified breast, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "External constriction of part of breast, unspecified breast, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

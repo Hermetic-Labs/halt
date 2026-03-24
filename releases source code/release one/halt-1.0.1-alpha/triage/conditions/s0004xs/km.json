@@ -1,0 +1,22 @@
+{
+  "id": "s0004xs",
+  "icd10": "S0004XS",
+  "name": "ការរឹតបន្តឹងផ្នែកខាងក្រៅនៃស្បែកក្បាល, វគ្គ",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "ការរឹតបន្តឹងខាងក្រៅនៃផ្នែកនៃស្បែកក្បាល, sequela",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

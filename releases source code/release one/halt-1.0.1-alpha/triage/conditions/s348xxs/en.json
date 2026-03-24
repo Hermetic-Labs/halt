@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s348xxs",
+    "icd10":  "S348XXS",
+    "name":  "Injury of other nerves at abdomen, lower back and pelvis level, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Injury of other nerves at abdomen, lower back and pelvis level, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

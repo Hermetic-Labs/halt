@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t361x5a",
+    "icd10":  "T361X5A",
+    "name":  "Adverse effect of cephalosporins and other beta-lactam antibiotics, initial encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Adverse effect of cephalosporins and other beta-lactam antibiotics, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

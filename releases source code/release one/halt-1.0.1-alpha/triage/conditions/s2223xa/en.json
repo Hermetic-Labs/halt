@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s2223xa",
+    "icd10":  "S2223XA",
+    "name":  "Sternal manubrial dissociation, initial encounter for closed fracture",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Sternal manubrial dissociation, initial encounter for closed fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

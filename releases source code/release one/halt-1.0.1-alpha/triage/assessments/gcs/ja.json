@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "グラスゴー昏睡スケール (GCS)",
+  "category": "neurological",
+  "description": "目、言語、運動反応による意識の標準化された神経学的スコアリング。スコア範囲は 3 ～ 15。",
+  "instructions": "3 つのドメインのそれぞれを個別にスコアリングします。合計 GCS として 3 つのスコアをすべて合計します。",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "自発的"
+        },
+        {
+          "score": 3,
+          "label": "声を出す"
+        },
+        {
+          "score": 2,
+          "label": "痛みに"
+        },
+        {
+          "score": 1,
+          "label": "なし"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "方向性がある"
+        },
+        {
+          "score": 4,
+          "label": "混乱しています"
+        },
+        {
+          "score": 3,
+          "label": "不適切な言葉"
+        },
+        {
+          "score": 2,
+          "label": "理解できない音"
+        },
+        {
+          "score": 1,
+          "label": "なし"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "命令に従います"
+        },
+        {
+          "score": 5,
+          "label": "痛みを局所に限定する"
+        },
+        {
+          "score": 4,
+          "label": "痛みから逃れる"
+        },
+        {
+          "score": 3,
+          "label": "異常な屈曲 (皮質剥離)"
+        },
+        {
+          "score": 2,
+          "label": "伸展 (除脳)"
+        },
+        {
+          "score": 1,
+          "label": "なし"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "軽度の外傷性脳損傷 -- 注意深く観察してください"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "中等度の外傷性脳損傷 -- 気道確保"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "重度の外傷性脳損傷 -- 気道の危険が差し迫った状態、可能であれば挿管してください"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "2 歳未満の小児には小児 GCS (pGCS) を使用します。言葉を話す前の子供向けに調整された言葉のスコア。"
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

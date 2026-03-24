@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s4292xk",
+    "icd10":  "S4292XK",
+    "name":  "Fracture of left shoulder girdle, part unspecified, subsequent encounter for fracture with nonunion",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Fracture of left shoulder girdle, part unspecified, subsequent encounter for fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t447x2a",
+    "icd10":  "T447X2A",
+    "name":  "Poisoning by beta-adrenoreceptor antagonists, intentional self-harm, initial encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Poisoning by beta-adrenoreceptor antagonists, intentional self-harm, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

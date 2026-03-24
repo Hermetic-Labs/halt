@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "AVPU スケール",
+  "category": "neurological",
+  "description": "迅速な4レベルの意識評価。初期トリアージでは GCS よりも高速です。",
+  "instructions": "患者が示す最高レベルの反応を評価します。",
+  "scoring": [
+    {
+      "code": "",
+      "label": "警告",
+      "description": "患者は目覚めており、意識があり、正常に反応しています"
+    },
+    {
+      "code": "V",
+      "label": "声",
+      "description": "患者は言葉による刺激にのみ反応します"
+    },
+    {
+      "code": "P",
+      "label": "痛み",
+      "description": "患者は痛みを伴う刺激（胸骨の摩擦、爪床の圧迫）にのみ反応します"
+    },
+    {
+      "code": "う",
+      "label": "応答なし",
+      "description": "どの刺激にも反応なし -- 直ちに気道介入が必要"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "",
+      "triage": "安定しています -- 評価を続行"
+    },
+    {
+      "code": "V",
+      "triage": "気道を監視することについて"
+    },
+    {
+      "code": "P",
+      "triage": "重大 -- 気道が危険にさらされており、GCS は通常 <= 8"
+    },
+    {
+      "code": "う",
+      "triage": "即時 -- 今すぐ気道を管理してください"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

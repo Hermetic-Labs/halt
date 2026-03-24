@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Ocena odwodnienia",
+  "category": "circulation",
+  "description": "Ocena terenowa pod kątem nasilenia odwodnienia i chorób cieplnych. Kolor moczu jest najbardziej praktycznym wskaźnikiem terenowym. Oceń stan psychiczny jako wskaźnik ciężkiego odwodnienia prowadzącego do udaru cieplnego.",
+  "instructions": "Sprawdź kolor moczu, napięcie skóry, stan psychiczny i parametry życiowe. Ciemny mocz, suchość błon śluzowych i tachykardia wskazują na znaczne odwodnienie wymagające aktywnego nawodnienia.",
+  "categories": [
+    {
+      "color": "jasno-blady",
+      "label": "Dobrze nawodniony",
+      "description": "Jasnożółty, aby oczyścić mocz. Nie potrzeba żadnej interwencji."
+    },
+    {
+      "color": "żółty",
+      "label": "Łagodne odwodnienie",
+      "description": "Ciemnożółty mocz, pragnienie. Nawodnienie doustne. Zachęcaj do picia 250–500 ml wody na godzinę."
+    },
+    {
+      "color": "bursztynowo-brązowy",
+      "label": "Umiarkowane-ciężkie odwodnienie",
+      "description": "Bursztynowy mocz, podwyższone HR, zmniejszony turgor skóry, suchość w ustach. Płyny IV/IO, jeśli nie są tolerowane doustnie. 1-2L LR lub NS."
+    },
+    {
+      "color": "czerwony",
+      "label": "Niebezpieczeństwo — udar cieplny / poważny",
+      "description": "Minimalna ilość wydalanego moczu, zmieniona LOC, gorąca, sucha skóra. Nagły wypadek medyczny – szybkie schładzanie + płyny dożylne + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Dzieci odwadniają się szybciej niż dorośli. Zapadnięte ciemiączko (niemowlęta), brak łez i letarg to krytyczne objawy. IV w oparciu o masę ciała: bolus LR 20 ml/kg."
+    },
+    "obstetric": {
+      "note": "Kobiety w ciąży wymagają zwiększonego spożycia płynów. Odwodnienie może wywołać przedwczesne skurcze. Najpierw agresywne nawodnienie doustne; IV jeśli nie toleruję doustnie."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

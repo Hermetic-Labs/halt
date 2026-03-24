@@ -1,0 +1,22 @@
+{
+  "id": "s0004xa",
+  "icd10": "S0004XA",
+  "name": "ဦးရေပြားတစ်စိတ်တစ်ပိုင်း၏ ပြင်ပကျဉ်းကျဉ်း၊ ကနဦးကြုံတွေ့ရမှု",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "ဦးရေပြား၏ ပြင်ပတွင် ကျဉ်းမြောင်းခြင်း ၊ ကနဦးကြုံတွေ့ရခြင်း၊",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

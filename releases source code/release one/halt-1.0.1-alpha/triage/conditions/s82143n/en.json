@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s82143n",
+    "icd10":  "S82143N",
+    "name":  "Displaced bicondylar fracture of unspecified tibia, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with nonunion",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Displaced bicondylar fracture of unspecified tibia, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

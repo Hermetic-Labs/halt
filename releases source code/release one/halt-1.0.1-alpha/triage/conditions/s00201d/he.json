@@ -1,0 +1,22 @@
+{
+  "id": "s00201d",
+  "icd10": "S00201D",
+  "name": "פגיעה שטחית לא מוגדרת בעפעף ימין ובאזור הפריוקולרי, מפגש לאחר מכן",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "פגיעה שטחית לא מוגדרת בעפעף ימין ובאזור הפריוקולרי, מפגש לאחר מכן",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

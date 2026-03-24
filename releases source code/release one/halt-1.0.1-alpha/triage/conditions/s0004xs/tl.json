@@ -1,0 +1,22 @@
+{
+  "id": "s0004xs",
+  "icd10": "S0004XS",
+  "name": "Panlabas na paninikip ng bahagi ng anit, sequela",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Panlabas na paninikip ng bahagi ng anit, sequela",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

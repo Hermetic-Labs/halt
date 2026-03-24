@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t431x1d",
+    "icd10":  "T431X1D",
+    "name":  "Poisoning by monoamine-oxidase-inhibitor antidepressants, accidental (unintentional), subsequent encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Poisoning by monoamine-oxidase-inhibitor antidepressants, accidental (unintentional), subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

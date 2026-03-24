@@ -1,0 +1,22 @@
+{
+  "id": "s00202s",
+  "icd10": "S00202S",
+  "name": "Dhaawac dusha sare ah oo aan la cayimin oo ka soo gaaray daboolka isha bidix iyo aagga periocular, sequela",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Dhaawac aan la cayimin oo aan la cayimin ee daboolka isha bidix iyo aagga periocular, sequela",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

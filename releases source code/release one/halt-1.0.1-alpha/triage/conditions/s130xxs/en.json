@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s130xxs",
+    "icd10":  "S130XXS",
+    "name":  "Traumatic rupture of cervical intervertebral disc, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Traumatic rupture of cervical intervertebral disc, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

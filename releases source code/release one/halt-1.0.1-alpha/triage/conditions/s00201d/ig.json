@@ -1,0 +1,22 @@
+{
+  "id": "s00201d",
+  "icd10": "S00201D",
+  "name": "Mmerụ nkuchianya aka nri na mpaghara periocular enweghị nkọwapụta, nhụte na-esote",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "mmerụ ahụ elu nke enweghị nkọwapụta nke nkuchianaya aka nri na mpaghara periocular, nhụta na-esote",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

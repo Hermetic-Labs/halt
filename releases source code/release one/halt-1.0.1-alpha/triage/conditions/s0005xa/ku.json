@@ -1,0 +1,22 @@
+{
+  "id": "s0005xa",
+  "icd10": "S0005XA",
+  "name": "Laşê biyanî yê rûvî yê serê serê, rûbirûbûna destpêkê",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Laşê biyanî yê rûvî yê serê serê, rûbirûbûna destpêkê",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

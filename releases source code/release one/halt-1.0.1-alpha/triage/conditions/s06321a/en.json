@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s06321a",
+    "icd10":  "S06321A",
+    "name":  "Contusion and laceration of left cerebrum with loss of consciousness of 30 minutes or less, initial encounter",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Contusion and laceration of left cerebrum with loss of consciousness of 30 minutes or less, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

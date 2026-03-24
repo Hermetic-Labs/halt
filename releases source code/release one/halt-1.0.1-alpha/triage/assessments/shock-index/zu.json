@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "I-Shock Index",
+  "category": "circulatory",
+  "description": "Inkomba esheshayo enenombolo eyodwa yokuzinza kwe-hemodynamic. Ibalwa njenge-HR / SBP. Okujwayelekile kungu-0.5-0.7.",
+  "instructions": "Hlukanisa izinga lokushaya kwenhliziyo ngomfutho wegazi we-systolic. Inkomba yokushaqeka ekhuphukayo ibonisa ukuwohloka.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Okuvamile -- uzinzile ngokwe-hemodynamically"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Ukushaqeka okuncane -- qapha eduze"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Ukushaqeka okumaphakathi -- ukufinyelela kwe-IV, uketshezi"
+    },
+    {
+      "range": ">1.4",
+      "label": "Ukushaqeka okukhulu -- ukuvuselelwa ngokushesha, imikhiqizo yegazi"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "I-Obstetric Shock Index (OSI) isebenzisa ifomula efanayo. I-SI> 0.9 ezigulini ezikhulelwe ibalulekile. I-HR evamile iphezulu ekukhulelweni (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

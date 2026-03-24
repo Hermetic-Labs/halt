@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s070xxs",
+    "icd10":  "S070XXS",
+    "name":  "Crushing injury of face, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Crushing injury of face, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

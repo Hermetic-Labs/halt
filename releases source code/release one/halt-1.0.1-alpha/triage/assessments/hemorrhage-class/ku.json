@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Dabeşkirina hemorrajiyê (Çîna I-IV)",
+  "category": "circulatory",
+  "description": "Dabeşkirina hemorrajê ya ATLS ji hêla windabûna xwînê û bersiva fîzyolojîkî ve tê texmîn kirin.",
+  "instructions": "Wendabûna xwînê binirxînin û nîşanên fîzyolojîkî li gorî polê bidin hev. Lezgîniya dermankirinê bi dersê re zêde dibe.",
+  "scoring": [
+    {
+      "class": "Ez",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Normal",
+      "rr": "14-20",
+      "mental_status": "Normal",
+      "treatment": "Binêrin, şikilên PO heke bikarin"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Normal",
+      "rr": "20-30",
+      "mental_status": "Xemgîn",
+      "treatment": "Gihîştina IV, krîstaloid îzotonîk"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Kêm kirin",
+      "rr": "30-40",
+      "mental_status": "Tevlihevî",
+      "treatment": "Avên IV + hilberên xwînê, kontrolkirina tavilê ya hemorrajiyê"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Pir kêm",
+      "rr": ">40",
+      "mental_status": "Letarjîk/bêhiş",
+      "treatment": "Kontrolkirina xwînrêjiya neştergerî ya tavilê -- xeternak li ser jiyanê"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Zarok beriya ku telafî bikin, dirêjtir telafî dikin. Sinifa III/IV dikare bi BP-ya hema hema-normal heya hilweşîna ji nişka ve diyar bibe. Baweriya tachycardia û rewşa derûnî li ser BP."
+    },
+    "obstetric": {
+      "note": "Di nexweşên ducanî de 40-50% rêjeya xwînê zêde dibe. Berî ku nîşanan nîşan bide, dibe ku windahiyek mezintir tehemûl bike. Tengasiya fetal dibe ku pêşîya nîşanên zikmakî bigire."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

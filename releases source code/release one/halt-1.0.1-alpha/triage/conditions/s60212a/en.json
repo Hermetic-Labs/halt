@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s60212a",
+    "icd10":  "S60212A",
+    "name":  "Contusion of left wrist, initial encounter",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Contusion of left wrist, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s2243xg",
+    "icd10":  "S2243XG",
+    "name":  "Multiple fractures of ribs, bilateral, subsequent encounter for fracture with delayed healing",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Multiple fractures of ribs, bilateral, subsequent encounter for fracture with delayed healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

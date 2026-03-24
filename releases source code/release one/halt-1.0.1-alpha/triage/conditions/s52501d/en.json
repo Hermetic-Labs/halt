@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s52501d",
+    "icd10":  "S52501D",
+    "name":  "Unspecified fracture of the lower end of right radius, subsequent encounter for closed fracture with routine healing",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified fracture of the lower end of right radius, subsequent encounter for closed fracture with routine healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

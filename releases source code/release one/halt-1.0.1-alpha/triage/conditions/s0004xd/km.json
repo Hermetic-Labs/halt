@@ -1,0 +1,22 @@
+{
+  "id": "s0004xd",
+  "icd10": "S0004XD",
+  "name": "ការរឹតបន្តឹងផ្នែកខាងក្រៅនៃស្បែកក្បាល ការជួបជាបន្តបន្ទាប់",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "ការរឹតបន្តឹងខាងក្រៅនៃផ្នែកនៃស្បែកក្បាល, ការជួបជាបន្តបន្ទាប់",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

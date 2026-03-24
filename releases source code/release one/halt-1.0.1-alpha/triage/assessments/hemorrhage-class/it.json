@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Classificazione delle emorragie (Classe I-IV)",
+  "category": "circulatory",
+  "description": "Classificazione dell'emorragia ATLS in base alla perdita di sangue stimata e alla risposta fisiologica.",
+  "instructions": "Stimare la perdita di sangue e abbinare i segni fisiologici alla classe. L’urgenza del trattamento aumenta con la classe.",
+  "scoring": [
+    {
+      "class": "Io",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Normale",
+      "rr": "14-20",
+      "mental_status": "Normale",
+      "treatment": "Osservare, PO fluidi se possibile"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Normale",
+      "rr": "20-30",
+      "mental_status": "Ansioso",
+      "treatment": "Accesso IV, cristalloide isotonico"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Diminuito",
+      "rr": "30-40",
+      "mental_status": "Confuso",
+      "treatment": "Liquidi IV + emoderivati, controllo immediato dell'emorragia"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Molto basso",
+      "rr": ">40",
+      "mental_status": "Letargico/incosciente",
+      "treatment": "Controllo immediato dell'emorragia chirurgica: pericolo di vita"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "I bambini compensano più a lungo prima di scompensarsi. La classe III/IV può presentarsi con una pressione arteriosa quasi normale fino al collasso improvviso. Fidati della tachicardia e dello stato mentale rispetto alla pressione arteriosa."
+    },
+    "obstetric": {
+      "note": "Le pazienti in gravidanza presentano un aumento del volume sanguigno del 40-50%. Può tollerare perdite maggiori prima di mostrare segni. Il disagio fetale può precedere i segni materni."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

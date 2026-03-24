@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s32453b",
+    "icd10":  "S32453B",
+    "name":  "Displaced transverse fracture of unspecified acetabulum, initial encounter for open fracture",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Displaced transverse fracture of unspecified acetabulum, initial encounter for open fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

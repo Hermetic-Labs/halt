@@ -1,0 +1,22 @@
+{
+  "id": "s0006xd",
+  "icd10": "S0006XD",
+  "name": "کھوپڑی کے کیڑے کا کاٹا (غیر زہریلا)، بعد میں تصادم",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "کھوپڑی کے کیڑے کا کاٹنا (غیر زہریلا)، بعد میں تصادم",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

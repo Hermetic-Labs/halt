@@ -1,0 +1,22 @@
+{
+  "id": "s00201a",
+  "icd10": "S00201A",
+  "name": "Cedera dangkal sing ora ditemtokake ing tlapukan mripat tengen lan area periokular, ketemu awal",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Cedera dangkal sing ora ditemtokake ing tlapukan tengen lan area periokular, pertemuan awal",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

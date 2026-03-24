@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s21332s",
+    "icd10":  "S21332S",
+    "name":  "Puncture wound without foreign body of left front wall of thorax with penetration into thoracic cavity, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Puncture wound without foreign body of left front wall of thorax with penetration into thoracic cavity, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

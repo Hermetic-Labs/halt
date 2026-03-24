@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s56103d",
+    "icd10":  "S56103D",
+    "name":  "Unspecified injury of flexor muscle, fascia and tendon of right middle finger at forearm level, subsequent encounter",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified injury of flexor muscle, fascia and tendon of right middle finger at forearm level, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

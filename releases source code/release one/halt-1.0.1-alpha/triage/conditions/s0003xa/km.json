@@ -1,0 +1,22 @@
+{
+  "id": "s0003xa",
+  "icd10": "S0003XA",
+  "name": "រមាស់ស្បែកក្បាល ជួបដំបូង",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "ការប៉ះទង្គិចនៃស្បែកក្បាល, ការជួបដំបូង",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s31142s",
+    "icd10":  "S31142S",
+    "name":  "Puncture wound of abdominal wall with foreign body, epigastric region without penetration into peritoneal cavity, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Puncture wound of abdominal wall with foreign body, epigastric region without penetration into peritoneal cavity, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

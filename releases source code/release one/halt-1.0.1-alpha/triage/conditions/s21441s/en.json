@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s21441s",
+    "icd10":  "S21441S",
+    "name":  "Puncture wound with foreign body of right back wall of thorax with penetration into thoracic cavity, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Puncture wound with foreign body of right back wall of thorax with penetration into thoracic cavity, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Indeks Kejut",
+  "category": "circulatory",
+  "description": "Indikator angka tunggal cepet stabilitas hemodinamik. Dietung minangka HR / SBP. Normal yaiku 0.5-0.7.",
+  "instructions": "Dibagi denyut jantung kanthi tekanan getih sistolik. Indeks kejut sing mundhak nuduhake kerusakan.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Normal -- hemodinamik stabil"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Kejut entheng -- ngawasi kanthi rapet"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Kejut moderat -- akses IV, cairan"
+    },
+    {
+      "range": ">1.4",
+      "label": "Kejut parah -- resusitasi langsung, produk getih"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Obstetric Shock Index (OSI) nggunakake formula sing padha. SI> 0.9 ing pasien ngandhut penting. HR normal luwih dhuwur nalika meteng (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

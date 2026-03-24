@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s52026b",
+    "icd10":  "S52026B",
+    "name":  "Nondisplaced fracture of olecranon process without intraarticular extension of unspecified ulna, initial encounter for open fracture type I or II",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of olecranon process without intraarticular extension of unspecified ulna, initial encounter for open fracture type I or II",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

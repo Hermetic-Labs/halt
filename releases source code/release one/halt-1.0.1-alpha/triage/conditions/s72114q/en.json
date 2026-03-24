@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s72114q",
+    "icd10":  "S72114Q",
+    "name":  "Nondisplaced fracture of greater trochanter of right femur, subsequent encounter for open fracture type I or II with malunion",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of greater trochanter of right femur, subsequent encounter for open fracture type I or II with malunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

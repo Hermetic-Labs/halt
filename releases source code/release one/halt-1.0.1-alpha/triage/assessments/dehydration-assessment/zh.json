@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "脱水评估",
+  "category": "circulation",
+  "description": "现场评估脱水和中暑严重程度。尿液颜色是最实用的现场指示剂。评估精神状态作为严重脱水进展为中暑的标志。",
+  "instructions": "检查尿液颜色、皮肤充盈度、精神状态和生命体征。深色尿液、干燥粘膜和心动过速表明严重脱水，需要积极补液。",
+  "categories": [
+    {
+      "color": "清澈-苍白",
+      "label": "水分充足",
+      "description": "尿液呈淡黄色至澄清。无需干预。"
+    },
+    {
+      "color": "黄色",
+      "label": "轻度脱水",
+      "description": "小便深黄，口渴。口服补液。鼓励每小时喝 250-500 毫升水。"
+    },
+    {
+      "color": "琥珀棕色",
+      "label": "中度至重度脱水",
+      "description": "琥珀色尿液，心率升高，皮肤弹性下降，口干。如果口服不耐受，则静脉/IO 液体。 1-2L LR 或 NS。"
+    },
+    {
+      "color": "红色",
+      "label": "危险——中暑/严重",
+      "description": "尿量极少、LOC 改变、皮肤干热。医疗紧急情况——快速降温+静脉输液+医疗后送。"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "儿童比成人脱水更快。囟门凹陷（婴儿）、无泪水和嗜睡是关键症状。基于体重的 IV：20 mL/kg LR 推注。"
+    },
+    "obstetric": {
+      "note": "孕妇需要增加液体摄入量。脱水会引发早产。首先积极口服补液；如果不能耐受口服，则静脉注射。"
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

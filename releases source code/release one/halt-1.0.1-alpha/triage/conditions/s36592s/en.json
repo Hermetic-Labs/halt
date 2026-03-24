@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s36592s",
+    "icd10":  "S36592S",
+    "name":  "Other injury of descending [left] colon, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Other injury of descending [left] colon, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

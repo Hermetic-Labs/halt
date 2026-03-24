@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s06350s",
+    "icd10":  "S06350S",
+    "name":  "Traumatic hemorrhage of left cerebrum without loss of consciousness, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Traumatic hemorrhage of left cerebrum without loss of consciousness, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

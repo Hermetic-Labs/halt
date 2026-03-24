@@ -1,0 +1,22 @@
+{
+  "id": "s0001xs",
+  "icd10": "S0001XS",
+  "name": "స్కాల్ప్ యొక్క రాపిడి, సీక్వెలా",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "స్కాల్ప్ యొక్క రాపిడి, సీక్వెలా",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

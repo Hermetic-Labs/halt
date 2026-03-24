@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s52346k",
+    "icd10":  "S52346K",
+    "name":  "Nondisplaced spiral fracture of shaft of radius, unspecified arm, subsequent encounter for closed fracture with nonunion",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced spiral fracture of shaft of radius, unspecified arm, subsequent encounter for closed fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s92154p",
+    "icd10":  "S92154P",
+    "name":  "Nondisplaced avulsion fracture (chip fracture) of right talus, subsequent encounter for fracture with malunion",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced avulsion fracture (chip fracture) of right talus, subsequent encounter for fracture with malunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

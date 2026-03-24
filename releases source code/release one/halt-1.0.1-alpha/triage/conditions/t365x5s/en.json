@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t365x5s",
+    "icd10":  "T365X5S",
+    "name":  "Adverse effect of aminoglycosides, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Adverse effect of aminoglycosides, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

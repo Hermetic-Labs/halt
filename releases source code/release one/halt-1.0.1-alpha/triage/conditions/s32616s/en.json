@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s32616s",
+    "icd10":  "S32616S",
+    "name":  "Nondisplaced avulsion fracture of unspecified ischium, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced avulsion fracture of unspecified ischium, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

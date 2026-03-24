@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s32451s",
+    "icd10":  "S32451S",
+    "name":  "Displaced transverse fracture of right acetabulum, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Displaced transverse fracture of right acetabulum, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

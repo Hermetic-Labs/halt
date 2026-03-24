@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s88112d",
+    "icd10":  "S88112D",
+    "name":  "Complete traumatic amputation at level between knee and ankle, left lower leg, subsequent encounter",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Complete traumatic amputation at level between knee and ankle, left lower leg, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

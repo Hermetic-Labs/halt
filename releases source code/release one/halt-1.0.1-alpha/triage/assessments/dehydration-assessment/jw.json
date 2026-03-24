@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Assessment dehidrasi",
+  "category": "circulation",
+  "description": "Evaluasi lapangan kanggo dehidrasi lan keruwetan penyakit panas. Werna urin minangka indikator lapangan sing paling praktis. Netepake status mental minangka tandha kanggo dehidrasi parah sing maju dadi stroke panas.",
+  "instructions": "Periksa warna urine, turgor kulit, status mental, dan tanda vital. Urine peteng, membran mukosa garing, lan tachycardia nuduhake dehidrasi sing signifikan sing mbutuhake rehidrasi aktif.",
+  "categories": [
+    {
+      "color": "bening-pucet",
+      "label": "Uga Hydrated",
+      "description": "Kuning pucet kanggo ngresiki urin. Ora perlu intervensi."
+    },
+    {
+      "color": "kuning",
+      "label": "Dehidrasi entheng",
+      "description": "Urine kuning peteng, ngelak. Rehidrasi oral. Dorong 250-500 ml banyu saben jam."
+    },
+    {
+      "color": "amber-coklat",
+      "label": "Dehidrasi Sedheng-Parah",
+      "description": "Urine amber, HR mundhak, turgor kulit mudhun, tutuk garing. Cairan IV/IO yen oral ora ditoleransi. 1-2L LR utawa NS."
+    },
+    {
+      "color": "abang",
+      "label": "Bebaya -- Stroke Panas / Parah",
+      "description": "Output urine minimal, LOC sing diowahi, kulit garing panas. Darurat medis -- pendinginan cepet + cairan IV + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Anak dehidrasi luwih cepet tinimbang wong diwasa. Fontanelle cekung (bayi), ora ana luh, lan lesu minangka tandha kritis. IV adhedhasar bobot: 20 mL/kg LR bolus."
+    },
+    "obstetric": {
+      "note": "Wanita ngandhut kudu nambah asupan cairan. Dehidrasi bisa nyebabake kontraksi preterm. Rehidrasi oral agresif pisanan; IV yen ora toleransi lisan."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

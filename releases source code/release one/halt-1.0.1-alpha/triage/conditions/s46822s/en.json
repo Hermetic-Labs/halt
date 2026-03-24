@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s46822s",
+    "icd10":  "S46822S",
+    "name":  "Laceration of other muscles, fascia and tendons at shoulder and upper arm level, left arm, sequela",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Laceration of other muscles, fascia and tendons at shoulder and upper arm level, left arm, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

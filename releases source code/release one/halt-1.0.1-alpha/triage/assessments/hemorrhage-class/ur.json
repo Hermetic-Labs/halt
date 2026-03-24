@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "نکسیر کی درجہ بندی (کلاس I-IV)",
+  "category": "circulatory",
+  "description": "تخمینہ شدہ خون کی کمی اور جسمانی ردعمل کے ذریعہ ATLS ہیمرج کی درجہ بندی۔",
+  "instructions": "خون کی کمی کا تخمینہ لگائیں اور جسمانی علامات کو کلاس سے میچ کریں۔ علاج کی عجلت کلاس کے ساتھ بڑھ جاتی ہے۔",
+  "scoring": [
+    {
+      "class": "میں",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "نکسیر کی درجہ بندی (کلاس I-IV)",
+      "hr": "تخمینہ شدہ خون کی کمی اور جسمانی ردعمل کے ذریعہ ATLS ہیمرج کی درجہ بندی۔",
+      "sbp": "خون کی کمی کا تخمینہ لگائیں اور جسمانی علامات کو کلاس سے میچ کریں۔ علاج کی عجلت کلاس کے ساتھ بڑھ جاتی ہے۔",
+      "rr": "میں",
+      "mental_status": "<750",
+      "treatment": "<15%"
+    },
+    {
+      "class": "<100",
+      "blood_loss_ml": "نارمل",
+      "blood_loss_pct": "14-20",
+      "hr": "نارمل",
+      "sbp": "مشاہدہ کریں، PO سیال اگر قابل ہو تو",
+      "rr": "II",
+      "mental_status": "750-1500",
+      "treatment": "15-30%"
+    },
+    {
+      "class": "100-120",
+      "blood_loss_ml": "نارمل",
+      "blood_loss_pct": "20-30",
+      "hr": "بے چین",
+      "sbp": "IV رسائی، isotonic crystalloid",
+      "rr": "III",
+      "mental_status": "1500-2000",
+      "treatment": "30-40%"
+    },
+    {
+      "class": "120-140",
+      "blood_loss_ml": "کم ہو گیا۔",
+      "blood_loss_pct": "30-40",
+      "hr": "کنفیوزڈ",
+      "sbp": "IV سیال + خون کی مصنوعات، فوری طور پر ہیمرج کنٹرول",
+      "rr": "چہارم",
+      "mental_status": ">2000",
+      "treatment": ">40%"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": ">140"
+    },
+    "obstetric": {
+      "note": "بہت کم"
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

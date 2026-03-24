@@ -1,0 +1,22 @@
+{
+  "id": "s0002xa",
+  "icd10": "S0002XA",
+  "name": "Kafa derisinde kabarcık (termal olmayan), ilk karşılaşma",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Kafa derisinde kabarcık (termal olmayan), ilk karşılaşma",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

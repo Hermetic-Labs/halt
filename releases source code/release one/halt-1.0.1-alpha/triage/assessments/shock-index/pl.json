@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Indeks szoku",
+  "category": "circulatory",
+  "description": "Szybki jednoliczbowy wskaźnik stabilności hemodynamicznej. Obliczane jako HR/SBP. Normalna wartość to 0,5-0,7.",
+  "instructions": "Podziel tętno przez skurczowe ciśnienie krwi. Rosnący wskaźnik szoku wskazuje na pogorszenie.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Normalny -- stabilny hemodynamicznie"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Łagodny szok – uważnie monitoruj"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Umiarkowany szok -- dostęp dożylny, płyny"
+    },
+    {
+      "range": ">1.4",
+      "label": "Ciężki wstrząs — natychmiastowa reanimacja, produkty krwiopochodne"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Wskaźnik szoku położniczego (OSI) wykorzystuje ten sam wzór. SI > 0,9 u pacjentek w ciąży jest istotny. Normalne tętno jest wyższe w czasie ciąży (80-100 uderzeń na minutę)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

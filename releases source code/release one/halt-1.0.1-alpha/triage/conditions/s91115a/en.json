@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s91115a",
+    "icd10":  "S91115A",
+    "name":  "Laceration without foreign body of left lesser toe(s) without damage to nail, initial encounter",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Laceration without foreign body of left lesser toe(s) without damage to nail, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "s0010xa",
+  "icd10": "S0010XA",
+  "name": "Contusion nke nkuchianaya a na-akọwapụtaghị na mpaghara periocular, nzute mbụ",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Contusion nke nkuchianaya na-akọwapụtaghị aha na mpaghara periocular, nzute mbụ",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

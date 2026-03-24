@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s42491g",
+    "icd10":  "S42491G",
+    "name":  "Other displaced fracture of lower end of right humerus, subsequent encounter for fracture with delayed healing",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Other displaced fracture of lower end of right humerus, subsequent encounter for fracture with delayed healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

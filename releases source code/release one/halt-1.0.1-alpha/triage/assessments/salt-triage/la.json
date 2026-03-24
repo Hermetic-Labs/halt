@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "SAL Triage (Sort, Assess, Lifesaving Interventions, Treatment/Transport)",
+  "category": "mass-casualty",
+  "description": "Casu triage protocollo Missae. Standard for multi-casualty events in military and civilian settings.",
+  "instructions": "Gradus 1: Global species (ambulatio, iactatio, adhuc). Gradus II: Assident in ordine prioritatis. Gradus 3: Facere interventus vitales (sanguinem maiorem, aerem apertum, acum decompressionem, auto-injectores). Gradus IV: genus assignare.",
+  "categories": [
+    {
+      "color": "nigrum",
+      "label": "Expectant/Deceased",
+      "description": "Verisimile superesse datas facultates, vel confirmari defuncti"
+    },
+    {
+      "color": "red",
+      "label": "Immediata (T1)",
+      "description": "Laesiones vita-minaces, interventu praesenti superstes erit"
+    },
+    {
+      "color": "flavo",
+      "label": "Moratus (T2)",
+      "description": "Laesiones graves sed stabiles possunt expectare curam"
+    },
+    {
+      "color": "viridis",
+      "label": "Minimal (T3)",
+      "description": "Minor iniurias - vulneratus ambulans"
+    },
+    {
+      "color": "griseo",
+      "label": "Expectant",
+      "description": "Laesio indeprecabilis data opum current -- solatium cura sola"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "SalireSTART triagium algorithmus sal pro aegris pediatricis mutat. Rate respiratorii liminum et gradus taxatio pro pueris sub VIII differunt."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

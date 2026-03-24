@@ -1,0 +1,22 @@
+{
+  "id": "s0004xd",
+  "icd10": "S0004XD",
+  "name": "உச்சந்தலையின் ஒரு பகுதியின் வெளிப்புற சுருக்கம், அடுத்தடுத்த சந்திப்பு",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "உச்சந்தலையின் ஒரு பகுதியின் வெளிப்புற சுருக்கம், அடுத்தடுத்த சந்திப்பு",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

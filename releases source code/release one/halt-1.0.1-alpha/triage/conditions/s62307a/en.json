@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s62307a",
+    "icd10":  "S62307A",
+    "name":  "Unspecified fracture of fifth metacarpal bone, left hand, initial encounter for closed fracture",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified fracture of fifth metacarpal bone, left hand, initial encounter for closed fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

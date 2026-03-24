@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s42471p",
+    "icd10":  "S42471P",
+    "name":  "Displaced transcondylar fracture of right humerus, subsequent encounter for fracture with malunion",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Displaced transcondylar fracture of right humerus, subsequent encounter for fracture with malunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

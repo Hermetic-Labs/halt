@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s2341xd",
+    "icd10":  "S2341XD",
+    "name":  "Sprain of ribs, subsequent encounter",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Sprain of ribs, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

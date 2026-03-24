@@ -1,0 +1,22 @@
+{
+  "id": "s0004xa",
+  "icd10": "S0004XA",
+  "name": "टाळूच्या भागाची बाह्य आकुंचन, प्रारंभिक सामना",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "टाळूच्या भागाची बाह्य आकुंचन, प्रारंभिक सामना",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

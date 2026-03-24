@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "出血の分類 (クラス I ～ IV)",
+  "category": "circulatory",
+  "description": "推定失血量と生理学的反応による ATLS 出血の分類。",
+  "instructions": "失血量を推定し、生理学的兆候をクラスに一致させます。治療の緊急性はクラスが上がるにつれて高まります。",
+  "scoring": [
+    {
+      "class": "私",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "通常",
+      "rr": "14-20",
+      "mental_status": "通常",
+      "treatment": "観察してください。可能であれば PO 輸液を行ってください"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "通常",
+      "rr": "20-30",
+      "mental_status": "不安",
+      "treatment": "IV アクセス、等張晶質"
+    },
+    {
+      "class": "Ⅲ",
+      "blood_loss_ml": "1500 ～ 2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "減少しました",
+      "rr": "30-40",
+      "mental_status": "混乱しています",
+      "treatment": "IV 輸液 + 血液製剤、即時出血制御"
+    },
+    {
+      "class": "Ⅳ",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "非常に低い",
+      "rr": ">40",
+      "mental_status": "無気力/意識不明",
+      "treatment": "即時外科的出血制御 -- 生命を脅かす"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "子供は代償を失う前に、より長く代償します。クラス III/IV では、突然倒れるまで正常に近い血圧が示されることがあります。血圧よりも頻脈と精神状態を信頼してください。"
+    },
+    "obstetric": {
+      "note": "妊娠中の患者の血液量は 40 ～ 50% 増加します。兆候が現れる前に、より大きな損失を許容する可能性があります。胎児仮死は母体の兆候に先行する場合があります。"
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

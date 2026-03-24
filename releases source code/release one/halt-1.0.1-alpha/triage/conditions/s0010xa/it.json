@@ -1,0 +1,22 @@
+{
+  "id": "s0010xa",
+  "icd10": "S0010XA",
+  "name": "Contusione della zona palpebrale e perioculare non specificata, primo incontro",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Contusione della zona palpebrale e perioculare non specificata, primo incontro",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s82264b",
+    "icd10":  "S82264B",
+    "name":  "Nondisplaced segmental fracture of shaft of right tibia, initial encounter for open fracture type I or II",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced segmental fracture of shaft of right tibia, initial encounter for open fracture type I or II",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

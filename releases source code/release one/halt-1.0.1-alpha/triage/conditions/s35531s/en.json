@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s35531s",
+    "icd10":  "S35531S",
+    "name":  "Injury of right uterine artery, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Injury of right uterine artery, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

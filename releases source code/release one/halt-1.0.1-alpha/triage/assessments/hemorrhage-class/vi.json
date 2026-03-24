@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Phân loại xuất huyết (Loại I-IV)",
+  "category": "circulatory",
+  "description": "Phân loại xuất huyết ATLS theo lượng máu mất ước tính và phản ứng sinh lý.",
+  "instructions": "Ước tính lượng máu mất và so sánh các dấu hiệu sinh lý với lớp học. Mức độ khẩn cấp điều trị leo thang theo lớp học.",
+  "scoring": [
+    {
+      "class": "Tôi",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Bình thường",
+      "rr": "14-20",
+      "mental_status": "Bình thường",
+      "treatment": "Quan sát, chất lỏng PO nếu có thể"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Bình thường",
+      "rr": "20-30",
+      "mental_status": "Lo lắng",
+      "treatment": "Đường truyền tĩnh mạch, dịch tinh thể đẳng trương"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Giảm",
+      "rr": "30-40",
+      "mental_status": "Bối rối",
+      "treatment": "Dịch truyền tĩnh mạch + chế phẩm máu, kiểm soát xuất huyết ngay lập tức"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Rất thấp",
+      "rr": ">40",
+      "mental_status": "Hôn mê/bất tỉnh",
+      "treatment": "Phẫu thuật cầm máu ngay lập tức -- đe dọa tính mạng"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Trẻ bù trừ lâu hơn trước khi mất bù. Loại III/IV có thể biểu hiện với huyết áp gần như bình thường cho đến khi suy sụp đột ngột. Tin tưởng vào nhịp tim nhanh và trạng thái tinh thần hơn là huyết áp."
+    },
+    "obstetric": {
+      "note": "Bệnh nhân mang thai có lượng máu tăng 40-50%. Có thể chịu đựng sự mất mát lớn hơn trước khi có dấu hiệu. Suy thai có thể xuất hiện trước các dấu hiệu của mẹ."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

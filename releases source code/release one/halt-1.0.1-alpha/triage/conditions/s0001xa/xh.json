@@ -1,0 +1,22 @@
+{
+  "id": "s0001xa",
+  "icd10": "S0001XA",
+  "name": "Ukukrazuka kwentloko, ukudibana kokuqala",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Ukuqhawuka kwe-scalp, ukudibana kokuqala",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

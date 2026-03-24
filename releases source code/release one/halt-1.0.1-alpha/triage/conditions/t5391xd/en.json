@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t5391xd",
+    "icd10":  "T5391XD",
+    "name":  "Toxic effect of unspecified halogen derivatives of aliphatic and aromatic hydrocarbons, accidental (unintentional), subsequent encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Toxic effect of unspecified halogen derivatives of aliphatic and aromatic hydrocarbons, accidental (unintentional), subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

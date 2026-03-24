@@ -1,0 +1,22 @@
+{
+  "id": "s0005xs",
+  "icd10": "S0005XS",
+  "name": "Badan asing kulit sirah, terusan",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Badan asing kulit sirah, sekuel",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t3141",
+    "icd10":  "T3141",
+    "name":  "Burns involving 40-49% of body surface with 10-19% third degree burns",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Burns involving 40-49% of body surface with 10-19% third degree burns",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s2609xs",
+    "icd10":  "S2609XS",
+    "name":  "Other injury of heart with hemopericardium, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Other injury of heart with hemopericardium, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

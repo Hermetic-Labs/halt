@@ -1,0 +1,22 @@
+{
+  "id": "s0004xa",
+  "icd10": "S0004XA",
+  "name": "Äußere Verengung eines Teils der Kopfhaut, erste Begegnung",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Äußere Verengung eines Teils der Kopfhaut, erste Begegnung",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

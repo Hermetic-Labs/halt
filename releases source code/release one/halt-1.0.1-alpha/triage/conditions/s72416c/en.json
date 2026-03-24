@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s72416c",
+    "icd10":  "S72416C",
+    "name":  "Nondisplaced unspecified condyle fracture of lower end of unspecified femur, initial encounter for open fracture type IIIA, IIIB, or IIIC",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced unspecified condyle fracture of lower end of unspecified femur, initial encounter for open fracture type IIIA, IIIB, or IIIC",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

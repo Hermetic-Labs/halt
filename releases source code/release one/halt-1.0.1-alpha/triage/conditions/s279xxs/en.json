@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s279xxs",
+    "icd10":  "S279XXS",
+    "name":  "Injury of unspecified intrathoracic organ, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Injury of unspecified intrathoracic organ, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

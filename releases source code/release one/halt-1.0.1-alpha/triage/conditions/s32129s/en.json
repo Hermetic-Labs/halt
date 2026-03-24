@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s32129s",
+    "icd10":  "S32129S",
+    "name":  "Unspecified Zone II fracture of sacrum, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified Zone II fracture of sacrum, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t40905s",
+    "icd10":  "T40905S",
+    "name":  "Adverse effect of unspecified psychodysleptics [hallucinogens], sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Adverse effect of unspecified psychodysleptics [hallucinogens], sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

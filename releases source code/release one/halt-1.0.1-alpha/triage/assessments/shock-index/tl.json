@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Shock Index",
+  "category": "circulatory",
+  "description": "Rapid single-number indicator ng hemodynamic stability. Kinakalkula bilang HR / SBP. Ang normal ay 0.5-0.7.",
+  "instructions": "Hatiin ang rate ng puso sa pamamagitan ng systolic na presyon ng dugo. Ang tumataas na shock index ay nagpapahiwatig ng pagkasira.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Normal -- hemodynamically stable"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Banayad na pagkabigla -- subaybayang mabuti"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Moderate shock -- IV access, mga likido"
+    },
+    {
+      "range": ">1.4",
+      "label": "Malubhang pagkabigla -- agarang resuscitation, mga produkto ng dugo"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Ang Obstetric Shock Index (OSI) ay gumagamit ng parehong formula. SI> 0.9 sa mga buntis na pasyente ay makabuluhan. Ang normal na HR ay mas mataas sa pagbubuntis (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

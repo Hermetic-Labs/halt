@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s85419a",
+    "icd10":  "S85419A",
+    "name":  "Laceration of lesser saphenous vein at lower leg level, unspecified leg, initial encounter",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Laceration of lesser saphenous vein at lower leg level, unspecified leg, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

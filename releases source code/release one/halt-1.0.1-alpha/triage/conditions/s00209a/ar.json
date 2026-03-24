@@ -1,0 +1,22 @@
+{
+  "id": "s00209a",
+  "icd10": "S00209A",
+  "name": "إصابة سطحية غير محددة في منطقة الجفن والمنطقة المحيطة بالعين غير محددة، مواجهة أولية",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "إصابة سطحية غير محددة في منطقة الجفن والمنطقة المحيطة بالعين غير المحددة، لقاء أولي",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

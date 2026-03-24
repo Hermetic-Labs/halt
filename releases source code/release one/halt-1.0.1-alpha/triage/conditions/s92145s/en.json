@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s92145s",
+    "icd10":  "S92145S",
+    "name":  "Nondisplaced dome fracture of left talus, sequela",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced dome fracture of left talus, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

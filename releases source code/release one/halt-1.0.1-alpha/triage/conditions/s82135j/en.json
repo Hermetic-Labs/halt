@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s82135j",
+    "icd10":  "S82135J",
+    "name":  "Nondisplaced fracture of medial condyle of left tibia, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with delayed healing",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of medial condyle of left tibia, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with delayed healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

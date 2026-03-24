@@ -1,0 +1,22 @@
+{
+  "id": "s00202s",
+  "icd10": "S00202S",
+  "name": "左眼睑和眼周区域未特指的浅表损伤，后遗症",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "左眼睑和眼周区域未特指的浅表损伤，后遗症",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

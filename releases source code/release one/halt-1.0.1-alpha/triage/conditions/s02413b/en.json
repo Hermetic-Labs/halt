@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s02413b",
+    "icd10":  "S02413B",
+    "name":  "LeFort III fracture, initial encounter for open fracture",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "LeFort III fracture, initial encounter for open fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

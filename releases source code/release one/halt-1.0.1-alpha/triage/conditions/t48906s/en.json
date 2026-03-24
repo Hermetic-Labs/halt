@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t48906s",
+    "icd10":  "T48906S",
+    "name":  "Underdosing of unspecified agents primarily acting on the respiratory system, sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Underdosing of unspecified agents primarily acting on the respiratory system, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

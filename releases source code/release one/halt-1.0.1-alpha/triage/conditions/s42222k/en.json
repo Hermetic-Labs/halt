@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s42222k",
+    "icd10":  "S42222K",
+    "name":  "2-part displaced fracture of surgical neck of left humerus, subsequent encounter for fracture with nonunion",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "2-part displaced fracture of surgical neck of left humerus, subsequent encounter for fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

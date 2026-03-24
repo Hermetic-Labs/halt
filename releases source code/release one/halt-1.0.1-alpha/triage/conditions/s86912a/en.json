@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s86912a",
+    "icd10":  "S86912A",
+    "name":  "Strain of unspecified muscle(s) and tendon(s) at lower leg level, left leg, initial encounter",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Strain of unspecified muscle(s) and tendon(s) at lower leg level, left leg, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

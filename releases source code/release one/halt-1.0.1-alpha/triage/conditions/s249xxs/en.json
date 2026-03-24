@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s249xxs",
+    "icd10":  "S249XXS",
+    "name":  "Injury of unspecified nerve of thorax, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Injury of unspecified nerve of thorax, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Penilaian Dehidrasi",
+  "category": "circulation",
+  "description": "Penilaian lapangan untuk tingkat keparahan penyakit dehidrasi dan panas. Warna urin adalah indikator lapangan yang paling praktis. Kaji status mental sebagai penanda dehidrasi berat yang berkembang menjadi serangan panas.",
+  "instructions": "Periksa warna urin, turgor kulit, status mental, dan tanda-tanda vital. Urin berwarna gelap, selaput lendir kering, dan takikardia menunjukkan dehidrasi signifikan yang memerlukan rehidrasi aktif.",
+  "categories": [
+    {
+      "color": "bening-pucat",
+      "label": "Terhidrasi dengan Baik",
+      "description": "Kuning pucat untuk membersihkan urin. Tidak diperlukan intervensi."
+    },
+    {
+      "color": "kuning",
+      "label": "Dehidrasi Ringan",
+      "description": "Urine berwarna kuning tua, haus. Rehidrasi oral. Anjurkan 250-500 mL air per jam."
+    },
+    {
+      "color": "coklat kuning",
+      "label": "Dehidrasi Sedang-Parah",
+      "description": "Urin berwarna kuning, HR meningkat, turgor kulit menurun, mulut kering. Cairan IV/IO jika oral tidak dapat ditoleransi. 1-2L LR atau NS."
+    },
+    {
+      "color": "merah",
+      "label": "Bahaya -- Serangan Panas / Parah",
+      "description": "Output urin minimal, perubahan LOC, kulit kering panas. Darurat medis -- pendinginan cepat + cairan IV + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Anak-anak mengalami dehidrasi lebih cepat dibandingkan orang dewasa. Ubun-ubun (bayi) cekung, tidak ada air mata, dan lesu merupakan tanda-tanda kritis. IV berdasarkan berat badan: 20 mL/kg LR bolus."
+    },
+    "obstetric": {
+      "note": "Ibu hamil membutuhkan peningkatan asupan cairan. Dehidrasi dapat memicu kontraksi prematur. Rehidrasi oral yang agresif terlebih dahulu; IV jika tidak mentoleransi oral."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

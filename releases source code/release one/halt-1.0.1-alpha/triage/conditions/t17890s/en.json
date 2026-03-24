@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t17890s",
+    "icd10":  "T17890S",
+    "name":  "Other foreign object in other parts of respiratory tract causing asphyxiation, sequela",
+    "category":  "foreign-body",
+    "triage_priority":  "",
+    "description":  "Other foreign object in other parts of respiratory tract causing asphyxiation, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

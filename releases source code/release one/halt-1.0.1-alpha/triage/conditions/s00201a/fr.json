@@ -1,0 +1,22 @@
+{
+  "id": "s00201a",
+  "icd10": "S00201A",
+  "name": "Lésion superficielle, non précisée, de la paupière droite et de la zone périoculaire, premier contact",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Lésion superficielle, non précisée, de la paupière droite et de la zone périoculaire, premier contact",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

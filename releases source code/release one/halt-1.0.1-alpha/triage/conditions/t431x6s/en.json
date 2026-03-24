@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t431x6s",
+    "icd10":  "T431X6S",
+    "name":  "Underdosing of monoamine-oxidase-inhibitor antidepressants, sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Underdosing of monoamine-oxidase-inhibitor antidepressants, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

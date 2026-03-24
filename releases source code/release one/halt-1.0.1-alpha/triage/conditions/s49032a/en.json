@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s49032a",
+    "icd10":  "S49032A",
+    "name":  "Salter-Harris Type III physeal fracture of upper end of humerus, left arm, initial encounter for closed fracture",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Salter-Harris Type III physeal fracture of upper end of humerus, left arm, initial encounter for closed fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

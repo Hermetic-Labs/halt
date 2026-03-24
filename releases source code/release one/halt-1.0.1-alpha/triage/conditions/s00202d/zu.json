@@ -1,0 +1,22 @@
+{
+  "id": "s00202d",
+  "icd10": "S00202D",
+  "name": "Ukulimala okungaphezulu okungacacisiwe kwejwabu leso lesokunxele nendawo ye-periocular, ukuhlangana okwalandela",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Ukulimala okungaphezulu okungacacisiwe kwejwabu leso lesokunxele nendawo ye-periocular, ukuhlangana kwakamuva",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

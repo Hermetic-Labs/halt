@@ -1,0 +1,22 @@
+{
+  "id": "s00201d",
+  "icd10": "S00201D",
+  "name": "የቀኝ ዐይን ሽፋሽፍት እና የፔሪዮኩላር አካባቢ ላይ ያልተገለጸ ላዩን ጉዳት ፣ከዚህ በኋላ የገጠመው ሁኔታ",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "ያልተገለጸ የቀኝ የዐይን ሽፋኑ እና የፔሪዮኩላር አካባቢ ላይ ላዩን ጉዳት ፣ ከዚያ በኋላ መገናኘት",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

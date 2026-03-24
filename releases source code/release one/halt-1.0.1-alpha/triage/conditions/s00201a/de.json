@@ -1,0 +1,22 @@
+{
+  "id": "s00201a",
+  "icd10": "S00201A",
+  "name": "Nicht näher bezeichnete oberflächliche Verletzung des rechten Augenlids und des Periokularbereichs, erste Begegnung",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Nicht näher bezeichnete oberflächliche Verletzung des rechten Augenlids und des Periokularbereichs, erste Begegnung",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

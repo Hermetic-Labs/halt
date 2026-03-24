@@ -1,0 +1,22 @@
+{
+  "id": "s00202s",
+  "icd10": "S00202S",
+  "name": "Lesión superficial no especificada de párpado izquierdo y zona periocular, secuela",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Lesión superficial no especificada de párpado izquierdo y área periocular, secuela",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

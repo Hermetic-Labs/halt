@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s62660k",
+    "icd10":  "S62660K",
+    "name":  "Nondisplaced fracture of distal phalanx of right index finger, subsequent encounter for fracture with nonunion",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of distal phalanx of right index finger, subsequent encounter for fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

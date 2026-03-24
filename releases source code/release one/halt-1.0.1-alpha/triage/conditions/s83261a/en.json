@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s83261a",
+    "icd10":  "S83261A",
+    "name":  "Peripheral tear of lateral meniscus, current injury, right knee, initial encounter",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Peripheral tear of lateral meniscus, current injury, right knee, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

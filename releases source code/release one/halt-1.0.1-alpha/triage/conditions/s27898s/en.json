@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s27898s",
+    "icd10":  "S27898S",
+    "name":  "Other injury of other specified intrathoracic organs, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Other injury of other specified intrathoracic organs, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s42154b",
+    "icd10":  "S42154B",
+    "name":  "Nondisplaced fracture of neck of scapula, right shoulder, initial encounter for open fracture",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of neck of scapula, right shoulder, initial encounter for open fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

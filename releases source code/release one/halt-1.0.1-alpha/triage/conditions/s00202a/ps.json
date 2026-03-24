@@ -1,0 +1,22 @@
+{
+  "id": "s00202a",
+  "icd10": "S00202A",
+  "name": "د چپې پزې او د پریوکولر سیمې نا مشخص سطحي زخم، ابتدايي مخامختیا",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "د چپې پزې او د پریوکولر ساحې غیر مشخص سطحي زخم، ابتدايي مخامخ",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

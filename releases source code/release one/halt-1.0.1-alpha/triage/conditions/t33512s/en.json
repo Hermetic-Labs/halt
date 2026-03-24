@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t33512s",
+    "icd10":  "T33512S",
+    "name":  "Superficial frostbite of left wrist, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Superficial frostbite of left wrist, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}
