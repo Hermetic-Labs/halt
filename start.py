@@ -36,6 +36,15 @@ IS_LINUX = sys.platform.startswith('linux')
 
 PLATFORM = "Windows" if IS_WINDOWS else "Mac" if IS_MAC else "Linux"
 
+# ── Bundled Runtime Detection (macOS distribution) ────────────────────────────
+# If we're in a macOS distribution with a bundled Python, re-exec using it
+# so all pre-installed dependencies are available.
+if IS_MAC:
+    _script_dir = os.path.dirname(os.path.abspath(__file__))
+    _bundled_python = os.path.join(_script_dir, 'runtime', 'python', 'bin', 'python3')
+    if os.path.isfile(_bundled_python) and os.path.realpath(sys.executable) != os.path.realpath(_bundled_python):
+        os.execv(_bundled_python, [_bundled_python] + sys.argv)
+
 # ── Colors for terminal output ────────────────────────────────────────────────
 
 class Colors:
