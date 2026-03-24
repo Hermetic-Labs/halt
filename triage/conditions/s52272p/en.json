@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s52272p",
+    "icd10":  "S52272P",
+    "name":  "Monteggia\u0027s fracture of left ulna, subsequent encounter for closed fracture with malunion",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Monteggia\u0027s fracture of left ulna, subsequent encounter for closed fracture with malunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

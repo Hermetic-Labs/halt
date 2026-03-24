@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s6431xs",
+    "icd10":  "S6431XS",
+    "name":  "Injury of digital nerve of right thumb, sequela",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Injury of digital nerve of right thumb, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s63291a",
+    "icd10":  "S63291A",
+    "name":  "Dislocation of distal interphalangeal joint of left index finger, initial encounter",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Dislocation of distal interphalangeal joint of left index finger, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s7222xk",
+    "icd10":  "S7222XK",
+    "name":  "Displaced subtrochanteric fracture of left femur, subsequent encounter for closed fracture with nonunion",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Displaced subtrochanteric fracture of left femur, subsequent encounter for closed fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s40251a",
+    "icd10":  "S40251A",
+    "name":  "Superficial foreign body of right shoulder, initial encounter",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Superficial foreign body of right shoulder, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

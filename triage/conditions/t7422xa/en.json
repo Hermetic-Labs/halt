@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t7422xa",
+    "icd10":  "T7422XA",
+    "name":  "Child sexual abuse, confirmed, initial encounter",
+    "category":  "environmental-injury",
+    "triage_priority":  "",
+    "description":  "Child sexual abuse, confirmed, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

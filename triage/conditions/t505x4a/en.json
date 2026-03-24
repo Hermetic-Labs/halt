@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t505x4a",
+    "icd10":  "T505X4A",
+    "name":  "Poisoning by appetite depressants, undetermined, initial encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Poisoning by appetite depressants, undetermined, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

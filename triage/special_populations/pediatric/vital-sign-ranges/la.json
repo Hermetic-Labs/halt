@@ -1,0 +1,43 @@
+{
+  "id": "pediatric-vital-sign-ranges",
+  "name": "Paediatric Normal Vitalis Sign Ranes",
+  "description": "Aevum accommodata referuntur ad HR, RR, et SBP. Critica de recta triage classificationis in aegris pediatricis -- adultis normalibus ordinibus perperam pueris.",
+  "ranges": [
+    {
+      "age": "Natum (0-1 mensis)",
+      "hr": "100-160",
+      "rr": "30-60",
+      "sbp_mmhg": "60-90",
+      "gcs_min": 15
+    },
+    {
+      "age": "Infantem (1-12 menses)",
+      "hr": "90-150",
+      "rr": "30-60",
+      "sbp_mmhg": "70-100",
+      "gcs_min": 15
+    },
+    {
+      "age": "Toddler (1-3 annis)",
+      "hr": "80-130",
+      "rr": "24-40",
+      "sbp_mmhg": "80-110",
+      "gcs_min": 15
+    },
+    {
+      "age": "Pueri (3-12 annos);",
+      "hr": "70-120",
+      "rr": "18-30",
+      "sbp_mmhg": "80-120",
+      "gcs_min": 15
+    },
+    {
+      "age": "Adolescens (> annis XII)",
+      "hr": "60-100",
+      "rr": "12-20",
+      "sbp_mmhg": "90-130",
+      "gcs_min": 15
+    }
+  ],
+  "source": "PALS Guidelines / JTS Pediatric CPG"
+}

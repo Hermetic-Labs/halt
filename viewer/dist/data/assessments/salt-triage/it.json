@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "Triage SALT (smistamento, valutazione, interventi salvavita, trattamento/trasporto)",
+  "category": "mass-casualty",
+  "description": "Protocollo di triage delle vittime di massa. Standard per eventi con più vittime in ambienti militari e civili.",
+  "instructions": "Passaggio 1: ordinamento globale (camminando, salutando, fermo). Passaggio 2: valutare in ordine di priorità. Fase 3: eseguire interventi salvavita (controllo delle emorragie maggiori, apertura delle vie aeree, decompressione con ago, autoiniettori). Passaggio 4: assegna la categoria.",
+  "categories": [
+    {
+      "color": "nero",
+      "label": "In attesa/deceduto",
+      "description": "Improbabile che sopravviva date le risorse disponibili o deceduto confermato"
+    },
+    {
+      "color": "rosso",
+      "label": "Immediato (T1)",
+      "description": "Lesioni mortali, sopravvivremo con un intervento immediato"
+    },
+    {
+      "color": "giallo",
+      "label": "Ritardato (T2)",
+      "description": "Lesioni gravi ma stabili, possono attendere cure"
+    },
+    {
+      "color": "verde",
+      "label": "Minimo (T3)",
+      "description": "Ferite lievi - feriti che camminano"
+    },
+    {
+      "color": "grigio",
+      "label": "In attesa",
+      "description": "Danno insolubile date le risorse attuali: solo cure di conforto"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "L'algoritmo di triage JumpSTART modifica il SALT per i pazienti pediatrici. Le soglie della frequenza respiratoria e le fasi di valutazione differiscono per i bambini di età inferiore a 8 anni."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

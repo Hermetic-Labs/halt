@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Dexamethasone",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Thập kỷ",
+    "DexPak"
+  ],
+  "description": "Corticosteroid tổng hợp tác dụng kéo dài. Được sử dụng cho chứng phù não (phù não do độ cao - HACE, TBI), phản ứng dị ứng nghiêm trọng, phù đường thở và suy thượng thận. Chống viêm, không đồng hóa.",
+  "indications": [
+    "Phù não do độ cao (HACE)",
+    "Phù đường thở (thở rít sau rút nội khí quản, viêm thanh quản)",
+    "Phù não do khối u hoặc áp xe",
+    "Phản ứng dị ứng nghiêm trọng (hỗ trợ epinephrine)",
+    "Khủng hoảng tuyến thượng thận",
+    "Hỗ trợ chống nôn (chu phẫu)"
+  ],
+  "dose": "Phù não/HACE: khởi đầu 8-10 mg IV/IM, sau đó 4 mg mỗi 6 giờ. Phù đường thở: 10 mg IV một lần. Mông: 0,6 mg/kg IM/PO (tối đa 16mg). Suy thượng thận: 4 mg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "TÔI",
+    "PO"
+  ],
+  "window": "HACE: Hãy cho đi càng sớm càng tốt cùng với việc hạ thấp ngay lập tức.",
+  "contraindications": [
+    "Nhiễm nấm toàn thân (không có thuốc chống nấm)",
+    "Vắc-xin virus sống trong vòng 30 ngày (tương đối)"
+  ],
+  "warnings": [
+    "Không thay thế quá trình hạ xuống và oxy cho HACE - chỉ sử dụng như chất bổ trợ.",
+    "Tăng đường huyết - theo dõi đường huyết ở bệnh nhân tiểu đường.",
+    "Ức chế miễn dịch khi sử dụng kéo dài.",
+    "Liều duy nhất cho trường hợp khẩn cấp nói chung là rất an toàn."
+  ],
+  "regional_names": {
+    "generic": "dexamethasone"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Mông: 0,6 mg/kg PO/IM (tối đa 16 mg). Phù não: 0,5-1 mg/kg IV (tối đa 10 mg). Phù đường thở: 0,5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg tiêm bắp mỗi 24 giờ x 2 liều dùng để đẩy nhanh quá trình trưởng thành phổi của thai nhi ở tuần thai thứ 24-34 trong chuyển dạ non tháng. Thảo luận với nhà cung cấp cao nhất hiện có."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

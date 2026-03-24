@@ -1,0 +1,22 @@
+{
+  "id": "s0005xa",
+  "icd10": "S0005XA",
+  "name": "Mwili wa kigeni wa juu juu wa ngozi ya kichwa, kukutana kwa mara ya kwanza",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Mwili wa kigeni wa juu juu wa ngozi ya kichwa, mkutano wa awali",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

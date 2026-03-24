@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Emergency Field Delivery",
+  "category": "obstetric",
+  "skill_level": "combat-medic",
+  "time_estimate": "Nag-iiba -- 20+ min",
+  "description": "Pamamahala ng mabilis o hindi planadong paghahatid sa mahigpit na kapaligiran.",
+  "equipment": [
+    "guwantes",
+    "malinis na telang kumot",
+    "cord-clamp-or-ties",
+    "gunting",
+    "bulb-syringe"
+  ],
+  "steps": [
+    "Iposisyon ang ina na nakahiga o semi-reclined. Mas gusto ang left lateral tilt kung walang malay (pinipigilan ang aortocaval compression).",
+    "Kontrolin ang paghahatid ng ulo -- suporta gamit ang palad. HUWAG hilahin.",
+    "Kapag naihatid na ang ulo, tingnan kung may nuchal cord (sa paligid ng leeg). Kung naroroon, dumulas sa ulo. Kung masikip, i-clamp at gupitin.",
+    "Sipsipin ang bibig pagkatapos ay ilong gamit ang bulb syringe kung magagamit.",
+    "Gabayan ang paghahatid ng anterior na balikat sa pamamagitan ng banayad na pababang traksyon sa ulo, pagkatapos ay pataas para sa posterior na balikat.",
+    "Ihatid ang katawan -- tandaan ang oras ng paghahatid.",
+    "Patuyuin at painitin kaagad ang sanggol. Pasiglahin sa pamamagitan ng paghagod sa likod.",
+    "I-clamp at putulin ang kurdon (maghintay ng 1-2 min kung matatag ang sanggol).",
+    "Ihatid ang inunan na may banayad na kinokontrol na traksyon -- HUWAG pilitin.",
+    "Magbigay ng oxytocin (kung magagamit) upang maiwasan ang postpartum hemorrhage pagkatapos ng paghahatid ng inunan.",
+    "Suriin para sa postpartum hemorrhage -- fundal massage, bimanual compression kung kinakailangan.",
+    "Tayahin ang marka ng Apgar sa 1 at 5 minuto."
+  ],
+  "warnings": [
+    "Kung ang paghahatid ay hindi nalalapit -- HUWAG subukan. Mas gusto ang Rapid MEDEVAC.",
+    "Shoulder dystocia: kung ang mga balikat ay natigil, ilapat ang McRoberts maneuver (hyperflex hips) at suprapubic pressure.",
+    "Ang postpartum hemorrhage ay ang nangungunang sanhi ng maiiwasang pagkamatay ng ina -- may handa na oxytocin."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

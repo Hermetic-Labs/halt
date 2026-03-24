@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Perimortem Sesarean Section (PMCS)",
+  "category": "obstetric",
+  "skill_level": "bijîjk-cerahah",
+  "time_estimate": "3-5 min",
+  "description": "Zayîna sezarî ya acîl di nav 4 hûrdeman de piştî girtina dilê dayikê da ku rê bide CPR-ya bi bandor û zindîbûna potansiyela neonatal. Malzarok aorta û IVC diqelişe -- jidayikbûn jî ji bo dayikê vejîn e.",
+  "equipment": [
+    "scalpel",
+    "destmal",
+    "retractors",
+    "cord-clamps",
+    "neonatal-resuscitation-equipment"
+  ],
+  "steps": [
+    "CPR bê navber bidomînin.",
+    "Di nav çerm û fascia de ji umbilicus heya pubisê qutiyek navîn a vertîkal çêbikin.",
+    "Parçeya jêrîn ya uterus bi horizontî vekin.",
+    "Zarokê radest bikin -- wextê hişyar bikin.",
+    "Girtî û qutkirina kordê.",
+    "Ji bo vejîna neonatal destê pitik ji pêşkêşkarê duyemîn re.",
+    "Placenta derxînin.",
+    "Ger girtina teqez tavilê ne mumkin be uterus û zikê pak bikin.",
+    "Vejîna zikmakî bidomînin - ROSC piştî dekompresyona uterus pirtir e."
+  ],
+  "warnings": [
+    "Ji bo encamên herî baş ên zikmakî û fetusê divê dema biryardayînê di binê 5 hûrdeman de be.",
+    "Ev pêvajo çareya dawîn e -- tenê eger dayik di rawestana dil de be û zayîn nêzîk be (20 hefte ducaniyê).",
+    "Perwerdehiya di asta bijîjkî de hewce dike. Divê bijîşkên şer qadê amade bikin û piştgirî bikin, ne ku serbixwe tevbigerin."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

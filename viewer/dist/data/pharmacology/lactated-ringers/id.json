@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Larutan Ringer Laktat (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Solusi Hartmann",
+    "Suntikan Ringer Laktat"
+  ],
+  "description": "Cairan kristaloid isotonik seimbang. Lebih disukai daripada larutan garam normal untuk resusitasi trauma bervolume besar -- lebih seimbang secara fisiologis, risiko asidosis hiperkloremik lebih kecil. Mengandung natrium, kalium, kalsium, laktat.",
+  "indications": [
+    "Resusitasi trauma (kristaloid pilihan pada syok hemoragik)",
+    "Resusitasi cairan luka bakar (rumus Parkland)",
+    "Hipovolemia",
+    "Pemeliharaan cairan"
+  ],
+  "dose": "Syok hemoragik: Batasi maksimal 1L sebelum beralih ke produk darah. Target SBP 80-90 mmHg trauma tembus, TBI 90 mmHg. Luka Bakar (Parkland): 4 mL x kg x %TBSA terbakar selama 24 jam (setengahnya dalam 8 jam pertama).",
+  "route": [
+    "IV",
+    "aku"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hiperkalemia (mengandung kalium)",
+    "Gagal hati yang parah (gangguan metabolisme laktat -- relatif)"
+  ],
+  "warnings": [
+    "Masih berupa kristaloid -- tidak dapat membawa oksigen. Produk darah lebih unggul untuk syok hemoragik. LR hanyalah jembatan saja.",
+    "Jangan bercampur dengan produk darah dalam satu lini (kalsium menyebabkan pembekuan).",
+    "JANGAN melakukan resusitasi berlebihan pada trauma tembus sebelum pengendalian perdarahan."
+  ],
+  "regional_names": {
+    "generic": "larutan Ringer laktat",
+    "UK": "Solusi Hartmann"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 mL/kg bolus, nilai kembali. Lebih disukai daripada NS untuk trauma pediatrik.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Cairan IV pilihan dalam persalinan dan persalinan. Cocok untuk resusitasi perdarahan obstetrik."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

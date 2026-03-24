@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s52023n",
+    "icd10":  "S52023N",
+    "name":  "Displaced fracture of olecranon process without intraarticular extension of unspecified ulna, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with nonunion",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Displaced fracture of olecranon process without intraarticular extension of unspecified ulna, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Saline na al'ada (0.9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "0.9% allurar sodium chloride"
+  ],
+  "description": "Isotonic crystalloid ruwa. Ana amfani da shi don farfado da ruwa na IV. A cikin gigin jini, yi amfani da hankali -- manyan ɗimbin yawa suna ƙara tsananta coagulopathy (hyperchloremic acidosis, dilutional coagulopathy). An fi son hauhawar jini mai izini a cikin shiga cikin rauni yayin da ake kula da zubar jini.",
+  "indications": [
+    "Farfadowar ruwa (tare da taka tsantsan a cikin girgizar hemorrhagic)",
+    "Maganin diluent / ruwa",
+    "Hypovolemia daga abubuwan da ba na jini ba"
+  ],
+  "dose": "Girgizar jini: Iyakance zuwa 1L max mai jiran gadon kula da zubar jini (halallen hanta). Maƙasudin SBP 80-90 mmHg a cikin rauni mai shiga, 90 mmHg a cikin TBI. Marasa jini hypovolemia: 500 ml boluses, sake tantancewa.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hypernatremia",
+    "Yawan ruwa mai yawa / edema na huhu (dangi)"
+  ],
+  "warnings": [
+    "Babban kundin yana haifar da hyperchloremic metabolic acidosis da dilutional coagulopathy -- yana kara muni mai kisa a cikin rauni.",
+    "An fi son Lactated Ringer's (LR) don farfado da rauni mai girma.",
+    "KAR a sake farfado da raunin raunin da ya wuce-wuri kafin maganin zubar jini na tiyata (haɓaka hawan jini)."
+  ],
+  "regional_names": {
+    "generic": "sodium chloride 0.9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 ml/kg IV bolus, sake tantancewa. Maimaita max x3 (60 ml/kg jimlar) kafin yin la'akari da samfuran jini.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Daidaitaccen farfadowa a cikin zubar da jini na haihuwa. Farfaɗowar ruwa mai ƙarfi wanda ya dace da zubar jini na haihuwa kafin samun samfuran jini."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

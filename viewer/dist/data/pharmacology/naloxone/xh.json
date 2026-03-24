@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxone",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "Kloxxado"
+  ],
+  "description": "I-opioid receptor antagonist ekhuphisanayo. Ibuyisela ngokukhawuleza ukudakumba okubangelwa yi-opioid, i-sedation, kunye ne-analgesia. Ukuqalisa IV: 2 min, IM: 5 min, IN: 8-13 min. Ubude bexesha bufutshane kunee-opioids ezininzi -- ukuphinda ithamo kungafuneka.",
+  "indications": [
+    "Ukugqithisa kwe-opioid okanye ukudakumba kokuphefumula",
+    "Ukuguqulwa kwe-opioid sedation",
+    "Kucingelwa ukuba wenzakala ye-opioid"
+  ],
+  "dose": "0.4-2 mg IV/IO/IM/IN. Phinda u-q2-3 min njengoko kufuneka. Ubuninzi 10mg. Intranasal (IN): 2mg ngempumlo nganye.",
+  "route": [
+    "IV",
+    "IO",
+    "I-IM",
+    "IN",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Akukho contraindications ngokupheleleyo kwi-overdose setting"
+  ],
+  "warnings": [
+    "Ubude bexesha lesenzo (30-90 min) lifutshane kunee-opioids ezininzi -- isigulana sinokuphinda sisebenzise i-narcotic. Beka esweni ubuncinane iyure eyi-1 emva kwedosi yokugqibela.",
+    "Ukunciphisa ukurhoxiswa kwe-opioid-kunokubangela ukuphazamiseka, i-tachycardia, i-pulmonary edema kwizigulana ezixhomekeke kwi-opioid.",
+    "Iza kuyibuyisela umva i-analgesia -- isigulana sinokulwa ngokugqithisileyo kwiintlungu."
+  ],
+  "regional_names": {
+    "generic": "naloxone",
+    "US": "Narcan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.01 mg / kg IV / IM / IN (max 0.4 mg). Phinda u-q2-3 min PRN.",
+      "note": "Umntwana osandul' ukuzalwa: i-0.01 mg/kg yokuguqulwa kwe-opioid kamama."
+    },
+    "obstetric": {
+      "note": "Ikhuselekile ekukhulelweni. Ukuba inikwe umama xa sele eza kubeleka, jonga umntwana osanda kuzalwa ukuba uyarhoxa."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

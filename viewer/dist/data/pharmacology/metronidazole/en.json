@@ -1,0 +1,44 @@
+﻿{
+    "id":  "metronidazole",
+    "name":  "Metronidazole",
+    "category":  "antibiotic",
+    "rxnorm":  "6922",
+    "brand_names":  [
+                        "Flagyl"
+                    ],
+    "description":  "Nitroimidazole antibiotic with excellent anaerobic and protozoal coverage. Essential for penetrating abdominal/bowel trauma to cover anaerobic gut flora. Often used in combination with ciprofloxacin.",
+    "indications":  [
+                        "Penetrating abdominal/bowel trauma",
+                        "Intra-abdominal infections",
+                        "Anaerobic soft tissue infections",
+                        "C. difficile infections"
+                    ],
+    "dose":  "500 mg IV q6-8h. PO: 500 mg q8h (if oral tolerated).",
+    "route":  [
+                  "IV",
+                  "PO"
+              ],
+    "window":  "",
+    "contraindications":  [
+                              "First trimester of pregnancy (relative)",
+                              "Known metronidazole or nitroimidazole allergy"
+                          ],
+    "warnings":  [
+                     "Disulfiram-like reaction with alcohol -- do not consume alcohol during treatment and 48h after.",
+                     "May cause peripheral neuropathy with prolonged use.",
+                     "Avoid in first trimester if possible."
+                 ],
+    "regional_names":  {
+                           "generic":  "metronidazole"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "7.5 mg/kg IV/PO q6h (max 500 mg/dose).",
+                                        "note":  "Safe in older children. Avoid in neonates."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Avoid in first trimester if possible. Use second/third trimester when medically necessary -- benefit usually outweighs risk for serious anaerobic infections."
+                                    }
+                  },
+    "source":  "JTS CPG: Wound Care / Abdominal Trauma"
+}

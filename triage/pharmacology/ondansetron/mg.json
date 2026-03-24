@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Selective 5-HT3 receptor antagonist antiemetic. Tena mandaitra amin'ny maloiloy sy mandoa. Ny ODT (tablette miparitaka am-bava) dia ilaina amin'ny toeran'ny saha rehefa tsy misy ny IV. Tafiditra ao anatin'ny fonosana pilina fiadiana sasany.",
+  "indications": [
+    "Loza sy mandoa (chemotherapy, opioid-induced, postoperative, TBI-related)",
+    "Aretina mihetsika",
+    "Loza avy amin'ny fitantanana ketamine"
+  ],
+  "dose": "4-8 mg IV/IO tosika miadana mandritra ny 2-5 min. ODT: 4-8 mg levona eo ambany lela. ny: 4mg.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ny hypersensitivity fantatra amin'ny ondansetron na hafa 5-HT3 antagonista",
+    "Syndrome QT maharitra hatrany am-bohoka (IV ihany)"
+  ],
+  "warnings": [
+    "Ny fatra IV avo lenta dia mety hanalava ny elanelan'ny QT -- ampiasao fatra IV mahomby indrindra.",
+    "Tsy manolo ny fitantanana ny lalan-drivotra amin'ny marary mandoa -- arovy aloha ny lalan-drivotra."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,1-0,15 mg/kg IV (max 4 mg). ODT: 4mg ho an'ny ankizy> 4 taona.",
+      "note": "Ampiasaina be dia be ary azo leferina amin'ny pediatrics."
+    },
+    "obstetric": {
+      "note": "Data voafetra amin'ny fitondrana vohoka. Ampiasaina amin'ny maloiloy / mandoa mafy aorian'ny trimester voalohany rehefa lehibe noho ny loza mety hitranga ny tombony. Tsy soso-kevitra amin'ny trimester voalohany."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

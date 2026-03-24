@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Kinga ya Hypothermia (H -- MACHI)",
+  "category": "temperature-management",
+  "skill_level": "mjibu yeyote",
+  "time_estimate": "Dakika 2-3",
+  "description": "Combat hypothermia ni muuaji anayeweza kuzuilika katika kiwewe. Utatu mbaya: hypothermia + acidosis + coagulopathy. Kuzuia kwa gharama zote.",
+  "equipment": [
+    "blanketi ya kutafakari joto",
+    "seti ya kuzuia hypothermia",
+    "joto-iv-maji-ikiwa-inapatikana"
+  ],
+  "steps": [
+    "Ondoa nguo zote zilizolowa maji haraka iwezekanavyo.",
+    "Mfunike mgonjwa kwa blanketi ya kuakisi joto (nafasi) -- upande unaong'aa KATIKA kuelekea mgonjwa.",
+    "Funga kichwa na shingo (tovuti muhimu ya kupoteza joto).",
+    "Insulate kutoka ardhini -- weka kitu kati ya ardhi ya mgonjwa na baridi.",
+    "Simamia maji ya joto ya IV ikiwa yanapatikana.",
+    "Usiruhusu mgonjwa kutetemeka bila kifuniko -- kutetemeka ni ishara ya onyo la mapema.",
+    "Fuatilia halijoto ikiwa kipimajoto kinapatikana. Chini ya 35°C (95°F) = hypothermia."
+  ],
+  "warnings": [
+    "Hypothermia huzidisha kuganda kwa damu -- wagonjwa wanaovuja damu hupoa haraka na kuganda kwa damu kwa ufanisi kidogo.",
+    "Uzuiaji wa hypothermia ya shamba lazima uanzie mahali pa kuumia, sio katika CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

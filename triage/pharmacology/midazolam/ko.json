@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "미다졸람",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "정통함",
+    "나이질람"
+  ],
+  "description": "발현이 빠른 속효성 벤조디아제핀. 절차상 진정, RSI 사전 투약 및 IM/IN 발작 관리에 선호됩니다. IM 및 비강 경로는 현장 설정에서 상당한 이점을 제공합니다.",
+  "indications": [
+    "절차상 진정",
+    "RSI 사전 약물 치료(케타민 포함)",
+    "발작 관리(IV를 사용할 수 없는 경우 IM/IN)",
+    "교반 관리"
+  ],
+  "dose": "진정작용: 0.05-0.1 mg/kg IV 적정. 절차: 1-5mg IV 천천히 밀어넣기. IM: 0.2mg/kg. IN: 0.2mg/kg(최대 10mg). 간질중첩증 IM: 10mg IM(성인).",
+  "route": [
+    "IV",
+    "IO",
+    "메신저",
+    "안으로"
+  ],
+  "window": "",
+  "contraindications": [
+    "급성협우각녹내장",
+    "심혈관 손상을 동반한 급성 알코올 중독",
+    "알려진 과민증"
+  ],
+  "warnings": [
+    "호흡 억제 - 기도를 모니터링하고 가능한 경우 역전제(플루마제닐)를 사용하십시오.",
+    "특히 오피오이드 병용투여 시 저혈압이 발생합니다.",
+    "급속한 IV 주입은 무호흡증을 유발합니다. 천천히 밀어 넣으십시오."
+  ],
+  "regional_names": {
+    "generic": "미다졸람"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "진정작용: 0.05-0.1 mg/kg IV. IM: 0.1-0.2 mg/kg. IN: 0.2-0.3mg/kg. 발작 IM: 0.2mg/kg(최대 10mg).",
+      "note": "IN 경로는 특히 어린이에게 유용하며 IV 접근을 피합니다."
+    },
+    "obstetric": {
+      "note": "태반을 통과합니다. 신생아 진정이 가능합니다. 최소 유효 용량을 사용하십시오. 출산이 임박한 경우 신생아를 모니터링하십시오."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Morfinesulfaat",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Doorgaan",
+    "Morfinesulfaatinjectie"
+  ],
+  "description": "Opioïde pijnstiller. Biedt effectieve pijnverlichting, maar veroorzaakt vasodilatatie en hypotensie - wees voorzichtig bij hemorragische shock. Ketamine heeft de voorkeur in gevechtsomgevingen. Gebruik morfine alleen bij hemodynamisch stabiele patiënten.",
+  "indications": [
+    "Matige tot ernstige pijn bij hemodynamisch stabiele patiënten",
+    "Niet eerstelijns in TCCC -- geef de voorkeur aan ketamine"
+  ],
+  "dose": "2-4 mg IV/IO q4u PRN. Titreer naar effect. IM: 5-10 mg elke 4 uur PRN.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hemodynamische instabiliteit / hemorragische shock",
+    "Ademhalingsdepressie",
+    "Hoofdletsel met gewijzigde LOC (relatief)"
+  ],
+  "warnings": [
+    "Veroorzaakt vasodilatatie - kan hemorragische shock verergeren. Beoordeel BP voor en na.",
+    "Zorg ervoor dat naloxon onmiddellijk beschikbaar is.",
+    "Ademhalingsdepressie - controleer de frequentie."
+  ],
+  "regional_names": {
+    "generic": "morfinesulfaat"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV q2-4 uur PRN. Maximale enkelvoudige dosis 2 mg IV bij opioïd-naïef kind.",
+      "note": "Houd de ademhalingsfrequentie nauwlettend in de gaten. Neonaten zijn extreem gevoelig."
+    },
+    "obstetric": {
+      "note": "Kruist de placenta. Neonatale ademhalingsdepressie is mogelijk indien gegeven binnen 2-4 uur na de bevalling. Houd naloxon klaar voor pasgeborenen."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

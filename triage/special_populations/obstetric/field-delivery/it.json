@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Consegna di emergenza sul campo",
+  "category": "obstetric",
+  "skill_level": "medico da combattimento",
+  "time_estimate": "Varia: più di 20 minuti",
+  "description": "Gestione del parto precipitoso o non pianificato in un ambiente austero.",
+  "equipment": [
+    "guanti",
+    "coperte-di-panno-pulite",
+    "fascette-o-fascette",
+    "forbici",
+    "siringa a bulbo"
+  ],
+  "steps": [
+    "Posizionare la madre supina o semi-reclinata. L'inclinazione laterale sinistra è preferibile in caso di incoscienza (previene la compressione aortocavale).",
+    "Controllare l'erogazione della testa – sostenere con il palmo. NON tirare.",
+    "Una volta consegnata la testa, controllare la presenza del cordone nucale (intorno al collo). Se presente, scivolare sopra la testa. Se stretto, fissarlo e tagliarlo.",
+    "Aspirare dalla bocca e poi dal naso con una siringa a bulbo, se disponibile.",
+    "Guidare il rilascio della spalla anteriore con una leggera trazione verso il basso sulla testa, quindi verso l'alto per la spalla posteriore.",
+    "Consegnare il corpo: annotare l'orario della consegna.",
+    "Asciugare e riscaldare immediatamente il neonato. Stimolare massaggiando la schiena.",
+    "Pinzare e tagliare il cordone (attendere 1-2 minuti se il bambino è stabile).",
+    "Consegnare la placenta con una trazione controllata e delicata: NON forzare.",
+    "Somministrare ossitocina (se disponibile) per prevenire l'emorragia postpartum dopo il parto della placenta.",
+    "Valutare l'emorragia postpartum: massaggio del fondo oculare, compressione bimanuale se necessario.",
+    "Valutare il punteggio di Apgar a 1 e 5 minuti."
+  ],
+  "warnings": [
+    "Se la consegna non è imminente, NON tentare. È preferibile il MEDEVAC rapido.",
+    "Distocia di spalla: se le spalle sono bloccate, applicare la manovra di McRoberts (anche iperflesse) e la pressione sovrapubica.",
+    "L'emorragia postpartum è la principale causa di morte materna prevenibile: tieni pronta l'ossitocina."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

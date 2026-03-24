@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Nước muối sinh lý thông thường (0,9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "Thuốc tiêm Natri Clorua 0,9%"
+  ],
+  "description": "Chất lỏng tinh thể đẳng trương. Được sử dụng để hồi sức bằng dịch truyền IV. Trong sốc mất máu, sử dụng thận trọng - lượng lớn làm nặng thêm tình trạng rối loạn đông máu (nhiễm toan tăng clo máu, rối loạn đông máu do pha loãng). Hạ huyết áp cho phép được ưu tiên hơn trong chấn thương xuyên thấu chờ kiểm soát xuất huyết.",
+  "indications": [
+    "Hồi sức truyền dịch (thận trọng trong sốc mất máu)",
+    "Chất pha loãng/xả thuốc",
+    "Giảm thể tích máu do nguyên nhân không xuất huyết"
+  ],
+  "dose": "Sốc xuất huyết: Giới hạn tối đa 1L trong khi chờ kiểm soát xuất huyết (hạ huyết áp cho phép). Mục tiêu SBP 80-90 mmHg trong chấn thương xuyên thấu, 90 mmHg trong TBI. Giảm thể tích máu không xuất huyết: bolus 500 mL, đánh giá lại.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Tăng natri máu",
+    "Quá tải chất lỏng / phù phổi (tương đối)"
+  ],
+  "warnings": [
+    "Thể tích lớn gây nhiễm toan chuyển hóa tăng clo máu và rối loạn đông máu do pha loãng - làm nặng thêm bộ ba nguy hiểm trong chấn thương.",
+    "Lactated Ringer's (LR) được ưu tiên sử dụng để hồi sức chấn thương với khối lượng lớn.",
+    "KHÔNG hồi sức quá mức cho chấn thương xuyên thấu thân trước khi phẫu thuật kiểm soát xuất huyết (hạ huyết áp cho phép)."
+  ],
+  "regional_names": {
+    "generic": "natri clorua 0,9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Tiêm bolus tĩnh mạch 20 mL/kg, đánh giá lại. Lặp lại tối đa x3 (tổng cộng 60 mL/kg) trước khi xem xét các sản phẩm máu.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Hồi sức tiêu chuẩn trong xuất huyết sản khoa. Hồi sức tích cực bằng dịch truyền thích hợp cho trường hợp xuất huyết sau sinh trước khi có sẵn các sản phẩm máu."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

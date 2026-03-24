@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s62181k",
+    "icd10":  "S62181K",
+    "name":  "Displaced fracture of trapezoid [smaller multangular], right wrist, subsequent encounter for fracture with nonunion",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Displaced fracture of trapezoid [smaller multangular], right wrist, subsequent encounter for fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "SALT Triage (Urutkan, Penilaian, Intervensi Penyelamatan Nyawa, Perawatan/Transportasi)",
+  "category": "mass-casualty",
+  "description": "Protokol triase korban massal. Standar untuk kejadian multi-korban di lingkungan militer dan sipil.",
+  "instructions": "Langkah 1: Pengurutan global (berjalan, melambai, diam). Langkah 2: Nilai berdasarkan urutan prioritas. Langkah 3: Lakukan intervensi penyelamatan nyawa (kontrol perdarahan besar, buka jalan napas, dekompresi jarum, injektor otomatis). Langkah 4: Tetapkan kategori.",
+  "categories": [
+    {
+      "color": "hitam",
+      "label": "Calon/Almarhum",
+      "description": "Kecil kemungkinannya untuk bertahan hidup mengingat sumber daya yang tersedia, atau dipastikan meninggal"
+    },
+    {
+      "color": "merah",
+      "label": "Segera (T1)",
+      "description": "Cedera yang mengancam jiwa, akan bertahan dengan intervensi segera"
+    },
+    {
+      "color": "kuning",
+      "label": "Tertunda (T2)",
+      "description": "Cedera serius tapi stabil, bisa menunggu perawatan"
+    },
+    {
+      "color": "hijau",
+      "label": "Minimal (T3)",
+      "description": "Luka ringan -- luka berjalan"
+    },
+    {
+      "color": "abu-abu",
+      "label": "Harapan",
+      "description": "Cedera yang tidak dapat disembuhkan mengingat sumber daya saat ini -- hanya perawatan kenyamanan"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Algoritme triase JumpSTART memodifikasi SALT untuk pasien anak. Ambang batas laju pernapasan dan langkah penilaian berbeda untuk anak di bawah 8 tahun."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

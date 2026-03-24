@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "ミダゾラム",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "精通した",
+    "ナイジラム"
+  ],
+  "description": "急速に発現する短時間作用型ベンゾジアゼピン。鎮静処置、RSI 前投薬、IM/IN 発作管理に適しています。 IM および鼻腔内ルートは、現場設定において大きな利点をもたらします。",
+  "indications": [
+    "鎮静処置",
+    "RSI 前投薬 (ケタミン併用)",
+    "発作管理 (IV が利用できない場合の IM/IN)",
+    "撹拌管理"
+  ],
+  "dose": "鎮静：0.05～0.1 mg/kg IV 滴定。手順: 1 ～ 5 mg の IV をゆっくりと押し込みます。 IM: 0.2 mg/kg。 IN: 0.2 mg/kg (最大 10 mg)。てんかん重積状態 IM: 10 mg IM (成人)。",
+  "route": [
+    "Ⅳ",
+    "イオ",
+    "IM",
+    "で"
+  ],
+  "window": "",
+  "contraindications": [
+    "急性狭隅角緑内障",
+    "心血管障害を伴う急性アルコール中毒",
+    "既知の過敏症"
+  ],
+  "warnings": [
+    "呼吸抑制 -- 気道を監視し、可能であれば回復薬 (フルマゼニル) を使用します。",
+    "特にオピオイドの併用による低血圧。",
+    "急速な IV 注射は無呼吸を引き起こします。ゆっくりと押してください。"
+  ],
+  "regional_names": {
+    "generic": "ミダゾラム"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "鎮静: 0.05-0.1 mg/kg IV。 IM: 0.1-0.2 mg/kg。 IN: 0.2-0.3 mg/kg。発作 IM: 0.2 mg/kg (最大 10 mg)。",
+      "note": "IN ルートは特に小児に役立ちます -- IV アクセスを回避します。"
+    },
+    "obstetric": {
+      "note": "胎盤を通過します。新生児鎮静が可能です。最小有効量を使用してください。出産間近に与えられた場合は新生児を監視してください。"
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

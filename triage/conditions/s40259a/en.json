@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s40259a",
+    "icd10":  "S40259A",
+    "name":  "Superficial foreign body of unspecified shoulder, initial encounter",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Superficial foreign body of unspecified shoulder, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Kwayoyin Fluoroquinolone tare da faffadan gram-korau. Ana amfani da shi don cututtukan raunuka masu tsanani, shiga cikin rauni na ciki (GI flora cover), da cututtukan urinary tract. Akwai PO da IV.",
+  "indications": [
+    "Ciwon ciki na ciki (GI decontamination)",
+    "Mummunan cututtuka masu rauni",
+    "Gram-korau cututtuka",
+    "Cutar cututtuka"
+  ],
+  "dose": "400 MG IV q8-12h. PO: 500-750 mg q12h.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Sanannen rashin lafiyar fluoroquinolone",
+    "Yara da matasa <shekaru 18 (dangi - haɗarin tendinopathy)",
+    "Ciki (dangi)"
+  ],
+  "warnings": [
+    "Haɗarin tsagewar jijiyoyi, musamman tendon Achilles. Kashe idan ciwon tsoka ya tasowa.",
+    "Yana iya tsawaita tazarar QT -- taka tsantsan tare da wasu magunguna masu tsawaita QT.",
+    "Guji a cikin ciki idan akwai madadin."
+  ],
+  "regional_names": {
+    "generic": "ciprofloxacin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV q8-12h (max 400 mg/dose). PO: 10-20 mg/kg q12h (max 750 mg/dose).",
+      "note": "Yi amfani da shi kawai lokacin da fa'idodin ya zarce haɗarin tendinopathy. Ajiye don cututtuka masu tsanani."
+    },
+    "obstetric": {
+      "note": "Guji a cikin ciki idan akwai madadin. Yi amfani kawai don cututtuka masu barazana ga rayuwa inda fa'ida ta fi haɗari."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

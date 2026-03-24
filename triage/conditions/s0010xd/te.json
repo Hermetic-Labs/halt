@@ -1,0 +1,22 @@
+{
+  "id": "s0010xd",
+  "icd10": "S0010XD",
+  "name": "పేర్కొనబడని కనురెప్ప మరియు పెరియోక్యులర్ ప్రాంతం యొక్క కాన్ట్యూషన్, తదుపరి ఎన్‌కౌంటర్",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "పేర్కొనబడని కనురెప్ప మరియు పెరియోక్యులర్ ప్రాంతం యొక్క కాన్ట్యూషన్, తదుపరి ఎన్‌కౌంటర్",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

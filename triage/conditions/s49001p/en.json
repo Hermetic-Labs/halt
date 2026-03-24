@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s49001p",
+    "icd10":  "S49001P",
+    "name":  "Unspecified physeal fracture of upper end of humerus, right arm, subsequent encounter for fracture with malunion",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified physeal fracture of upper end of humerus, right arm, subsequent encounter for fracture with malunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

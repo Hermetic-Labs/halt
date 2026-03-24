@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s72491e",
+    "icd10":  "S72491E",
+    "name":  "Other fracture of lower end of right femur, subsequent encounter for open fracture type I or II with routine healing",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Other fracture of lower end of right femur, subsequent encounter for open fracture type I or II with routine healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

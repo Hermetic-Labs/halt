@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Fisorohana ny hypothermia (H -- MARTSA)",
+  "category": "temperature-management",
+  "skill_level": "misy mamaly",
+  "time_estimate": "2-3 min",
+  "description": "Ny ady amin'ny hypothermia dia mpamono azo sorohina amin'ny trauma. Ny triad mahafaty: hypothermia + acidose + coagulopathy. Misoroka amin'ny fomba rehetra.",
+  "equipment": [
+    "bodofotsy taratra hafanana",
+    "kitapom-pisorohana hypothermia",
+    "mafana-iv-fluids-raha misy"
+  ],
+  "steps": [
+    "Esory ny akanjo lena rehetra raha vao azo atao.",
+    "Sarony bodofotsy miendrika hafanana (espace) ny marary -- lafiny mamirapiratra IN mankany amin'ny marary.",
+    "Fonosy ny loha sy ny tendany (toerana very hafanana lehibe).",
+    "Misoroka avy amin'ny tany -- asio zavatra eo anelanelan'ny marary sy ny tany mangatsiaka.",
+    "Omeo rano mafana IV raha misy.",
+    "Aza avela hangovitra tsy misy saron-tava ny marary -- famantarana fampitandremana mialoha ny mangovitra.",
+    "Araho ny maripana raha misy thermometer. Latsaky ny 35°C (95°F) = hypothermie."
+  ],
+  "warnings": [
+    "Ny hypothermia dia miharatsy ny coagulopathie - ny marary mandeha ra dia mihamangatsiaka kokoa ary tsy dia mandaitra loatra.",
+    "Ny fisorohana ny hypothermia eny an-kianja dia tsy maintsy manomboka amin'ny toerana misy ratra, fa tsy amin'ny CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

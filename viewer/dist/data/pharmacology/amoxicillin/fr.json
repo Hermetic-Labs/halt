@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicilline",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "Trimox"
+  ],
+  "description": "Antibiotique aminopénicilline à large spectre. Antibiotique prophylactique oral pour l'infection des plaies. Fait partie du pack de pilules de combat TCCC pour la prophylaxie des blessures non graves.",
+  "indications": [
+    "Prophylaxie des infections des plaies (plaies légères à modérées, plaquette de pilules orales)",
+    "Infections des tissus mous",
+    "Infections des voies respiratoires"
+  ],
+  "dose": "500 mg PO toutes les 8 heures x 7 jours (prophylaxie des plaies). Alternative à 875 mg PO toutes les 12 heures.",
+  "route": [
+    "PO"
+  ],
+  "window": "Commencez dans les 3 heures suivant la blessure pour la prophylaxie des plaies.",
+  "contraindications": [
+    "Allergie connue à la pénicilline (utiliser plutôt la doxycycline)",
+    "Mononucléose (risque d'éruption cutanée)"
+  ],
+  "warnings": [
+    "En cas d'allergie à la pénicilline : remplacer la doxycycline par 100 mg PO BID.",
+    "Voie orale uniquement - utiliser des antibiotiques IV (céfazoline/ciprofloxacine) en cas de plaies graves ou si la voie orale n'est pas tolérée."
+  ],
+  "regional_names": {
+    "generic": "amoxicilline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/jour divisé toutes les 8 heures (max 500 mg/dose). Utilisez la référence Broselow basée sur le poids.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Sans danger pendant la grossesse. Préféré à la doxycycline (qui est contre-indiquée pendant la grossesse)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Steccatura improvvisata",
+  "category": "ortho-stabilization",
+  "skill_level": "Base",
+  "time_estimate": "5-10 minuti",
+  "description": "Immobilizzare le fratture utilizzando i materiali disponibili per prevenire ulteriori lesioni, ridurre il dolore e limitare la perdita di sangue nei tessuti circostanti. Trovata la stecca in posizione, a meno che la circolazione non sia compromessa, quindi raddrizzarla delicatamente.",
+  "equipment": [
+    "Stecca SAM (preferita)",
+    "Riviste arrotolate, bastoni, pali della tenda (improvvisati sul campo)",
+    "Cravatta/fasce triangolari",
+    "Imbottitura (abbigliamento, schiuma)",
+    "Nastri o strisce di tessuto"
+  ],
+  "steps": [
+    "Esporre e valutare la lesione: controllare la circolazione, la sensibilità e il movimento (CSM) distalmente alla frattura prima e dopo.",
+    "Controllare qualsiasi sanguinamento attivo prima dello splintaggio.",
+    "Imbottire generosamente le protuberanze ossee per prevenire piaghe da decubito.",
+    "Selezionare un materiale per la stecca sufficientemente lungo da immobilizzare l'articolazione sopra E sotto la frattura.",
+    "Posizionare l'arto in una posizione comoda o in allineamento anatomico: non forzare.",
+    "Applicare l'imbottitura, quindi il materiale della stecca. Fissare con bende o strisce di tessuto.",
+    "NON avvolgere troppo stretto: lasciare le punte delle mani e dei piedi esposte al CSM del monitor.",
+    "Rivalutare il CSM dopo l'applicazione: allentarlo immediatamente in caso di circolazione compromessa.",
+    "Se possibile, sollevare l'arto per ridurre il gonfiore.",
+    "Documentare l'ora dell'applicazione della stecca."
+  ],
+  "warnings": [
+    "Rivalutare il CSM ogni 15-30 minuti: il gonfiore può far sì che una stecca corretta diventi un laccio emostatico.",
+    "Fratture aperte: coprire prima la ferita con una medicazione sterile, poi con una stecca. NON reinserire l'osso.",
+    "Le fratture del femore possono perdere 1-2 litri di sangue nella coscia: trattare in modo aggressivo in caso di shock.",
+    "Sospetta frattura spinale: NON improvvisare una stecca: ridurre al minimo i movimenti, mantenere la stabilizzazione in linea."
+  ],
+  "follows": [
+    "pressione diretta",
+    "applicazione-laccio emostatico"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Le cartilagini di crescita nei bambini sono più deboli dei legamenti: sospetta frattura anche con meccanismo lieve. Le fratture del toro (fibbia) possono presentare un gonfiore minimo."
+    },
+    "obstetric": {
+      "note": "Si applica la steccatura standard. Evitare il posizionamento supino prolungato: inclinazione laterale sinistra se si è distesi."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

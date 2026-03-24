@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s63063d",
+    "icd10":  "S63063D",
+    "name":  "Subluxation of metacarpal (bone), proximal end of unspecified hand, subsequent encounter",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Subluxation of metacarpal (bone), proximal end of unspecified hand, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

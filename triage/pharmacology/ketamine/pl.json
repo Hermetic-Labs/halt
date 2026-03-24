@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamina",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Znieczulenie dysocjacyjne zapewniające analgezję, sedację i amnezję, przy jednoczesnym zachowaniu odruchów oddechowych i stabilności hemodynamicznej. Preferowany środek przeciwbólowy w TCCC – utrzymuje BP w przeciwieństwie do opioidów. Stosowany również do sedacji proceduralnej i RSI.",
+  "indications": [
+    "Leczenie bólu o nasileniu umiarkowanym do ciężkiego",
+    "Sedacja proceduralna (opakowanie ran, nastawienie złamań)",
+    "Środek wprowadzający dla RSI",
+    "Znieczulenie bojowe"
+  ],
+  "dose": "Analgezja: 0,1-0,3 mg/kg IV/IO (powolne naciśnięcie) | 0,5 mg/kg domięśniowo. Sedacja proceduralna: 1-2 mg/kg IV | 4-6 mg/kg domięśniowo. Indukcja RSI: 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "W"
+  ],
+  "window": "",
+  "contraindications": [
+    "Znana schizofrenia lub aktywna psychoza",
+    "Podwyższone ICP bez ochrony dróg oddechowych (względne)"
+  ],
+  "warnings": [
+    "Reakcje pojawiające się (delirium/halucynacje) – złagodzić za pomocą midazolamu 1-2 mg dożylnie, jeśli jest dostępny.",
+    "Zwiększa wydzielanie wydzieliny – przygotuj się do odsysania.",
+    "Skurcz krtani rzadki, ale możliwy – należy zapewnić dostęp do BVM."
+  ],
+  "regional_names": {
+    "generic": "ketamina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgezja: 0,5 mg/kg IV. Sedacja proceduralna: 1-2 mg/kg IV | 4-5 mg/kg domięśniowo.",
+      "note": "Dobrze wykształcony w pediatrii. Preferowany przy bolesnych zabiegach."
+    },
+    "obstetric": {
+      "note": "Bezpieczny dla analgezji matki w małych dawkach. W dużych dawkach może powodować depresję oddechową u noworodków, jeśli zostanie podany w pobliżu czasu porodu."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

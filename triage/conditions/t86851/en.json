@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t86851",
+    "icd10":  "T86851",
+    "name":  "Intestine transplant failure",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Intestine transplant failure",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicillin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "Trimox"
+  ],
+  "description": "Kháng sinh phổ rộng aminopenicillin. Kháng sinh dự phòng nhiễm trùng vết thương bằng đường uống. Một phần của gói thuốc chiến đấu TCCC để dự phòng vết thương ở những vết thương không nặng.",
+  "indications": [
+    "Dự phòng nhiễm trùng vết thương (vết thương nhẹ-trung bình, gói thuốc uống)",
+    "Nhiễm trùng mô mềm",
+    "Nhiễm trùng đường hô hấp"
+  ],
+  "dose": "500 mg uống mỗi 8 giờ x 7 ngày (dự phòng vết thương). 875 mg PO mỗi 12 giờ thay thế.",
+  "route": [
+    "PO"
+  ],
+  "window": "Bắt đầu điều trị dự phòng vết thương trong vòng 3 giờ sau khi bị thương.",
+  "contraindications": [
+    "Đã biết dị ứng penicillin (thay vào đó hãy sử dụng doxycycline)",
+    "Bệnh bạch cầu đơn nhân (nguy cơ phát ban)"
+  ],
+  "warnings": [
+    "Nếu dị ứng penicillin: thay thế doxycycline 100mg PO BID.",
+    "Chỉ dùng đường uống - sử dụng kháng sinh tiêm tĩnh mạch (cefazolin/ciprofloxacin) cho các vết thương nặng hoặc nếu không dung nạp được bằng đường uống."
+  ],
+  "regional_names": {
+    "generic": "amoxicillin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/ngày chia mỗi 8 giờ (tối đa 500 mg/liều). Sử dụng tài liệu tham khảo Broselow dựa trên trọng lượng.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "An toàn trong thai kỳ. Được ưu tiên hơn doxycycline (chống chỉ định trong thai kỳ)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

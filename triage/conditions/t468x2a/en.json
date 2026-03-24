@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t468x2a",
+    "icd10":  "T468X2A",
+    "name":  "Poisoning by antivaricose drugs, including sclerosing agents, intentional self-harm, initial encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Poisoning by antivaricose drugs, including sclerosing agents, intentional self-harm, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

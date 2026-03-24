@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Pression directe pour le contrôle des hémorragies",
+  "category": "hemorrhage-control",
+  "skill_level": "n'importe quel répondeur",
+  "time_estimate": "3-5 minutes",
+  "description": "Contrôle des hémorragies de première intention pour les plaies accessibles aux extrémités et au corps.",
+  "equipment": [
+    "gants",
+    "pansement traumatologique",
+    "cravate-bandage"
+  ],
+  "steps": [
+    "Enfilez des gants si disponibles.",
+    "Exposez la plaie en coupant les vêtements.",
+    "Appliquez un pansement traumatologique ou un chiffon plié directement sur la plaie.",
+    "Appuyez fermement avec le talon de votre main. Utilisez votre poids corporel, pas seulement la force de vos bras.",
+    "Maintenez une pression continue et ininterrompue pendant au moins 3 minutes.",
+    "Ne soulevez PAS le pansement pour vérifier – cela perturbe la formation du caillot.",
+    "Si le saignement s'infiltre, ajoutez un autre pansement par-dessus. Ne retirez pas le premier.",
+    "Fixez avec un bandage compressif si disponible et passez au pansement ou au garrot si le saignement continue."
+  ],
+  "warnings": [
+    "La pression directe seule est inadéquate pour les saignements artériels – elle peut dégénérer en pansement ou en garrot.",
+    "Les plaies jonctionnelles (aine, aisselle, cou) nécessitent un pansement, et non une simple pression externe."
+  ],
+  "follows": [],
+  "precedes": [
+    "pansement des plaies",
+    "application de garrot"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Pression proportionnelle uniquement. Évitez de comprimer le thorax chez les nourrissons."
+    },
+    "obstetric": {
+      "note": "Évitez les fortes compressions sur l’utérus gravide. Utiliser un pansement latéral en cas de plaie jonctionnelle près du bassin."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

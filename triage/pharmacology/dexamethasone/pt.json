@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Dexametasona",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Decadrão",
+    "DexPak"
+  ],
+  "description": "Corticosteroide sintético de ação prolongada. Usado para edema cerebral (edema cerebral de alta altitude - HACE, TBI), reações alérgicas graves, edema das vias aéreas e crise adrenal. Antiinflamatório, não anabólico.",
+  "indications": [
+    "Edema cerebral de altitude (ECGA)",
+    "Edema de vias aéreas (estridor pós-extubação, crupe)",
+    "Edema cerebral por tumor ou abscesso",
+    "Reações alérgicas graves (adjunto à epinefrina)",
+    "Crise adrenal",
+    "Adjuvante antiemético (perioperatório)"
+  ],
+  "dose": "Edema cerebral/HACE: 8-10 mg IV/IM inicial, depois 4 mg a cada 6 horas. Edema das vias aéreas: 10 mg IV uma vez. Garupa: 0,6 mg/kg IM/PO (máx. 16 mg). Crise adrenal: 4 mg IV.",
+  "route": [
+    "IV",
+    "OI",
+    "Eu estou",
+    "PO"
+  ],
+  "window": "HACE: Dê o mais cedo possível junto com a descida imediata.",
+  "contraindications": [
+    "Infeções fúngicas sistémicas (sem cobertura antifúngica)",
+    "Vacinas com vírus vivos no prazo de 30 dias (relativo)"
+  ],
+  "warnings": [
+    "Não substitui a descida e o oxigênio para HACE – use apenas como complemento.",
+    "Hiperglicemia – monitore a glicemia em diabéticos.",
+    "Imunossupressão com uso prolongado.",
+    "Doses únicas para emergências geralmente são muito seguras."
+  ],
+  "regional_names": {
+    "generic": "dexametasona"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Garupa: 0,6 mg/kg PO/IM (máx. 16 mg). Edema cerebral: 0,5-1 mg/kg IV (máx. 10 mg). Edema das vias aéreas: 0,5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM a cada 24 horas x 2 doses usadas para acelerar a maturidade pulmonar fetal em 24-34 semanas de gestação em trabalho de parto prematuro. Discuta com o maior fornecedor disponível."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

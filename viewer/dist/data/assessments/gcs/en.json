@@ -1,0 +1,113 @@
+﻿{
+    "id":  "gcs",
+    "name":  "Glasgow Coma Scale (GCS)",
+    "category":  "neurological",
+    "description":  "Standardized neurological scoring of consciousness via eye, verbal, and motor responses. Score range 3-15.",
+    "instructions":  "Score each of the three domains independently. Sum all three scores for the total GCS.",
+    "scoring":  [
+                    {
+                        "domain":  "Eye",
+                        "options":  [
+                                        {
+                                            "score":  4,
+                                            "label":  "Spontaneous"
+                                        },
+                                        {
+                                            "score":  3,
+                                            "label":  "To voice"
+                                        },
+                                        {
+                                            "score":  2,
+                                            "label":  "To pain"
+                                        },
+                                        {
+                                            "score":  1,
+                                            "label":  "None"
+                                        }
+                                    ]
+                    },
+                    {
+                        "domain":  "Verbal",
+                        "options":  [
+                                        {
+                                            "score":  5,
+                                            "label":  "Oriented"
+                                        },
+                                        {
+                                            "score":  4,
+                                            "label":  "Confused"
+                                        },
+                                        {
+                                            "score":  3,
+                                            "label":  "Inappropriate words"
+                                        },
+                                        {
+                                            "score":  2,
+                                            "label":  "Incomprehensible sounds"
+                                        },
+                                        {
+                                            "score":  1,
+                                            "label":  "None"
+                                        }
+                                    ]
+                    },
+                    {
+                        "domain":  "Motor",
+                        "options":  [
+                                        {
+                                            "score":  6,
+                                            "label":  "Obeys commands"
+                                        },
+                                        {
+                                            "score":  5,
+                                            "label":  "Localizes pain"
+                                        },
+                                        {
+                                            "score":  4,
+                                            "label":  "Withdraws from pain"
+                                        },
+                                        {
+                                            "score":  3,
+                                            "label":  "Abnormal flexion (decorticate)"
+                                        },
+                                        {
+                                            "score":  2,
+                                            "label":  "Extension (decerebrate)"
+                                        },
+                                        {
+                                            "score":  1,
+                                            "label":  "None"
+                                        }
+                                    ]
+                    }
+                ],
+    "interpretation":  [
+                           {
+                               "range":  [
+                                             13,
+                                             15
+                                         ],
+                               "label":  "Mild TBI -- monitor closely"
+                           },
+                           {
+                               "range":  [
+                                             9,
+                                             12
+                                         ],
+                               "label":  "Moderate TBI -- prepare airway"
+                           },
+                           {
+                               "range":  [
+                                             3,
+                                             8
+                                         ],
+                               "label":  "Severe TBI -- airway at immediate risk, intubate if possible"
+                           }
+                       ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  "Use Pediatric GCS (pGCS) for children under 2 years. Verbal scoring adjusted for pre-verbal children."
+                                    }
+                  },
+    "source":  "JTS CPG / Standard Neurological Assessment"
+}

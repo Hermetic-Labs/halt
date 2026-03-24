@@ -1,0 +1,63 @@
+{
+  "id": "broselow-tape",
+  "name": "Riferimento al nastro di emergenza pediatrica Broselow",
+  "description": "Riferimento peso-dose codificato a colori per la somministrazione di farmaci pediatrici quando non è disponibile una scala. Misura il bambino dalla sommità della testa ai talloni e abbinalo al colore della fascia.",
+  "note": "Questo riferimento è solo per STIMA. Utilizzare il peso effettivo quando disponibile.",
+  "bands": [
+    {
+      "color": "grigio",
+      "weight_kg": "3-5",
+      "length_cm": "46-57",
+      "est_age": "Neonato"
+    },
+    {
+      "color": "rosa",
+      "weight_kg": "6-7",
+      "length_cm": "57-67",
+      "est_age": "3-6 mesi"
+    },
+    {
+      "color": "rosso",
+      "weight_kg": "8-9",
+      "length_cm": "67-74",
+      "est_age": "6-12 mesi"
+    },
+    {
+      "color": "viola",
+      "weight_kg": "10-11",
+      "length_cm": "74-83",
+      "est_age": "12-18 mesi"
+    },
+    {
+      "color": "giallo",
+      "weight_kg": "12-14",
+      "length_cm": "83-95",
+      "est_age": "18 mesi-3 anni"
+    },
+    {
+      "color": "bianco",
+      "weight_kg": "15-18",
+      "length_cm": "95-107",
+      "est_age": "3-5 anni"
+    },
+    {
+      "color": "blu",
+      "weight_kg": "19-22",
+      "length_cm": "107-122",
+      "est_age": "5-7 anni"
+    },
+    {
+      "color": "arancione",
+      "weight_kg": "24-28",
+      "length_cm": "122-137",
+      "est_age": "7-9 anni"
+    },
+    {
+      "color": "verde",
+      "weight_kg": "30-36",
+      "length_cm": "137-152",
+      "est_age": "9-12 anni"
+    }
+  ],
+  "source": "Broselow Pediatric Emergency Reference / PALS"
+}

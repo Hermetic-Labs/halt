@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t540x2a",
+    "icd10":  "T540X2A",
+    "name":  "Toxic effect of phenol and phenol homologues, intentional self-harm, initial encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Toxic effect of phenol and phenol homologues, intentional self-harm, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

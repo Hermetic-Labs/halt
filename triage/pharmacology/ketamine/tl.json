@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Dissociative anesthetic na nagbibigay ng analgesia, sedation, at amnesia habang pinapanatili ang airway reflexes at hemodynamic stability. Mas pinipiling analgesic sa TCCC -- nagpapanatili ng BP hindi katulad ng mga opioid. Ginagamit din para sa procedural sedation at RSI.",
+  "indications": [
+    "Pamamahala ng katamtaman hanggang sa matinding pananakit",
+    "Procedural sedation (pagpapakete ng sugat, pagbabawas ng bali)",
+    "Induction agent para sa RSI",
+    "Labanan ang kawalan ng pakiramdam"
+  ],
+  "dose": "Analgesia: 0.1-0.3 mg/kg IV/IO (mabagal na pagtulak) | 0.5 mg/kg IM. Pamamaraang pagpapatahimik: 1-2 mg/kg IV | 4-6 mg/kg IM. RSI induction: 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "SA"
+  ],
+  "window": "",
+  "contraindications": [
+    "Kilalang schizophrenia o active psychosis",
+    "Nakataas na ICP na walang proteksyon sa daanan ng hangin (kamag-anak)"
+  ],
+  "warnings": [
+    "Mga reaksyon sa paglitaw (delirium/hallucinations) -- pagaanin gamit ang midazolam 1-2mg IV kung magagamit.",
+    "Nagpapataas ng pagtatago -- ihanda ang pagsipsip.",
+    "Ang laryngospasm ay bihira ngunit posible -- panatilihing available ang BVM."
+  ],
+  "regional_names": {
+    "generic": "ketamine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesia: 0.5 mg/kg IV. Pamamaraang pagpapatahimik: 1-2 mg/kg IV | 4-5 mg/kg IM.",
+      "note": "Nag-aral ng mabuti sa pediatrics. Mas pinipili para sa masakit na mga pamamaraan."
+    },
+    "obstetric": {
+      "note": "Ligtas para sa maternal analgesia sa mababang dosis. Maaaring magdulot ng neonatal respiratory depression sa mataas na dosis kung ihahatid malapit sa oras ng panganganak."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

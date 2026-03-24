@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Tekanan Langsung kanggo Kontrol Perdarahan",
+  "category": "hemorrhage-control",
+  "skill_level": "sembarang-responder",
+  "time_estimate": "3-5 min",
+  "description": "Kontrol pendarahan baris pisanan kanggo ekstremitas lan tatu awak sing bisa diakses.",
+  "equipment": [
+    "sarung tangan",
+    "trauma-dressing",
+    "cravat-bandage"
+  ],
+  "steps": [
+    "Don sarung tangan yen kasedhiya.",
+    "Mbukak tatu kanthi ngethok sandhangan.",
+    "Pasang balutan trauma utawa kain sing dilipat langsung ing tatu kasebut.",
+    "Pencet kanthi kuat kanthi tumit tangan sampeyan. Gunakake bobot awak - ora mung kekuatan lengen.",
+    "Tahan tekanan sing terus-terusan lan tanpa gangguan paling sethithik 3 menit.",
+    "Aja ngangkat klamben kanggo mriksa - iki ngganggu pembentukan gumpalan.",
+    "Yen getihen nyerep, tambahake klamben liyane ing ndhuwur. Aja mbusak pisanan.",
+    "Aman nganggo bandage tekanan yen kasedhiya lan pindhah menyang kemasan tatu utawa tourniquet yen getihen terus."
+  ],
+  "warnings": [
+    "Tekanan langsung mung ora nyukupi kanggo pendarahan arteri -- mundhak menyang packing tatu utawa tourniquet.",
+    "Luka junctional (pangkal paha, ketiak, gulu) mbutuhake packing tatu, ora mung tekanan eksternal."
+  ],
+  "follows": [],
+  "precedes": [
+    "pambungkus tatu",
+    "tourniquet-aplikasi"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Tekanan proporsional mung. Aja ngompres thorax ing bayi."
+    },
+    "obstetric": {
+      "note": "Ngindhari kompresi abot ing rahim gravid. Gunakake packing lateral yen tatu junctional cedhak pelvis."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

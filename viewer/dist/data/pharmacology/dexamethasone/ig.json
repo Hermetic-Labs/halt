@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Dexamethasone",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Decadron",
+    "DexPak"
+  ],
+  "description": "Corticosteroid sịntetik na-eme ogologo oge. A na-eji maka edema ụbụrụ (elu elu cerebral edema - HACE, TBI), mmeghachi omume nfụkasị siri ike, edema ikuku, na nsogbu adrenal. Anti-inflammatory, ọ bụghị anabolic.",
+  "indications": [
+    "Edema cerebral elu dị elu (HACE)",
+    "Edema ikuku (mgbe extubation stridor, croup)",
+    "Cerebral edema sitere na akpụ ma ọ bụ akpụ",
+    "Mmeghachi omume nfụkasị ahụ siri ike (na mgbakwunye na epinephrine)",
+    "Nsogbu adrenal",
+    "Anti-emetic adjunct (perioperative)"
+  ],
+  "dose": "Cerebral edema/HACE: 8-10 mg IV/IM mbụ, emesia 4 mg q6h. Edema ikuku: 10 mg IV otu ugboro. Croup: 0.6 mg/kg IM/PO (max 16mg). Nsogbu adrenal: 4 mg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO"
+  ],
+  "window": "HACE: Nye ozugbo enwere ike yana mgbadata ozugbo.",
+  "contraindications": [
+    "Ọrịa fungal sistemu (na-enweghị mkpuchi antifungal)",
+    "Ọgwụ mgbochi nje dị ndụ n'ime ụbọchị 30 (ihe metụtara)"
+  ],
+  "warnings": [
+    "Anaghị edochi mgbanaka na oxygen maka HACE -- jiri naanị mgbakwunye.",
+    "Hyperglycemia - nyochaa glucose ọbara na ndị ọrịa mamịrị.",
+    "Immunosuppression na iji ogologo oge.",
+    "Otu doses maka ihe mberede na-adịkarị mma nke ukwuu."
+  ],
+  "regional_names": {
+    "generic": "dexamethasone"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Croup: 0.6 mg/kg PO/IM (karịa 16 mg). Cerebral edema: 0.5-1 mg / kg IV (max 10 mg). Edema nke ikuku: 0.5 mg / kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "A na-eji 12 mg IM q24h x 2 doses iji mee ka nwa ebu n'afọ too ntozu oke n'ime izu 24-34 n'ime ime ime tupu oge eruo. Gị na ndị na-eweta kacha dịnụ kparịta ụka."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

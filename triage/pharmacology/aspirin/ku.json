@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirin (Acetylsalicylic Acid)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Bayer Aspirin",
+    "Ecotrin"
+  ],
+  "description": "Dermanê dijî-înflamatuar ne-steroîdal (NSAID) bi taybetmendiyên antîplatelet. Dermankirina rêza yekem ji bo sendroma koroner a akût ya gumanbar (ACS). Bi awayekî bêveger kombûna trombocitan asteng dike - bandor ji bo temenê trombolê (7-10 roj) dom dike.",
+  "indications": [
+    "Bi gumanbariya înfarktê ya akût a myokardial (MI) - tavilê bixwin",
+    "Angîna nestable / sendroma koroner a akût",
+    "Stok (ischemic -- piştî ku hemorrajîk tê derxistin)",
+    "Germbûn û êşa sivik-navîn (analjîk)"
+  ],
+  "dose": "ACS: 325 mg PO -- CHEW (tevahiya daqurtandinê) tavilê. Analjezîk/antîpîretîk: 325-650 mg PO q4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Hîngê zû bidin -- li ser gumanê tavilê bixwin.",
+  "contraindications": [
+    "Xwîna GI ya çalak",
+    "Derba hemorrajîk",
+    "Alerjiya aspirinê an hestiyariya zêde ya NSAID-ê ya naskirî",
+    "Xwîna nekontrolkirî ya giran -- aspîrîn xwînrêjiyê xirab dike"
+  ],
+  "warnings": [
+    "Nexweşên hemorrajîk nedin - aspirin bi rengekî bêveger fonksiyona trombêlan xera dike û xwînê xirab dike.",
+    "Nedin zarokên <12 salî yên bi nexweşiya vîrusê - xetereya sendroma Reye.",
+    "Hêrsbûna GI - heke ne acîl be bi xwarinê re were girtin."
+  ],
+  "regional_names": {
+    "generic": "aspirin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analjîk/antîpîretîk: 10-15 mg/kg PO q4-6h (max 650 mg/doz). BİXWÎNE: Di nexweşiya vîrusê de (sendroma Reye) berevajî ye.",
+      "note": "Di şûna wê de ji bo tayê li zarokên bi nexweşiya virusê acetaminophen (parasetamol) bikar bînin."
+    },
+    "obstetric": {
+      "note": "Di ducaniyê de bi taybetî sêmeha sêyemîn (girtina zû ya ductus arteriosus) ji ducaniyê dûr bisekinin. Doza kêm (81 mg) tenê di bin rêberiya bijîjkî de ji bo pêşîlêgirtina pre-eklampsiyê tê bikar anîn."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

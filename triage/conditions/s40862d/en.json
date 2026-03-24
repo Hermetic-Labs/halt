@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s40862d",
+    "icd10":  "S40862D",
+    "name":  "Insect bite (nonvenomous) of left upper arm, subsequent encounter",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Insect bite (nonvenomous) of left upper arm, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

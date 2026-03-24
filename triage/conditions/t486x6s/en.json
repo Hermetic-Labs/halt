@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t486x6s",
+    "icd10":  "T486X6S",
+    "name":  "Underdosing of antiasthmatics, sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Underdosing of antiasthmatics, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

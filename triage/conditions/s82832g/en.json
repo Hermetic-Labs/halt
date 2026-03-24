@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s82832g",
+    "icd10":  "S82832G",
+    "name":  "Other fracture of upper and lower end of left fibula, subsequent encounter for closed fracture with delayed healing",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Other fracture of upper and lower end of left fibula, subsequent encounter for closed fracture with delayed healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

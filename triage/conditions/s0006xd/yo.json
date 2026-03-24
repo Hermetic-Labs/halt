@@ -1,0 +1,22 @@
+{
+  "id": "s0006xd",
+  "icd10": "S0006XD",
+  "name": "Jáni kòkòrò (àìjẹ́ olóró) ti orí, ìpàdé tó tẹ̀ lé e",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Kokoro jáni (nonvenomous) ti scalp, tetele pade",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

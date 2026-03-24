@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Direktang Presyon para sa Pagkontrol sa Pagdurugo",
+  "category": "hemorrhage-control",
+  "skill_level": "sinumang tumugon",
+  "time_estimate": "3-5 min",
+  "description": "First-line hemorrhage control para sa naa-access na extremity at mga sugat sa katawan.",
+  "equipment": [
+    "guwantes",
+    "trauma-dressing",
+    "cravat-bandage"
+  ],
+  "steps": [
+    "Don gloves kung magagamit.",
+    "Ilantad ang sugat sa pamamagitan ng pagputol ng damit.",
+    "Maglagay ng trauma dressing o nakatuping tela nang direkta sa sugat.",
+    "Pindutin nang mahigpit gamit ang takong ng iyong kamay. Gamitin ang bigat ng iyong katawan -- hindi lamang lakas ng braso.",
+    "Hawakan ang tuluy-tuloy, walang patid na presyon nang hindi bababa sa 3 minuto.",
+    "HUWAG iangat ang dressing para tingnan -- nakakaabala ito sa pagbuo ng clot.",
+    "Kung ang pagdurugo ay bumabad, magdagdag ng isa pang dressing sa ibabaw. Huwag tanggalin ang una.",
+    "I-secure gamit ang pressure bandage kung magagamit at lumipat sa pag-iimpake ng sugat o tourniquet kung magpapatuloy ang pagdurugo."
+  ],
+  "warnings": [
+    "Ang direktang presyon lamang ay hindi sapat para sa arterial bleeds -- umabot sa pag-iimpake ng sugat o tourniquet.",
+    "Ang mga junctional na sugat (singit, aksila, leeg) ay nangangailangan ng pag-iimpake ng sugat, hindi ang panlabas na presyon lamang."
+  ],
+  "follows": [],
+  "precedes": [
+    "sugat-packing",
+    "tourniquet-application"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Proporsyonal na presyon lamang. Iwasang i-compress ang thorax sa mga sanggol."
+    },
+    "obstetric": {
+      "note": "Iwasan ang mabigat na compression sa gravid uterus. Gumamit ng lateral packing kung junctional wound malapit sa pelvis."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Kỹ thuật di chuyển bệnh nhân",
+  "category": "casualty-movement",
+  "skill_level": "Cơ bản",
+  "time_estimate": "1-30 phút tùy theo khoảng cách và phương thức",
+  "description": "Di chuyển nạn nhân trong đám cháy hoặc tới nơi an toàn hơn để điều trị. Phương pháp này phụ thuộc vào địa hình, khoảng cách, số lượng người cứu hộ và vết thương của nạn nhân. Tốc độ và phòng ngừa cột sống là một quyết định mang tính chiến thuật -- trong TCCC, mối đe dọa được ưu tiên.",
+  "equipment": [
+    "Chất độn SKED (ưu tiên)",
+    "Cáng / cáng di động NATO",
+    "Xả rác cải tiến: cột + áo khoác/ponchos",
+    "Tay cầm kéo (đồng phục hoặc dây nịt)",
+    "Dây treo TACEVAC"
+  ],
+  "steps": [
+    "CHĂM SÓC KHI CHÁY: Bắn trả trước nếu được trang bị vũ khí. Di chuyển nạn nhân bằng phương pháp kéo nhanh nhất - không dừng lại để điều trị trong vùng tiêu diệt.",
+    "KÉO HASTY (một người cứu): nắm cổ áo/tay cầm kéo ở vai, kéo về phía sau. Bảo vệ đầu khỏi va đập.",
+    "CỨU HỎA CỨU (một người cứu hộ): nâng nạn nhân qua vai với khoảng cách xa hơn - yêu cầu nạn nhân bất tỉnh hoặc hợp tác.",
+    "VANG HAI NGƯỜI: người cứu hộ vòng tay dưới lưng và đầu gối của nạn nhân. Nhanh hơn kéo trong khoảng cách ngắn.",
+    "RÁC CẢI TIẾN: đặt hai cọc cách nhau 18 inch. Dệt áo khoác qua cột có nút bên trong. Kiểm tra trước khi tải nạn nhân.",
+    "LITTER SKED: trải ra, trượt xuống dưới nạn nhân, quấn và cố định bằng dây đai. Yêu cầu 2-4 người vận chuyển.",
+    "Khi tải: nâng lên khi đếm đến 3, duy trì sự thẳng hàng của đầu/cơ thể, giảm thiểu chuyển động cột sống khi có thể.",
+    "Nếu nghi ngờ chấn thương cột sống và không có mối đe dọa: duy trì sự ổn định trong suốt quá trình di chuyển. Một người chuyên trách việc kiểm soát đầu.",
+    "Di chuyển đến trang bìa, sau đó đánh giá lại ABC."
+  ],
+  "warnings": [
+    "Ưu tiên TCCC: tính mạng > chi > phòng ngừa cột sống. Đừng trì hoãn việc di chuyển khỏi vùng tiêu diệt để phòng ngừa cột sống.",
+    "Chống chỉ định mang theo lính cứu hỏa khi nghi ngờ chấn thương cột sống, gãy xương đùi hoặc chấn thương xuyên bụng.",
+    "Những lứa cải tiến: kiểm tra khả năng chịu trọng lượng trước khi tin tưởng giao cho nạn nhân.",
+    "Di chuyển nạn nhân bằng garô: kiểm tra xem garô có bị lỏng trong quá trình di chuyển hay không."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Trẻ em nhẹ hơn - một người cứu hộ có thể mang được lâu hơn. Duy trì đầu lớn hơn tương ứng - trọng tâm cao hơn khi mang."
+    },
+    "obstetric": {
+      "note": "Tránh tư thế nằm sấp hoặc gây áp lực lên vùng bụng. Vận chuyển nằm ngang (ưu tiên bên trái) hoặc nằm ngửa với nêm hông trái."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

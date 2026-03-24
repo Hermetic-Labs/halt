@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t71121s",
+    "icd10":  "T71121S",
+    "name":  "Asphyxiation due to plastic bag, accidental, sequela",
+    "category":  "environmental-injury",
+    "triage_priority":  "",
+    "description":  "Asphyxiation due to plastic bag, accidental, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

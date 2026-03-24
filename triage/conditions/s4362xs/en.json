@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s4362xs",
+    "icd10":  "S4362XS",
+    "name":  "Sprain of left sternoclavicular joint, sequela",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Sprain of left sternoclavicular joint, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

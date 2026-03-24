@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t63812a",
+    "icd10":  "T63812A",
+    "name":  "Toxic effect of contact with venomous frog, intentional self-harm, initial encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Toxic effect of contact with venomous frog, intentional self-harm, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

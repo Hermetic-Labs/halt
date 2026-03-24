@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Berpengalaman",
+    "Nayzilam"
+  ],
+  "description": "Benzodiazepin kerja pendek dengan onset cepat. Dipilih untuk sedasi prosedural, pra-pengobatan RSI, dan manajemen kejang IM/IN. Rute IM dan intranasal memberikan keuntungan yang signifikan dalam pengaturan lapangan.",
+  "indications": [
+    "Sedasi prosedural",
+    "Pra-pengobatan RSI (dengan ketamin)",
+    "Manajemen kejang (IM/IN bila IV tidak tersedia)",
+    "Manajemen agitasi"
+  ],
+  "dose": "Sedasi: 0,05-0,1 mg/kg IV dititrasi. Prosedural: 1-5 mg IV dorongan lambat. IM: 0,2mg/kg. DALAM: 0,2 mg/kg (maks 10 mg). Status epileptikus IM: 10 mg IM (dewasa).",
+  "route": [
+    "IV",
+    "aku",
+    "SAYA",
+    "DALAM"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaukoma sudut sempit akut",
+    "Keracunan alkohol akut dengan gangguan kardiovaskular",
+    "Diketahui hipersensitivitas"
+  ],
+  "warnings": [
+    "Depresi pernapasan - pantau jalan napas, berikan obat pembalikan (flumazenil) jika tersedia.",
+    "Hipotensi terutama dengan pemberian opioid secara bersamaan.",
+    "Suntikan IV yang cepat menyebabkan apnea - dorong perlahan."
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Sedasi: 0,05-0,1 mg/kg IV. IM: 0,1-0,2 mg/kg. DALAM: 0,2-0,3 mg/kg. Kejang IM: 0,2 mg/kg (maks 10 mg).",
+      "note": "DALAM rute sangat berguna pada anak-anak -- hindari akses IV."
+    },
+    "obstetric": {
+      "note": "Melewati plasenta. Sedasi neonatus mungkin terjadi. Gunakan dosis efektif minimum; pantau neonatus jika diberikan menjelang persalinan."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

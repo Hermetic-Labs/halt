@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t792xxd",
+    "icd10":  "T792XXD",
+    "name":  "Traumatic secondary and recurrent hemorrhage and seroma, subsequent encounter",
+    "category":  "adverse-effects",
+    "triage_priority":  "",
+    "description":  "Traumatic secondary and recurrent hemorrhage and seroma, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

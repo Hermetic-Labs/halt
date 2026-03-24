@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s43001s",
+    "icd10":  "S43001S",
+    "name":  "Unspecified subluxation of right shoulder joint, sequela",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified subluxation of right shoulder joint, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

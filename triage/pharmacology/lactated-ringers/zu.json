@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Isixazululo se-Lactated Ringer's Solution (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Isixazululo sikaHartmann",
+    "Umjovo WeRinger Encibilikisiwe"
+  ],
+  "description": "Uketshezi lwe-isotonic crystalloid olulinganiselwe. Okuncanyelwayo kunosawoti ovamile ukuze kuvuselelwe ukuhlukumezeka kwevolumu enkulu -- okulinganiselayo ngokomzimba, ingozi encane ye-hyperchloremic acidosis. Iqukethe i-sodium, i-potassium, i-calcium, i-lactate.",
+  "indications": [
+    "Ukuvuselela i-trauma (i-crystalloid ekhethwayo ekushaqekeni kwegazi)",
+    "I-Burns fluid resuscitation (ifomula yaseParkland)",
+    "I-Hypovolemia",
+    "Ukunakekela uketshezi"
+  ],
+  "dose": "Ukushaqeka kwe-Hemorrhagic: Umkhawulo ku-1L max ngaphambi kokushintshela emikhiqizweni yegazi. Ithagethi ye-SBP 80-90 mmHg yokuhlukumezeka kokungena, 90 mmHg TBI. Ukushiswa (Parkland): 4 mL x kg x %TBSA kushiswe ngaphezu kuka-24h (uhhafu ku-8h wokuqala).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "I-Hyperkalemia (iqukethe i-potassium)",
+    "Ukwehluleka kwesibindi okukhulu (ukuphazamiseka kwe-lactate metabolism - isihlobo)"
+  ],
+  "warnings": [
+    "I-crystalloid -- ayikwazi ukuthwala umoya-mpilo. Imikhiqizo yegazi ingcono kunokwethuka ukopha. I-LR ibhuloho kuphela.",
+    "Ungaxubani nemikhiqizo yegazi emgqeni ofanayo (i-calcium ibangela ukujiya).",
+    "UNGAVUMI ngokweqile ekuhlukumezekeni okungena ngaphakathi ngaphambi kokulawula ukopha."
+  ],
+  "regional_names": {
+    "generic": "isixazululo sikaRinger esilactation",
+    "UK": "Isixazululo sikaHartmann"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 mL/kg bolus, phinda uhlole. Kukhethwa kune-NS ngenxa yokulimala kwezingane.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Uketshezi lwe-IV olukhethwayo ekuzalweni nasekubelethweni. Ifanele ukuvuswa kwe-obstetric hemorrhage."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

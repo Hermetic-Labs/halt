@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Tecniche di movimento del paziente",
+  "category": "casualty-movement",
+  "skill_level": "Base",
+  "time_estimate": "1-30 minuti a seconda della distanza e del metodo",
+  "description": "Spostare una vittima sotto il fuoco o in un luogo più sicuro per le cure. Il metodo dipende dal terreno, dalla distanza, dal numero di soccorritori e dalle ferite della vittima. La velocità rispetto alla precauzione spinale è una decisione tattica: nel TCCC, la minaccia ha la priorità.",
+  "equipment": [
+    "Cucciolata SKED (preferita)",
+    "Lettiera / barella portatile NATO",
+    "Lettiera improvvisata: bastoncini + giacche/poncho",
+    "Maniglie di trascinamento (uniforme o imbracatura)",
+    "Imbracatura TACEVAC"
+  ],
+  "steps": [
+    "ATTENZIONE SOTTO FUOCO: se armati, rispondete prima al fuoco. Sposta la vittima utilizzando il metodo di trascinamento più veloce: non fermarti a curare nella zona di uccisione.",
+    "HASTY DRAG (un soccorritore): afferrare il collare/trascinare la maniglia sulle spalle, trascinarla sulla schiena. Proteggi la testa dagli urti.",
+    "TRASPORTO DEI POMPIERI (un soccorritore): sollevare l'infortunato sulle spalle per distanze maggiori - richiede che l'infortunato sia incosciente o collaborativo.",
+    "TRASPORTO PER DUE PERSONE: i soccorritori collegano le braccia sotto la schiena e le ginocchia della vittima. Più veloce del trascinamento per brevi distanze.",
+    "RIFIUTI IMPROVVISATI: posizionare due pali a 18 pollici di distanza l'uno dall'altro. Intreccia le giacche attraverso i pali con i bottoni all'interno. Prova prima di caricare la vittima.",
+    "LETTIERA SKED: srotolare, far scivolare sotto l'infortunato, avvolgere e fissare con cinghie. Richiede 2-4 vettori.",
+    "Durante il carico: sollevare contando fino a 3, mantenere l'allineamento testa/corpo, ridurre al minimo il movimento della colonna vertebrale quando possibile.",
+    "Se si sospetta una lesione spinale e non vi è alcun pericolo: mantenere la stabilizzazione in linea durante tutto il movimento. Una persona dedicata al controllo della testa.",
+    "Passare alla copertura, quindi rivalutare l'ABC."
+  ],
+  "warnings": [
+    "Priorità del TCCC: vita > arto > precauzione spinale. Non ritardare il movimento da una zona mortale per precauzioni spinali.",
+    "Il trasporto da parte dei vigili del fuoco è controindicato in caso di sospetta lesione spinale, frattura del femore o trauma addominale penetrante.",
+    "Cucciolate improvvisate: testare la capacità di peso prima di confidare con una vittima.",
+    "Spostamento dell'infortunato con il laccio emostatico: verificare che il laccio emostatico non si sia allentato durante il movimento."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "I bambini sono più leggeri: un soccorritore può trasportarli più a lungo. Mantenere la testa proporzionalmente più grande: baricentro più alto durante il trasporto."
+    },
+    "obstetric": {
+      "note": "Evitare la posizione prona o la pressione sull'addome. Trasporto laterale (preferibilmente lato sinistro) o supino con cuneo dell'anca sinistra."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

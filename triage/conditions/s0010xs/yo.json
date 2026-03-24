@@ -1,0 +1,22 @@
+{
+  "id": "s0010xs",
+  "icd10": "S0010XS",
+  "name": "Contusion ti ipenpeju ti ko ni pato ati agbegbe periocular, atele",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Contusion ti ipenpeju ti a ko ni pato ati agbegbe periocular, atẹle",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

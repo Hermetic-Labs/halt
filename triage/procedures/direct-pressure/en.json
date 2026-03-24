@@ -1,0 +1,43 @@
+﻿{
+    "id":  "direct-pressure",
+    "name":  "Direct Pressure for Hemorrhage Control",
+    "category":  "hemorrhage-control",
+    "skill_level":  "any-responder",
+    "time_estimate":  "3-5 min",
+    "description":  "First-line hemorrhage control for accessible extremity and body wounds.",
+    "equipment":  [
+                      "gloves",
+                      "trauma-dressing",
+                      "cravat-bandage"
+                  ],
+    "steps":  [
+                  "Don gloves if available.",
+                  "Expose the wound by cutting away clothing.",
+                  "Apply a trauma dressing or folded cloth directly over the wound.",
+                  "Press firmly with the heel of your hand. Use your body weight -- not just arm strength.",
+                  "Hold continuous, uninterrupted pressure for at least 3 minutes.",
+                  "Do NOT lift the dressing to check -- this disrupts clot formation.",
+                  "If bleeding soaks through, add another dressing on top. Do not remove the first.",
+                  "Secure with a pressure bandage if available and move to wound packing or tourniquet if bleeding continues."
+              ],
+    "warnings":  [
+                     "Direct pressure alone is inadequate for arterial bleeds -- escalate to wound packing or tourniquet.",
+                     "Junctional wounds (groin, axilla, neck) require wound packing, not external pressure alone."
+                 ],
+    "follows":  [
+
+                ],
+    "precedes":  [
+                     "wound-packing",
+                     "tourniquet-application"
+                 ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  "Proportional pressure only. Avoid compressing the thorax in infants."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Avoid heavy compression over gravid uterus. Use lateral packing if junctional wound near pelvis."
+                                    }
+                  },
+    "source":  "JTS CPG / TCCC / PHTLS"
+}

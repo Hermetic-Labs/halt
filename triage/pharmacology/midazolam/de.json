@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Versiert",
+    "Nayzilam"
+  ],
+  "description": "Kurzwirksames Benzodiazepin mit schnellem Wirkungseintritt. Bevorzugt für Verfahrenssedierung, RSI-Prämedikation und IM/IN-Anfallsmanagement. IM- und intranasale Wege bieten erhebliche Vorteile im Feldeinsatz.",
+  "indications": [
+    "Verfahrenssedierung",
+    "RSI-Prämedikation (mit Ketamin)",
+    "Anfallsmanagement (IM/IN, wenn IV nicht verfügbar)",
+    "Agitationsmanagement"
+  ],
+  "dose": "Sedierung: 0,05–0,1 mg/kg i.v. titriert. Verfahren: 1-5 mg i.v. langsamer Druck. IM: 0,2 mg/kg. IN: 0,2 mg/kg (maximal 10 mg). Status epilepticus IM: 10 mg IM (Erwachsener).",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "Akutes Engwinkelglaukom",
+    "Akute Alkoholvergiftung mit Herz-Kreislauf-Beeinträchtigung",
+    "Bekannte Überempfindlichkeit"
+  ],
+  "warnings": [
+    "Atemdepression – Atemwege überwachen, ggf. Gegenmittel (Flumazenil) einnehmen.",
+    "Hypotonie, insbesondere bei gleichzeitiger Gabe von Opioiden.",
+    "Eine schnelle intravenöse Injektion verursacht Apnoe – langsam drücken."
+  ],
+  "regional_names": {
+    "generic": "Midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Sedierung: 0,05–0,1 mg/kg i.v. IM: 0,1–0,2 mg/kg. IN: 0,2–0,3 mg/kg. Anfall IM: 0,2 mg/kg (maximal 10 mg).",
+      "note": "Der IN-Weg ist besonders nützlich bei Kindern – vermeidet den intravenösen Zugang."
+    },
+    "obstetric": {
+      "note": "Kreuzt die Plazenta. Neugeborenensedierung möglich. Verwenden Sie die minimal wirksame Dosis; Überwachen Sie das Neugeborene, wenn es kurz vor der Entbindung verabreicht wird."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

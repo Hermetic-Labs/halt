@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s82134r",
+    "icd10":  "S82134R",
+    "name":  "Nondisplaced fracture of medial condyle of right tibia, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with malunion",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of medial condyle of right tibia, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with malunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s82126g",
+    "icd10":  "S82126G",
+    "name":  "Nondisplaced fracture of lateral condyle of unspecified tibia, subsequent encounter for closed fracture with delayed healing",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of lateral condyle of unspecified tibia, subsequent encounter for closed fracture with delayed healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

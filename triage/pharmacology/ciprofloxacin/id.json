@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Sipro"
+  ],
+  "description": "Antibiotik fluoroquinolone dengan cakupan gram negatif yang luas. Digunakan untuk infeksi luka serius, trauma tembus perut (cakupan flora GI), dan infeksi saluran kemih. Tersedia PO dan IV.",
+  "indications": [
+    "Trauma tembus perut (dekontaminasi GI)",
+    "Infeksi luka serius",
+    "Infeksi gram negatif",
+    "Infeksi saluran kemih"
+  ],
+  "dose": "400 mg IV setiap 8-12 jam. PO: 500-750 mg setiap 12 jam.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Alergi fluoroquinolone yang diketahui",
+    "Anak-anak dan remaja < 18 tahun (relatif -- risiko tendinopati)",
+    "Kehamilan (relatif)"
+  ],
+  "warnings": [
+    "Risiko pecahnya tendon, terutama tendon Achilles. Hentikan jika nyeri tendon berkembang.",
+    "Dapat memperpanjang interval QT -- hati-hati dengan obat pemanjangan QT lainnya.",
+    "Hindari pada kehamilan jika alternatif tersedia."
+  ],
+  "regional_names": {
+    "generic": "ciprofloxacin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV setiap 8-12 jam (maks 400 mg/dosis). PO: 10-20 mg/kg setiap 12 jam (maks 750 mg/dosis).",
+      "note": "Gunakan hanya jika manfaatnya lebih besar daripada risiko tendinopati. Cadangan untuk infeksi serius."
+    },
+    "obstetric": {
+      "note": "Hindari pada kehamilan jika alternatif tersedia. Gunakan hanya untuk infeksi yang mengancam jiwa dimana manfaatnya lebih besar daripada risikonya."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

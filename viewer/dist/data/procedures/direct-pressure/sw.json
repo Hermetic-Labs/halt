@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Shinikizo la moja kwa moja la Udhibiti wa Kuvuja damu",
+  "category": "hemorrhage-control",
+  "skill_level": "mjibu yeyote",
+  "time_estimate": "Dakika 3-5",
+  "description": "Udhibiti wa uvujaji wa damu wa mstari wa kwanza kwa ncha inayopatikana na majeraha ya mwili.",
+  "equipment": [
+    "kinga",
+    "kiwewe-dressing",
+    "cravat-bandage"
+  ],
+  "steps": [
+    "Don glavu ikiwa inapatikana.",
+    "Fichua jeraha kwa kukata nguo.",
+    "Weka kitambaa cha kiwewe au kitambaa kilichokunjwa moja kwa moja juu ya jeraha.",
+    "Bonyeza kwa nguvu kwa kisigino cha mkono wako. Tumia uzito wa mwili wako -- sio tu nguvu za mkono.",
+    "Shikilia shinikizo la kuendelea, lisiloingiliwa kwa angalau dakika 3.",
+    "USIINUE nguo ili kuangalia -- hii inatatiza uundaji wa donge la damu.",
+    "Ikiwa damu inapita, ongeza vazi lingine juu. Usiondoe ya kwanza.",
+    "Jilinde kwa kutumia bandeji ya shinikizo ikiwa inapatikana na sogea kwenye kifungashio cha jeraha au kionesho ikiwa damu itaendelea."
+  ],
+  "warnings": [
+    "Shinikizo la moja kwa moja pekee halitoshi kwa kutokwa na damu kwa ateri -- hupanda hadi kwenye ufungaji wa majeraha au tourniquet.",
+    "Majeraha ya makutano (groin, axilla, shingo) yanahitaji ufungaji wa jeraha, sio shinikizo la nje pekee."
+  ],
+  "follows": [],
+  "precedes": [
+    "jeraha-kufunga",
+    "tourniquet-maombi"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Shinikizo la uwiano pekee. Epuka kukandamiza kifua kwa watoto wachanga."
+    },
+    "obstetric": {
+      "note": "Epuka mgandamizo mkubwa juu ya uterasi yenye nguvu. Tumia kifungashio cha kando ikiwa jeraha la makutano karibu na pelvisi."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

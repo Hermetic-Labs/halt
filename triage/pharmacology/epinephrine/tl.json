@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinephrine (Adrenaline)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalin"
+  ],
+  "description": "Endogenous catecholamine na may alpha at beta adrenergic activity. First-line na paggamot para sa anaphylaxis at cardiac arrest. Sa anaphylaxis, mas pinipili ang IM thigh kaysa IV (mas ligtas, katumbas na bisa). Huwag mag-antala para sa IV access sa anaphylaxis.",
+  "indications": [
+    "Anaphylaxis (unang linya)",
+    "Pag-aresto sa puso -- pulseless VF/VT/PEA/asystole",
+    "Matinding bronchospasm",
+    "Hypotension refractory sa mga likido"
+  ],
+  "dose": "Anaphylaxis: 0.3-0.5 mg IM (anterolateral thigh) | Auto-injector 0.3 mg IM. Ulitin q5-15 min PRN. Pag-aresto sa puso: 1 mg IV/IO q3-5 min sa panahon ng CPR. Malubhang bronchospasm: 0.3 mg IM.",
+  "route": [
+    "IM",
+    "IV",
+    "IO"
+  ],
+  "window": "Sa anaphylaxis: bigyan kaagad ng IM -- huwag mag-antala para sa IV access.",
+  "contraindications": [
+    "Walang ganap na contraindications sa nagbabanta sa buhay na emergency"
+  ],
+  "warnings": [
+    "Ang IV epinephrine para sa anaphylaxis ay dapat lamang gamitin sa pag-aresto sa puso o malalim na pagkabigla -- mapanganib kung binibigyan ng IV push sa isang may malay na pasyente.",
+    "Ang extravasation ay nagdudulot ng tissue necrosis -- tiyakin ang IV patency.",
+    "Pinapataas ang pangangailangan ng myocardial oxygen -- mag-ingat sa kilalang sakit sa coronary sa labas ng pag-aresto."
+  ],
+  "regional_names": {
+    "generic": "epinephrine",
+    "UK": "adrenaline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anaphylaxis: 0.01 mg/kg IM (max 0.5 mg). EpiPen Jr (0.15 mg) para sa 15-30 kg. Pag-aresto sa puso: 0.01 mg/kg IV/IO q3-5 min.",
+      "note": "Gumamit ng weight-based na dosing. Inirerekomenda ang broselow tape reference."
+    },
+    "obstetric": {
+      "note": "Gumamit ng karaniwang anaphylaxis dosing -- ang kaligtasan ng ina ay pinakamahalaga. Ligtas ang epinephrine sa pagbubuntis para sa mga emergency na nagbabanta sa buhay."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

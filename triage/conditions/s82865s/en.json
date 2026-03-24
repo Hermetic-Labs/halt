@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s82865s",
+    "icd10":  "S82865S",
+    "name":  "Nondisplaced Maisonneuve\u0027s fracture of left leg, sequela",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced Maisonneuve\u0027s fracture of left leg, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

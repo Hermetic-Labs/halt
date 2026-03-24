@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Ifijiṣẹ aaye pajawiri",
+  "category": "obstetric",
+  "skill_level": "oogun ogun",
+  "time_estimate": "O yatọ -- 20+ min",
+  "description": "Isakoso ti precipitous tabi unplanned ifijiṣẹ ni austere ayika.",
+  "equipment": [
+    "ibọwọ",
+    "o mọ-aṣọ-bora",
+    "okùn-clamps-tabi-tai",
+    "scissors",
+    "boolubu-syringe"
+  ],
+  "steps": [
+    "Ṣe ipo iya ti o wa ni isalẹ tabi ologbele-reclined. Titẹ ita ti osi fẹ bi aimọkan (idilọwọ funmorawon aortocaval).",
+    "Ṣakoso ifijiṣẹ ti ori - atilẹyin pẹlu ọpẹ. MAA ṢE fa.",
+    "Ni kete ti ori ba ti fi jiṣẹ, ṣayẹwo fun okun nuchal (ni ayika ọrun). Ti o ba wa, yọ si ori. Ti o ba ṣoro, dimole ati ge.",
+    "Fa ẹnu ẹnu lẹhinna imu pẹlu syringe boolubu ti o ba wa.",
+    "Ifijiṣẹ itọsọna ti ejika iwaju nipasẹ isunmọ irẹlẹ si isalẹ lori ori, lẹhinna si oke fun ejika ẹhin.",
+    "Fi ara ranṣẹ -- akiyesi akoko ifijiṣẹ.",
+    "Gbẹ ati ki o gbona ọmọ naa lẹsẹkẹsẹ. Ṣe iwuri nipa fifi pa ẹhin.",
+    "Dimole ati ge okun naa (duro fun iṣẹju 1-2 ti ọmọ ba jẹ iduroṣinṣin).",
+    "Fi ibi-ọmọ lọ pẹlu isunmọ iṣakoso jẹjẹ -- MAA ṢE fi agbara mu.",
+    "Ṣe abojuto oxytocin (ti o ba wa) lati ṣe idiwọ iṣọn-ẹjẹ lẹhin ibimọ lẹhin ifijiṣẹ ibi-ọmọ.",
+    "Ṣe ayẹwo ẹjẹ ẹjẹ lẹhin ibimọ -- ifọwọra inawo, funmorawon bimanual ti o ba nilo.",
+    "Ṣe ayẹwo Dimegilio Apgar ni iṣẹju 1 ati 5."
+  ],
+  "warnings": [
+    "Ti ifijiṣẹ ko ba sunmọ -- ma ṣe gbiyanju. Iyara MEDEVAC jẹ ayanfẹ.",
+    "Dystocia ejika: ti awọn ejika ba di, lo ọgbọn McRoberts (hyperflex hips) ati titẹ suprapubic.",
+    "Ẹjẹ ẹjẹ lẹhin ibimọ jẹ idi pataki ti iku iya ti o le ṣe idiwọ - ti ṣetan oxytocin."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

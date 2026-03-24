@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Fampidirana Nasopharyngeal Airway (NPA)",
+  "category": "airway",
+  "skill_level": "combat-lifesaver",
+  "time_estimate": "1 min",
+  "description": "Fampidirana lakan-drivotra miendrika orona mba hitazomana ny lalan-drivotra amin'ny marary tsy mahatsiaro tena na tsy mahatsiaro tena.",
+  "equipment": [
+    "npa-misy-safety-pin",
+    "menaka"
+  ],
+  "steps": [
+    "Safidio ny haben'ny NPA mety (refesina manomboka amin'ny vavorona ka hatramin'ny lakan-tsofina).",
+    "Hosory tsara ny NPA amin'ny lubricant na saline mety levona anaty rano.",
+    "Ampidiro amin'ny alalan'ny flange ny tsipìka fiarovana raha mbola tsy misy (manakana ny aspiraka).",
+    "Ampidiro moramora ao amin'ny vavorona havanana (bevel mankany amin'ny septum), mandroso mifanila amin'ny lanilany.",
+    "Mandrosoa mandra-pijanonan'ny flange amin'ny vavorona.",
+    "Avereno apetraka ny marary (toerana sitrana raha tsy misy olana amin'ny hazondamosina) ary avereno jerena ny lalan-drivotra.",
+    "Raha misy fanoherana, andramo ny vavorona havia."
+  ],
+  "warnings": [
+    "Contraindicated amin'ny ahiana ho tapaka ny karandoha basilar (maso raccoon, famantarana ny ady, rhinorrhea CSF).",
+    "Ny NPA no fanampin'ny lalan-drivotra voalohany indrindra ho an'ny marary tsy mahatsiaro tena -- Ny OPA dia mety hiteraka fandoavana ny marary tsy mahatsiaro tena."
+  ],
+  "source": "TCCC / JTS CPG"
+}

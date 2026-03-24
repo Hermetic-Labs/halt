@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Tıkayıcı Göğüs Mührü Uygulaması",
+  "category": "respiration",
+  "skill_level": "savaş cankurtaran",
+  "time_estimate": "1-2 dakika",
+  "description": "Emici göğüs yarasının (açık pnömotoraks) hava girişini önlemek ve aynı zamanda basıncın serbest bırakılmasına izin vermek için havalandırmalı bir göğüs contasıyla kapatılması.",
+  "equipment": [
+    "havalandırmalı göğüs contası",
+    "eldivenler",
+    "travma makası"
+  ],
+  "steps": [
+    "Yarayı açığa çıkarın; kesin veya giysileri çıkarın.",
+    "Yara etrafındaki deriyi mümkün olduğu kadar kuru bir şekilde silin (kan, ter yapışmayı önler).",
+    "Havalandırmalı göğüs contası paketini açın.",
+    "Contayı yaranın üzerine, deliği ortalayacak şekilde yerleştirin. Tüm kenarların birbirine yapışmasını sağlayarak sıkıca bastırın.",
+    "Valf yönünü kontrol edin - havalandırma deliği dışarı doğru (deriden uzağa) bakmalı ve engellenmemelidir.",
+    "Nefes seslerini yeniden değerlendirin. Sızdırmazlık sonrasında bozulma devam ederse tansiyon pnömotoraksını düşünün ve BOH gerçekleştirin.",
+    "Havalandırmalı bir conta mevcut değilse, havalandırmasız bir conta kullanılabilir ancak tansiyon pnömotoraks gelişimi açısından izlenmelidir."
+  ],
+  "warnings": [
+    "Havalandırmasız contalar basit bir pnömotoraksı gerilim pnömotoraksa dönüştürebilir; havalandırmalı contaları yalnızca sahada kullanın.",
+    "Üç taraflı bantlama (doğaçlama conta) artık CoTCCC tarafından önerilmemektedir; ticari havalandırmalı göğüs contası kullanın.",
+    "GİRİŞ ve ÇIKIŞ yaralarına daima mühür uygulayın."
+  ],
+  "follows": [],
+  "precedes": [
+    "iğne dekompresyonu"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

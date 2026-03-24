@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazol",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagil"
+  ],
+  "description": "Mükemmel anaerobik ve protozoal kapsama sahip nitroimidazol antibiyotik. Anaerobik bağırsak florasını kapsayacak şekilde penetran karın/bağırsak travması için gereklidir. Genellikle siprofloksasin ile kombinasyon halinde kullanılır.",
+  "indications": [
+    "Penetran karın/bağırsak travması",
+    "Karın içi enfeksiyonlar",
+    "Anaerobik yumuşak doku enfeksiyonları",
+    "C. difficile enfeksiyonları"
+  ],
+  "dose": "500 mg IV 6-8 saatte bir. PO: 500 mg her 8 saatte bir (oral yolla tolere ediliyorsa).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Gebeliğin ilk üç ayı (göreceli)",
+    "Bilinen metronidazol veya nitroimidazol alerjisi"
+  ],
+  "warnings": [
+    "Alkolle disülfiram benzeri reaksiyon - tedavi sırasında ve tedaviden 48 saat sonra alkol tüketmeyin.",
+    "Uzun süreli kullanımda periferik nöropatiye neden olabilir.",
+    "Mümkünse ilk trimesterde kaçının."
+  ],
+  "regional_names": {
+    "generic": "metronidazol"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7,5 mg/kg IV/PO 6 saatte bir (maks. 500 mg/doz).",
+      "note": "Daha büyük çocuklarda güvenlidir. Yenidoğanlarda kaçının."
+    },
+    "obstetric": {
+      "note": "Mümkünse ilk trimesterde kaçının. Tıbbi olarak gerekli olduğunda ikinci/üçüncü trimesteri kullanın; yarar genellikle ciddi anaerobik enfeksiyon riskinden daha ağır basar."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s76229d",
+    "icd10":  "S76229D",
+    "name":  "Laceration of adductor muscle, fascia and tendon of unspecified thigh, subsequent encounter",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Laceration of adductor muscle, fascia and tendon of unspecified thigh, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

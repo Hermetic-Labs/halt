@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Aplikacja okluzyjnej uszczelki klatki piersiowej",
+  "category": "respiration",
+  "skill_level": "ratownik bojowy",
+  "time_estimate": "1-2 minuty",
+  "description": "Uszczelnienie rany ssącej klatki piersiowej (otwarta odma opłucnowa) za pomocą wentylowanej uszczelki klatki piersiowej, aby zapobiec przedostawaniu się powietrza, jednocześnie umożliwiając uwolnienie ciśnienia.",
+  "equipment": [
+    "wentylowana uszczelka klatki piersiowej",
+    "rękawiczki",
+    "nożyce urazowe"
+  ],
+  "steps": [
+    "Odsłoń ranę – odetnij lub zdejmij ubranie.",
+    "Wytrzyj skórę wokół rany tak sucho, jak to możliwe (krew, pot zapobiegają przyleganiu).",
+    "Otwórz opakowanie z wentylowaną uszczelką piersiową.",
+    "Umieścić uszczelkę na ranie, centralnie względem otworu. Dociśnij mocno, upewniając się, że wszystkie krawędzie przylegają.",
+    "Sprawdź orientację zaworu — odpowietrznik musi być skierowany na zewnątrz (z dala od skóry) i nie może być zasłonięty.",
+    "Ponownie oceń szmery oddechowe. Jeśli po uszczelnieniu pogorszenie stanu się utrzymuje, należy rozważyć odmę prężną i wykonać NCD.",
+    "Jeśli uszczelka wentylowana jest niedostępna, można zastosować uszczelkę niewentylowaną, MUSI to jednak być monitorowane pod kątem rozwoju odmy prężnej."
+  ],
+  "warnings": [
+    "Uszczelki niewentylowane mogą przekształcić zwykłą odmę opłucnową w odmę prężną – należy używać uszczelek wentylowanych tylko w terenie.",
+    "CoTCCC nie zaleca już stosowania trójstronnej taśmy (improwizowanej uszczelki) – należy używać dostępnej w handlu uszczelki klatki piersiowej z wentylacją.",
+    "Zawsze nakładaj uszczelkę na rany WEJŚCIOWE i WYJŚCIOWE."
+  ],
+  "follows": [],
+  "precedes": [
+    "dekompresja igłowa"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

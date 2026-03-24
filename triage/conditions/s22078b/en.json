@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s22078b",
+    "icd10":  "S22078B",
+    "name":  "Other fracture of T9-T10 vertebra, initial encounter for open fracture",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Other fracture of T9-T10 vertebra, initial encounter for open fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s079xxs",
+    "icd10":  "S079XXS",
+    "name":  "Crushing injury of head, part unspecified, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Crushing injury of head, part unspecified, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

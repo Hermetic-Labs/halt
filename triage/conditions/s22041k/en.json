@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s22041k",
+    "icd10":  "S22041K",
+    "name":  "Stable burst fracture of fourth thoracic vertebra, subsequent encounter for fracture with nonunion",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Stable burst fracture of fourth thoracic vertebra, subsequent encounter for fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

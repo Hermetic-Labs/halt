@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t367x4a",
+    "icd10":  "T367X4A",
+    "name":  "Poisoning by antifungal antibiotics, systemically used, undetermined, initial encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Poisoning by antifungal antibiotics, systemically used, undetermined, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

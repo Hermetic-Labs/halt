@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t63193s",
+    "icd10":  "T63193S",
+    "name":  "Toxic effect of venom of other reptiles, assault, sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Toxic effect of venom of other reptiles, assault, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Fanombanana ny tsy fahampian-drano",
+  "category": "circulation",
+  "description": "Tombana eny an-kianja momba ny tsy fahampian-drano sy ny hamafin'ny aretin'ny hafanana. Ny lokon'ny urine no famantarana tena azo ampiharina. Tombanana ny sata ara-tsaina ho marika famantarana ny tsy fahampian-drano mafy mivoatra mankany amin'ny fahatapahan'ny hafanana.",
+  "instructions": "Jereo ny lokon'ny urine, ny turgoran'ny hoditra, ny toe-tsaina, ary ny famantarana tena ilaina. Ny urine maizimaizina, ny mucous membrane maina, ary ny tachycardia dia manondro ny tsy fahampian-drano be loatra izay mitaky rehydration mavitrika.",
+  "categories": [
+    {
+      "color": "mazava-mazava",
+      "label": "Voahidy tsara",
+      "description": "Mavo mavo mba hanadio ny urine. Tsy ilaina ny fitsabahana."
+    },
+    {
+      "color": "mavo",
+      "label": "Tsy fahampian-drano malefaka",
+      "description": "Ny urine mavo maizina, mangetaheta. Rehydration am-bava. Amporisiho ny rano 250-500 ml isan'ora."
+    },
+    {
+      "color": "amber-brown",
+      "label": "Fahafatesana antonony-mahery vaika",
+      "description": "Ny urine amber, ny HR niakatra, ny turgor hoditra nihena, ny vava maina. ranon-javatra IV/IO raha tsy leferina am-bava. 1-2L LR na NS."
+    },
+    {
+      "color": "mena",
+      "label": "Loza -- Tapaka hafanana / Mafy",
+      "description": "Famoahana urine kely indrindra, LOC niova, hoditra maina mafana. Fitsaboana vonjy taitra -- fampangatsiahana haingana + fluide IV + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Ny ankizy dia mihamalemy haingana kokoa noho ny olon-dehibe. Ny fontanelle (zazakely), ny tsy fisian'ny ranomaso, ary ny fahalainana dia famantarana lehibe. IV mifototra amin'ny lanja: 20 mL/kg LR bolus."
+    },
+    "obstetric": {
+      "note": "Ny vehivavy bevohoka dia mila mampitombo ny fisotron-drano. Ny tsy fahampian-drano dia mety hiteraka contractions mialoha ny fotoana. Rehydration am-bava mahery vaika aloha; IV raha tsy mandefitra am-bava."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

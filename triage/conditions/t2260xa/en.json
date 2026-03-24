@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t2260xa",
+    "icd10":  "T2260XA",
+    "name":  "Corrosion of second degree of shoulder and upper limb, except wrist and hand, unspecified site, initial encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Corrosion of second degree of shoulder and upper limb, except wrist and hand, unspecified site, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

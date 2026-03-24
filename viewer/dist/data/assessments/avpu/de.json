@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "AVPU-Skala",
+  "category": "neurological",
+  "description": "Schnelle 4-stufige Bewusstseinsbeurteilung. Schneller als GCS für die Ersttriage.",
+  "instructions": "Bewerten Sie das höchste Maß an Reaktion, das der Patient zeigt.",
+  "scoring": [
+    {
+      "code": "Ein",
+      "label": "Warnung",
+      "description": "Der Patient ist wach, bei Bewusstsein und reagiert normal"
+    },
+    {
+      "code": "V",
+      "label": "Stimme",
+      "description": "Der Patient reagiert nur auf verbale Stimulation"
+    },
+    {
+      "code": "P",
+      "label": "Schmerz",
+      "description": "Der Patient reagiert nur auf schmerzhafte Reize (Sternalreibung, Nagelbettdruck)"
+    },
+    {
+      "code": "U",
+      "label": "Reagiert nicht",
+      "description": "Keine Reaktion auf irgendwelche Reize – sofortiger Eingriff in die Atemwege erforderlich"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "Ein",
+      "triage": "Stabil – Bewertung fortsetzen"
+    },
+    {
+      "code": "V",
+      "triage": "Bezüglich – Atemwege überwachen"
+    },
+    {
+      "code": "P",
+      "triage": "Kritisch – Atemwege gefährdet, GCS typischerweise <= 8"
+    },
+    {
+      "code": "U",
+      "triage": "Sofort – Atemwege jetzt verwalten"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinefrin (Adrenalin)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalin"
+  ],
+  "description": "Alfa ve beta adrenerjik aktiviteye sahip endojen katekolamin. Anafilaksi ve kalp durması için birinci basamak tedavi. Anafilakside IM uyluk IV yerine tercih edilir (daha güvenli, eşdeğer etkinlik). Anafilakside IV erişimini geciktirmeyin.",
+  "indications": [
+    "Anafilaksi (birinci basamak)",
+    "Kardiyak arest -- nabızsız VF/VT/PEA/asistol",
+    "Şiddetli bronkospazm",
+    "Sıvılara dirençli hipotansiyon"
+  ],
+  "dose": "Anafilaksi: 0,3-0,5 mg IM (uyluğun anterolaterali) | Otomatik enjektör 0,3 mg IM. q5-15 dk PRN'yi tekrarlayın. Kalp durması: CPR sırasında 1 mg IV/IO 3-5 dk. Şiddetli bronkospazm: 0,3 mg IM.",
+  "route": [
+    "anlık ileti",
+    "IV",
+    "Giriş Çıkış"
+  ],
+  "window": "Anafilakside: Derhal IM verin; IV erişimini geciktirmeyin.",
+  "contraindications": [
+    "Hayatı tehdit eden acil durumlarda mutlak kontrendikasyon yok"
+  ],
+  "warnings": [
+    "Anafilaksi için IV epinefrin yalnızca kalp durması veya derin şokta kullanılmalıdır; bilinçli bir hastaya IV itme uygulandığında tehlikelidir.",
+    "Ekstravazasyon doku nekrozuna neden olur - IV açıklığını sağlayın.",
+    "Miyokardın oksijen ihtiyacını artırır; bilinen koroner hastalık durumunda, tutuklama dışında dikkatli olun."
+  ],
+  "regional_names": {
+    "generic": "epinefrin",
+    "UK": "adrenalin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anafilaksi: 0,01 mg/kg IM (maks 0,5 mg). 15-30 kg için EpiPen Jr (0,15 mg). Kalp durması: 0,01 mg/kg IV/IO 3-5 dk.",
+      "note": "Ağırlığa dayalı dozaj kullanın. Broselow bant referansı önerilir."
+    },
+    "obstetric": {
+      "note": "Standart anafilaksi dozunu kullanın; annenin hayatta kalması çok önemlidir. Epinefrin, yaşamı tehdit eden acil durumlar için hamilelikte güvenlidir."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Antiemetik antagonis reseptor 5-HT3 selektif. Sangat efektif untuk mual dan muntah. ODT (tablet yang disintegrasi secara oral) berguna di lapangan ketika IV tidak tersedia. Termasuk dalam beberapa paket pil tempur.",
+  "indications": [
+    "Mual dan muntah (kemoterapi, akibat opioid, pasca operasi, terkait TBI)",
+    "Mabuk perjalanan",
+    "Mual akibat pemberian ketamin"
+  ],
+  "dose": "4-8 mg IV/IO tekan perlahan selama 2-5 menit. ODT: 4-8 mg dilarutkan di bawah lidah. IM: 4 mg.",
+  "route": [
+    "IV",
+    "aku",
+    "SAYA",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Diketahui hipersensitivitas terhadap ondansetron atau antagonis 5-HT3 lainnya",
+    "Sindrom QT panjang bawaan (hanya IV dosis tinggi)"
+  ],
+  "warnings": [
+    "IV dosis tinggi dapat memperpanjang interval QT - gunakan dosis IV yang paling efektif.",
+    "Tidak menggantikan manajemen saluran napas pada pasien yang mengalami muntah-muntah -- lindungi jalan napas terlebih dahulu."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,1-0,15 mg/kg IV (maks 4 mg). ODT: 4mg untuk anak > 4 tahun.",
+      "note": "Banyak digunakan dan ditoleransi dengan baik dalam pediatri."
+    },
+    "obstetric": {
+      "note": "Data terbatas pada kehamilan. Gunakan untuk mual/muntah parah setelah trimester pertama ketika manfaatnya lebih besar daripada risikonya. Tidak dianjurkan pada trimester pertama."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

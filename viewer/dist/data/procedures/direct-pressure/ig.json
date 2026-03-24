@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Nrụgide ozugbo maka njikwa ọbara ọgbụgba",
+  "category": "hemorrhage-control",
+  "skill_level": "onye ọ bụla na-aza",
+  "time_estimate": "Nkeji 3-5",
+  "description": "Njikwa ọbara ọgbụgba nke mbụ maka njedebe na ọnya ahụ nwere ike ịnweta.",
+  "equipment": [
+    "uwe aka",
+    "mgbakwasa trauma",
+    "cravat-bandeji"
+  ],
+  "steps": [
+    "Don gloves ma ọ bụrụ na ọ dị.",
+    "Wepụ ọnya ahụ site n'ibipụ uwe.",
+    "Tinye akwa trauma ma ọ bụ akwa apịaji ozugbo n'elu ọnya ahụ.",
+    "Jiri ikiri ụkwụ aka gị kwụsie ike. Jiri ahụ gị dị arọ -- ọ bụghị naanị ike ogwe aka.",
+    "Jide nrụgide na-aga n'ihu, na-akwụsịghị akwụsị ma ọ dịkarịa ala nkeji 3.",
+    "Ebulila uwe ahụ ka ịlele - nke a na-akpaghasị mkpụkọ mkpụkọ.",
+    "Ọ bụrụ na ọbara ọgbụgba na-adaba, tinye akwa ọzọ n'elu. Ewepụla nke mbụ.",
+    "Chekwaa ya na bandeeji nrụgide ma ọ bụrụ na ọ dị wee gaa na nkwakọba ọnya ma ọ bụ nlegharị anya ma ọ bụrụ na ọbara na-aga n'ihu."
+  ],
+  "warnings": [
+    "Naanị nrụgide ozugbo ezughị oke maka ọbara ọgbụgba akwara -- gbagoro ruo na mbukota ọnya ma ọ bụ njem nlegharị anya.",
+    "Ọnya nkwonkwo (oke, axilla, olu) chọrọ ịkwakọba ọnya, ọ bụghị naanị nrụgide mpụga."
+  ],
+  "follows": [],
+  "precedes": [
+    "mbukota ọnya",
+    "ngwa tourniquet"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Naanị nrụgide nha nhata. Zere ịpịkọta thorax na ụmụ ọhụrụ."
+    },
+    "obstetric": {
+      "note": "Zere mkpakọ dị arọ n'elu akpanwa gravid. Jiri nkwakọ ihe dị n'akụkụ ma ọ bụrụ na ọnya nkwụsị na nso pelvis."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s32811b",
+    "icd10":  "S32811B",
+    "name":  "Multiple fractures of pelvis with unstable disruption of pelvic ring, initial encounter for open fracture",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Multiple fractures of pelvis with unstable disruption of pelvic ring, initial encounter for open fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

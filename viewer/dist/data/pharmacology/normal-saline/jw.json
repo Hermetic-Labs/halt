@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Saline Normal (0,9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "0,9% natrium klorida injeksi"
+  ],
+  "description": "Cairan kristaloid isotonik. Digunakake kanggo resusitasi cairan IV. Ing kejut hemorrhagic, gunakake kanthi ati-ati - volume gedhe nambah koagulopati (asidosis hiperkloremik, koagulopati pengenceran). Hipotensi permisif luwih disenengi ing trauma penetrasi sing nunggu kontrol pendarahan.",
+  "indications": [
+    "Resusitasi cairan (kanthi ati-ati ing syok hemoragik)",
+    "Obat pengencer/siram",
+    "Hypovolemia saka sabab non-hemoragik"
+  ],
+  "dose": "Kejut hemoragik: Watesan maksimal 1L kontrol pendarahan sing ditundha (hipotensi permisif). Target SBP 80-90 mmHg ing trauma penetrasi, 90 mmHg ing TBI. Hipovolemia non hemoragik: 500 mL bolus, kaji ulang.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hipernatremia",
+    "Kakehan cairan / edema paru (relatif)"
+  ],
+  "warnings": [
+    "Volume gedhe nyebabake asidosis metabolik hiperkloremik lan koagulopati pengenceran - nambah triad sing bisa nyebabake trauma.",
+    "Lactated Ringer's (LR) luwih disenengi kanggo resusitasi trauma volume gedhe.",
+    "Aja over-resuscitate trauma torso penetrating sadurunge operasi kontrol pendarahan (hipotensi permisif)."
+  ],
+  "regional_names": {
+    "generic": "natrium klorida 0,9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 mL/kg IV bolus, kaji ulang. Baleni maksimal x3 (total 60 mL/kg) sadurunge nimbang produk getih.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Resusitasi standar ing pendarahan obstetrik. Resusitasi cairan agresif sing cocog kanggo pendarahan postpartum sadurunge produk getih kasedhiya."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

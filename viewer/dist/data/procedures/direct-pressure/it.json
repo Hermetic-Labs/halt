@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Pressione diretta per il controllo dell'emorragia",
+  "category": "hemorrhage-control",
+  "skill_level": "qualsiasi risponditore",
+  "time_estimate": "3-5 minuti",
+  "description": "Controllo di prima linea dell'emorragia per le estremità accessibili e le ferite del corpo.",
+  "equipment": [
+    "guanti",
+    "medicazione traumatica",
+    "fasciatura della cravatta"
+  ],
+  "steps": [
+    "Indossare guanti, se disponibili.",
+    "Esporre la ferita tagliando via i vestiti.",
+    "Applicare una medicazione traumatica o un panno piegato direttamente sulla ferita.",
+    "Premi saldamente con il palmo della mano. Usa il peso del tuo corpo, non solo la forza delle braccia.",
+    "Mantenere una pressione continua e ininterrotta per almeno 3 minuti.",
+    "NON sollevare la medicazione per controllare: ciò interrompe la formazione del coagulo.",
+    "Se il sangue penetra, aggiungi un'altra medicazione sopra. Non rimuovere il primo.",
+    "Fissare con una benda compressiva, se disponibile, e passare alla medicazione della ferita o al laccio emostatico se il sanguinamento continua."
+  ],
+  "warnings": [
+    "La sola pressione diretta è inadeguata per i sanguinamenti arteriosi: ricorrere alla medicazione della ferita o al laccio emostatico.",
+    "Le ferite giunzionali (inguine, ascella, collo) richiedono la medicazione della ferita, non la sola pressione esterna."
+  ],
+  "follows": [],
+  "precedes": [
+    "medicazione delle ferite",
+    "applicazione-laccio emostatico"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Solo pressione proporzionale. Evitare di comprimere il torace nei neonati."
+    },
+    "obstetric": {
+      "note": "Evitare una compressione pesante sull'utero gravido. Utilizzare la medicazione laterale in caso di ferita giunzionale vicino al bacino."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

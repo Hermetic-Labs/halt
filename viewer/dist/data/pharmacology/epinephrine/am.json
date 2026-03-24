@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "ኤፒንፍሪን (አድሬናሊን)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "አድሬናሊን"
+  ],
+  "description": "ኢንዶጂን ካቴኮላሚን ከአልፋ እና ከቤታ አድሬነርጂክ እንቅስቃሴ ጋር። ለአናፊላክሲስ እና ለልብ ማቆም የመጀመሪያ ደረጃ ሕክምና። በአናፊላክሲስ ውስጥ፣ IM ጭን ከ IV (ከአስተማማኝ፣ ተመጣጣኝ ውጤታማነት) ይመረጣል። በአናፊላክሲስ ውስጥ ለ IV መዳረሻ አይዘገዩ.",
+  "indications": [
+    "አናፊላክሲስ (የመጀመሪያ መስመር)",
+    "የልብ ድካም -- pulseless VF/VT/PEA/asystole",
+    "ከባድ bronchospasm",
+    "ሃይፖታቴሽን ወደ ፈሳሾች የሚከላከል"
+  ],
+  "dose": "Anaphylaxis: 0.3-0.5 mg IM (anterolateral thigh) | ራስ-ሰር መርፌ 0.3 mg IM. ከq5-15 ደቂቃ PRN መድገም። የልብ መታሰር፡ 1 mg IV/IO q3-5 ደቂቃ በሲፒአር ጊዜ። ከባድ bronchospasm: 0.3 mg IM.",
+  "route": [
+    "IM",
+    "IV",
+    "IO"
+  ],
+  "window": "በአናፊላክሲስ: ወዲያውኑ IM ይስጡ - ለ IV መዳረሻ አይዘገዩ.",
+  "contraindications": [
+    "ለሕይወት አስጊ በሆነ የአደጋ ጊዜ ውስጥ ምንም ፍጹም ተቃራኒዎች የሉም"
+  ],
+  "warnings": [
+    "IV epinephrine ለአናፊላክሲስ ጥቅም ላይ መዋል ያለበት በልብ መቆራረጥ ወይም በከባድ ድንጋጤ ውስጥ ብቻ ነው -- አደገኛ ለታወቀ በሽተኛ IV ግፊት ከተደረገ።",
+    "Extravasation ቲሹ necrosis ያስከትላል - IV patency ያረጋግጡ.",
+    "የ myocardial ኦክስጅን ፍላጎትን ይጨምራል -- ከመያዣ ውጭ በሚታወቀው የልብ ህመም ላይ ጥንቃቄ ያድርጉ።"
+  ],
+  "regional_names": {
+    "generic": "epinephrine",
+    "UK": "አድሬናሊን"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "አናፊላክሲስ፡ 0.01 mg/kg IM (ከፍተኛ 0.5 mg)። EpiPen Jr (0.15 mg) ለ 15-30 ኪ.ግ. የልብ ድካም: 0.01 mg / kg IV / IO q3-5 ደቂቃ.",
+      "note": "በክብደት ላይ የተመሠረተ መጠን ይጠቀሙ። Broselow ቴፕ ማጣቀሻ ይመከራል."
+    },
+    "obstetric": {
+      "note": "ደረጃውን የጠበቀ አናፊላክሲስ መጠን ይጠቀሙ -- የእናቶች ሕልውና ከሁሉም በላይ ነው። Epinephrine በእርግዝና ወቅት ለሕይወት አስጊ ለሆኑ ድንገተኛ አደጋዎች ደህንነቱ የተጠበቀ ነው።"
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

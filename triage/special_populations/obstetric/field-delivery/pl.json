@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Awaryjna dostawa terenowa",
+  "category": "obstetric",
+  "skill_level": "medyk bojowy",
+  "time_estimate": "Różnie -- 20+ min",
+  "description": "Zarządzanie nagłymi lub nieplanowanymi dostawami w surowym środowisku.",
+  "equipment": [
+    "rękawiczki",
+    "koce-z czystej tkaniny",
+    "zaciski lub krawaty do sznurków",
+    "nożyczki",
+    "gruszka-strzykawka"
+  ],
+  "steps": [
+    "Ułóż matkę w pozycji leżącej lub półleżącej. W przypadku nieprzytomności preferowane jest przechylenie na lewy bok (zapobiega uciskowi aorty i żyły głównej).",
+    "Kontroluj ułożenie głowy – podeprzyj dłonią. NIE ciągnij.",
+    "Po dostarczeniu głowy sprawdź, czy nie ma pępka karkowego (wokół szyi). Jeśli występuje, wsuń się przez głowę. Jeśli jest ciasno, zaciśnij i przetnij.",
+    "Odssij usta, a następnie nos strzykawką gruszkową, jeśli jest dostępna.",
+    "Prowadź wprowadzanie przedniego barku poprzez delikatne pociągnięcie głowy w dół, a następnie w górę w przypadku tylnego barku.",
+    "Dostarcz ciało - zanotuj czas dostawy.",
+    "Natychmiast osusz i ogrzej niemowlę. Pobudzaj poprzez masowanie pleców.",
+    "Zaciśnij i przetnij pępowinę (odczekaj 1-2 minuty, jeśli niemowlę jest stabilne).",
+    "Dostarcz łożysko delikatnie, kontrolowanym naciągiem – NIE używaj siły.",
+    "Podaj oksytocynę (jeśli jest dostępna), aby zapobiec krwotokowi poporodowemu po porodzie łożyska.",
+    "Oceń, czy nie ma krwotoku poporodowego – masaż dna macicy, w razie potrzeby ucisk oburęczny.",
+    "Ocenić punktację Apgar po 1 i 5 minutach."
+  ],
+  "warnings": [
+    "Jeśli dostawa nie jest bliska – NIE podejmuj próby. Preferowany jest szybki MEDEVAC.",
+    "Dystocja barkowa: jeśli barki utknęły, zastosuj manewr McRobertsa (hiperfleksja bioder) i ucisk nadłonowy.",
+    "Krwotok poporodowy jest główną przyczyną śmierci matek, której można zapobiec – przygotuj oksytocynę."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "冲击指数",
+  "category": "circulatory",
+  "description": "血流动力学稳定性的快速单数指标。计算公式为 HR/SBP。正常值为0.5-0.7。",
+  "instructions": "将心率除以收缩压。冲击指数上升表明情况恶化。",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "正常——血流动力学稳定"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "轻度休克——密切监测"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "中度休克——静脉注射、输液"
+    },
+    {
+      "range": ">1.4",
+      "label": "严重休克——立即复苏、血制品"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "产科休克指数 (OSI) 使用相同的公式。 SI > 0.9 在怀孕患者中具有重要意义。怀孕期间的正常心率较高（80-100 bpm）。"
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

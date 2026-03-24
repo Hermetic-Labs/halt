@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t490x6d",
+    "icd10":  "T490X6D",
+    "name":  "Underdosing of local antifungal, anti-infective and anti-inflammatory drugs, subsequent encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Underdosing of local antifungal, anti-infective and anti-inflammatory drugs, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

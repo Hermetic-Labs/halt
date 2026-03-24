@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "Escala AVPU",
+  "category": "neurological",
+  "description": "Avaliação rápida da consciência em 4 níveis. Mais rápido que o GCS para triagem inicial.",
+  "instructions": "Avalie o nível mais alto de resposta que o paciente demonstra.",
+  "scoring": [
+    {
+      "code": "Um",
+      "label": "Alerta",
+      "description": "O paciente está acordado, consciente e respondendo normalmente"
+    },
+    {
+      "code": "V",
+      "label": "Voz",
+      "description": "Paciente responde apenas à estimulação verbal"
+    },
+    {
+      "code": "P",
+      "label": "Dor",
+      "description": "O paciente responde apenas a estímulos dolorosos (atrito esternal, pressão no leito ungueal)"
+    },
+    {
+      "code": "Você",
+      "label": "Sem resposta",
+      "description": "Nenhuma resposta a qualquer estímulo – é necessária intervenção imediata nas vias aéreas"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "Um",
+      "triage": "Estável – continuar avaliação"
+    },
+    {
+      "code": "V",
+      "triage": "Relativo - monitorizar as vias aéreas"
+    },
+    {
+      "code": "P",
+      "triage": "Crítico – via aérea em risco, ECG normalmente <= 8"
+    },
+    {
+      "code": "Você",
+      "triage": "Imediato – gerencie as vias aéreas agora"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

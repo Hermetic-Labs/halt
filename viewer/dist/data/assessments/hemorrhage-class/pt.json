@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Classificação de hemorragia (Classe I-IV)",
+  "category": "circulatory",
+  "description": "Classificação de hemorragia ATLS por perda sanguínea estimada e resposta fisiológica.",
+  "instructions": "Estime a perda de sangue e combine os sinais fisiológicos com a aula. A urgência do tratamento aumenta com a aula.",
+  "scoring": [
+    {
+      "class": "Eu",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Normais",
+      "rr": "14-20",
+      "mental_status": "Normais",
+      "treatment": "Observe, fluidos PO, se possível"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Normais",
+      "rr": "20-30",
+      "mental_status": "Ansioso",
+      "treatment": "Acesso IV, cristaloide isotônico"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Diminuiu",
+      "rr": "30-40",
+      "mental_status": "Confuso",
+      "treatment": "Fluidos intravenosos + hemoderivados, controle imediato de hemorragia"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Muito baixo",
+      "rr": ">40",
+      "mental_status": "Letárgico/inconsciente",
+      "treatment": "Controle imediato da hemorragia cirúrgica – risco de vida"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "As crianças compensam por mais tempo antes de descompensar. A classe III/IV pode apresentar PA quase normal até colapso repentino. Confie na taquicardia e no estado mental em vez da PA."
+    },
+    "obstetric": {
+      "note": "Pacientes grávidas apresentam aumento de 40-50% no volume sanguíneo. Pode tolerar perdas maiores antes de apresentar sinais. O sofrimento fetal pode preceder os sinais maternos."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Versed",
+    "Nayzilam"
+  ],
+  "description": "Benzodiazepine fohy miasa miaraka amin'ny fanombohana haingana. Aleo ho an'ny fampitoniana fomba fitsaboana, fitsaboana mialoha ny RSI, ary ny fitantanana ny fanenjehana IM/IN. Ny làlan'ny IM sy ny intranasal dia manome tombony lehibe amin'ny sehatry ny sehatra.",
+  "indications": [
+    "Fitsaboana ara-dalàna",
+    "RSI mialoha ny fanafody (miaraka amin'ny ketamine)",
+    "Fitantanana ny fisamborana (IM/IN rehefa tsy misy IV)",
+    "Fitantanana korontana"
+  ],
+  "dose": "Sedation: 0,05-0,1 mg/kg IV titrated. Fomba: 1-5 mg IV tosika miadana. IM: 0,2 mg/kg. IN: 0,2 mg/kg (max 10 mg). Status epilepticus IM: 10 mg IM (olon-dehibe).",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN"
+  ],
+  "window": "",
+  "contraindications": [
+    "glaucome tery zoro tery",
+    "Fimamoana toaka mahery vaika miaraka amin'ny marimaritra iraisana",
+    "hypersensitivity fantatra"
+  ],
+  "warnings": [
+    "Fahaketrahana amin'ny taovam-pisefoana -- manara-maso ny lalan-drivotra, manana agent reversal (flumazenil) raha misy.",
+    "Hypotension indrindra miaraka amin'ny opioid coadministration.",
+    "Ny tsindrona IV haingana dia miteraka apnea - manosika moramora."
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Sedation: 0,05-0,1 mg/kg IV. IM: 0,1-0,2 mg/kg. IN: 0,2-0,3 mg/kg. Fanesorana IM: 0,2 mg/kg (max 10 mg).",
+      "note": "IN route tena ilaina amin'ny ankizy -- misoroka ny fidirana IV."
+    },
+    "obstetric": {
+      "note": "Miampita ny placenta. Mety ho sedation neonatal. Mampiasà fatra mahomby faran'izay kely indrindra; manara-maso ny zaza vao teraka raha omena akaiky ny fiterahana."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

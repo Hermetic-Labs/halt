@@ -1,0 +1,44 @@
+﻿{
+    "id":  "tourniquet-application",
+    "name":  "Tourniquet Application (Combat Application Tourniquet -- CAT)",
+    "category":  "hemorrhage-control",
+    "skill_level":  "any-responder",
+    "time_estimate":  "30-60 sec",
+    "description":  "Definitive hemorrhage control for life-threatening extremity bleeding. Apply early -- do not delay.",
+    "equipment":  [
+                      "cat-tourniquet",
+                      "permanent-marker"
+                  ],
+    "steps":  [
+                  "Apply tourniquet 2-3 inches (5-7 cm) proximal (above) the wound -- over clothing is acceptable.",
+                  "Route the self-adhering band around the limb and thread through the friction adaptor buckle.",
+                  "Pull the band tight and secure it back on itself.",
+                  "Twist the windlass rod until bleeding stops or distal pulse is absent.",
+                  "Lock the windlass in the windlass clip.",
+                  "Apply the windlass strap over the windlass rod to secure.",
+                  "Write the time of application directly on the tourniquet (use marker) AND on the TCCC card.",
+                  "Expose and re-evaluate the wound. Reassess after 5 minutes."
+              ],
+    "warnings":  [
+                     "Do NOT remove a tourniquet once applied in the field -- only trained medical personnel in a controlled setting.",
+                     "Time is critical: tourniquet \u003e2 hours significantly increases limb loss risk. Log time immediately.",
+                     "Do NOT apply over a joint. If limb has wounds at multiple levels, apply proximal to all wounds.",
+                     "Improvised tourniquets (belts, ropes) are significantly less effective."
+                 ],
+    "follows":  [
+                    "direct-pressure",
+                    "wound-packing"
+                ],
+    "precedes":  [
+
+                 ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  "Use narrow pediatric tourniquet if available. Standard CAT can be used but tighten with care. Limbs are smaller -- check distal pulse carefully."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Standard application for extremity wounds. Do not apply to abdomen or pelvis."
+                                    }
+                  },
+    "source":  "TCCC / JTS CPG / CoTCCC"
+}

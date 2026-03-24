@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicillin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "Trimox"
+  ],
+  "description": "Antibiotika aminopenicillin midadasika. Antibiotika prophylactic am-bava ho an'ny otrikaretina ratra. Ampahany amin'ny fonosana pilina TCCC ho an'ny fisorohana ny ratra amin'ny ratra tsy dia mafy.",
+  "indications": [
+    "Fisorohana ny otrikaretina ratra (ratra malefaka sy antonony, fonosana pilina am-bava)",
+    "Otrikaretina tavy malefaka",
+    "Aretina amin'ny taovam-pisefoana"
+  ],
+  "dose": "500 mg PO isaky ny 8 ora x 7 andro (prophylaxis ratra). 875 mg PO isaky ny 12 ora.",
+  "route": [
+    "PO"
+  ],
+  "window": "Atombohy ao anatin'ny 3 ora aorian'ny ratra ho an'ny fisorohana ny ratra.",
+  "contraindications": [
+    "Allergie amin'ny penisilinina fantatra (ampiasao ny doxycycline)",
+    "Mononucleose (risika ny maimaika)"
+  ],
+  "warnings": [
+    "Raha tsy mahazaka penicillin: soloy doxycycline 100mg PO BID.",
+    "Lalana am-bava fotsiny -- mampiasa antibiotika IV (cefazolin/ciprofloxacin) raha ratra mafy na raha tsy leferina ny am-bava."
+  ],
+  "regional_names": {
+    "generic": "amoxicillin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg / kg / andro mizara q8h (max 500 mg / dose). Ampiasao ny reference Broselow mifototra amin'ny lanja.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Safe amin'ny fitondrana vohoka. Aleo kokoa noho ny doxycycline (izay contraindicated amin'ny fitondrana vohoka)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

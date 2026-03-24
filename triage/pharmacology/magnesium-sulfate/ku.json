@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Sulfatê Magnesium (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Derziyê Sulfatê Magnesium"
+  ],
+  "description": "Depresant û antîkonvulsant CNS-ê ji bo pêşîgirtin û dermankirina destgirtinên eklamptîk (sergirtinên di ducaniyê de ji pêş-eklampsiya) têne bikar anîn. Di heman demê de ji bo astima giran û torsades de pointes jî tê bikar anîn. Rêza yekem ji bo eclampsia li ser benzodiazepines.",
+  "indications": [
+    "Eclampsia (pêşîlêgirtin û dermankirina girtinê di pêşeklampsiya giran de)",
+    "Pêşîgirtina pêşeklampsiyê (taybetmendiyên giran)",
+    "Torsades de Pointes (V-taşa polymorphic ji hîpomagnesemiya)",
+    "Astima akût a giran (alîkar)"
+  ],
+  "dose": "Doza barkirinê ya Eclampsia: 4-6g IV hêdî hêdî di nav 20 hûrdeman de. Lênêrîn: 1-2g/saet înfuzyonê IV. Heger sitandin dubare bibe: 2-4g IV di nav 5 min de. Barkirina IM (heke IV tune): 5g IM her qûnek (bi tevahî 10 g) bi hevdemî.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "Di destpêka girtinê de an bi tespîtkirina taybetmendiyên giran ên pre-eklampsiya dest pê bikin.",
+  "contraindications": [
+    "Myasthenia gravis",
+    "Kêmasiyên rêgirtina dil",
+    "Kêmasiya gurçikê (kom dike -- dozê kêm dike)"
+  ],
+  "warnings": [
+    "Nîşanên jehrê: windabûna refleksa patellar (nîşana yekem, 7-10 mEq/L), depresyona nefesê (> 10 mEq/L), girtina dil (> 15 mEq/L).",
+    "Her 15 hûrdem carekê refleksên patellar bişopînin -- windabûna refleksê = înfuzyonê rawestînin.",
+    "ANTIDOTE ji bo jehrê: Kalsiyûm glukonat 1 g IV di nav 3 hûrdeman de.",
+    "Di kêmbûna gurçikê de dozê kêm bikin - hilberîna mîzê bişopînin."
+  ],
+  "regional_names": {
+    "generic": "sulfate magnesium"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg IV di nav 10-20 hûrdeman de (max 2g). Astima giran: 25-75 mg/kg IV (max 2g).",
+      "note": "Kêm caran ji bo sergirtinê di nexweşên zarokan ên ne-dayikbûnê de tê bikar anîn - eclampsia nîşana bingehîn e."
+    },
+    "obstetric": {
+      "note": "Nîşana seretayî. Placenta derbas dike - hypermagnesemia ya neonatal gengaz e. Doza neonatal heke depresyona nefesê: Kalsiyûm glukonat 100 mg/kg IV. Tîma NICU ya karanîna magnezyûmê ya dayikê agahdar bikin."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

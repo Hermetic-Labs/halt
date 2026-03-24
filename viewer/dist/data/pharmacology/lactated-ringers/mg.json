@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Vahaolana amin'ny lactated Ringer (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Vahaolana Hartmann",
+    "Ny tsindrona Ringer Lactate"
+  ],
+  "description": "Ny fluid isotonic crystalloid voalanjalanja. Aleo kokoa noho ny sira ara-dalàna ho an'ny famelomana ratram-po be dia be -- mifandanja kokoa ara-batana, tsy dia atahorana ho voan'ny acidose hyperchloremic. Misy sodium, potassium, calcium, lactate.",
+  "indications": [
+    "Resuscitation trauma (kristaloid tiana amin'ny fahatairana hemorrhagic)",
+    "Famelomana ranon-javatra mandoro (Forum Parkland)",
+    "Hypovolemia",
+    "Fikarakarana ranon-javatra"
+  ],
+  "dose": "Fahatairana hemorrhagic: ferana hatramin'ny 1L max alohan'ny hidirana amin'ny vokatra ra. Kendrena SBP 80-90 mmHg traotraoka, 90 mmHg TBI. May (Parkland): 4 mL x kg x %TBSA no may nandritra ny 24h (antsasany tamin'ny 8h voalohany).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hyperkalemia (misy potasioma)",
+    "Ny tsy fahombiazan'ny atiny mafy (miharatsy ny metabolisma laktate -- havana)"
+  ],
+  "warnings": [
+    "Mbola kristaly -- tsy afaka mitondra oksizenina. Ny vokatra ra dia tsara indrindra amin'ny fahatafintohinana hemorrhagic. LR dia tetezana ihany.",
+    "Aza afangaro amin'ny vokatra ra amin'ny andalana mitovy (ny kalsioma no mahatonga ny clotting).",
+    "AZA mifofofofo be loatra amin'ny trauma miditra alohan'ny hifehezana ny rà mandriaka."
+  ],
+  "regional_names": {
+    "generic": "lactated Ringer's solution",
+    "UK": "Vahaolana Hartmann"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 mL/kg bolus, avereno jerena. Aleo kokoa noho ny NS noho ny trauma pediatric.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Ny fluid IV amin'ny fiterahana sy ny fiterahana. Mety amin'ny famelomana ny rà mandriaka."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

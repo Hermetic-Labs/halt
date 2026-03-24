@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t8183xs",
+    "icd10":  "T8183XS",
+    "name":  "Persistent postprocedural fistula, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Persistent postprocedural fistula, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

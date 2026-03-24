@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t4146xa",
+    "icd10":  "T4146XA",
+    "name":  "Underdosing of unspecified anesthetics, initial encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Underdosing of unspecified anesthetics, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

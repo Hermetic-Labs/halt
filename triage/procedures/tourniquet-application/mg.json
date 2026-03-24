@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Fampiharana Tourniquet (Tourniquet Application Combat -- CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "misy mamaly",
+  "time_estimate": "30-60 seg",
+  "description": "Fanaraha-maso ny fandatsahan-drà voafaritra ho an'ny fandehanan-drà matin'ny fiainana. Ampiharo aloha -- aza tara.",
+  "equipment": [
+    "cat-tourniquet",
+    "permanent-marker"
+  ],
+  "steps": [
+    "Asio tourniquet 2-3 santimetatra (5-7 sm) proximal (ambony) ny fery - eo ambonin'ny akanjo dia azo ekena.",
+    "Ampitahao amin'ny rantsam-batany sy ny kofehy amin'ny alàlan'ny fehikibo adaptatera friction.",
+    "Sintonina mafy ilay bandy ary avereno amin'ny tenany.",
+    "Ahodinkodina ny tsora-drivotra mandra-pijanonan'ny rà mandriaka na tsy misy ny fiposahan'ny rivotra.",
+    "Ampidiro ao amin'ny clip ny fitaratra.",
+    "Apetaho eo ambonin'ny tadin'ny windlass ny tadin-drivotra mba hahazoana antoka.",
+    "Soraty mivantana eo amin'ny tourniquet (fampiasàna marika) SY amin'ny karatra TCCC ny fotoana fampiharana.",
+    "Asehoy ary avereno jerena ny ratra. Avereno averina rehefa afaka 5 minitra."
+  ],
+  "warnings": [
+    "AZA manaisotra tourniquet rehefa ampiharina eny an-kianja -- mpiasan'ny mpitsabo voaofana ihany amin'ny toerana voafehy.",
+    "Zava-dehibe ny fotoana: ny tourniquet> 2 ora dia mampitombo be ny mety ho fahavoazan'ny rantsambatana. Misoratra anarana avy hatrany.",
+    "AZA ampiharina amin'ny tonon-taolana. Raha misy ratra amin'ny rantsambatana maromaro dia ampiharo eo akaikin'ny ratra rehetra.",
+    "Ny tourniquets namboarina (fehikibo, tady) dia tsy dia mahomby loatra."
+  ],
+  "follows": [
+    "fanerena mivantana",
+    "famenoana ratra"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Mampiasà tourniquet pediatric tery raha misy. Ny CAT mahazatra dia azo ampiasaina fa henjana tsara. Kely kokoa ny rantsambatana -- jereo tsara ny pulse distal."
+    },
+    "obstetric": {
+      "note": "Fampiharana mahazatra ho an'ny ratra amin'ny tendrony. Aza atao amin'ny kibo na ny valahany."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oxytocin",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocin",
+    "Syntocinon"
+  ],
+  "description": "Ihomoni ye-peptide engapheliyo. Umgca wokuqala we-uterotonic wokuthintela kunye nokunyangwa kwe-postpartum hemorrhage (PPH). Ibangela ukunyanzeliswa kwesibeleko kunye nokunciphisa ukulahleka kwegazi emva kokunikezelwa. Inikwe EMVA kokunikezelwa kwe-placenta.",
+  "indications": [
+    "Ukuthintela ukopha kwangemva kokubeleka (isiqhelo emva kokunikezelwa)",
+    "Unyango lwe-postpartum hemorrhage (i-uterine atony)",
+    "Ukuqaliswa komsebenzi (ulungiselelo olulawulwayo kuphela)"
+  ],
+  "dose": "Uthintelo lwe-PPH: Iiyunithi ezili-10 ze-IM ngokukhawuleza emva kokunikezelwa kwe-placenta (indlela ekhethwayo yasendle). Unyango lwe-PPH: iiyunithi ze-10-40 kwi-1L IV, zifake kwi-40-80 mU / min. Ukuba i-IV ayifumaneki: iiyunithi ezili-10 ze-IM.",
+  "route": [
+    "IV",
+    "I-IM"
+  ],
+  "window": "Nika EMVA kokubeleka kwe-placenta--ukunika ngaphambi kokuba i-placenta ibeleke inokubamba i-placenta.",
+  "contraindications": [
+    "Ngaphambi kokunikezelwa kwe-placenta (inokuthi ibambe i-placenta)",
+    "Uxinzelelo lwe-Fetal kunye nentloko engakhange inikezelwe",
+    "I-hypersensitivity eyaziwayo"
+  ],
+  "warnings": [
+    "NIKEZA EMVA KOKWENZIWA KWE-placenta -- ukubambisa i-placenta yingxaki ebeka ubomi esichengeni.",
+    "I-IV bolus inokubangela i-hypotension enzima kunye ne-cardiac arrhythmia-hlala ihlanjululwa kwaye ifake ngokukhawuleza.",
+    "Impembelelo ye-Antidiuretic enemiqulu emikhulu --monitha i-hyponatremia."
+  ],
+  "regional_names": {
+    "generic": "oxytocin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A -- ukusetyenziswa kokubelekisa kuphela.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "I-uterotonic yokuqala. Ukuba i-atony yesibeleko ayiphenduli, qwalasela i-misoprostol, i-tranexamic acid (TXA), i-bimanual uterine compression, kunye ne-MEDEVAC esheshayo."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

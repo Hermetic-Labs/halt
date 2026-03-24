@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s35232a",
+    "icd10":  "S35232A",
+    "name":  "Major laceration of inferior mesenteric artery, initial encounter",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Major laceration of inferior mesenteric artery, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Nasofaryngeale luchtweg (NPA) inbrengen",
+  "category": "airway",
+  "skill_level": "gevechtsredder",
+  "time_estimate": "1 minuut",
+  "description": "Inbrengen van een flexibel neusluchtweghulpmiddel om de luchtwegen open te houden bij een bewusteloze of halfbewuste patiënt.",
+  "equipment": [
+    "npa-met-veiligheidsspeld",
+    "smeermiddel"
+  ],
+  "steps": [
+    "Selecteer de juiste NPA-maat (meet van neusgat tot oorlel).",
+    "Smeer de NPA rijkelijk in met wateroplosbaar glijmiddel of zoutoplossing.",
+    "Steek de veiligheidsspeld door de flens als deze nog niet aanwezig is (voorkomt aspiratie).",
+    "Breng het voorzichtig in het rechter neusgat (afschuining richting septum), parallel aan het gehemelte.",
+    "Ga verder totdat de flens tegen het neusgat rust.",
+    "Herpositioneer de patiënt (herstelpositie als er geen problemen met de wervelkolom zijn) en beoordeel de luchtwegen opnieuw.",
+    "Als u weerstand ondervindt, probeer dan het linkerneusgat."
+  ],
+  "warnings": [
+    "Gecontra-indiceerd bij vermoedelijke schedelbasisfractuur (wasbeerogen, Battle-teken, CSF-rinorroe).",
+    "NPA is het beste eerste hulpmiddel voor de luchtwegen van een bewusteloze patiënt; OPA kan braken veroorzaken bij halfbewuste patiënten."
+  ],
+  "source": "TCCC / JTS CPG"
+}

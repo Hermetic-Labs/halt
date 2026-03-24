@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicillin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "I-Trimox"
+  ],
+  "description": "I-Broad-spectrum aminopenicillin amayeza okubulala iintsholongwane. I-Oral prophylactic antibiotics yosulelo lwenxeba. Inxalenye ye-TCCC yokulwa neepilisi ipakethe ye-nxeba prophylaxis kukulimala okungamanduleli.",
+  "indications": [
+    "Iprophylaxis yosulelo lwamanxeba (amanxeba aphakathi, iipilisi zomlomo)",
+    "Usulelo kwiithishu ezithambileyo",
+    "Usulelo lomgudu wokuphefumla"
+  ],
+  "dose": "I-500 mg PO rhoqo kwiiyure ze-8 x iintsuku ze-7 (i-nxeba prophylaxis). I-875 mg PO nganye kwiiyure ze-12 enye.",
+  "route": [
+    "PO"
+  ],
+  "window": "Qalisa kwiiyure ze-3 zokulimala kwi-nxeba prophylaxis.",
+  "contraindications": [
+    "Ukwaliwa yipenicillin okwaziwayo (sebenzisa idoxycycline endaweni yoko)",
+    "I-Mononucleosis (umngcipheko wokuqhambuka)"
+  ],
+  "warnings": [
+    "Ukuba i-penicillin iyalamba: endaweni ye-doxycycline 100mg PO BID.",
+    "Indlela yomlomo kuphela -- sebenzisa i-IV antibiotics (cefazolin/ciprofloxacin) kumanxeba amabi okanye ukuba umlomo awunyamezelwa."
+  ],
+  "regional_names": {
+    "generic": "amoxicillin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "I-25-45 mg / kg / ngosuku ihlukaniswe i-q8h (ubuninzi be-500 mg / umthamo). Sebenzisa ireferensi yeBrowselow esekwe kubunzima.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Ikhuselekile ekukhulelweni. Ikhethwa ngaphezu kwe-doxycycline (echaswa ekukhulelweni)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

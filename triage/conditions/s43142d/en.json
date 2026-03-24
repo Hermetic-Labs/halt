@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s43142d",
+    "icd10":  "S43142D",
+    "name":  "Inferior dislocation of left acromioclavicular joint, subsequent encounter",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Inferior dislocation of left acromioclavicular joint, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

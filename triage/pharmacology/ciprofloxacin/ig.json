@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Ọgwụ nje fluoroquinolone nwere mkpuchi gram-adịghị mma. A na-eji ya maka ọrịa ọnya dị njọ, na-abanye n'ime trauma abdominal (GI flora cover), na ọrịa urinary tract. PO na IV dị.",
+  "indications": [
+    "Ọkụ na-abanye n'ime afọ (GI decontamination)",
+    "Ọrịa ọnya dị njọ",
+    "Ọrịa gram-adịghị mma",
+    "Ọrịa urinary tract"
+  ],
+  "dose": "400 mg IV q8-12h. PO: 500-750 mg q12h.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "A maara fluoroquinolone allergies",
+    "Ụmụaka na ndị nọ n'afọ iri na ụma (afọ 18) (ihe ize ndụ nke tendinopathy)",
+    "Ime ime (ndị ikwu)"
+  ],
+  "warnings": [
+    "Ihe egwu mgbawa akwara, ọkachasị akwara Achilles. Kwụsị ma ọ bụrụ na mgbu akwara amalitela.",
+    "Nwere ike ịgbatị oge QT -- ịkpachara anya na ọgwụ ndị ọzọ na-agbatị QT.",
+    "Zere ime ime ma ọ bụrụ na ụzọ ọzọ dị."
+  ],
+  "regional_names": {
+    "generic": "ciprofloxacin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg / kg IV q8-12h (max 400 mg / dose). PO: 10-20 mg / kg q12h (karịa 750 mg / dose).",
+      "note": "Jiri naanị mgbe uru karịrị ihe ize ndụ tendinopathy. Debe maka ọrịa siri ike."
+    },
+    "obstetric": {
+      "note": "Zere ime ime ma ọ bụrụ na ụzọ ọzọ dị. Jiri naanị maka ọrịa na-eyi ndụ egwu ebe uru karịrị ihe egwu."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

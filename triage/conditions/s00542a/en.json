@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s00542a",
+    "icd10":  "S00542A",
+    "name":  "External constriction of oral cavity, initial encounter",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "External constriction of oral cavity, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

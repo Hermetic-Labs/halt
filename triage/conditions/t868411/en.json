@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t868411",
+    "icd10":  "T868411",
+    "name":  "Corneal transplant failure, right eye",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Corneal transplant failure, right eye",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Attelle improvisée",
+  "category": "ortho-stabilization",
+  "skill_level": "De base",
+  "time_estimate": "5-10 minutes",
+  "description": "Immobilisez les fractures à l’aide des matériaux disponibles pour éviter d’autres blessures, réduire la douleur et limiter la perte de sang dans les tissus environnants. Attelle en position trouvée à moins que la circulation ne soit compromise – puis redressez-la doucement.",
+  "equipment": [
+    "Attelle SAM (de préférence)",
+    "Magazines roulés, bâtons, piquets de tente (terrain improvisé)",
+    "Cravate / bandages triangulaires",
+    "Rembourrage (vêtements, mousse)",
+    "Ruban ou bandes de tissu"
+  ],
+  "steps": [
+    "Exposer et évaluer la blessure – vérifier la circulation, la sensation, le mouvement (CSM) en aval de la fracture avant et après.",
+    "Contrôlez tout saignement actif avant de poser une attelle.",
+    "Rembourrez généreusement les protubérances osseuses pour prévenir les escarres.",
+    "Sélectionnez un matériau d’attelle suffisamment long pour immobiliser l’articulation au-dessus ET en dessous de la fracture.",
+    "Positionnez le membre dans une position de confort ou d’alignement anatomique – ne forcez pas.",
+    "Appliquez un rembourrage, puis du matériel d'attelle. Fixez avec des bandages ou des bandes de tissu.",
+    "Ne pas envelopper trop étroitement – ​​laisser le bout des doigts/orteils exposés au moniteur CSM.",
+    "Réévaluez le CSM après l'application - desserrez-le immédiatement si la circulation est altérée.",
+    "Surélevez le membre si possible pour réduire l’enflure.",
+    "Documenter l’heure d’application de l’attelle."
+  ],
+  "warnings": [
+    "Réévaluez le CSM toutes les 15 à 30 minutes : un gonflement peut transformer une attelle correcte en garrot.",
+    "Fractures ouvertes : couvrir d'abord la plaie avec un pansement stérile, puis une attelle. Ne repoussez PAS l’os.",
+    "Les fractures du fémur peuvent perdre 1 à 2 L de sang dans la cuisse – traiter de manière agressive en cas de choc.",
+    "Fracture vertébrale suspectée : n'improvisez PAS une attelle - minimisez les mouvements, maintenez la stabilisation en ligne."
+  ],
+  "follows": [
+    "pression directe",
+    "application de garrot"
+  ],
+  "precedes": [
+    "évacuation sanitaire-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Les cartilages de croissance chez les enfants sont plus faibles que les ligaments - une fracture suspecte même avec un mécanisme léger. Les fractures du tore (boucle) peuvent présenter un gonflement minime."
+    },
+    "obstetric": {
+      "note": "Une attelle standard s'applique. Évitez une position prolongée en décubitus dorsal – inclinaison latérale gauche si vous êtes allongé à plat."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

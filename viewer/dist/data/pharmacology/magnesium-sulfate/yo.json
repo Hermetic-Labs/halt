@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Sulfate magnẹsia (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Abẹrẹ iṣuu magnẹsia"
+  ],
+  "description": "Ibanujẹ CNS ati anticonvulsant ti a lo fun idena ati itọju awọn ikọlu eclamptic (awọn ijagba ninu oyun lati iṣaaju-eclampsia). Tun lo fun ikọ-fèé nla ati torsades de pointes. Laini akọkọ fun eclampsia lori awọn benzodiazepines.",
+  "indications": [
+    "Eclampsia (idena ijagba ati itọju ni pre-eclampsia ti o lagbara)",
+    "Pre-eclampsia prophylaxis (awọn ẹya ti o lagbara)",
+    "Torsades de Pointes (polymorphic V-tach lati hypomagnesemia)",
+    "Ikọ-fèé nla (apapọ)"
+  ],
+  "dose": "Iwọn ikojọpọ Eclampsia: 4-6g IV titari lọra ju iṣẹju 20 lọ. Itọju: 1-2g / wakati IV idapo. Ti ijagba ba nwaye: 2-4g IV ju iṣẹju marun 5 lọ. IM ikojọpọ (ti ko ba si IV): 5g IM kọọkan buttock (10g lapapọ) ni nigbakannaa.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "Bẹrẹ ni ibẹrẹ ijagba tabi ni ayẹwo ti awọn ẹya iṣaaju-eclampsia ti o lagbara.",
+  "contraindications": [
+    "Myasthenia gravis",
+    "Awọn abawọn idari ọkan ọkan",
+    "Ikuna kidirin (kojọpọ - dinku iwọn lilo)"
+  ],
+  "warnings": [
+    "Awọn ami majele: isonu ti patellar reflex (ami akọkọ, 7-10 mEq / L), ibanujẹ atẹgun (> 10 mEq / L), idaduro ọkan (> 15 mEq / L).",
+    "Bojuto patellar reflexes ni gbogbo iṣẹju 15 -- isonu ti reflex = idaduro idapo.",
+    "ANTIDOTE fun majele ti: Calcium gluconate 1g IV ju iṣẹju mẹta lọ.",
+    "Din iwọn lilo dinku ni ailagbara kidirin -- ṣe atẹle iṣelọpọ ito."
+  ],
+  "regional_names": {
+    "generic": "iṣuu magnẹsia imi-ọjọ"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg IV ju 10-20 min (max 2g). Ikọ-fèé nla: 25-75 mg/kg IV (max 2g).",
+      "note": "Ṣọwọn lilo fun ijagba ni awọn alaisan ti kii ṣe obstetric paediatric - eclampsia jẹ itọkasi akọkọ."
+    },
+    "obstetric": {
+      "note": "Itọkasi akọkọ. Rekọja ibi-ọmọ - hypermagnesemia ọmọ tuntun ṣee ṣe. Iwọn ọmọ ikoko ti ibanujẹ atẹgun: kalisiomu gluconate 100 mg / kg IV. Sọ fun ẹgbẹ NICU ti lilo iṣuu magnẹsia iya."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Asam Traneksamat (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Siklokapron",
+    "Daftar"
+  ],
+  "description": "Agen antifibrinolitik yang menghambat pemecahan bekuan darah. Secara signifikan mengurangi angka kematian akibat syok hemoragik bila diberikan sejak dini. Direkomendasikan oleh CoTCCC untuk semua korban dengan perdarahan signifikan atau berisiko mengalami perdarahan signifikan.",
+  "indications": [
+    "Perdarahan eksternal atau dugaan internal yang signifikan",
+    "Syok hemoragik",
+    "Risiko tinggi pendarahan (mekanisme cedera)"
+  ],
+  "dose": "1g IV/IO selama 10 menit, diikuti dengan 1g IV/IO selama 8 jam. Jika IV/IO tidak tersedia: 650mg PO x2 (total 1,3g) -- opsi TCCC PO.",
+  "route": [
+    "IV",
+    "aku",
+    "PO"
+  ],
+  "window": "HARUS diberikan dalam waktu 3 jam setelah cedera. Lebih dari 3 jam, TXA mungkin MENINGKATKAN angka kematian -- jangan berikan.",
+  "contraindications": [
+    "Riwayat penyakit tromboemboli (DVT, PE, stroke)",
+    "Koagulasi Intravaskular Diseminata (DIC)",
+    "> 3 jam pasca cedera"
+  ],
+  "warnings": [
+    "Segera catat waktu pemberiannya -- jangka waktunya adalah 3 jam dari waktu cedera, bukan waktu kedatangan.",
+    "Jangan bingung antara dosis IV (1g) dengan dosis oral."
+  ],
+  "regional_names": {
+    "generic": "asam traneksamat",
+    "US": "Siklokapron",
+    "UK": "Siklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg IV (maks 1g). Bukti yang muncul -- gunakan penilaian klinis.",
+      "note": "Jendela 3 jam yang sama berlaku."
+    },
+    "obstetric": {
+      "note": "Diindikasikan untuk perdarahan postpartum. Aman pada kehamilan. Dosis dewasa yang sama berlaku."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Ativan"
+  ],
+  "description": "Benzodiazepina de acción intermedia. Tratamiento de primera línea IV/IM para el estado epiléptico y las convulsiones agudas. También se utiliza para procedimientos de sedación y ansiolisis.",
+  "indications": [
+    "Estado epiléptico (primera línea IV)",
+    "Manejo de las convulsiones agudas",
+    "Sedación procesal",
+    "Ansiedad o agitación severa"
+  ],
+  "dose": "Convulsiones: 4 mg IV/IO en inyección lenta durante 2 min. Repita 4 mg en 5 a 10 minutos si la convulsión continúa. IM: 4 mg si no está disponible la vía intravenosa.",
+  "route": [
+    "IV",
+    "OI",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaucoma agudo de ángulo estrecho",
+    "Depresión respiratoria grave",
+    "Hipersensibilidad al propilenglicol"
+  ],
+  "warnings": [
+    "Provoca depresión respiratoria: tenga listo el BVM y el equipo para las vías respiratorias.",
+    "La sedación puede durar de 6 a 8 horas; controle las vías respiratorias.",
+    "Posible agitación paradójica, especialmente en ancianos y niños."
+  ],
+  "regional_names": {
+    "generic": "lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV/IM (máximo 4 mg/dosis). Repita una vez cada 5-10 minutos si es necesario.",
+      "note": "Se prefiere al diazepam para el tratamiento de las convulsiones intravenosas en niños."
+    },
+    "obstetric": {
+      "note": "Atraviesa la placenta: posible depresión respiratoria neonatal. Uso en estado epiléptico materno cuando el beneficio supera el riesgo."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

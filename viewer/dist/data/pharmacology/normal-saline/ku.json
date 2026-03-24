@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Xêra normal (0,9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "0,9% Sodyum Chloride Injection"
+  ],
+  "description": "Avêtina îzotonîk a krîstaloid. Ji bo vejîna şilavê ya IV tê bikar anîn. Di şokê hemorrajîk de, bi baldarî bikar bînin - cildên mezin koagulopatiyê xirabtir dike (acidoza hîperkloremîk, koagulopatiya dilusîyonal). Hîpotensiona destûrî di trawmaya penetrî ya li benda kontrolkirina hemorrajiyê de tê tercîh kirin.",
+  "indications": [
+    "Resuscitation fluid (di şokê hemorrajîk de bi hişyarî)",
+    "Derman rijandin/flush",
+    "Hypovolemia ji sedemên ne-hemorrajîk"
+  ],
+  "dose": "Şokê hemorrajîk: Bi 1L herî zêde li benda kontrolkirina xwînrêjiyê (hîpotensiona destûrdar) sînordar bikin. Di travmaya penetratî de SBP 80-90 mmHg, di TBI de 90 mmHg armanc dike. Hîpovolemiya ne-hemorrajîk: Bolûsên 500 ml, ji nû ve binirxînin.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hypernatremia",
+    "Zêdebûna şilê / edema pişikê (xizm)"
+  ],
+  "warnings": [
+    "Berhemên mezin dibin sedema acidoza metabolîk a hîperkloremîk û koagulopatiya dilusîyonê - di trawmayê de sêya kujer xirabtir dike.",
+    "Lactated Ringer's (LR) ji bo vejîna trawmaya cildê mezin tê tercîh kirin.",
+    "Berî kontrolkirina hemorrajiyê ya neştergerî (hîpotensiona destûrdar) travmaya torso ya penetrker zêde vejîne."
+  ],
+  "regional_names": {
+    "generic": "sodyum kloride 0,9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 ml/kg bolusa IV, ji nû ve binirxînin. Berî ku hûn hilberên xwînê bifikirin, max x3 (bi tevahî 60 mL/kg) dubare bikin.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Vejîna standard di hemorrajiyê de. Ji bo xwînrêjiya piştî zayînê berî ku hilberên xwînê peyda bibin, vejîna şilava agresîf guncan e."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

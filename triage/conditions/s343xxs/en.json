@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s343xxs",
+    "icd10":  "S343XXS",
+    "name":  "Injury of cauda equina, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Injury of cauda equina, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

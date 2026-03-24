@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Siprofloksasin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Geniş gram-negatif kapsama sahip florokinolon antibiyotik. Ciddi yara enfeksiyonları, penetran karın travması (GI florası kapsamı) ve idrar yolu enfeksiyonlarında kullanılır. Mevcut PO ve IV.",
+  "indications": [
+    "Penetran karın travması (GI dekontaminasyonu)",
+    "Ciddi yara enfeksiyonları",
+    "Gram-negatif enfeksiyonlar",
+    "İdrar yolu enfeksiyonları"
+  ],
+  "dose": "400 mg IV 8-12 saatte bir. PO: 500-750 mg her 12 saatte bir.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Bilinen florokinolon alerjisi",
+    "18 yaş altı çocuklar ve ergenler (göreceli -- tendinopati riski)",
+    "Gebelik (göreceli)"
+  ],
+  "warnings": [
+    "Tendon yırtılması riski, özellikle Aşil tendonu. Tendon ağrısı gelişirse devam etmeyin.",
+    "QT aralığını uzatabilir - diğer QT uzatan ilaçlara dikkat edin.",
+    "Alternatifler mevcutsa hamilelikte kaçının."
+  ],
+  "regional_names": {
+    "generic": "siprofloksasin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV 8-12 saatte bir (maks. 400 mg/doz). PO: 10-20 mg/kg 12 saatte bir (maks. 750 mg/doz).",
+      "note": "Yalnızca faydaların tendinopati riskinden daha ağır bastığı durumlarda kullanın. Ciddi enfeksiyonlar için rezerv."
+    },
+    "obstetric": {
+      "note": "Alternatifler mevcutsa hamilelikte kaçının. Yalnızca yararın riskten ağır bastığı yaşamı tehdit eden enfeksiyonlar için kullanın."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

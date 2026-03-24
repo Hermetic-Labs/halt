@@ -1,0 +1,43 @@
+{
+  "id": "pediatric-vital-sign-ranges",
+  "name": "Famantarana ara-pahasalamana ara-dalàna ho an'ny ankizy",
+  "description": "Fanondroana taona ho an'ny HR, RR, ary SBP. Zava-dehibe ho an'ny fanasokajiana triage marina amin'ny mararin'ny ankizy -- tsy mety ho an'ny ankizy ny elanelana mahazatra ho an'ny olon-dehibe.",
+  "ranges": [
+    {
+      "age": "Vao teraka (0-1 volana)",
+      "hr": "100-160",
+      "rr": "30-60",
+      "sbp_mmhg": "60-90",
+      "gcs_min": 15
+    },
+    {
+      "age": "Zazakely (1-12 volana)",
+      "hr": "90-150",
+      "rr": "30-60",
+      "sbp_mmhg": "70-100",
+      "gcs_min": 15
+    },
+    {
+      "age": "Zazakely (1-3 taona)",
+      "hr": "80-130",
+      "rr": "24-40",
+      "sbp_mmhg": "80-110",
+      "gcs_min": 15
+    },
+    {
+      "age": "Ankizy (3-12 taona)",
+      "hr": "70-120",
+      "rr": "18-30",
+      "sbp_mmhg": "80-120",
+      "gcs_min": 15
+    },
+    {
+      "age": "Tanora (>12 taona)",
+      "hr": "60-100",
+      "rr": "12-20",
+      "sbp_mmhg": "90-130",
+      "gcs_min": 15
+    }
+  ],
+  "source": "PALS Guidelines / JTS Pediatric CPG"
+}

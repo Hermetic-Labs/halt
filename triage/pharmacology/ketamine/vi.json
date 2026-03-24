@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketar"
+  ],
+  "description": "Thuốc gây mê phân ly giúp giảm đau, an thần và gây mất trí nhớ trong khi vẫn duy trì phản xạ đường thở và ổn định huyết động. Thuốc giảm đau được ưu tiên trong TCCC - duy trì huyết áp không giống như opioid. Cũng được sử dụng để gây mê theo thủ tục và RSI.",
+  "indications": [
+    "Kiểm soát cơn đau từ trung bình đến nặng",
+    "Gây tê theo quy trình (đóng vết thương, giảm gãy xương)",
+    "Tác nhân cảm ứng cho RSI",
+    "Chống gây mê"
+  ],
+  "dose": "Giảm đau: 0,1-0,3 mg/kg IV/IO (đẩy chậm) | 0,5 mg/kg tiêm bắp. Thuốc an thần theo thủ tục: 1-2 mg/kg IV | 4-6 mg/kg tiêm bắp. Cảm ứng RSI: 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "TÔI",
+    "TRONG"
+  ],
+  "window": "",
+  "contraindications": [
+    "Đã biết tâm thần phân liệt hoặc rối loạn tâm thần hoạt động",
+    "ICP tăng cao mà không bảo vệ đường thở (tương đối)"
+  ],
+  "warnings": [
+    "Phản ứng cấp tính (mê sảng/ảo giác) - giảm nhẹ bằng midazolam 1-2mg IV nếu có.",
+    "Tăng tiết - chuẩn bị sẵn máy hút.",
+    "Co thắt thanh quản hiếm gặp nhưng có thể xảy ra - hãy chuẩn bị sẵn BVM."
+  ],
+  "regional_names": {
+    "generic": "ketamine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Giảm đau: 0,5 mg/kg tiêm tĩnh mạch. Thuốc an thần theo thủ tục: 1-2 mg/kg IV | 4-5 mg/kg tiêm bắp.",
+      "note": "Học giỏi về nhi khoa. Ưu tiên cho các thủ tục đau đớn."
+    },
+    "obstetric": {
+      "note": "An toàn cho mẹ giảm đau ở liều thấp. Có thể gây suy hô hấp ở trẻ sơ sinh ở liều cao nếu dùng gần thời điểm sinh."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t498x5d",
+    "icd10":  "T498X5D",
+    "name":  "Adverse effect of other topical agents, subsequent encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Adverse effect of other topical agents, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

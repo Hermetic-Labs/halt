@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Uainishaji wa Kuvuja kwa damu (Daraja la I-IV)",
+  "category": "circulatory",
+  "description": "Uainishaji wa kutokwa na damu kwa ATLS kwa makadirio ya upotezaji wa damu na mwitikio wa kisaikolojia.",
+  "instructions": "Kadiria upotezaji wa damu na ulinganishe ishara za kisaikolojia na darasa. Uharaka wa matibabu unaongezeka na darasa.",
+  "scoring": [
+    {
+      "class": "Mimi",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Kawaida",
+      "rr": "14-20",
+      "mental_status": "Kawaida",
+      "treatment": "Angalia, vimiminiko vya PO kama vinaweza"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Kawaida",
+      "rr": "20-30",
+      "mental_status": "Wasiwasi",
+      "treatment": "IV ufikiaji, isotonic crystalloid"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Imepungua",
+      "rr": "30-40",
+      "mental_status": "Imechanganyikiwa",
+      "treatment": "Vimiminika vya IV + bidhaa za damu, udhibiti wa uvujaji wa damu mara moja"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Chini sana",
+      "rr": ">40",
+      "mental_status": "Lethargic/kupoteza fahamu",
+      "treatment": "Udhibiti wa haraka wa kuvuja damu kwa upasuaji -- kutishia maisha"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Watoto hulipa fidia kwa muda mrefu kabla ya kutengana. Daraja la III/IV linaweza kuambatana na BP ya karibu ya kawaida hadi kuanguka kwa ghafla. Kuamini tachycardia na hali ya akili juu ya BP."
+    },
+    "obstetric": {
+      "note": "Wagonjwa wajawazito wana 40-50% kuongezeka kwa kiasi cha damu. Inaweza kuvumilia hasara kubwa kabla ya kuonyesha ishara. Dhiki ya fetasi inaweza kutangulia ishara za mama."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

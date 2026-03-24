@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t84296s",
+    "icd10":  "T84296S",
+    "name":  "Other mechanical complication of internal fixation device of vertebrae, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Other mechanical complication of internal fixation device of vertebrae, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

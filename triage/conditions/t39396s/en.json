@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t39396s",
+    "icd10":  "T39396S",
+    "name":  "Underdosing of other nonsteroidal anti-inflammatory drugs [NSAID], sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Underdosing of other nonsteroidal anti-inflammatory drugs [NSAID], sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

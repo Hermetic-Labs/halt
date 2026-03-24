@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Tathmini ya upungufu wa maji mwilini",
+  "category": "circulation",
+  "description": "Tathmini ya uwanja kwa upungufu wa maji mwilini na ukali wa ugonjwa wa joto. Rangi ya mkojo ni kiashiria cha vitendo zaidi cha shamba. Tathmini hali ya akili kama alama ya upungufu mkubwa wa maji mwilini unaoendelea hadi kiharusi cha joto.",
+  "instructions": "Angalia rangi ya mkojo, turgor ya ngozi, hali ya akili na ishara muhimu. Mkojo mweusi, utando kavu wa mucous, na tachycardia zinaonyesha upungufu mkubwa wa maji mwilini unaohitaji urejeshaji wa maji mwilini.",
+  "categories": [
+    {
+      "color": "wazi-pale",
+      "label": "Inayo maji vizuri",
+      "description": "Rangi ya manjano ili kusafisha mkojo. Hakuna kuingilia kati kunahitajika."
+    },
+    {
+      "color": "njano",
+      "label": "Ukosefu wa maji mwilini kidogo",
+      "description": "Mkojo wa manjano giza, kiu. Kurejesha maji mwilini kwa mdomo. Kuhimiza 250-500 ml ya maji kwa saa."
+    },
+    {
+      "color": "kahawia-kahawia",
+      "label": "Ukosefu wa maji mwilini kwa wastani",
+      "description": "Mkojo wa amber, HR iliyoinuliwa, turgor ya ngozi ilipungua, kinywa kavu. Vimiminika vya IV/IO ikiwa simulizi hazivumiliwi. 1-2L LR au NS."
+    },
+    {
+      "color": "nyekundu",
+      "label": "Hatari -- Kiharusi cha Joto / Kikali",
+      "description": "Utoaji mdogo wa mkojo, LOC iliyobadilishwa, ngozi kavu ya moto. Dharura ya kimatibabu -- kupoeza haraka + vimiminika vya IV + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Watoto hupunguza maji kwa kasi zaidi kuliko watu wazima. Sunken fontanelle (watoto wachanga), kutokuwepo kwa machozi, na uchovu ni ishara muhimu. Uzito wa IV: 20 mL/kg LR bolus."
+    },
+    "obstetric": {
+      "note": "Wanawake wajawazito wanahitaji kuongezeka kwa ulaji wa maji. Upungufu wa maji mwilini unaweza kusababisha mikazo kabla ya wakati. Urejeshaji maji mwilini mdomoni kwa nguvu kwanza; IV ikiwa haivumilii kwa mdomo."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

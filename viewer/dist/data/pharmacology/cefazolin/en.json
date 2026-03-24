@@ -1,0 +1,44 @@
+﻿{
+    "id":  "cefazolin",
+    "name":  "Cefazolin",
+    "category":  "antibiotic",
+    "rxnorm":  "2180",
+    "brand_names":  [
+                        "Ancef",
+                        "Kefzol"
+                    ],
+    "description":  "First-generation cephalosporin. First-line parenteral antibiotic for serious wound infections and surgical prophylaxis. Good gram-positive coverage including MSSA. Give within 60 minutes of surgical incision for prophylaxis.",
+    "indications":  [
+                        "Surgical wound prophylaxis",
+                        "Serious soft tissue infections",
+                        "Open fracture prophylaxis",
+                        "Skin and skin structure infections"
+                    ],
+    "dose":  "1-2g IV/IM q8h. Surgical prophylaxis: 2g IV within 60 minutes before incision. Repeat 2g if surgery \u003e 4 hours.",
+    "route":  [
+                  "IV",
+                  "IM"
+              ],
+    "window":  "For surgical prophylaxis: give within 60 minutes of incision.",
+    "contraindications":  [
+                              "Known cephalosporin allergy",
+                              "Severe penicillin allergy (5-10% cross-reactivity)"
+                          ],
+    "warnings":  [
+                     "Cross-reactivity with penicillin allergy: use with caution in penicillin-allergic patients.",
+                     "Adjust dose in renal impairment."
+                 ],
+    "regional_names":  {
+                           "generic":  "cefazolin"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "25-50 mg/kg IV/IM q8h (max 2g/dose). Prophylaxis: 30 mg/kg (max 2g) before incision.",
+                                        "note":  "Safe and well-studied in pediatrics."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Safe in pregnancy and lactation. Preferred parenteral antibiotic for obstetric procedures."
+                                    }
+                  },
+    "source":  "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

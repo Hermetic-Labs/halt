@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxycycline",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramycin",
+    "Doryx"
+  ],
+  "description": "Antibiotiki ya wigo mpana wa tetracycline. Njia mbadala ya kuzuia jeraha la mdomo kwa wagonjwa wa penicillin-mzio. Pia ina ufanisi dhidi ya viumbe visivyo na kawaida na baadhi ya magonjwa yanayoenezwa na vekta (uzuiaji wa malaria katika maeneo endemic).",
+  "indications": [
+    "Kuzuia jeraha (mzio wa penicillin)",
+    "Maambukizi ya tishu laini",
+    "Vidonda vya kuumwa",
+    "Kuzuia Malaria katika maeneo endemic"
+  ],
+  "dose": "100 mg PO kila masaa 12 x siku 7.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Anza ndani ya masaa 3 baada ya kuumia kwa kuzuia jeraha.",
+  "contraindications": [
+    "Mimba (husababisha meno ya fetasi kubadilika rangi na kuzuia ukuaji wa mifupa)",
+    "Watoto chini ya miaka 8 (sababu sawa)",
+    "Uharibifu mkubwa wa ini"
+  ],
+  "warnings": [
+    "ILIYOZUIWA wakati wa ujauzito -- tumia amoksilini badala yake.",
+    "Imezuiliwa kwa watoto chini ya miaka 8.",
+    "Usikivu wa picha -- mshauri mgonjwa aepuke kupigwa na jua.",
+    "Usichukue pamoja na vyakula vyenye kalsiamu, antacids, au chuma -- huharibu ufyonzaji wake."
+  ],
+  "regional_names": {
+    "generic": "doxycycline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Imechangiwa chini ya miaka 8. Umri 8+: 2-4 mg/kg/siku imegawanywa q12h (kiwango cha juu 100 mg/dozi).",
+      "note": "Tumia amoxicillin kwa watoto chini ya miaka 8."
+    },
+    "obstetric": {
+      "note": "ILIYOZUIWA wakati wa ujauzito -- husababisha madhara kwa fetasi. Tumia amoksilini badala yake."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

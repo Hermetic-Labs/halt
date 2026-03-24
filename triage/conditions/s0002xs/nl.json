@@ -1,0 +1,22 @@
+{
+  "id": "s0002xs",
+  "icd10": "S0002XS",
+  "name": "Blaar (niet-thermisch) op de hoofdhuid, gevolgen",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Blaar (niet-thermisch) op de hoofdhuid, gevolgen",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

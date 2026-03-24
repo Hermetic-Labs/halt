@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Normalis SAL (0.9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "0,9% Sodium Chloride Iniectio"
+  ],
+  "description": "Liquor isotonic crystalloidus. Usus est pro IV fluido resuscitatione. In concussione hemorrhagic, caute utere - magna volumina coagulopathy peior (acidisis hyperchloremica, coagulopathy dilutionalis). Hypotension permissiva praelata in trauma pendente sanguinis imperium penetrans.",
+  "indications": [
+    "Liquor resuscitatio (caute in inpulsa hemorrhagic)",
+    "Medicamentum diluent / rubor",
+    "Hypovolemia de causis non-haemorrhagicis"
+  ],
+  "dose": "Incursu hemorrhagic: Limit ad 1L max pendens sanguinis imperium (hypotension permissivum). Scopum SBP 80-90 mmHg in penetrando trauma, 90 mmHg in TBI. Hypovolemia non-haemorrhagia: 500 mL bolos, candam.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hypernatremia",
+    "Liquor onerare / oedema pulmonis (relativum)"
+  ],
+  "warnings": [
+    "Magna volumina causant acidosis metabolicae hyperchloremicae et coagulopathy dilutionalis - trias lethalis in trauma gravescit.",
+    "Lactatum Ringer (LR) praefertur pro magno-volumine trauma resuscitationis.",
+    "Noli nimis-resuscitare abdominis trauma penetrans ante sanguinem chirurgicum imperium (hypotension permissiva)."
+  ],
+  "regional_names": {
+    "generic": "sodium 0.9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "XX mL/kg IV bolus, candam. Itera max x3 (60 mL/kg totalis) antequam considerans sanguinem products.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Latin resuscitatio in haemorrhagia obstetricante. Implacabilis fluida resuscitatio apta postpartum sanguinis producta ante sanguinem available."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

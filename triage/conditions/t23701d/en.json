@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t23701d",
+    "icd10":  "T23701D",
+    "name":  "Corrosion of third degree of right hand, unspecified site, subsequent encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Corrosion of third degree of right hand, unspecified site, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

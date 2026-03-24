@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Cesariana Perimortem (PMCS)",
+  "category": "obstetric",
+  "skill_level": "médico-cirurgião",
+  "time_estimate": "3-5 minutos",
+  "description": "Parto cesáreo de emergência dentro de 4 minutos após a parada cardíaca materna para permitir RCP eficaz e potencial sobrevivência neonatal. O útero comprime a aorta e a VCI – o parto também é reanimador para a mãe.",
+  "equipment": [
+    "bisturi",
+    "luvas",
+    "afastadores",
+    "braçadeiras para cabos",
+    "equipamento de reanimação neonatal"
+  ],
+  "steps": [
+    "Continue a RCP sem interrupção.",
+    "Faça uma incisão vertical na linha média do umbigo ao púbis através da pele e da fáscia.",
+    "Faça uma incisão no segmento uterino inferior horizontalmente.",
+    "Faça o parto do bebê – anote o tempo.",
+    "Prenda e corte o cordão.",
+    "Entregar o bebê ao segundo provedor para reanimação neonatal.",
+    "Remova a placenta.",
+    "Tampe o útero e o abdômen se o fechamento definitivo não for imediatamente possível.",
+    "Continuar a reanimação materna – o RCE é mais provável após a descompressão uterina."
+  ],
+  "warnings": [
+    "O tempo da decisão até o parto deve ser inferior a 5 minutos para melhores resultados maternos e fetais.",
+    "Este procedimento é o último recurso – somente se a mãe estiver em parada cardíaca e o parto for iminente (>20 semanas de gestação).",
+    "Requer treinamento de nível médico. Os médicos de combate devem preparar o campo e apoiar, e não atuar de forma independente."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

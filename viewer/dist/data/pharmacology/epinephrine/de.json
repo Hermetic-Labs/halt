@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinephrin (Adrenalin)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalin"
+  ],
+  "description": "Endogenes Katecholamin mit alpha- und beta-adrenerger Aktivität. Erstbehandlung bei Anaphylaxie und Herzstillstand. Bei der Anaphylaxie wird die intramuskuläre Gabe des Oberschenkels gegenüber der intravenösen Gabe bevorzugt (sicherer, gleichwertige Wirksamkeit). Verzögern Sie den IV-Zugang bei Anaphylaxie nicht.",
+  "indications": [
+    "Anaphylaxie (erste Wahl)",
+    "Herzstillstand – pulsloses VF/VT/PEA/Asystolie",
+    "Schwerer Bronchospasmus",
+    "Gegen Flüssigkeiten resistente Hypotonie"
+  ],
+  "dose": "Anaphylaxie: 0,3-0,5 mg IM (anterolateraler Oberschenkel) | Autoinjektor 0,3 mg IM. Wiederholen Sie die PRN alle 5–15 Minuten. Herzstillstand: 1 mg i.v./i.o. alle 3–5 Min. während der HLW. Schwerer Bronchospasmus: 0,3 mg IM.",
+  "route": [
+    "IM",
+    "IV",
+    "IO"
+  ],
+  "window": "Bei Anaphylaxie: Sofort intramuskulär verabreichen – mit intravenösem Zugang nicht zögern.",
+  "contraindications": [
+    "Keine absoluten Kontraindikationen im lebensbedrohlichen Notfall"
+  ],
+  "warnings": [
+    "Adrenalin intravenös zur Anaphylaxie sollte nur bei Herzstillstand oder schwerem Schock eingesetzt werden – gefährlich, wenn einem wachen Patienten intravenös verabreicht wird.",
+    "Extravasation verursacht Gewebenekrose – stellen Sie die Durchgängigkeit der Infusion sicher.",
+    "Erhöht den Sauerstoffbedarf des Myokards – Vorsicht bei bekannten Koronarerkrankungen außerhalb des Herzstillstands."
+  ],
+  "regional_names": {
+    "generic": "Adrenalin",
+    "UK": "Adrenalin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anaphylaxie: 0,01 mg/kg IM (maximal 0,5 mg). EpiPen Jr (0,15 mg) für 15-30 kg. Herzstillstand: 0,01 mg/kg i.v./i.o. alle 3–5 Min.",
+      "note": "Verwenden Sie eine gewichtsbasierte Dosierung. Broselow-Bandreferenz empfohlen."
+    },
+    "obstetric": {
+      "note": "Verwenden Sie die Standarddosierung für die Anaphylaxie – das Überleben der Mutter ist von größter Bedeutung. Adrenalin ist in der Schwangerschaft für lebensbedrohliche Notfälle sicher."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

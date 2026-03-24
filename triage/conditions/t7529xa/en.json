@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t7529xa",
+    "icd10":  "T7529XA",
+    "name":  "Other effects of vibration, initial encounter",
+    "category":  "environmental-injury",
+    "triage_priority":  "",
+    "description":  "Other effects of vibration, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

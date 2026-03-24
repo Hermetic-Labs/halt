@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s99032g",
+    "icd10":  "S99032G",
+    "name":  "Salter-Harris Type III physeal fracture of left calcaneus, subsequent encounter for fracture with delayed healing",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Salter-Harris Type III physeal fracture of left calcaneus, subsequent encounter for fracture with delayed healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s31522s",
+    "icd10":  "S31522S",
+    "name":  "Laceration with foreign body of unspecified external genital organs, female, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Laceration with foreign body of unspecified external genital organs, female, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

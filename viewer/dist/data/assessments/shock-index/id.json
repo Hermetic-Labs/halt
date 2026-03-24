@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Indeks Kejutan",
+  "category": "circulatory",
+  "description": "Indikator angka tunggal yang cepat untuk stabilitas hemodinamik. Dihitung sebagai SDM/SBP. Normalnya adalah 0,5-0,7.",
+  "instructions": "Bagilah detak jantung dengan tekanan darah sistolik. Meningkatnya indeks guncangan menunjukkan adanya kemunduran.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Normal -- hemodinamik stabil"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Kejutan ringan -- pantau dengan cermat"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Syok sedang -- akses IV, cairan"
+    },
+    {
+      "range": ">1.4",
+      "label": "Syok parah -- resusitasi segera, produk darah"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Obstetric Shock Index (OSI) menggunakan rumus yang sama. SI > 0,9 pada pasien hamil adalah signifikan. HR normal lebih tinggi pada kehamilan (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

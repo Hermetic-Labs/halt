@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "I-Epinephrine (Adrenaline)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "I-EpiPen",
+    "I-Adrenalin"
+  ],
+  "description": "I-Endogenous catecholamine enomsebenzi we-alpha ne-beta adrenergic. Ukwelashwa komugqa wokuqala we-anaphylaxis nokuboshwa kwenhliziyo. Ku-anaphylaxis, ithanga le-IM liyakhethwa kune-IV (ukusebenza okuphephile, okulinganayo). Ungalibali ukufinyelela kwe-IV ku-anaphylaxis.",
+  "indications": [
+    "I-Anaphylaxis (umugqa wokuqala)",
+    "Ukuboshwa kwenhliziyo -- i-pulseless VF/VT/PEA/asystole",
+    "I-bronchospasm enzima",
+    "I-Hypotension refractory to fluids"
+  ],
+  "dose": "I-Anaphylaxis: 0.3-0.5 mg IM (ithanga le-anterolateral) | I-Auto-injector 0.3 mg IM. Phinda u-q5-15 amaminithi we-PRN. Ukuboshwa kwenhliziyo: 1 mg IV/IO q3-5 min ngesikhathi se-CPR. I-bronchospasm enzima: 0.3 mg IM.",
+  "route": [
+    "IM",
+    "IV",
+    "IO"
+  ],
+  "window": "Ku-anaphylaxis: nikeza i-IM ngokushesha -- ungalibali ukuze uthole ukufinyelela kwe-IV.",
+  "contraindications": [
+    "Akukho contraindications ngokuphelele ezimweni eziphuthumayo ezisongela ukuphila"
+  ],
+  "warnings": [
+    "I-IV epinephrine ye-anaphylaxis kufanele isetshenziswe kuphela ekuboshweni kwenhliziyo noma ukushaqeka okujulile -- kuyingozi uma inikezwa i-IV push esigulini esiyaziyo.",
+    "Ukwengeza kubangela i-tissue necrosis -- qinisekisa i-IV patency.",
+    "Khulisa isidingo somoya-mpilo we-myocardial -- sebenzisa ukuqapha esikhungweni senhliziyo esaziwayo ngaphandle kokuboshwa."
+  ],
+  "regional_names": {
+    "generic": "i-epinephrine",
+    "UK": "i-adrenaline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "I-Anaphylaxis: 0.01 mg/kg IM (ubukhulu obungu-0.5 mg). I-EpiPen Jr (0.15 mg) ye-15-30 kg. Ukuboshwa kwenhliziyo: 0.01 mg/kg IV/IO q3-5 min.",
+      "note": "Sebenzisa umthamo osekelwe esisindweni. Ireferensi yetheyiphu ye-Browselow iyanconywa."
+    },
+    "obstetric": {
+      "note": "Sebenzisa umthamo ojwayelekile we-anaphylaxis -- ukusinda komama kubalulekile. I-epinephrine iphephile ekukhulelweni ezimweni eziphuthumayo ezisongela ukuphila."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "s0003xd",
+  "icd10": "S0003XD",
+  "name": "Fifandirana amin'ny hodi-doha, fihaonana manaraka",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Contusion ny hodi-doha, fihaonana manaraka",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

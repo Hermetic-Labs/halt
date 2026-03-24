@@ -1,0 +1,105 @@
+{
+    "name": "halt-medical-triage",
+    "version": "1.0.0",
+    "description": "HALT Desktop Launcher - Hermetic Anonymous Local Triage",
+    "main": "main.js",
+    "author": "Hermetic Labs",
+    "license": "MIT",
+    "scripts": {
+        "start": "electron .",
+        "build:win": "electron-builder --win",
+        "build:mac": "electron-builder --mac",
+        "build:linux": "electron-builder --linux",
+        "build:all": "electron-builder --win --mac --linux"
+    },
+    "dependencies": {
+        "electron-is-dev": "^2.0.0"
+    },
+    "devDependencies": {
+        "electron": "^28.0.0",
+        "electron-builder": "^24.9.1"
+    },
+    "build": {
+        "appId": "com.hermeticlabs.halt",
+        "productName": "HALT - Medical Triage",
+        "copyright": "Copyright © 2025 Hermetic Labs",
+        "directories": {
+            "output": "dist",
+            "buildResources": "assets"
+        },
+        "files": [
+            "main.js",
+            "preload.js",
+            "renderer/**/*",
+            "assets/**/*"
+        ],
+        "win": {
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ],
+            "icon": "assets/Icon.ico",
+            "artifactName": "HALT-Setup-${version}.${ext}"
+        },
+        "mac": {
+            "target": [
+                {
+                    "target": "dmg",
+                    "arch": [
+                        "x64",
+                        "arm64"
+                    ]
+                }
+            ],
+            "icon": "assets/Hermetic Labs Logo 500x500.png",
+            "category": "public.app-category.medical",
+            "artifactName": "HALT-${version}-${arch}.${ext}",
+            "hardenedRuntime": true,
+            "gatekeeperAssess": false,
+            "entitlements": "entitlements.mac.plist",
+            "entitlementsInherit": "entitlements.mac.plist"
+        },
+        "linux": {
+            "target": [
+                "AppImage",
+                "deb"
+            ],
+            "icon": "assets/icon.png",
+            "category": "Science",
+            "artifactName": "HALT-${version}.${ext}"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true,
+            "perMachine": true,
+            "installerIcon": "assets/Icon.ico",
+            "uninstallerIcon": "assets/Icon.ico",
+            "installerHeaderIcon": "assets/Icon.ico",
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true,
+            "menuCategory": "Hermetic Labs",
+            "shortcutName": "HALT - Medical Triage",
+            "runAfterFinish": true
+        },
+        "dmg": {
+            "title": "HALT Installer",
+            "icon": "assets/icon.icns",
+            "contents": [
+                {
+                    "x": 130,
+                    "y": 220
+                },
+                {
+                    "x": 410,
+                    "y": 220,
+                    "type": "link",
+                    "path": "/Applications"
+                }
+            ]
+        }
+    }
+}

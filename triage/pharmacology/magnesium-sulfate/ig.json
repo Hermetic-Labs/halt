@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Magnesium sulfate (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Magnesium sulfate injection"
+  ],
+  "description": "CNS depressant na anticonvulsant eji maka mgbochi na ọgwụgwọ nke eclamptic ọdịdọ (ọdịdọ dị ime site na pre-eclampsia). A na-ejikwa maka ụkwara ume ọkụ siri ike na torsades de pointes. Ahịrị mbụ maka eclampsia n'elu benzodiazepines.",
+  "indications": [
+    "Eclampsia (mgbochi ọdịdọ na ọgwụgwọ na pre-eclampsia siri ike)",
+    "Pre-eclampsia prophylaxis (atụmatụ siri ike)",
+    "Torsades de Pointes (polymorphic V-tach sitere na hypomagnesemia)",
+    "Nnukwu ụkwara ume ọkụ (adjunct)"
+  ],
+  "dose": "Ngwunye Eclampsia: 4-6g IV jiri nwayọ mee ihe karịrị nkeji 20. Nlekọta: 1-2g / hour IV infusion. Ọ bụrụ na ọdịdọ na-alọghachi: 2-4g IV karịrị nkeji 5. IM loading (ma ọ bụrụ na ọ dịghị IV): 5g IM ọ bụla buttock (10g ngụkọta) n'out oge.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "Malite na mmalite ọdịdọ ma ọ bụ na nchoputa nke njirimara pre-eclampsia siri ike.",
+  "contraindications": [
+    "Myasthenia gravis",
+    "Nrụrụ aka nke obi",
+    "Ọdịda gbasara akụrụ (na-agbakọta - belata dose)"
+  ],
+  "warnings": [
+    "Ihe ịrịba ama nsi: ọnwụ nke patellar reflex (akara mbụ, 7-10 mEq / L), ịda mbà n'obi nke iku ume (> 10 mEq / L), njide obi (> 15 mEq / L).",
+    "Nyochaa patellar reflexes kwa nkeji iri na ise -- ọnwụ nke reflex = kwụsị infusion.",
+    "Mgbochi maka nsi: Calcium gluconate 1g IV karịrị nkeji 3.",
+    "Belata dose na mmebi gbasara akụrụ -- nyochaa mmepụta mmamịrị."
+  ],
+  "regional_names": {
+    "generic": "magnesium sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg IV n'elu 10-20 min (kacha 2g). Ụkwara ume ọkụ siri ike: 25-75 mg/kg IV (max 2g).",
+      "note": "A na-ejikarị ya eme ihe maka ọdịdọ na ndị ọrịa na-abụghị ụmụaka ime ime --eclampsia bụ isi ihe na-egosi."
+    },
+    "obstetric": {
+      "note": "Ngosipụta izizi. Na-agafe placenta - hypermagnesemia nwa amụrụ ọhụrụ ga-ekwe omume. Ọgwụ nwa ọhụrụ ma ọ bụrụ na nkụda mmụọ iku ume: calcium gluconate 100 mg / kg IV. Gwa ndị otu NICU maka ojiji magnesium nke nne."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

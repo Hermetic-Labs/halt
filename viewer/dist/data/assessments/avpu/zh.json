@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "AVPU 规模",
+  "category": "neurological",
+  "description": "快速 4 级意识评估。初始分类比 GCS 更快。",
+  "instructions": "评估患者表现出的最高反应水平。",
+  "scoring": [
+    {
+      "code": "一个",
+      "label": "警报",
+      "description": "患者清醒、有意识且反应正常"
+    },
+    {
+      "code": "V",
+      "label": "语音",
+      "description": "患者仅对言语刺激有反应"
+    },
+    {
+      "code": "普",
+      "label": "疼痛",
+      "description": "患者仅对疼痛刺激有反应（胸骨摩擦、甲床压力）"
+    },
+    {
+      "code": "你",
+      "label": "没有反应",
+      "description": "对任何刺激均无反应——需要立即进行气道干预"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "一个",
+      "triage": "稳定--继续评估"
+    },
+    {
+      "code": "V",
+      "triage": "关于——监测气道"
+    },
+    {
+      "code": "普",
+      "triage": "严重 - 气道有风险，GCS 通常 <= 8"
+    },
+    {
+      "code": "你",
+      "triage": "立即——立即管理气道"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

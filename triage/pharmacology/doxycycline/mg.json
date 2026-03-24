@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxycycline",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramycin",
+    "Doryx"
+  ],
+  "description": "Antibiotika tetracycline midadasika. Alterna prophylaxis amin'ny ratra am-bava ho an'ny mararin'ny penicillin-allergy. Mahomby ihany koa amin'ny zavamananaina atypical sy aretina entin'ny vector sasany (fampihenana ny tazomoka any amin'ny faritra tsy misy farany).",
+  "indications": [
+    "Fisorohana ny ratra (allergie pénisilin) ​​",
+    "Otrikaretina tavy malefaka",
+    "ratra kaikitra",
+    "Fisorohana ny tazomoka any amin'ny faritra tsy misy farany"
+  ],
+  "dose": "100 mg PO isaky ny 12 ora x 7 andro.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Atombohy ao anatin'ny 3 ora aorian'ny ratra ho an'ny fisorohana ny ratra.",
+  "contraindications": [
+    "Bevohoka (miteraka fiovan'ny nifin'ny foetus sy tsy fahampian'ny fitomboan'ny taolana)",
+    "Ankizy latsaky ny 8 taona (mitovy antony)",
+    "Fahavoazana hepatika mafy"
+  ],
+  "warnings": [
+    "CONTRAINDICATED amin'ny fitondrana vohoka -- fampiasa amoxicillin.",
+    "CONTRAINDICATED amin'ny ankizy latsaky ny 8 taona.",
+    "Photosensitivity - manoro hevitra ny marary mba hisorohana ny tara-masoandro.",
+    "Aza mihinana miaraka amin'ny sakafo be kalsioma, antacids, na vy -- manimba ny hisakana ny fiasan'ireny."
+  ],
+  "regional_names": {
+    "generic": "doxycycline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Contraindicated latsaky ny 8 taona. Taona 8+: 2-4 mg / kg / andro mizara q12h (max 100 mg / dose).",
+      "note": "Mampiasà amoxicillin ho an'ny ankizy latsaky ny 8 taona."
+    },
+    "obstetric": {
+      "note": "CONTRAINDICATED amin'ny fitondrana vohoka -- miteraka fahasimban'ny foetus. Ampiasao kosa ny amoxicillin."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

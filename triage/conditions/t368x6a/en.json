@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t368x6a",
+    "icd10":  "T368X6A",
+    "name":  "Underdosing of other systemic antibiotics, initial encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Underdosing of other systemic antibiotics, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Antibiyootiga Fluoroquinolone oo leh dabool ballaaran oo garaam-negative ah. Waxaa loo isticmaalaa infekshannada dhaawaca halista ah, dhaawaca caloosha gala (GI flora cover), iyo caabuqyada kaadi mareenka. PO iyo IV la heli karo.",
+  "indications": [
+    "Dhaawaca caloosha gasha (GI ka-saarista)",
+    "Infekshannada dhaawaca halista ah",
+    "Caabuqyada Gram-negative",
+    "Caabuqyada kaadi mareenka"
+  ],
+  "dose": "400 mg IV q8-12h. PO: 500-750 mg q12h.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Xasaasiyadda fluoroquinolone ee la yaqaan",
+    "Carruurta iyo da'yarta <18 jir'",
+    "Uurka (qaraabo)"
+  ],
+  "warnings": [
+    "Khatarta dillaaca Tendon, gaar ahaan tendonka Achilles. Jooji haddii xanuunka seedaha uu soo baxo.",
+    "Waxa laga yaabaa inay kordhiso muddada QT -- ka taxaddar daawooyinka kale ee QT-dheereeya.",
+    "Ka fogow uurka haddii wax kale la heli karo."
+  ],
+  "regional_names": {
+    "generic": "ciprofloxacin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV q8-12h (ugu badnaan 400 mg/qiyaas). PO: 10-20 mg/kg q12h (ugu badnaan 750 mg/qiyaas).",
+      "note": "Isticmaal kaliya marka faa'idooyinka ay ka miisaan badan yihiin halista tendinopathy. Kaydka caabuqyada halista ah."
+    },
+    "obstetric": {
+      "note": "Ka fogow uurka haddii wax kale la heli karo. U isticmaal kaliya caabuqyada nafta halis geliya halka faa'iidada ay ka miisaan badan tahay khatarta."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

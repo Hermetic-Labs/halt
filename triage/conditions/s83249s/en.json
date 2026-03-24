@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s83249s",
+    "icd10":  "S83249S",
+    "name":  "Other tear of medial meniscus, current injury, unspecified knee, sequela",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Other tear of medial meniscus, current injury, unspecified knee, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

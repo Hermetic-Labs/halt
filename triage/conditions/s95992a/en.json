@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s95992a",
+    "icd10":  "S95992A",
+    "name":  "Other specified injury of unspecified blood vessel at ankle and foot level, left leg, initial encounter",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Other specified injury of unspecified blood vessel at ankle and foot level, left leg, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

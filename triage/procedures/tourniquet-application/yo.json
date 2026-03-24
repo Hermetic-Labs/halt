@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Ohun elo Irin-ajo (Arin ajo Ohun elo ija - CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "eyikeyi-oludahun",
+  "time_estimate": "30-60 iṣẹju-aaya",
+  "description": "Iṣakoso isun ẹjẹ to daju fun ẹjẹ opin ti o lewu aye. Waye ni kutukutu -- ma ṣe idaduro.",
+  "equipment": [
+    "ologbo-tourniquet",
+    "yẹ-ami"
+  ],
+  "steps": [
+    "Waye tourniquet 2-3 inches (5-7 cm) isunmọ (loke) ọgbẹ naa - lori aṣọ jẹ itẹwọgba.",
+    "Ṣe ipa ẹgbẹ ti ara ẹni ni ayika ẹsẹ ati okun nipasẹ idii ohun ti nmu badọgba ija.",
+    "Fa awọn iye ṣinṣin ki o si oluso o pada lori ara.",
+    "Yi opa afẹfẹ yi titi ti ẹjẹ yoo fi duro tabi pulse jijin ko si.",
+    "Titiipa afẹfẹ afẹfẹ ninu agekuru afẹfẹ.",
+    "Waye okun afẹfẹ lori ọpá afẹfẹ lati ni aabo.",
+    "Kọ akoko ohun elo taara lori irin-ajo (lilo asami) ATI sori kaadi TCCC.",
+    "Fi han ki o tun ṣe ayẹwo ọgbẹ naa. Tun ṣe ayẹwo lẹhin iṣẹju 5."
+  ],
+  "warnings": [
+    "MAA ṢE yọ kuro ni irin-ajo ni ẹẹkan ti a lo ni aaye -- oṣiṣẹ iṣoogun nikan ni eto iṣakoso.",
+    "Akoko jẹ pataki: tourniquet> 2 wakati significantly mu ọwọ ipadanu ewu. Wọle akoko lẹsẹkẹsẹ.",
+    "MAA ṢE waye lori isẹpo. Ti ẹsẹ ba ni awọn ọgbẹ ni awọn ipele pupọ, lo isunmọ si gbogbo awọn ọgbẹ.",
+    "Awọn irin-ajo ti o ni ilọsiwaju (awọn beliti, awọn okun) ko munadoko ni pataki."
+  ],
+  "follows": [
+    "taara-titẹ",
+    "iṣakojọpọ ọgbẹ"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Lo irin-ajo itọju ọmọde dín ti o ba wa. Standard CAT le ṣee lo ṣugbọn Mu pẹlu iṣọra. Awọn ẹsẹ ti kere -- ṣayẹwo pulse jijin ni pẹkipẹki."
+    },
+    "obstetric": {
+      "note": "Ohun elo boṣewa fun awọn ọgbẹ opin. Ma ṣe kan si ikun tabi pelvis."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "UThintelo lweHypothermia (H --MATSHI)",
+  "category": "temperature-management",
+  "skill_level": "nawuphi na umphenduli",
+  "time_estimate": "2-3 imiz",
+  "description": "I-Combat hypothermia ngumbulali ophambili onokuthintelwa kumothuko. I-triad ebulalayo: hypothermia + acidosis + coagulopathy. Thintela ngazo zonke iindleko.",
+  "equipment": [
+    "Ingubo ebonakalisa ubushushu",
+    "hypothermia-prevention-kit",
+    "ukufudumala-iv-ulwelo-ukuba-lukhona"
+  ],
+  "steps": [
+    "Susa zonke iimpahla ezimanzi ngokukhawuleza kangangoko kunokwenzeka.",
+    "Gquma isigulana ngengubo ebonakalisa ubushushu (isithuba)-- icala elimenyezelayo ANGAPHAKATHI kwisigulana.",
+    "Ukusonga intloko kunye nentamo (indawo ebalulekileyo yokulahleka kobushushu).",
+    "Insulate ukusuka emhlabeni -- beka into phakathi kwesigulana kunye nomhlaba obandayo.",
+    "Lawula ulwelo olufudumeleyo lwe-IV ukuba lukhona.",
+    "Musa ukuvumela isigulana ukuba singcangcazele ngaphandle kokugquma -- ukungcangcazela luphawu olusisilumkiso kwangethuba.",
+    "Beka iliso kwiqondo lobushushu ukuba ithemometha ikhona. Ngaphantsi kwe-35 ° C (95 ° F) = hypothermia."
+  ],
+  "warnings": [
+    "I-Hypothermia yenza i-coagulopathy ibe mandundu -- izigulana ezophayo ziyaphola ngokukhawuleza kwaye zivale kancinci ngokusebenzayo.",
+    "Ukuthintela i-Field hypothermia kufuneka kuqale kwindawo yokulimala, kungekhona kwi-CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

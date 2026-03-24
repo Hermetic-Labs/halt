@@ -1,0 +1,22 @@
+{
+  "id": "s00202s",
+  "icd10": "S00202S",
+  "name": "የግራ አይን ሽፋሽፍት እና የፔሪዮኩላር አካባቢ ላይ ያልተገለጸ የላይ ላይ ጉዳት፣ ተከታይ",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "የግራ የዐይን ሽፋኑ እና የፔሪዮኩላር አካባቢ ላይ ያልተገለጸ ውጫዊ ጉዳት፣ ተከታይ",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

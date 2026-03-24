@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s14157a",
+    "icd10":  "S14157A",
+    "name":  "Other incomplete lesion at C7 level of cervical spinal cord, initial encounter",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Other incomplete lesion at C7 level of cervical spinal cord, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

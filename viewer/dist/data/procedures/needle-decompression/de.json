@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Nadel-Thorax-Dekompression (NCD)",
+  "category": "respiration",
+  "skill_level": "Kampfmediziner",
+  "time_estimate": "1-2 Minuten",
+  "description": "Notfalllinderung des Spannungspneumothorax durch Nadeleinstich in den zweiten Interkostalraum. Lebensrettender Eingriff.",
+  "equipment": [
+    "14g-Nadelkatheter-3-25in",
+    "Handschuhe",
+    "Brustsiegel-optional"
+  ],
+  "steps": [
+    "Identifizieren Sie einen Spannungspneumothorax: fehlende Atemgeräusche auf der betroffenen Seite, Trachealdeviation (spät), Atemnot, Hypotonie, JVD.",
+    "Legen Sie den Brustkorb auf der betroffenen Seite frei.",
+    "Lokalisieren Sie den 2. Interkostalraum, Mittelklavikularlinie (alternativ: 4./5. ICS, vordere Axillarlinie).",
+    "Führen Sie einen 14 g schweren, 3,25 Zoll langen Nadelkatheter senkrecht zur Brustwand ein, knapp über der OBERSEITE der 3. Rippe (vermeidet neurovaskuläre Bündel).",
+    "Fahren Sie fort, bis Sie einen Luftstrom spüren oder ein Zischen hören.",
+    "Entfernen Sie die Nadel und lassen Sie den Katheter an Ort und Stelle.",
+    "Achten Sie auf eine Verbesserung der Atemgeräusche und der Atemanstrengung.",
+    "Sichern Sie den Katheteransatz. Das offene Ende NICHT festklemmen oder abdecken.",
+    "Alle 5 Minuten erneut prüfen – der Katheter kann knicken oder verstopfen, was eine wiederholte Dekompression erforderlich macht."
+  ],
+  "warnings": [
+    "Verwenden Sie eine 3,25-Zoll-Nadel – ein standardmäßiger 14-g-Angiokatheter (1,5 Zoll) versagt bei Militärpatienten häufig aufgrund von Körperschutz und Muskulatur.",
+    "Eine bilaterale NCD kann erforderlich sein, wenn nicht bekannt ist, welche Seite betroffen ist und sich beim Patienten ein Periarrest befindet.",
+    "Nicht auf der Seite der saugenden Brustwunde platzieren, ohne die Wunde vorher zu verschließen."
+  ],
+  "follows": [],
+  "precedes": [
+    "Brustversiegelungsanwendung"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Verwenden Sie eine Nadel geeigneter Größe (bei kleineren Patienten können 1,5–2 Zoll ausreichend sein). Verwenden Sie den 2. ICS-MCL-Ansatz. Das Erkennen von Sehenswürdigkeiten ist schwieriger – seien Sie vorsichtig."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Entablillado improvisado",
+  "category": "ortho-stabilization",
+  "skill_level": "Básico",
+  "time_estimate": "5-10 minutos",
+  "description": "Inmovilice las fracturas utilizando materiales disponibles para evitar más lesiones, reducir el dolor y limitar la pérdida de sangre hacia el tejido circundante. Se encuentra la férula en su posición, a menos que la circulación esté comprometida; luego, enderece suavemente.",
+  "equipment": [
+    "Férula SAM (preferida)",
+    "Revistas enrolladas, palos, postes de tiendas de campaña (improvisados ​​en el campo)",
+    "Pañuelo / vendas triangulares",
+    "Acolchado (ropa, espuma)",
+    "Cinta o tiras de tela"
+  ],
+  "steps": [
+    "Exponga y evalúe la lesión: verifique la circulación, la sensación y el movimiento (CSM) distal a la fractura antes y después.",
+    "Controle cualquier sangrado activo antes de entablillar.",
+    "Rellene generosamente las prominencias óseas para prevenir úlceras por presión.",
+    "Seleccione un material de férula lo suficientemente largo como para inmovilizar la articulación por encima Y por debajo de la fractura.",
+    "Coloque la extremidad en una posición cómoda o alineada anatómicamente; no la fuerce.",
+    "Aplique el acolchado y luego el material de la férula. Asegúrelo con vendas o tiras de tela.",
+    "NO lo envuelva demasiado apretado: deje las yemas de los dedos de las manos y de los pies expuestos al monitor CSM.",
+    "Vuelva a evaluar el CSM después de la aplicación; aflójelo inmediatamente si hay problemas de circulación.",
+    "Eleve la extremidad si es posible para reducir la hinchazón.",
+    "Documente el momento de la aplicación de la férula."
+  ],
+  "warnings": [
+    "Vuelva a evaluar el CSM cada 15 a 30 minutos; la hinchazón puede hacer que una férula correcta se convierta en un torniquete.",
+    "Fracturas abiertas: cubrir la herida primero con un apósito estéril y luego con una férula. NO empuje el hueso hacia adentro.",
+    "Las fracturas de fémur pueden perder entre 1 y 2 litros de sangre en el muslo; trate enérgicamente el shock.",
+    "Sospecha de fractura de columna: NO improvise la férula; minimice el movimiento y mantenga la estabilización en línea."
+  ],
+  "follows": [
+    "presión directa",
+    "aplicación-de-torniquete"
+  ],
+  "precedes": [
+    "línea medevac-9"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Las placas de crecimiento en los niños son más débiles que los ligamentos; se sospecha una fractura incluso con un mecanismo leve. Las fracturas en toro (hebilla) pueden tener una inflamación mínima."
+    },
+    "obstetric": {
+      "note": "Se aplica la ferulización estándar. Evite la posición supina prolongada: inclinación lateral izquierda si está acostado."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

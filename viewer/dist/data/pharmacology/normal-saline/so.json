@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Saline caadi ah (0.9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "0.9% Sodium Chloride duritaanka"
+  ],
+  "description": "Dheecaan isotonic crystalloid. Loo isticmaalo soo noolaynta dareeraha faleebbaha. shoogga dhiigbaxa, si taxadir leh u isticmaal -- xaddi badan ayaa ka sii dara xinjirowga dhiigga (hyperchloremic acidosis, coagulopathy dilutional). Hoos-u-dhac la oggol yahay ayaa doorbiday dhex-gelidda dhaawacyada ilaa la xakameynayo dhiig-baxa.",
+  "indications": [
+    "Soo kicinta dareeraha (iyada oo taxaddar leh shoogga dhiigbaxa)",
+    "Daawada lagu qasi karo/daadin",
+    "Hypovolemia ee ka yimaada sababaha aan dhiigbaxa ahayn"
+  ],
+  "dose": "Hemorrhagic shock: Xadid ilaa 1L ugu badnaan oo la sugayo xakamaynta dhiigbaxa (hypotension ogolaan). Bartilmaameedka SBP 80-90 mmHg gudaha dhaawaca, 90 mmHg gudaha TBI. Hypovolemia aan dhiig-baxa ahayn: 500 ml boluses, dib u qiimee.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hypernatremia",
+    "Dheecaan badan / bararka sambabada (qaraabo)"
+  ],
+  "warnings": [
+    "Cadadka waaweyni waxay keenaan hyperchloremic metabolic acidosis iyo xinjirowga dhiigga ee la isku qaso -- waxay ka sii daraysaa saddex-geesoodka halista ah ee dhaawaca.",
+    "Ringer's lactated (LR) ayaa loo door bidaa dib u soo kicinta dhaawacyada mug weyn.",
+    "Ha u kicin dib-u-soo-nooleynta gasha dhaawacyada jirka ka hor inta aan la xakameynin dhiig-baxa qalliinka (hypotension oggol yahay)."
+  ],
+  "regional_names": {
+    "generic": "sodium chloride 0.9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 ml/kg IV bolus, dib u qiimee. Ku celi ugu badnaan x3 (60 mL/kg) ka hor inta aanad tixgelinin wax soo saarka dhiigga.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Dib-u-nooleynta caadiga ah ee dhiig-baxa umusha. Dib-u-soo-nooleynta dareeraha xoogga leh ee ku habboon dhiig-baxa dhalmada ka hor inta aan la helin wax-soo-saarka dhiigga."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

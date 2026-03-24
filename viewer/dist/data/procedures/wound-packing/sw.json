@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Ufungaji wa Jeraha la Hemostatic",
+  "category": "hemorrhage-control",
+  "skill_level": "kupambana na kuokoa maisha",
+  "time_estimate": "Dakika 3-5",
+  "description": "Ufungashaji wa jeraha lisiloshinikizwa au la makutano na chachi ya hemostatic ili kudhibiti uvujaji wa damu mahali ambapo tourniquet haiwezi kutumika.",
+  "equipment": [
+    "hemostatic-gauze",
+    "glavu za nitrile",
+    "kiwewe-shears",
+    "shinikizo-bandage"
+  ],
+  "steps": [
+    "Don glavu. Fungua jeraha kikamilifu kwa kutumia shears za kiwewe.",
+    "Tambua chanzo cha damu kinachofanya kazi ndani ya cavity ya jeraha.",
+    "Fungua chachi ya hemostatic na uifunge kwa nguvu kwenye jeraha kwa kidole chako, ukisukuma moja kwa moja kwenye chanzo cha damu.",
+    "Endelea kufunga mpaka cavity ya jeraha imejaa kabisa.",
+    "Omba shinikizo thabiti na la moja kwa moja na kisigino cha mkono wako kwa angalau dakika 3.",
+    "USIONDOE nyenzo yoyote ya kufunga mara tu inapotumika.",
+    "Weka bandeji ya shinikizo juu ya jeraha lililojaa.",
+    "Weka alama kwenye kadi ya TCCC au paji la uso la mgonjwa (k.m., 'PKD 0145')."
+  ],
+  "warnings": [
+    "USIJENGE majeraha ya kifua yanayopenya -- tumia kuziba kifua badala yake.",
+    "Ikiwa unafunga jeraha la shingo, weka shinikizo bila kukandamiza carotidi zote mbili kwa wakati mmoja.",
+    "Tathmini tena ndani ya dakika 5 ikiwa chanzo cha ateri kinashukiwa."
+  ],
+  "follows": [
+    "shinikizo la moja kwa moja"
+  ],
+  "precedes": [
+    "tourniquet-maombi"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Tumia chachi kidogo kwa uwiano. Omba shinikizo nyepesi ili kuzuia ukandamizaji wa thoracic kwa watoto wachanga."
+    },
+    "obstetric": {
+      "note": "Epuka shinikizo la kina au la ukali la kufunga karibu na tumbo la gravid. Kupanda kwa kasi kunapendekezwa."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

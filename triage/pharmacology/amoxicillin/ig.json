@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicillin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "Trimox"
+  ],
+  "description": "Ọgwụ nje aminopenicillin sara mbara. Ọgwụ nje prophylactic nke ọnụ maka ọrịa ọnya. Akụkụ nke ngwugwu ọgwụ ọgụ TCCC maka prophylaxis ọnya na mmerụ ahụ adịghị njọ.",
+  "indications": [
+    "Prophylaxis ọrịa ọnya (ọnyá dị nro, mkpọ ọgwụ ọnụ)",
+    "Ọrịa anụ ahụ dị nro",
+    "Ọrịa akụkụ iku ume"
+  ],
+  "dose": "500 mg PO kwa awa 8 x 7 ụbọchị (prophylaxis ọnya). 875 mg PO kwa awa 12 ọzọ.",
+  "route": [
+    "PO"
+  ],
+  "window": "Malite n'ime awa 3 nke mmerụ ahụ maka prophylaxis ọnya.",
+  "contraindications": [
+    "Allergy penicillin mara amara (jiri doxycycline kama)",
+    "Mononucleosis (ihe ize ndụ nke ọkụ ọkụ)"
+  ],
+  "warnings": [
+    "Ọ bụrụ na nfụkasị penicillin: dochie doxycycline 100mg PO BID.",
+    "Ụzọ ọnụ naanị --eji ọgwụ nje IV (cefazolin/ciprofloxacin) maka ọnya siri ike ma ọ bụ ọ bụrụ na anabataghị ọnụ."
+  ],
+  "regional_names": {
+    "generic": "amoxicillin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg / kg / ụbọchị kewara q8h (max 500 mg / dose). Jiri ntụaka Broselow dabere na ibu.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Nchekwa na ime ime. Mmasị karịa doxycycline (nke a na-egbochi ime ime)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

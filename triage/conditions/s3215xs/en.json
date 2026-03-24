@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s3215xs",
+    "icd10":  "S3215XS",
+    "name":  "Type 2 fracture of sacrum, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Type 2 fracture of sacrum, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

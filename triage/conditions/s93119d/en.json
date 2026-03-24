@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s93119d",
+    "icd10":  "S93119D",
+    "name":  "Dislocation of interphalangeal joint of unspecified toe(s), subsequent encounter",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Dislocation of interphalangeal joint of unspecified toe(s), subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

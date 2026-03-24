@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t8482xs",
+    "icd10":  "T8482XS",
+    "name":  "Fibrosis due to internal orthopedic prosthetic devices, implants and grafts, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Fibrosis due to internal orthopedic prosthetic devices, implants and grafts, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

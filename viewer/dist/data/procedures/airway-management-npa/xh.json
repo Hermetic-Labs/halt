@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Ukufakwa kweNasopharyngeal Airway (NPA).",
+  "category": "airway",
+  "skill_level": "ukulwa-umsindisi wobomi",
+  "time_estimate": "1 min",
+  "description": "Ukufakwa kwendlela yomoya yempumlo eguquguqukayo yokugcina i-patency yomoya kwisigulane esingekho zingqondweni okanye semiconscious.",
+  "equipment": [
+    "i-npa-nge-pin yokhuseleko",
+    "into yokuthambisa"
+  ],
+  "steps": [
+    "Khetha ubungakanani obufanelekileyo be-NPA (umlinganiselo ukusuka kwimpumlo ukuya kwinwebu yendlebe).",
+    "Thambisa i-NPA ngesisa ngesithambiso esinyibilikayo emanzini okanye ngesaline.",
+    "Faka isikhonkwane sokhuseleko kwiflange ukuba ayikabikho (ithintela ukulangazelela).",
+    "Faka ngobunono kwikhala lasekunene (bevel ukuya kwiseptum), uhambela phambili ngokungqamene nenkalakahla.",
+    "Ukuqhubela phambili de i-flange iphumle malunga nempumlo.",
+    "Phinda ubeke isigulane (indawo yokubuyisela ukuba akukho nkxalabo yomgogodla) kwaye uphinde uhlolisise indlela yomoya.",
+    "Ukuba ukuxhathisa kuhlangatyezwana nayo, zama impumlo yasekhohlo."
+  ],
+  "warnings": [
+    "Ichanekile ekurhanelweni kokakayi lwe-basilar (amehlo e-raccoon, uphawu lwedabi, i-CSF rhinorrhea).",
+    "I-NPA sesona sigulana singekho zingqondweni sesona sihlomelo sendlela yomoya yokuqala -- i-OPA inokubangela ukugabha kwizigulana zingekho zingqondweni."
+  ],
+  "source": "TCCC / JTS CPG"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "s0010xs",
+  "icd10": "S0010XS",
+  "name": "未特指的眼睑和眼周区域挫伤、后遗症",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "不明眼睑和眼周区域挫伤、后遗症",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

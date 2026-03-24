@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Mai hikima",
+    "Nayzilam"
+  ],
+  "description": "Benzodiazepine mai gajeren aiki tare da saurin farawa. An fi so don kwantar da hankali, RSI pre-magani, da kuma IM/IN sarrafa kama. Hanyoyin IM da na ciki suna ba da fa'ida mai mahimmanci a saitunan filin.",
+  "indications": [
+    "Hanyar kwantar da hankali",
+    "RSI kafin magani (tare da ketamine)",
+    "Gudanar da kama (IM/IN lokacin da babu IV)",
+    "Gudanar da tashin hankali"
+  ],
+  "dose": "Kwanciyar hankali: 0.05-0.1 mg/kg IV titrated. Tsari: 1-5 MG IV jinkirin turawa. IM: 0.2 mg/kg. IN: 0.2 mg/kg (max 10 mg). Matsayin epilepticus IM: 10 MG IM (babba).",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN"
+  ],
+  "window": "",
+  "contraindications": [
+    "M kunkuntar-kwana glaucoma",
+    "Mummunan maye barasa tare da daidaitawar zuciya da jijiyoyin jini",
+    "Sanannen hypersensitivity"
+  ],
+  "warnings": [
+    "Bacin rai na numfashi -- duba hanyar iska, sami wakili mai juyawa (flumazenil) idan akwai.",
+    "Hypotension musamman tare da haɗin gwiwar opioid.",
+    "Saurin allura na IV yana haifar da bugun jini -- turawa a hankali."
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Kwanciyar hankali: 0.05-0.1 mg/kg IV. IM: 0.1-0.2 mg/kg. A cikin: 0.2-0.3 mg/kg. Kamewa IM: 0.2 mg/kg (max 10 mg).",
+      "note": "A hanya mai amfani musamman ga yara -- yana guje wa shiga IV."
+    },
+    "obstetric": {
+      "note": "Ketare mahaifa. Maganin jinya mai yiwuwa. Yi amfani da ƙaramin tasiri mai inganci; saka idanu ga jariri idan an ba shi kusa da bayarwa."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

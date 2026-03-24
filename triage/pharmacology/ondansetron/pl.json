@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Selektywny lek przeciwwymiotny, antagonista receptora 5-HT3. Bardzo skuteczny przy nudnościach i wymiotach. ODT (tabletka rozpadająca się w jamie ustnej) jest przydatna w warunkach terenowych, gdy IV nie jest dostępna. Zawarte w niektórych opakowaniach pigułek bojowych.",
+  "indications": [
+    "Nudności i wymioty (chemioterapia, wywołane opioidami, pooperacyjne, związane z TBI)",
+    "Choroba lokomocyjna",
+    "Nudności po podaniu ketaminy"
+  ],
+  "dose": "4-8 mg IV/IO powolne wciśnięcie przez 2-5 min. ODT: 4-8 mg rozpuszczone pod językiem. domięśniowo: 4 mg.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Znana nadwrażliwość na ondansetron lub innych antagonistów 5-HT3",
+    "Wrodzony zespół długiego odstępu QT (tylko duże dawki dożylne)"
+  ],
+  "warnings": [
+    "Wysoka dawka dożylna może wydłużyć odstęp QT – należy stosować najniższą skuteczną dawkę dożylną.",
+    "Nie zastępuje udrożnienia dróg oddechowych u otępiałego pacjenta z wymiotami – w pierwszej kolejności należy zabezpieczyć drogi oddechowe."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,1-0,15 mg/kg dożylnie (maks. 4 mg). ODT: 4 mg dla dzieci > 4 lat.",
+      "note": "Powszechnie stosowany i dobrze tolerowany w pediatrii."
+    },
+    "obstetric": {
+      "note": "Ograniczone dane dotyczące ciąży. Stosować w przypadku ciężkich nudności/wymiotów po pierwszym trymestrze ciąży, gdy korzyści przewyższają ryzyko. Nie zaleca się stosowania w pierwszym trymestrze."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

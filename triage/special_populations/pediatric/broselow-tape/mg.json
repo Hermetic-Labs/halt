@@ -1,0 +1,63 @@
+{
+  "id": "broselow-tape",
+  "name": "Broselow Pediatric Emergency Tape Reference",
+  "description": "Filazana lanja amin'ny fatra miloko miloko ho an'ny fitantanana fanafody ho an'ny ankizy rehefa tsy misy mizana. Fandrefesana ny zaza manomboka eo an-tampon-doha ka hatramin’ny ombelahin-tongony ary ampifanaraho amin’ny tarika miloko.",
+  "note": "Ity fanondroana ity dia natao ho an'ny ESTIMATION ihany. Ampiasao ny lanja tena izy rehefa misy.",
+  "bands": [
+    {
+      "color": "volondavenona",
+      "weight_kg": "3-5",
+      "length_cm": "46-57",
+      "est_age": "Vao teraka"
+    },
+    {
+      "color": "mavokely",
+      "weight_kg": "6-7",
+      "length_cm": "57-67",
+      "est_age": "3-6 volana"
+    },
+    {
+      "color": "mena",
+      "weight_kg": "8-9",
+      "length_cm": "67-74",
+      "est_age": "6-12 volana"
+    },
+    {
+      "color": "volomparasy",
+      "weight_kg": "10-11",
+      "length_cm": "74-83",
+      "est_age": "12-18 volana"
+    },
+    {
+      "color": "mavo",
+      "weight_kg": "12-14",
+      "length_cm": "83-95",
+      "est_age": "18 volana-3 taona"
+    },
+    {
+      "color": "fotsy",
+      "weight_kg": "15-18",
+      "length_cm": "95-107",
+      "est_age": "3-5 taona"
+    },
+    {
+      "color": "manga",
+      "weight_kg": "19-22",
+      "length_cm": "107-122",
+      "est_age": "5-7 taona"
+    },
+    {
+      "color": "voasary",
+      "weight_kg": "24-28",
+      "length_cm": "122-137",
+      "est_age": "7-9 taona"
+    },
+    {
+      "color": "maitso",
+      "weight_kg": "30-36",
+      "length_cm": "137-152",
+      "est_age": "9-12 taona"
+    }
+  ],
+  "source": "Broselow Pediatric Emergency Reference / PALS"
+}

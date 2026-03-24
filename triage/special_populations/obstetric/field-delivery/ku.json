@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Radestkirina Qada Acil",
+  "category": "obstetric",
+  "skill_level": "şerker-bijîjk",
+  "time_estimate": "Diguhere -- 20+ min",
+  "description": "Rêvebiriya radestkirina bilez an neplankirî di hawîrdora hişk de.",
+  "equipment": [
+    "destmal",
+    "paqij-cil-betanî",
+    "cord-clamps-an-ties",
+    "meqes",
+    "ampûla-şirçe"
+  ],
+  "steps": [
+    "Diya xwe li ser piştê an jî nîv-raxistî bi cih bikin. Ger bêhiş be, tiliya çepê ya çepê tê tercîh kirin (pêşî lihevkirina aortocaval digire).",
+    "Radestkirina serî kontrol bikin -- bi palmê piştgirî bikin. NEkişin.",
+    "Dema ku serî hat radest kirin, ji bo korda nuçal (li dora stûyê) kontrol bikin. Ger hebe, li ser serê xwe bişon. Heke teng be, bixin û birîn.",
+    "Ger hebe dev jê bike paşê poz bi şiringa ampûlê.",
+    "Rêvekirina radestkirina milê pêşiyê bi kêşana nerm a ber bi jêr ve li ser serî, dûv re ji bo milê paşîn ber bi jor ve.",
+    "Bedenê radest bikin -- dema radestkirinê bala xwe bidin.",
+    "Pitik yekser hişk bikin û germ bikin. Bi rijandina piştê teşwîq bikin.",
+    "Bendê bixin û qut bikin (heke pitik sabît be 1-2 hûrdem bisekinin).",
+    "Placentayê bi kêşa kontrolkirî ya nerm radest bikin - zorê nekin.",
+    "Oksîtosîn (heke hebe) îdare bikin da ku pêşî li hemorrajiya piştî zayînê ya piştî zayîna placenta bigire.",
+    "Ji bo hemorrajiya piştî zayînê binirxînin - ger hewce bike, masajkirina fundê, bimanualîkirina bimanual.",
+    "Di 1 û 5 hûrdeman de xala Apgar binirxînin."
+  ],
+  "warnings": [
+    "Heke radest ne nêzîk be - hewl nekin. MEDEVAC Rapid tê tercîh kirin.",
+    "Distocia şanê: ger milên xwe zeliqîne, manovra McRoberts (hiperflex hips) û zexta suprapubîk bicîh bikin.",
+    "Hemorrajiya piştî zayînê sedema sereke ya mirina zikmakî ya pêşîlêgirtinê ye - oxytocin amade be."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

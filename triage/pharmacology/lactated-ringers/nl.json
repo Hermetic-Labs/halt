@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Ringerlactaatoplossing (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Hartmanns oplossing",
+    "Ringerlactaat-injectie"
+  ],
+  "description": "Evenwichtige isotone kristalloïde vloeistof. Voorkeur boven normale zoutoplossing voor traumareanimatie van grote volumes - fysiologisch evenwichtiger, minder risico op hyperchloremische acidose. Bevat natrium, kalium, calcium, lactaat.",
+  "indications": [
+    "Trauma-reanimatie (bij voorkeur kristalloïde bij hemorragische shock)",
+    "Brandwondenvloeistofreanimatie (Parkland-formule)",
+    "Hypovolemie",
+    "Vloeistofonderhoud"
+  ],
+  "dose": "Hemorragische shock: Beperk tot maximaal 1 liter voordat u overstapt op bloedproducten. Doel SBP 80-90 mmHg penetrerend trauma, 90 mmHg TBI. Brandwonden (parkland): 4 ml x kg x% TBSA verbrand gedurende 24 uur (de helft in de eerste 8 uur).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hyperkaliëmie (bevat kalium)",
+    "Ernstig leverfalen (verminderd lactaatmetabolisme – relatief)"
+  ],
+  "warnings": [
+    "Nog steeds een kristalloïde - kan geen zuurstof vervoeren. Bloedproducten zijn superieur bij hemorragische shock. LR is alleen een brug.",
+    "Niet mengen met bloedproducten in dezelfde lijn (calcium veroorzaakt stolling).",
+    "Bij penetrerend trauma NIET overmatig reanimeren voordat de bloeding onder controle is."
+  ],
+  "regional_names": {
+    "generic": "lactaat Ringer's oplossing",
+    "UK": "Hartmanns oplossing"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Bolus van 20 ml/kg, opnieuw beoordelen. Voorkeur boven NS voor pediatrisch trauma.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Voorkeur IV-vloeistof tijdens bevalling en bevalling. Geschikt voor reanimatie van verloskundige bloedingen."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

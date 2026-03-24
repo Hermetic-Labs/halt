@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Dexamethasone",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "I-Decadron",
+    "DexPak"
+  ],
+  "description": "I-corticosteroid yokwenziwa ixesha elide. Isetyenziselwa i-edema ye-cerebral (i-high altitude cerebral edema - i-HACE, i-TBI), ukuguquguquka okukhulu, i-edema ye-airway, kunye ne-adrenal crisis. Anti-ukudumba, hayi anabolic.",
+  "indications": [
+    "Ukuphakama okuphezulu kwe-cerebral edema (HACE)",
+    "I-edema yomoya (i-post-extubation stridor, croup)",
+    "I-Cerebral edema evela kwi-tumor okanye ithumba",
+    "Ukwalana okumandundu (idibanisa ne-epinephrine)",
+    "Ingxaki ye-adrenal",
+    "I-Anti-emetic adjunct (perioperative)"
+  ],
+  "dose": "I-Cerebral edema / HACE: 8-10 mg IV / IM yokuqala, emva koko 4 mg q6h. Airway edema: 10 mg IV kanye. I-Croup: 0.6 mg / kg IM / PO (ubuninzi be-16mg). Ingxaki yeAdrenal: 4 mg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "I-IM",
+    "PO"
+  ],
+  "window": "I-HACE: Nikeza kwangethuba kunye nokwehla ngoko nangoko.",
+  "contraindications": [
+    "Usulelo lomngundo lwenkqubo (ngaphandle kokhuselo lwe-antifungal)",
+    "Ugonyo lwentsholongwane ephilayo ngaphakathi kweentsuku ezingama-30 (isalamane)"
+  ],
+  "warnings": [
+    "Ayithathi indawo yokwehla kunye neoksijini ye-HACE -- sebenzisa njengesihlomelo kuphela.",
+    "I-Hyperglycemia-ibeke iliso kwi-glucose yegazi kwi-diabetes.",
+    "Immunosuppression kunye nokusetyenziswa ixesha elide.",
+    "Idosi enye yeemeko ezingxamisekileyo ngokubanzi ikhuselekile kakhulu."
+  ],
+  "regional_names": {
+    "generic": "idexamethasone"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "I-Croup: 0.6 mg / kg PO / IM (ubuninzi be-16 mg). I-Cerebral edema: 0.5-1 mg / kg IV (max 10 mg). I-edema yomoya: 0.5 mg / kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "I-12 mg IM q24h x 2 iidosi ezisetyenziselwa ukukhawulezisa ukukhula kwemiphunga yomntwana kwiiveki ezingama-24-34 zokumitha ekubelekeni kwangaphambi kwexesha. Xoxa nomboneleli ophezulu okhoyo."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

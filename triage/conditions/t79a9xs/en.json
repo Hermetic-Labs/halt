@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t79a9xs",
+    "icd10":  "T79A9XS",
+    "name":  "Traumatic compartment syndrome of other sites, sequela",
+    "category":  "adverse-effects",
+    "triage_priority":  "",
+    "description":  "Traumatic compartment syndrome of other sites, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

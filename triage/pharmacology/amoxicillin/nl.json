@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicilline",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "Trimox"
+  ],
+  "description": "Breedspectrumaminopenicilline-antibioticum. Oraal profylactisch antibioticum voor wondinfectie. Onderdeel van het TCCC-gevechtspillenpakket voor wondprofylaxe bij niet-ernstige verwondingen.",
+  "indications": [
+    "Profylaxe van wondinfecties (lichte tot matige wonden, orale pillendoos)",
+    "Infecties van zacht weefsel",
+    "Luchtweginfecties"
+  ],
+  "dose": "500 mg PO elke 8 uur x 7 dagen (wondprofylaxe). 875 mg PO elke 12 uur alternatief.",
+  "route": [
+    "PO"
+  ],
+  "window": "Begin binnen 3 uur na het letsel met wondprofylaxe.",
+  "contraindications": [
+    "Bekende penicilline-allergie (gebruik in plaats daarvan doxycycline)",
+    "Mononucleosis (risico op huiduitslag)"
+  ],
+  "warnings": [
+    "Als u allergisch bent voor penicilline: vervang doxycycline 100 mg PO BID.",
+    "Alleen orale route - gebruik IV-antibiotica (cefazoline/ciprofloxacine) voor ernstige wonden of als oraal niet wordt verdragen."
+  ],
+  "regional_names": {
+    "generic": "amoxicilline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/dag verdeeld om de 8 uur (max. 500 mg/dosis). Gebruik op gewicht gebaseerde Broselow-referentie.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Veilig tijdens de zwangerschap. Geprefereerd boven doxycycline (wat gecontra-indiceerd is tijdens de zwangerschap)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

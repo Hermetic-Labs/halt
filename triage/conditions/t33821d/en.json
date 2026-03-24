@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t33821d",
+    "icd10":  "T33821D",
+    "name":  "Superficial frostbite of right foot, subsequent encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Superficial frostbite of right foot, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

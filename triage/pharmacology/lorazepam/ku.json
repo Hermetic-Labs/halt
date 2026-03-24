@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Ativan"
+  ],
+  "description": "Benzodiazepine-çalakiya navîn. Dermankirina rêza yekem a IV/IM ji bo statûya epîleptîk û girtina akût. Di heman demê de ji bo aramkirina prosedurê û anxiolysis jî tê bikar anîn.",
+  "indications": [
+    "Status epilepticus (rêza yekem IV)",
+    "Birêvebirina girtina akût",
+    "Sedation prosedural",
+    "Xemgîniyek giran an acizbûn"
+  ],
+  "dose": "Girtin: 4 mg IV/IO hêdî hêdî di 2 hûrdeman de. Ger çewisandin berdewam bike 4 mg di 5-10 hûrdeman de dubare bikin. IM: 4 mg heke IV tunebe.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaukoma akût-goşeya teng",
+    "Depresyona nefesê ya giran",
+    "Hîperhesasiya propylen glycol"
+  ],
+  "warnings": [
+    "Sedema depresyona nefesê - BVM û amûrên rêyên hewayê amade ne.",
+    "Sedation dibe ku 6-8 demjimêran bidome - rêça hewayê bişopînin.",
+    "Ajîtasyonek paradoksî gengaz e, nemaze di pîr û zarokan de."
+  ],
+  "regional_names": {
+    "generic": "lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV/IM (max 4 mg/doz). Ger hewce be di 5-10 hûrdeman de carekê dubare bikin.",
+      "note": "Ji bo birêvebirina girtina IV di zarokan de li ser diazepam bijarte."
+    },
+    "obstetric": {
+      "note": "Placenta derbas dike - depresyona nefesê ya neonatal gengaz e. Dema ku feyde ji xetereyê zêdetir be di rewşa epîleptîka zikmakî de bikar bînin."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Ativan"
+  ],
+  "description": "Intermediate-acting benzodiazepine. First-line IV/IM na paggamot para sa status epilepticus at acute seizure. Ginagamit din para sa procedural sedation at anxiolysis.",
+  "indications": [
+    "Status epilepticus (unang linya IV)",
+    "Talamak na pamamahala ng seizure",
+    "Procedural na pagpapatahimik",
+    "Matinding pagkabalisa o pagkabalisa"
+  ],
+  "dose": "Pag-agaw: 4 mg IV/IO mabagal na pagtulak sa loob ng 2 min. Ulitin ang 4 mg sa loob ng 5-10 min kung magpapatuloy ang seizure. IM: 4 mg kung hindi magagamit ang IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "Talamak na narrow-angle glaucoma",
+    "Malubhang depresyon sa paghinga",
+    "Propylene glycol hypersensitivity"
+  ],
+  "warnings": [
+    "Nagdudulot ng respiratory depression -- ihanda ang BVM at airway equipment.",
+    "Maaaring tumagal ng 6-8 oras ang pagpapatahimik -- subaybayan ang daanan ng hangin.",
+    "Posible ang paradoxical agitation, lalo na sa mga matatanda at bata."
+  ],
+  "regional_names": {
+    "generic": "lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV/IM (max na 4 mg/dosis). Ulitin nang isang beses sa loob ng 5-10 min kung kinakailangan.",
+      "note": "Mas pinipili kaysa sa diazepam para sa IV seizure management sa mga bata."
+    },
+    "obstetric": {
+      "note": "Tumawid sa inunan -- posible ang neonatal respiratory depression. Gamitin sa maternal status epilepticus kapag ang benepisyo ay mas malaki kaysa sa panganib."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

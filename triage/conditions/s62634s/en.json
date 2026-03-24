@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s62634s",
+    "icd10":  "S62634S",
+    "name":  "Displaced fracture of distal phalanx of right ring finger, sequela",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Displaced fracture of distal phalanx of right ring finger, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Isı Yaralanması Yönetimi",
+  "category": "environmental",
+  "skill_level": "Temel",
+  "time_estimate": "MEDEVAC veya hasta stabil olana kadar devam ediyor",
+  "description": "Sıcak krampları, sıcak bitkinliği ve sıcak çarpmasının yönetimi. Sıcak çarpması hayatı tehdit eden bir acil durumdur; tedavisi hızlı soğutmadır. Isı bitkinliğini (normal zihinsel durum) sıcak çarpmasından (değişmiş LOC) hemen ayırın.",
+  "equipment": [
+    "Su (ağızdan + soğutma)",
+    "Buz torbaları veya soğuk ıslak bezler",
+    "IV malzemeleri (LR veya NS)",
+    "Vantilatör veya gölge",
+    "Rektal termometre (kesin çekirdek sıcaklığı)"
+  ],
+  "steps": [
+    "DEĞERLENDİRME: Yaralı uyanık ve yönelimli mi? Sıcak kuru cilt mi, sıcak terli cilt mi? Termometre mevcutsa çekirdek sıcaklığı.",
+    "ISI KRAMPLARI: Kas spazmları, normal zihinsel durum. Gölgede dinlenin, elektrolitlerle oral rehidrasyon, hafif esneme. Hayati tehlikesi yok.",
+    "ISI YORGUNLUĞU: Aşırı terleme, halsizlik, baş dönmesi, normal veya normale yakın zihinsel durum. Gölge/serin alana geçin. Fazla giysileri çıkarın. Oral sıvılar (bilinçli ise) veya 30-60 dakika boyunca IV LR 1L. Sıcak çarpmasının ilerlemesini izleyin.",
+    "ISI ÇARPMASI (acil durum): LOC'de değişiklik, kafa karışıklığı, kavgacılık veya bilinç kaybı. Çekirdek sıcaklığı > 40C (104F). Sıcak cilt (ıslak veya kuru olabilir). BAŞLANGIÇ: Hemen ocaktan alın, tüm kıyafetleri çıkarın, cildinizi ıslatın ve agresif bir şekilde havalandırın. Boyun, koltuk altı ve kasıklara (yüksek damarlı alanlar) buz paketleri uygulayın. IV LR 1-2L. Bilinci yerinde değilse hava yolunu koruyun. Derhal MEDEVAC'ı kullanın.",
+    "Sıcak çarpması için aspirin veya asetaminofen VERMEYİN; faydası olmaz, zarar verebilir.",
+    "Monitör: hayati değerler 15 dakikada bir, hava yolu, zihinsel durum. Belge sıcaklığı eğilimi.",
+    "MEDEVAC sırasında soğutmaya devam edin; taşıma için durmayın."
+  ],
+  "warnings": [
+    "Sıcak çarpması hayatı tehdit eden bir acil durumdur; bunu sıcak bitkinliğiyle karıştırmayın. Zihinsel durumu kontrol edin.",
+    "Soğutma kesin tedavidir. IV erişimi sağlamak için soğutmayı geciktirmeyin.",
+    "Eforlu sıcak çarpması formda bireylerde meydana gelebilir; fiziksel kondisyon korumaz.",
+    "Sade su ile aşırı hidrasyondan kaynaklanan hiponatremi (düşük sodyum), sıcak çarpmasını taklit edebilir; sadece su değil, elektrolit çözeltisi de verir."
+  ],
+  "follows": [
+    "dehidrasyon değerlendirmesi"
+  ],
+  "precedes": [
+    "tıbbi tahliye-9 hattı"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Çocuklar ısıyı daha az verimli bir şekilde düzenler. Sıcak çarpması daha hızlı ilerleyebilir. Ağırlığa dayalı sıvı: 20 mL/kg LR IV bolus. Rektal termometre aracılığıyla çekirdek sıcaklığı en doğru şekilde ölçülür."
+    },
+    "obstetric": {
+      "note": "Maternal hipertermi (>39C), fetal nöral tüp defektlerine (erken) ve fetal sıkıntıya (geç) neden olabilir. Agresif soğutma. Varsa fetal kalp atış hızının izlenmesi."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

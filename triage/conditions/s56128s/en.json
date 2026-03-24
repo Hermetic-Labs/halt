@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s56128s",
+    "icd10":  "S56128S",
+    "name":  "Laceration of flexor muscle, fascia and tendon of left little finger at forearm level, sequela",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Laceration of flexor muscle, fascia and tendon of left little finger at forearm level, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

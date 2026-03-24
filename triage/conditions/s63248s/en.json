@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s63248s",
+    "icd10":  "S63248S",
+    "name":  "Subluxation of distal interphalangeal joint of other finger, sequela",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Subluxation of distal interphalangeal joint of other finger, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

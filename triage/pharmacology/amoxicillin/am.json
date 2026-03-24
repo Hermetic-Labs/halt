@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicillin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "ትሪሞክስ"
+  ],
+  "description": "ሰፊ-ስፔክትረም aminopenicillin አንቲባዮቲክ. ለቁስል ኢንፌክሽን የአፍ ውስጥ መከላከያ አንቲባዮቲክ. ከባድ ባልሆኑ ጉዳቶች ላይ ቁስልን ለመከላከል የ TCCC የውጊያ ክኒን ጥቅል አካል።",
+  "indications": [
+    "የቁስል ኢንፌክሽን መከላከያ (መለስተኛ-መካከለኛ ቁስሎች፣ የአፍ ውስጥ ክኒን ጥቅል)",
+    "ለስላሳ ቲሹ ኢንፌክሽን",
+    "የመተንፈሻ አካላት ኢንፌክሽኖች"
+  ],
+  "dose": "500 mg PO በየ 8 ሰዓቱ x 7 ቀናት (ቁስል መከላከያ)። በየ 12 ሰዓቱ 875 mg PO አማራጭ።",
+  "route": [
+    "PO"
+  ],
+  "window": "ለቁስል መከላከያ ከጉዳት በኋላ በ 3 ሰዓታት ውስጥ ይጀምሩ.",
+  "contraindications": [
+    "የታወቀ የፔኒሲሊን አለርጂ (በምትኩ ዶክሲሳይክሊን ይጠቀሙ)",
+    "Mononucleosis (የሽፍታ ስጋት)"
+  ],
+  "warnings": [
+    "ፔኒሲሊን አለርጂክ ከሆነ፡ ምትክ ዶክሲሳይክሊን 100mg PO BID።",
+    "የቃል መንገድ ብቻ - ለከባድ ቁስሎች ወይም በአፍ የማይታገሥ ከሆነ IV አንቲባዮቲክን (cefazolin/ciprofloxacin) ይጠቀሙ።"
+  ],
+  "regional_names": {
+    "generic": "amoxicillin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/d የተከፈለ q8h (ከፍተኛ 500 mg/dose)። በክብደት ላይ የተመሰረተ ብሮዝሎቭ ማጣቀሻን ይጠቀሙ።",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "በእርግዝና ወቅት ደህንነቱ የተጠበቀ. ከዶክሲሳይክሊን (በእርግዝና ወቅት የተከለከለ ነው) ይመረጣል."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s230xxs",
+    "icd10":  "S230XXS",
+    "name":  "Traumatic rupture of thoracic intervertebral disc, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Traumatic rupture of thoracic intervertebral disc, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

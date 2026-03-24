@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s52509j",
+    "icd10":  "S52509J",
+    "name":  "Unspecified fracture of the lower end of unspecified radius, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with delayed healing",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified fracture of the lower end of unspecified radius, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with delayed healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

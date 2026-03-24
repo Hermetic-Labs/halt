@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t3340xd",
+    "icd10":  "T3340XD",
+    "name":  "Superficial frostbite of unspecified arm, subsequent encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Superficial frostbite of unspecified arm, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

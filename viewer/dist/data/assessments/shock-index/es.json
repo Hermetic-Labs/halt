@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Índice de shock",
+  "category": "circulatory",
+  "description": "Indicador rápido de un solo número de estabilidad hemodinámica. Calculado como FC/PAS. Lo normal es 0,5-0,7.",
+  "instructions": "Divida la frecuencia cardíaca por la presión arterial sistólica. Un índice de shock creciente indica deterioro.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Normal - hemodinámicamente estable"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Choque leve: controle de cerca"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Choque moderado: acceso intravenoso, líquidos"
+    },
+    {
+      "range": ">1.4",
+      "label": "Choque grave: reanimación inmediata, hemoderivados"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "El índice de shock obstétrico (OSI) utiliza la misma fórmula. SI > 0,9 en pacientes embarazadas es significativo. La frecuencia cardíaca normal es mayor durante el embarazo (80-100 lpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

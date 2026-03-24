@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s72044n",
+    "icd10":  "S72044N",
+    "name":  "Nondisplaced fracture of base of neck of right femur, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with nonunion",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of base of neck of right femur, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

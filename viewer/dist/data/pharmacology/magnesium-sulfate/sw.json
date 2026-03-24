@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Magnesium Sulfate (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Sindano ya Magnesium Sulfate"
+  ],
+  "description": "Dawa ya mfadhaiko ya mfumo mkuu wa neva na anticonvulsant inayotumika kwa ajili ya kuzuia na kutibu mshtuko wa moyo (mshtuko wa moyo kutoka kwa preeclampsia). Pia hutumiwa kwa pumu kali na torsades de pointes. Mstari wa kwanza wa eclampsia juu ya benzodiazepines.",
+  "indications": [
+    "Eclampsia (kuzuia mshtuko na matibabu katika priklampsia kali)",
+    "Pre-eclampsia prophylaxis (sifa kali)",
+    "Torsades de Pointes (polymorphic V-tach kutoka hypomagnesemia)",
+    "Pumu kali ya papo hapo (kiambatanisho)"
+  ],
+  "dose": "Kiwango cha kupakia Eclampsia: 4-6g IV kusukuma polepole zaidi ya dakika 20. Matengenezo: 1-2g / saa IV infusion. Ikiwa kifafa kinajirudia: 2-4g IV zaidi ya dakika 5. Upakiaji wa IM (ikiwa hakuna IV): 5g IM kila kitako (jumla ya 10g) kwa wakati mmoja.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "Anza wakati mshtuko unapoanza au unapogunduliwa na dalili kali za priklampsia.",
+  "contraindications": [
+    "Myasthenia gravis",
+    "Kasoro za uendeshaji wa moyo",
+    "Kushindwa kwa figo (hujilimbikiza -- kupunguza kipimo)"
+  ],
+  "warnings": [
+    "Dalili za sumu: kupoteza reflex ya patellar (ishara ya kwanza, 7-10 mEq/L), unyogovu wa kupumua (> 10 mEq/L), mshtuko wa moyo (> 15 mEq/L).",
+    "Fuatilia reflexes ya patellar kila baada ya dakika 15 -- kupoteza reflex = kuacha infusion.",
+    "DAWA ya sumu: Calcium gluconate 1g IV kwa dakika 3.",
+    "Punguza kipimo katika kuharibika kwa figo -- fuatilia pato la mkojo."
+  ],
+  "regional_names": {
+    "generic": "sulfate ya magnesiamu"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg IV zaidi ya dakika 10-20 (max 2g). Pumu kali: 25-75 mg/kg IV (max 2g).",
+      "note": "Hutumika mara chache sana kwa ajili ya mshtuko wa moyo kwa wagonjwa wa watoto wasio na uzazi -- eclampsia ndio dalili kuu."
+    },
+    "obstetric": {
+      "note": "Kiashiria cha msingi. Huvuka kondo -- hypermagnesemia ya watoto wachanga inawezekana. Kiwango cha watoto wachanga ikiwa unyogovu wa kupumua: calcium gluconate 100 mg/kg IV. Ifahamishe timu ya NICU kuhusu matumizi ya magnesiamu ya uzazi."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

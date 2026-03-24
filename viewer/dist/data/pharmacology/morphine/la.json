@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Morphine Sulfate",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Contin",
+    "Morphine Sulfate Iniectio"
+  ],
+  "description": "Opioideum analgesicum. Dolorem efficacem subsidio praebet, sed vasodilationem et hypotensionem causat — utendum caute in concussione haemorrhagicae. Ketamine occasus pugnae praefertur. Morphinis tantum in aegris hemodynamically stabilibus utere.",
+  "indications": [
+    "Gravis dolor in hemodynamically moderatus aegris stabilis",
+    "Non prima linea in TCCC"
+  ],
+  "dose": "2-4 mg IV/IO q4h PRN. Titrate ad effectum. IM: 5-10 mg q4h PRN.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hemodynamic instabilitas / haemorrhagia inpulsa",
+    "Depressione respiratorii",
+    "Capitis injuriam mutato LOC (relativo)"
+  ],
+  "warnings": [
+    "Causat vasodilation - hemorrhagic incursu peior potest. Ante et post assess BP.",
+    "Habes naloxone statim praesto.",
+    "Depressione respiratorii -- monitor rate."
+  ],
+  "regional_names": {
+    "generic": "MORPHINUM sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV q2-4h PRN. Max singularis dosis 2mg IV in puero opioidino-navo.",
+      "note": "Monitor rate respiratorii proxime. Neonates sunt perquam sensibiles."
+    },
+    "obstetric": {
+      "note": "Cruces placentae. Tristitia respiratorii neonatalis datur, si intra 2-4 horas partus datur. Have naloxone parata natum."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

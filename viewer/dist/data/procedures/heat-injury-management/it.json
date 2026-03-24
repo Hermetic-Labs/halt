@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Gestione degli infortuni da calore",
+  "category": "environmental",
+  "skill_level": "Base",
+  "time_estimate": "In corso fino al MEDEVAC o al paziente stabile",
+  "description": "Gestione dei crampi da calore, dell’esaurimento da calore e del colpo di calore. Il colpo di calore è un’emergenza pericolosa per la vita: il trattamento è il raffreddamento rapido. Distinguere immediatamente l'esaurimento da calore (attività mentale normale) dal colpo di calore (LOC alterato).",
+  "equipment": [
+    "Acqua (orale + raffreddamento)",
+    "Impacchi di ghiaccio o panni bagnati freddi",
+    "Forniture IV (LR o NS)",
+    "Ventilatore o parasole",
+    "Termometro rettale (temperatura interna definitiva)"
+  ],
+  "steps": [
+    "VALUTAZIONE: la vittima è vigile e orientata? Pelle calda e secca o pelle calda e sudata? Temperatura interna se il termometro è disponibile.",
+    "CRAMPI DA CALDO: spasmi muscolari, attività mentale normale. Riposo all'ombra, reidratazione orale con elettroliti, stretching dolce. Non in pericolo di vita.",
+    "ESAURIMENTO DA CALORE: sudorazione abbondante, debolezza, vertigini, stato mentale normale o quasi normale. Spostarsi in una zona ombreggiata/fresca. Rimuovere gli indumenti in eccesso. Fluidi orali (se cosciente) o IV LR 1 L in 30-60 min. Monitorare la progressione verso il colpo di calore.",
+    "COLPO DI CALORE (emergenza): posizione alterata, confusione, combattività o perdita di coscienza. Temperatura interna > 40°C (104°F). Pelle calda (può essere bagnata o asciutta). INIZIO: Togliere immediatamente dal fuoco, rimuovere tutti gli indumenti, la pelle bagnata e ventilare in modo aggressivo. Applicare impacchi di ghiaccio su collo, ascelle e inguine (aree ad alta vascolarizzazione). IVLR 1-2L. Proteggere le vie aeree in caso di incoscienza. MEDEVAC immediatamente.",
+    "NON somministrare aspirina o paracetamolo in caso di colpo di calore: non aiuta, può nuocere.",
+    "Monitorare: parametri vitali ogni 15 minuti, vie aeree, stato mentale. Andamento della temperatura del documento.",
+    "Continuare il raffreddamento durante MEDEVAC – non fermarsi per il trasporto."
+  ],
+  "warnings": [
+    "Il colpo di calore è un'emergenza pericolosa per la vita: non confonderlo con l'esaurimento da calore. Controlla lo stato mentale.",
+    "Il raffreddamento è il trattamento definitivo. Non ritardare il raffreddamento per stabilire l'accesso IV.",
+    "Il colpo di calore da sforzo può verificarsi in individui in forma: la forma fisica non protegge.",
+    "L'iponatriemia (basso contenuto di sodio) dovuta all'iperidratazione con acqua naturale può simulare un colpo di calore: somministrare una soluzione elettrolitica e non solo acqua."
+  ],
+  "follows": [
+    "valutazione della disidratazione"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "I bambini termoregolano in modo meno efficiente. Il colpo di calore può progredire più velocemente. Fluido in base al peso: bolo LR IV da 20 mL/kg. Temperatura interna tramite termometro rettale più accurato."
+    },
+    "obstetric": {
+      "note": "L'ipertermia materna (>39°C) può causare difetti del tubo neurale fetale (precoce) e sofferenza fetale (tardiva). Raffreddamento aggressivo. Monitoraggio della frequenza cardiaca fetale, se disponibile."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

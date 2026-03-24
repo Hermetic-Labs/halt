@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t82595d",
+    "icd10":  "T82595D",
+    "name":  "Other mechanical complication of umbrella device, subsequent encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Other mechanical complication of umbrella device, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

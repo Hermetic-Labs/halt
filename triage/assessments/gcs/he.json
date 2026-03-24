@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "Glasgow Coma Scale (GCS)",
+  "category": "neurological",
+  "description": "ניקוד נוירולוגי מתוקנן של התודעה באמצעות תגובות עיניים, מילוליות ומוטוריות. טווח ציון 3-15.",
+  "instructions": "ציון כל אחד משלושת התחומים בנפרד. סכם את כל שלושת הציונים עבור ה-GCS הכולל.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "ספונטני"
+        },
+        {
+          "score": 3,
+          "label": "להשמיע"
+        },
+        {
+          "score": 2,
+          "label": "לכאב"
+        },
+        {
+          "score": 1,
+          "label": "אין"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "מכוון"
+        },
+        {
+          "score": 4,
+          "label": "מבולבל"
+        },
+        {
+          "score": 3,
+          "label": "מילים לא מתאימות"
+        },
+        {
+          "score": 2,
+          "label": "צלילים לא מובנים"
+        },
+        {
+          "score": 1,
+          "label": "אין"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "מציית לפקודות"
+        },
+        {
+          "score": 5,
+          "label": "ממקמת כאב"
+        },
+        {
+          "score": 4,
+          "label": "נסוג מכאב"
+        },
+        {
+          "score": 3,
+          "label": "כפיפה לא תקינה (לקשט)"
+        },
+        {
+          "score": 2,
+          "label": "הרחבה (הרס)"
+        },
+        {
+          "score": 1,
+          "label": "אין"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "TBI מתון -- עקוב מקרוב"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "TBI בינוני - הכנת נתיב אוויר"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "TBI חמור - נתיב אוויר בסיכון מיידי, אינטובט במידת האפשר"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "השתמש ב-Pediatric GCS (pGCS) לילדים מתחת לגיל שנתיים. ניקוד מילולי מותאם לילדים טרום מילוליים."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

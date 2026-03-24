@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t50a26s",
+    "icd10":  "T50A26S",
+    "name":  "Underdosing of mixed bacterial vaccines without a pertussis component, sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Underdosing of mixed bacterial vaccines without a pertussis component, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

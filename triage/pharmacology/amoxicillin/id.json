@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoksisilin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoksil",
+    "Trimoks"
+  ],
+  "description": "Antibiotik aminopenisilin spektrum luas. Antibiotik profilaksis oral untuk infeksi luka. Bagian dari paket pil tempur TCCC untuk profilaksis luka pada cedera tidak parah.",
+  "indications": [
+    "Profilaksis infeksi luka (luka ringan-sedang, paket pil oral)",
+    "Infeksi jaringan lunak",
+    "Infeksi saluran pernafasan"
+  ],
+  "dose": "500 mg PO setiap 8 jam x 7 hari (profilaksis luka). 875 mg PO setiap 12 jam alternatif.",
+  "route": [
+    "PO"
+  ],
+  "window": "Mulailah dalam waktu 3 jam setelah cedera untuk profilaksis luka.",
+  "contraindications": [
+    "Alergi penisilin yang diketahui (gunakan doksisiklin sebagai gantinya)",
+    "Mononukleosis (risiko ruam)"
+  ],
+  "warnings": [
+    "Jika alergi terhadap penisilin: gantikan doksisiklin 100mg PO BID.",
+    "Hanya rute oral - gunakan antibiotik IV (cefazolin/ciprofloxacin) untuk luka parah atau jika oral tidak dapat ditoleransi."
+  ],
+  "regional_names": {
+    "generic": "amoksisilin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/hari dibagi setiap 8 jam (maks 500 mg/dosis). Gunakan referensi Broselow berdasarkan berat badan.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Aman pada kehamilan. Lebih disukai daripada doksisiklin (yang dikontraindikasikan pada kehamilan)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

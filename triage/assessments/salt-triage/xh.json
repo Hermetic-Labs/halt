@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "I-SALT Triage (Hlungisa, Vavanya, amaNgenelelo asindisa ubomi, unyango/uthutho)",
+  "category": "mass-casualty",
+  "description": "Iprothokholi yovavanyo lwexhoba lobuninzi. Umgangatho weziganeko ezininzi zokwenzakala emkhosini kunye nabahlali.",
+  "instructions": "Inyathelo 1: Ukuhlela kwihlabathi (ukuhamba, ukuwangawangisa, ukushukuma). Inyathelo lesi-2: Vavanya ngokolandelelwano oluphambili. Inyathelo lesi-3: Yenza ungenelelo olusindisa ubomi (ukulawula ukopha okukhulu, indlela yomoya evulekileyo, ukuxinzelelwa kweenaliti, izitofu ezizenzekelayo). Inyathelo lesi-4: Yabela udidi.",
+  "categories": [
+    {
+      "color": "mnyama",
+      "label": "| Olindelweyo/Oswelekileyo",
+      "description": "Akunakwenzeka ukuba uphile xa unikwa izixhobo ezikhoyo, okanye uswelekileyo oqinisekisiweyo"
+    },
+    {
+      "color": "bomvu",
+      "label": "Ngokukhawuleza (T1)",
+      "description": "Ukwenzakala okusongela ubomi, kuya kusinda ngokungenelela kwangoko"
+    },
+    {
+      "color": "tyheli",
+      "label": "Ilibazisekile (T2)",
+      "description": "Ukwenzakala okumandundu kodwa okuzinzileyo, kunokulinda ukhathalelo"
+    },
+    {
+      "color": "eluhlaza",
+      "label": "| Ubuncinane (T3)",
+      "description": "Ukonzakala kancinci -- ukuhamba ungxwelerhekile"
+    },
+    {
+      "color": "ngwevu",
+      "label": "Olindelekileyo",
+      "description": "Ukwenzakala okungenakukhuseleka kunikwe izixhobo zangoku -- ukhathalelo lwentuthuzelo kuphela"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "I-JumpSTART triage algorithm iguqula i-SALT kwizigulana zabantwana. Imilinganiselo yesantya sokuphefumla kunye namanyathelo ovavanyo ayahluka kubantwana abangaphantsi kwesi-8."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

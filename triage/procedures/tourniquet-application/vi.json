@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Ứng dụng Tourniquet (Tourniquet ứng dụng chiến đấu -- CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "bất kỳ người trả lời nào",
+  "time_estimate": "30-60 giây",
+  "description": "Kiểm soát xuất huyết dứt điểm đối với chảy máu tứ chi đe dọa tính mạng. Nộp đơn sớm - đừng trì hoãn.",
+  "equipment": [
+    "garô mèo",
+    "điểm đánh dấu vĩnh viễn"
+  ],
+  "steps": [
+    "Buộc garô khoảng 2-3 inch (5-7 cm) ở phần gần (phía trên) vết thương -- trên quần áo có thể được chấp nhận.",
+    "Luồn dải tự dính quanh chi và luồn qua khóa bộ chuyển đổi ma sát.",
+    "Kéo chặt dây đeo và cố định nó lại.",
+    "Xoay thanh kính chắn gió cho đến khi ngừng chảy máu hoặc không còn mạch ở đầu xa.",
+    "Khóa kính chắn gió trong kẹp kính chắn gió.",
+    "Quấn dây đeo kính chắn gió lên thanh kính chắn gió để cố định.",
+    "Ghi thời gian áp dụng trực tiếp lên dây garô (dùng bút đánh dấu) VÀ trên thẻ TCCC.",
+    "Phơi nhiễm và đánh giá lại vết thương. Đánh giá lại sau 5 phút."
+  ],
+  "warnings": [
+    "KHÔNG tháo ga-rô sau khi đã áp dụng tại hiện trường - chỉ tháo nhân viên y tế đã được đào tạo trong môi trường được kiểm soát.",
+    "Thời gian rất quan trọng: dây garo > 2 giờ làm tăng đáng kể nguy cơ mất chi. Đăng nhập thời gian ngay lập tức.",
+    "KHÔNG bôi lên khớp. Nếu chi có vết thương ở nhiều mức độ, hãy bôi ở phần gần nhất của tất cả các vết thương.",
+    "Dây garô cải tiến (thắt lưng, dây thừng) kém hiệu quả hơn đáng kể."
+  ],
+  "follows": [
+    "áp lực trực tiếp",
+    "băng bó vết thương"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Sử dụng dây garô hẹp dành cho trẻ em nếu có. CAT tiêu chuẩn có thể được sử dụng nhưng phải thắt chặt cẩn thận. Tay chân nhỏ hơn - kiểm tra mạch ở phần xa cẩn thận."
+    },
+    "obstetric": {
+      "note": "Ứng dụng tiêu chuẩn cho vết thương tứ chi. Không áp dụng cho bụng hoặc xương chậu."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

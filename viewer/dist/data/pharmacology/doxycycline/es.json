@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxiciclina",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramicina",
+    "Doríx"
+  ],
+  "description": "Antibiótico tetraciclina de amplio espectro. Alternativa de profilaxis de heridas orales para pacientes alérgicos a la penicilina. También eficaz contra organismos atípicos y algunas enfermedades transmitidas por vectores (profilaxis de malaria en zonas endémicas).",
+  "indications": [
+    "Profilaxis de heridas (alergia a la penicilina)",
+    "Infecciones de tejidos blandos",
+    "Heridas por mordedura",
+    "Profilaxis del paludismo en zonas endémicas"
+  ],
+  "dose": "100 mg VO cada 12 horas x 7 días.",
+  "route": [
+    "orden de compra",
+    "IV"
+  ],
+  "window": "Comience dentro de las 3 horas posteriores a la lesión para la profilaxis de la herida.",
+  "contraindications": [
+    "Embarazo (provoca decoloración de los dientes fetales e inhibición del crecimiento óseo)",
+    "Niños menores de 8 años (mismo motivo)",
+    "Insuficiencia hepática grave"
+  ],
+  "warnings": [
+    "CONTRAINDICADO durante el embarazo: utilice amoxicilina en su lugar.",
+    "CONTRAINDICADO en niños menores de 8 años.",
+    "Fotosensibilidad: aconseje al paciente que evite la exposición al sol.",
+    "No lo tome con alimentos ricos en calcio, antiácidos o hierro, ya que perjudica la absorción."
+  ],
+  "regional_names": {
+    "generic": "doxiciclina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Contraindicado menores de 8 años. Edad 8+: 2-4 mg/kg/día dividido cada 12 h (máximo 100 mg/dosis).",
+      "note": "Utilice amoxicilina en niños menores de 8 años."
+    },
+    "obstetric": {
+      "note": "CONTRAINDICADO durante el embarazo: causa daño fetal. Utilice amoxicilina en su lugar."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

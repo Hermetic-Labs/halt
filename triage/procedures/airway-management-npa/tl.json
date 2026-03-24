@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Nasopharyngeal Airway (NPA) Insertion",
+  "category": "airway",
+  "skill_level": "combat-lifesaver",
+  "time_estimate": "1 min",
+  "description": "Pagpasok ng isang flexible na nasal airway adjunct upang mapanatili ang airway patency sa isang walang malay o semiconscious na pasyente.",
+  "equipment": [
+    "npa-with-safety-pin",
+    "pampadulas"
+  ],
+  "steps": [
+    "Pumili ng naaangkop na laki ng NPA (sukatin mula sa butas ng ilong hanggang earlobe).",
+    "Lubricate ang NPA nang sagana sa water-soluble lubricant o saline.",
+    "Ipasok ang safety pin sa pamamagitan ng flange kung wala pa (pinipigilan ang aspirasyon).",
+    "Ipasok nang malumanay sa kanang butas ng ilong (bevel patungo sa septum), na umaasenso nang kahanay sa panlasa.",
+    "Mag-advance hanggang ang flange ay tumama sa butas ng ilong.",
+    "I-reposition ang pasyente (recovery position kung walang spinal concern) at muling suriin ang daanan ng hangin.",
+    "Kung ang paglaban ay natugunan, subukan ang kaliwang butas ng ilong."
+  ],
+  "warnings": [
+    "Contraindicated sa pinaghihinalaang basilar skull fracture (raccoon eyes, Battle's sign, CSF rhinorrhea).",
+    "Ang NPA ay ang walang malay na pandagdag sa daanan ng hangin ng pasyente -- Ang OPA ay maaaring mag-trigger ng pagsusuka sa mga semiconscious na pasyente."
+  ],
+  "source": "TCCC / JTS CPG"
+}

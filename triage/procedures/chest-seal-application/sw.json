@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Occlusive Chest Muhuri Maombi",
+  "category": "respiration",
+  "skill_level": "kupambana na kuokoa maisha",
+  "time_estimate": "Dakika 1-2",
+  "description": "Kuziba jeraha la kifua la kunyonya (pneumothorax iliyo wazi) kwa muhuri wa kifua ulio na hewa ili kuzuia hewa kuingia huku ikiruhusu shinikizo kutolewa.",
+  "equipment": [
+    "vented-kifua-muhuri",
+    "kinga",
+    "kiwewe-shears"
+  ],
+  "steps": [
+    "Fichua jeraha -- kata au ondoa nguo.",
+    "Futa ngozi karibu na jeraha kavu iwezekanavyo (damu, jasho huzuia kujitoa).",
+    "Fungua kifurushi cha muhuri wa kifua kilichowekwa hewa.",
+    "Weka muhuri juu ya jeraha, katikati ya shimo. Bonyeza kwa uthabiti, hakikisha kingo zote zinafuata.",
+    "Angalia mwelekeo wa vali -- tundu lazima liangalie nje (mbali na ngozi) na libaki bila kizuizi.",
+    "Tathmini tena sauti za kupumua. Ikiwa kuzorota kutaendelea baada ya kufungwa, zingatia mvutano wa pneumothorax -- fanya NCD.",
+    "Ikiwa muhuri wa hewa haupatikani, muhuri usio na hewa unaweza kutumika lakini LAZIMA ufuatiliwe kwa ajili ya maendeleo ya pneumothorax ya mvutano."
+  ],
+  "warnings": [
+    "Mihuri isiyo na hewa inaweza kubadilisha pneumothorax rahisi kuwa pneumothorax ya mvutano -- tumia mihuri iliyo na hewa kwenye uwanja pekee.",
+    "Ugongaji wa pande tatu (muhuri ulioboreshwa) haupendekezwi tena na CoTCCC -- tumia muhuri wa kifua unaotolewa hewa wa kibiashara.",
+    "Weka muhuri kila wakati kwenye ENTRANCE na ONDOA majeraha."
+  ],
+  "follows": [],
+  "precedes": [
+    "sindano-decompression"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

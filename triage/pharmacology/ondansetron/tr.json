@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Seçici 5-HT3 reseptör antagonisti antiemetik. Bulantı ve kusmaya karşı oldukça etkilidir. ODT (ağızda parçalanan tablet), IV'ün mevcut olmadığı durumlarda saha ayarlarında faydalıdır. Bazı savaş hapı paketlerine dahildir.",
+  "indications": [
+    "Bulantı ve kusma (kemoterapi, opioid kaynaklı, ameliyat sonrası, TBI ile ilişkili)",
+    "Hareket hastalığı",
+    "Ketamin uygulamasından kaynaklanan bulantı"
+  ],
+  "dose": "4-8 mg IV/IO, 2-5 dakika boyunca yavaş itme. ODT: 4-8 mg dil altında eritilir. IM: 4 mg.",
+  "route": [
+    "IV",
+    "Giriş Çıkış",
+    "anlık ileti",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ondansetron veya diğer 5-HT3 antagonistlerine karşı bilinen aşırı duyarlılık",
+    "Konjenital uzun QT sendromu (yalnızca yüksek doz IV)"
+  ],
+  "warnings": [
+    "Yüksek doz IV, QT aralığını uzatabilir; etkili en düşük IV dozunu kullanın.",
+    "Kusma sorunu olan hastada hava yolu yönetiminin yerini almaz; öncelikle hava yolunu koruyun."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,1-0,15 mg/kg IV (en fazla 4 mg). ODT: 4 yaşından büyük çocuklar için 4 mg.",
+      "note": "Pediatride yaygın olarak kullanılır ve iyi tolere edilir."
+    },
+    "obstetric": {
+      "note": "Gebelikte sınırlı veri. İlk üç aylık dönemden sonra, faydaların risklerden daha ağır bastığı şiddetli mide bulantısı/kusma için kullanın. İlk trimesterde önerilmez."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

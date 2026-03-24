@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinephrine (အက်ဒရီနလင်း)",
+  "category": "cardiac-emergency",
+  "rxnorm": "၃၉၉၂",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalin"
+  ],
+  "description": "အယ်ဖာနှင့် ဘီတာ adrenergic လုပ်ဆောင်ချက်ပါရှိသော Endogenous catecholamine anaphylaxis နှင့် နှလုံးရပ်ခြင်းအတွက် ပထမတန်း ကုသမှု။ anaphylaxis တွင်၊ IM ပေါင်ကို IV (ပိုမိုလုံခြုံပြီး ညီမျှသောထိရောက်မှု) ထက် ပိုဦးစားပေးသည်။ anaphylaxis တွင် IV ဝင်ရောက်မှုအတွက် မနှောင့်နှေးပါနှင့်။",
+  "indications": [
+    "Anaphylaxis (ပထမလိုင်း)",
+    "နှလုံးရပ်ခြင်း - pulseless VF/VT/PEA/asystole",
+    "ပြင်းထန် bronchospasm",
+    "Hypotension သည် ရုန်းမထွက်နိုင်သော အရည်များဆီသို့"
+  ],
+  "dose": "Anaphylaxis: 0.3-0.5 mg IM (anterolateral ပေါင်) | အလိုအလျောက်ထိုးဆေး 0.3 mg IM။ q5-15 မိနစ် PRN ပြန်လုပ်ပါ။ နှလုံးရပ်ခြင်း- 1 mg IV/IO q3-5 မိနစ် CPR လုပ်နေစဉ်။ ပြင်းထန်သောလေပြွန်ချောင်းဆိုးခြင်း- 0.3 mg IM။",
+  "route": [
+    "IM",
+    "IV",
+    "IO"
+  ],
+  "window": "Anaphylaxis တွင်- IM ကိုချက်ချင်းပေးပါ- IV ဝင်ခွင့်အတွက် မနှောင့်နှေးပါနှင့်။",
+  "contraindications": [
+    "အသက်အန္တရာယ်ရှိသော အရေးပေါ်အခြေအနေတွင် လုံးဝကန့်ကွက်ခြင်းမရှိပါ။"
+  ],
+  "warnings": [
+    "ဓာတ်မတည့်ခြင်းအတွက် IV epinephrine ကို နှလုံးရပ်ခြင်း သို့မဟုတ် ပြင်းထန်သော ရှော့ခ်တွင်သာ အသုံးပြုသင့်သည် - သတိလစ်သောလူနာအား IV တွန်းအားပေးပါက အန္တရာယ်ရှိသည်။",
+    "Extravasation သည် တစ်သျှူး necrosis ကို ဖြစ်စေသည် - IV patency ကို သေချာစေပါသည်။",
+    "myocardial အောက်ဆီဂျင် လိုအပ်ချက်ကို တိုးစေသည် - အဖမ်းအဆီး ပြင်ပတွင် သိရှိထားသော သွေးကြောကျဉ်းရောဂါအတွက် သတိထားပါ။"
+  ],
+  "regional_names": {
+    "generic": "epinephrine",
+    "UK": "adrenaline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anaphylaxis- 0.01 mg/kg IM (အမြင့်ဆုံး 0.5 mg)။ 15-30 ကီလိုဂရမ်အတွက် EpiPen Jr (0.15 mg)။ နှလုံးရပ်ခြင်း- 0.01 mg/kg IV/IO q3-5 မိနစ်။",
+      "note": "ကိုယ်အလေးချိန် အခြေပြု ဆေးကို အသုံးပြုပါ။ Broselow တိပ်အညွှန်းကို အကြံပြုထားသည်။"
+    },
+    "obstetric": {
+      "note": "စံနှုန်း anaphylaxis ပမာဏကို အသုံးပြုပါ - မိခင်အသက်ရှင်ရေးသည် အရေးကြီးဆုံးဖြစ်သည်။ Epinephrine သည် အသက်အန္တရာယ်ရှိသော အရေးပေါ်အခြေအနေများအတွက် ကိုယ်ဝန်ဆောင်တွင် ဘေးကင်းပါသည်။"
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

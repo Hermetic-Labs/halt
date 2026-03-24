@@ -1,0 +1,84 @@
+﻿{
+    "id":  "march",
+    "algorithm":  "sequential",
+    "entry":  "any-trauma-casualty",
+    "steps":  [
+                  {
+                      "phase":  "M",
+                      "label":  "Massive Hemorrhage",
+                      "check":  "visible-arterial-or-major-bleeding",
+                      "yes":  {
+                                  "assess":  [
+                                                 "hemorrhage-class",
+                                                 "shock-index"
+                                             ],
+                                  "procedures":  [
+                                                     "direct-pressure",
+                                                     "wound-packing",
+                                                     "tourniquet-application"
+                                                 ],
+                                  "drugs":  [
+                                                "txa"
+                                            ]
+                              },
+                      "no":  {
+                                 "next":  "A"
+                             }
+                  },
+                  {
+                      "phase":  "A",
+                      "label":  "Airway",
+                      "check":  "airway-patent-and-clear",
+                      "yes":  {
+                                  "next":  "R"
+                              },
+                      "no":  {
+                                 "procedures":  [
+                                                    "airway-management-npa"
+                                                ],
+                                 "next":  "R"
+                             }
+                  },
+                  {
+                      "phase":  "R",
+                      "label":  "Respiration",
+                      "check":  "adequate-chest-rise-both-sides",
+                      "yes":  {
+                                  "next":  "C"
+                              },
+                      "no":  {
+                                 "assess":  [
+                                                "breath-sounds"
+                                            ],
+                                 "procedures":  [
+                                                    "needle-decompression",
+                                                    "chest-seal-application"
+                                                ],
+                                 "next":  "C"
+                             }
+                  },
+                  {
+                      "phase":  "C",
+                      "label":  "Circulation",
+                      "check":  "none",
+                      "assess":  [
+                                     "shock-index",
+                                     "hemorrhage-class"
+                                 ],
+                      "drugs":  [
+                                    "normal-saline",
+                                    "lactated-ringers"
+                                ],
+                      "next":  "H"
+                  },
+                  {
+                      "phase":  "H",
+                      "label":  "Hypothermia",
+                      "check":  "none",
+                      "procedures":  [
+                                         "hypothermia-prevention"
+                                     ],
+                      "next":  null
+                  }
+              ]
+}

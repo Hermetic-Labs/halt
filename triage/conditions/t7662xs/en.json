@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t7662xs",
+    "icd10":  "T7662XS",
+    "name":  "Child forced labor exploitation, suspected, sequela",
+    "category":  "environmental-injury",
+    "triage_priority":  "",
+    "description":  "Child forced labor exploitation, suspected, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

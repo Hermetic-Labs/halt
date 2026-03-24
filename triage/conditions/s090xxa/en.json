@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s090xxa",
+    "icd10":  "S090XXA",
+    "name":  "Injury of blood vessels of head, not elsewhere classified, initial encounter",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Injury of blood vessels of head, not elsewhere classified, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

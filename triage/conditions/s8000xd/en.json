@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s8000xd",
+    "icd10":  "S8000XD",
+    "name":  "Contusion of unspecified knee, subsequent encounter",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Contusion of unspecified knee, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

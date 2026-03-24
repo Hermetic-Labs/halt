@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Prévention de l'hypothermie (H -- MARS)",
+  "category": "temperature-management",
+  "skill_level": "n'importe quel répondeur",
+  "time_estimate": "2-3 minutes",
+  "description": "L’hypothermie de combat est l’une des principales causes de mortalité évitable en matière de traumatisme. La triade mortelle : hypothermie + acidose + coagulopathie. Prévenir à tout prix.",
+  "equipment": [
+    "couverture-réfléchissante-chaleur",
+    "kit-de-prévention-de-l'hypothermie",
+    "fluides-iv-chauds-si-disponibles"
+  ],
+  "steps": [
+    "Retirez tous les vêtements mouillés dès que cela est tactiquement possible.",
+    "Couvrir le patient avec une couverture (espace) réfléchissant la chaleur – côté brillant vers l’intérieur vers le patient.",
+    "Envelopper la tête et le cou (site de perte de chaleur importante).",
+    "Isoler du sol – placer quelque chose entre le patient et la surface froide du sol.",
+    "Administrer des liquides IV chauds si disponibles.",
+    "Ne laissez pas le patient frissonner sans couverture – les frissons sont un signe avant-coureur.",
+    "Surveiller la température si un thermomètre est disponible. En dessous de 35°C (95°F) = hypothermie."
+  ],
+  "warnings": [
+    "L'hypothermie aggrave la coagulopathie : les patients qui saignent se refroidissent plus rapidement et coagulent moins efficacement.",
+    "La prévention de l'hypothermie sur le terrain doit commencer au point de blessure, et non au PCC."
+  ],
+  "source": "TCCC / JTS CPG"
+}

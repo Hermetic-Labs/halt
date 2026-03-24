@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Fluoroquinolone aporo-ajẹsara pẹlu agbegbe gram-odi nla. Ti a lo fun awọn akoran ọgbẹ to ṣe pataki, ibalokan inu ikun (agbegbe GI flora), ati awọn akoran ito. PO ati IV ti o wa.",
+  "indications": [
+    "Inu ibalokanjẹ inu inu (GI decontamination)",
+    "Awọn akoran ọgbẹ to ṣe pataki",
+    "Giramu-odi àkóràn",
+    "Awọn àkóràn ito"
+  ],
+  "dose": "400 mg IV q8-12h. PO: 500-750 mg q12h.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ẹhun fluoroquinolone ti a mọ",
+    "Awọn ọmọde ati awọn ọdọ < 18 ọdun (i ibatan - eewu ti tendinopathy)",
+    "Oyún ( ìbátan)"
+  ],
+  "warnings": [
+    "Ewu rupture tendoni, paapaa tendoni Achilles. Da duro ti irora tendoni ba dagba.",
+    "Le fa aarin QT gun -- iṣọra pẹlu awọn oogun gigun-QT miiran.",
+    "Yago fun ni oyun ti o ba ti yiyan wa."
+  ],
+  "regional_names": {
+    "generic": "ciprofloxacin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg / kg IV q8-12h (max 400 mg / iwọn lilo). PO: 10-20 mg / kg q12h (o pọju 750 mg / iwọn lilo).",
+      "note": "Lo nikan nigbati awọn anfani ba pọ si eewu tendinopathy. Ṣe ipamọ fun awọn akoran to ṣe pataki."
+    },
+    "obstetric": {
+      "note": "Yago fun ni oyun ti o ba ti yiyan wa. Lo nikan fun awọn akoran ti o lewu aye nibiti anfani ti ju eewu lọ."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

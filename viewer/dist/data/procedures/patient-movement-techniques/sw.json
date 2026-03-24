@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Mbinu za Mwendo wa Wagonjwa",
+  "category": "casualty-movement",
+  "skill_level": "Msingi",
+  "time_estimate": "Dakika 1-30 kulingana na umbali na njia",
+  "description": "Kuhamisha majeruhi chini ya moto au mahali salama kwa matibabu. Mbinu inategemea ardhi, umbali, idadi ya waokoaji na majeraha ya majeruhi. Kasi dhidi ya tahadhari ya uti wa mgongo ni uamuzi wa busara -- katika TCCC, tishio linapewa kipaumbele.",
+  "equipment": [
+    "Takataka za SKED (inapendekezwa)",
+    "Takataka za NATO / machela inayoweza kubebeka",
+    "Takataka zilizoboreshwa: nguzo + koti / poncho",
+    "Kokota vishikizo (sare au kuunganisha)",
+    "TACEVAC teo"
+  ],
+  "steps": [
+    "HUDUMA CHINI YA MOTO: Rudisha moto kwanza ikiwa una silaha. Sogeza majeruhi kwa kutumia njia ya haraka ya kuburuta -- usisimame ili kutibu katika eneo la kuua.",
+    "DRAG HASTY (mwokozi mmoja): kamata mpini wa kola/buruta kwenye mabega, buruta mgongoni. Kinga kichwa kutokana na athari.",
+    "FIREMAN CARRY (mwokoaji mmoja): kuinua majeruhi juu ya mabega kwa umbali mrefu -- inahitaji majeruhi kuwa na fahamu au kushirikiana.",
+    "KUBEBA KWA WATU WAWILI: waokoaji wanaunganisha mikono chini ya mgongo na magoti ya majeruhi. Kasi kuliko kuburuta kwa umbali mfupi.",
+    "TAKA ILIYOBORESHWA: weka nguzo mbili kwa umbali wa inchi 18. Weave jackets kupitia miti na vifungo ndani. Jaribu kabla ya kupakia majeruhi.",
+    "SKED LITTER: fungua, telezesha chini ya majeruhi, funika na uimarishe kwa mikanda. Inahitaji watoa huduma 2-4.",
+    "Wakati wa kupakia: kuinua kwa hesabu ya 3, kudumisha usawa wa kichwa / mwili, kupunguza harakati za mgongo iwezekanavyo.",
+    "Ikiwa jeraha la uti wa mgongo linashukiwa na hakuna tishio: dumisha utulivu wa ndani wakati wa harakati. Mtu mmoja aliyejitolea kwa udhibiti wa kichwa.",
+    "Sogeza hadi jalada, kisha utathmini upya ABC."
+  ],
+  "warnings": [
+    "Kipaumbele cha TCCC: maisha > kiungo > tahadhari ya uti wa mgongo. Usicheleweshe harakati kutoka eneo la kuua kwa tahadhari za uti wa mgongo.",
+    "Fireman bear imepingana na inayoshukiwa kuwa na jeraha la uti wa mgongo, kuvunjika kwa fupa la paja, au kiwewe cha kupenya cha tumbo.",
+    "Takataka zilizoboreshwa: jaribu uwezo wa uzito kabla ya kumwamini mtu aliyejeruhiwa.",
+    "Kusogeza majeruhi na tourniquet: angalia tourniquet haijalegea wakati wa harakati."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Watoto ni wepesi zaidi -- mwokozi mmoja hubeba upembuzi yakinifu kwa muda mrefu zaidi. Dumisha kichwa kikubwa sawia -- kituo cha juu cha mvuto wakati wa kubeba."
+    },
+    "obstetric": {
+      "note": "Epuka nafasi ya kukabiliwa au shinikizo kwenye tumbo. Usafiri wa kando (upande wa kushoto unaopendelewa) au usafiri wa supine wenye kabari ya nyonga ya kushoto."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Morphine sulfate",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Contin",
+    "morphine sulfate allura"
+  ],
+  "description": "Opioid analgesic. Yana ba da taimako mai tasiri mai tasiri amma yana haifar da vasodilation da hypotension - yi amfani da hankali a cikin girgizar jini. An fi son Ketamine a cikin saitunan fama. Yi amfani da morphine kawai a cikin majinyata masu tsayin daka.",
+  "indications": [
+    "Matsakaici-zuwa zafi mai tsanani a cikin marasa lafiya na hemodynamically barga",
+    "Ba layin farko ba a cikin TCCC -- fi son ketamine"
+  ],
+  "dose": "2-4 mg IV/IO q4h PRN. Titrate don tasiri. IM: 5-10 mg q4h PRN.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Rashin kwanciyar hankali na hemodynamic / bugun jini",
+    "Bacin rai na numfashi",
+    "Raunin kai tare da canza LOC (dangi)"
+  ],
+  "warnings": [
+    "Yana haifar da vasodilation -- na iya kara tsananta bugun jini. Yi la'akari da BP kafin da bayan.",
+    "Samu naloxone nan da nan.",
+    "Bacin rai na numfashi -- yawan saka idanu."
+  ],
+  "regional_names": {
+    "generic": "morphine sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV q2-4h PRN. Matsakaicin kashi ɗaya na 2mg IV a cikin yaro mai butulci.",
+      "note": "Kula da yawan numfashi a hankali. Neonates suna da hankali sosai."
+    },
+    "obstetric": {
+      "note": "Ketare mahaifa. Bacin rai na jariri mai yiwuwa idan an ba shi a cikin sa'o'i 2-4 na haihuwa. Yi naloxone a shirye don jariri."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Morfîn Sulfat",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Contin",
+    "Derziya Morfîn Sulfatê"
+  ],
+  "description": "Analjezikê opioîd. Rehetkirina êşê ya bi bandor peyda dike lê dibe sedema vazodilatasyon û hîpotensionê - di şokê hemorrajîk de bi hişyarî bikar bînin. Ketamine di mîhengên şer de tê tercîh kirin. Morfînê tenê di nexweşên hemodinamîkî yên stabîl de bikar bînin.",
+  "indications": [
+    "Di nexweşên hemodinamîkî yên bi îstîqrar de êşa navîn-bi- giran",
+    "Di TCCC de ne rêza yekem - ketamine tercîh bikin"
+  ],
+  "dose": "2-4 mg IV/IO q4h PRN. Titrate ji bo bandorê. IM: 5-10 mg q4h PRN.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Bêîstîqrara hemodnamîk / şoka hemorrajîk",
+    "Depresyona nefesê",
+    "Birîndarkirina serê bi LOC-ya guhertî (xizm)"
+  ],
+  "warnings": [
+    "Sedema vazodilasyonê - dikare şoka hemorrajîk xirabtir bike. Berî û paşê BP-ê binirxînin.",
+    "Naloxone tavilê peyda bikin.",
+    "Depresyona nefesê -- rêjeya şopandinê."
+  ],
+  "regional_names": {
+    "generic": "morfîn sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV q2-4h PRN. Doza herî zêde ya yekane 2 mg IV di zarokek-opioîd-nexwedî de.",
+      "note": "Rêjeya nefesê ji nêz ve bişopînin. Neonî pir hesas in."
+    },
+    "obstetric": {
+      "note": "Placentayê derbas dike. Depresyona nefesê ya neonatal gengaz e ku di nav 2-4 demjimêran piştî zayînê de were dayîn. Naloxone ji bo zarokên nûbûyî amade bikin."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s2220xb",
+    "icd10":  "S2220XB",
+    "name":  "Unspecified fracture of sternum, initial encounter for open fracture",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified fracture of sternum, initial encounter for open fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

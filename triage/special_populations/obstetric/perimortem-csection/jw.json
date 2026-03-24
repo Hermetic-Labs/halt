@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Perimortem Caesarean Section (PMCS)",
+  "category": "obstetric",
+  "skill_level": "dokter-bedah",
+  "time_estimate": "3-5 min",
+  "description": "Pangiriman cesarean darurat ing 4 menit saka penahanan jantung ibu kanggo ngidini CPR efektif lan potensial kaslametan neonatal. Uterus compresses aorta lan IVC - pangiriman uga resuscitative kanggo ibu.",
+  "equipment": [
+    "skalpel",
+    "sarung tangan",
+    "retraktor",
+    "tali-clamps",
+    "neonatal-resusitasi-peralatan"
+  ],
+  "steps": [
+    "Terusake CPR tanpa gangguan.",
+    "Nggawe irisan garis tengah vertikal saka umbilicus menyang pubis liwat kulit lan fascia.",
+    "Incise bagean ngisor uterus horisontal.",
+    "Ngirim bayi - cathetan wektu.",
+    "Clamp lan Cut kabel.",
+    "Tangan bayi menyang panyedhiya kapindho kanggo resusitasi neonatal.",
+    "Mbusak plasenta.",
+    "Bungkus uterus lan weteng yen penutupan definitif ora bisa ditindakake.",
+    "Terusake resusitasi ibu - ROSC luwih cenderung sawise dekompresi uterus."
+  ],
+  "warnings": [
+    "Wektu kaputusan kanggo nglairake kudu kurang saka 5 menit kanggo asil ibu lan janin sing paling apik.",
+    "Prosedur iki minangka pilihan pungkasan - mung yen ibune nandhang lara jantung lan pangiriman wis cedhak (gestation> 20 minggu).",
+    "Mbutuhake latihan tingkat dokter. Medis pertempuran kudu nyiapake lapangan lan dhukungan, ora nindakake kanthi mandiri."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

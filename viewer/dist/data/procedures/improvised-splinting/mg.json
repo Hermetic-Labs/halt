@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Fizarana improvised",
+  "category": "ortho-stabilization",
+  "skill_level": "fototra",
+  "time_estimate": "5-10 min",
+  "description": "Atsaharo ny ratra amin'ny fampiasana fitaovana misy mba hisorohana ny ratra bebe kokoa, hampihenana ny fanaintainana ary hamerana ny fahaverezan-dra amin'ny tavy manodidina. Tsidiho eo amin'ny toerana hita raha tsy misy ny fikorianan'ny rivotra - dia ahitsio moramora.",
+  "equipment": [
+    "SAM splint (tia)",
+    "Gazety mihodinkodina, kibay, baoritra (efa namboarina)",
+    "Cravat / triangular bandage",
+    "Padding (akanjo, foam)",
+    "Tape na tapa-damba"
+  ],
+  "steps": [
+    "Asehoy sy tombantombana ny ratra -- jereo ny circulation, sensation, movement (CSM) lavitra mankany amin'ny fracture aloha sy aoriana.",
+    "Hifehezana izay fandehanan-dra mihetsiketsika alohan'ny hiterahana.",
+    "Misoroka ny fery amin'ny fanerena.",
+    "Safidio ny akora misy splint ampy lava mba tsy hihetsika ny tonon-taolana eo ambony SY eo ambanin'ilay tapaka.",
+    "Apetraho eo amin'ny toeran'ny fampiononana na firindrana anatomika -- aza manery.",
+    "Ampiharo padding, avy eo ny fitaovana splint. Arovy amin'ny bandy na tady lamba.",
+    "AZA mifono mafy loatra -- avela hibaribary ny rantsantanana/rantsan-tongotra mba hanaraha-maso ny CSM.",
+    "Avereno tombanana ny CSM aorian'ny fampiharana -- esory avy hatrany raha toa ka tsy afaka mivezivezy.",
+    "Atsangano ny rantsambatana raha azo atao mba hampihenana ny fivontosana.",
+    "Manorata fotoana fampiharana splint."
+  ],
+  "warnings": [
+    "Tombanana indray ny CSM isaky ny 15-30 minitra -- ny fivontosana dia mety hahatonga ny splint marina ho lasa tourniquet.",
+    "Vaky misokatra: rakotra lamba sterile aloha ny ratra, avy eo asiana splint. AZA manosika taolana hiverina.",
+    "Mety hamoy rà 1-2L ao amin'ny feny ny tapaka femur -- tsaboina amin'ny fomba mahery vaika ny fahatairana.",
+    "Ahina ho tapaka amin'ny hazondamosina: TSY manamboatra splint - manamaivana ny fihetsehana, mitazona ny stabilization inline."
+  ],
+  "follows": [
+    "fanerena mivantana",
+    "tourniquet-application"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Ny takelaka fitomboana amin'ny ankizy dia malemy noho ny ligaments - miahiahy fa tapaka na dia amin'ny mekanika malefaka aza. Mety misy fivontosana kely indrindra ny vaky torus (buckle)."
+    },
+    "obstetric": {
+      "note": "Mihatra ny splinting mahazatra. Fadio ny fipetrahana lavareny -- mitongilana miankavia raha mitsotra."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

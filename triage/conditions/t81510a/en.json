@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t81510a",
+    "icd10":  "T81510A",
+    "name":  "Adhesions due to foreign body accidentally left in body following surgical operation, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Adhesions due to foreign body accidentally left in body following surgical operation, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

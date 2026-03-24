@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t22229a",
+    "icd10":  "T22229A",
+    "name":  "Burn of second degree of unspecified elbow, initial encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Burn of second degree of unspecified elbow, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

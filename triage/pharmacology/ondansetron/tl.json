@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Selective 5-HT3 receptor antagonist antiemetic. Napakabisa para sa pagduduwal at pagsusuka. Ang ODT (oral disintegrating tablet) ay kapaki-pakinabang sa mga setting ng field kapag hindi available ang IV. Kasama sa ilang combat pill pack.",
+  "indications": [
+    "Pagduduwal at pagsusuka (chemotherapy, opioid-induced, post-operative, TBI-related)",
+    "Sakit sa paggalaw",
+    "Pagduduwal mula sa pangangasiwa ng ketamine"
+  ],
+  "dose": "4-8 mg IV/IO mabagal na pagtulak sa loob ng 2-5 min. ODT: 4-8 mg natunaw sa ilalim ng dila. IM: 4 mg.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Kilalang hypersensitivity sa ondansetron o iba pang 5-HT3 antagonist",
+    "Congenital long QT syndrome (high-dose IV lang)"
+  ],
+  "warnings": [
+    "Maaaring pahabain ng mataas na dosis IV ang pagitan ng QT -- gumamit ng pinakamababang epektibong dosis IV.",
+    "Hindi pinapalitan ang airway management sa obtunded na pasyente na may pagsusuka -- protektahan muna ang daanan ng hangin."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.1-0.15 mg/kg IV (max 4 mg). ODT: 4mg para sa mga bata> 4 na taon.",
+      "note": "Malawakang ginagamit at mahusay na pinahihintulutan sa pediatrics."
+    },
+    "obstetric": {
+      "note": "Limitadong data sa pagbubuntis. Gamitin para sa matinding pagduduwal/pagsusuka pagkatapos ng unang trimester kapag ang mga benepisyo ay mas malaki kaysa sa mga panganib. Hindi inirerekomenda sa unang trimester."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

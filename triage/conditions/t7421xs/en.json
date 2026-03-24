@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t7421xs",
+    "icd10":  "T7421XS",
+    "name":  "Adult sexual abuse, confirmed, sequela",
+    "category":  "environmental-injury",
+    "triage_priority":  "",
+    "description":  "Adult sexual abuse, confirmed, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Saline Normal (0,9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "0.9% Sodium Chloride tsindrona"
+  ],
+  "description": "Ny fluid isotonic crystalloid. Ampiasaina amin'ny famerenana ny fluid IV. Amin'ny fahatafintohinana hemorrhagic, ampiasao amim-pitandremana -- miharatsy ny coagulopathie (acidose hyperchloremic, coagulopathy dilutional). Ny hypotension permissive dia aleony amin'ny trauma mipetaka eo am-piandrasana ny fanaraha-maso ny rà mandriaka.",
+  "indications": [
+    "Resuscitation ranon-javatra (miaraka amin'ny fitandremana amin'ny fahatafintohinana hemorrhagic)",
+    "Fanadiovana fanafody/fandroana",
+    "Hypovolemia avy amin'ny antony tsy hemorrhagic"
+  ],
+  "dose": "Fahatairana hemorrhagic: ferana hatramin'ny 1L max miandry ny fanaraha-maso ny fandehanan-dra (hypotension permissive). Kendrena SBP 80-90 mmHg amin'ny trauma miditra, 90 mmHg amin'ny TBI. Hypovolemia tsy hemorrhagic: 500 mL boluses, avereno jerena.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hypernatremia",
+    "Be loatra ny ranon-javatra / edema havokavoka (havana)"
+  ],
+  "warnings": [
+    "Ny habetsahana lehibe dia miteraka asidose metabolika hyperchloremic sy coagulopathie dilutional -- manaratsy ny triad mahafaty amin'ny trauma.",
+    "Ny lactated Ringer's (LR) dia aleony amin'ny famelomana trauma be dia be.",
+    "AZA mamelona be loatra ny trauma amin'ny vatana alohan'ny fandidiana fandidiana (hypotension permissive)."
+  ],
+  "regional_names": {
+    "generic": "ny sodium klôro 0,9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 mL/kg IV bolus, tombana indray. Avereno max x3 (60 mL/kg total) alohan'ny handinihana ny vokatra ra.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Resuscitation mahazatra amin'ny hemorrhage obstetric. Famelomana ranon-javatra mahery vaika mety amin'ny fandehanan-drà aorian'ny fiterahana alohan'ny hahazoana vokatra avy amin'ny ra."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

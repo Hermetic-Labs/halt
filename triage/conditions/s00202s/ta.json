@@ -1,0 +1,22 @@
+{
+  "id": "s00202s",
+  "icd10": "S00202S",
+  "name": "இடது கண்ணிமை மற்றும் பெரியோகுலர் பகுதியின் குறிப்பிடப்படாத மேலோட்டமான காயம், தொடர்ச்சி",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "இடது கண்ணிமை மற்றும் பெரியோகுலர் பகுதியின் குறிப்பிடப்படாத மேலோட்டமான காயம், தொடர்ச்சி",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

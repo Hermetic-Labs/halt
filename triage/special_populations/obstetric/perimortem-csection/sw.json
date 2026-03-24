@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Sehemu ya Upasuaji ya Perimortem (PMCS)",
+  "category": "obstetric",
+  "skill_level": "daktari-upasuaji",
+  "time_estimate": "Dakika 3-5",
+  "description": "Utoaji wa dharura wa upasuaji ndani ya dakika 4 baada ya mshtuko wa moyo wa mama ili kuruhusu CPR inayofaa na uwezekano wa maisha ya mtoto mchanga. Uterasi hubana aota na IVC -- kuzaa pia kunarejesha uhai kwa mama.",
+  "equipment": [
+    "scalpel",
+    "kinga",
+    "retractors",
+    "kamba-clamps",
+    "vifaa vya kufufua watoto wachanga"
+  ],
+  "steps": [
+    "Endelea CPR bila kukatizwa.",
+    "Tengeneza mkato wa katikati wima kutoka kwa kitovu hadi kwenye sehemu ya siri kupitia ngozi na fascia.",
+    "Panda sehemu ya chini ya uterasi kwa usawa.",
+    "Mpe mtoto mchanga -- muda wa kumbuka.",
+    "Bana na kukata kamba.",
+    "Mkabidhi mtoto mchanga kwa mtoaji wa pili kwa ufufuo wa watoto wachanga.",
+    "Ondoa placenta.",
+    "Fungasha uterasi na tumbo ikiwa kufungwa kwa uhakika hakuwezekani mara moja.",
+    "Endelea ufufuo wa uzazi -- ROSC ina uwezekano mkubwa baada ya kuharibika kwa uterasi."
+  ],
+  "warnings": [
+    "Muda wa uamuzi wa kujifungua lazima uwe chini ya dakika 5 kwa matokeo bora ya uzazi na fetasi.",
+    "Utaratibu huu ni wa mwisho -- ikiwa tu mama yuko katika mshtuko wa moyo na kuzaa kunakaribia (> wiki 20 za ujauzito).",
+    "Inahitaji mafunzo ya kiwango cha daktari. Madaktari wa vita wanapaswa kuandaa uwanja na usaidizi, sio kufanya kazi kwa kujitegemea."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

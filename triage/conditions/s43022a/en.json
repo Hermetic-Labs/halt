@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s43022a",
+    "icd10":  "S43022A",
+    "name":  "Posterior subluxation of left humerus, initial encounter",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Posterior subluxation of left humerus, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

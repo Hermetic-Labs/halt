@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Tourniquet-applicatie (Combat Application Tourniquet - CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "elke responder",
+  "time_estimate": "30-60 seconden",
+  "description": "Definitieve controle van bloedingen bij levensbedreigende bloedingen in de ledematen. Solliciteer vroeg - wacht niet langer.",
+  "equipment": [
+    "katten-tourniquet",
+    "permanente marker"
+  ],
+  "steps": [
+    "Breng een tourniquet aan op 5-7 cm proximaal (boven) de wond – over kleding heen is toegestaan.",
+    "Leid de zelfklevende band rond het ledemaat en haal deze door de frictieadaptergesp.",
+    "Trek de band strak en zet hem weer vast.",
+    "Draai de ankerlierstaaf totdat het bloeden stopt of de distale polsslag afwezig is.",
+    "Vergrendel de ankerlier in de ankerlierclip.",
+    "Breng de ankerlierriem over de ankerlierstang aan om deze vast te zetten.",
+    "Schrijf het tijdstip van aanbrengen rechtstreeks op de tourniquet (gebruik een marker) EN op de TCCC-kaart.",
+    "Stel de wond bloot en evalueer deze opnieuw. Beoordeel na 5 minuten opnieuw."
+  ],
+  "warnings": [
+    "Verwijder een tourniquet NIET zodra deze in het veld is aangebracht - alleen opgeleid medisch personeel in een gecontroleerde omgeving.",
+    "Tijd is van cruciaal belang: een tourniquet >2 uur verhoogt het risico op ledemaatverlies aanzienlijk. Registreer de tijd onmiddellijk.",
+    "NIET aanbrengen over een voeg. Als een ledemaat wonden op meerdere niveaus heeft, breng dan proximaal op alle wonden aan.",
+    "Geïmproviseerde tourniquets (riemen, touwen) zijn aanzienlijk minder effectief."
+  ],
+  "follows": [
+    "directe druk",
+    "wondverpakking"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Gebruik, indien beschikbaar, een smalle pediatrische tourniquet. Standaard CAT kan worden gebruikt, maar draai deze voorzichtig vast. De ledematen zijn kleiner – controleer de distale pols zorgvuldig."
+    },
+    "obstetric": {
+      "note": "Standaardtoepassing voor wonden aan ledematen. Niet aanbrengen op buik of bekken."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Đóng gói vết thương cầm máu",
+  "category": "hemorrhage-control",
+  "skill_level": "cứu cánh chiến đấu",
+  "time_estimate": "3-5 phút",
+  "description": "Băng vết thương không thể nén được hoặc vết thương nối bằng gạc cầm máu để kiểm soát tình trạng xuất huyết ở những nơi không thể dùng dây ga-rô.",
+  "equipment": [
+    "gạc cầm máu",
+    "găng tay nitrile",
+    "kéo cắt chấn thương",
+    "băng ép"
+  ],
+  "steps": [
+    "Don găng tay. Để lộ toàn bộ vết thương bằng kéo cắt chấn thương.",
+    "Xác định nguồn chảy máu đang hoạt động trong khoang vết thương.",
+    "Mở gạc cầm máu và dùng ngón tay nén chặt vào vết thương, đẩy thẳng vào nguồn chảy máu.",
+    "Tiếp tục băng bó cho đến khi khoang vết thương được lấp đầy hoàn toàn.",
+    "Ấn mạnh và liên tục trực tiếp bằng gót bàn tay trong tối thiểu 3 phút.",
+    "KHÔNG loại bỏ bất kỳ vật liệu đóng gói nào sau khi áp dụng.",
+    "Đắp băng ép lên vết thương đã được đóng gói.",
+    "Đánh dấu thời gian trên thẻ TCCC hoặc trên trán của bệnh nhân (ví dụ: 'PKD 0145')."
+  ],
+  "warnings": [
+    "KHÔNG băng bó vết thương xuyên thấu ở ngực - thay vào đó hãy sử dụng miếng dán ngực.",
+    "Nếu băng bó vết thương ở cổ, hãy tạo áp lực mà không nén đồng thời cả hai động mạch cảnh.",
+    "Đánh giá lại trong vòng 5 phút nếu nghi ngờ nguồn động mạch."
+  ],
+  "follows": [
+    "áp lực trực tiếp"
+  ],
+  "precedes": [
+    "ứng dụng dây garô"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Sử dụng tương ứng ít gạc hơn. Áp dụng áp lực nhẹ hơn để tránh chèn ép ngực ở trẻ sơ sinh."
+    },
+    "obstetric": {
+      "note": "Tránh áp lực dồn nén sâu hoặc mạnh gần vùng bụng mang thai. Leo thang nhanh chóng được ưa thích."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

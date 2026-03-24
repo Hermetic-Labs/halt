@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s60322d",
+    "icd10":  "S60322D",
+    "name":  "Blister (nonthermal) of left thumb, subsequent encounter",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Blister (nonthermal) of left thumb, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

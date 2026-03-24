@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Entrega de emergencia en el campo",
+  "category": "obstetric",
+  "skill_level": "médico de combate",
+  "time_estimate": "Varía: más de 20 minutos",
+  "description": "Manejo de partos precipitados o no planificados en ambiente austero.",
+  "equipment": [
+    "guantes",
+    "mantas-de-tela-limpia",
+    "abrazaderas-o-cintas-para-cordon",
+    "tijeras",
+    "jeringa-bulbo"
+  ],
+  "steps": [
+    "Coloque a la madre en decúbito supino o semireclinada. Se prefiere la inclinación lateral izquierda si está inconsciente (evita la compresión aortocava).",
+    "Controlar la salida de la cabeza - apoyo con la palma. NO tire.",
+    "Una vez que sale la cabeza, verifique si hay cordón nucal (alrededor del cuello). Si está presente, deslícelo por encima de la cabeza. Si está apretado, sujételo y córtelo.",
+    "Aspire la boca y luego la nariz con una pera, si está disponible.",
+    "Guíe el parto de la parte anterior del hombro mediante una suave tracción hacia abajo sobre la cabeza y luego hacia arriba para la parte posterior del hombro.",
+    "Entrega el cuerpo: anota la hora de entrega.",
+    "Seque y caliente al bebé inmediatamente. Estimular frotando la espalda.",
+    "Sujete y corte el cordón (espere 1-2 minutos si el bebé está estable).",
+    "Saque la placenta con una tracción suave y controlada, NO fuerce.",
+    "Administre oxitocina (si está disponible) para prevenir la hemorragia posparto después del parto de la placenta.",
+    "Evaluar si hay hemorragia posparto: masaje del fondo uterino, compresión bimanual si es necesario.",
+    "Evaluar la puntuación de Apgar al minuto 1 y 5."
+  ],
+  "warnings": [
+    "Si el parto no es inminente, NO lo intente. Se prefiere MEDEVAC rápida.",
+    "Distocia de hombros: si los hombros están trabados, aplicar maniobra de McRoberts (hiperflexión de caderas) y presión suprapúbica.",
+    "La hemorragia posparto es la principal causa de muerte materna evitable: tenga preparada oxitocina."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

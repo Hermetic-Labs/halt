@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Pressão Direta para Controle de Hemorragia",
+  "category": "hemorrhage-control",
+  "skill_level": "qualquer resposta",
+  "time_estimate": "3-5 minutos",
+  "description": "Controle de hemorragia de primeira linha para feridas acessíveis em extremidades e no corpo.",
+  "equipment": [
+    "luvas",
+    "curativo para traumas",
+    "bandagem de gravata"
+  ],
+  "steps": [
+    "Use luvas, se disponíveis.",
+    "Exponha a ferida cortando a roupa.",
+    "Aplique um curativo para trauma ou pano dobrado diretamente sobre a ferida.",
+    "Pressione firmemente com a palma da mão. Use o peso do seu corpo – não apenas a força do braço.",
+    "Mantenha a pressão contínua e ininterrupta por pelo menos 3 minutos.",
+    "NÃO levante o curativo para verificar – isso atrapalha a formação de coágulos.",
+    "Se o sangramento penetrar, coloque outro curativo por cima. Não remova o primeiro.",
+    "Prenda com uma bandagem de pressão, se disponível, e passe para o curativo ou torniquete se o sangramento continuar."
+  ],
+  "warnings": [
+    "A pressão direta por si só é inadequada para sangramentos arteriais - aumente para tamponamento da ferida ou torniquete.",
+    "Feridas juncionais (virilha, axila, pescoço) requerem tamponamento da ferida, e não apenas pressão externa."
+  ],
+  "follows": [],
+  "precedes": [
+    "tamponamento de feridas",
+    "aplicação de torniquete"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Pressão proporcional apenas. Evite comprimir o tórax em bebês."
+    },
+    "obstetric": {
+      "note": "Evite compressão pesada sobre o útero gravídico. Use tamponamento lateral se houver lesão juncional próxima à pelve."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

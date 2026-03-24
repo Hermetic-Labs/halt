@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s8420xs",
+    "icd10":  "S8420XS",
+    "name":  "Injury of cutaneous sensory nerve at lower leg level, unspecified leg, sequela",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Injury of cutaneous sensory nerve at lower leg level, unspecified leg, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Ativan"
+  ],
+  "description": "benzodiazepine ya kaimu ya kati. Matibabu ya mstari wa kwanza wa IV/IM kwa hali ya kifafa na kifafa cha papo hapo. Pia hutumiwa kwa sedation ya utaratibu na anxiolysis.",
+  "indications": [
+    "Hali ya kifafa (mstari wa IV)",
+    "Udhibiti wa mshtuko wa papo hapo",
+    "Sedation ya utaratibu",
+    "Hofu kali au mshtuko"
+  ],
+  "dose": "Mshtuko wa moyo: 4 mg IV/IO kusukuma polepole zaidi ya dakika 2. Rudia 4 mg ndani ya dakika 5-10 ikiwa kifafa kitaendelea. IM: 4 mg ikiwa IV haipatikani.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaucoma ya papo hapo yenye pembe nyembamba",
+    "Unyogovu mkubwa wa kupumua",
+    "Propylene glycol hypersensitivity"
+  ],
+  "warnings": [
+    "Husababisha mfadhaiko wa kupumua -- kuwa na BVM na vifaa vya njia ya hewa tayari.",
+    "Sedation inaweza kudumu masaa 6-8 - kufuatilia njia ya hewa.",
+    "Kufadhaika kwa kushangaza kunawezekana, haswa kwa wazee na watoto."
+  ],
+  "regional_names": {
+    "generic": "lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV/IM (kiwango cha juu 4 mg/dozi). Rudia mara moja katika dakika 5-10 ikiwa inahitajika.",
+      "note": "Inapendekezwa kuliko diazepam kwa usimamizi wa mshtuko wa IV kwa watoto."
+    },
+    "obstetric": {
+      "note": "Huvuka kondo -- unyogovu wa kupumua kwa watoto wachanga unawezekana. Tumia katika hali ya uzazi ya kifafa wakati manufaa yanazidi hatari."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

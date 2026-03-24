@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Dexamethason",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Decadron",
+    "DexPak"
+  ],
+  "description": "Langwerkende synthetische corticosteroïde. Gebruikt voor hersenoedeem (hersenoedeem op grote hoogte - HACE, TBI), ernstige allergische reacties, luchtwegoedeem en bijniercrisis. Ontstekingsremmend, niet anabool.",
+  "indications": [
+    "Hersenoedeem op grote hoogte (HACE)",
+    "Luchtwegoedeem (stridor na extubatie, kruis)",
+    "Hersenoedeem door tumor of abces",
+    "Ernstige allergische reacties (aanvullend op epinefrine)",
+    "Bijniercrisis",
+    "Anti-emetisch hulpmiddel (perioperatief)"
+  ],
+  "dose": "Hersenoedeem/HACE: aanvankelijk 8-10 mg IV/IM, daarna 4 mg elke 6 uur. Luchtwegoedeem: 10 mg IV eenmaal. Kroep: 0,6 mg/kg IM/PO (max. 16 mg). Bijniercrisis: 4 mg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO"
+  ],
+  "window": "HACE: Geef zo ​​vroeg mogelijk en onmiddellijke afdaling.",
+  "contraindications": [
+    "Systemische schimmelinfecties (zonder antischimmeldekking)",
+    "Levende virusvaccins binnen 30 dagen (relatief)"
+  ],
+  "warnings": [
+    "Vervangt niet de afdaling en zuurstof voor HACE - alleen als aanvulling gebruiken.",
+    "Hyperglykemie - controleer de bloedglucose bij diabetici.",
+    "Immunosuppressie bij langdurig gebruik.",
+    "Enkelvoudige doses voor noodgevallen zijn over het algemeen zeer veilig."
+  ],
+  "regional_names": {
+    "generic": "dexamethason"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Kroep: 0,6 mg/kg PO/IM (max 16 mg). Hersenoedeem: 0,5-1 mg/kg IV (max. 10 mg). Luchtwegoedeem: 0,5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM elke 24 uur x 2 doses gebruikt om de rijping van de foetale longen te versnellen bij een zwangerschapsduur van 24-34 weken bij vroeggeboorte. Bespreek dit met de hoogst beschikbare aanbieder."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s98212d",
+    "icd10":  "S98212D",
+    "name":  "Complete traumatic amputation of two or more left lesser toes, subsequent encounter",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Complete traumatic amputation of two or more left lesser toes, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

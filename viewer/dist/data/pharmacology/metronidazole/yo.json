@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazole",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "Nitroimidazole aporo aisan pẹlu anaerobic ti o dara julọ ati agbegbe protozoal. Pataki fun wiwọ inu / ibalokanjẹ ifun lati bo ododo ikun anaerobic. Nigbagbogbo a lo ni apapo pẹlu ciprofloxacin.",
+  "indications": [
+    "Inu ibalokanjẹ inu / ifun",
+    "Awọn akoran inu-inu",
+    "Anaerobic rirọ àkóràn",
+    "C. awọn akoran ti o nira"
+  ],
+  "dose": "500 mg IV q6-8h. PO: 500 mg q8h (ti o ba farada ẹnu).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ni oṣu mẹta akọkọ ti oyun (ojulumo)",
+    "metronidazole ti a mọ tabi aleji nitroimidazole"
+  ],
+  "warnings": [
+    "Idahun bii Disulfiram pẹlu oti -- maṣe jẹ ọti lakoko itọju ati 48h lẹhin.",
+    "Le fa neuropathy agbeegbe pẹlu lilo gigun.",
+    "Yago fun ni akọkọ trimester ti o ba ti ṣee ṣe."
+  ],
+  "regional_names": {
+    "generic": "metronidazole"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7.5 mg / kg IV / PO q6h (max 500 mg / iwọn lilo).",
+      "note": "Ailewu ninu awọn ọmọ agbalagba. Yẹra fun awọn ọmọ tuntun."
+    },
+    "obstetric": {
+      "note": "Yago fun ni akọkọ trimester ti o ba ti ṣee ṣe. Lo akoko oṣu keji/kẹta nigbati o ba jẹ dandan fun iṣoogun --anfani nigbagbogbo ju eewu fun awọn akoran anaerobic to ṣe pataki."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

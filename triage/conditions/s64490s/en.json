@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s64490s",
+    "icd10":  "S64490S",
+    "name":  "Injury of digital nerve of right index finger, sequela",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Injury of digital nerve of right index finger, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

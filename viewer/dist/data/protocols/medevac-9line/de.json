@@ -1,0 +1,6 @@
+{
+  "id": "medevac-9line",
+  "name": "9-zeilige MEDEVAC-Anfrage",
+  "description": "Standardisiertes NATO-Format für die Anforderung einer medizinischen Evakuierung. Der Reihe nach übermittelt, Zeilen 1-9. Zeilen 1-5 werden sofort übertragen (unverschlüsselt erlaubt). Es folgen die Zeilen 6-9. Eine korrekte 9-Linie bringt den Vogel in die Luft. Eine unvollständige verzögert es.",
+  "source": "FM 3-04.301 / ATP 4-02.2 / NATO STANAG 3204"
+}

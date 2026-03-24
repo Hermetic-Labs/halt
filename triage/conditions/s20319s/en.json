@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s20319s",
+    "icd10":  "S20319S",
+    "name":  "Abrasion of unspecified front wall of thorax, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Abrasion of unspecified front wall of thorax, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

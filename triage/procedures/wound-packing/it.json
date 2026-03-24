@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Medicazione emostatica della ferita",
+  "category": "hemorrhage-control",
+  "skill_level": "salvagente da combattimento",
+  "time_estimate": "3-5 minuti",
+  "description": "Medicazione di una ferita non comprimibile o giunzionale con garza emostatica per controllare l'emorragia laddove non è possibile applicare il laccio emostatico.",
+  "equipment": [
+    "garza emostatica",
+    "guanti-nitrile",
+    "cesoie da trauma",
+    "bendaggio compressivo"
+  ],
+  "steps": [
+    "Indossa i guanti. Esporre completamente la ferita utilizzando le cesoie per trauma.",
+    "Identificare la fonte di sanguinamento attivo all'interno della cavità della ferita.",
+    "Aprire la garza emostatica e fissarla saldamente nella ferita con il dito, spingendola direttamente verso la fonte del sanguinamento.",
+    "Continuare a tamponare fino a riempire completamente la cavità della ferita.",
+    "Applicare una pressione diretta decisa e continua con il palmo della mano per almeno 3 minuti.",
+    "NON rimuovere alcun materiale di imballaggio una volta applicato.",
+    "Applicare una benda compressiva sulla ferita compressa.",
+    "Segnare l'ora sulla tessera TCCC o sulla fronte del paziente (ad esempio \"PKD 0145\")."
+  ],
+  "warnings": [
+    "NON imballare ferite penetranti al torace: utilizzare invece il sigillo toracico.",
+    "Se si medica una ferita al collo, applicare pressione senza comprimere entrambe le carotidi contemporaneamente.",
+    "Rivalutare entro 5 minuti se si sospetta una fonte arteriosa."
+  ],
+  "follows": [
+    "pressione diretta"
+  ],
+  "precedes": [
+    "applicazione-laccio emostatico"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Utilizzare proporzionalmente meno garza. Applicare una pressione più leggera per evitare la compressione toracica nei neonati."
+    },
+    "obstetric": {
+      "note": "Evitare una pressione di impaccamento profonda o aggressiva vicino all'addome gravido. È preferibile un'escalation rapida."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

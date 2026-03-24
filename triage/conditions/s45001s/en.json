@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s45001s",
+    "icd10":  "S45001S",
+    "name":  "Unspecified injury of axillary artery, right side, sequela",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified injury of axillary artery, right side, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

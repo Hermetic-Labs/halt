@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinephrine (Adrenaline)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalin"
+  ],
+  "description": "Catecholamine endogenous leh alfa iyo beta adrenergic dhaqdhaqaaqa. Daawaynta safka koowaad ee anaphylaxis iyo xiritaanka wadnaha. Anaphylaxis-ka, bawdada IM ayaa laga door bidaa IV (ammaan, waxtar u dhigma). Ha dib u dhigin gelitaanka IV ee anaphylaxis.",
+  "indications": [
+    "Anaphylaxis (khadka koowaad)",
+    "Wadnaha oo istaaga -- garaaca wadnaha VF/VT/PEA/asystole",
+    "Bronchospasm daran",
+    "Dhiig-karka oo u diida dareerayaasha"
+  ],
+  "dose": "Anaphylaxis: 0.3-0.5 mg IM (bowdada xagasha) | Isku-durista tooska ah 0.3 mg IM. Ku celi q5-15 daqiiqo PRN. Xiritaanka wadnaha: 1 mg IV/IO q3-5 min inta lagu jiro CPR. Bronchospasm daran: 0.3 mg IM.",
+  "route": [
+    "IM",
+    "IV",
+    "IO"
+  ],
+  "window": "Marka lagu jiro anaphylaxis: sii IM isla markiiba -- ha dib u dhigin gelitaanka faleebbaha.",
+  "contraindications": [
+    "Ma jiraan wax liddi ku ah xaalad degdeg ah oo nafta halis gelinaysa"
+  ],
+  "warnings": [
+    "IV epinephrine ee anaphylaxis waa in kaliya loo isticmaalo xiritaanka wadnaha ama shoog qotodheer - khatar ah haddii IV lagu riixo bukaan miyir qaba.",
+    "Extravasation-ku wuxuu keenaa necrosis unug --hubi patency IV.",
+    "Waxay kordhisaa baahida ogsijiinta myocardial -- ka taxaddar cudurka wadnaha ee la yaqaan ee xiritaanka dibadda ah."
+  ],
+  "regional_names": {
+    "generic": "epinephrine",
+    "UK": "adrenaline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anaphylaxis: 0.01 mg/kg IM (ugu badnaan 0.5 mg). EpiPen Jr (0.15 mg) 15-30 kg. Xiritaanka wadnaha: 0.01 mg/kg IV/IO q3-5 min.",
+      "note": "Isticmaal qiyaasta miisaanka ku salaysan. Tixraaca cajaladda Broselow ayaa lagula taliyay."
+    },
+    "obstetric": {
+      "note": "Isticmaal qiyaasta anaphylaxis-ka caadiga ah - badbaadada hooyadu waa muhiim. Epinephrine waxay badbaado u tahay uurka xaaladaha degdegga ah ee nafta halis gelinaya."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

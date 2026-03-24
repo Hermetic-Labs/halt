@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastat"
+  ],
+  "description": "Benzodiazepine ya dirêj-çalak. Ji bo birêvebirina girtinê, spazma masûlkeyê, û anxiolîzê tê bikar anîn. Gela rektal (Diastat) di mîhengên zeviyê de dema ku IV tune be bikêr e. Demjimêra ji lorazepam dirêjtir e.",
+  "indications": [
+    "Birêvebirina girtinê (rektal/IV)",
+    "Spazma masûlkeyan ji birîna stûyê an jî tetanusê",
+    "Alîkarê antîdot ajanê nervê (di kîtên CHEMPACK de)",
+    "Vekêşana alkolê"
+  ],
+  "dose": "Girtin: 5-10 mg IV hêdî hêdî. Q10-15 min dubare bikin (max 30 mg). Rektal: 0,2-0,5 mg/kg. Veguheztina IM-ê xelet - heke gengaz be ji IM-ê dûr bixin.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaukoma akût-goşeya teng",
+    "Nexweşiya giran ya kezebê",
+    "Depresyona nefesê"
+  ],
+  "warnings": [
+    "Veguheztina IM nebaş û bi êş e - IV, rektal, an li şûna midazolam IM tercîh bikin.",
+    "Demjimêra dirêj a sedasyonê (24-48h ji bo dozên dubare).",
+    "Birînên ajanên nervê: diazepam di kîtên CHEMPACK-ê de ji bo girtina ji krîza kolînerjîk tê de heye."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0,1-0,3 mg/kg (max 10 mg). Rektal: 0,3-0,5 mg/kg. Dema ku IV tunebe riya rektal bikar bînin.",
+      "note": "Gela diastatê ya rektal bi taybetî ji bo girtina pediatrîkî di mîhengên zeviyê de bikêr e."
+    },
+    "obstetric": {
+      "note": "Placentayê derbas dike. Dikare bibe sedema hîpotoniya neonatal, depresyona nefesê. Tenê ji bo girtina zikmakî ya ku ji magnesiumê re bersiv nade bikar bînin."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

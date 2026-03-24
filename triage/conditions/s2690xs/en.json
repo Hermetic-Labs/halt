@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s2690xs",
+    "icd10":  "S2690XS",
+    "name":  "Unspecified injury of heart, unspecified with or without hemopericardium, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified injury of heart, unspecified with or without hemopericardium, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

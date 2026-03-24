@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s53032a",
+    "icd10":  "S53032A",
+    "name":  "Nursemaid\u0027s elbow, left elbow, initial encounter",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Nursemaid\u0027s elbow, left elbow, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Sulfate ya Morphine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Contin",
+    "Sindano ya Morphine Sulfate"
+  ],
+  "description": "Analgesic ya opioid. Hutoa utulivu wa maumivu lakini husababisha vasodilation na hypotension -- tumia kwa tahadhari katika mshtuko wa hemorrhagic. Ketamine inapendekezwa katika mipangilio ya mapigano. Tumia morphine tu kwa wagonjwa walio na utulivu wa hemodynamically.",
+  "indications": [
+    "Maumivu ya wastani hadi makali kwa wagonjwa wenye utulivu wa hemodynamically",
+    "Sio safu ya kwanza katika TCCC -- napendelea ketamine"
+  ],
+  "dose": "2-4 mg IV/IO q4h PRN. Titrate kwa athari. IM: 5-10 mg q4h PRN.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Kukosekana kwa utulivu wa hemodynamic / mshtuko wa hemorrhagic",
+    "Unyogovu wa kupumua",
+    "Jeraha la kichwa na LOC iliyobadilishwa (jamaa)"
+  ],
+  "warnings": [
+    "Husababisha vasodilation -- inaweza kuwa mbaya zaidi mshtuko wa hemorrhagic. Tathmini BP kabla na baada.",
+    "Na naloxone inapatikana mara moja.",
+    "Unyogovu wa kupumua - kiwango cha kufuatilia."
+  ],
+  "regional_names": {
+    "generic": "sulfate ya morphine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV q2-4h PRN. Kiwango cha juu zaidi cha 2mg IV kwa mtoto asiye na opioid.",
+      "note": "Fuatilia kwa karibu kiwango cha kupumua. Watoto wachanga ni nyeti sana."
+    },
+    "obstetric": {
+      "note": "Inavuka placenta. Unyogovu wa kupumua kwa watoto wachanga unawezekana ikiwa utatolewa ndani ya masaa 2-4 baada ya kujifungua. Weka naloxone tayari kwa mtoto mchanga."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

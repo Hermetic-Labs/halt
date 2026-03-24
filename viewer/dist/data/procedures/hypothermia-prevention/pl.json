@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Zapobieganie hipotermii (H – MARZEC)",
+  "category": "temperature-management",
+  "skill_level": "dowolny odpowiadający",
+  "time_estimate": "2-3 minuty",
+  "description": "Hipotermia bojowa jest głównym zabójcą, któremu można zapobiec w przypadku urazów. Śmiertelna triada: hipotermia + kwasica + koagulopatia. Zapobiegaj za wszelką cenę.",
+  "equipment": [
+    "koc-odblaskowy",
+    "zestaw-zapobiegający hipotermii",
+    "ciepłe-płyny-iv-jeśli-dostępne"
+  ],
+  "steps": [
+    "Zdjąć całą mokrą odzież tak szybko, jak to możliwe.",
+    "Przykryj pacjenta kocem odbijającym ciepło (kostką) – błyszczącą stroną do wewnątrz w kierunku pacjenta.",
+    "Owiń głowę i szyję (miejsce znaczącej utraty ciepła).",
+    "Odizoluj od podłoża — umieść coś pomiędzy pacjentem a zimną powierzchnią podłoża.",
+    "Jeśli to możliwe, podaj ciepłe płyny dożylne.",
+    "Nie pozwalaj pacjentowi drżeć bez przykrycia – dreszcze są wczesnym sygnałem ostrzegawczym.",
+    "Monitoruj temperaturę, jeśli masz termometr. Poniżej 35°C (95°F) = hipotermia."
+  ],
+  "warnings": [
+    "Hipotermia pogarsza koagulopatię – krwawiący pacjenci schładzają się szybciej i krzepną mniej skutecznie.",
+    "Zapobieganie hipotermii w terenie należy rozpocząć w miejscu urazu, a nie w CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

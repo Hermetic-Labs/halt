@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastat"
+  ],
+  "description": "benzodiazepine ti n ṣiṣẹ pipẹ. Ti a lo fun iṣakoso ijagba, spasm iṣan, ati anxiolysis. Geli rectal (Diastat) wulo ni awọn eto aaye nigbati IV ko si. Iye to gun ju lorazepam lọ.",
+  "indications": [
+    "Itoju ijagba (rectal/IV)",
+    "Spasm iṣan lati ipalara ọpa-ẹhin tabi tetanus",
+    "Adjunct antidote oluranlowo nerve (ninu awọn ohun elo CHEMPACK)",
+    "Oti yiyọ kuro"
+  ],
+  "dose": "Imudani: 5-10 mg IV titari lọra. Tun q10-15 iṣẹju (max 30 mg). Rectal: 0.2-0.5 mg / kg. IM gbigba aiṣedeede -- yago fun IM ti o ba ṣeeṣe.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaucoma igun-igun ti o tobi",
+    "Àrùn ẹ̀dọ̀ tó le",
+    "Ibanujẹ atẹgun"
+  ],
+  "warnings": [
+    "Gbigba IM jẹ aiṣedeede ati irora - fẹ IV, rectal, tabi lo midazolam IM dipo.",
+    "Iye gigun ti sedation (24-48h fun awọn abere ti o tun).",
+    "Awọn olufaragba aṣoju aifọkanbalẹ: diazepam wa ninu awọn ohun elo CHEMPACK fun ijagba lati idaamu cholinergic."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0.1-0.3 mg/kg (max 10 mg). Rectal: 0.3-0.5 mg / kg. Lo ipa ọna rectal nigbati IV ko si.",
+      "note": "Geli diastat rectal wulo paapaa fun awọn ijagba ọmọde ni awọn eto aaye."
+    },
+    "obstetric": {
+      "note": "Rekọja placenta. O le fa hypotonia ọmọ tuntun, ibanujẹ atẹgun. Lo fun awọn ijagba iya nikan ko ṣe idahun si iṣuu magnẹsia."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

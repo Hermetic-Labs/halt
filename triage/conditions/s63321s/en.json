@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s63321s",
+    "icd10":  "S63321S",
+    "name":  "Traumatic rupture of right radiocarpal ligament, sequela",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Traumatic rupture of right radiocarpal ligament, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

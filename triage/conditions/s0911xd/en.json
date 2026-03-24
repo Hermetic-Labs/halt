@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s0911xd",
+    "icd10":  "S0911XD",
+    "name":  "Strain of muscle and tendon of head, subsequent encounter",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Strain of muscle and tendon of head, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

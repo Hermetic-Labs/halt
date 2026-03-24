@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Perimortem Cesarean Section (PMCS)",
+  "category": "obstetric",
+  "skill_level": "manggagamot-surgeon",
+  "time_estimate": "3-5 min",
+  "description": "Emergency cesarean delivery sa loob ng 4 na minuto ng maternal cardiac arrest upang payagan ang epektibong CPR at potensyal na kaligtasan ng neonatal. Ang matris ay pumipiga sa aorta at IVC -- ang panganganak ay nakapagpapasigla din para sa ina.",
+  "equipment": [
+    "panistis",
+    "guwantes",
+    "mga retractor",
+    "mga cord-clamp",
+    "neonatal-resuscitation-equipment"
+  ],
+  "steps": [
+    "Ipagpatuloy ang CPR nang walang pagkaantala.",
+    "Gumawa ng vertical midline incision mula sa pusod hanggang sa pubis sa pamamagitan ng balat at fascia.",
+    "Ihiwa ang ibabang bahagi ng matris nang pahalang.",
+    "Ihatid ang sanggol -- tandaan ang oras.",
+    "I-clamp at putulin ang kurdon.",
+    "Ibigay ang sanggol sa pangalawang tagapagkaloob para sa neonatal resuscitation.",
+    "Alisin ang inunan.",
+    "I-pack ang matris at tiyan kung hindi kaagad posible ang tiyak na pagsasara.",
+    "Ipagpatuloy ang maternal resuscitation -- Ang ROSC ay mas malamang pagkatapos ng uterine decompression."
+  ],
+  "warnings": [
+    "Ang oras ng pagpapasya sa paghahatid ay dapat na wala pang 5 minuto para sa pinakamahusay na resulta ng ina at pangsanggol.",
+    "Ang pamamaraang ito ay isang huling paraan -- kung ang ina ay nasa cardiac arrest at malapit na ang panganganak (>20 linggong pagbubuntis).",
+    "Nangangailangan ng pagsasanay sa antas ng doktor. Dapat ihanda ng mga combat medic ang field at suporta, hindi gumanap nang nakapag-iisa."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

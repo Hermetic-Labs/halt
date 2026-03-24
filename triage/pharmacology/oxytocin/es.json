@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oxitocina",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocina",
+    "Sintocinón"
+  ],
+  "description": "Hormona peptídica endógena. Uterotónico de primera línea para la prevención y tratamiento de la hemorragia posparto (HPP). Provoca la contracción uterina y reduce la pérdida de sangre después del parto. Administrado DESPUÉS del parto placentario.",
+  "indications": [
+    "Prevención de la hemorragia posparto (rutina después del parto)",
+    "Tratamiento de la hemorragia posparto (atonía uterina)",
+    "Inducción del parto (únicamente en entornos controlados)"
+  ],
+  "dose": "Prevención de HPP: 10 unidades IM inmediatamente después del parto placentario (vía de campo preferida). Tratamiento de HPP: 10-40 unidades en 1 litro IV, infusión a 40-80 mU/min. Si IV no está disponible: 10 unidades IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Administre DESPUÉS del parto placentario: administrar antes de que la placenta salga puede atrapar la placenta.",
+  "contraindications": [
+    "Antes del parto placentario (puede atrapar la placenta)",
+    "Sufrimiento fetal con cabeza no expulsada",
+    "Hipersensibilidad conocida"
+  ],
+  "warnings": [
+    "DAR DESPUÉS DE EXTRAER LA PLACENTA: el atrapamiento de la placenta es una complicación potencialmente mortal.",
+    "El bolo intravenoso puede causar hipotensión grave y arritmia cardíaca; siempre diluya e infunda lentamente.",
+    "Efecto antidiurético con grandes volúmenes: controle la hiponatremia."
+  ],
+  "regional_names": {
+    "generic": "oxitocina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A: solo para uso obstétrico.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Uterotónico primario. Si la atonía uterina no responde, considere misoprostol, ácido tranexámico (TXA), compresión uterina bimanual y MEDEVAC rápida."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "s0011xd",
+  "icd10": "S0011XD",
+  "name": "ការប៉ះទង្គិចនៃត្របកភ្នែកខាងស្តាំ និងតំបន់ជុំវិញ ការជួបជាបន្តបន្ទាប់",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "ការប៉ះទង្គិចនៃត្របកភ្នែកខាងស្តាំ និងតំបន់ periocular, ការជួបជាបន្តបន្ទាប់",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

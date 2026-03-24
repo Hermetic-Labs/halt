@@ -1,0 +1,22 @@
+{
+  "id": "s0003xa",
+  "icd10": "S0003XA",
+  "name": "두피 타박상, 초기 발생",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "두피의 타박상, 초기 발생",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

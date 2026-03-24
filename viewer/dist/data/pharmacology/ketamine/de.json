@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamin",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Dissoziatives Anästhetikum, das Analgesie, Sedierung und Amnesie bewirkt und gleichzeitig die Atemwegsreflexe und die hämodynamische Stabilität erhält. Bevorzugtes Analgetikum bei TCCC – hält den Blutdruck im Gegensatz zu Opioiden aufrecht. Wird auch zur Kurzsedierung und RSI verwendet.",
+  "indications": [
+    "Mittelschwere bis schwere Schmerzbehandlung",
+    "Verfahrenssedierung (Wundfüllung, Frakturreposition)",
+    "Induktionsagent für RSI",
+    "Kampfanästhesie"
+  ],
+  "dose": "Analgesie: 0,1–0,3 mg/kg IV/IO (langsamer Druck) | 0,5 mg/kg IM. Verfahrenssedierung: 1-2 mg/kg i.v. | 4-6 mg/kg i.m. RSI-Induktion: 1–2 mg/kg i.v.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "Bekannte Schizophrenie oder aktive Psychose",
+    "Erhöhter ICP ohne Atemwegsschutz (relativ)"
+  ],
+  "warnings": [
+    "Emergenzreaktionen (Delirium/Halluzinationen) – mit Midazolam 1–2 mg i.v. lindern, falls verfügbar.",
+    "Erhöht die Sekretion – Absaugung bereithalten.",
+    "Laryngospasmus selten, aber möglich – BVM verfügbar halten."
+  ],
+  "regional_names": {
+    "generic": "Ketamin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesie: 0,5 mg/kg i.v. Verfahrenssedierung: 1-2 mg/kg i.v. | 4-5 mg/kg i.m.",
+      "note": "Gut untersucht in der Pädiatrie. Bevorzugt bei schmerzhaften Eingriffen."
+    },
+    "obstetric": {
+      "note": "Sicher für die Analgesie der Mutter bei niedrigen Dosen. Kann bei hohen Dosen eine Atemdepression beim Neugeborenen hervorrufen, wenn es kurz vor der Entbindung verabreicht wird."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

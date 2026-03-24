@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s90511s",
+    "icd10":  "S90511S",
+    "name":  "Abrasion, right ankle, sequela",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Abrasion, right ankle, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s56199a",
+    "icd10":  "S56199A",
+    "name":  "Other injury of flexor muscle, fascia and tendon of unspecified finger at forearm level, initial encounter",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Other injury of flexor muscle, fascia and tendon of unspecified finger at forearm level, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Siarczan Morfiny",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Contin",
+    "Zastrzyk siarczanu morfiny"
+  ],
+  "description": "Opioidowy środek przeciwbólowy. Zapewnia skuteczną ulgę w bólu, ale powoduje rozszerzenie naczyń i niedociśnienie. Należy zachować ostrożność podczas wstrząsu krwotocznego. Ketamina jest preferowana w warunkach bojowych. Morfinę należy stosować wyłącznie u pacjentów stabilnych hemodynamicznie.",
+  "indications": [
+    "Umiarkowany do silnego ból u pacjentów stabilnych hemodynamicznie",
+    "Nie pierwsza linia w TCCC – wolę ketaminę"
+  ],
+  "dose": "2-4 mg IV/IO co 4 godziny PRN. Miareczkuj do skutku. IM: 5-10 mg PRN co 4 godziny.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "KW"
+  ],
+  "window": "",
+  "contraindications": [
+    "Niestabilność hemodynamiczna / wstrząs krwotoczny",
+    "Depresja oddechowa",
+    "Uraz głowy ze zmienioną LOC (względną)"
+  ],
+  "warnings": [
+    "Powoduje rozszerzenie naczyń krwionośnych – może pogorszyć wstrząs krwotoczny. Ocenić ciśnienie krwi przed i po.",
+    "Należy natychmiast przygotować nalokson.",
+    "Depresja oddechowa – monitoruj częstość."
+  ],
+  "regional_names": {
+    "generic": "siarczan morfiny"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV co 2-4 godziny PRN. Maksymalna pojedyncza dawka 2 mg dożylnie u dziecka, które nie przyjmowało wcześniej opioidów.",
+      "note": "Uważnie monitoruj częstość oddechów. Noworodki są niezwykle wrażliwe."
+    },
+    "obstetric": {
+      "note": "Przechodzi przez łożysko. Depresja oddechowa u noworodków jest możliwa, jeśli zostanie podana w ciągu 2–4 godzin po porodzie. Przygotuj nalokson dla noworodka."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

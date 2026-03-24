@@ -1,0 +1,43 @@
+{
+  "id": "pediatric-vital-sign-ranges",
+  "name": "Uluhlu lwabantwana oluQhelekileyo lweempawu eziBalulekileyo",
+  "description": "Isalathiso esilungelelaniswe nobudala be-HR, i-RR, kunye ne-SBP. Okubalulekileyo kuhlelo oluchanekileyo lovavanyo kwizigulana zabantwana -- uluhlu oluqhelekileyo lwabantu abadala aluchanekanga ebantwaneni.",
+  "ranges": [
+    {
+      "age": "Ukuzalwa Okusandul 'ukuzalwa (inyanga eyi-0-1)",
+      "hr": "100-160",
+      "rr": "30-60",
+      "sbp_mmhg": "60-90",
+      "gcs_min": 15
+    },
+    {
+      "age": "Usana (iinyanga ezi-1-12)",
+      "hr": "90-150",
+      "rr": "30-60",
+      "sbp_mmhg": "70-100",
+      "gcs_min": 15
+    },
+    {
+      "age": "Umntwana (iminyaka eyi-1-3)",
+      "hr": "80-130",
+      "rr": "24-40",
+      "sbp_mmhg": "80-110",
+      "gcs_min": 15
+    },
+    {
+      "age": "Umntwana (iminyaka eyi-3-12)",
+      "hr": "70-120",
+      "rr": "18-30",
+      "sbp_mmhg": "80-120",
+      "gcs_min": 15
+    },
+    {
+      "age": "Umntu ofikisayo (>12 iminyaka)",
+      "hr": "60-100",
+      "rr": "12-20",
+      "sbp_mmhg": "90-130",
+      "gcs_min": 15
+    }
+  ],
+  "source": "PALS Guidelines / JTS Pediatric CPG"
+}

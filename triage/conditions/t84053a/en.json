@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t84053a",
+    "icd10":  "T84053A",
+    "name":  "Periprosthetic osteolysis of internal prosthetic left knee joint, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Periprosthetic osteolysis of internal prosthetic left knee joint, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

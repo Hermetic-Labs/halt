@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t86850",
+    "icd10":  "T86850",
+    "name":  "Intestine transplant rejection",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Intestine transplant rejection",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Morfina solfato",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Continua",
+    "Iniezione di morfina solfato"
+  ],
+  "description": "Analgesico oppioide. Fornisce un efficace sollievo dal dolore ma provoca vasodilatazione e ipotensione: da usare con cautela nello shock emorragico. La ketamina è preferita nelle situazioni di combattimento. Utilizzare la morfina solo in pazienti emodinamicamente stabili.",
+  "indications": [
+    "Dolore da moderato a severo in pazienti emodinamicamente stabili",
+    "Non in prima linea nel TCCC: preferisco la ketamina"
+  ],
+  "dose": "2-4 mg EV/IO ogni 4 ore PRN. Titolare fino all'effetto. IM: 5-10 mg ogni 4 ore PRN.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "QS"
+  ],
+  "window": "",
+  "contraindications": [
+    "Instabilità emodinamica/shock emorragico",
+    "Depressione respiratoria",
+    "Trauma cranico con LOC alterato (relativo)"
+  ],
+  "warnings": [
+    "Provoca vasodilatazione – può peggiorare lo shock emorragico. Valutare la pressione arteriosa prima e dopo.",
+    "Avere il naloxone immediatamente disponibile.",
+    "Depressione respiratoria: monitorare la frequenza."
+  ],
+  "regional_names": {
+    "generic": "morfina solfato"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV ogni 2-4 ore PRN. Dose singola massima 2 mg IV in bambini naive agli oppioidi.",
+      "note": "Monitorare attentamente la frequenza respiratoria. I neonati sono estremamente sensibili."
+    },
+    "obstetric": {
+      "note": "Attraversa la placenta. Depressione respiratoria neonatale possibile se somministrata entro 2-4 ore dal parto. Tieni il naloxone pronto per il neonato."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

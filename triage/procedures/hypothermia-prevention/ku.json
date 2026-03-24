@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Pêşîlêgirtina Hypothermia (H -- ADAR)",
+  "category": "temperature-management",
+  "skill_level": "her-bersiv",
+  "time_estimate": "2-3 min",
+  "description": "Hîpotermiya têkoşînê di trawmayê de kujerek pêşeng a pêşîlêgirtinê ye. Sêya kujer: hîpotermî + acidoz + koagulopatî. Bi her awayî pêşî lê bigirin.",
+  "equipment": [
+    "germ-refleks-blanket",
+    "hypothermia-prevention-kit",
+    "germ-iv-fluids-if-available"
+  ],
+  "steps": [
+    "Heya ku ji hêla taktîkî ve gengaz be hemî cilên şil jê bikin.",
+    "Nexweşê bi betaniyek germ-refleksa (cihê) veşêrin -- Aliyê biriqandî DI IN ber bi nexweş ve.",
+    "Ser û stûyê xwe bipêçin (malpera windabûna germê ya girîng).",
+    "Ji axê îzole bikin - tiştek di navbera rûbera axa nexweş û sar de bixin.",
+    "Ger hebin şilekên IV yên germ bi rêve bibin.",
+    "Destûr nedin ku nexweş bê sergirtî bilerizîne - lerzîn nîşanek hişyariya zû ye.",
+    "Ger termometre hebe, germahiyê bişopînin. Li jêr 35°C (95°F) = hîpotermî."
+  ],
+  "warnings": [
+    "Hîpotermî koagulopatiyê xirabtir dike -- nexweşên xwînrêj zûtir sar dibin û kêmtir bi bandor dikevin.",
+    "Pêşîlêgirtina hîpotermiya zeviyê divê li cihê birîndarbûnê dest pê bike, ne li CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

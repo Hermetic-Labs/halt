@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "格拉斯哥昏迷量表 (GCS)",
+  "category": "neurological",
+  "description": "通过眼睛、言语和运动反应对意识进行标准化神经评分。分数范围 3-15。",
+  "instructions": "独立地对三个领域中的每一个进行评分。将所有三个分数相加即为总 GCS。",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "自发"
+        },
+        {
+          "score": 3,
+          "label": "发声"
+        },
+        {
+          "score": 2,
+          "label": "痛苦"
+        },
+        {
+          "score": 1,
+          "label": "无"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "面向"
+        },
+        {
+          "score": 4,
+          "label": "困惑"
+        },
+        {
+          "score": 3,
+          "label": "不当用词"
+        },
+        {
+          "score": 2,
+          "label": "难以理解的声音"
+        },
+        {
+          "score": 1,
+          "label": "无"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "服从命令"
+        },
+        {
+          "score": 5,
+          "label": "定位疼痛"
+        },
+        {
+          "score": 4,
+          "label": "远离痛苦"
+        },
+        {
+          "score": 3,
+          "label": "异常屈曲（去皮质）"
+        },
+        {
+          "score": 2,
+          "label": "延伸（去大脑）"
+        },
+        {
+          "score": 1,
+          "label": "无"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "轻度 TBI——密切监测"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "中度 TBI——准备气道"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "严重 TBI——气道面临直接危险，如果可能的话插管"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "2 岁以下儿童使用儿科 GCS (pGCS)。针对语言前儿童调整语言评分。"
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

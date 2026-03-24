@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Cefazolin",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Ancef",
+    "Kefzol"
+  ],
+  "description": "cephalosporin akọkọ-iran. aporo aporo obi akọkọ-akọkọ fun awọn akoran ọgbẹ to ṣe pataki ati prophylaxis iṣẹ abẹ. Iboju to dara giramu-rere pẹlu MSSA. Fun laarin 60 iṣẹju ti lila iṣẹ abẹ fun prophylaxis.",
+  "indications": [
+    "Ilana ọgbẹ abẹ",
+    "Awọn àkóràn àsopọ asọ to ṣe pataki",
+    "Ṣii idena fifọ fifọ",
+    "Awọ ati ara be àkóràn"
+  ],
+  "dose": "1-2g IV / IM q8h. Ilana ti iṣẹ abẹ: 2g IV laarin awọn iṣẹju 60 ṣaaju lila. Tun 2g ti iṣẹ abẹ> 4 wakati.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Fun prophylaxis iṣẹ abẹ: fun laarin awọn iṣẹju 60 ti lila.",
+  "contraindications": [
+    "Aleji cephalosporin ti a mọ",
+    "Aleji penicillin ti o lewu (5-10% ifaseyin agbekọja)"
+  ],
+  "warnings": [
+    "Iṣe agbekọja pẹlu aleji penicillini: lo pẹlu iṣọra ni awọn alaisan ti ara korira penicillin.",
+    "Ṣatunṣe iwọn lilo ninu ailagbara kidirin."
+  ],
+  "regional_names": {
+    "generic": "cefazolin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM q8h (max 2g/iwọn lilo). Itọkasi: 30 mg / kg (max 2g) ṣaaju lila.",
+      "note": "Ailewu ati ikẹkọ daradara ni awọn itọju ọmọde."
+    },
+    "obstetric": {
+      "note": "Ailewu ninu oyun ati lactation. aporo aporo obi ti o fẹ fun awọn ilana alaboyun."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

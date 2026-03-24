@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s76809a",
+    "icd10":  "S76809A",
+    "name":  "Unspecified injury of other specified muscles, fascia and tendons at thigh level, unspecified thigh, initial encounter",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified injury of other specified muscles, fascia and tendons at thigh level, unspecified thigh, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

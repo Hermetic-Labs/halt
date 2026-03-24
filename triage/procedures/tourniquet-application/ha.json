@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Aikace-aikacen Yawon shakatawa (Yaƙin Aikace-aikacen Tourniquet - CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "duk mai amsawa",
+  "time_estimate": "30-60 sec",
+  "description": "Tabbatacciyar kulawar zubar jini don matsanancin zubar jini mai barazanar rai. Aiwatar da wuri -- kar a jinkirta.",
+  "equipment": [
+    "cat-tourniquet",
+    "Alamar dindindin"
+  ],
+  "steps": [
+    "Aiwatar da yawon shakatawa 2-3 inci (5-7 cm) kusa da (sama) rauni - akan tufafi abin karɓa ne.",
+    "Juya band ɗin mai ɗaukar kai a kusa da gaɓa kuma zare ta cikin madaidaicin adaftan gogayya.",
+    "Cire band ɗin da ƙarfi kuma ka mayar da shi akan kanta.",
+    "Karkatar da sandar gilashin iska har sai zubar jini ya tsaya ko bugun jini mai nisa ba ya nan.",
+    "Kulle gilashin gilashi a cikin shirin gilashin.",
+    "Aiwatar da madaurin iska akan sandar gilashin don amintacce.",
+    "Rubuta lokacin aikace-aikacen kai tsaye akan yawon shakatawa (amfani da alamar) DA kan katin TCCC.",
+    "Bayyana kuma sake gwada raunin. Sake tantancewa bayan mintuna 5."
+  ],
+  "warnings": [
+    "KAR KA cire yawon shakatawa da zarar an yi amfani da shi a filin -- ma'aikatan kiwon lafiya da aka horar da su kawai a cikin yanayin sarrafawa.",
+    "Lokaci yana da mahimmanci: yawon shakatawa> sa'o'i 2 yana ƙara haɗarin asarar gaɓoɓi. Login lokaci nan da nan.",
+    "KADA a shafa akan haɗin gwiwa. Idan kafa yana da raunuka a matakai da yawa, shafa kusa da duk raunuka.",
+    "Ingantattun wuraren yawon shakatawa (belts, igiyoyi) ba su da tasiri sosai."
+  ],
+  "follows": [
+    "kai tsaye-matsi",
+    "shiryar da rauni"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Yi amfani da kunkuntar yawon shakatawa na yara idan akwai. Ana iya amfani da madaidaicin CAT amma a ƙarfafa da kulawa. Gagarawa sun fi ƙanƙanta -- duba bugun jini a hankali."
+    },
+    "obstetric": {
+      "note": "Daidaitaccen aikace-aikacen don raunukan iyaka. Kada a shafa cikin ciki ko ƙashin ƙugu."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

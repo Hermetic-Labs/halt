@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Ukucindezela Okuqondile Kokulawulwa Kokopha",
+  "category": "hemorrhage-control",
+  "skill_level": "noma yimuphi-umphenduli",
+  "time_estimate": "3-5 imiz",
+  "description": "Umugqa wokuqala wokulawula ukopha emaphethelweni afinyelelekayo kanye namanxeba omzimba.",
+  "equipment": [
+    "amagilavu",
+    "ukuhlukumezeka-ukugqoka",
+    "i-cravat-bandage"
+  ],
+  "steps": [
+    "Don amagilavu ​​uma ekhona.",
+    "Veza isilonda ngokusika izingubo.",
+    "Gcoba indwangu yokuhlukumezeka noma indwangu egoqiwe ngqo phezu kwenxeba.",
+    "Cindezela ngokuqinile ngesithende sesandla sakho. Sebenzisa isisindo somzimba wakho -- hhayi nje amandla engalo.",
+    "Bamba ingcindezi eqhubekayo, engaphazamiseki okungenani imizuzu emi-3.",
+    "UNGAKULISI okokugqoka ukuze uhlole -- lokhu kuphazamisa ukwakheka kwehlule.",
+    "Uma ukopha kungena, engeza enye ingubo phezulu. Ungasusi owokuqala.",
+    "Vikela ngebhandeshi elicindezelayo uma litholakala futhi uye endaweni yokupakisha amanxeba noma ku-tourniquet uma ukopha kuqhubeka."
+  ],
+  "warnings": [
+    "Ingcindezi eqondile iyodwa ayinele ukopha kwe-arterial -- ikhuphukela ekupakishweni kwezilonda noma i-tourniquet.",
+    "Izilonda ezihlangene (i-groin, i-axilla, intamo) zidinga ukupakishwa kwamanxeba, hhayi ukucindezela kwangaphandle kuphela."
+  ],
+  "follows": [],
+  "precedes": [
+    "ukupakisha amanxeba",
+    "tourniquet-uhlelo lokusebenza"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Ingcindezi elinganayo kuphela. Gwema ukucindezela ithorax ezinganeni."
+    },
+    "obstetric": {
+      "note": "Gwema ukucindezela okukhulu phezu kwesibeletho se-gravid. Sebenzisa i-lateral packing uma inxeba elihlangene eduze kwe-pelvis."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

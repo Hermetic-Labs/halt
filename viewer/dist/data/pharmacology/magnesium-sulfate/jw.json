@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Magnesium Sulfat (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Injeksi Magnesium Sulfat"
+  ],
+  "description": "Depresan CNS lan anticonvulsant digunakake kanggo nyegah lan perawatan kejang eklampsia (kejang nalika meteng saka pre-eklampsia). Uga digunakake kanggo asma abot lan torsades de pointes. First-line kanggo eklampsia liwat benzodiazepines.",
+  "indications": [
+    "Eklampsia (nyegah lan perawatan kejang ing pre-eklampsia abot)",
+    "Pre-eklampsia profilaksis (fitur abot)",
+    "Torsades de Pointes (polymorphic V-tach saka hypomagnesemia)",
+    "Asma akut akut (adjunct)"
+  ],
+  "dose": "Dosis beban eklampsia: 4-6g IV push alon liwat 20 menit. Pangopènan: 1-2 g / jam infus IV. Yen kejang kambuh: 2-4g IV liwat 5 menit. IM loading (yen ora IV): 5g IM saben bokong (10g total) bebarengan.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "Diwiwiti ing wiwitan kejang utawa nalika diagnosa fitur pre-eklampsia abot.",
+  "contraindications": [
+    "Myasthenia gravis",
+    "Cacat konduksi jantung",
+    "Gagal ginjel (akumulasi - nyuda dosis)"
+  ],
+  "warnings": [
+    "Tanda-tanda keracunan: mundhut refleks patellar (tandha pisanan, 7-10 mEq / L), depresi pernapasan (> 10 mEq / L), serangan jantung (> 15 mEq / L).",
+    "Pantau refleks patela saben 15 menit -- mundhut refleks = mungkasi infus.",
+    "ANTIDOTE kanggo keracunan: Kalsium glukonat 1g IV liwat 3 menit.",
+    "Ngurangi dosis ing gangguan ginjel - monitor output urin."
+  ],
+  "regional_names": {
+    "generic": "magnesium sulfat"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg / kg IV liwat 10-20 menit (maks 2g). Asma abot: 25-75 mg/kg IV (maks 2g).",
+      "note": "Jarang digunakake kanggo kejang ing pasien pediatrik non-obstetrik - eklampsia minangka indikasi utama."
+    },
+    "obstetric": {
+      "note": "Indikasi utami. Nglintasi plasenta - hipermagnesemia neonatal bisa uga. Dosis neonatal yen depresi pernapasan: kalsium glukonat 100 mg / kg IV. Informasi marang tim NICU babagan panggunaan magnesium ibu."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

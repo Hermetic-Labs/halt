@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Unikezelo lweNdawo eNgxamisekileyo",
+  "category": "obstetric",
+  "skill_level": "ukulwa-medical",
+  "time_estimate": "Iyahluka -- 20+ min",
+  "description": "Ulawulo lonikezelo olukhawulezayo okanye olungacwangciswanga kwindawo enzima.",
+  "equipment": [
+    "iiglavu",
+    "iingubo ezicocekileyo zelaphu",
+    "intambo-izibambiso-okanye-izibophelelo",
+    "isikere",
+    "ibhalbhu-sirinji"
+  ],
+  "steps": [
+    "Beka umama supine okanye ulale kancinci. Ukuthambeka kwicala lasekhohlo kuyakhethwa ukuba akukho zingqondweni (ukuthintela ukucinezelwa kwe-aortocaval).",
+    "Lawula ukuhanjiswa kwentloko -- inkxaso ngesundu. Sukutsala.",
+    "Emva kokuba intloko ihanjiswe, khangela intambo ye-nuchal (ejikeleze intamo). Ukuba ikhona, tyibilika phezu kwentloko. Ukuba iqinile, yibambe kwaye usike.",
+    "Funxa umlomo emva koko impumlo ngesirinji yebhalbhu ukuba ikhona.",
+    "Isikhokelo sokuhanjiswa kwegxalaba langaphambili ngokutsala kancinci entloko, emva koko unyuse igxalaba elingasemva.",
+    "Hambisa umzimba-- qaphela ixesha lokuziswa.",
+    "Yomisa kwaye ufudumale usana ngokukhawuleza. Hlaziya ngokuphulula umqolo.",
+    "Bamba kwaye unqumle intambo (linda i-1-2 min ukuba usana luzinzile).",
+    "Zisa i-placenta ngokutsala okuthambileyo okulawulekayo -- SUKUQHAKAZA.",
+    "Lawula i-oxytocin (ukuba ikhona) ukuthintela ukopha kwangemva kokubeleka emva kokubeleka kwe-placenta.",
+    "Vavanya ukopha kwasemva kokubeleka -- ifundal massage, ucinezelo lwe-bimanual ukuba kuyafuneka.",
+    "Vavanya amanqaku e-Apgar kwi-1 kunye nemizuzu emi-5."
+  ],
+  "warnings": [
+    "Ukuba ukuhanjiswa akukafiki -- SUKU uzame. I-MEDEVAC ekhawulezayo iyakhethwa.",
+    "I-dystocia yamagxa: ukuba amagxa abambelele, sebenzisa i-McRoberts maneuver (hyperflex hips) kunye noxinzelelo lwe-suprapubic.",
+    "Ukopha kwasemva kokubeleka ngoyena nobangela uphambili wokubhubha kukamama okunokuthinteleka -- yiba ne-oxytocin sele ilungile."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

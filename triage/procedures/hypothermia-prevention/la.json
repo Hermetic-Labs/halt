@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Hypothermia Praeventionis (H - MAR)",
+  "category": "temperature-management",
+  "skill_level": "quis responder-",
+  "time_estimate": "2-3 min",
+  "description": "Certamen hypothermia est principale interfectorem in trauma preventabile. Trias letalis: hypothermia + acidosis + coagulopathy. Omnino prohibeo.",
+  "equipment": [
+    "calor-reflective, stratum",
+    "hypothermia-ne, ornamentum",
+    "fermentum iv fluidorum, si praesto"
+  ],
+  "steps": [
+    "Amove indumenta infectum quam primum tactically posse.",
+    "Tege aegrum stragulum calefactivum reflexivum — latus lucidum IN ad patientem.",
+    "Caput et collum involvent (situm significat calorem detrimentum).",
+    "INSULO e terra -- pone aliquid inter superficiem terrae patientem et frigidam.",
+    "Administrare calidum IV humores si available.",
+    "Sine tegumento non sinas patiens horrescere -- horror praenuntius est .",
+    "Sed ultricies tortor vel nisi scelerisque consectetur. Infra 35°C (95°F) = hypothermia."
+  ],
+  "warnings": [
+    "Hypothermia coagulopathiam ingravescit, sanguinem quoque citius refrigerant et minus concretum valent.",
+    "Campus hypothermia praeventionis incipiendum est in puncto iniuriae, non in CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

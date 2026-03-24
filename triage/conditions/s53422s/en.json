@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s53422s",
+    "icd10":  "S53422S",
+    "name":  "Ulnohumeral (joint) sprain of left elbow, sequela",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Ulnohumeral (joint) sprain of left elbow, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

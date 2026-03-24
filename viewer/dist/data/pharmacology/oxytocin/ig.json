@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oxytocin",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocin",
+    "Syntocinon"
+  ],
+  "description": "Endogenous peptide homonụ. Uterotonic nke mbụ maka mgbochi na ọgwụgwọ nke ọbara ọgbụgba (PPH). Na-ebute mkpụkọ uterine ma belata mfu ọbara mgbe a mụsịrị ya. Enyere mgbe a mụsịrị placental.",
+  "indications": [
+    "Mgbochi nke ọbara ọgbụgba mgbe ọmụmụ (na-emekarị mgbe a mụsịrị nwa)",
+    "Ọgwụgwọ ọbara ọgbụgba mgbe ime nwa (uterine atony)",
+    "Mmalite nke ọrụ (naanị ntọala a na-achịkwa)"
+  ],
+  "dose": "Mgbochi PPH: nkeji 10 IM ozugbo nnyefe placental (ụzọ ubi ọkacha mmasị). Ọgwụgwọ PPH: nkeji 10-40 na 1L IV, tinye na 40-80 mU / min. Ọ bụrụ na IV adịghị: 10 nkeji IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Nye mgbe a mụsịrị placenta -- inye tupu placenta ebupụta nwere ike ọnyà placenta.",
+  "contraindications": [
+    "Tupu nnyefe placental (nwere ike ijide placenta)",
+    "Ahụhụ nwa ebu n'afọ na-enweghị isi",
+    "Amara hypersensitivity"
+  ],
+  "warnings": [
+    "ENYERE MGBE E KWASỊTA PLACETA -- ọnyà placenta bụ ihe mgbagwoju anya na-eyi ndụ egwu.",
+    "IV bolus nwere ike ịkpata nnukwu hypotension na obi arrhythmia --mgbe niile na-atụgharị ma na-enye nwayọọ nwayọọ.",
+    "Mmetụta antidiuretic nwere nnukwu mpịakọta - nyochaa maka hyponatremia."
+  ],
+  "regional_names": {
+    "generic": "oxytocin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A -- naanị iji nwa eme ihe.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Uterotonic nke mbụ. Ọ bụrụ na atony uterine azaghị, tụlee misoprostol, tranexamic acid (TXA), mkpakọ uterine bimanual, na ngwa ngwa MEDEVAC."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

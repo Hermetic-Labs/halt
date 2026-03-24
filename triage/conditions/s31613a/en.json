@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s31613a",
+    "icd10":  "S31613A",
+    "name":  "Laceration without foreign body of abdominal wall, right lower quadrant with penetration into peritoneal cavity, initial encounter",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Laceration without foreign body of abdominal wall, right lower quadrant with penetration into peritoneal cavity, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

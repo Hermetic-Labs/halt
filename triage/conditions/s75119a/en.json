@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s75119a",
+    "icd10":  "S75119A",
+    "name":  "Minor laceration of femoral vein at hip and thigh level, unspecified leg, initial encounter",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Minor laceration of femoral vein at hip and thigh level, unspecified leg, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

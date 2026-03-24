@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Prevenção da Hipotermia (H -- MARÇO)",
+  "category": "temperature-management",
+  "skill_level": "qualquer resposta",
+  "time_estimate": "2-3 minutos",
+  "description": "A hipotermia de combate é uma das principais causas de morte evitável em traumas. A tríade letal: hipotermia + acidose + coagulopatia. Prevenir a todo custo.",
+  "equipment": [
+    "manta reflectora de calor",
+    "kit-prevenção-hipotermia",
+    "fluidos iv quentes, se disponíveis"
+  ],
+  "steps": [
+    "Remova todas as roupas molhadas assim que for taticamente possível.",
+    "Cubra o paciente com um cobertor refletor de calor (espacial) - com o lado brilhante voltado para o paciente.",
+    "Enrole a cabeça e o pescoço (local de perda significativa de calor).",
+    "Isole do solo – coloque algo entre o paciente e a superfície fria do solo.",
+    "Administre fluidos intravenosos quentes, se disponíveis.",
+    "Não permita que o paciente trema sem cobertura – tremores são um sinal de alerta precoce.",
+    "Monitore a temperatura se o termômetro estiver disponível. Abaixo de 35°C (95°F) = hipotermia."
+  ],
+  "warnings": [
+    "A hipotermia piora a coagulopatia – pacientes com sangramento esfriam mais rápido e coagulam com menos eficácia.",
+    "A prevenção da hipotermia de campo deve começar no local da lesão e não no PCC."
+  ],
+  "source": "TCCC / JTS CPG"
+}

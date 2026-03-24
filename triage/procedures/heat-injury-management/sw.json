@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Usimamizi wa Jeraha la Joto",
+  "category": "environmental",
+  "skill_level": "Msingi",
+  "time_estimate": "Inaendelea hadi MEDEVAC au hali ya mgonjwa iwe thabiti",
+  "description": "Udhibiti wa tumbo la joto, uchovu wa joto, na kiharusi cha joto. Kiharusi cha joto ni hali ya dharura inayotishia maisha -- kupoeza haraka ndio matibabu. Tofautisha uchovu wa joto (mtazamo wa kawaida) kutoka kwa kiharusi cha joto (LOC iliyobadilishwa) mara moja.",
+  "equipment": [
+    "Maji (kwa mdomo + baridi)",
+    "Pakiti za barafu au vitambaa vya mvua baridi",
+    "Vifaa vya IV (LR au NS)",
+    "Shabiki au kivuli",
+    "Kipimajoto cha rektamu (joto la uhakika la msingi)"
+  ],
+  "steps": [
+    "TATHMINI: Je, majeruhi yuko macho na ana mwelekeo? Ngozi ya joto kavu dhidi ya ngozi yenye jasho kali? Joto kuu ikiwa kipimajoto kinapatikana.",
+    "MFUKO WA JOTO: Misuli ya misuli, mawazo ya kawaida. Pumzika kwenye kivuli, urejeshe maji mwilini kwa mdomo na elektroliti, kunyoosha kwa upole. Sio kutishia maisha.",
+    "KUCHOKA JOTO: Kutokwa na jasho zito, udhaifu, kizunguzungu, mawazo ya kawaida au karibu ya kawaida. Sogeza kwenye kivuli/ eneo la baridi. Ondoa nguo za ziada. Vimiminika vya kumeza (kama fahamu) au IV LR 1L kwa zaidi ya dakika 30-60. Fuatilia maendeleo ya kiharusi cha joto.",
+    "HEAT STROKE (dharura): LOC iliyobadilishwa, kuchanganyikiwa, mapigano, au kupoteza fahamu. Joto kuu > 40C (104F). Ngozi ya moto (inaweza kuwa mvua au kavu). ANZA: Ondoa kwenye joto mara moja, ondoa nguo zote, ngozi yenye unyevu na feni kwa ukali. Omba vifurushi vya barafu kwenye shingo, kwapa, na kinena (maeneo yenye mishipa ya juu). IV LR 1-2L. Linda njia ya hewa ikiwa amepoteza fahamu. MEDEVAC mara moja.",
+    "USIPE aspirini au acetaminophen kwa kiharusi cha joto -- haisaidii, inaweza kudhuru.",
+    "Monitor: vitals q15 min, njia ya hewa, hali ya akili. Mwenendo wa halijoto ya hati.",
+    "Endelea kupoa wakati wa MEDEVAC -- usisimame kwa usafiri."
+  ],
+  "warnings": [
+    "Kiharusi cha joto ni hali ya dharura inayohatarisha maisha -- usikose kuwa ni uchovu wa joto. Angalia hali ya akili.",
+    "Kupoeza ni matibabu ya uhakika. Usicheleweshe kupoa ili kuanzisha ufikiaji wa IV.",
+    "Kiharusi cha joto cha ziada kinaweza kutokea kwa watu wanaofaa -- utimamu wa mwili haulinde.",
+    "Hyponatremia (sodiamu ya chini) kutoka kwa maji kupita kiasi na maji ya kawaida inaweza kuiga kiharusi cha joto -- kutoa mmumunyo wa elektroliti sio maji tu."
+  ],
+  "follows": [
+    "tathmini ya upungufu wa maji mwilini"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Watoto thermoregulate chini kwa ufanisi. Kiharusi cha joto kinaweza kuendelea kwa kasi zaidi. Kioevu chenye uzito: 20 mL/kg LR IV bolus. Joto la msingi kupitia kipimajoto cha rectal sahihi zaidi."
+    },
+    "obstetric": {
+      "note": "Hyperthermia ya mama (> 39C) inaweza kusababisha kasoro za mirija ya neva ya fetasi (mapema) na dhiki ya fetasi (kuchelewa). Kupoa kwa fujo. Ufuatiliaji wa kiwango cha moyo wa fetasi ikiwa inapatikana."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Nẹp cải tiến",
+  "category": "ortho-stabilization",
+  "skill_level": "Cơ bản",
+  "time_estimate": "5-10 phút",
+  "description": "Cố định chỗ gãy bằng vật liệu sẵn có để ngăn ngừa tổn thương thêm, giảm đau và hạn chế mất máu vào các mô xung quanh. Nẹp vào đúng vị trí trừ khi hệ tuần hoàn bị suy giảm -- sau đó duỗi thẳng nhẹ nhàng.",
+  "equipment": [
+    "Nẹp SAM (ưu tiên)",
+    "Tạp chí cuộn, gậy, cọc lều (ngẫu hứng)",
+    "Cà vạt / băng hình tam giác",
+    "Đệm (quần áo, xốp)",
+    "Băng hoặc dải vải"
+  ],
+  "steps": [
+    "Phát hiện và đánh giá vết thương - kiểm tra tuần hoàn, cảm giác, chuyển động (CSM) ở xa chỗ gãy trước và sau.",
+    "Kiểm soát tình trạng chảy máu đang diễn ra trước khi nẹp.",
+    "Miếng đệm xương nhô ra rộng rãi để ngăn ngừa vết loét do áp lực.",
+    "Chọn vật liệu nẹp đủ dài để cố định khớp trên VÀ dưới ổ gãy.",
+    "Đặt chi ở vị trí thoải mái hoặc thẳng hàng về mặt giải phẫu - không ép buộc.",
+    "Áp dụng đệm, sau đó vật liệu nẹp. Cố định bằng băng hoặc dải vải.",
+    "KHÔNG quấn quá chặt - để đầu ngón tay/ngón chân tiếp xúc với màn hình CSM.",
+    "Đánh giá lại CSM sau khi bôi - nới lỏng ngay lập tức nếu tuần hoàn bị suy giảm.",
+    "Nâng cao chi nếu có thể để giảm sưng.",
+    "Ghi lại thời gian áp dụng nẹp."
+  ],
+  "warnings": [
+    "Đánh giá lại CSM sau mỗi 15-30 phút - tình trạng sưng tấy có thể khiến thanh nẹp bên phải trở thành dây garô.",
+    "Gãy xương hở: băng vết thương bằng băng vô trùng trước, sau đó nẹp. KHÔNG đẩy xương trở lại.",
+    "Gãy xương đùi có thể mất 1-2L máu vào đùi - điều trị tích cực khi bị sốc.",
+    "Nghi ngờ gãy xương cột sống: KHÔNG tùy biến nẹp -- hạn chế tối đa chuyển động, duy trì sự ổn định theo đường thẳng."
+  ],
+  "follows": [
+    "áp lực trực tiếp",
+    "ứng dụng dây garô"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Đĩa tăng trưởng ở trẻ em yếu hơn dây chằng - nghi ngờ gãy xương ngay cả khi có cơ chế nhẹ. Gãy xương hình xuyến (khóa) có thể bị sưng tấy tối thiểu."
+    },
+    "obstetric": {
+      "note": "Áp dụng nẹp tiêu chuẩn. Tránh tư thế nằm ngửa kéo dài - nghiêng sang trái nếu nằm thẳng."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

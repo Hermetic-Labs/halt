@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s12120a",
+    "icd10":  "S12120A",
+    "name":  "Other displaced dens fracture, initial encounter for closed fracture",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Other displaced dens fracture, initial encounter for closed fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

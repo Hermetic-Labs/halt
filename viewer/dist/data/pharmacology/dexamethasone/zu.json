@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "I-Dexamethasone",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "I-Decadron",
+    "I-DexPak"
+  ],
+  "description": "I-corticosteroid yokwenziwa esebenza isikhathi eside. Isetshenziselwa i-cerebral edema (i-high altitude cerebral edema -- HACE, TBI), ukungezwani okunamandla, i-airway edema, kanye ne-adrenal crisis. Anti-inflammatory, hhayi Anabolic.",
+  "indications": [
+    "I-high altitude cerebral edema (HACE)",
+    "I-Airway edema (i-post-extubation stridor, croup)",
+    "I-cerebral edema evela ku-tumor noma ithumba",
+    "Ukungezwani okunamandla (okuhambisana ne-epinephrine)",
+    "Inkinga ye-adrenal",
+    "I-Anti-emetic adjunct (i-perioperative)"
+  ],
+  "dose": "I-Cerebral edema/HACE: 8-10 mg IV/IM kokuqala, bese kuba ngu-4 mg q6h. I-Airway edema: 10 mg IV kanye. I-Croup: 0.6 mg/kg IM/PO (ubukhulu obungu-16mg). Inkinga ye-Adrenal: 4 mg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO"
+  ],
+  "window": "HACE: Nikeza ngokushesha ngangokunokwenzeka kanye nokwehla ngokushesha.",
+  "contraindications": [
+    "Izifo ze-fungal zesistimu (ngaphandle kokufakwa kwe-antifungal)",
+    "Imithi yokugomela igciwane bukhoma phakathi kwezinsuku ezingu-30 (isihlobo)"
+  ],
+  "warnings": [
+    "Ayithathi indawo yokwehla nomoya-mpilo we-HACE -- sebenzisa njenge-adjunct kuphela.",
+    "I-Hyperglycemia - ukuqapha ushukela wegazi kwabanesifo sikashukela.",
+    "I-Immunosuppression ngokusetshenziswa isikhathi eside.",
+    "Imithamo eyodwa yezimo eziphuthumayo ngokuvamile iphephe kakhulu."
+  ],
+  "regional_names": {
+    "generic": "i-dexamethasone"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "I-Croup: 0.6 mg/kg PO/IM (ubukhulu obungu-16 mg). I-cerebral edema: 0.5-1 mg/kg IV (ubukhulu obungu-10 mg). I-Airway edema: 0.5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM q24h x 2 imithamo esetshenziselwa ukusheshisa ukuvuthwa kwamaphaphu engane emasontweni angama-24-34 okukhulelwa esibelethweni sangaphambi kwesikhathi. Xoxa nomhlinzeki ophezulu otholakalayo."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

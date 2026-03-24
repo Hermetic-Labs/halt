@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s42101s",
+    "icd10":  "S42101S",
+    "name":  "Fracture of unspecified part of scapula, right shoulder, sequela",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Fracture of unspecified part of scapula, right shoulder, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

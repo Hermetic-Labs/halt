@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Morphine Sulfate",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Contin",
+    "Morphine Sulfate tsindrona"
+  ],
+  "description": "Opioid analgesic. Manome fanamaivanana mahomby nefa miteraka vasodilation sy hypotension -- ampiasana amim-pitandremana amin'ny fahatafintohinana hemorrhagic. Ketamine no tiana amin'ny toerana fiadiana. Mampiasà morphine amin'ny marary stable hemodynamically.",
+  "indications": [
+    "Fanaintainana antonony hatramin'ny henjana amin'ny marary hemodynamika stable",
+    "Tsy andalana voalohany amin'ny TCCC -- aleo ketamine"
+  ],
+  "dose": "2-4 mg IV/IO q4h PRN. Titrate ho vokany. IM: 5-10 mg q4h PRN.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ny tsy fandriam-pahalemana hemodynamika / fahatafintohinana hemorrhagic",
+    "Fahaketrahana ara-pisefoana",
+    "Faharatrana loha misy LOC (havana) niova"
+  ],
+  "warnings": [
+    "Mahatonga vasodilation -- mety hiharatsy ny fahatafintohinana hemorrhagic. Tombanana ny BP aloha sy aorian'ny.",
+    "Manana naloxone avy hatrany.",
+    "Fahaketrahana amin'ny taovam-pisefoana -- manara-maso ny tahan'ny."
+  ],
+  "regional_names": {
+    "generic": "morphine sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV q2-4h PRN. Max fatra tokana 2mg IV amin'ny zaza tsy misy opioid.",
+      "note": "Araho akaiky ny tahan'ny taovam-pisefoana. Ny zaza vao teraka dia tena saro-pady."
+    },
+    "obstetric": {
+      "note": "Miampita ny placenta. Ny fahaketrahana amin'ny taovam-pisefoana zaza vao teraka dia azo atao raha omena ao anatin'ny 2-4 ora aorian'ny fiterahana. Asio naloxone ho an'ny zaza vao teraka."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

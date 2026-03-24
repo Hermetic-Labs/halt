@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s53093s",
+    "icd10":  "S53093S",
+    "name":  "Other subluxation of unspecified radial head, sequela",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Other subluxation of unspecified radial head, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

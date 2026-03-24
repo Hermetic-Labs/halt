@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s90219a",
+    "icd10":  "S90219A",
+    "name":  "Contusion of unspecified great toe with damage to nail, initial encounter",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Contusion of unspecified great toe with damage to nail, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

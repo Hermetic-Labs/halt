@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Unterkühlungsprävention (H – MÄRZ)",
+  "category": "temperature-management",
+  "skill_level": "Any-Responder",
+  "time_estimate": "2-3 Minuten",
+  "description": "Kampfhypothermie ist eine der häufigsten vermeidbaren Todesursachen bei Traumata. Die tödliche Trias: Hypothermie + Azidose + Koagulopathie. Um jeden Preis verhindern.",
+  "equipment": [
+    "wärmereflektierende Decke",
+    "Hypothermie-Präventionsset",
+    "warme-iv-Flüssigkeiten-falls verfügbar"
+  ],
+  "steps": [
+    "Entfernen Sie alle nassen Kleidungsstücke, sobald es taktisch möglich ist.",
+    "Decken Sie den Patienten mit einer wärmereflektierenden (Weltraum-)Decke ab – die glänzende Seite NACH IN Richtung des Patienten.",
+    "Wickeln Sie Kopf und Hals ein (starke Wärmeverluststelle).",
+    "Vom Boden isolieren – etwas zwischen Patient und kalter Bodenoberfläche platzieren.",
+    "Falls verfügbar, warme intravenöse Flüssigkeit verabreichen.",
+    "Lassen Sie den Patienten nicht ohne Schutz zittern – Zittern ist ein Frühwarnzeichen.",
+    "Überwachen Sie die Temperatur, wenn ein Thermometer verfügbar ist. Unter 35 °C (95 °F) = Unterkühlung."
+  ],
+  "warnings": [
+    "Hypothermie verschlimmert die Koagulopathie – blutende Patienten kühlen schneller ab und gerinnen weniger effektiv.",
+    "Die Prävention von Feldunterkühlung muss am Ort der Verletzung beginnen, nicht am CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

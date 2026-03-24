@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s29099a",
+    "icd10":  "S29099A",
+    "name":  "Other injury of muscle and tendon of unspecified wall of thorax, initial encounter",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Other injury of muscle and tendon of unspecified wall of thorax, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

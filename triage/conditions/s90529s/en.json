@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s90529s",
+    "icd10":  "S90529S",
+    "name":  "Blister (nonthermal), unspecified ankle, sequela",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Blister (nonthermal), unspecified ankle, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

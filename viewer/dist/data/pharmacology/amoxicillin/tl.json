@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicillin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "Trimox"
+  ],
+  "description": "Malawak na spectrum aminopenicillin antibiotic. Oral prophylactic antibiotic para sa impeksyon sa sugat. Bahagi ng TCCC combat pill pack para sa pag-iwas sa sugat sa mga hindi malubhang pinsala.",
+  "indications": [
+    "Prophylaxis sa impeksyon sa sugat (malumanay-katamtamang sugat, oral pill pack)",
+    "Mga impeksyon sa malambot na tisyu",
+    "Mga impeksyon sa respiratory tract"
+  ],
+  "dose": "500 mg PO tuwing 8 oras x 7 araw (pag-iwas sa sugat). 875 mg PO bawat 12 oras na alternatibo.",
+  "route": [
+    "PO"
+  ],
+  "window": "Magsimula sa loob ng 3 oras ng pinsala para sa pag-iwas sa sugat.",
+  "contraindications": [
+    "Kilalang penicillin allergy (gumamit ng doxycycline sa halip)",
+    "Mononucleosis (panganib ng pantal)"
+  ],
+  "warnings": [
+    "Kung ang penicillin allergic: palitan ang doxycycline 100mg PO BID.",
+    "Oral route lang -- gumamit ng IV antibiotics (cefazolin/ciprofloxacin) para sa malalang sugat o kung hindi matitiis ang bibig."
+  ],
+  "regional_names": {
+    "generic": "amoxicillin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/araw na hinati q8h (max 500 mg/dosis). Gumamit ng sanggunian ng Broselow na batay sa timbang.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Ligtas sa pagbubuntis. Mas gusto kaysa doxycycline (na kontraindikado sa pagbubuntis)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t794xxd",
+    "icd10":  "T794XXD",
+    "name":  "Traumatic shock, subsequent encounter",
+    "category":  "adverse-effects",
+    "triage_priority":  "",
+    "description":  "Traumatic shock, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

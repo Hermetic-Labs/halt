@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Bedreven",
+    "Nayzilam"
+  ],
+  "description": "Kortwerkende benzodiazepine met snel intredende werking. Bij voorkeur voor procedurele sedatie, RSI-premedicatie en beheer van IM/IN-aanvallen. IM en intranasale routes bieden aanzienlijk voordeel in veldomgevingen.",
+  "indications": [
+    "Procedurele sedatie",
+    "RSI premedicatie (met ketamine)",
+    "Beheer van inbeslagnemingen (IM/IN wanneer IV niet beschikbaar is)",
+    "Agitatiebeheer"
+  ],
+  "dose": "Sedatie: 0,05-0,1 mg/kg IV getitreerd. Procedure: 1-5 mg IV langzaam duwen. IM: 0,2 mg/kg. IN: 0,2 mg/kg (max. 10 mg). Status epilepticus IM: 10 mg IM (volwassenen).",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN"
+  ],
+  "window": "",
+  "contraindications": [
+    "Acuut nauwekamerhoekglaucoom",
+    "Acute alcoholintoxicatie met cardiovasculaire problemen",
+    "Bekende overgevoeligheid"
+  ],
+  "warnings": [
+    "Ademhalingsdepressie - controleer de luchtwegen, gebruik een omkeringsmiddel (flumazenil) indien beschikbaar.",
+    "Hypotensie, vooral bij gelijktijdige toediening van opioïden.",
+    "Snelle IV-injectie veroorzaakt apneu - duw langzaam."
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Sedatie: 0,05-0,1 mg/kg IV. IM: 0,1-0,2 mg/kg. IN: 0,2-0,3 mg/kg. Inbeslagneming IM: 0,2 mg/kg (max. 10 mg).",
+      "note": "IN-route is vooral nuttig bij kinderen - vermijdt IV-toegang."
+    },
+    "obstetric": {
+      "note": "Kruist de placenta. Neonatale sedatie mogelijk. Gebruik de minimale effectieve dosis; controleer de pasgeborene als deze vlak bij de bevalling wordt gegeven."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

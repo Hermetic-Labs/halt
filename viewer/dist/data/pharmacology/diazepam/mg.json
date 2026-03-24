@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastat"
+  ],
+  "description": "Benzodiazepine maharitra ela. Ampiasaina amin'ny fitantanana ny fakana an-keriny, ny spasm hozatra ary ny anxiolysis. Rectal gel (Diastat) dia ilaina amin'ny sehatry ny sehatra rehefa tsy misy IV. Maharitra ela kokoa noho ny lorazepam.",
+  "indications": [
+    "Fitantanana ny fisamborana (rectal/IV)",
+    "Fihetseham-po noho ny ratra amin'ny tadin'ny hazon-damosina na tetanosy",
+    "Fanampin'ny antidote antidote (ao amin'ny kitapo CHEMPACK)",
+    "Fisintonana toaka"
+  ],
+  "dose": "Fanafihana: 5-10 mg IV tosika miadana. Avereno q10-15 min (max 30 mg). Rectal: 0,2-0,5 mg/kg. Fisorohana ny IM -- ialao ny IM raha azo atao.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "glaucome tery zoro tery",
+    "Aretina hepatika mafy",
+    "Fahaketrahana ara-pisefoana"
+  ],
+  "warnings": [
+    "Ny fisoronana IM dia tsy miovaova sy maharary - aleo IV, rectal, na mampiasa midazolam IM fa tsy.",
+    "Ny faharetan'ny sedation maharitra (24-48h ho an'ny fatra miverimberina).",
+    "Ireo tra-boina avy amin'ny nerve: ny diazepam dia tafiditra ao anatin'ny kitapo CHEMPACK ho an'ny fisamborana noho ny krizy cholinergic."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0,1-0,3 mg/kg (max 10 mg). Rectal: 0,3-0,5 mg/kg. Mampiasà lalan-kibo rehefa tsy misy IV.",
+      "note": "Ny gel diastat rectal dia tena ilaina indrindra amin'ny fisamborana zaza ao amin'ny toeram-piasana."
+    },
+    "obstetric": {
+      "note": "Miampita ny placenta. Mety hiteraka hypotonia neonatal, fahaketrahana taovam-pisefoana. Ampiasaina ihany ho an'ny reny mihetsiketsika tsy mahazaka magnesium."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

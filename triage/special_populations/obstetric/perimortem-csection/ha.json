@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Sashin Cesarean Perimortem (PMCS)",
+  "category": "obstetric",
+  "skill_level": "likita-likita",
+  "time_estimate": "3-5 min",
+  "description": "Isar da cesarean na gaggawa a cikin mintuna 4 na kama zuciya na uwa don ba da damar ingantaccen CPR da yuwuwar tsira ga jariri. Mahaifa yana matsawa aorta da IVC -- bayarwa kuma yana farfado da uwa.",
+  "equipment": [
+    "fatar kan mutum",
+    "safar hannu",
+    "masu mayar da martani",
+    "igiya-matsala",
+    "kayan aikin resuscitation na jarirai"
+  ],
+  "steps": [
+    "Ci gaba CPR ba tare da katsewa ba.",
+    "Yi tsaka-tsakin tsaka-tsakin tsaka-tsakin tsaye daga cibiya zuwa pubis ta fata da fascia.",
+    "Ƙarfafa sashin ƙananan mahaifa a kwance.",
+    "Bayar da jariri -- lokacin bayanin kula.",
+    "Matsa kuma yanke igiyar.",
+    "Mika jariri ga mai bada na biyu don farfado da jariri.",
+    "Cire mahaifa.",
+    "Sanya mahaifa da ciki idan tabbataccen rufewa ba zai yiwu nan da nan ba.",
+    "Ci gaba da farfaɗowar mahaifa -- ROSC yana yiwuwa bayan lalatawar mahaifa."
+  ],
+  "warnings": [
+    "Lokacin yanke shawara don bayarwa dole ne ya kasance ƙasa da mintuna 5 don mafi kyawun sakamakon uwa da tayi.",
+    "Wannan hanya ita ce makoma ta ƙarshe -- kawai idan mahaifiyar tana cikin kamawar zuciya kuma haihuwa ta kusa (> makonni 20 ciki).",
+    "Yana buƙatar horon matakin likita. Ya kamata likitocin yaƙi su shirya filin da goyan baya, ba yin aiki da kansu ba."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

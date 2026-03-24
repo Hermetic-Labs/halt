@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Morphinsulfat",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Contin",
+    "Morphinsulfat-Injektion"
+  ],
+  "description": "Opioid-Analgetikum. Bietet wirksame Schmerzlinderung, führt jedoch zu Gefäßerweiterung und Hypotonie – bei hämorrhagischem Schock mit Vorsicht anwenden. Ketamin wird in Kampfsituationen bevorzugt. Verwenden Sie Morphin nur bei hämodynamisch stabilen Patienten.",
+  "indications": [
+    "Mäßige bis starke Schmerzen bei hämodynamisch stabilen Patienten",
+    "Nicht die erste Wahl bei TCCC – bevorzugen Sie Ketamin"
+  ],
+  "dose": "2-4 mg IV/IO alle 4 Stunden PRN. Auf Wirkung titrieren. IM: 5-10 mg alle 4 Stunden PRN.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "Quadrat"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hämodynamische Instabilität / hämorrhagischer Schock",
+    "Atemdepression",
+    "Kopfverletzung mit verändertem LOC (relativ)"
+  ],
+  "warnings": [
+    "Verursacht eine Gefäßerweiterung – kann den hämorrhagischen Schock verschlimmern. Bewerten Sie den Blutdruck vorher und nachher.",
+    "Halten Sie Naloxon sofort verfügbar.",
+    "Atemdepression – Frequenz überwachen."
+  ],
+  "regional_names": {
+    "generic": "Morphinsulfat"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05–0,1 mg/kg i.v. alle 2–4 Stunden PRN. Maximale Einzeldosis 2 mg i.v. bei opioidnaiven Kindern.",
+      "note": "Überwachen Sie die Atemfrequenz genau. Neugeborene sind äußerst empfindlich."
+    },
+    "obstetric": {
+      "note": "Kreuzt die Plazenta. Eine Atemdepression beim Neugeborenen ist möglich, wenn es innerhalb von 2–4 Stunden nach der Entbindung verabreicht wird. Halten Sie Naloxon für Neugeborene bereit."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

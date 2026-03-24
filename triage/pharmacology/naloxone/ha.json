@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxone",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "Kloxxado"
+  ],
+  "description": "Gasar antagonist mai karɓar mai karɓa na opioid. Da sauri yana juyar da baƙin ciki na numfashi mai haifar da opioid, kwantar da hankali, da analgesia. Farawa IV: Minti 2, IM: 5 min, IN: 8-13 min. Tsawon lokaci ya fi yawancin opioids -- ana iya buƙatar maimaita allurai.",
+  "indications": [
+    "Opioid fiye da kima ko damuwa na numfashi",
+    "Juyawar kwantar da hankali na opioid",
+    "Wanda ake zargin an yi asarar opioid"
+  ],
+  "dose": "0.4-2 mg IV/IO/IM/IN. Maimaita q2-3 min kamar yadda ake buƙata. Max 10mg. Intranasal (IN): 2mg kowace hanci.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Babu cikakkiyar contraindications a cikin saitin overdose"
+  ],
+  "warnings": [
+    "Tsawon aiki (minti 30-90) ya fi guntu fiye da yawancin opioids -- mara lafiya na iya sake narkoti. Saka idanu na akalla awa 1 bayan kashi na ƙarshe.",
+    "Yana haifar da cirewar opioid mai tsanani -- na iya haifar da tashin hankali, tachycardia, edema na huhu a cikin marasa lafiya masu dogaro da opioid.",
+    "Zai juyar da analgesia - mai haƙuri na iya zama mai fama da zafi sosai."
+  ],
+  "regional_names": {
+    "generic": "naloxone",
+    "US": "Narcan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.01 mg/kg IV/IM/IN (max 0.4 mg). Maimaita q2-3 min PRN.",
+      "note": "Neonatal: 0.01 mg/kg don juyawar opioid na uwa."
+    },
+    "obstetric": {
+      "note": "Amintacce a cikin ciki. Idan aka ba uwa kusa da haihuwa, kula da jariri don cirewa."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

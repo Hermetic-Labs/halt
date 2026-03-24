@@ -1,0 +1,22 @@
+{
+  "id": "s0000xd",
+  "icd10": "S0000XD",
+  "name": "Lesión superficial no especificada del cuero cabelludo, contacto posterior",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Lesión superficial no especificada del cuero cabelludo, contacto posterior",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

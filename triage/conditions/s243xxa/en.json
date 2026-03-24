@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s243xxa",
+    "icd10":  "S243XXA",
+    "name":  "Injury of peripheral nerves of thorax, initial encounter",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Injury of peripheral nerves of thorax, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

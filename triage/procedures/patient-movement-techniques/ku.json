@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Teknîkên Tevgera Nexweşan",
+  "category": "casualty-movement",
+  "skill_level": "Bingehîn",
+  "time_estimate": "1-30 hûrdem li gorî dûr û rêbazê",
+  "description": "Ji bo dermankirinê birîndarek di bin agir de an jî cîhek ewletir veguhezînin. Rêbaz bi erd, dûrbûn, hejmara rizgarkeran û birînên kuştî ve girêdayî ye. Zûbûn li hember tedbîra spinal biryarek taktîkî ye -- di TCCC de, tehdîd pêşî digire.",
+  "equipment": [
+    "SKED zibil (tercihkirin)",
+    "Tora NATO / barkêşê portable",
+    "Kevirê bidestçêkirî: stûn + çakêt/ponço",
+    "Destên kaş bikin (yekreng an jî zencîre)",
+    "TACEVAC sling"
+  ],
+  "steps": [
+    "LÊNÎŞTÎNA LI BIN AGIRÊ: Ger çekdar be ewil agir vegere. Bi karanîna rêbaza dravê ya zûtirîn qurbanî biguhezînin - ji bo dermankirina li devera kuştinê nesekinin.",
+    "HASTY DRAG (Xilaskarek) Serê xwe ji bandorê biparêze.",
+    "AGIRÎ KIR (Xilaskarek): Birîndaran ji bo mesajan dirêj bi ser milên xwe rakin -- hewce dike ku birîndar bêhiş be an hevkar be.",
+    "DU KES HIŞTIN: Xilaskar çekan di bin pişt û çokên birîndaran de girêdidin. Zûtir ji dravê ji bo dûrên kurt.",
+    "PÊŞÎNÊN BIŞARÎ: du stûnên 18 înç ji hev dûr bixin. Çakêtan bi bişkokên hundir re di nav stûnan de bipêçin. Berî barkirina qurbaniyê test bikin.",
+    "SKED LITTER: vekin, bixin bin qurbaniyê, bipêçin û bi kemînan vekin. 2-4 bargiran hewce dike.",
+    "Dema barkirinê: jimareya 3 bilind bikin, lihevhatina serê/laş bidomînin, gava ku gengaz be tevgera stûyê kêm bikin.",
+    "Ger birîna stûyê guman heye û xeternak tune: li seranserê tevgerê stabîlîzasyona hundurîn biparêzin. Yek kes ji bo kontrolkirina serî.",
+    "Bikevin ser nixumandî, dûv re ABC ji nû ve binirxînin."
+  ],
+  "warnings": [
+    "Pêşîniya TCCC: jiyan > ling > tedbîra spinal. Ji bo tedbîrên spinal tevgerê ji deverek kuştinê dereng nexin.",
+    "Hilgirtina agirkuj bi gumanbariya birîna stûyê, şikestina femur, an travmaya zik a penêr re berevajî ye.",
+    "Kevirên bidestçêkirî: berî ku bi qurbaniyek bawer bikin kapasîteya giraniyê ceribandin.",
+    "Veguheztina birîndarekî bi tûrikê: kontrol bikin ku di dema tevgerê de tûrikê sivik nebûye."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Zarok siviktir in - yek-rizgarkar demek dirêjtir dibe. Serî bi rêjeyek mezin mezintir bihêlin - dema hilgirtinê navenda giraniyê bilindtir bikin."
+    },
+    "obstetric": {
+      "note": "Dûr pozîsyona meyla an zexta li ser zikê. Veguheztina aliyî (aliyê çepê tê tercîh kirin) an jî li ser piştê bi qeşa çepê."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

@@ -1,0 +1,45 @@
+﻿{
+    "id":  "heat-injury-management",
+    "name":  "Heat Injury Management",
+    "category":  "environmental",
+    "skill_level":  "Basic",
+    "time_estimate":  "Ongoing until MEDEVAC or patient stable",
+    "description":  "Management of heat cramps, heat exhaustion, and heat stroke. Heat stroke is a life-threatening emergency -- rapid cooling is the treatment. Distinguish heat exhaustion (normal mentation) from heat stroke (altered LOC) immediately.",
+    "equipment":  [
+                      "Water (oral + cooling)",
+                      "Ice packs or cold wet cloths",
+                      "IV supplies (LR or NS)",
+                      "Fan or shade",
+                      "Rectal thermometer (definitive core temp)"
+                  ],
+    "steps":  [
+                  "ASSESS: Is the casualty alert and oriented? Hot dry skin vs. hot sweaty skin? Core temp if thermometer available.",
+                  "HEAT CRAMPS: Muscle spasms, normal mentation. Rest in shade, oral rehydration with electrolytes, gentle stretching. Not life-threatening.",
+                  "HEAT EXHAUSTION: Heavy sweating, weakness, dizziness, normal or near-normal mentation. Move to shade/cool area. Remove excess clothing. Oral fluids (if conscious) or IV LR 1L over 30-60 min. Monitor for progression to heat stroke.",
+                  "HEAT STROKE (emergency): Altered LOC, confusion, combativeness, or unconsciousness. Core temp \u003e 40C (104F). Hot skin (may be wet or dry). BEGIN: Remove from heat immediately, remove all clothing, wet skin and fan aggressively. Apply ice packs to neck, axillae, and groin (high vascular areas). IV LR 1-2L. Protect airway if unconscious. MEDEVAC immediately.",
+                  "Do NOT give aspirin or acetaminophen for heat stroke -- does not help, may harm.",
+                  "Monitor: vitals q15 min, airway, mental status. Document temp trend.",
+                  "Continue cooling during MEDEVAC -- do not stop for transport."
+              ],
+    "warnings":  [
+                     "Heat stroke is a life-threatening emergency -- do not mistake it for heat exhaustion. Check mental status.",
+                     "Cooling is the definitive treatment. Do not delay cooling to establish IV access.",
+                     "Exertional heat stroke can occur in fit individuals -- physical fitness does not protect.",
+                     "Hyponatremia (low sodium) from overhydration with plain water can mimic heat stroke -- give electrolyte solution not just water."
+                 ],
+    "follows":  [
+                    "dehydration-assessment"
+                ],
+    "precedes":  [
+                     "medevac-9line"
+                 ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  "Children thermoregulate less efficiently. Heat stroke can progress faster. Weight-based fluid: 20 mL/kg LR IV bolus. Core temp via rectal thermometer most accurate."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Maternal hyperthermia (\u003e39C) can cause fetal neural tube defects (early) and fetal distress (late). Aggressive cooling. Fetal heart rate monitoring if available."
+                                    }
+                  },
+    "source":  "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

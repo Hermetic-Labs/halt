@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Iniuriam caloris procuratio",
+  "category": "environmental",
+  "skill_level": "Basic",
+  "time_estimate": "Permanentis usque ad MEDEVAC vel patientes stabilia",
+  "description": "Procuratio caloris cramps, calor defatigatio, calor plaga. Plaga caloris est vita periclitantis - celeri refrigeratio curatio est. Defatigatio caloris distingue statim ab ictu caloris (mutata mentationis)",
+  "equipment": [
+    "Aqua (oralis + refrigeratio)",
+    "Ice sarcinas aut frigus infectum linteis",
+    "IV commeatus (LR vel NS)",
+    "Fan vel umbra",
+    "Thermometrum rectum (definitive core temp)"
+  ],
+  "steps": [
+    "CENSEO: Estne casus erectus et ordinandus? Calida cutis arida vs. calidum aestuosum cutis? Core tempor nisi thermometrum consectetur.",
+    "CALOR cramps: spasmus musculi, tationi normal. Requiescant in umbra, oralis rehydration cum electrolytis, lenibus extendens. Non vitae minabatur.",
+    "FERVUS EXHAUSTIO: Sudor gravis, debilitas, vertigo, normalis vel prope-normalis. Movere ad umbram / frigus area. Detrahere vestem. Liquores orales (si conscii) vel IV LR 1L supra 30-60 min. Monitor pro progressione ad ictum calefacere.",
+    "ARDOR. Core temp > 40C (104F). Cutis calida (potest humida vel arida). INCIPIT: Aufer a calore statim, aufer omnem vestem, humidam cutem et ventilabrum infensi. Adicio glaciem sarcinis collo, axillis et inguinibus (altis locis vascularibus). IV LR 1-2L. Si conscientiam airway defendat. MEDEVAC statim.",
+    "Non das aspirin vel acetaminophen pro ictu caloris - non adiuvat, nocere potest.",
+    "Monitor: viscera q15 min, airway, status mentis. Documenti temp tenoris.",
+    "Perge refrigerationem in MEDEVAC - noli prohibere ad utensilia."
+  ],
+  "warnings": [
+    "Plaga caloris subitis est vita minax -- nec fallor pro lassitudine caloris. Status mentis reprehendo.",
+    "Infrigidatio est curatio definitiva. Noli tardare refrigerationem ad accessum constituere iv.",
+    "Plaga exercens caloris in personis idoneis fieri potest -- corporis idoneitas non protegit.",
+    "Hyponatremia ( sodium humilis ) ex overhydration cum aqua plana potest acidum imitantia ictum -- electrolytici solutionem da non aqua tantum ."
+  ],
+  "follows": [
+    "siccitatibus conveniunt, aestimationem"
+  ],
+  "precedes": [
+    "medvac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Pueri thermo- gulati minus efficaces. Plaga caloris celerius progredi potest. Pondus substructio fluida: 20 mL/kg LR IV bolus. Core temp via rectal thermometrum accuratissimum."
+    },
+    "obstetric": {
+      "note": "Hyperthermia materna (>39C) foetus neuralis tubus defectus (prima) et angustia foetus causare potest (nuper). Infesta refrigeratio. Foetus cor rate adipiscing si available."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

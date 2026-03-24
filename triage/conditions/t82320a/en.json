@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t82320a",
+    "icd10":  "T82320A",
+    "name":  "Displacement of aortic (bifurcation) graft (replacement), initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Displacement of aortic (bifurcation) graft (replacement), initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

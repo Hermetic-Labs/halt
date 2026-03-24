@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t7120xd",
+    "icd10":  "T7120XD",
+    "name":  "Asphyxiation due to systemic oxygen deficiency due to low oxygen content in ambient air due to unspecified cause, subsequent encounter",
+    "category":  "environmental-injury",
+    "triage_priority":  "",
+    "description":  "Asphyxiation due to systemic oxygen deficiency due to low oxygen content in ambient air due to unspecified cause, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

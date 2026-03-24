@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Morphine sulfate",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Contin",
+    "Ngwunye morphine sulfate"
+  ],
+  "description": "Opioid analgesic. Na-enye ihe mgbu dị irè ma na-akpata vasodilation na hypotension - jiri nlezianya mee ihe na ujo hemorrhagic. A na-ahọrọ Ketamine na ntọala ọgụ. Jiri morphine naanị na ndị ọrịa hemodynamically kwụsiri ike.",
+  "indications": [
+    "Ihe mgbu na-agafeghị oke na nke siri ike na ndị ọrịa hemodynamically kwụsiri ike",
+    "Ọ bụghị ahịrị mbụ na TCCC --ahọrọ ketamine"
+  ],
+  "dose": "2-4 mg IV/IO q4h PRN. Titrate na-arụ ọrụ. IM: 5-10 mg q4h PRN.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hemodynamic akwụghị ụgwọ / hemorrhagic ujo",
+    "Mmetụta iku ume",
+    "Mmerụ isi na LOC gbanwere (ndị ikwu)"
+  ],
+  "warnings": [
+    "Na-ebute vasodilation - nwere ike ime ka ujo hemorrhagic dịkwuo njọ. Nyochaa BP tupu na mgbe emechara.",
+    "Nweta naloxone ozugbo.",
+    "Ịda mbà n'obi iku ume -- ọnụego nyochaa."
+  ],
+  "regional_names": {
+    "generic": "morphine sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV q2-4h PRN. Oke otu dose 2mg IV na nwa opioid-naive.",
+      "note": "Nyochaa ọnụego iku ume nke ọma. Ụmụ ọhụrụ na-enwe mmetụta nke ukwuu."
+    },
+    "obstetric": {
+      "note": "Na-agafe placenta. Enwere ike ịda mbà n'obi iku ume nwa ọhụrụ ma ọ bụrụ na enyere ya n'ime awa 2-4 nke ọmụmụ. Nwee naloxone dị njikere maka nwa amụrụ ọhụrụ."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

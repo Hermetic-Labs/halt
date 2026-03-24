@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s37019s",
+    "icd10":  "S37019S",
+    "name":  "Minor contusion of unspecified kidney, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Minor contusion of unspecified kidney, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

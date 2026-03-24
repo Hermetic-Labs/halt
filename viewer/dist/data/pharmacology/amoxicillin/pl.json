@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoksycylina",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoksyl",
+    "Trimox"
+  ],
+  "description": "Antybiotyk aminopenicylinowy o szerokim spektrum działania. Doustny antybiotyk profilaktyczny w przypadku infekcji ran. Część opakowania tabletek bojowych TCCC do profilaktyki ran w przypadku nieciężkich obrażeń.",
+  "indications": [
+    "Profilaktyka infekcji ran (rany łagodne i umiarkowane, opakowanie tabletek doustnych)",
+    "Zakażenia tkanek miękkich",
+    "Infekcje dróg oddechowych"
+  ],
+  "dose": "500 mg PO co 8 godzin x 7 dni (profilaktyka ran). Alternatywnie 875 mg PO co 12 godzin.",
+  "route": [
+    "PO"
+  ],
+  "window": "Rozpocząć w ciągu 3 godzin od urazu w celu profilaktyki ran.",
+  "contraindications": [
+    "Znana alergia na penicylinę (zamiast tego użyj doksycykliny)",
+    "Mononukleoza (ryzyko wysypki)"
+  ],
+  "warnings": [
+    "Jeśli jesteś uczulony na penicylinę: zastąp doksycyklinę 100 mg PO BID.",
+    "Tylko doustnie – w przypadku ciężkich ran lub w przypadku braku tolerancji doustnej należy stosować antybiotyki dożylne (cefazolina/cyprofloksacyna)."
+  ],
+  "regional_names": {
+    "generic": "amoksycylina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/dobę podzielone co 8 godzin (maks. 500 mg/dawkę). Użyj odniesienia Broselow opartego na wadze.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Bezpieczny w ciąży. Preferowany zamiast doksycykliny (która jest przeciwwskazana w ciąży)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

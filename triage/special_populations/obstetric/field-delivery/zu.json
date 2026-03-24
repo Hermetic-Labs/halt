@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Ukulethwa Kwezimo Eziphuthumayo",
+  "category": "obstetric",
+  "skill_level": "ukulwa-udokotela",
+  "time_estimate": "Iyahluka -- 20+ min",
+  "description": "Ukuphathwa kokulethwa okunejubane noma okungahleliwe endaweni enzima.",
+  "equipment": [
+    "amagilavu",
+    "izingubo zokulala ezihlanzekile",
+    "izintambo-izimpiko-noma-izibopho",
+    "isikelo",
+    "i-bulb-syringe"
+  ],
+  "steps": [
+    "Misa umama olale phansi noma olale kancane. Ukutsheka kwezinhlangothi kwesokunxele kuyakhethwa uma uqulekile (kuvimbela ukucindezelwa kwe-aortocaval).",
+    "Lawula ukulethwa kwekhanda -- ukusekela ngesundu. UNGAdonsi.",
+    "Uma ikhanda selithunyelwe, hlola intambo ye-nuchal (emqaleni). Uma ikhona, shelela phezu kwekhanda. Uma kuqinile, qinisa futhi usike.",
+    "Munca umlomo bese ukhala ngesirinji ye-bulb uma ikhona.",
+    "Ukuqondisa ukulethwa kwehlombe elingaphambili ngokuhlehlisa okuthambile okuya phansi ekhanda, bese phezulu ukuze uthole ihlombe elingemuva.",
+    "Letha umzimba -- qaphela isikhathi sokulethwa.",
+    "Yomisa futhi ufudumale usana ngokushesha. Khuthaza ngokuhlikihla emhlane.",
+    "Bamba bese usika intambo (linda imizuzu engu-1-2 uma usana luzinzile).",
+    "Letha i-placenta ngokudonsa okulawulwayo okuthambile -- UNGAPHOQI.",
+    "Lawula i-oxytocin (uma ikhona) ukuze uvimbele ukopha kwangemva kokubeletha ngemva kokubeletha kwe-placenta.",
+    "Hlola ukopha kwangemva kokubeletha -- ukubhucungwa kwe-fundal, ukucindezela kwe-bimanual uma kudingeka.",
+    "Hlola amaphuzu e-Apgar ngomzuzu ongu-1 no-5."
+  ],
+  "warnings": [
+    "Uma ukulethwa kungafiki -- UNGAZAMI. I-Rapid MEDEVAC iyakhethwa.",
+    "I-dystocia yamahlombe: uma amahlombe ebambekile, sebenzisa i-McRoberts maneuver (hyperflex hips) kanye ne-suprapubic pressure.",
+    "Ukopha kwangemva kokubeletha kuyimbangela ehamba phambili yokufa komama okungavinjelwa -- yiba ne-oxytocin isilungile."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

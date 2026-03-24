@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t80818a",
+    "icd10":  "T80818A",
+    "name":  "Extravasation of other vesicant agent, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Extravasation of other vesicant agent, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

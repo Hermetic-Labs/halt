@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t17500a",
+    "icd10":  "T17500A",
+    "name":  "Unspecified foreign body in bronchus causing asphyxiation, initial encounter",
+    "category":  "foreign-body",
+    "triage_priority":  "",
+    "description":  "Unspecified foreign body in bronchus causing asphyxiation, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

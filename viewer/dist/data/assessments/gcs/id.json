@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "Skala Koma Glasgow (GCS)",
+  "category": "neurological",
+  "description": "Penilaian kesadaran neurologis standar melalui respons mata, verbal, dan motorik. Kisaran skor 3-15.",
+  "instructions": "Skor masing-masing dari tiga domain secara independen. Jumlahkan ketiga skor untuk total GCS.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Spontan"
+        },
+        {
+          "score": 3,
+          "label": "Untuk menyuarakan"
+        },
+        {
+          "score": 2,
+          "label": "Sakit"
+        },
+        {
+          "score": 1,
+          "label": "Tidak ada"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "Berorientasi"
+        },
+        {
+          "score": 4,
+          "label": "Bingung"
+        },
+        {
+          "score": 3,
+          "label": "Kata-kata yang tidak pantas"
+        },
+        {
+          "score": 2,
+          "label": "Suara yang tidak bisa dimengerti"
+        },
+        {
+          "score": 1,
+          "label": "Tidak ada"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "Mematuhi perintah"
+        },
+        {
+          "score": 5,
+          "label": "Melokalisasi rasa sakit"
+        },
+        {
+          "score": 4,
+          "label": "Menarik diri dari rasa sakit"
+        },
+        {
+          "score": 3,
+          "label": "Fleksi yang tidak normal (decorticate)"
+        },
+        {
+          "score": 2,
+          "label": "Ekstensi (deserebrasi)"
+        },
+        {
+          "score": 1,
+          "label": "Tidak ada"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "TBI ringan -- pantau dengan cermat"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "TBI sedang -- persiapkan jalan napas"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "TBI parah -- jalan napas berisiko, lakukan intubasi jika memungkinkan"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Gunakan Pediatric GCS (pGCS) untuk anak di bawah 2 tahun. Penilaian verbal disesuaikan untuk anak pra-verbal."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

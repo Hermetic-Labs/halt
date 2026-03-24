@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t17410s",
+    "icd10":  "T17410S",
+    "name":  "Gastric contents in trachea causing asphyxiation, sequela",
+    "category":  "foreign-body",
+    "triage_priority":  "",
+    "description":  "Gastric contents in trachea causing asphyxiation, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

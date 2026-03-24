@@ -1,0 +1,43 @@
+{
+  "id": "pediatric-vital-sign-ranges",
+  "name": "Rêjeyên Nîşanên Jiyanî yên Normal ên Zarokan",
+  "description": "Ji bo HR, RR, û SBP referansa verastkirî ya temen. Di nexweşên pediatrîkî de ji bo dabeşkirina sêwirana rast a krîtîk - rêzikên normal ên mezinan ji bo zarokan ne rast in.",
+  "ranges": [
+    {
+      "age": "Nûbihar (0-1 meh)",
+      "hr": "100-160",
+      "rr": "30-60",
+      "sbp_mmhg": "60-90",
+      "gcs_min": 15
+    },
+    {
+      "age": "Pitik (1-12 meh)",
+      "hr": "90-150",
+      "rr": "30-60",
+      "sbp_mmhg": "70-100",
+      "gcs_min": 15
+    },
+    {
+      "age": "Zarok (1-3 sal)",
+      "hr": "80-130",
+      "rr": "24-40",
+      "sbp_mmhg": "80-110",
+      "gcs_min": 15
+    },
+    {
+      "age": "Zarok (3-12 sal)",
+      "hr": "70-120",
+      "rr": "18-30",
+      "sbp_mmhg": "80-120",
+      "gcs_min": 15
+    },
+    {
+      "age": "Ciwan (> 12 salî)",
+      "hr": "60-100",
+      "rr": "12-20",
+      "sbp_mmhg": "90-130",
+      "gcs_min": 15
+    }
+  ],
+  "source": "PALS Guidelines / JTS Pediatric CPG"
+}

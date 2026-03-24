@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Serlêdana Tourniquet (Torniquet Application Combat - CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "her-bersiv",
+  "time_estimate": "30-60 sec",
+  "description": "Kontrolkirina xwînrijandinê ya teqez ji bo xwînrijandina lemlateyên ku ji jiyanê xeternak e. Serîlêdana zû - dereng neke.",
+  "equipment": [
+    "cat-tourniquet",
+    "daîmî-marker"
+  ],
+  "steps": [
+    "Tourniquet bi qasî 2-3 înç (5-7 cm) nêzîk (jor) birînê bixin -- li ser cilê tê qebûlkirin.",
+    "Banda xwe-girêdayî li dora lingê xwe bi rê ve bibin û di nav pêlika adapterê kêşanê de bişopînin.",
+    "Bendê hişk bikişîne û li ser xwe vegerîne.",
+    "Kulîlka bayê bizivirînin heya ku xwîn bisekine an nebza dûrî tune be.",
+    "Di klîba bayê bayê de kilît bikin.",
+    "Ji bo ku ewleh bikin, kembera bayê li ser çopa bayê bixin.",
+    "Dema serîlêdanê rasterast li ser tûrikê (nîşankerê bikar bînin) Û li ser qerta TCCC binivîsin.",
+    "Birînê eşkere bikin û ji nû ve binirxînin. Piştî 5 deqîqeyan ji nû ve binirxînin."
+  ],
+  "warnings": [
+    "Dema ku li zeviyê hatî sepandin tûrek jê neynin - tenê personelên bijîjkî yên perwerdekirî di cîhek kontrolkirî de.",
+    "Dem krîtîk e: Tourniquet> 2 saetan xetereya windabûna lingan bi girîngî zêde dike. Wextê tavilê têkevin.",
+    "Li ser movikê neqedin. Ger di gelek astê de birînên lingan hebin, li ser hemî birînan nêzîkê xwe bicîh bikin.",
+    "Tourniques improvisated (kember, ropes) bi girîngî kêmtir bandor in."
+  ],
+  "follows": [
+    "rasterast-pext",
+    "birîn-pêçandin"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Ger hebe gerîdeya zarokan a teng bikar bînin. CAT-ya standard dikare were bikar anîn lê bi lênêrîn teng bike. Endok piçûktir in -- nebza dûr bi baldarî kontrol bikin."
+    },
+    "obstetric": {
+      "note": "Serlêdana standard ji bo birînên extremity. Li ser zik ​​û pelvisê nehêle."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

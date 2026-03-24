@@ -1,0 +1,56 @@
+# ==============================================================================
+# HALT .gitignore — Git vs Cloudflare Separation
+# ==============================================================================
+#
+# ┌─────────────────────────────────────────────────────────────────────────────┐
+# │  GIT (this repo — source only)  │  CLOUDFLARE R2                           │
+# │  → github.com/Hermetic-Labs     │                                          │
+# │                                 │  BUILDS (end users):                      │
+# │  api/          backend source   │    HALT-v1.0.0-Windows.zip               │
+# │  electron/     shell source     │    HALT-latest-Windows.zip               │
+# │  viewer/       frontend dist    │                                          │
+# │  triage/       medical data     │  DEV ASSETS (after git clone):            │
+# │  dev/          build + setup    │    models.zip → extracts to models/       │
+# │  assets/       logo, branding   │    runtime-windows.zip → runtime/         │
+# │  start.py, launchers, docs     │                                          │
+# │                                 │  Setup: python dev/setup.py               │
+# └─────────────────────────────────────────────────────────────────────────────┘
+
+# ── Large assets (downloaded from R2 via dev/setup.py, NOT in git) ────────────
+# These are dev-only — the built app on R2 already bundles everything.
+models/
+runtime/
+
+# ── Built distributions (Cloudflare R2, not Git) ─────────────────────────────
+builds/
+HALT-v1.0.01/
+
+# ── Runtime user data (never committed) ──────────────────────────────────────
+patients/
+*.key
+
+# ── Node modules (reinstallable) ─────────────────────────────────────────────
+node_modules/
+
+# ── Python cache ─────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+
+# ── OS junk ──────────────────────────────────────────────────────────────────
+.DS_Store
+._*
+desktop.ini
+Thumbs.db
+
+# ── IDE ──────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+.gemini/
+
+# ── GitHub Pages site (separate repo, no bleed) ──────────────────────────────
+site/
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+halt-log.txt

@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Matsi kai tsaye don Kula da Hemorrhage",
+  "category": "hemorrhage-control",
+  "skill_level": "duk mai amsawa",
+  "time_estimate": "3-5 min",
+  "description": "Ikon zubar da jini na farko don samun damar iyawa da raunin jiki.",
+  "equipment": [
+    "safar hannu",
+    "rauni-tufa",
+    "bandeji"
+  ],
+  "steps": [
+    "Don safar hannu idan akwai.",
+    "Bayyana raunin ta hanyar yanke tufafi.",
+    "Aiwatar da rigar rauni ko rigar da aka naɗe ta kai tsaye akan raunin.",
+    "Danna sosai tare da diddigin hannunka. Yi amfani da nauyin jikin ku -- ba kawai ƙarfin hannu ba.",
+    "Riƙe ci gaba, matsa lamba mara yankewa na akalla mintuna 3.",
+    "KAR KA ɗaga rigar don dubawa - wannan yana kawo cikas ga samuwar jini.",
+    "Idan jini ya ratsa, ƙara wani sutura a sama. Kar a cire na farko.",
+    "Aminta da bandeji na matsa lamba idan akwai kuma matsa zuwa wurin tattara raunuka ko yawon shakatawa idan zubar jini ya ci gaba."
+  ],
+  "warnings": [
+    "Matsakaicin kai tsaye kadai bai isa ba don zubar da jini -- ya ƙaru zuwa tattara raunuka ko yawon shakatawa.",
+    "Raunin haɗin gwiwa (kwakwalwa, axilla, wuyansa) yana buƙatar ɗaukar rauni, ba matsi na waje kaɗai ba."
+  ],
+  "follows": [],
+  "precedes": [
+    "shiryawa rauni",
+    "yawon shakatawa-application"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Matsakaicin daidaito kawai. Guji damfara thorax a jarirai."
+    },
+    "obstetric": {
+      "note": "Guji matsi mai nauyi akan mahaifa. Yi amfani da marufi na gefe idan raunin haɗin gwiwa kusa da ƙashin ƙugu."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

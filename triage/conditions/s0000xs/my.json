@@ -1,0 +1,22 @@
+{
+  "id": "s0000xs",
+  "icd10": "S0000XS",
+  "name": "သတ်မှတ်မထားသော ဦးရေပြား၏ အပေါ်ယံဒဏ်ရာ၊ နောက်ဆက်တွဲ",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "သတ်မှတ်မထားသော ဦးရေပြား၏ အပေါ်ယံဒဏ်ရာ၊ နောက်ဆက်တွဲ",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

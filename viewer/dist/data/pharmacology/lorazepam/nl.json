@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Ativan"
+  ],
+  "description": "Middellangwerkend benzodiazepine. Eerstelijns IV/IM-behandeling voor status epilepticus en acute aanvallen. Wordt ook gebruikt voor procedurele sedatie en anxiolyse.",
+  "indications": [
+    "Status epilepticus (eerstelijns IV)",
+    "Beheer van acute aanvallen",
+    "Procedurele sedatie",
+    "Ernstige angst of opwinding"
+  ],
+  "dose": "Toeval: 4 mg IV/IO langzaam duwen gedurende 2 minuten. Herhaal 4 mg binnen 5-10 minuten als de aanval aanhoudt. IM: 4 mg als IV niet beschikbaar is.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "Acuut nauwekamerhoekglaucoom",
+    "Ernstige ademhalingsdepressie",
+    "Propyleenglycol-overgevoeligheid"
+  ],
+  "warnings": [
+    "Veroorzaakt ademhalingsdepressie - houd BVM en luchtwegapparatuur gereed.",
+    "De sedatie kan 6-8 uur duren - controleer de luchtwegen.",
+    "Paradoxale agitatie mogelijk, vooral bij ouderen en kinderen."
+  ],
+  "regional_names": {
+    "generic": "lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV/IM (max. 4 mg/dosis). Herhaal indien nodig één keer per 5-10 minuten.",
+      "note": "De voorkeur boven diazepam voor de behandeling van IV-aanvallen bij kinderen."
+    },
+    "obstetric": {
+      "note": "Passeert de placenta - neonatale ademhalingsdepressie mogelijk. Gebruik bij maternale status epilepticus wanneer de voordelen groter zijn dan de risico's."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

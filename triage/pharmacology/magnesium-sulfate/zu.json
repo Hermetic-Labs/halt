@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "I-Magnesium Sulfate (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "I-Magnesium Sulfate Injection"
+  ],
+  "description": "I-CNS depressant kanye ne-anticonvulsant esetshenziselwa ukuvimbela kanye nokwelashwa kwe-eclamptic seizures (i-seizures ekukhulelwe kusukela ku-pre-eclampsia). Futhi isetshenziselwa isifuba somoya esinamandla kanye ne-torsades de pointes. Umugqa wokuqala we-eclampsia phezu kwe-benzodiazepines.",
+  "indications": [
+    "I-Eclampsia (ukuvimbela nokwelashwa kwesithuthwane ku-pre-eclampsia enzima)",
+    "I-Pre-eclampsia prophylaxis (izici ezinzima)",
+    "Torsades de Pointes (polymorphic V-tach from hypomagnesemia)",
+    "Isifuba somoya esinamandla (i-adjunct)"
+  ],
+  "dose": "I-Eclampsia yokulayisha umthamo: 4-6g IV ukusunduza okunensayo ngaphezu kwemizuzu engama-20. Isondlo: 1-2g/ihora IV ukumnika. Uma ukuquleka kuphinda: 2-4g IV ngaphezu kwemizuzu emi-5. Ukulayisha kwe-IM (uma kungekho IV): 5g IM isinqe ngasinye (ingqikithi engu-10g) ngesikhathi esisodwa.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "Qala ekuqaleni kokuquleka noma ekuxilongweni kwezimpawu ze-pre-eclampsia ezinzima.",
+  "contraindications": [
+    "I-Myasthenia gravis",
+    "Ukukhubazeka kokuhamba kwenhliziyo",
+    "Ukwehluleka kwezinso (kuyanqwabelana -- nciphisa umthamo)"
+  ],
+  "warnings": [
+    "Izimpawu zobuthi: ukulahlekelwa i-patellar reflex (uphawu lokuqala, 7-10 mEq/L), ukucindezeleka kokuphefumula (> 10 mEq/L), ukuboshwa kwenhliziyo (> 15 mEq/L).",
+    "Gada i-patellar reflexes njalo ngemizuzu engu-15 -- ukulahlekelwa i-reflex = ukuyeka ukumnika.",
+    "I-ANTIDOTE yobuthi: I-Calcium gluconate 1g IV ngaphezu kwemizuzu emi-3.",
+    "Yehlisa umthamo ekulimaleni kwezinso -- qapha ukuphuma komchamo."
+  ],
+  "regional_names": {
+    "generic": "i-magnesium sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Ama-Torsades: 25-50 mg/kg IV phezu kwe-10-20 min (ubukhulu obungu-2g). Isifuba somoya esibi kakhulu: 25-75 mg/kg IV (max 2g).",
+      "note": "Akuvamile ukusetshenziselwa ukuquleka ezigulini ezingezona ezokubeletha -- i-eclampsia iyinkomba eyinhloko."
+    },
+    "obstetric": {
+      "note": "Inkomba eyinhloko. Iwela i-placenta - i-neonatal hypermagnesemia kungenzeka. Umthamo wezingane ezisanda kuzalwa uma ukucindezeleka kokuphefumula: i-calcium gluconate 100 mg/kg IV. Yazisa ithimba le-NICU ngokusetshenziswa kwe-magnesium yomama."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

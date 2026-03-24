@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Geïmproviseerde spalken",
+  "category": "ortho-stabilization",
+  "skill_level": "Basis",
+  "time_estimate": "5-10 minuten",
+  "description": "Immobiliseer fracturen met behulp van beschikbare materialen om verder letsel te voorkomen, pijn te verminderen en bloedverlies naar omringend weefsel te beperken. Spalk in positie gevonden, tenzij de bloedsomloop wordt belemmerd – en vervolgens voorzichtig rechttrekken.",
+  "equipment": [
+    "SAM-spalk (bij voorkeur)",
+    "Opgerolde tijdschriften, stokken, tentstokken (veldgeïmproviseerd)",
+    "Cravat / driehoekige verbanden",
+    "Vulling (kleding, schuim)",
+    "Tape of stroken stof"
+  ],
+  "steps": [
+    "Stel het letsel bloot en beoordeel het - controleer de bloedsomloop, het gevoel, de beweging (CSM) distaal van de fractuur voor en na.",
+    "Controleer eventuele actieve bloedingen vóór het spalken.",
+    "Bedek de botuitsteeksels royaal om drukzweren te voorkomen.",
+    "Kies het spalkmateriaal dat lang genoeg is om het gewricht boven EN onder de fractuur te immobiliseren.",
+    "Plaats het ledemaat in een comfortabele positie of anatomische uitlijning – forceer niet.",
+    "Breng vulling aan en spalkmateriaal. Zet vast met verband of stoffen strips.",
+    "Wikkel het NIET te strak – laat uw vingertoppen/tenen blootstaan ​​aan de CSM-monitor.",
+    "Beoordeel CSM opnieuw na het aanbrengen - maak onmiddellijk los als de bloedsomloop wordt belemmerd.",
+    "Leg het ledemaat indien mogelijk omhoog om de zwelling te verminderen.",
+    "Documenteer het tijdstip waarop de spalk is aangebracht."
+  ],
+  "warnings": [
+    "Beoordeel CSM elke 15-30 minuten opnieuw - zwelling kan ervoor zorgen dat een correcte spalk een tourniquet wordt.",
+    "Open fracturen: bedek de wond eerst met een steriel verband en daarna met een spalk. Duw het bot NIET terug.",
+    "Bij dijbeenfracturen kan 1-2 liter bloed in de dij terechtkomen; behandel agressief bij shock.",
+    "Vermoedelijke wervelfractuur: improviseer GEEN spalk - minimaliseer beweging, handhaaf inline-stabilisatie."
+  ],
+  "follows": [
+    "directe druk",
+    "tourniquet-applicatie"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Groeischijven bij kinderen zijn zwakker dan ligamenten - vermoed een breuk, zelfs met een mild mechanisme. Torusfracturen (gespfracturen) kunnen een minimale zwelling vertonen."
+    },
+    "obstetric": {
+      "note": "Standaard spalken is van toepassing. Vermijd langdurige rugligging - zijwaartse kanteling naar links als u plat ligt."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

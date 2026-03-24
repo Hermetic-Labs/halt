@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Cefazolin",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Ancef",
+    "Kefzol"
+  ],
+  "description": "Cephalosporin generasi pisanan. Antibiotik parenteral lini pertama kanggo infeksi tatu serius lan profilaksis bedah. Jangkoan gram positif sing apik kalebu MSSA. Diwenehi ing 60 menit saka incision bedhah kanggo profilaksis.",
+  "indications": [
+    "Profilaksis tatu bedhah",
+    "Infèksi jaringan alus sing serius",
+    "Prophylaxis fraktur mbukak",
+    "Infeksi kulit lan struktur kulit"
+  ],
+  "dose": "1-2g IV/IM q8h. Profilaksis bedah: 2g IV ing 60 menit sadurunge incision. Baleni 2g yen operasi> 4 jam.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Kanggo prophylaxis bedhah: menehi ing 60 menit saka incision.",
+  "contraindications": [
+    "Dikenal alergi cephalosporin",
+    "Alergi penisilin abot (5-10% reaktivitas silang)"
+  ],
+  "warnings": [
+    "Reaktivitas silang karo alergi penisilin: gunakake kanthi ati-ati ing pasien alergi penisilin.",
+    "Nyetel dosis ing gangguan ginjel."
+  ],
+  "regional_names": {
+    "generic": "cefazolin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM q8h (maks 2g/dosis). Profilaksis: 30 mg/kg (maks 2g) sadurunge sayatan.",
+      "note": "Aman lan uga sinau ing pediatri."
+    },
+    "obstetric": {
+      "note": "Aman kanggo meteng lan lactation. Antibiotik parenteral sing disenengi kanggo prosedur obstetrik."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

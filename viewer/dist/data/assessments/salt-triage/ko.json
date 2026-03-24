@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "SALT 분류(분류, 평가, 인명 구조 개입, 치료/운송)",
+  "category": "mass-casualty",
+  "description": "대량 사상자 분류 프로토콜. 군사 및 민간 환경에서 다수의 사상자를 낸 사건에 대한 표준입니다.",
+  "instructions": "1단계: 전역 정렬(걷기, 흔들기, 정지) 2단계: 우선순위에 따라 평가합니다. 3단계: 생명을 구하는 개입(대출혈 조절, 기도 개방, 바늘 감압, 자동 주사기)을 수행합니다. 4단계: 카테고리 지정",
+  "categories": [
+    {
+      "color": "검정색",
+      "label": "기대/사망",
+      "description": "가용 자원이 주어지면 생존 가능성이 낮거나 사망한 것으로 확인됨"
+    },
+    {
+      "color": "빨간색",
+      "label": "즉시(T1)",
+      "description": "생명을 위협하는 부상, 즉각적인 개입으로 살아남을 수 있음"
+    },
+    {
+      "color": "노란색",
+      "label": "지연됨(T2)",
+      "description": "심각하지만 안정적인 부상, 치료를 기다릴 수 있음"
+    },
+    {
+      "color": "녹색",
+      "label": "최소(T3)",
+      "description": "경미한 부상 -- 보행 부상"
+    },
+    {
+      "color": "회색",
+      "label": "기대되는",
+      "description": "현재 자원을 고려할 때 생존 불가능한 부상 -- 편안한 치료만 가능"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "JumpSTART 선별 알고리즘은 소아 환자에 대한 SALT를 수정합니다. 호흡수 역치 및 평가 단계는 8세 미만 어린이의 경우 다릅니다."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

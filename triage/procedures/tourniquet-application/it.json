@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Applicazione del laccio emostatico (Laccio emostatico per applicazione da combattimento - CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "qualsiasi risponditore",
+  "time_estimate": "30-60 secondi",
+  "description": "Controllo definitivo dell’emorragia per sanguinamento delle estremità pericoloso per la vita. Applicare in anticipo: non ritardare.",
+  "equipment": [
+    "laccio emostatico per gatti",
+    "pennarello indelebile"
+  ],
+  "steps": [
+    "Applicare il laccio emostatico a 2-3 pollici (5-7 cm) prossimale (sopra) la ferita (sopra gli indumenti è accettabile).",
+    "Far passare la fascia autoadesiva attorno all'arto e infilarla nella fibbia dell'adattatore a frizione.",
+    "Tirare bene la fascia e fissarla su se stessa.",
+    "Ruotare l'asta del verricello fino all'arresto del sanguinamento o all'assenza del polso distale.",
+    "Bloccare il verricello nella clip del verricello.",
+    "Applicare la cinghia del verricello sull'asta del verricello per fissarla.",
+    "Scrivere l'orario di applicazione direttamente sul laccio emostatico (usare pennarello) E sulla tessera TCCC.",
+    "Esporre e rivalutare la ferita. Rivalutare dopo 5 minuti."
+  ],
+  "warnings": [
+    "NON rimuovere il laccio emostatico una volta applicato sul campo: solo personale medico addestrato in un ambiente controllato.",
+    "Il tempo è fondamentale: il laccio emostatico >2 ore aumenta significativamente il rischio di perdita degli arti. Registra il tempo immediatamente.",
+    "NON applicare su una giuntura. Se l'arto presenta ferite a più livelli, applicare prossimale a tutte le ferite.",
+    "I lacci emostatici improvvisati (cinture, corde) sono significativamente meno efficaci."
+  ],
+  "follows": [
+    "pressione diretta",
+    "medicazione delle ferite"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Se disponibile, utilizzare un laccio emostatico pediatrico stretto. È possibile utilizzare il CAT standard, ma serrarlo con cautela. Gli arti sono più piccoli: controlla attentamente il polso distale."
+    },
+    "obstetric": {
+      "note": "Applicazione standard per ferite alle estremità. Non applicare sull'addome o sul bacino."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

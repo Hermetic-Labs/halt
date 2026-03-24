@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Uxinzelelo lwesifuba seNaliti (NCD)",
+  "category": "respiration",
+  "skill_level": "ukulwa-medical",
+  "time_estimate": "1-2 min",
+  "description": "Uncedo olungxamisekileyo lwe-tension pneumothorax ngokufaka inaliti kwindawo yesibini ye-intercostal. Ungenelelo olusindisa ubomi.",
+  "equipment": [
+    "14g-inaliti-catheter-3-25in",
+    "iiglavu",
+    "isifuba-seal-ukhetho"
+  ],
+  "steps": [
+    "Chonga i-tension pneumothorax: ukungabikho kwezandi zokuphefumula kwicala elichaphazelekayo, ukuphambuka koqhoqhoqho (kade), uxinzelelo lokuphefumula, i-hypotension, i-JVD.",
+    "Veza isifuba kwicala elichaphazelekayo.",
+    "Fumana indawo ye-2 ye-intercostal, umgca we-midclavicular (enye: 4th / 5th ICS, umgca we-axillary wangaphambili).",
+    "Faka i-14g, i-3.25-inch inaliti-catheter perpendicular to the chest wall, nje ngaphaya kwe-TOP ye-3rd rib (ukuphepha i-neurovascular bundle).",
+    "Dlulela phambili de kuvakala ukungxola komoya okanye ukufutha okuvakalayo.",
+    "Susa inaliti kwaye ushiye i-catheter endaweni.",
+    "Mamela ukuphuculwa kwezandi zokuphefumula kunye nomzamo wokuphefumla.",
+    "Khusela ihabhu yecatheter. UNGAQINISEKI okanye uvale isiphelo esivulekileyo.",
+    "Phinda uphonononge yonke imizuzu emi-5-- i-catheter inokukink okanye ihlwili, ifuna ukuphinda uxinezeleke."
+  ],
+  "warnings": [
+    "Sebenzisa inaliti eyi-3.25-intshi -- umgangatho we-14g angiocatheter (1.5in) isoloko isilela kwizigulana zasemkhosini ngenxa yesikrweqe somzimba kunye nezihlunu.",
+    "I-NCD yamacala omabini inokufunwa ukuba akuqinisekanga ukuba leliphi na icala elichaphazelekayo kwaye isigulane sibanjwe ngamathuba athile.",
+    "Musa ukubeka kwicala elinye nenxeba lokufunxa esifubeni ngaphandle kokuvala inxeba kuqala."
+  ],
+  "follows": [],
+  "precedes": [
+    "isifuba-seal-application"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Sebenzisa inaliti yobungakanani ngokufanelekileyo (izigulane ezincinci, i-1.5-2in inokwanela). Sebenzisa indlela ye-2 ye-ICS MCL. Ukuqondwa kophawu lomhlaba kunzima kakhulu -- sebenzisa isilumkiso."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

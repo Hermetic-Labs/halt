@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Antibiotika fluoroquinolone misy fandrakofana gram-negative midadasika. Ampiasaina amin'ny otrikaretina ratra mafy, trauma amin'ny kibo (GI flora coverage), ary ny areti-mifindra. Misy PO sy IV.",
+  "indications": [
+    "Tratran'ny abdominale miditra (fanafoanana GI)",
+    "Otrikaretina ratra mafy",
+    "otrikaretina Gram-negatif",
+    "Otrik'aretina ao amin'ny uretra"
+  ],
+  "dose": "400 mg IV q8-12h. PO: 500-750 mg q12h.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Allergy fluoroquinolone fantatra",
+    "Ankizy sy tanora latsaky ny 18 taona (havana -- mety ho voan'ny tendinopathie)",
+    "Bevohoka (havana)"
+  ],
+  "warnings": [
+    "Ny risika vaky ny tendon, indrindra ny tendon Achilles. Atsaharo raha mitombo ny fanaintainan'ny tendon.",
+    "Mety hanitatra ny elanelam-potoana QT -- mitandrema amin'ny fanafody manalava QT hafa.",
+    "Fadio amin'ny fitondrana vohoka raha misy safidy hafa."
+  ],
+  "regional_names": {
+    "generic": "ciprofloxacin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV q8-12h (max 400 mg/dose). PO: 10-20 mg/kg q12h (max 750 mg/dose).",
+      "note": "Ampiasao raha tsy misy tombony mihoatra ny risika amin'ny tendinopathie. Atokana ho an'ny aretina mafy."
+    },
+    "obstetric": {
+      "note": "Fadio amin'ny fitondrana vohoka raha misy safidy hafa. Ampiasaina amin'ny areti-mifindra mahafaty ihany izay mahasoa kokoa noho ny loza mety hitranga."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

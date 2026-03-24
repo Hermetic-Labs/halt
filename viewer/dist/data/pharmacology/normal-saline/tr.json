@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Normal Salin (%0,9 NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "%0,9 Sodyum Klorür Enjeksiyonu"
+  ],
+  "description": "İzotonik kristalloid sıvı. IV sıvı resüsitasyonunda kullanılır. Hemorajik şokta dikkatli kullanın; büyük hacimler koagülopatiyi kötüleştirir (hiperkloremik asidoz, dilüsyonel koagülopati). Penetran travmada kanama kontrolüne kadar izin verilen hipotansiyon tercih edilir.",
+  "indications": [
+    "Sıvı resüsitasyonu (hemorajik şokta dikkatli olunmalıdır)",
+    "İlaç seyreltici/yıkama",
+    "Kanama dışı nedenlerden kaynaklanan hipovolemi"
+  ],
+  "dose": "Hemorajik şok: Kanama kontrolü beklenirken maksimum 1 L ile sınırlayın (izin verilen hipotansiyon). Penetran travmada SBP'yi 80-90 mmHg, TBI'da 90 mmHg'yi hedefleyin. Hemorajik olmayan hipovolemi: 500 mL boluslar, yeniden değerlendirin.",
+  "route": [
+    "IV",
+    "Giriş Çıkış"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hipernatremi",
+    "Aşırı sıvı yükü / akciğer ödemi (göreceli)"
+  ],
+  "warnings": [
+    "Büyük hacimler hiperkloremik metabolik asidoza ve dilüsyonel koagülopatiye neden olur; travmadaki ölümcül üçlüyü kötüleştirir.",
+    "Büyük hacimli travma resüsitasyonunda Laktatlı Ringer (LR) tercih edilir.",
+    "Cerrahi kanama kontrolünden (izin veren hipotansiyon) önce delici gövde travmasını aşırı canlandırmayın."
+  ],
+  "regional_names": {
+    "generic": "sodyum klorür %0,9"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 mL/kg IV bolus, yeniden değerlendirin. Kan ürünlerini değerlendirmeden önce maksimum x3 (toplam 60 mL/kg) tekrarlayın.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Obstetrik kanamada standart resüsitasyon. Kan ürünleri temin edilmeden önce doğum sonu kanamaya uygun agresif sıvı resüsitasyonu."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

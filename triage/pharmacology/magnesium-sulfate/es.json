@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Sulfato de magnesio (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Inyección de sulfato de magnesio"
+  ],
+  "description": "Depresor del SNC y anticonvulsivo utilizado para la prevención y el tratamiento de las convulsiones eclámpticas (convulsiones durante el embarazo por preeclampsia). También se utiliza para el asma grave y la torsade de pointes. Primera línea para la eclampsia sobre las benzodiazepinas.",
+  "indications": [
+    "Eclampsia (prevención y tratamiento de las convulsiones en la preeclampsia grave)",
+    "Profilaxis de la preeclampsia (características graves)",
+    "Torsades de Pointes (V-tach polimórfico por hipomagnesemia)",
+    "Asma aguda grave (complementaria)"
+  ],
+  "dose": "Dosis de carga para eclampsia: 4-6 g IV en dosis lenta durante 20 minutos. Mantenimiento: 1-2 g/hora en infusión intravenosa. Si la convulsión vuelve a aparecer: 2-4 g IV durante 5 min. Carga IM (si no hay IV): 5 g IM en cada nalga (10 g en total) simultáneamente.",
+  "route": [
+    "IV",
+    "OI",
+    "IM"
+  ],
+  "window": "Comenzar al inicio de las convulsiones o al diagnóstico de características graves de preeclampsia.",
+  "contraindications": [
+    "Miastenia gravis",
+    "Defectos de la conducción cardíaca",
+    "Insuficiencia renal (se acumula - reducir dosis)"
+  ],
+  "warnings": [
+    "Signos de toxicidad: pérdida del reflejo rotuliano (primer signo, 7-10 mEq/L), depresión respiratoria (> 10 mEq/L), paro cardíaco (> 15 mEq/L).",
+    "Controle los reflejos rotulianos cada 15 minutos; pérdida de reflejo = detener la infusión.",
+    "ANTÍDOTO para la toxicidad: gluconato de calcio 1 g IV durante 3 minutos.",
+    "Reducir la dosis en caso de insuficiencia renal: controlar la producción de orina."
+  ],
+  "regional_names": {
+    "generic": "sulfato de magnesio"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg IV durante 10-20 min (máx. 2 g). Asma grave: 25-75 mg/kg IV (máx. 2 g).",
+      "note": "Rara vez se utiliza para las convulsiones en pacientes pediátricos no obstétricos; la eclampsia es la indicación principal."
+    },
+    "obstetric": {
+      "note": "Indicación primaria. Atraviesa la placenta: posible hipermagnesemia neonatal. Dosis neonatal en caso de depresión respiratoria: gluconato de calcio 100 mg/kg IV. Informar al equipo de la UCIN sobre el uso materno de magnesio."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

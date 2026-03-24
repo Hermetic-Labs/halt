@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Perimortem keizersnede (PMCS)",
+  "category": "obstetric",
+  "skill_level": "arts-chirurg",
+  "time_estimate": "3-5 minuten",
+  "description": "Noodkeizersnede binnen 4 minuten na een hartstilstand bij de moeder om effectieve reanimatie en potentiële neonatale overleving mogelijk te maken. De baarmoeder drukt de aorta en IVC samen - de bevalling is ook reanimatie voor de moeder.",
+  "equipment": [
+    "scalpel",
+    "handschoenen",
+    "oprolmechanismen",
+    "snoerklemmen",
+    "neonatale-reanimatie-apparatuur"
+  ],
+  "steps": [
+    "Ga door met reanimatie zonder onderbreking.",
+    "Maak een verticale incisie in de middellijn van de navel tot het schaambeen, door de huid en het fascia.",
+    "Snijd het onderste baarmoedersegment horizontaal in.",
+    "Bezorg het kind - noteer de tijd.",
+    "Klem het snoer vast en knip het door.",
+    "Geef het kind door aan een tweede zorgverlener voor neonatale reanimatie.",
+    "Verwijder de placenta.",
+    "Pak de baarmoeder en de buik in als definitieve sluiting niet direct mogelijk is.",
+    "Ga door met reanimatie van de moeder - ROSC is waarschijnlijker na decompressie van de baarmoeder."
+  ],
+  "warnings": [
+    "Voor de beste maternale en foetale resultaten moet de beslissingstijd tot bevalling minder dan 5 minuten bedragen.",
+    "Deze procedure is een laatste redmiddel – alleen als de moeder een hartstilstand heeft en de bevalling op handen is (>20 weken zwangerschap).",
+    "Vereist een opleiding op artsniveau. Gevechtsmedici moeten het veld voorbereiden en ondersteunen, en niet zelfstandig optreden."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

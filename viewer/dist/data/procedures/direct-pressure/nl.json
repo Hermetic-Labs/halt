@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Directe druk voor controle van bloedingen",
+  "category": "hemorrhage-control",
+  "skill_level": "elke responder",
+  "time_estimate": "3-5 minuten",
+  "description": "Eerstelijnsbloedingscontrole voor toegankelijke ledematen en lichaamswonden.",
+  "equipment": [
+    "handschoenen",
+    "traumaverband",
+    "dasverband"
+  ],
+  "steps": [
+    "Trek handschoenen aan, indien beschikbaar.",
+    "Maak de wond bloot door kleding weg te snijden.",
+    "Breng een traumaverband of een gevouwen doek direct over de wond aan.",
+    "Druk stevig aan met de muis van uw hand. Gebruik uw lichaamsgewicht - niet alleen de kracht van uw armen.",
+    "Houd een continue, ononderbroken druk aan gedurende minimaal 3 minuten.",
+    "Til het verband NIET op om dit te controleren – dit verstoort de vorming van stolsels.",
+    "Als het bloeden doordringt, doe er dan nog een verband overheen. Verwijder de eerste niet.",
+    "Zet vast met een drukverband, indien beschikbaar, en ga over op wondpakking of tourniquet als het bloeden aanhoudt."
+  ],
+  "warnings": [
+    "Directe druk alleen is onvoldoende voor arteriële bloedingen - escaleer tot wondpakking of tourniquet.",
+    "Junctionele wonden (lies, oksel, nek) vereisen wondpakking, niet alleen externe druk."
+  ],
+  "follows": [],
+  "precedes": [
+    "wondverpakking",
+    "tourniquet-applicatie"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Alleen proportionele druk. Vermijd het samendrukken van de thorax bij zuigelingen."
+    },
+    "obstetric": {
+      "note": "Vermijd zware compressie over de zwangere baarmoeder. Gebruik laterale pakking als er sprake is van een verbindingswond nabij het bekken."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

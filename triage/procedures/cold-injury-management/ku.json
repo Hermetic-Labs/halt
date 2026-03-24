@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Birêvebiriya Birîndariya Sar",
+  "category": "environmental",
+  "skill_level": "Bingehîn",
+  "time_estimate": "Berdewam",
+  "description": "Birêvebirina sermayê, lingê binavbûnê (lingê xendek), û hîpotermiyê. Birînên sermayê têne pêşîlêgirtin - nîşanên destpêkê nas bikin berî ku zirara tevniyê neveger be. Tîma qeşagirtî pir bi nermî hildin.",
+  "equipment": [
+    "Cil û bergên îzolekirî yên hişk / kîseya xewê",
+    "Ava germ (38-42C/100-108F) ji bo germkirina serşokê",
+    "Cilên sterîl",
+    "Ibuprofen 400mg PO (heke hebe)",
+    "IV LR (ger gengaz be)"
+  ],
+  "steps": [
+    "Hîpotermiya PÊŞÎ: Germahiya bingehîn bi termometreya kêm-xwendinê binirxînin. Sivik (32-35C): lerzîn, tevlihevî. Nêzîk (28-32C): bê lerzîn, tevliheviyek giran. Zehf (<28C): bêhiş, nebz nayê dîtin.",
+    "HÎPOTERMÎ -- Sivik/Sal: Cil û bergên şil derxînin, ji erdê, hawîrdora germ îzole bikin, ger hay ji xwe hebin şilîkên şêrîn germ bikin, ber bi axil/kêzikan ve germ bikin (ne rasterast li ser çerm). Bi nermî tevbigerin - jar dibe ku VFib bike.",
+    "HÎPOTERMÎ -- Xidir: PIR bi nermî raber bikin. Beriya CPR-ê 60 saniyeyên tije pulsê kontrol bikin. Heke nebza tune be CPR dest pê bikin. Ger hebin şilekên IV germ bikin. Pêşîniya MEDEVAC - 'heya germ û mirinê nemire'.",
+    "QEŞTÎ: Serpêhatî (çerm spî/gewr, li jêr nerm) beramberî kûr (hişka hişk, darî, felq). Herêmê NEXWÎNE. Ger metirsiya ji nûve cemidandinê ji nû ve germ nekin - ji nûve cemidandin ji nûvegermkirina dereng zirarê xirabtir dike.",
+    "Germkirina FROSTBITE: 15-30 hûrdeman di nav ava 38-42C (ne germtir) de bihêlin heya ku tevnek nerm û sor/binefşî bibe. Pir bi êş -- analjeziyek (ketamine an morfîn) pêşkêş bikin.",
+    "Piştî ji nû ve germkirinê: Di navbera tiliyên/tiliyan de bi gaza sterîl pêve bikin. Pûçikan nepêjin. Ji zextê biparêzin.",
+    "PÎNÊ BIÇAV (Piyê xendeqê): bi dirêjî şil/sarbûn, çerm sor paşê zer û paşê belkî. Piyên hişk, hêdî hêdî germ bikin, bilind bikin. Germahiya rasterast nedin.",
+    "Belge dema birîndarbûnê û dema ji nû ve germkirinê."
+  ],
+  "warnings": [
+    "Ger şansek ji nûve cemidandinê hebe, sermayê ji nû ve germ nekin -- Germkirina netemam + ji nû ve cemidandin = windabûna tevnek felaketî.",
+    "Hîpotermiya giran dikare mirinê bişibînin. Ji bo 60 çirkeyan nebza kontrol bikin. 'Heta germ û mirinê nemire.'",
+    "Alkol tevî têgihîştina germahiyê windabûna germê zêde dike -- alkol nedin.",
+    "Xetereya VFib di hîpotermiya navîn-giran de bilind e - manîpulasyon û hejandina nexweş kêm bike."
+  ],
+  "follows": [
+    "pêşîlêgirtina hîpotermiyê"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Zarok ji ber rêjeya rûbera berbi girseyê zûtir sar dibin. Bendavên hîpotermiyê yek in. Germ IV şilî krîtîk. Avêtina li ser bingeha giraniyê: 20 mL/kg LR germ."
+    },
+    "obstetric": {
+      "note": "Hîpotermiya dayikê dibe sedema bradycardia û acidosis fetal. Ji nû ve germkirina zikmakî tedawiya fetusê ye. Ger hebe çavdêriya fetal."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

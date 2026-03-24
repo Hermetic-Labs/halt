@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirina (acido acetilsalicilico)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Aspirina Bayer",
+    "Ecotrina"
+  ],
+  "description": "Farmaco antinfiammatorio non steroideo (FANS) con proprietà antipiastriniche. Trattamento di prima linea per sospetta sindrome coronarica acuta (ACS). Inibisce irreversibilmente l'aggregazione piastrinica: l'effetto dura per tutta la vita delle piastrine (7-10 giorni).",
+  "indications": [
+    "Sospetto infarto miocardico acuto (MI) – masticare immediatamente",
+    "Angina instabile/sindrome coronarica acuta",
+    "Ictus (ischemico – escluso dopo quello emorragico)",
+    "Febbre e dolore lieve-moderato (analgesico)"
+  ],
+  "dose": "ACS: 325 mg PO – MASTICARE (non ingoiare intero) immediatamente. Analgesico/antipiretico: 325-650 mg PO ogni 4-6 ore PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Date il prima possibile, masticate subito in caso di sospetto.",
+  "contraindications": [
+    "Sanguinamento gastrointestinale attivo",
+    "Ictus emorragico",
+    "Nota allergia all'aspirina o ipersensibilità ai FANS",
+    "Grave sanguinamento incontrollato: l'aspirina peggiora l'emorragia"
+  ],
+  "warnings": [
+    "NON somministrare a pazienti emorragici: l'aspirina compromette irreversibilmente la funzione piastrinica e peggiora il sanguinamento.",
+    "NON somministrare a bambini di età < 12 anni affetti da malattie virali: rischio di sindrome di Reye.",
+    "Irritazione gastrointestinale: assumere con il cibo se non urgente."
+  ],
+  "regional_names": {
+    "generic": "aspirina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesico/antipiretico: 10-15 mg/kg PO ogni 4-6 ore (max 650 mg/dose). NOTA: controindicato nelle malattie virali (sindrome di Reye).",
+      "note": "Utilizzare invece il paracetamolo (paracetamolo) per la febbre nei bambini con malattie virali."
+    },
+    "obstetric": {
+      "note": "Evitare in gravidanza soprattutto nel terzo trimestre (chiusura prematura del dotto arterioso). La dose bassa (81 mg) viene utilizzata per la prevenzione della preeclampsia solo sotto la guida del medico."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

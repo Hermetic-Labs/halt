@@ -1,0 +1,22 @@
+{
+  "id": "s0007xa",
+  "icd10": "S0007XA",
+  "name": "Sauran cizon kai na sama, haduwar farko",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Sauran cizon fatar kai, gamuwa ta farko",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

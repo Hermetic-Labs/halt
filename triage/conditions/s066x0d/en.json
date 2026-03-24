@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s066x0d",
+    "icd10":  "S066X0D",
+    "name":  "Traumatic subarachnoid hemorrhage without loss of consciousness, subsequent encounter",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Traumatic subarachnoid hemorrhage without loss of consciousness, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

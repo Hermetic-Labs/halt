@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t868422",
+    "icd10":  "T868422",
+    "name":  "Corneal transplant infection, left eye",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Corneal transplant infection, left eye",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

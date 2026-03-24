@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "မဂ္ဂနီဆီယမ် ဆာလဖိတ် (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "မဂ္ဂနီဆီယမ် ဆာလဖိတ် ထိုးဆေး"
+  ],
+  "description": "eclamptic seizures (pre-eclampsia မှကိုယ်ဝန်ဆောင်ခြင်းမှတက်ခြင်း) ကိုကာကွယ်ရန်နှင့်ကုသရန်အတွက်အသုံးပြုသော CNS စိတ်ကျရောဂါနှင့် anticonvulsant ။ ပြင်းထန်ပန်းနာရင်ကျပ်ရောဂါနှင့် torsades de pointes များအတွက်လည်း အသုံးပြုသည်။ benzodiazepines ထက် eclampsia အတွက် ပထမစာကြောင်း။",
+  "indications": [
+    "Eclampsia (ပြင်းထန်သော pre-eclampsia တွင်အတက်ရောဂါကာကွယ်ခြင်းနှင့်ကုသခြင်း)",
+    "Pre-eclampsia prophylaxis (ပြင်းထန်သောလက္ခဏာများ)",
+    "Torsades de Pointes ( hypomagnesemia မှ polymorphic V-tach)",
+    "Severe acute asthma (adjunct)"
+  ],
+  "dose": "Eclampsia loading dose: 4-6g IV သည် မိနစ် 20 ကျော်ကြာအောင် နှေးကွေးသည်။ ထိန်းသိမ်းမှု- 1-2g/နာရီ IV ဖျော်ရည်။ ဆီးပြန်ဖြစ်လျှင် 2-4g IV 5 မိနစ်ကျော်။ IM တင်ခြင်း (IV မရှိလျှင်) 5g IM တင်ပါးတစ်ခုစီ (10g စုစုပေါင်း) တစ်ပြိုင်နက်။",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "ပြင်းထန်သော pre-eclampsia လက္ခဏာများကို ရှာဖွေတွေ့ရှိသောအခါတွင် စတင်ပါ။",
+  "contraindications": [
+    "Myasthenia gravis",
+    "နှလုံးလမ်းကြောင်း ချို့ယွင်းချက်များ",
+    "ကျောက်ကပ်ဆိုင်ရာ ချို့ယွင်းမှု (စုပုံ--ဆေးပမာဏကို လျှော့ချသည်)"
+  ],
+  "warnings": [
+    "အဆိပ်သင့်ခြင်းလက္ခဏာများ- patellar reflex ဆုံးရှုံးမှု (ပထမလက္ခဏာ၊ 7-10 mEq/L)၊ အသက်ရှူလမ်းကြောင်းဆိုင်ရာ စိတ်ဓာတ်ကျခြင်း (> 10 mEq/L)၊ နှလုံးရပ်ခြင်း (> 15 mEq/L)။",
+    "15 မိနစ်တိုင်း patellar တုံ့ပြန်မှုကိုစောင့်ကြည့်ပါ - တုံ့ပြန်မှုဆုံးရှုံးခြင်း = ဆေးသွင်းခြင်းကိုရပ်ပါ။",
+    "အဆိပ်သင့်ခြင်းအတွက် ဖြေဆေး- Calcium gluconate 1g IV ကို 3 မိနစ်ထက်ကြာအောင်။",
+    "ကျောက်ကပ်ဆိုင်ရာချို့ယွင်းမှုတွင် ဆေးပမာဏကို လျှော့ချပါ - ဆီးအထွက်နှုန်းကို စောင့်ကြည့်ပါ။"
+  ],
+  "regional_names": {
+    "generic": "မဂ္ဂနီဆီယမ်ဆာလဖိတ်"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg IV သည် 10-20 min (အများဆုံး 2g)။ ပြင်းထန်ပန်းနာရင်ကျပ်- 25-75 mg/kg IV (အများဆုံး 2g)။",
+      "note": "သားဖွါးမဟုတ်သော ကလေးလူနာများတွင် တက်ခြင်းအတွက် သုံးခဲပါသည် - eclampsia သည် အဓိက လက္ခဏာဖြစ်သည်။"
+    },
+    "obstetric": {
+      "note": "အဓိကအချက်။ အချင်းဖြတ်သည် - မွေးကင်းစကလေးငယ်များ hypermagnesemia ဖြစ်နိုင်သည်။ အသက်ရှုလမ်းကြောင်းဆိုင်ရာ စိတ်ဓာတ်ကျနေပါက မွေးကင်းစကလေးသောက်ဆေး- calcium gluconate 100 mg/kg IV။ မိခင်မဂ္ဂနီစီယမ်အသုံးပြုမှုကို NICU အဖွဲ့ထံ အကြောင်းကြားပါ။"
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

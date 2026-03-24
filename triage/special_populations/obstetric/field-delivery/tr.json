@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Acil Durum Saha Teslimatı",
+  "category": "obstetric",
+  "skill_level": "savaş doktoru",
+  "time_estimate": "Değişir -- 20+ dk",
+  "description": "Zorlu ortamlarda aceleci veya plansız teslimatın yönetimi.",
+  "equipment": [
+    "eldivenler",
+    "temiz bez-battaniyeler",
+    "kablo kelepçeleri veya bağları",
+    "makas",
+    "ampul-şırınga"
+  ],
+  "steps": [
+    "Anneyi sırt üstü veya yarı yatar pozisyonda konumlandırın. Bilinci yerinde değilse sola yana eğim tercih edilir (aortokaval sıkışmayı önler).",
+    "Başın çıkışını kontrol edin; avuç içi ile destekleyin. ÇEKMEYİN.",
+    "Baş çıktıktan sonra ense kordonunu (boyun çevresi) kontrol edin. Varsa başınızın üzerinden kaydırın. Sıkıysa kelepçeleyin ve kesin.",
+    "Varsa ampul şırıngasıyla ağzınızı ve ardından burnunuzu aspire edin.",
+    "Ön omuzun doğumunu, başı hafifçe aşağı doğru çekerek, ardından arka omuz için yukarı doğru çekerek yönlendirin.",
+    "Cesedi teslim edin - teslimat zamanını not edin.",
+    "Bebeği hemen kurulayın ve ısıtın. Sırtını ovalayarak uyarın.",
+    "Kordonu kelepçeleyin ve kesin (bebek stabilse 1-2 dakika bekleyin).",
+    "Plasentayı hafif, kontrollü bir çekişle doğurtun; ZORLAMAYIN.",
+    "Plasentanın doğumundan sonra doğum sonu kanamayı önlemek için oksitosin (varsa) uygulayın.",
+    "Doğum sonu kanamayı değerlendirin - fundal masaj, gerekirse iki elle kompresyon.",
+    "Apgar skorunu 1. ve 5. dakikalarda değerlendirin."
+  ],
+  "warnings": [
+    "Teslimat yakın değilse denemeyin. Hızlı MEDEVAC tercih edilir.",
+    "Omuz distosisi: Omuzlar sıkışmışsa McRoberts manevrası (hiperfleks kalçalar) ve suprapubik basınç uygulayın.",
+    "Doğum sonu kanama, önlenebilir anne ölümünün önde gelen nedenidir; oksitosini hazır bulundurun."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

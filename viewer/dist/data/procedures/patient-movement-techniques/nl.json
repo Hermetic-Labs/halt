@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Technieken voor patiëntbeweging",
+  "category": "casualty-movement",
+  "skill_level": "Basis",
+  "time_estimate": "1-30 min afhankelijk van afstand en methode",
+  "description": "Een slachtoffer onder brand verplaatsen of naar een veiliger locatie brengen voor behandeling. De methode is afhankelijk van het terrein, de afstand, het aantal reddingswerkers en de verwondingen van het slachtoffer. Voorzorg voor snelheid versus wervelkolom is een tactische beslissing: bij TCCC heeft dreiging prioriteit.",
+  "equipment": [
+    "SKED-nest (bij voorkeur)",
+    "NAVO-afval / draagbare brancard",
+    "Geïmproviseerd nest: stokken + jassen/poncho's",
+    "Sleephandvatten (uniform of harnas)",
+    "TACEVAC-tilband"
+  ],
+  "steps": [
+    "ZORG ONDER VUUR: Vuur eerst terug als je gewapend bent. Verplaats het slachtoffer met behulp van de snelste sleepmethode - stop niet om te behandelen in de kill-zone.",
+    "HASTY DRAG (één redder): pak de kraag/sleephandgreep bij de schouders, sleep op de rug. Bescherm het hoofd tegen schokken.",
+    "BRANDWEERMAN CARRY (één hulpverlener): til het slachtoffer over de schouders voor langere afstanden - vereist dat het slachtoffer bewusteloos is of meewerkt.",
+    "DRAGEN VOOR TWEE PERSONEN: reddingswerkers verbinden de armen onder de rug en knieën van het slachtoffer. Sneller dan slepen voor korte afstanden.",
+    "VERBETERD strooisel: leg twee palen op een afstand van 45 centimeter van elkaar. Weef jassen door stokken met knopen aan de binnenkant. Test vóór het laden van het slachtoffer.",
+    "SKED LITTER: uitrollen, onder het slachtoffer schuiven, omwikkelen en vastzetten met riemen. Vereist 2-4 vervoerders.",
+    "Bij het laden: til tot 3 op, houd de hoofd/lichaam-uitlijning in stand, minimaliseer de beweging van de wervelkolom indien mogelijk.",
+    "Als er sprake is van ruggengraatletsel en er geen gevaar bestaat: handhaaf de inline-stabilisatie tijdens de beweging. Eén persoon die zich bezighoudt met hoofdcontrole.",
+    "Zoek dekking en beoordeel ABC opnieuw."
+  ],
+  "warnings": [
+    "TCCC-prioriteit: leven > ledematen > voorzorg voor de wervelkolom. Stel de beweging vanuit een kill-zone niet uit vanwege voorzorgsmaatregelen voor de wervelkolom.",
+    "Het dragen van een brandweerman is gecontra-indiceerd bij vermoedelijk ruggenmergletsel, een femurfractuur of een penetrerend buiktrauma.",
+    "Geïmproviseerde nesten: test het gewichtsvermogen voordat u een slachtoffer toevertrouwt.",
+    "Een slachtoffer verplaatsen met een tourniquet: controleer of de tourniquet niet is losgeraakt tijdens de beweging."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Kinderen zijn lichter: één redder kan langer vervoerd worden. Houd het hoofd proportioneel groter – hoger zwaartepunt tijdens het dragen."
+    },
+    "obstetric": {
+      "note": "Vermijd buikligging of druk op de buik. Lateraal (bij voorkeur linkerkant) of liggend transport met linkerheupwig."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

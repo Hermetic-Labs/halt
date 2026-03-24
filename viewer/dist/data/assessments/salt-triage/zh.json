@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "SALT 分类（分类、评估、救生干预、治疗/运输）",
+  "category": "mass-casualty",
+  "description": "大规模伤亡伤员分类协议。军事和民用环境中多人伤亡事件的标准。",
+  "instructions": "第 1 步：全局排序（行走、挥手、静止）。步骤 2：按优先顺序进行评估。第 3 步：执行救生干预措施（控制大出血、开放气道、针头减压、自动注射器）。第 4 步：分配类别。",
+  "categories": [
+    {
+      "color": "黑色",
+      "label": "待产/已故",
+      "description": "考虑到可用资源，不太可能生存，或确认已死亡"
+    },
+    {
+      "color": "红色",
+      "label": "立即 (T1)",
+      "description": "危及生命的伤害，立即干预即可幸存"
+    },
+    {
+      "color": "黄色",
+      "label": "延迟 (T2)",
+      "description": "伤势严重但稳定，可以等待护理"
+    },
+    {
+      "color": "绿色",
+      "label": "最小（T3）",
+      "description": "轻伤——行走受伤"
+    },
+    {
+      "color": "灰色",
+      "label": "期待",
+      "description": "鉴于目前的资源，无法挽救的伤害——仅提供舒适护理"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "JumpSTART 分类算法修改了儿科患者的 SALT。 8 岁以下儿童的呼吸频率阈值和评估步骤有所不同。"
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

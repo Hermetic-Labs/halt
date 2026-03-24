@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Aplikasi Segel Dada Oklusif",
+  "category": "respiration",
+  "skill_level": "penyelamat tempur",
+  "time_estimate": "1-2 menit",
+  "description": "Menutup luka dada akibat menghisap (pneumotoraks terbuka) dengan penutup dada berventilasi untuk mencegah masuknya udara sekaligus memungkinkan pelepasan tekanan.",
+  "equipment": [
+    "segel dada berventilasi",
+    "sarung tangan",
+    "gunting trauma"
+  ],
+  "steps": [
+    "Paparkan lukanya - potong atau lepas pakaian.",
+    "Usap kulit di sekitar luka sekering mungkin (darah, keringat mencegah adhesi).",
+    "Buka paket segel dada berventilasi.",
+    "Tempatkan segel di atas luka, di tengah lubang. Tekan dengan kuat, pastikan semua tepinya menempel.",
+    "Periksa orientasi katup -- ventilasi harus menghadap ke luar (menjauhi kulit) dan tidak terhalang.",
+    "Kaji ulang suara napas. Jika kerusakan berlanjut setelah penyegelan, pertimbangkan tension pneumothorax - lakukan NCD.",
+    "Jika segel berventilasi tidak tersedia, segel non-ventilasi dapat digunakan tetapi HARUS dipantau untuk mengetahui perkembangan tension pneumothorax."
+  ],
+  "warnings": [
+    "Segel tanpa ventilasi dapat mengubah pneumotoraks sederhana menjadi pneumotoraks tegangan -- gunakan segel berventilasi hanya di lapangan.",
+    "Perekatan tiga sisi (segel improvisasi) tidak lagi direkomendasikan oleh CoTCCC -- gunakan segel dada berventilasi komersial.",
+    "Selalu tempelkan segel pada luka MASUK dan KELUAR."
+  ],
+  "follows": [],
+  "precedes": [
+    "dekompresi jarum"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "SALT Triyaj (Sırala, Değerlendir, Hayat Kurtarıcı Müdahaleler, Tedavi/Nakil)",
+  "category": "mass-casualty",
+  "description": "Kitlesel yaralanma triyaj protokolü. Askeri ve sivil ortamlarda çok kayıplı olaylar için standart.",
+  "instructions": "Adım 1: Küresel sıralama (yürümek, el sallamak, hareketsiz). Adım 2: Öncelik sırasına göre değerlendirin. Adım 3: Hayat kurtarıcı müdahaleleri gerçekleştirin (büyük kanamayı kontrol edin, hava yolunu açın, iğne dekompresyonu, otomatik enjektörler). Adım 4: Kategori atayın.",
+  "categories": [
+    {
+      "color": "siyah",
+      "label": "Bekleyen/Ölen",
+      "description": "Eldeki kaynaklar göz önüne alındığında hayatta kalma ihtimali yok ya da öldüğü doğrulandı"
+    },
+    {
+      "color": "kırmızı",
+      "label": "Hemen (T1)",
+      "description": "Hayati tehlikesi bulunan yaralılar, acil müdahaleyle kurtulacak"
+    },
+    {
+      "color": "sarı",
+      "label": "Gecikmeli (T2)",
+      "description": "Ciddi ama stabil yaralanmalar, bakım için bekleyebilir"
+    },
+    {
+      "color": "yeşil",
+      "label": "Minimum (T3)",
+      "description": "Hafif yaralanmalar -- yürüyen yaralılar"
+    },
+    {
+      "color": "gri",
+      "label": "Bekleyen",
+      "description": "Mevcut kaynaklar göz önüne alındığında hayatta kalamayacak yaralanmalar - yalnızca konfor bakımı"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "JumpSTART triyaj algoritması pediatrik hastalar için SALT'ı değiştirir. Solunum hızı eşikleri ve değerlendirme adımları 8 yaşın altındaki çocuklar için farklılık gösterir."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

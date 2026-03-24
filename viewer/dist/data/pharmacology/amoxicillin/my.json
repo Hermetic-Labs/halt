@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicillin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "Trimox"
+  ],
+  "description": "Broad-spectrum aminopenicillin ပဋိဇီဝဆေး။ အနာပိုးဝင်ခြင်းအတွက် ခံတွင်းသုံး ပဋိဇီဝဆေး။ ပြင်းထန်သောဒဏ်ရာမဟုတ်သောဒဏ်ရာများအတွက် TCCC တိုက်ခိုက်ရေးဆေးပြား၏တစ်စိတ်တစ်ပိုင်း။",
+  "indications": [
+    "အနာပိုးဝင်ခြင်း (အပျော့စား-အလယ်အလတ်အနာများ၊ ပါးစပ်ဆေးပြား)",
+    "တစ်သျှူးပျော့ပိုးဝင်ခြင်း",
+    "အသက်ရှူလမ်းကြောင်းပိုးဝင်ခြင်း"
+  ],
+  "dose": "500 mg PO 8 နာရီ x 7 ရက်တိုင်း (အနာရောဂါကာကွယ်ခြင်း)။ 875 mg PO 12 နာရီတိုင်း အစားထိုး။",
+  "route": [
+    "စာတိုက်"
+  ],
+  "window": "ဒဏ်ရာကြိုတင်ကာကွယ်ရန် ဒဏ်ရာမှ ၃ နာရီအတွင်း စတင်ပါ။",
+  "contraindications": [
+    "လူသိများသော Penicillin ဓာတ်မတည့်ခြင်း (အစား doxycycline ကိုသုံးပါ)",
+    "Mononucleosis (အဖုဖြစ်နိုင်ချေ)"
+  ],
+  "warnings": [
+    "ပင်နီဆီလင်နှင့် မတည့်ပါက- doxycycline 100mg PO BID ကို အစားထိုးပါ။",
+    "ခံတွင်းလမ်းကြောင်းတစ်ခုတည်းသာ - ပြင်းထန်သောဒဏ်ရာများအတွက် IV ပဋိဇီဝဆေးများ (cefazolin/ciprofloxacin) ကိုသုံးပါ။"
+  ],
+  "regional_names": {
+    "generic": "amoxicillin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/day q8h (အမြင့်ဆုံး 500 mg/dose) ကို ပိုင်းခြားပါ။ ကိုယ်အလေးချိန်အခြေခံ Broselow အကိုးအကားကိုသုံးပါ။",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "ကိုယ်ဝန်ရှိစဉ် အန္တရာယ်ကင်းသည်။ Doxycycline (ကိုယ်ဝန်၌ တားမြစ်ထားသော) ကို ဦးစားပေးသည်။"
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t868419",
+    "icd10":  "T868419",
+    "name":  "Corneal transplant failure, unspecified eye",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Corneal transplant failure, unspecified eye",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

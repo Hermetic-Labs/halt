@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t23741s",
+    "icd10":  "T23741S",
+    "name":  "Corrosion of third degree of multiple right fingers (nail), including thumb, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Corrosion of third degree of multiple right fingers (nail), including thumb, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

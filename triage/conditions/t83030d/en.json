@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t83030d",
+    "icd10":  "T83030D",
+    "name":  "Leakage of cystostomy catheter, subsequent encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Leakage of cystostomy catheter, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s46222s",
+    "icd10":  "S46222S",
+    "name":  "Laceration of muscle, fascia and tendon of other parts of biceps, left arm, sequela",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Laceration of muscle, fascia and tendon of other parts of biceps, left arm, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

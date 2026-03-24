@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Teknika fihetsehan'ny marary",
+  "category": "casualty-movement",
+  "skill_level": "fototra",
+  "time_estimate": "1-30 min arakaraka ny halavirana sy ny fomba",
+  "description": "Mamindra olona maty ao anaty afo na any amin'ny toerana azo antoka kokoa hanaovana fitsaboana. Ny fomba dia miankina amin'ny terrain, ny halavirana, ny isan'ny mpamonjy voina, ary ny faharatran'ny niharam-boina. Fanapahan-kevitra ara-tetika ny hafainganam-pandeha vs. fisorohana ny hazondamosina -- ao amin'ny TCCC, ny fandrahonana no atao laharam-pahamehana.",
+  "equipment": [
+    "SKED fako (tia)",
+    "OTAN fako / fampitana portable",
+    "Fako namboarina: bao + palitao/poncho",
+    "Tarika tantana (fanamiana na harness)",
+    "TACEVAC antsamotady"
+  ],
+  "steps": [
+    "FIkarakarana eo ambany afo: Avereno tifitra aloha raha mitam-piadiana. Alefaso ny tra-boina amin'ny alàlan'ny fomba fisintonana haingana indrindra -- aza mijanona amin'ny fitsaboana any amin'ny faritra famonoana.",
+    "HASTY DRAG (mpamonjy voina iray): alaivo ny vozon'akanjony / tarihina eo amin'ny soroka, tarihina eo aoriana. Arovy ny loha amin'ny fiatraikany.",
+    "MITONDRA FIREMANANA (mpamonjy voina iray): mampiakatra ny sorony eo ambonin'ny soroka amin'ny halavirana lavitra - mitaky ny tsy nahatsiaro tena na ny fiaraha-miasa.",
+    "MITONDRA OLONA ROA: mampifamatotra ny sandry eo ambanin'ny lamosina sy ny lohalika ny mpamonjy voina. Haingana kokoa noho ny fisintonana amin'ny halavirana fohy.",
+    "Fako mihatsara: mametraka bao roa mirefy 18 santimetatra. Manenona palitao amin'ny bao misy bokotra ao anatiny. Andramo alohan'ny hampidirana ny maty.",
+    "SKED LITTER: esory ny horonana, atsofohy ao ambanin'ny lozam-pifamoivoizana, fonosina ary arovana amin'ny tady. Mila mpitatitra 2-4.",
+    "Rehefa mitondra entana: atsangano amin'ny isa 3, tazomy ny firindran'ny loha/vatana, manamaivana ny fihetsehan'ny hazondamosina raha azo atao.",
+    "Raha ahiana ny ratra amin'ny hazondamosina ary tsy misy fandrahonana: tohizo ny fanamafisana an-tserasera mandritra ny hetsika. Olona iray natokana ho an'ny fifehezana ny loha.",
+    "Mandrosoa mankany amin'ny fonony, dia tombano indray ny ABC."
+  ],
+  "warnings": [
+    "Laharam-pahamehana TCCC: aina> rantsambatana> fitandremana ny hazondamosina. Aza ahemotra ny hetsika avy amin'ny faritra famonoana ho an'ny fitandremana ny hazondamosina.",
+    "Ny fireman carry dia contraindicated amin'ny ahiahiana ho ratra amin'ny hazondamosina, femur fracture, na trauma amin'ny kibo.",
+    "Fako namboarina: andramo ny lanjan'ny lanja alohan'ny hitokisana amin'ny maty.",
+    "Mamindra olona voan'ny tourniquet: jereo fa tsy nivaha ny tourniquet nandritra ny hetsika."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Maivana kokoa ny ankizy - ny mpamonjy voina iray dia azo atao ela kokoa. Tazony ho lehibe kokoa ny loha -- ivon'ny sinton'ny tany rehefa mitondra."
+    },
+    "obstetric": {
+      "note": "Fadio ny fanerena na fanerena ny kibo. Lateral (ankavia no tiana) na fitateram-bahoaka miaraka amin'ny andilany havia."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

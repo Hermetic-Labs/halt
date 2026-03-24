@@ -1,0 +1,47 @@
+﻿{
+    "id":  "txa",
+    "name":  "Tranexamic Acid (TXA)",
+    "category":  "hemostatic",
+    "rxnorm":  "40769",
+    "brand_names":  [
+                        "Cyklokapron",
+                        "Lysteda"
+                    ],
+    "description":  "Antifibrinolytic agent that inhibits the breakdown of blood clots. Significantly reduces mortality from hemorrhagic shock when given early. Recommended by CoTCCC for all casualties with significant hemorrhage or at risk of significant hemorrhage.",
+    "indications":  [
+                        "Significant external or suspected internal hemorrhage",
+                        "Hemorrhagic shock",
+                        "High-risk of hemorrhage (mechanism of injury)"
+                    ],
+    "dose":  "1g IV/IO over 10 minutes, followed by 1g IV/IO over 8 hours. If IV/IO unavailable: 650mg PO x2 (1.3g total) -- TCCC PO option.",
+    "route":  [
+                  "IV",
+                  "IO",
+                  "PO"
+              ],
+    "window":  "MUST be administered within 3 hours of injury. Beyond 3 hours, TXA may INCREASE mortality -- do not give.",
+    "contraindications":  [
+                              "History of thromboembolic disease (DVT, PE, stroke)",
+                              "Disseminated Intravascular Coagulation (DIC)",
+                              "\u003e 3 hours post-injury"
+                          ],
+    "warnings":  [
+                     "Log time of administration immediately -- window is 3 hours from time of injury, not time of arrival.",
+                     "Do not confuse IV dose (1g) with oral dose."
+                 ],
+    "regional_names":  {
+                           "generic":  "tranexamic acid",
+                           "US":  "Cyklokapron",
+                           "UK":  "Cyklokapron"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "15 mg/kg IV (max 1g). Evidence emerging -- use clinical judgment.",
+                                        "note":  "Same 3-hour window applies."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Indicated for postpartum hemorrhage. Safe in pregnancy. Same adult dosing applies."
+                                    }
+                  },
+    "source":  "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

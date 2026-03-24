@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t71134s",
+    "icd10":  "T71134S",
+    "name":  "Asphyxiation due to being trapped in bed linens, undetermined, sequela",
+    "category":  "environmental-injury",
+    "triage_priority":  "",
+    "description":  "Asphyxiation due to being trapped in bed linens, undetermined, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

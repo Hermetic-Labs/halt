@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oksitosin",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitosin",
+    "Sintosinon"
+  ],
+  "description": "Endojen peptid hormonu. Doğum sonu kanamanın (PPH) önlenmesi ve tedavisinde birinci basamak uterotonik. Rahim kasılmasına neden olur ve doğumdan sonra kan kaybını azaltır. Plasental doğumdan SONRA verilir.",
+  "indications": [
+    "Doğum sonu kanamanın önlenmesi (doğum sonrası rutin)",
+    "Doğum sonu kanama tedavisi (uterus atonisi)",
+    "Doğumun indüksiyonu (yalnızca kontrollü ayar)"
+  ],
+  "dose": "PPH'nin önlenmesi: Plasental doğumdan hemen sonra 10 ünite IM (tercih edilen saha yolu). PPH tedavisi: 1 L IV'te 10-40 ünite, 40-80 mU/dakika hızında infüze edin. IV mevcut değilse: 10 ünite IM.",
+  "route": [
+    "IV",
+    "anlık ileti"
+  ],
+  "window": "Plasental doğumdan SONRA verin; plasentanın doğumundan önce vermek plasentayı hapsedebilir.",
+  "contraindications": [
+    "Plasental doğumdan önce (plasenta sıkışabilir)",
+    "Kafanın doğmamasıyla birlikte fetal sıkıntı",
+    "Bilinen aşırı duyarlılık"
+  ],
+  "warnings": [
+    "PLASENTA DOĞUMDAN SONRA VERİN - Plasentanın hapsedilmesi yaşamı tehdit eden bir komplikasyondur.",
+    "IV bolus ciddi hipotansiyona ve kardiyak aritmiye neden olabilir; daima seyreltin ve yavaşça infüze edin.",
+    "Büyük hacimlerde antidiüretik etki - hiponatremiyi izleyin."
+  ],
+  "regional_names": {
+    "generic": "oksitosin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Yok -- yalnızca obstetrik kullanım.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Birincil uterotonik. Uterus atonisi yanıt vermezse misoprostol, traneksamik asit (TXA), iki elle uterus kompresyonunu ve hızlı MEDEVAC'ı düşünün."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

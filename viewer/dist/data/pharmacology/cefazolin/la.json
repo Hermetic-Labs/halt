@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Cefazolin",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Ancef",
+    "Kefzol"
+  ],
+  "description": "Generatio prima cephalosporin. Primo-linea antibiotica parenterale pro gravibus infectionibus vulneris et prophylaxis chirurgica. Bonum gram-positivum coverage possidet MSSA. Da intra 60 minuta incisionem chirurgicam pro prophylaxi.",
+  "indications": [
+    "Vulnus chirurgicum prophylaxis",
+    "Gravis mollis textus contagio",
+    "fractura aperta prophylaxis",
+    "Infectiones cutis et cutis structura"
+  ],
+  "dose": "1-2g IV/IM q8h. Prophylaxis chirurgica: 2g IV intra 60 minuta ante incisionem. Repetere 2g si surgery > 4 horas.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Pro chirurgicis prophylaxibus: intra 60 minuta incisionis da.",
+  "contraindications": [
+    "Notum cephalosporin allergia",
+    "Gravi penicillin allergy (5-10% cross-reactivity)"
+  ],
+  "warnings": [
+    "Crux-reactividad cum allergia penicillin: caute utere in aegris penicillin-allergicis.",
+    "Adjust dosem in renum incom."
+  ],
+  "regional_names": {
+    "generic": "cefazolin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM q8h (max 2g/dose). Prophylaxis: 30 mg / kg (max 2g) ante incisionem.",
+      "note": "Tutus et studiosus in pediatricis."
+    },
+    "obstetric": {
+      "note": "Tutus in graviditate et lactatione. Anteferendo parenterale antibioticam ob rationes obstetricas."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

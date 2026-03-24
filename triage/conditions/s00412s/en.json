@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s00412s",
+    "icd10":  "S00412S",
+    "name":  "Abrasion of left ear, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Abrasion of left ear, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

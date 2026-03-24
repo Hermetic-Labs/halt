@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s068a4d",
+    "icd10":  "S068A4D",
+    "name":  "Primary blast injury of brain, not elsewhere classified with loss of consciousness of 6 hours to 24 hours, subsequent encounter",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Primary blast injury of brain, not elsewhere classified with loss of consciousness of 6 hours to 24 hours, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

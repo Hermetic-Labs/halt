@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Classification des hémorragies (classe I-IV)",
+  "category": "circulatory",
+  "description": "Classification des hémorragies ATLS par perte de sang estimée et réponse physiologique.",
+  "instructions": "Estimez la perte de sang et faites correspondre les signes physiologiques à la classe. L’urgence du traitement augmente avec la classe.",
+  "scoring": [
+    {
+      "class": "Je",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Normale",
+      "rr": "14-20",
+      "mental_status": "Normale",
+      "treatment": "Observer, fluides PO si possible"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Normale",
+      "rr": "20-30",
+      "mental_status": "Anxieux",
+      "treatment": "Accès IV, cristalloïde isotonique"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Diminué",
+      "rr": "30-40",
+      "mental_status": "Confus",
+      "treatment": "Fluides IV + produits sanguins, contrôle immédiat des hémorragies"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Très faible",
+      "rr": ">40",
+      "mental_status": "Léthargique/inconscient",
+      "treatment": "Contrôle chirurgical immédiat des hémorragies – mettant la vie en danger"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Les enfants compensent plus longtemps avant de décompenser. Les classes III/IV peuvent présenter une TA proche de la normale jusqu'à un collapsus soudain. Faites confiance à la tachycardie et à l’état mental plutôt qu’à la tension artérielle."
+    },
+    "obstetric": {
+      "note": "Les patientes enceintes ont une augmentation du volume sanguin de 40 à 50 %. Peut tolérer une perte plus importante avant de montrer des signes. La souffrance fœtale peut précéder les signes maternels."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

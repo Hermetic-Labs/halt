@@ -1,0 +1,22 @@
+{
+  "id": "s0002xa",
+  "icd10": "S0002XA",
+  "name": "Blister (nonthermal) ti scalp, ipade akọkọ",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Blister (nonthermal) ti awọ-ori, ipade akọkọ",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

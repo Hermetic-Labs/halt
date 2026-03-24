@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "ケタミン",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "ケタラール"
+  ],
+  "description": "気道反射と血行力学的安定性を維持しながら、鎮痛、鎮静、記憶喪失を提供する解離性麻酔薬。 TCCC で好ましい鎮痛薬 -- オピオイドとは異なり、血圧を維持します。鎮静処置や RSI にも使用されます。",
+  "indications": [
+    "中等度から重度の痛みの管理",
+    "鎮静処置 (創傷パッキング、骨折整復)",
+    "RSI 誘発剤",
+    "戦闘麻酔"
+  ],
+  "dose": "鎮痛: 0.1-0.3 mg/kg IV/IO (ゆっくりプッシュ) | 0.5 mg/kg IM。処置的鎮静: 1-2 mg/kg IV | 4～6 mg/kg IM。 RSI 誘発: 1-2 mg/kg IV。",
+  "route": [
+    "Ⅳ",
+    "イオ",
+    "IM",
+    "で"
+  ],
+  "window": "",
+  "contraindications": [
+    "既知の統合失調症または活動性精神病",
+    "気道保護なしで頭蓋内圧が上昇（相対的）"
+  ],
+  "warnings": [
+    "出現反応（せん妄/幻覚） -- 可能であればミダゾラム 1～2mg IV で軽減します。",
+    "分泌物が増加します -- 吸引の準備をしてください。",
+    "喉頭けいれんはまれですが可能性があります -- BVM を利用できるようにしてください。"
+  ],
+  "regional_names": {
+    "generic": "ケタミン"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "鎮痛：0.5 mg/kg IV。処置的鎮静: 1-2 mg/kg IV | 4-5 mg/kg IM。",
+      "note": "小児科でよく勉強しました。痛みを伴う処置に適しています。"
+    },
+    "obstetric": {
+      "note": "低用量で母体の鎮痛に対して安全です。出産間近に出産した場合、高用量で新生児の呼吸抑制を引き起こす可能性があります。"
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

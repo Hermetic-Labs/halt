@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t7602xs",
+    "icd10":  "T7602XS",
+    "name":  "Child neglect or abandonment, suspected, sequela",
+    "category":  "environmental-injury",
+    "triage_priority":  "",
+    "description":  "Child neglect or abandonment, suspected, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

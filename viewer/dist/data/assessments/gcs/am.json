@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "ግላስጎው ኮማ ልኬት (ጂሲኤስ)",
+  "category": "neurological",
+  "description": "በአይን ፣ በቃላት እና በሞተር ምላሾች በኩል ደረጃውን የጠበቀ የንቃተ ህሊና ውጤት የነርቭ። የውጤት ክልል 3-15።",
+  "instructions": "እያንዳንዱን ሶስት ጎራዎች በተናጥል ያስመዝግቡ። ለጠቅላላ GCS ሦስቱንም ነጥቦች አጠቃልል።",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "ድንገተኛ"
+        },
+        {
+          "score": 3,
+          "label": "ድምጽ ለመስጠት"
+        },
+        {
+          "score": 2,
+          "label": "ወደ ህመም"
+        },
+        {
+          "score": 1,
+          "label": "ምንም"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "ተኮር"
+        },
+        {
+          "score": 4,
+          "label": "ግራ ተጋባ"
+        },
+        {
+          "score": 3,
+          "label": "ተገቢ ያልሆኑ ቃላት"
+        },
+        {
+          "score": 2,
+          "label": "ለመረዳት የማይቻል ድምፆች"
+        },
+        {
+          "score": 1,
+          "label": "ምንም"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "ትዕዛዞችን ያከብራል"
+        },
+        {
+          "score": 5,
+          "label": "ህመምን አካባቢያዊ ያደርጋል"
+        },
+        {
+          "score": 4,
+          "label": "ህመምን ያስወግዳል"
+        },
+        {
+          "score": 3,
+          "label": "ያልተለመደ መታጠፍ (ማጌጥ)"
+        },
+        {
+          "score": 2,
+          "label": "ቅጥያ (የቀነሰ)"
+        },
+        {
+          "score": 1,
+          "label": "ምንም"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "ቀላል TBI -- በቅርበት ይከታተሉ"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "መጠነኛ ቲቢአይ -- የአየር መንገድ ማዘጋጀት"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "ከባድ ቲቢአይ - ወዲያውኑ አደጋ ላይ የአየር መተላለፊያ፣ ከተቻለ ወደ ውስጥ ያስገባል።"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "ዕድሜያቸው ከ 2 ዓመት በታች ለሆኑ ሕፃናት የሕፃናት ሕክምና GCS (pGCS) ይጠቀሙ። ለቅድመ-ቃል ልጆች የቃል ነጥብ ተስተካክሏል።"
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

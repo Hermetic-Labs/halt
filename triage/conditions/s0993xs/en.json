@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s0993xs",
+    "icd10":  "S0993XS",
+    "name":  "Unspecified injury of face, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified injury of face, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

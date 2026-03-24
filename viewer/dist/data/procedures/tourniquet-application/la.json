@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Tourniquet Application ( Certamina Application Tourniquet -- CAT )",
+  "category": "hemorrhage-control",
+  "skill_level": "quis-respondet",
+  "time_estimate": "30-60 sec",
+  "description": "Haemorrhagia definitiva imperium pro sanguinis extremitate vitae minabatur. Applica mane -- ne moreris.",
+  "equipment": [
+    "cat-tourniquet",
+    "permanent-mark"
+  ],
+  "steps": [
+    "Applica tourniquet 2—3 pollices (5-7 cm) proximalis (super) ulcus — super vestem acceptum est.",
+    "Itineraria circa limbum et linum per se adhaerens fibulam adaptori frictioni.",
+    "Cohors stricta trahere, et in se recipere securam.",
+    "Torquent ferulae suculae, donec sanguis sistit vel pulsus exterior abfuerit.",
+    "Sucula in tonde sucula claudite.",
+    "Applicare sucula lorum super virga sucula secure.",
+    "Scribe tempus applicationis directe in tourniquet (utendi titulo) ET in charta TCCC.",
+    "Exponere et re- estimare vulnus. Post V minuta candam."
+  ],
+  "warnings": [
+    "Tourniquet semel in agro applicatum non remove - tantum exercitati medici curatores in occasu moderato.",
+    "Tempus est criticum: tourniquet >2 horas signanter auget periculum membri damni. Log statim tempore.",
+    "Noli applicare super iuncturam. Si plura membra vulnera habet, omnibus proxima vulnera adhibenda est.",
+    "Improvisae tourniquets (cingula, funes) signanter minus efficaces sunt."
+  ],
+  "follows": [
+    "direct-pressione",
+    "vulnus-packing"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Angusta pediatrica tourniquet si available utere. Latin CAT adhiberi potest sed diligenter obstringere. Membra minora sunt - venae distentae diligenter reprehendo."
+    },
+    "obstetric": {
+      "note": "Vexillum ad extremas plagas application. Abdomen vel pelvis non convenit."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

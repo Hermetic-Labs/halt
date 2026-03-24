@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Usoro mmegharị ndị ọrịa",
+  "category": "casualty-movement",
+  "skill_level": "Ihe ndabere",
+  "time_estimate": "1-30 min dabere na anya na usoro",
+  "description": "Ịbuga onye merụrụ ahụ n'okpuru ọkụ ma ọ bụ gaa n'ebe dị mma maka ọgwụgwọ. Usoro a dabere na ala, anya, ọnụọgụ ndị nnapụta, na mmerụ ahụ nke onye ahụ merụrụ ahụ. Ịkpachara anya ọsọ ọsọ vs. spinal bụ mkpebi akọ - na TCCC, iyi egwu na-ebute ụzọ.",
+  "equipment": [
+    "SKED-awụba n'oké osimiri (ọ masịrị)",
+    "NATO-awụba n'oké osimiri / obere ihe na-agbatị",
+    "Mpempe akwụkwọ dị mma: okporo osisi + jaket / ponchos",
+    "Dịrị aka (uwe ma ọ bụ ihe njide)",
+    "èbè TACEVAC"
+  ],
+  "steps": [
+    "Nlekọta n'okpuru ọkụ: buru ụzọ weghachi ọkụ ma ọ bụrụ na ọ bụ ngwa ọgụ. Jiri usoro ịdọrọ ngwa ngwa bugharịa ndị merụrụ ahụ -- akwụsịla ọgwụgwọ na mpaghara igbu mmadụ.",
+    "OGWU (otu onye nnapụta): jide olu akwa/dọkpụrụ aka n'ubu, dọrọ na azụ. Chebe isi pụọ na mmetụta.",
+    "Ọkụ Ọkụ (otu onye nnapụta): bulite ihe nwuru n'elu ubu ogologo ogologo -- chọrọ onye merụrụ ahụ ka ọ ghara ịma ihe ma ọ bụ imekọ ihe ọnụ.",
+    "MMADỤ ABỤỌ: Ndị nnapụta na-ejikọta aka n'okpuru azụ na ikpere ndị ihe merụrụ ahụ. Ọsọ karịa ịdọrọ maka obere anya.",
+    "IMPROVISED LITTER: lay two poles 18 inches apart. Kpaa jaketị site na mkpanaka nwere bọtịnụ n'ime. Nwalee tupu ibunye ihe oruru.",
+    "SKED LITTER: bupugharịa, sụọ n'okpuru ndị ihe mberede, kechie ma jiri eriri chekwaa ya. Achọrọ 2-4 ndị na-ebu.",
+    "Mgbe ị na-ebu: bulite na ọnụ ọgụgụ 3, jikwaa nhazi isi/anụ ahụ, belata mmegharị azụ azụ mgbe enwere ike.",
+    "Ọ bụrụ na a na-enyo enyo mmerụ azụ azụ na enweghị ihe iyi egwu: jigide nkwụsi ike inline n'oge mmegharị ahụ. Otu onye raara onwe ya nye njikwa isi.",
+    "Gaa na mkpuchi, wee nyochaa ABC."
+  ],
+  "warnings": [
+    "Ihe kacha mkpa TCCC: ndụ> akụkụ> nlezianya azụ azụ. Egbula oge mmegharị site na mpaghara igbu egbu maka ịkpachara anya azụ azụ.",
+    "Akwụsịla onye na-agba ọkụ na-ebu ya na mmerụ ahụ a na-enyo enyo na ọnya azụ, mgbaji femur, ma ọ bụ banye n'ime trauma abdominal.",
+    "Mpempe akwụkwọ dị mma: nwalee ikike ịdị arọ tupu ị tụkwasị onye nwere nsogbu obi.",
+    "Iji njem nlegharị anya na-ebuga ndị ihe ọghọm: lelee njem nlegharị anya atọpụbeghị n'oge mmegharị."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Ụmụaka dị mfe karị - otu onye nnapụta na-ebu ogologo oge. Debe isi ka ọ buru ibu -- etiti ike ndọda dị elu mgbe ị na-ebu."
+    },
+    "obstetric": {
+      "note": "Zere ọnọdụ dị mfe ma ọ bụ nrụgide na afọ. Mkpesa (n'akụkụ aka ekpe masịrị) ma ọ bụ mbugharị n'azụ ya na úkwù aka ekpe."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

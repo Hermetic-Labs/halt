@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t86838",
+    "icd10":  "T86838",
+    "name":  "Other complications of bone graft",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Other complications of bone graft",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

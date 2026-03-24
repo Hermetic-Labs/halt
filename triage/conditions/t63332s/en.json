@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t63332s",
+    "icd10":  "T63332S",
+    "name":  "Toxic effect of venom of brown recluse spider, intentional self-harm, sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Toxic effect of venom of brown recluse spider, intentional self-harm, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

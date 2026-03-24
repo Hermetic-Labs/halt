@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxone",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "Kloxxado"
+  ],
+  "description": "Mapagkumpitensyang opioid receptor antagonist. Mabilis na binabaligtad ang opioid-induced respiratory depression, sedation, at analgesia. Simula IV: 2 min, IM: 5 min, IN: 8-13 min. Mas maikli ang tagal kaysa sa karamihan ng mga opioid -- maaaring kailanganin ang paulit-ulit na dosing.",
+  "indications": [
+    "Overdose ng opioid o respiratory depression",
+    "Pagbabalik ng opioid sedation",
+    "Pinaghihinalaang nasawi sa opioid"
+  ],
+  "dose": "0.4-2 mg IV/IO/IM/IN. Ulitin ang q2-3 min kung kinakailangan. Pinakamataas na 10mg. Intranasal (IN): 2mg bawat butas ng ilong.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "SA",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Walang ganap na contraindications sa overdose setting"
+  ],
+  "warnings": [
+    "Ang tagal ng pagkilos (30-90 min) ay mas maikli kaysa sa karamihan ng mga opioid -- maaaring muling mag-narkot ang pasyente. Subaybayan nang hindi bababa sa 1 oras pagkatapos ng huling dosis.",
+    "Nag-uudyok ng talamak na pag-withdraw ng opioid -- maaaring magdulot ng pagkabalisa, tachycardia, pulmonary edema sa mga pasyenteng umaasa sa opioid.",
+    "Babagtarin ang analgesia -- ang pasyente ay maaaring maging matinding panlaban sa sakit."
+  ],
+  "regional_names": {
+    "generic": "naloxone",
+    "US": "Narcan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.01 mg/kg IV/IM/IN (max 0.4 mg). Ulitin q2-3 min PRN.",
+      "note": "Neonatal: 0.01 mg/kg para sa pagbabalik ng maternal opioid."
+    },
+    "obstetric": {
+      "note": "Ligtas sa pagbubuntis. Kung ibibigay sa ina na malapit nang manganak, subaybayan ang neonate para sa withdrawal."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

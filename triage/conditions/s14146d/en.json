@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s14146d",
+    "icd10":  "S14146D",
+    "name":  "Brown-Sequard syndrome at C6 level of cervical spinal cord, subsequent encounter",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Brown-Sequard syndrome at C6 level of cervical spinal cord, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

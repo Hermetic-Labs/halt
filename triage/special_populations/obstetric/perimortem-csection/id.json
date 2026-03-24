@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Operasi Caesar Perimortem (PMCS)",
+  "category": "obstetric",
+  "skill_level": "dokter-ahli bedah",
+  "time_estimate": "3-5 menit",
+  "description": "Persalinan sesar darurat dalam waktu 4 menit setelah serangan jantung ibu untuk memungkinkan CPR yang efektif dan potensi kelangsungan hidup neonatal. Rahim menekan aorta dan IVC -- persalinan juga merupakan tindakan resusitasi bagi ibu.",
+  "equipment": [
+    "pisau bedah",
+    "sarung tangan",
+    "retraktor",
+    "penjepit kabel",
+    "peralatan-resusitasi-neonatal"
+  ],
+  "steps": [
+    "Lanjutkan CPR tanpa gangguan.",
+    "Buat sayatan garis tengah vertikal dari umbilikus hingga pubis melalui kulit dan fasia.",
+    "Sayatan segmen bawah rahim secara horizontal.",
+    "Melahirkan bayi -- perhatikan waktunya.",
+    "Jepit dan potong kabelnya.",
+    "Serahkan bayi ke penyedia kedua untuk resusitasi neonatal.",
+    "Lepaskan plasenta.",
+    "Bungkus rahim dan perut jika penutupan definitif tidak dapat segera dilakukan.",
+    "Lanjutkan resusitasi ibu - ROSC lebih mungkin terjadi setelah dekompresi uterus."
+  ],
+  "warnings": [
+    "Waktu pengambilan keputusan untuk melahirkan harus kurang dari 5 menit untuk mendapatkan hasil terbaik bagi ibu dan janin.",
+    "Prosedur ini merupakan upaya terakhir -- hanya jika ibu mengalami serangan jantung dan persalinan akan segera terjadi (usia kehamilan >20 minggu).",
+    "Membutuhkan pelatihan tingkat dokter. Petugas medis tempur harus mempersiapkan lapangan dan memberikan dukungan, bukan bekerja secara mandiri."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Direct Pressure for Hemorrhage Control",
+  "category": "hemorrhage-control",
+  "skill_level": "quis-respondet",
+  "time_estimate": "3-5 min",
+  "description": "Prima-linea sanguinis imperium ad accessum extremitatem et vulnera corporis.",
+  "equipment": [
+    "caestus",
+    "trauma-cingens",
+    "cravat-band"
+  ],
+  "steps": [
+    "Don caestus si available.",
+    "Vulnus exponere vestem caedendo.",
+    "Applicare trauma vestiendi vel pannum complicatum directe super vulnus.",
+    "Preme plantam tuam firmiter. Utere pondere corporis tuo -- non modo bracchiis viribus.",
+    "Contine continua, continua pressura pro saltem 3 minutis.",
+    "Sollicitus ad reprimendam coluisse - haec formatio concretus disrupts.",
+    "Si sanguinem libat, aliam superpositam adicies. Ne pri tollit.",
+    "Secura cum fascia pressione si suppetat et moveat ad vulnus sarcinis vel tourniquet, si sanguis perdurat."
+  ],
+  "warnings": [
+    "Sola pressio directa insufficiens est sanguinibus arterialibus -- escalate ad vulnus sarcinis vel tourniquet.",
+    "Vulnera coniuncta (inguen, axilla, collum) vulnus sarcinis requirunt, non solum pressura externa."
+  ],
+  "follows": [],
+  "precedes": [
+    "vulnus-packing",
+    "tourniquet-application"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Pressura proportionalis tantum. Thoracem in infantibus comprimere."
+    },
+    "obstetric": {
+      "note": "Vitare compressionem gravem super uterum gravidum. Utere sarcinis lateralibus, si vulnus junctum prope pelvis est."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

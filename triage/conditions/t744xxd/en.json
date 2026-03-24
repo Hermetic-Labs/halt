@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t744xxd",
+    "icd10":  "T744XXD",
+    "name":  "Shaken infant syndrome, subsequent encounter",
+    "category":  "environmental-injury",
+    "triage_priority":  "",
+    "description":  "Shaken infant syndrome, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

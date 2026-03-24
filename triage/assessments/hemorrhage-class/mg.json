@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Fanasokajiana ny rà mandriaka (kilasy I-IV)",
+  "category": "circulatory",
+  "description": "ATLS fanasokajiana hemorrhage amin'ny tombantombana ny fahaverezan'ny rà sy ny valin'ny physiologique.",
+  "instructions": "Tombanana ny fahaverezan-dra ary ampifanaraho amin'ny kilasy ny famantarana ara-batana. Mitombo miaraka amin'ny kilasy ny hamehana fitsaboana.",
+  "scoring": [
+    {
+      "class": "I",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Normal",
+      "rr": "14-20",
+      "mental_status": "Normal",
+      "treatment": "Jereo, PO fluids raha afaka"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Normal",
+      "rr": "20-30",
+      "mental_status": "Manahy",
+      "treatment": "fidirana IV, isotonic crystalloid"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Nihena",
+      "rr": "30-40",
+      "mental_status": "Misafotofoto",
+      "treatment": "Rano IV + vokatra avy amin'ny rà, fanaraha-maso avy hatrany ny rà"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Tena ambany",
+      "rr": ">40",
+      "mental_status": "Lethargic/tsy mahatsiaro tena",
+      "treatment": "Fanaraha-maso avy hatrany amin'ny fandidiana hemorrhage -- mahafaty"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Manonitra elaela kokoa ny ankizy alohan'ny handravana azy. Ny kilasy III/IV dia mety misy BP akaiky ara-dalàna mandra-pirava tampoka. Matokia ny tachycardia sy ny sata ara-tsaina amin'ny BP."
+    },
+    "obstetric": {
+      "note": "Ny marary bevohoka dia mitombo 40-50% ny habetsahan'ny rà. Mety handefitra fatiantoka lehibe kokoa alohan'ny hanehoana famantarana. Ny fahorian'ny foetus dia mety hialoha ny famantarana ny reny."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

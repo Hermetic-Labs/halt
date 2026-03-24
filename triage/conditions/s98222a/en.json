@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s98222a",
+    "icd10":  "S98222A",
+    "name":  "Partial traumatic amputation of two or more left lesser toes, initial encounter",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Partial traumatic amputation of two or more left lesser toes, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

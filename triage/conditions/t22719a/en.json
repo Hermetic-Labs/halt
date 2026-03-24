@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t22719a",
+    "icd10":  "T22719A",
+    "name":  "Corrosion of third degree of unspecified forearm, initial encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Corrosion of third degree of unspecified forearm, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

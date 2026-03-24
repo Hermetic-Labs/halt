@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacine",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Fluorochinolon-antibioticum met brede gramnegatieve dekking. Gebruikt voor ernstige wondinfecties, penetrerend abdominaal trauma (dekking van de gastro-intestinale flora) en urineweginfecties. Beschikbaar PO en IV.",
+  "indications": [
+    "Penetrerend buiktrauma (GI-decontaminatie)",
+    "Ernstige wondinfecties",
+    "Gram-negatieve infecties",
+    "Urineweginfecties"
+  ],
+  "dose": "400 mg IV elke 8-12 uur. PO: 500-750 mg elke 12 uur.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Bekende allergie voor fluorochinolonen",
+    "Kinderen en adolescenten < 18 jaar (relatief – risico op tendinopathie)",
+    "Zwangerschap (relatief)"
+  ],
+  "warnings": [
+    "Risico op peesruptuur, vooral de achillespees. Stop als er peespijn ontstaat.",
+    "Kan het QT-interval verlengen - wees voorzichtig met andere QT-verlengende geneesmiddelen.",
+    "Vermijd tijdens de zwangerschap als er alternatieven beschikbaar zijn."
+  ],
+  "regional_names": {
+    "generic": "ciprofloxacine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV elke 8-12 uur (max. 400 mg/dosis). PO: 10-20 mg/kg elke 12 uur (max. 750 mg/dosis).",
+      "note": "Alleen gebruiken als de voordelen groter zijn dan het risico op tendinopathie. Reserveer voor ernstige infecties."
+    },
+    "obstetric": {
+      "note": "Vermijd tijdens de zwangerschap als er alternatieven beschikbaar zijn. Alleen gebruiken voor levensbedreigende infecties waarbij de voordelen groter zijn dan de risico's."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

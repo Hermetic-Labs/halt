@@ -1,0 +1,63 @@
+{
+  "id": "broselow-tape",
+  "name": "Broselow 소아 응급 테이프 참조",
+  "description": "체중계를 사용할 수 없는 경우 소아 약물 투여에 대한 색상으로 구분된 체중별 용량 기준입니다. 어린이의 머리 꼭대기부터 발뒤꿈치까지 측정하고 색상 밴드와 일치시킵니다.",
+  "note": "이 참조는 추정용으로만 사용됩니다. 가능한 경우 실제 무게를 사용하십시오.",
+  "bands": [
+    {
+      "color": "회색",
+      "weight_kg": "3-5",
+      "length_cm": "46-57",
+      "est_age": "신생아"
+    },
+    {
+      "color": "분홍색",
+      "weight_kg": "6-7",
+      "length_cm": "57-67",
+      "est_age": "3~6개월"
+    },
+    {
+      "color": "빨간색",
+      "weight_kg": "8-9",
+      "length_cm": "67-74",
+      "est_age": "6~12개월"
+    },
+    {
+      "color": "보라색",
+      "weight_kg": "10-11",
+      "length_cm": "74-83",
+      "est_age": "12~18개월"
+    },
+    {
+      "color": "노란색",
+      "weight_kg": "12-14",
+      "length_cm": "83-95",
+      "est_age": "18개월~3년"
+    },
+    {
+      "color": "흰색",
+      "weight_kg": "15-18",
+      "length_cm": "95-107",
+      "est_age": "3~5년"
+    },
+    {
+      "color": "파란색",
+      "weight_kg": "19-22",
+      "length_cm": "107-122",
+      "est_age": "5~7세"
+    },
+    {
+      "color": "오렌지",
+      "weight_kg": "24-28",
+      "length_cm": "122-137",
+      "est_age": "7~9세"
+    },
+    {
+      "color": "녹색",
+      "weight_kg": "30-36",
+      "length_cm": "137-152",
+      "est_age": "9~12세"
+    }
+  ],
+  "source": "Broselow Pediatric Emergency Reference / PALS"
+}

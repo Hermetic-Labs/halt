@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s48111d",
+    "icd10":  "S48111D",
+    "name":  "Complete traumatic amputation at level between right shoulder and elbow, subsequent encounter",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Complete traumatic amputation at level between right shoulder and elbow, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

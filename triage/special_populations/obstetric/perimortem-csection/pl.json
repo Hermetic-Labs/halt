@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Przedśmiertne cesarskie cięcie (PMCS)",
+  "category": "obstetric",
+  "skill_level": "lekarz-chirurg",
+  "time_estimate": "3-5 minut",
+  "description": "Awaryjne cięcie cesarskie w ciągu 4 minut od zatrzymania krążenia u matki, aby umożliwić skuteczną resuscytację krążeniowo-oddechową i potencjalne przeżycie noworodka. Macica uciska aortę i IVC – poród również resuscytuje matkę.",
+  "equipment": [
+    "skalpel",
+    "rękawiczki",
+    "zwijacze",
+    "zaciski do sznurków",
+    "sprzęt-resuscytacyjny dla noworodków"
+  ],
+  "steps": [
+    "Kontynuuj resuscytację bez przerywania.",
+    "Wykonaj pionowe nacięcie w linii środkowej od pępka do kości łonowej, przez skórę i powięź.",
+    "Naciąć dolny odcinek macicy poziomo.",
+    "Poród niemowlęcia – zanotuj czas.",
+    "Zaciśnij i przetnij przewód.",
+    "Przekaż niemowlę drugiemu ratownikowi w celu resuscytacji noworodka.",
+    "Usuń łożysko.",
+    "Jeśli ostateczne zamknięcie nie jest możliwe natychmiast, należy spakować macicę i brzuch.",
+    "Kontynuuj resuscytację matki – prawdopodobieństwo ROSC jest większe po dekompresji macicy."
+  ],
+  "warnings": [
+    "Aby zapewnić najlepsze wyniki dla matki i płodu, czas od podjęcia decyzji do porodu musi być krótszy niż 5 minut.",
+    "Ta procedura jest ostatecznością – tylko wtedy, gdy u matki występuje zatrzymanie akcji serca i poród jest nieuchronny (> 20 tydzień ciąży).",
+    "Wymaga przeszkolenia na poziomie lekarza. Medycy bojowi powinni przygotować pole i wsparcie, a nie działać samodzielnie."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

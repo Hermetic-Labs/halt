@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s59819s",
+    "icd10":  "S59819S",
+    "name":  "Other specified injuries unspecified forearm, sequela",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Other specified injuries unspecified forearm, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

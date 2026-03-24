@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s31011s",
+    "icd10":  "S31011S",
+    "name":  "Laceration without foreign body of lower back and pelvis with penetration into retroperitoneum, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Laceration without foreign body of lower back and pelvis with penetration into retroperitoneum, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

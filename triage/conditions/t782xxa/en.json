@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t782xxa",
+    "icd10":  "T782XXA",
+    "name":  "Anaphylactic shock, unspecified, initial encounter",
+    "category":  "adverse-effects",
+    "triage_priority":  "",
+    "description":  "Anaphylactic shock, unspecified, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

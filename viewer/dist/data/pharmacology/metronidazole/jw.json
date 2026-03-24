@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazole",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "Antibiotik Nitroimidazole kanthi jangkoan anaerob lan protozoal banget. Penting kanggo nembus trauma abdomen / usus kanggo nutupi flora usus anaerob. Asring digunakake ing kombinasi karo ciprofloxacin.",
+  "indications": [
+    "Trauma tembus abdomen/usus",
+    "Infeksi intra-abdomen",
+    "Infeksi jaringan lunak anaerob",
+    "C. infèksi angel"
+  ],
+  "dose": "500 mg IV q6-8h. PO: 500 mg q8h (yen ditoleransi oral).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Trimester pisanan meteng (relatif)",
+    "Dikenal alergi metronidazole utawa nitroimidazole"
+  ],
+  "warnings": [
+    "Reaksi kaya disulfiram karo alkohol - aja ngombe alkohol sajrone perawatan lan 48 jam sawise.",
+    "Bisa nyebabake neuropati perifer kanthi panggunaan sing berpanjangan.",
+    "Aja ing trimester pisanan yen bisa."
+  ],
+  "regional_names": {
+    "generic": "metronidazole"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7,5 mg/kg IV/PO q6h (maks 500 mg/dosis).",
+      "note": "Aman ing bocah sing luwih tuwa. Nyegah ing neonatus."
+    },
+    "obstetric": {
+      "note": "Aja ing trimester pisanan yen bisa. Gunakake trimester kapindho/telu yen perlu sacara medis -- entuk manfaat biasane luwih gedhe tinimbang risiko infeksi anaerob serius."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

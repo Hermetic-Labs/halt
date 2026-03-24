@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t48205d",
+    "icd10":  "T48205D",
+    "name":  "Adverse effect of unspecified drugs acting on muscles, subsequent encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Adverse effect of unspecified drugs acting on muscles, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

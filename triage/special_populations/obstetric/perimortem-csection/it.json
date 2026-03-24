@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Taglio cesareo perimortem (PMCS)",
+  "category": "obstetric",
+  "skill_level": "medico-chirurgo",
+  "time_estimate": "3-5 minuti",
+  "description": "Parto cesareo d'urgenza entro 4 minuti dall'arresto cardiaco materno per consentire una RCP efficace e la potenziale sopravvivenza neonatale. L'utero comprime l'aorta e l'IVC: anche il parto è rianimatorio per la madre.",
+  "equipment": [
+    "bisturi",
+    "guanti",
+    "divaricatori",
+    "fascette",
+    "attrezzature-per-rianimazione-neonatale"
+  ],
+  "steps": [
+    "Continuare la RCP senza interruzione.",
+    "Praticare un'incisione verticale sulla linea mediana dall'ombelico al pube attraverso la pelle e la fascia.",
+    "Incidere orizzontalmente il segmento uterino inferiore.",
+    "Consegnare il bambino: prendere nota dell'ora.",
+    "Bloccare e tagliare il cavo.",
+    "Consegnare il neonato a un secondo operatore per la rianimazione neonatale.",
+    "Rimuovere la placenta.",
+    "Imballare l'utero e l'addome se la chiusura definitiva non è immediatamente possibile.",
+    "Continuare la rianimazione materna: il ROSC è più probabile dopo la decompressione uterina."
+  ],
+  "warnings": [
+    "Il tempo dalla decisione al parto deve essere inferiore a 5 minuti per ottenere i migliori risultati materni e fetali.",
+    "Questa procedura è l'ultima risorsa, solo se la madre è in arresto cardiaco e il parto è imminente (>20 settimane di gestazione).",
+    "Richiede una formazione di livello medico. I medici da combattimento dovrebbero preparare il campo e fornire supporto, non agire in modo indipendente."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

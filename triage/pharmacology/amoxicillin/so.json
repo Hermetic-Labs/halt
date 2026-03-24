@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicillin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "Trimox"
+  ],
+  "description": "Antibiyootiga aminopenicillin ee ballaaran. Antibiyootiga ka hortagga afka ee caabuqa nabarka. Qayb ka mid ah xidhmada kiniinka dagaalka ee TCCC ee ka hortagga dhaawaca ee dhaawacyada aan daran ahayn.",
+  "indications": [
+    "Kahortagga caabuqa dhaawaca (nabarrada dhexdhexaadka ah, xirmada kiniinka afka)",
+    "Caabuqyada unugyada jilicsan",
+    "Caabuqyada habdhiska neefsiga"
+  ],
+  "dose": "500 mg PO 8dii saacadoodba mar x 7 maalmood (prophylaxis nabarka). 875 mg PO 12 saacadood kasta oo beddel ah.",
+  "route": [
+    "PO"
+  ],
+  "window": "Bilow 3 saacadood gudahooda ka dib dhaawaca ka hortagga dhaawaca.",
+  "contraindications": [
+    "Xasaasiyadda penicillin ee la yaqaan (isticmaal doxycycline beddelkeeda)",
+    "Mononucleosis (khatarta finanka)"
+  ],
+  "warnings": [
+    "Haddii penicillin uu xasaasiyad ku leeyahay: beddel doxycycline 100mg PO BID.",
+    "Dariiqa afka kaliya -- isticmaal antibiyootiko IV (cefazolin/ciprofloxacin) nabarrada daran ama haddii aan afka loo dulqaadan."
+  ],
+  "regional_names": {
+    "generic": "amoxicillin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/maalintii la qaybiyay q8h (ugu badnaan 500 mg/qiyaas). Isticmaal tixraac Broselow ku salaysan miisaanka.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Badbaadada uurka. Laga door biday doxycycline (taas oo ka mamnuuc ah uurka)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

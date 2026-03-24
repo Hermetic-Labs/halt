@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Dekompresja klatki piersiowej igłą (NCD)",
+  "category": "respiration",
+  "skill_level": "medyk bojowy",
+  "time_estimate": "1-2 minuty",
+  "description": "Doraźne łagodzenie odmy prężnej poprzez wprowadzenie igły do ​​drugiej przestrzeni międzyżebrowej. Interwencja ratująca życie.",
+  "equipment": [
+    "Cewnik-igłowy 14g-3-25 cali",
+    "rękawiczki",
+    "uszczelka piersiowa – opcjonalna"
+  ],
+  "steps": [
+    "Zidentyfikuj odmę prężną: brak szmerów oddechowych po uszkodzonej stronie, skrzywienie tchawicy (późne), niewydolność oddechowa, niedociśnienie, JVD.",
+    "Odsłoń klatkę piersiową po uszkodzonej stronie.",
+    "Zlokalizuj II przestrzeń międzyżebrową, linia środkowo-obojczykowa (alternatywa: 4./5. ICS, linia pachowa przednia).",
+    "Wprowadzić cewnik igłowy o masie 14 g i średnicy 3,25 cala, prostopadle do ściany klatki piersiowej, tuż nad GÓRĄ trzeciego żebra (pomijając wiązkę nerwowo-naczyniową).",
+    "Przesuwaj się, aż poczujesz podmuch powietrza lub usłyszysz syk.",
+    "Usunąć igłę i pozostawić cewnik na miejscu.",
+    "Słuchaj poprawy szmerów oddechowych i wysiłku oddechowego.",
+    "Zabezpieczyć nasadkę cewnika. NIE zaciskaj ani nie zakrywaj otwartego końca.",
+    "Oceniaj ponownie co 5 minut – cewnik może się załamać lub zakrzepnąć, co wymaga ponownej dekompresji."
+  ],
+  "warnings": [
+    "Użyj igły 3,25 cala — standardowy angiocewnik 14 g (1,5 cala) często zawodzi u pacjentów wojskowych ze względu na kamizelkę kuloodporną i muskulaturę.",
+    "Jeśli nie ma pewności, która strona jest zajęta, a pacjent znajduje się w pobliżu zatrzymania krążenia, może być konieczne zastosowanie obustronnej choroby niezakaźnej.",
+    "Nie umieszczać po tej samej stronie, po której ssana jest rana klatki piersiowej, bez uprzedniego uszczelnienia rany."
+  ],
+  "follows": [],
+  "precedes": [
+    "aplikacja z uszczelką piersiową"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Użyj igły o odpowiednim rozmiarze (mniejsi pacjenci, 1,5-2 cale mogą wystarczyć). Użyj drugiego podejścia ICS MCL. Rozpoznawanie punktów orientacyjnych jest trudniejsze – należy zachować ostrożność."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

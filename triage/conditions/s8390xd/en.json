@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s8390xd",
+    "icd10":  "S8390XD",
+    "name":  "Sprain of unspecified site of unspecified knee, subsequent encounter",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Sprain of unspecified site of unspecified knee, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

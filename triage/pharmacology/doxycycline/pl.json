@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doksycyklina",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Wibramycyna",
+    "Doryx"
+  ],
+  "description": "Antybiotyk tetracyklinowy o szerokim spektrum działania. Alternatywna profilaktyka ran jamy ustnej u pacjentów uczulonych na penicylinę. Skuteczny także przeciwko organizmom nietypowym i niektórym chorobom przenoszonym przez wektory (profilaktyka malarii na obszarach endemicznych).",
+  "indications": [
+    "Profilaktyka ran (alergia na penicylinę)",
+    "Zakażenia tkanek miękkich",
+    "Rany po ukąszeniach",
+    "Profilaktyka malarii na obszarach endemicznych"
+  ],
+  "dose": "100 mg PO co 12 godzin x 7 dni.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Rozpocząć w ciągu 3 godzin od urazu w celu profilaktyki ran.",
+  "contraindications": [
+    "Ciąża (powoduje przebarwienie zębów płodu i zahamowanie wzrostu kości)",
+    "Dzieci poniżej 8 lat (z tego samego powodu)",
+    "Ciężkie zaburzenia czynności wątroby"
+  ],
+  "warnings": [
+    "PRZECIWWSKAZANE w czasie ciąży – zamiast tego należy stosować amoksycylinę.",
+    "PRZECIWWSKAZANE u dzieci poniżej 8 lat.",
+    "Nadwrażliwość na światło – zalecić pacjentowi unikanie ekspozycji na słońce.",
+    "Nie należy przyjmować z pokarmami bogatymi w wapń, lekami zobojętniającymi sok żołądkowy lub żelazem – upośledza wchłanianie."
+  ],
+  "regional_names": {
+    "generic": "doksycyklina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Przeciwwskazane poniżej 8 lat. Wiek 8+: 2-4 mg/kg/dzień podzielone co 12 godzin (maks. 100 mg/dawkę).",
+      "note": "Stosuj amoksycylinę u dzieci poniżej 8. roku życia."
+    },
+    "obstetric": {
+      "note": "PRZECIWWSKAZANE w ciąży – powoduje uszkodzenie płodu. Zamiast tego użyj amoksycyliny."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

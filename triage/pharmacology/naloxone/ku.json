@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxone",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "Kloxxado"
+  ],
+  "description": "Antagonîstê receptorên opioîdê yên hevrikî. Bi lez û bez depresyona nefesê ya ku ji hêla opioîd ve hatî çêkirin vedigere. Destpêka IV: 2 hûrdem, IM: 5 hûrdem, IN: 8-13 hûrdem. Demjimêr ji piraniya opioîdan kurttir - dibe ku dozek dubare hewce bike.",
+  "indications": [
+    "Doza zêde ya opioîd an depresyona nefesê",
+    "Reversal sedation of opioid",
+    "Birîna opioîdê gumanbar"
+  ],
+  "dose": "0,4-2 mg IV/IO/IM/IN. Q2-3 hûrdeman li gorî hewcedariyê dubare bikin. Herî zêde 10 mg. Intranasal (IN): 2mg per pozê.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Di mîhengê zêdedozê de berevajîkirina bêkêmasî tune"
+  ],
+  "warnings": [
+    "Demjimêra çalakiyê (30-90 hûrdem) ji piraniya opioîdan kurttir e - dibe ku nexweş ji nû ve narkotîze bibe. Bi kêmanî 1 saet piştî doza dawîn bişopînin.",
+    "Vekişîna akût a opioîdê zêde dike -- dikare di nexweşên girêdayî opioîdê de bibe sedema ajîtasyon, tachycardia, edema pişikê.",
+    "Dê analjeziyê berevajî bike - dibe ku nexweş ji êşê bi tundî şer bike."
+  ],
+  "regional_names": {
+    "generic": "naloxone",
+    "US": "Narcan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,01 mg/kg IV/IM/IN (max 0,4 mg). Q2-3 min PRN dubare bikin.",
+      "note": "Neonatal: 0.01 mg/kg ji bo vegerandina opioîdê zikmakî."
+    },
+    "obstetric": {
+      "note": "Ewle di ducaniyê de. Heger di nêzîkê zayînê de ji dayikê re were dayîn, ji bo vekêşana neonîkî bişopînin."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

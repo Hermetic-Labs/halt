@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "Iwọn Coma Glasgow (GCS)",
+  "category": "neurological",
+  "description": "Idiwọn ti iṣan ti aiji ti aiji nipasẹ oju, ọrọ-ọrọ, ati awọn idahun mọto. Iwọn iwọn 3-15.",
+  "instructions": "Ṣe Dimegilio ọkọọkan awọn agbegbe mẹta ni ominira. Pao gbogbo awọn ikun mẹta fun apapọ GCS.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Lẹẹkọkan"
+        },
+        {
+          "score": 3,
+          "label": "Lati ohun"
+        },
+        {
+          "score": 2,
+          "label": "Si irora"
+        },
+        {
+          "score": 1,
+          "label": "Ko si"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "Oorun"
+        },
+        {
+          "score": 4,
+          "label": "Ìdàrúdàpọ̀"
+        },
+        {
+          "score": 3,
+          "label": "Awọn ọrọ ti ko yẹ"
+        },
+        {
+          "score": 2,
+          "label": "Awọn ohun ti ko ni oye"
+        },
+        {
+          "score": 1,
+          "label": "Ko si"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "Ngbọran si awọn aṣẹ"
+        },
+        {
+          "score": 5,
+          "label": "Lokalizes irora"
+        },
+        {
+          "score": 4,
+          "label": "Withdraws lati irora"
+        },
+        {
+          "score": 3,
+          "label": "Yiyi aijẹ deede (ṣe ọṣọ)"
+        },
+        {
+          "score": 2,
+          "label": "Itẹsiwaju (idinku)"
+        },
+        {
+          "score": 1,
+          "label": "Ko si"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "TBI ìwọnba -- atẹle ni pẹkipẹki"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "TBI dede -- mura ọna atẹgun"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "TBI ti o nira - ọna atẹgun ni ewu lẹsẹkẹsẹ, intubate ti o ba ṣeeṣe"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Lo GCS Paediatric (pGCS) fun awọn ọmọde labẹ ọdun 2. Ifimaaki ọrọ ẹnu ni titunse fun awọn ọmọde ti iṣaaju-ọrọ."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

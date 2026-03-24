@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Inserción de la vía aérea nasofaríngea (NPA)",
+  "category": "airway",
+  "skill_level": "salvavidas de combate",
+  "time_estimate": "1 minuto",
+  "description": "Inserción de un complemento flexible para las vías respiratorias nasales para mantener la permeabilidad de las vías respiratorias en un paciente inconsciente o semiconsciente.",
+  "equipment": [
+    "npa-con-imperdible-",
+    "lubricante"
+  ],
+  "steps": [
+    "Seleccione el tamaño NPA apropiado (mida desde la fosa nasal hasta el lóbulo de la oreja).",
+    "Lubrique generosamente el NPA con lubricante soluble en agua o solución salina.",
+    "Inserte el pasador de seguridad a través de la brida si aún no está presente (evita la aspiración).",
+    "Insértelo suavemente en la fosa nasal derecha (biselado hacia el tabique), avanzando paralelo al paladar.",
+    "Avance hasta que el reborde descanse contra la fosa nasal.",
+    "Vuelva a colocar al paciente (posición de recuperación si no hay problemas en la columna) y vuelva a evaluar las vías respiratorias.",
+    "Si encuentra resistencia, pruebe con la fosa nasal izquierda."
+  ],
+  "warnings": [
+    "Contraindicado en sospecha de fractura de la base del cráneo (ojos de mapache, signo de Battle, rinorrea en LCR).",
+    "La NPA es el mejor complemento inicial para las vías respiratorias de los pacientes inconscientes: la OPA puede provocar vómitos en pacientes semiconscientes."
+  ],
+  "source": "TCCC / JTS CPG"
+}

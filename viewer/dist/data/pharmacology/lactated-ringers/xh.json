@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Isisombululo seRinger encancisiweyo (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Isisombululo sikaHartmann",
+    "Isitofu seRinger eneLactated"
+  ],
+  "description": "Ulwelo lwe-isotonic crystalloid olulungelelanisiweyo. Ikhethwa ngaphezu kwe-saline eqhelekileyo yokuvuselela i-volume-volume enkulu-i-physiologically balanced, ingozi encinci ye-hyperchloremic acidosis. Iqulethe i-sodium, i-potassium, i-calcium, i-lactate.",
+  "indications": [
+    "Ukuvuselela i-trauma (i-crystalloid ekhethwayo kwi-hemorrhagic shock)",
+    "Utshise ukuvuselela ulwelo (ifomula yaseParkland)",
+    "I-Hypovolemia",
+    "Ukugcinwa kolwelo"
+  ],
+  "dose": "Umothuko we-Hemorrhagic: Mda ukuya kwi-1L max phambi kokuba utshintshele kwiimveliso zegazi. Ithagethi ye-SBP 80-90 mmHg i-trauma yokungena, i-90 mmHg TBI. Ukutshisa (i-Parkland): 4 mL x kg x %TBSA itshise ngaphezu kwe-24h (isiqingatha kwi-8h yokuqala).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "I-Hyperkalemia (iqulethe i-potassium)",
+    "Ukungaphumeleli okukhulu kwesibindi (i-lactate metabolism ephazamisekileyo)"
+  ],
+  "warnings": [
+    "Sekunjalo icrystalloid--ayikwazi ukuthwala ioksijini. Iimveliso zegazi ziphezulu kwi-hemorrhagic shock. I-LR yibhulorho kuphela.",
+    "Musa ukudibanisa kunye neemveliso zegazi kumgca ofanayo (i-calcium ibangela i-clotting).",
+    "UNGAVUMI ngokugqithiselayo kumonzakalo ongeneyo ngaphambi kokulawula ukopha."
+  ],
+  "regional_names": {
+    "generic": "Isisombululo sikaRinger esincancisiweyo",
+    "UK": "Isisombululo sikaHartmann"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "I-20 mL / kg bolus, phinda uhlolisise. Ikhethwa ngaphezu kwe-NS kumonzakalo wabantwana.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Ulwelo olukhethwayo lwe-IV ekuzalweni nasekubelekeni. Kufanelekile ukuvuswa kwe-obstetric hemorrhage."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

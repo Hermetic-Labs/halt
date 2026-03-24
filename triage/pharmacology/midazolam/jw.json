@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Versed",
+    "Nayzilam"
+  ],
+  "description": "Benzodiazepine short-acting kanthi onset cepet. Preferred kanggo sedasi prosedural, pra-pengobatan RSI, lan manajemen kejang IM/IN. Rute IM lan intranasal nyedhiyakake kauntungan sing signifikan ing setelan lapangan.",
+  "indications": [
+    "Sedasi prosedural",
+    "Pra-pengobatan RSI (karo ketamin)",
+    "Manajemen kejang (IM/IN nalika IV ora kasedhiya)",
+    "Manajemen agitasi"
+  ],
+  "dose": "Sedasi: 0,05-0,1 mg/kg IV dititrasi. Prosedur: 1-5 mg IV push alon. IM: 0,2 mg/kg. IN: 0,2 mg/kg (maks 10 mg). Status epileptikus IM: 10 mg IM (dewasa).",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "ING"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaukoma sudut sempit akut",
+    "Intoxication alkohol akut kanthi kompromi kardiovaskular",
+    "Hipersensitifitas sing dikenal"
+  ],
+  "warnings": [
+    "Depresi ambegan - monitor saluran napas, duwe agen pembalikan (flumazenil) yen kasedhiya.",
+    "Hipotensi utamane karo administrasi opioid.",
+    "Injeksi IV Rapid nyebabake apnea - push alon."
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Sedasi: 0,05-0,1 mg/kg IV. IM: 0,1-0,2 mg/kg. IN: 0,2-0,3 mg/kg. Kejang IM: 0,2 mg/kg (maks 10 mg).",
+      "note": "Rute IN utamané migunani kanggo bocah-bocah - ngindhari akses IV."
+    },
+    "obstetric": {
+      "note": "Nyabrang plasenta. Neonatal sedasi bisa. Gunakake dosis efektif minimal; ngawasi neonatus yen diwenehi cedhak pangiriman."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

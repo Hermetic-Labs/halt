@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Gwajin Rashin Ruwa",
+  "category": "circulation",
+  "description": "Kimanta filin don rashin ruwa da tsananin rashin lafiya. Launin fitsari shine mafi yawan alamar filin aiki. Yi la'akari da halin tunani a matsayin alamar rashin ruwa mai tsanani yana ci gaba zuwa bugun jini.",
+  "instructions": "Bincika launin fitsari, turgor fata, yanayin tunani, da alamun mahimmanci. Fitsari mai duhu, busassun mucous membranes, da tachycardia suna nuna rashin ruwa mai mahimmanci da ke buƙatar rehydration mai aiki.",
+  "categories": [
+    {
+      "color": "bayyananne-kodiri",
+      "label": "To Mai Ruwa",
+      "description": "Kodan rawaya don share fitsari. Ba a buƙatar sa baki."
+    },
+    {
+      "color": "rawaya",
+      "label": "Karancin Rashin Ruwa",
+      "description": "Fitsari mai launin rawaya, ƙishirwa. Rehydration na baka. Ƙarfafa 250-500 ml na ruwa a kowace awa."
+    },
+    {
+      "color": "amber-launin ruwan kasa",
+      "label": "Matsakaici-Mai Tsananin Rashin Ruwa",
+      "description": "Fitsari amber, HR dagawa, turgor fata ya ragu, bushe baki. Ruwan IV/IO idan ba a yarda da baki ba. 1-2L LR ko NS."
+    },
+    {
+      "color": "ja",
+      "label": "Hatsari -- Zafi Zafi / Mai tsanani",
+      "description": "Mafi ƙarancin fitowar fitsari, canjin LOC, bushewar fata mai zafi. Gaggawa na likita -- saurin sanyaya + ruwaye na IV + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Yara suna bushewa da sauri fiye da manya. Sunken fontanelle (jarirai), hawayen da ba a nan, da gajiyawa alamu ne masu mahimmanci. IV tushen nauyi: 20 ml/kg LR bolus."
+    },
+    "obstetric": {
+      "note": "Mata masu ciki suna buƙatar ƙara yawan ruwa. Rashin ruwa na iya haifar da maƙarƙashiya. Mummunan sake shan ruwa na baki na farko; IV idan ba jure wa baka ba."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

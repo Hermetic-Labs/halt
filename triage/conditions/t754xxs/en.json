@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t754xxs",
+    "icd10":  "T754XXS",
+    "name":  "Electrocution, sequela",
+    "category":  "environmental-injury",
+    "triage_priority":  "",
+    "description":  "Electrocution, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

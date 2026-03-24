@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s89092g",
+    "icd10":  "S89092G",
+    "name":  "Other physeal fracture of upper end of left tibia, subsequent encounter for fracture with delayed healing",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Other physeal fracture of upper end of left tibia, subsequent encounter for fracture with delayed healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

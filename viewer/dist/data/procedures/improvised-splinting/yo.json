@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Imudara Splinting",
+  "category": "ortho-stabilization",
+  "skill_level": "Ipilẹṣẹ",
+  "time_estimate": "5-10 iṣẹju",
+  "description": "Mu awọn fifọ kuro ni lilo awọn ohun elo ti o wa lati ṣe idiwọ ipalara siwaju sii, dinku irora, ati idinwo isonu ẹjẹ sinu awọn ohun elo agbegbe. Splint ni ipo ti a rii ayafi ti sisan kaakiri ba jẹ ipalara - lẹhinna taara ni rọra.",
+  "equipment": [
+    "SAM splint (ti o fẹ)",
+    "Awọn iwe irohin ti a ti yiyi, awọn igi, awọn ọpa agọ (aṣepe aaye)",
+    "Cravat / triangular bandages",
+    "Padding (aṣọ, foomu)",
+    "Teepu tabi awọn ila ti aṣọ"
+  ],
+  "steps": [
+    "Fi han ati ṣe ayẹwo ipalara naa - ṣayẹwo sisan, aibalẹ, gbigbe (CSM) distal si fifọ ṣaaju ati lẹhin.",
+    "Ṣakoso eyikeyi ẹjẹ ti nṣiṣe lọwọ ṣaaju fifọ.",
+    "Paadi bony olokiki lọpọlọpọ lati ṣe idiwọ awọn ọgbẹ titẹ.",
+    "Yan ohun elo splint to gun to lati ṣe aibikita isẹpo loke ATI ni isalẹ fifọ.",
+    "Ipo ẹsẹ ni ipo itunu tabi titete anatomical -- maṣe fi agbara mu.",
+    "Wa padding, lẹhinna ohun elo splint. Ṣe aabo pẹlu bandages tabi awọn ila aṣọ.",
+    "MAA ṢE fi ipari si ni wiwọ -- fi ika ika/ ika ẹsẹ silẹ lati ṣe atẹle CSM.",
+    "Tun CSM ṣe ayẹwo lẹhin ohun elo - tú silẹ lẹsẹkẹsẹ ti o ba jẹ alaiṣedeede.",
+    "Gbe ẹsẹ soke ti o ba ṣee ṣe lati dinku wiwu.",
+    "Akoko iwe ti ohun elo splint."
+  ],
+  "warnings": [
+    "Tun CSM ṣe ayẹwo ni gbogbo iṣẹju 15-30 - wiwu le jẹ ki splint ti o pe di aṣa-ajo.",
+    "Ṣii awọn fifọ: bo egbo pẹlu wiwọ ifo ni akọkọ, lẹhinna splint. MAA ṢE ti egungun pada sinu.",
+    "Awọn dida egungun abo le padanu 1-2L ẹjẹ sinu itan - ṣe itọju lile fun mọnamọna.",
+    "Ẹsẹ ọpa-ẹhin ti a fura si: MAA ṢE ṣe atunṣe splint - gbe gbigbe silẹ, ṣetọju imuduro laini."
+  ],
+  "follows": [
+    "taara-titẹ",
+    "tourniquet-elo"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Awọn awo idagbasoke ninu awọn ọmọde jẹ alailagbara ju awọn iṣan ligamenti - ifura ifura paapaa pẹlu ẹrọ kekere. Awọn fifọ Torus (fikun) le ni wiwu diẹ."
+    },
+    "obstetric": {
+      "note": "Standard splinting waye. Yago fun ipo gigun gigun -- tẹ ita osi ti o ba dubulẹ ni pẹlẹbẹ."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

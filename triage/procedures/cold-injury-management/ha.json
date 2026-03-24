@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Gudanar da Raunin sanyi",
+  "category": "environmental",
+  "skill_level": "Na asali",
+  "time_estimate": "Ci gaba",
+  "description": "Gudanar da sanyi, ƙafar nutsewa (ƙafar maƙarƙashiya), da kuma hypothermia. Ana iya rigakafin raunin sanyi -- gane alamun farko kafin lalacewar nama ba ta iya dawowa. Sarrafa nama mai sanyi a hankali sosai.",
+  "equipment": [
+    "Busassun tufafi masu rufewa/jakar barci",
+    "Ruwan dumi (38-42C/100-108F) don sake dumama wanka",
+    "Tufafin bakararre",
+    "Ibuprofen 400mg PO (idan akwai)",
+    "IV LR (dumi idan zai yiwu)"
+  ],
+  "steps": [
+    "HYPOTHERMIA NA FARKO: Tantance ainihin zafin jiki tare da ƙananan ma'aunin zafi da sanyio. M (32-35C): rawar jiki, rudani. Matsakaici (28-32C): babu rawar jiki, rudani mai tsanani. Mai tsanani (<28C): sume, babu bugun jini da za'a iya ganowa.",
+    "HYPOTHERMIA -- M / Matsakaici: Cire rigar tufafi, rufewa daga ƙasa, yanayi mai dumi, dumi mai dadi idan an sani, fakitin zafi zuwa axillae / makwancin gwaiwa (ba kai tsaye a kan fata ba). Karɓa a hankali - jarring na iya jawo VFib.",
+    "HYPOTHERMIA -- Tsanani: Karɓa sosai a hankali. Duba bugun bugun jini 60 cikakkun dakika kafin CPR. Fara CPR idan babu bugun jini. Ruwan ruwa mai dumi idan akwai. MEDEVAC fifiko -- 'ba a mutu ba har sai dumi da matattu'.",
+    "FROSTBITE: Sama (fata fari/ launin toka, taushi a ƙasa) vs. zurfi (wuya, jin katako, blistering). KAR KA shafa yankin. KAR a sake dumi idan haɗarin sake daskarewa -- sake daskarewa yana haifar da muni fiye da jinkirin sakewar.",
+    "FROSTBITE rewarming: nutse a cikin 38-42C ruwa (ba zafi) na 15-30 min har sai nama ya yi laushi da ja / m. Yana da zafi sosai - bayar da analgesia (ketamine ko morphine).",
+    "Bayan sake dumama: kushin tsakanin yatsun kafa/yatsu tare da gauze mara kyau. KAR KA BUGA blisters. Kare daga matsin lamba.",
+    "KAFARKIN IMMERSION (Ƙafar Maɓalli): Tsawon jika/sanyi bayyanar, fata ja sannan ta yi fari sannan ta yi tari. Busassun ƙafafu, dumi a hankali, ɗagawa. KAR a shafa zafi kai tsaye.",
+    "Takaddun lokacin rauni da lokacin sakewa."
+  ],
+  "warnings": [
+    "Kar a sake dumama sanyi idan akwai wata dama ta sake daskarewa -- rewarming rashin cikawa + sake daskarewa = asarar nama mai bala'i.",
+    "Tsananin hypothermia na iya kwatanta mutuwa. Duba bugun jini na daƙiƙa 60. 'Ba a mutu ba sai dumi da matattu.'",
+    "Barasa yana ƙara asarar zafi duk da fahimtar zafi -- kar a ba da barasa.",
+    "Haɗarin VFib yana da girma a cikin matsananciyar hypothermia -- rage magudi da lalata majiyyaci."
+  ],
+  "follows": [
+    "hypothermia - rigakafin"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Yara suna yin sanyi da sauri saboda mafi girman yanki zuwa rabo mai yawa. Hypothermia yana da tsayi iri ɗaya. Dumi-dumin ruwa na IV mai mahimmanci. Ruwa na tushen nauyi: 20 ml/kg dumi LR."
+    },
+    "obstetric": {
+      "note": "Ciwon ciki na mahaifa yana haifar da bradycardia na tayin da acidosis. Maimaita mata mai tsanani shine maganin tayi. Sa idanu tayi idan akwai."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Beheer van koude verwondingen",
+  "category": "environmental",
+  "skill_level": "Basis",
+  "time_estimate": "Lopend",
+  "description": "Beheer van bevriezing, immersievoet (loopgraafvoet) en onderkoeling. Koudeblessures zijn te voorkomen: herken vroege tekenen voordat weefselschade onomkeerbaar is. Ga uiterst voorzichtig om met bevroren weefsel.",
+  "equipment": [
+    "Droge isolerende kleding/slaapzak",
+    "Warm water (38-42C/100-108F) voor opwarmbad",
+    "Steriele verbanden",
+    "Ibuprofen 400 mg PO (indien beschikbaar)",
+    "IV LR (warm indien mogelijk)"
+  ],
+  "steps": [
+    "EERST HYPOTHERMIE: Beoordeel de kerntemperatuur met een thermometer met lage aflezing. Mild (32-35C): rillingen, verwarring. Matig (28-32°C): geen rillingen, ernstige verwarring. Ernstig (<28C): bewusteloos, geen hartslag waarneembaar.",
+    "HYPOTHERMIE - Mild/matig: verwijder natte kleding, isoleer van de grond, warme omgeving, verwarm zoete vloeistoffen indien bij bewustzijn, warmtepakketten naar oksel/lies (niet direct op de huid). Ga voorzichtig te werk; schokken kan VFib veroorzaken.",
+    "HYPOTHERMIE - Ernstig: behandel ZEER voorzichtig. Controleer de polsslag 60 volle seconden vóór reanimatie. Begin met reanimatie als er geen hartslag is. Warme IV-vloeistoffen, indien beschikbaar. MEDEVAC prioriteit -- 'niet dood totdat het warm en dood is'.",
+    "FROSTBITE: Oppervlakkig (huid wit/grijs, zachte onderkant) vs. diep (hard, houtgevoel, blaarvorming). Wrijf NIET over het gebied. NIET opwarmen als het risico op opnieuw invriezen bestaat; opnieuw invriezen veroorzaakt ergere schade dan uitgesteld opwarmen.",
+    "Opwarmen van FROSTBITE: Dompel gedurende 15-30 minuten onder in water van 38-42 °C (niet heter) totdat het weefsel zacht en rood/paars is. Zeer pijnlijk - bied analgesie aan (ketamine of morfine).",
+    "Na het opwarmen: bedek de tenen/vingers met steriel gaas. Blaren NIET doorprikken. Beschermen tegen druk.",
+    "ONDERDOMPELVOET (loopgraafvoet): langdurige blootstelling aan nat/koud, huid rood, vervolgens bleek en vervolgens blaren. Droge voeten, langzaam opwarmen, omhoog brengen. Gebruik GEEN directe hitte.",
+    "Documenteer de tijd van blessure en tijd van opwarming."
+  ],
+  "warnings": [
+    "Verwarm de bevriezing NIET opnieuw als er enige kans is op opnieuw invriezen -- onvolledige opwarming + opnieuw invriezen = catastrofaal weefselverlies.",
+    "Ernstige onderkoeling kan de dood nabootsen. Controleer de hartslag gedurende 60 seconden. 'Pas dood als het warm en dood is.'",
+    "Alcohol verhoogt het warmteverlies ondanks de perceptie van warmte - geef geen alcohol.",
+    "Het VFib-risico is hoog bij matige tot ernstige hypothermie – minimaliseer manipulatie en schokken van de patiënt."
+  ],
+  "follows": [
+    "onderkoeling-preventie"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Kinderen koelen sneller af vanwege de hogere oppervlakte-massaverhouding. Hypothermiedrempels hetzelfde. Warme IV-vloeistoffen zijn van cruciaal belang. Vloeistof op gewichtsbasis: 20 ml/kg warme LR."
+    },
+    "obstetric": {
+      "note": "Maternale hypothermie veroorzaakt foetale bradycardie en acidose. Agressieve opwarming van de moeder is een foetale behandeling. Foetale monitoring, indien beschikbaar."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

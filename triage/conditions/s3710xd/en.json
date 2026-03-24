@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s3710xd",
+    "icd10":  "S3710XD",
+    "name":  "Unspecified injury of ureter, subsequent encounter",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified injury of ureter, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

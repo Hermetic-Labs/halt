@@ -1,0 +1,22 @@
+{
+  "id": "s0006xs",
+  "icd10": "S0006XS",
+  "name": "Côn trùng cắn (không có nọc độc) da đầu, để lại di chứng",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Côn trùng cắn (không có nọc độc) da đầu, để lại di chứng",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

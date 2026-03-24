@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Fanondroana fahatairana",
+  "category": "circulatory",
+  "description": "Famantarana isa tokana haingana momba ny fahamarinan-toerana hemodynamic. Kajy ho HR / SBP. Normal dia 0.5-0.7.",
+  "instructions": "Zarao amin'ny tosidra systolika ny tahan'ny fo. Ny fanondroan'ny fahatairana miakatra dia manondro ny fahasimbana.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Normal -- stable hemodynamically"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Fahatairana malefaka -- manara-maso akaiky"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Fahatairana antonony -- fidirana IV, ranon-javatra"
+    },
+    {
+      "range": ">1.4",
+      "label": "Fahatairana mafy -- famelomana avy hatrany, vokatra ra"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Obstetric Shock Index (OSI) dia mampiasa formula mitovy. SI> 0.9 amin'ny marary bevohoka dia manan-danja. Ny HR mahazatra dia ambony kokoa amin'ny fitondrana vohoka (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

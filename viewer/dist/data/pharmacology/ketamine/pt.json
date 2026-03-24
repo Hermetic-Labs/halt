@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Cetamina",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Anestésico dissociativo que proporciona analgesia, sedação e amnésia, preservando os reflexos das vias aéreas e a estabilidade hemodinâmica. Analgésico preferido no TCCC – mantém a PA ao contrário dos opioides. Também usado para sedação processual e LER.",
+  "indications": [
+    "Tratamento da dor moderada a intensa",
+    "Sedação para procedimentos (tamponamento de feridas, redução de fraturas)",
+    "Agente de indução para LER",
+    "Anestesia de combate"
+  ],
+  "dose": "Analgesia: 0,1-0,3 mg/kg IV/IO (empurrão lento) | 0,5 mg/kg IM. Sedação processual: 1-2 mg/kg IV | 4-6 mg/kg IM. Indução de LER: 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "OI",
+    "Eu estou",
+    "DENTRO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Esquizofrenia conhecida ou psicose ativa",
+    "PIC elevada sem proteção das vias aéreas (relativa)"
+  ],
+  "warnings": [
+    "Reações de emergência (delirium/alucinações) – atenuar com midazolam 1-2 mg IV, se disponível.",
+    "Aumenta as secreções – tenha a sucção pronta.",
+    "Laringoespasmo raro, mas possível – mantenha o BVM disponível."
+  ],
+  "regional_names": {
+    "generic": "cetamina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesia: 0,5 mg/kg IV. Sedação processual: 1-2 mg/kg IV | 4-5 mg/kg IM.",
+      "note": "Bem estudado em pediatria. Preferido para procedimentos dolorosos."
+    },
+    "obstetric": {
+      "note": "Seguro para analgesia materna em doses baixas. Pode causar depressão respiratória neonatal em altas doses se administradas próximo ao momento do parto."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "Bambance-bambancen SALT (Nau'i, Ƙimar, Matsalolin Ceto Rai, Jiyya/Tafi)",
+  "category": "mass-casualty",
+  "description": "Yarjejeniyar tantance yawan asarar rayuka. Ma'auni don abubuwan da suka faru da yawa a cikin sojoji da na farar hula.",
+  "instructions": "Mataki 1: Nau'in Duniya (Tafiya, Tafiya, Har yanzu). Mataki na 2: Yi la'akari cikin tsari mai fifiko. Mataki na 3: Yi ayyukan ceton rai (samar da manyan zub da jini, buɗaɗɗen hanyar iska, ɓarkewar allura, masu allura ta atomatik). Mataki 4: Sanya rukuni.",
+  "categories": [
+    {
+      "color": "baki",
+      "label": "Wanda ake tsammani/Matattu",
+      "description": "Ba zai yiwu a tsira da wadatattun albarkatun ba, ko kuma an tabbatar da cewa ya mutu"
+    },
+    {
+      "color": "ja",
+      "label": "Nan take (T1)",
+      "description": "Raunin da ke barazana ga rayuwa, zai tsira tare da shiga tsakani"
+    },
+    {
+      "color": "rawaya",
+      "label": "An jinkirta (T2)",
+      "description": "Mummunan raunin da ya faru amma barga, zai iya jira don kulawa"
+    },
+    {
+      "color": "kore",
+      "label": "Mafi qarancin (T3)",
+      "description": "Ƙananan raunuka -- rauni mai tafiya"
+    },
+    {
+      "color": "launin toka",
+      "label": "Wanda ake tsammani",
+      "description": "Raunin da ba za a iya tsira ba da aka ba da albarkatu na yanzu -- kulawa kawai"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "JumpSTART triage algorithm yana canza SALT don marasa lafiyar yara. Matsakaicin ƙimar numfashi da matakan tantancewa sun bambanta ga yara a ƙarƙashin 8."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

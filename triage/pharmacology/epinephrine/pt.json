@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinefrina (Adrenalina)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalina"
+  ],
+  "description": "Catecolamina endógena com atividade alfa e beta adrenérgica. Tratamento de primeira linha para anafilaxia e parada cardíaca. Na anafilaxia, a coxa IM é preferida à IV (eficácia equivalente e mais segura). Não adie o acesso intravenoso na anafilaxia.",
+  "indications": [
+    "Anafilaxia (primeira linha)",
+    "Parada cardíaca – FV/TV/AESP/assistolia sem pulso",
+    "Broncoespasmo grave",
+    "Hipotensão refratária a fluidos"
+  ],
+  "dose": "Anafilaxia: 0,3-0,5 mg IM (ântero-lateral da coxa) | Autoinjetor 0,3 mg IM. Repita q5-15 min PRN. Parada cardíaca: 1 mg IV/IO a cada 3-5 min durante a RCP. Broncoespasmo grave: 0,3 mg IM.",
+  "route": [
+    "Eu estou",
+    "IV",
+    "OI"
+  ],
+  "window": "Na anafilaxia: administrar IM imediatamente – não atrasar o acesso IV.",
+  "contraindications": [
+    "Sem contraindicações absolutas em situações de emergência com risco de vida"
+  ],
+  "warnings": [
+    "A epinefrina intravenosa para anafilaxia só deve ser usada em parada cardíaca ou choque profundo - perigoso se administrada por via intravenosa em um paciente consciente.",
+    "O extravasamento causa necrose tecidual – garanta a permeabilidade intravenosa.",
+    "Aumenta a demanda miocárdica de oxigênio – tenha cuidado em caso de doença coronariana conhecida fora da parada."
+  ],
+  "regional_names": {
+    "generic": "epinefrina",
+    "UK": "adrenalina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anafilaxia: 0,01 mg/kg IM (máx. 0,5 mg). EpiPen Jr (0,15 mg) para 15-30 kg. Parada cardíaca: 0,01 mg/kg IV/IO a cada 3-5 min.",
+      "note": "Use dosagem baseada em peso. Referência de fita Broselow recomendada."
+    },
+    "obstetric": {
+      "note": "Use dosagem padrão para anafilaxia – a sobrevivência materna é fundamental. A adrenalina é segura durante a gravidez para emergências com risco de vida."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

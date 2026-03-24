@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t7802xd",
+    "icd10":  "T7802XD",
+    "name":  "Anaphylactic reaction due to shellfish (crustaceans), subsequent encounter",
+    "category":  "adverse-effects",
+    "triage_priority":  "",
+    "description":  "Anaphylactic reaction due to shellfish (crustaceans), subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

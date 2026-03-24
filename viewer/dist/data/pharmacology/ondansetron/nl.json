@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Selectieve 5-HT3-receptorantagonist anti-emeticum. Zeer effectief bij misselijkheid en braken. ODT (oraal desintegrerende tablet) is nuttig in veldomgevingen wanneer IV niet beschikbaar is. Inbegrepen in sommige gevechtspilpakketten.",
+  "indications": [
+    "Misselijkheid en braken (chemotherapie, door opioïden geïnduceerd, postoperatief, TBI-gerelateerd)",
+    "Bewegingsziekte",
+    "Misselijkheid door toediening van ketamine"
+  ],
+  "dose": "4-8 mg IV/IO langzaam duwen gedurende 2-5 minuten. ODT: 4-8 mg opgelost onder de tong. IM: 4 mg.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Bekende overgevoeligheid voor ondansetron of andere 5-HT3-antagonisten",
+    "Congenitaal lang QT-syndroom (alleen hoge dosis IV)"
+  ],
+  "warnings": [
+    "Een hoge dosis IV kan het QT-interval verlengen - gebruik de laagste effectieve dosis IV.",
+    "Vervangt de luchtwegbehandeling niet bij een verzwakte patiënt met braken – bescherm eerst de luchtwegen."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,1-0,15 mg/kg IV (max. 4 mg). ODT: 4 mg voor kinderen > 4 jaar.",
+      "note": "Op grote schaal gebruikt en goed verdragen in de kindergeneeskunde."
+    },
+    "obstetric": {
+      "note": "Beperkte gegevens tijdens de zwangerschap. Gebruiken bij ernstige misselijkheid/braken na het eerste trimester, wanneer de voordelen groter zijn dan de risico's. Niet aanbevolen in het eerste trimester."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

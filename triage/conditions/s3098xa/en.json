@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s3098xa",
+    "icd10":  "S3098XA",
+    "name":  "Unspecified superficial injury of anus, initial encounter",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified superficial injury of anus, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

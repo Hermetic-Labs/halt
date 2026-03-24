@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Thông thạo",
+    "Nayzilam"
+  ],
+  "description": "Benzodiazepine tác dụng ngắn và khởi phát nhanh. Được ưa thích để gây mê theo thủ thuật, dùng thuốc trước RSI và quản lý cơn động kinh IM/IN. Các đường tiêm bắp và nội sọ mang lại lợi thế đáng kể trong cài đặt hiện trường.",
+  "indications": [
+    "Thủ tục gây mê",
+    "Dùng thuốc trước RSI (với ketamine)",
+    "Quản lý cơn động kinh (IM/IN khi không có IV)",
+    "Quản lý kích động"
+  ],
+  "dose": "An thần: chuẩn độ 0,05-0,1 mg/kg tiêm tĩnh mạch. Thủ tục: 1-5 mg IV đẩy chậm. Tiêm bắp: 0,2 mg/kg. IN: 0,2 mg/kg (tối đa 10 mg). Trạng thái động kinh tiêm bắp: 10 mg tiêm bắp (người lớn).",
+  "route": [
+    "IV",
+    "IO",
+    "TÔI",
+    "TRONG"
+  ],
+  "window": "",
+  "contraindications": [
+    "Bệnh tăng nhãn áp góc hẹp cấp tính",
+    "Ngộ độc rượu cấp tính gây tổn thương tim mạch",
+    "Đã biết quá mẫn"
+  ],
+  "warnings": [
+    "Suy hô hấp - theo dõi đường thở, dùng thuốc đảo ngược (flumazenil) nếu có.",
+    "Hạ huyết áp, đặc biệt khi dùng đồng thời opioid.",
+    "Tiêm IV nhanh gây ngưng thở - đẩy chậm."
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "An thần: 0,05-0,1 mg/kg IV. Tiêm bắp: 0,1-0,2 mg/kg. TRONG: 0,2-0,3 mg/kg. Động kinh IM: 0,2 mg/kg (tối đa 10 mg).",
+      "note": "Đường IN đặc biệt hữu ích ở trẻ em - tránh đường truyền tĩnh mạch."
+    },
+    "obstetric": {
+      "note": "Đi qua nhau thai. Có thể dùng thuốc an thần cho trẻ sơ sinh. Sử dụng liều tối thiểu có hiệu quả; theo dõi trẻ sơ sinh nếu được tiêm gần ngày sinh."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

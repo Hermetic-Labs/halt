@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Uwasilishaji wa Sehemu ya Dharura",
+  "category": "obstetric",
+  "skill_level": "kupambana-daktari",
+  "time_estimate": "Inatofautiana -- 20+ min",
+  "description": "Usimamizi wa utoaji wa haraka au usiopangwa katika mazingira magumu.",
+  "equipment": [
+    "kinga",
+    "nguo safi-blanketi",
+    "kamba-clamps-au-tie",
+    "mkasi",
+    "bulb-sindano"
+  ],
+  "steps": [
+    "Weka mama amelala chali au aliyeegemea nusu. Kuinamisha upande wa kushoto kunapendekezwa ikiwa hakuna fahamu (huzuia mgandamizo wa aortocaval).",
+    "Dhibiti utoaji wa kichwa -- msaada kwa kiganja. USIVUTE.",
+    "Mara tu kichwa kinapotolewa, angalia kamba ya nuchal (karibu na shingo). Ikiwa iko, telezesha juu ya kichwa. Ikiwa ni ngumu, funga na ukate.",
+    "Vuta mdomo kisha pua na bomba la sindano kama inapatikana.",
+    "Elekeza utoaji wa bega la mbele kwa mvutano wa kushuka chini kwenye kichwa, kisha juu kwa bega la nyuma.",
+    "Peana mwili -- kumbuka wakati wa kujifungua.",
+    "Kausha na joto mtoto mara moja. Kuchochea kwa kusugua nyuma.",
+    "Bana na ukate kamba (subiri dakika 1-2 ikiwa mtoto yuko thabiti).",
+    "Toa kondo la nyuma kwa mvutano unaodhibitiwa kwa upole -- USILAZIMISHE.",
+    "Simamia oxytocin (ikiwa inapatikana) ili kuzuia uvujaji wa damu baada ya kuzaa baada ya kuzaa kondo.",
+    "Tathmini kutokwa na damu baada ya kuzaa -- masaji ya fandasi, mgandamizo wa mikono miwili ikihitajika.",
+    "Tathmini alama ya Apgar kwa dakika 1 na 5."
+  ],
+  "warnings": [
+    "Ikiwa uwasilishaji haujakaribia -- USIJARIBU. Rapid MEDEVAC inapendelewa.",
+    "Dystocia ya bega: ikiwa mabega yamekwama, tumia ujanja wa McRoberts (hyperflex hips) na shinikizo la suprapubic.",
+    "Kuvuja damu baada ya kuzaa ndio sababu kuu ya kifo cha uzazi kinachoweza kuzuilika -- kuwa na oxytocin tayari."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

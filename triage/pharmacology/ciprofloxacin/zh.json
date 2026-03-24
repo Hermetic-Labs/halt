@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "环丙沙星",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "西普罗"
+  ],
+  "description": "氟喹诺酮类抗生素，广泛覆盖革兰氏阴性菌。用于严重伤口感染、腹部穿透伤（胃肠道菌群覆盖）和尿路感染。可用 PO 和 IV。",
+  "indications": [
+    "腹部穿透伤（胃肠道净化）",
+    "严重伤口感染",
+    "革兰氏阴性菌感染",
+    "尿路感染"
+  ],
+  "dose": "400 mg IV 每 8-12 小时一次。 PO：500-750 毫克，每 2 小时一次。",
+  "route": [
+    "四号",
+    "采购订单"
+  ],
+  "window": "",
+  "contraindications": [
+    "已知氟喹诺酮过敏",
+    "18 岁以下的儿童和青少年（相对 - 肌腱病风险）",
+    "怀孕（相对）"
+  ],
+  "warnings": [
+    "肌腱断裂的风险，尤其是跟腱。如果出现肌腱疼痛，请停止使用。",
+    "可能延长 QT 间期——谨慎使用其他 QT 延长药物。",
+    "如果有其他选择，请避免在怀孕期间使用。"
+  ],
+  "regional_names": {
+    "generic": "环丙沙星"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV q8-12h（最大 400 mg/剂）。 PO：10-20 mg/kg，每 12 小时一次（最大 750 mg/剂）。",
+      "note": "仅当益处大于肌腱病风险时才使用。为严重感染保留。"
+    },
+    "obstetric": {
+      "note": "如果有其他选择，请避免在怀孕期间使用。仅用于益处大于风险的危及生命的感染。"
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

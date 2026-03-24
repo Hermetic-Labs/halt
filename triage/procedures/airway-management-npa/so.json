@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Gelida Jidka Hawada Nasopharyngeal (NPA)",
+  "category": "airway",
+  "skill_level": "dagaal-naf-badbaadiye",
+  "time_estimate": "1 daqiiqo",
+  "description": "Gelida marin-haweedka sanka oo dabacsan si ay u ilaaliso dareenka marin-haweedka bukaanka miyir-beelka ah ama miyir-beelka.",
+  "equipment": [
+    "npa-with-nabdoon-pin",
+    "saliidayn"
+  ],
+  "steps": [
+    "Dooro cabbirka NPA ee habboon (cabir sanka ilaa xuubka dhegta).",
+    "Si deeqsinimo leh ugu subag NPA saliid ama milix biyo-milmi leh.",
+    "Geli biinka badbaadada dhexda garabka haddii aanu hore u jirin (waxay ka hortagtaa hamiga).",
+    "Geli si tartiib ah daloolada midig ee sanka (gow u jeedda septum), adigoo u sii socda si la mid ah saxanka.",
+    "Hore u soco ilaa baalku ka soo hor jeedo sanka.",
+    "Dib u dhig bukaanka (booska soo kabashada haddii aysan jirin walaac laf dhabarta) oo dib u qiimee marin-haweedka.",
+    "Haddii iska caabin la kulmo, tijaabi sanka bidix ee sanka."
+  ],
+  "warnings": [
+    "Kahortag laga shakisan yahay jabka madaxa basil (indhaha raccoon, calaamada dagaalka, wiyisha CSF).",
+    "NPA waa bukaanka miyir daboolan ee isku xira marin hawoeedka bilowga ah ee ugu wanaagsan -- OPA waxay kicin kartaa matag bukaanada miyir daboolan."
+  ],
+  "source": "TCCC / JTS CPG"
+}

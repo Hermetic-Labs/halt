@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Decompression Singa Derzî (NCD)",
+  "category": "respiration",
+  "skill_level": "şerker-bijîjk",
+  "time_estimate": "1-2 min",
+  "description": "Rakirina acîl a pneumotoraksa tansiyonê bi ketina derziyê li cîhê duyemîn intercostal. Destwerdana jiyanê-rizgarkirinê.",
+  "equipment": [
+    "14g-derzî-kateter-3-25in",
+    "destmal",
+    "sing-seal-optional"
+  ],
+  "steps": [
+    "Pneumotoraksa tansiyonê nas bikin: nebûna dengên bêhnê li aliyê bandorkirî, derengiya tracheal (dereng), tengahiya nefesê, hîpotension, JVD.",
+    "Sîngê li aliyê bandorkirî eşkere bikin.",
+    "Cihê 2-mîn cîhê navberê, xeta midclavicular (alternatîf: 4-emîn / 5-emîn ICS, xeta axillary ya pêşîn) bibînin.",
+    "Derzî-kateterek 14g, 3,25 înç perpendîkular li ser dîwarê sîngê, tenê li ser TOP ya 3-mîn rib bixin (ji girêka neurovaskuler dûr dikeve).",
+    "Bi pêş ve biçin heya ku lehiyek hewayê were hîs kirin an jî fîşekek bihîstî.",
+    "Derziyê rakin û kateterê li cihê xwe bihêlin.",
+    "Guh bidin başbûna dengên hilm û hewildana nefesê.",
+    "Huba kateterê ewle bikin. Dawiya vekirî negirin an negirin.",
+    "Her 5 hûrdeman carek ji nû ve binirxînin - kateter dikare biqelişe an biqelişe, pêdivî bi dubarekirina dekompresyonê heye."
+  ],
+  "warnings": [
+    "Derziyek 3,25-inch bikar bînin -- angiocathetera standard 14g (1,5 în) pir caran di nexweşên leşkerî de ji ber zirx û masûlkeyên laş têk diçe.",
+    "Dibe ku NCD-ya dualî hewce be heke ne diyar be ku kîjan alî bandor dibe û nexweş ji ber girtinê ye.",
+    "Bêyî ku pêşî li birînê bigire, li heman aliyê birîna sîngê mêj neke."
+  ],
+  "follows": [],
+  "precedes": [
+    "chest-seal-application"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Derziyek bi pîvana guncan bikar bînin (nexweşên piçûktir, 1,5-2 in dibe ku bes be). Nêzîkatiya 2nd ICS MCL bikar bînin. Naskirina nîşanan dijwartir e -- hişyariyê bikar bînin."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

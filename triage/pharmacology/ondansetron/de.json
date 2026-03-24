@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Selektives 5-HT3-Rezeptorantagonist-Antiemetikum. Hochwirksam bei Übelkeit und Erbrechen. ODT (oral zerfallende Tablette) ist vor Ort nützlich, wenn eine intravenöse Gabe nicht verfügbar ist. In einigen Kampfpillenpackungen enthalten.",
+  "indications": [
+    "Übelkeit und Erbrechen (Chemotherapie, Opioid-induziert, postoperativ, SHT-bedingt)",
+    "Reisekrankheit",
+    "Übelkeit durch Ketaminverabreichung"
+  ],
+  "dose": "4–8 mg i.v./i.o. langsam über 2–5 Min. verabreichen. ODT: 4–8 mg unter der Zunge aufgelöst. IM: 4 mg.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Bekannte Überempfindlichkeit gegen Ondansetron oder andere 5-HT3-Antagonisten",
+    "Angeborenes Long-QT-Syndrom (nur Hochdosis-IV)"
+  ],
+  "warnings": [
+    "Eine hohe IV-Dosis kann das QT-Intervall verlängern – verwenden Sie die niedrigste wirksame IV-Dosis.",
+    "Ersetzt nicht die Atemwegskontrolle bei Patienten mit Benommenheit und Erbrechen – schützen Sie zuerst die Atemwege."
+  ],
+  "regional_names": {
+    "generic": "Ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,1–0,15 mg/kg i.v. (max. 4 mg). ODT: 4 mg für Kinder > 4 Jahre.",
+      "note": "In der Pädiatrie weit verbreitet und gut verträglich."
+    },
+    "obstetric": {
+      "note": "Begrenzte Daten zur Schwangerschaft. Bei starker Übelkeit/Erbrechen nach dem ersten Trimester anwenden, wenn der Nutzen das Risiko überwiegt. Im ersten Trimester nicht empfohlen."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

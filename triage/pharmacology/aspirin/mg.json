@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirine (asidra acetylsalicylic)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Bayer Aspirin",
+    "Ecotrin"
+  ],
+  "description": "Non-steroidal anti-inflammatory drug (NSAID) manana fananana antiplatelet. Fitsaboana an-tsipika voalohany ho an'ny aretina miteraka aretina (ACS). Manakana ny fivondronan'ny platelet tsy azo ovaina - maharitra mandritra ny androm-piainan'ny platelet (7-10 andro).",
+  "indications": [
+    "Ahina ho infarction miokardial (MI) -- mitsako avy hatrany",
+    "Angina tsy marim-pototra / aretin'ny tsimokaretina acute",
+    "Stroke (ischemic -- rehefa nesorina ny hemorrhagic)",
+    "Fanaviana sy fanaintainan'ny antonony (analgesic)"
+  ],
+  "dose": "ACS: 325 mg PO - TOKOA (aza atelina manontolo) avy hatrany. Analgesic/antipyretic: 325-650 mg PO q4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Omeo haingana araka izay azo atao - mitsako avy hatrany amin'ny ahiahy.",
+  "contraindications": [
+    "Active GI mandeha ra",
+    "Aretina hemorrhagic",
+    "Allergy aspirine fantatra na hypersensitivity NSAID",
+    "Fandatsahan-drà mafy tsy voafehy -- mampiharatsy ny fandehanan-dra ny aspirine"
+  ],
+  "warnings": [
+    "TSY omena ny marary hemorrhagic - aspirinina tsy azo ovaina manimba ny fiasan'ny platelet ary miharatsy ny fandehanan-dra.",
+    "TSY omena ny ankizy latsaky ny 12 taona voan'ny aretina virosy -- mety ho voan'ny aretin'i Reye.",
+    "Irritation GI - ento miaraka amin'ny sakafo raha tsy mipoitra."
+  ],
+  "regional_names": {
+    "generic": "aspirine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesic/antipyretic: 10-15 mg/kg PO q4-6h (max 650 mg/dose). FANAMARIHANA: Contraindicated amin'ny aretina virosy (Reye syndrome).",
+      "note": "Ampiasao ny acetaminophen (paracetamol) ho an'ny tazo amin'ny ankizy voan'ny aretina virosy."
+    },
+    "obstetric": {
+      "note": "Fadio ny fitondrana vohoka, indrindra fa ny trimester fahatelo (nakatona aloha ny ductus arteriosus). Ny fatra ambany (81mg) dia ampiasaina amin'ny fisorohana ny pre-eclampsia eo ambany fitarihan'ny dokotera ihany."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

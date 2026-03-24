@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Occlusieve borstsealtoepassing",
+  "category": "respiration",
+  "skill_level": "gevechtsredder",
+  "time_estimate": "1-2 minuten",
+  "description": "Het afdichten van een zuigende borstwond (open pneumothorax) met een geventileerde borstafdichting om het binnendringen van lucht te voorkomen en tegelijkertijd de druk te laten ontsnappen.",
+  "equipment": [
+    "geventileerde borstzegel",
+    "handschoenen",
+    "traumaschaar"
+  ],
+  "steps": [
+    "Leg de wond bloot - knip kleding weg of verwijder deze.",
+    "Veeg de huid rond de wond zo droog mogelijk af (bloed, zweet verhinderen verkleving).",
+    "Open de verpakking met geventileerde borstafdichtingen.",
+    "Plaats de afdichting over de wond, gecentreerd op het gat. Druk stevig aan en zorg ervoor dat alle randen goed vastzitten.",
+    "Richting van de klep controleren: de ontluchting moet naar buiten gericht zijn (weg van de huid) en vrij blijven.",
+    "Beoordeel de ademgeluiden opnieuw. Als de verslechtering na het sealen aanhoudt, overweeg dan een spanningspneumothorax – voer NCD uit.",
+    "Als er geen geventileerde afdichting beschikbaar is, kan een niet-geventileerde afdichting worden gebruikt, maar deze MOET worden gecontroleerd op de ontwikkeling van een spanningspneumothorax."
+  ],
+  "warnings": [
+    "Niet-geventileerde afdichtingen kunnen een eenvoudige pneumothorax omzetten in een spanningspneumothorax; gebruik geventileerde afdichtingen alleen in het veld.",
+    "Driezijdig tapen (geïmproviseerde afdichting) wordt niet langer aanbevolen door CoTCCC - gebruik een in de handel verkrijgbare geventileerde borstafdichting.",
+    "Breng altijd een afdichting aan op INGANG- en UITGANG-wonden."
+  ],
+  "follows": [],
+  "precedes": [
+    "naald-decompressie"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "broselow-tape",
+  "name": "Odniesienie do taśm ratunkowych dla dzieci Broselow",
+  "description": "Oznaczone kolorami odniesienia dotyczące stosunku masy do dawki w przypadku podawania leku u dzieci, gdy skala jest niedostępna. Zmierz dziecko od czubka głowy do pięty i dopasuj do kolorowego paska.",
+  "note": "To odniesienie służy wyłącznie do SZACOWANIA. Użyj rzeczywistej wagi, jeśli jest dostępna.",
+  "bands": [
+    {
+      "color": "szary",
+      "weight_kg": "3-5",
+      "length_cm": "46-57",
+      "est_age": "Noworodek"
+    },
+    {
+      "color": "różowy",
+      "weight_kg": "6-7",
+      "length_cm": "57-67",
+      "est_age": "3-6 miesięcy"
+    },
+    {
+      "color": "czerwony",
+      "weight_kg": "8-9",
+      "length_cm": "67-74",
+      "est_age": "6-12 miesięcy"
+    },
+    {
+      "color": "fioletowy",
+      "weight_kg": "10-11",
+      "length_cm": "74-83",
+      "est_age": "12-18 miesięcy"
+    },
+    {
+      "color": "żółty",
+      "weight_kg": "12-14",
+      "length_cm": "83-95",
+      "est_age": "18 miesięcy-3 lata"
+    },
+    {
+      "color": "biały",
+      "weight_kg": "15-18",
+      "length_cm": "95-107",
+      "est_age": "3-5 lat"
+    },
+    {
+      "color": "niebieski",
+      "weight_kg": "19-22",
+      "length_cm": "107-122",
+      "est_age": "5-7 lat"
+    },
+    {
+      "color": "pomarańczowy",
+      "weight_kg": "24-28",
+      "length_cm": "122-137",
+      "est_age": "7-9 lat"
+    },
+    {
+      "color": "zielony",
+      "weight_kg": "30-36",
+      "length_cm": "137-152",
+      "est_age": "9-12 lat"
+    }
+  ],
+  "source": "Broselow Pediatric Emergency Reference / PALS"
+}

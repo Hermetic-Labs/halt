@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxone",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "Kloxxado"
+  ],
+  "description": "Opioid receptor antagonist oo tartamaya. Si degdeg ah ayey u beddeshaa niyad-jabka neef-mareenka, suuxinta, iyo xanuunka xanuunka ee opioid. Bilawga IV: 2 daqiiqo, IM: 5 min, IN: 8-13 min. Mudada ka gaaban inta badan opioids -- ku celcelinta qiyaasta ayaa loo baahan karaa.",
+  "indications": [
+    "Opioid xad-dhaaf ah ama niyad-jabka neefsashada",
+    "Dib u noqoshada suuxinta opioid",
+    "Khasaare la tuhunsan yahay oo opioid"
+  ],
+  "dose": "0.4-2 mg IV/IO/IM/IN. Ku celi q2-3 daqiiqo haddii loo baahdo. ugu badnaan 10mg Intranasal (IN): 2mg halkii sanka.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ma jiraan wax liddi ku ah xad-dhaafka ah"
+  ],
+  "warnings": [
+    "Muddada ficilku (30-90 daqiiqo) way ka gaaban tahay inta badan opioids -- bukaanku waxa laga yaabaa inuu dib u maandooriyo. La soco ugu yaraan 1 saac kadib qiyaasta ugu dambeysay.",
+    "Waxay keentaa ka-noqoshada degdega ah ee opioid -- waxay keeni kartaa kacsanaan, tachycardia, bararka sambabada ee bukaanada ku tiirsan opioid.",
+    "Waxay beddeli doontaa xanuunka -- bukaanku wuxuu si ba'an ula dagaallami karaa xanuunka."
+  ],
+  "regional_names": {
+    "generic": "naloxone",
+    "US": "Narcan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.01 mg/kg IV/IM/IN (ugu badnaan 0.4 mg). Ku celi q2-3 daqiiqo PRN.",
+      "note": "Dhallaanka: 0.01 mg/kg dib u noqoshada opioid-ka hooyada."
+    },
+    "obstetric": {
+      "note": "Badbaadada uurka. Haddii la siiyo hooyada u dhow umusha, la soco ilmaha dhasha si ay uga baxdo."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

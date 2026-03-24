@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t374x1s",
+    "icd10":  "T374X1S",
+    "name":  "Poisoning by anthelminthics, accidental (unintentional), sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Poisoning by anthelminthics, accidental (unintentional), sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

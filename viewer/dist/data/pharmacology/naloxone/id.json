@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Nalokson",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narkan",
+    "Kloxxado"
+  ],
+  "description": "Antagonis reseptor opioid kompetitif. Dengan cepat membalikkan depresi pernapasan, sedasi, dan analgesia akibat opioid. Onset IV: 2 menit, IM: 5 menit, IN: 8-13 menit. Durasi lebih pendek dari kebanyakan opioid -- pemberian dosis berulang mungkin diperlukan.",
+  "indications": [
+    "Overdosis opioid atau depresi pernafasan",
+    "Pembalikan sedasi opioid",
+    "Diduga korban opioid"
+  ],
+  "dose": "0,4-2 mg IV/IO/IM/IN. Ulangi setiap 2-3 menit sesuai kebutuhan. Maks 10mg. Intranasal (IN): 2mg per lubang hidung.",
+  "route": [
+    "IV",
+    "aku",
+    "SAYA",
+    "DALAM",
+    "meter persegi"
+  ],
+  "window": "",
+  "contraindications": [
+    "Tidak ada kontraindikasi absolut dalam pengaturan overdosis"
+  ],
+  "warnings": [
+    "Durasi kerja (30-90 menit) lebih pendek dibandingkan kebanyakan opioid -- pasien dapat melakukan narkotika ulang. Pantau setidaknya 1 jam setelah dosis terakhir.",
+    "Memicu penghentian opioid akut -- dapat menyebabkan agitasi, takikardia, edema paru pada pasien yang bergantung pada opioid.",
+    "Akan membalikkan analgesia - pasien mungkin menjadi sangat agresif karena rasa sakit."
+  ],
+  "regional_names": {
+    "generic": "nalokson",
+    "US": "Narkan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,01 mg/kg IV/IM/IN (maks 0,4 mg). Ulangi q2-3 menit PRN.",
+      "note": "Neonatal: 0,01 mg/kg untuk pembalikan opioid ibu."
+    },
+    "obstetric": {
+      "note": "Aman pada kehamilan. Jika diberikan kepada ibu menjelang persalinan, pantau neonatus untuk mengetahui adanya penghentian obat."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

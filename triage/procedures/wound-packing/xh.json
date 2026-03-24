@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Ukupakishwa kwenxeba leHemostatic",
+  "category": "hemorrhage-control",
+  "skill_level": "ukulwa-umsindisi wobomi",
+  "time_estimate": "3-5 imiz",
+  "description": "Ukupakishwa kwenxeba elingacinezelekiyo okanye elidibeneyo kunye ne-hemostatic gauze ukulawula ukuphuma kwegazi apho i-tourniquet ayinakusetyenziswa.",
+  "equipment": [
+    "hemostatic-gauze",
+    "iiglavu ze-nitrile",
+    "trauma-chears",
+    "uxinzelelo-bandage"
+  ],
+  "steps": [
+    "Don iiglavu. Liveze ngokupheleleyo inxeba usebenzisa izikere zokwenzakala.",
+    "Chonga umthombo wokopha osebenzayo kumngxuma wenxeba.",
+    "Vula i-hemostatic gauze kwaye uyipakishe ngokuqinileyo enxebeni ngomnwe wakho, uyityhalele ngqo kwindawo yokopha.",
+    "Qhubeka upakisha de umgodi wenxeba uzaliswe ngokupheleleyo.",
+    "Faka isicelo esiqinileyo, uxinzelelo oluqhubekayo oluthe ngqo ngesithende sesandla sakho ubuncinci bemizuzu emi-3.",
+    "Sukususa nayiphi na imathiriyeli yokupakisha xa sele uyifakile.",
+    "Faka ibhandeji yoxinzelelo kwinxeba elipakishiweyo.",
+    "Phawula ixesha kwikhadi le-TCCC okanye ibunzi lesigulane (umzekelo, 'PKD 0145')."
+  ],
+  "warnings": [
+    "UNGApakishi amanxeba agqobhozayo esifubeni -- sebenzisa isifuba endaweni yoko.",
+    "Ukuba upakisha inxeba lentamo, faka uxinzelelo ngaphandle kokucinezela zombini ii-carotids ngaxeshanye.",
+    "Phinda uvavanye kwimizuzu emi-5 ukuba kukrokreleka umthombo wemithambo."
+  ],
+  "follows": [
+    "ngqo-uxinzelelo"
+  ],
+  "precedes": [
+    "tourniquet-isicelo"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Sebenzisa i-gauze encinci ngokulinganayo. Faka isicelo soxinzelelo olulula ukuze ugweme ukunyanzeliswa kwe-thoracic kwiintsana."
+    },
+    "obstetric": {
+      "note": "Kuphephe ukupakisha uxinzelelo olunzulu okanye olunobundlobongela kufutshane nesisu se-gravid. Ukunyuka ngokukhawuleza kuyakhethwa."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

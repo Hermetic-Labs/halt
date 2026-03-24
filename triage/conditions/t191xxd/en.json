@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t191xxd",
+    "icd10":  "T191XXD",
+    "name":  "Foreign body in bladder, subsequent encounter",
+    "category":  "foreign-body",
+    "triage_priority":  "",
+    "description":  "Foreign body in bladder, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

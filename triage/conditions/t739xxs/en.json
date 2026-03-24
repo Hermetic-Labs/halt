@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t739xxs",
+    "icd10":  "T739XXS",
+    "name":  "Effect of deprivation, unspecified, sequela",
+    "category":  "environmental-injury",
+    "triage_priority":  "",
+    "description":  "Effect of deprivation, unspecified, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

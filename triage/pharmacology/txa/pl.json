@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Kwas traneksamowy (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Cyklokapron",
+    "Listeda"
+  ],
+  "description": "Środek antyfibrynolityczny, który hamuje rozpad skrzepów krwi. Wczesne podanie znacznie zmniejsza śmiertelność z powodu wstrząsu krwotocznego. Zalecane przez CoTCCC dla wszystkich ofiar ze znacznym krwotokiem lub z ryzykiem znacznego krwotoku.",
+  "indications": [
+    "Znaczący krwotok zewnętrzny lub podejrzewany krwotok wewnętrzny",
+    "Wstrząs krwotoczny",
+    "Wysokie ryzyko krwotoku (mechanizm urazu)"
+  ],
+  "dose": "1 g IV/IO przez 10 minut, następnie 1 g IV/IO przez 8 godzin. Jeśli IV/IO jest niedostępne: 650 mg PO x2 (łącznie 1,3 g) – opcja TCCC PO.",
+  "route": [
+    "IV",
+    "IO",
+    "PO"
+  ],
+  "window": "MUSI zostać podany w ciągu 3 godzin od urazu. Po upływie 3 godzin TXA może ZWIĘKSZYĆ śmiertelność – nie podawać.",
+  "contraindications": [
+    "Historia choroby zakrzepowo-zatorowej (DVT, PE, udar)",
+    "Rozsiane wykrzepianie wewnątrznaczyniowe (DIC)",
+    "> 3 godziny po urazie"
+  ],
+  "warnings": [
+    "Natychmiast zapisz czas podania – okno wynosi 3 godziny od chwili urazu, a nie czasu przybycia.",
+    "Nie mylić dawki dożylnej (1 g) z dawką doustną."
+  ],
+  "regional_names": {
+    "generic": "kwas traneksamowy",
+    "US": "Cyklokapron",
+    "UK": "Cyklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg dożylnie (maks. 1 g). Pojawiają się dowody – skorzystaj z oceny klinicznej.",
+      "note": "Obowiązuje to samo 3-godzinne okno."
+    },
+    "obstetric": {
+      "note": "Wskazany przy krwotoku poporodowym. Bezpieczny w ciąży. Obowiązuje to samo dawkowanie dla dorosłych."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

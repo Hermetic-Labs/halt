@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Aplicación de sellado torácico oclusivo",
+  "category": "respiration",
+  "skill_level": "salvavidas de combate",
+  "time_estimate": "1-2 minutos",
+  "description": "Sellado de una herida torácica por succión (neumotórax abierto) con un sello torácico ventilado para evitar la entrada de aire y al mismo tiempo permitir la liberación de presión.",
+  "equipment": [
+    "sello-tórax-ventilado",
+    "guantes",
+    "tijeras de trauma"
+  ],
+  "steps": [
+    "Exponga la herida: corte o quítese la ropa.",
+    "Limpie la piel alrededor de la herida lo más seca posible (la sangre y el sudor impiden la adhesión).",
+    "Abra el paquete de sello torácico ventilado.",
+    "Coloque el sello sobre la herida, centrado en el agujero. Presione firmemente, asegurándose de que todos los bordes se adhieran.",
+    "Verifique la orientación de la válvula: la ventilación debe mirar hacia afuera (lejos de la piel) y permanecer sin obstrucciones.",
+    "Vuelva a evaluar los ruidos respiratorios. Si el deterioro continúa después del sellado, considere el neumotórax a tensión y realice una NCD.",
+    "Si no se dispone de un sello con ventilación, se puede utilizar un sello sin ventilación, pero DEBE monitorearse para detectar el desarrollo de neumotórax a tensión."
+  ],
+  "warnings": [
+    "Los sellos sin ventilación pueden convertir un neumotórax simple en un neumotórax a tensión; use sellos con ventilación solo en el campo.",
+    "CoTCCC ya no recomienda el uso de cinta adhesiva de tres lados (sello improvisado); utilice un sello torácico con ventilación comercial.",
+    "Aplique siempre un sello a las heridas de ENTRADA y SALIDA."
+  ],
+  "follows": [],
+  "precedes": [
+    "descompresión con aguja"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s98011d",
+    "icd10":  "S98011D",
+    "name":  "Complete traumatic amputation of right foot at ankle level, subsequent encounter",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Complete traumatic amputation of right foot at ankle level, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

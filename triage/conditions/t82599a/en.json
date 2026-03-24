@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t82599a",
+    "icd10":  "T82599A",
+    "name":  "Other mechanical complication of unspecified cardiac and vascular devices and implants, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Other mechanical complication of unspecified cardiac and vascular devices and implants, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Uingizaji wa Njia ya Nasopharyngeal Airway (NPA).",
+  "category": "airway",
+  "skill_level": "kupambana na kuokoa maisha",
+  "time_estimate": "Dakika 1",
+  "description": "Uingizaji wa kiambatanisho cha njia ya hewa ya pua inayonyumbulika ili kudumisha hali ya hewa kwa mgonjwa asiye na fahamu au asiye na fahamu.",
+  "equipment": [
+    "npa-na-pini-ya-usalama",
+    "mafuta ya kulainisha"
+  ],
+  "steps": [
+    "Chagua saizi inayofaa ya NPA (pima kutoka pua hadi sikio).",
+    "Lainisha NPA kwa ukarimu na kilainishi kisicho na maji au salini.",
+    "Ingiza pini ya usalama kupitia flange ikiwa haipo tayari (huzuia kutamani).",
+    "Ingiza kwa upole kwenye pua ya kulia (bevel kuelekea septamu), ukienda sambamba na kaakaa.",
+    "Kuendeleza mpaka flange inakaa dhidi ya pua.",
+    "Weka upya mgonjwa (nafasi ya kupona ikiwa hakuna wasiwasi wa mgongo) na uangalie upya njia ya hewa.",
+    "Ikiwa upinzani unakabiliwa, jaribu pua ya kushoto."
+  ],
+  "warnings": [
+    "Haikubaliki katika kuvunjika kwa fuvu la basilar (macho ya raccoon, ishara ya vita, rhinorrhea ya CSF).",
+    "NPA ni kiambatanisho bora cha awali cha mgonjwa asiye na fahamu -- OPA inaweza kusababisha kutapika kwa wagonjwa walio na fahamu."
+  ],
+  "source": "TCCC / JTS CPG"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s025xxg",
+    "icd10":  "S025XXG",
+    "name":  "Fracture of tooth (traumatic), subsequent encounter for fracture with delayed healing",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Fracture of tooth (traumatic), subsequent encounter for fracture with delayed healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

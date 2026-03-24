@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxycycline",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramycin",
+    "Doryx"
+  ],
+  "description": "Antibiyootiga tetracycline ballaaran. Beddelka ka hortagga boogta afka ee bukaanka xasaasiyadda penicillin. Sidoo kale wax ku ool ah oo ka dhan ah noolaha caadiga ah iyo qaar ka mid ah cudurrada ka dhasha vector-ka (ka hortagga duumada ee meelaha endemic).",
+  "indications": [
+    "Ka hortagga dhaawaca (xasaasiyadda penicillin)",
+    "Caabuqyada unugyada jilicsan",
+    "Nabaro qaniinyo",
+    "Kahortagga duumada ee meelaha ay ka jirto"
+  ],
+  "dose": "100 mg PO 12 saacadood kasta x 7 maalmood.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Bilow 3 saacadood gudahooda ka dib dhaawaca ka hortagga dhaawaca.",
+  "contraindications": [
+    "Uurka (waxay sababtaa midabka iligga uurjiifka iyo ka hortagga koritaanka lafaha)",
+    "Carruurta ka yar 8 sano (la mid ah sabab)",
+    "Cagaarshow daran"
+  ],
+  "warnings": [
+    "XANUUNKA uurka leh -- isticmaal amoxicillin beddelkeeda.",
+    "KACAYN carruurta 8 sano ka yar.",
+    "Dareen-qaadasho -- kula tali bukaanka inuu iska ilaaliyo soo-gaadhista qorraxda.",
+    "Ha ku qaadan cuntooyinka qani ku ah kaalshiyamka, antacids, ama iron -- waxay wax u dhimaysaa nuugista."
+  ],
+  "regional_names": {
+    "generic": "doxycycline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Contraindicated ka yar 8 sano. Da'da 8+: 2-4 mg/kg/maalintii la qaybiyay q12h (ugu badnaan 100 mg/qiyaas).",
+      "note": "U isticmaal amoxicillin carruurta ka yar 8."
+    },
+    "obstetric": {
+      "note": "U KEENAY uurka -- waxay keentaa dhaawac uurjiifka ah. Isticmaal amoxicillin."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

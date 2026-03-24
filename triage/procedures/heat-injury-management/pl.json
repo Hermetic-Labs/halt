@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Zarządzanie urazami cieplnymi",
+  "category": "environmental",
+  "skill_level": "Podstawowe",
+  "time_estimate": "Trwa do momentu uzyskania statusu MEDEVAC lub stanu pacjenta",
+  "description": "Postępowanie w przypadku skurczów cieplnych, wyczerpania cieplnego i udaru cieplnego. Udar cieplny jest stanem zagrażającym życiu – leczenie polega na szybkim ochłodzeniu. Natychmiast rozróżnij wyczerpanie cieplne (normalne określenie) od udaru cieplnego (zmieniona LOC).",
+  "equipment": [
+    "Woda (doustnie + chłodzenie)",
+    "Okłady z lodu lub zimne, mokre ściereczki",
+    "Zaopatrzenie dożylne (LR lub NS)",
+    "Wentylator lub cień",
+    "Termometr doodbytniczy (ostateczna temperatura wewnętrzna)"
+  ],
+  "steps": [
+    "OCEŃ: Czy ofiara jest czujna i zorientowana? Gorąca, sucha skóra czy gorąca, spocona skóra? Temperatura rdzenia, jeśli dostępny jest termometr.",
+    "Skurcze cieplne: skurcze mięśni, normalne myślenie. Odpoczynek w cieniu, nawadnianie doustne elektrolitami, delikatne rozciąganie. Nie zagrażające życiu.",
+    "WYczerpanie upałem: obfite pocenie się, osłabienie, zawroty głowy, normalne lub prawie normalne myślenie. Przenieś się do zacienionego/chłodnego miejsca. Usuń nadmiar odzieży. Płyny doustne (jeśli są przytomne) lub IV LR 1L przez 30-60 min. Monitoruj rozwój udaru cieplnego.",
+    "Udar cieplny (nagły wypadek): Zmieniona lokalizacja, dezorientacja, waleczność lub utrata przytomności. Temperatura rdzenia > 40°C (104°F). Gorąca skóra (może być mokra lub sucha). POCZĄTEK: Natychmiast zdjąć z ognia, zdjąć całe ubranie, wilgotną skórę i mocno wachlować. Zastosuj okłady z lodu na szyję, pachy i pachwiny (obszary wysoko naczyniowe). IV LR 1-2L. W przypadku nieprzytomności chronić drogi oddechowe. MEDEVAC natychmiast.",
+    "NIE podawaj aspiryny ani acetaminofenu w przypadku udaru cieplnego – nie pomaga, może zaszkodzić.",
+    "Monitoruj: czynności życiowe co 15 min, drogi oddechowe, stan psychiczny. Udokumentuj trend temp.",
+    "Kontynuuj chłodzenie podczas MEDEVAC – nie zatrzymuj się na czas transportu."
+  ],
+  "warnings": [
+    "Udar cieplny to stan zagrażający życiu – nie należy go mylić z wyczerpaniem cieplnym. Sprawdź stan psychiczny.",
+    "Chłodzenie jest ostatecznym leczeniem. Nie opóźniać schładzania w celu zapewnienia dostępu dożylnego.",
+    "U osób sprawnych może wystąpić wysiłkowy udar cieplny – sprawność fizyczna nie chroni.",
+    "Hiponatremia (niski poziom sodu) spowodowana przewodnieniem zwykłą wodą może imitować udar cieplny – należy podawać roztwór elektrolitów, a nie tylko wodę."
+  ],
+  "follows": [
+    "ocena odwodnienia"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Dzieci termoregulują mniej efektywnie. Udar cieplny może postępować szybciej. Płyn w zależności od masy ciała: bolus dożylny LR 20 ml/kg. Najdokładniejsza temperatura ciała mierzona termometrem doodbytniczym."
+    },
+    "obstetric": {
+      "note": "Hipertermia u matki (>39°C) może powodować wady cewy nerwowej u płodu (wczesne) i zagrożenie dla płodu (późne). Agresywne chłodzenie. Monitorowanie tętna płodu, jeśli jest dostępne."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

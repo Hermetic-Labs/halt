@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t23659s",
+    "icd10":  "T23659S",
+    "name":  "Corrosion of second degree of unspecified palm, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Corrosion of second degree of unspecified palm, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

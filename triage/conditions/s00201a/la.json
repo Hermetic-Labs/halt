@@ -1,0 +1,22 @@
+{
+  "id": "s00201a",
+  "icd10": "S00201A",
+  "name": "Laesio superficialis superficialis palpebrae dextrae et area periocularis, occursus initialis",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Laesio superficialis superficialis palpebrae dextrae et area periocularis, occursus initialis",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

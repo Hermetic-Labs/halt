@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Gestion des blessures causées par la chaleur",
+  "category": "environmental",
+  "skill_level": "De base",
+  "time_estimate": "En cours jusqu'à MEDEVAC ou patient stable",
+  "description": "Gestion des crampes de chaleur, de l’épuisement dû à la chaleur et du coup de chaleur. Le coup de chaleur est une urgence potentiellement mortelle – le traitement est un refroidissement rapide. Distinguer immédiatement l’épuisement dû à la chaleur (mentation normale) du coup de chaleur (LOC modifié).",
+  "equipment": [
+    "Eau (orale + refroidissement)",
+    "Des blocs de glace ou des chiffons froids et humides",
+    "Fournitures IV (LR ou NS)",
+    "Ventilateur ou ombre",
+    "Thermomètre rectal (température à cœur définitive)"
+  ],
+  "steps": [
+    "ÉVALUER : La victime est-elle alerte et orientée ? Peau chaude et sèche ou peau chaude et moite ? Température à cœur si thermomètre disponible.",
+    "CRAMPES DE CHALEUR : spasmes musculaires, état d'esprit normal. Repos à l'ombre, réhydratation orale avec électrolytes, étirements doux. Ne met pas la vie en danger.",
+    "ÉPUISEMENT THERMIQUE : transpiration abondante, faiblesse, étourdissements, état mental normal ou presque normal. Déplacez-vous vers une zone ombragée/fraîche. Retirez les vêtements en excès. Liquides oraux (si conscient) ou IV LR 1 L pendant 30 à 60 min. Surveiller la progression vers un coup de chaleur.",
+    "COUP DE CHALEUR (urgence) : altération du niveau de conscience, confusion, combativité ou perte de conscience. Température à cœur > 40 °C (104 °F). Peau chaude (peut être humide ou sèche). COMMENCER : Retirer immédiatement du feu, retirer tous les vêtements, mouiller la peau et ventiler agressivement. Appliquez des blocs de glace sur le cou, les aisselles et l'aine (zones vasculaires élevées). IV LR 1-2L. Protéger les voies respiratoires en cas d'inconscience. ÉVACUATION SANITAIRE immédiatement.",
+    "Ne donnez PAS d’aspirine ou d’acétaminophène en cas de coup de chaleur – cela n’aide pas, cela peut nuire.",
+    "Moniteur : signes vitaux toutes les 15 min, voies respiratoires, état mental. Tendance de la température du document.",
+    "Continuez à refroidir pendant MEDEVAC – ne vous arrêtez pas pour le transport."
+  ],
+  "warnings": [
+    "Le coup de chaleur est une urgence potentiellement mortelle – ne le confondez pas avec un épuisement dû à la chaleur. Vérifiez l'état mental.",
+    "Le refroidissement est le traitement définitif. Ne retardez pas le refroidissement pour établir un accès IV.",
+    "Un coup de chaleur à l'effort peut survenir chez des individus en bonne forme physique – la forme physique ne protège pas.",
+    "L'hyponatrémie (faible teneur en sodium) due à une surhydratation avec de l'eau claire peut imiter un coup de chaleur : donnez une solution électrolytique et non seulement de l'eau."
+  ],
+  "follows": [
+    "évaluation de la déshydratation"
+  ],
+  "precedes": [
+    "évacuation sanitaire-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Les enfants régulent moins efficacement leur température. Le coup de chaleur peut progresser plus rapidement. Liquide basé sur le poids : bolus LR IV de 20 mL/kg. Température centrale via le thermomètre rectal le plus précis."
+    },
+    "obstetric": {
+      "note": "L'hyperthermie maternelle (> 39 °C) peut provoquer des anomalies du tube neural fœtal (précoces) et une détresse fœtale (tardive). Refroidissement agressif. Surveillance de la fréquence cardiaque fœtale si disponible."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

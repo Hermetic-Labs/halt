@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "SALT Triage (Rêvekirin, Nirxandin, Destwerdanên Jiyanê, Dermankirin / Veguheztin)",
+  "category": "mass-casualty",
+  "description": "Protokola ceribandina qurbaniyên girseyî. Standard ji bo bûyerên pir-kuştî di mîhengên leşkerî û sivîl de.",
+  "instructions": "Gav 1: Rêzkirina gerdûnî (meşe, hejandin, hîn). Gav 2: Bi rêza pêşîn binirxînin. Gav 3: Destwerdanên rizgarkirinê pêk bînin (kontrolkirina xwîna mezin, rêça hewayê vekirî, dekompresyona derziyê, oto-injektîf). Gav 4: Kategorî destnîşan bikin.",
+  "categories": [
+    {
+      "color": "reş",
+      "label": "Hêvî / Mirî",
+      "description": "Ji ber çavkaniyên berdest ne mimkûn e ku sax bimîne, an mirina piştrastkirî"
+    },
+    {
+      "color": "sor",
+      "label": "Yekser (T1)",
+      "description": "Birînên xeternak ên jiyanê, dê bi destwerdana lezgîn bijîn"
+    },
+    {
+      "color": "zer",
+      "label": "Derengmayî (T2)",
+      "description": "Birînên giran lê bi îstîqrar, dikarin li benda lênêrînê bisekinin"
+    },
+    {
+      "color": "kesk",
+      "label": "Kêmtirîn (T3)",
+      "description": "Birînên biçûk -- birînên dimeşin"
+    },
+    {
+      "color": "gewr",
+      "label": "Hêvîdar",
+      "description": "Birîndariyek bêserûber ji ber çavkaniyên heyî - tenê lênêrîna rehetiyê"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Algorîtmaya Triage JumpSTART XWÊ ji bo nexweşên zarokan diguherîne. Bendavên rêjeya nefesê û gavên nirxandinê ji bo zarokên di bin 8 salî de cuda ne."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

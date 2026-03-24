@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s6390xd",
+    "icd10":  "S6390XD",
+    "name":  "Sprain of unspecified part of unspecified wrist and hand, subsequent encounter",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Sprain of unspecified part of unspecified wrist and hand, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

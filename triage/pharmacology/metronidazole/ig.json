@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazole",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "Ọgwụ nje Nitroimidazole nwere ezigbo mkpuchi anaerobic na protozoal. Ihe dị mkpa maka ịbanye n'ime ọnya afọ / eriri afọ iji kpuchie osisi gut anaerobic. A na-ejikarị ya na ciprofloxacin.",
+  "indications": [
+    "Ịba n'ime afọ / eriri afọ trauma",
+    "Ọrịa intra-abdominal",
+    "Ọrịa anụ ahụ dị nro anaerobic",
+    "C. ọrịa siri ike"
+  ],
+  "dose": "500 mg IV q6-8h. PO: 500 mg q8h (ọ bụrụ na anabatara ọnụ).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Nke mbụ trimester nke afọ ime (ihe ikwu)",
+    "A maara metronidazole ma ọ bụ nitroimidazole nfụkasị ahụ"
+  ],
+  "warnings": [
+    "Mmeghachi omume dị ka Disulfiram na mmanya --aṅụla mmanya na-aba n'anya n'oge ọgwụgwọ na 48h mgbe e mesịrị.",
+    "Enwere ike ibute neuropathy akụkụ site na iji ogologo oge.",
+    "Zere n'ime ọnwa atọ mbụ ma ọ bụrụ na ọ ga-ekwe omume."
+  ],
+  "regional_names": {
+    "generic": "metronidazole"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7.5 mg / kg IV / PO q6h (max 500 mg / dose).",
+      "note": "Nchekwa na ụmụaka toro eto. Zere na ụmụ ọhụrụ."
+    },
+    "obstetric": {
+      "note": "Zere n'ime ọnwa atọ mbụ ma ọ bụrụ na ọ ga-ekwe omume. Jiri nkeji nke abụọ/nke atọ mgbe ọ dị mkpa maka ahụike --erite na-akakarị ihe ize ndụ maka ọrịa anaerobic siri ike."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

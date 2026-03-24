@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s51821a",
+    "icd10":  "S51821A",
+    "name":  "Laceration with foreign body of right forearm, initial encounter",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Laceration with foreign body of right forearm, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

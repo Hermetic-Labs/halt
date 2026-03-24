@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Ooru ifarapa Management",
+  "category": "environmental",
+  "skill_level": "Ipilẹṣẹ",
+  "time_estimate": "Ti nlọ lọwọ titi MEDEVAC tabi iduroṣinṣin alaisan",
+  "description": "Isakoso ti ooru niiṣe, ooru re, ati ooru ọpọlọ. Ikọlu ooru jẹ pajawiri eewu-aye -- itutu agbaiye yara ni itọju naa. Ṣe iyatọ imukuro ooru (itumọ deede) lati ikọlu ooru (LOC ti o yipada) lẹsẹkẹsẹ.",
+  "equipment": [
+    "Omi (oral + itutu agbaiye)",
+    "Awọn akopọ yinyin tabi awọn asọ tutu tutu",
+    "Awọn ipese IV (LR tabi NS)",
+    "Fan tabi iboji",
+    "thermometer rectal (iwọn otutu koko pataki)"
+  ],
+  "steps": [
+    "AKIYESI: Njẹ itaniji ati iṣalaye olufaragba naa? Awọ gbigbẹ gbona vs. gbona lagun ara? Iwọn otutu ti iwọn otutu ti thermometer ba wa.",
+    "gbigbona CRAMPS: Awọn spasms iṣan, idarukọ deede. Sinmi ni iboji, isọdọtun ẹnu pẹlu awọn elekitiroti, nina pẹlẹ. Ko ṣe idẹruba aye.",
+    "ÀWỌN ỌRỌ̀ ÒRÙN: Oogun ti o wuwo, ailera, dizziness, deede tabi isunmọ deede. Gbe si iboji/agbegbe tutu. Yọ awọn aṣọ ti o pọju kuro. Awọn fifa ẹnu (ti o ba mọ) tabi IV LR 1L ju 30-60 min. Bojuto fun lilọsiwaju si ikọlu ooru.",
+    "IGBONA gbigbona (pajawiri): Iyipada LOC, iporuru, ija, tabi aimọkan. Iwọn otutu> 40C (104F). Awọ gbigbona (le jẹ tutu tabi gbẹ). BERE: Yọ kuro ninu ooru lẹsẹkẹsẹ, yọ gbogbo aṣọ kuro, awọ tutu ati fan ni ibinu. Waye awọn idii yinyin si ọrun, axillae, ati ikun (awọn agbegbe iṣan giga). IV LR 1-2L. Dabobo ọna atẹgun ti o ba daku. MEDEVAC lẹsẹkẹsẹ.",
+    "MAA ṢE fun aspirin tabi acetaminophen fun ikọlu ooru - ko ṣe iranlọwọ, o le ṣe ipalara.",
+    "Atẹle: vitals q15 min, ọna atẹgun, ipo opolo. Ṣe iwe aṣa aṣa.",
+    "Tẹsiwaju itutu agbaiye lakoko MEDEVAC - maṣe duro fun gbigbe."
+  ],
+  "warnings": [
+    "Ikọlu ooru jẹ pajawiri ti o lewu-aye -- maṣe ṣe asise rẹ fun irẹ ooru. Ṣayẹwo ipo opolo.",
+    "Itutu agbaiye jẹ itọju pataki. Maṣe ṣe idaduro itutu agbaiye lati fi idi iwọle IV silẹ.",
+    "Ikọlu ooru adaṣe le waye ni awọn eniyan ti o yẹ - amọdaju ti ara ko ni aabo.",
+    "Hyponatremia (sodiomu kekere) lati inu omi apọju pẹlu omi lasan le ṣe afiwe ikọlu ooru - fun ojutu elekitiroti kii ṣe omi nikan."
+  ],
+  "follows": [
+    "gbígbẹ-iyẹwo"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Awọn ọmọde thermoregulate kere si daradara. Ooru ọpọlọ le ni ilọsiwaju yiyara. Omi ti o da lori iwuwo: 20 milimita / kg LR IV bolus. Iwọn otutu mojuto nipasẹ thermometer rectal deede julọ."
+    },
+    "obstetric": {
+      "note": "Hyperthermia ti iya iya (> 39C) le fa awọn abawọn tube nkankikan ọmọ inu oyun (ni kutukutu) ati ipọnju oyun (pẹ). Ibinu itutu agbaiye. Abojuto oṣuwọn ọkan inu oyun ti o ba wa."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

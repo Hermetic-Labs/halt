@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Fizarana Cesarean Perimortem (PMCS)",
+  "category": "obstetric",
+  "skill_level": "dokotera-mpandidy",
+  "time_estimate": "3-5 min",
+  "description": "Ny fanaterana cesarean vonjy maika ao anatin'ny 4 minitra amin'ny fisamborana ny fo amin'ny reny mba ahafahan'ny CPR mahomby sy ny fahaveloman'ny zaza vao teraka. Ny tranonjaza dia manindry ny aorta sy ny IVC - ny fiterahana koa dia mamelona ny reny.",
+  "equipment": [
+    "scalpel",
+    "fonon-tanana",
+    "retractors",
+    "cord-clamps",
+    "fitaovana-fanamelohana-neonatal"
+  ],
+  "steps": [
+    "Tohizo ny CPR tsy misy fanelingelenana.",
+    "Manaova tsipika mitsangana mitsangana manomboka amin'ny umbilicus ka hatramin'ny pubis amin'ny alalan'ny hoditra sy ny fascia.",
+    "Atsipazo mitsivalana ny ampahany ambany amin'ny tranonjaza.",
+    "Ateraho ny zaza - mariho ny fotoana.",
+    "Apetaho ary tapaho ny tady.",
+    "Alefaso any amin'ny mpamatsy faharoa ny zaza vao teraka.",
+    "Esory ny placenta.",
+    "Fenoy ny tranonjaza sy ny kibo raha tsy azo atao avy hatrany ny fanakatonana.",
+    "Tohizo ny famelomana ny reny - ny ROSC dia azo inoana kokoa aorian'ny famotehana ny tranonjaza."
+  ],
+  "warnings": [
+    "Ny fotoana fanapahan-kevitra amin'ny fiterahana dia tsy maintsy latsaky ny 5 minitra mba hahazoana vokatra tsara indrindra amin'ny reny sy ny foetus.",
+    "Ity dingana ity dia fomba farany - raha tsy misy ny fijanonan'ny fo sy ny fiterahana efa akaiky (> 20 herinandro ny fitondrana vohoka).",
+    "Mitaky fiofanana amin'ny ambaratongan'ny dokotera. Ny mpitsabo miady dia tokony hanomana ny saha sy hanohana, fa tsy hanao tsy miankina."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "I-Morphine sulfate",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Cotin",
+    "Isitofu seMorphine Sulfate"
+  ],
+  "description": "I-opioid analgesic. Inika isiqabu kwiintlungu ezisebenzayo kodwa ibangela i-vasodilation kunye ne-hypotension--sebenzisa ngononophelo kumothuko we-hemorrhagic. I-Ketamine ikhethwa kwiindawo zokulwa. Sebenzisa imorphine kuphela kwizigulane ezizinzile kwi-hemodynamically.",
+  "indications": [
+    "Intlungu ephakathi ukuya kwi-hemodynamically stable",
+    "Ayingomgca wokuqala kwi-TCCC -- khetha i-ketamine"
+  ],
+  "dose": "2-4 mg IV/IO q4h PRN. Titrate ukuya kwisiphumo. I-IM: 5-10 mg q4h PRN.",
+  "route": [
+    "IV",
+    "IO",
+    "I-IM",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ukungazinzi kwe-Hemodynamic / ukothuka kwe-hemorrhagic",
+    "Ukudakumba kokuphefumla",
+    "Ukwenzakala entloko ngokuguqulwa kweLOC (isihlobo)"
+  ],
+  "warnings": [
+    "Ibangela i-vasodilation -- inokwenza mandundu ukothuka ukopha. Vavanya iBP ngaphambi nasemva.",
+    "Yiba naloxone ngokukhawuleza.",
+    "Ukudakumba kokuphefumla -- izinga lokujonga."
+  ],
+  "regional_names": {
+    "generic": "imorphine sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg / kg IV q2-4h PRN. Ubukhulu bedosi enye 2mg IV kumntwana opioid-naive.",
+      "note": "Libeke iliso elibukhali izinga lokuphefumla. Iintsana zinovakalelo kakhulu."
+    },
+    "obstetric": {
+      "note": "Unqumla i-placenta. Ukudakumba komntwana osandul’ ukuphefumla kunokwenzeka ukuba kunikwe kwiiyure ezi-2-4 zokubeleka. Yiba naloxone elungele usana olusanda kuzalwa."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

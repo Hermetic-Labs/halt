@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Decompression Chest Needle (NCD)",
+  "category": "respiration",
+  "skill_level": "combat-medic",
+  "time_estimate": "1-2 min",
+  "description": "Fanamaivanana vonjy taitra ny pneumothorax tension amin'ny alalan'ny fampidirana fanjaitra ao amin'ny habaka intercostal faharoa. Fidirana mamonjy aina.",
+  "equipment": [
+    "14g-needle-catheter-3-25in",
+    "fonon-tanana",
+    "chest-tombo-kase-tsy voatery"
+  ],
+  "steps": [
+    "Fantaro ny fihenjanana pneumothorax: tsy misy feo fofona amin'ny lafiny voakasika, tracheal deviation (tara), aretim-pisefoana, hypotension, JVD.",
+    "Asehoy ny tratra amin'ny lafiny voakasika.",
+    "Tadiavo ny habaka intercostal 2, tsipika midclavicular (alternative: 4th/5th ICS, anterior axillary line).",
+    "Asio catheter fanjaitra 14g, 3.25-inch mitsangana eo amin'ny rindrin'ny tratra, eo ambonin'ny TOP amin'ny taolan-tehezana faha-3 (miala amin'ny fonosana neurovascular).",
+    "Mandrosoa mandra-pahatsapana ny firohondrohon'ny rivotra na ny sioka heno.",
+    "Esory ny fanjaitra ary avelao eo amin'ny toerany ny catheter.",
+    "Henoy ny fanatsarana ny feon'ny fofonaina sy ny ezaka amin'ny taovam-pisefoana.",
+    "Arovy ny habaka catheter. AZA fehezina na saronana ny farany misokatra.",
+    "Avereno tombanana isaky ny 5 minitra -- mety mikisaka na mivonto ny catheter, ka mila decompression miverimberina."
+  ],
+  "warnings": [
+    "Mampiasà fanjaitra 3.25-inch -- angiocatheter 14g mahazatra (1.5in) matetika tsy mahomby amin'ny marary miaramila noho ny fiarovan-tena sy ny hozatra.",
+    "Mety ilaina ny NCD roa tonta raha tsy fantatra hoe iza no voakasika ary ny marary no voasambotra.",
+    "Aza apetraka eo amin'ny ilany iray amin'ny ratra amin'ny tratra mitsentsitra raha tsy voaisy tombo-kase aloha ilay ratra."
+  ],
+  "follows": [],
+  "precedes": [
+    "chest-seal-application"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Mampiasà fanjaitra mifanaraka amin'ny habeny (marary kely kokoa, 1.5-2in dia mety ho ampy). Mampiasà fomba faha-2 ICS MCL. Sarotra kokoa ny famantarana famantarana -- mitandrema."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

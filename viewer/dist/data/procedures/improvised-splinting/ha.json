@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Ingantaccen Tsatsa",
+  "category": "ortho-stabilization",
+  "skill_level": "Na asali",
+  "time_estimate": "5-10 min",
+  "description": "Rage karaya ta amfani da kayan da ake da su don hana ƙarin rauni, rage zafi, da iyakance asarar jini a cikin nama da ke kewaye. Split a cikin matsayi da aka samu sai dai idan an daidaita yanayin wurare dabam dabam - sannan a mike a hankali.",
+  "equipment": [
+    "SAM splint (wanda aka fi so)",
+    "Mujallu na birgima, sanduna, sandunan tantuna (an inganta filin)",
+    "Cravat / bandeji triangular",
+    "Padding (tufafi, kumfa)",
+    "Tef ko tube na masana'anta"
+  ],
+  "steps": [
+    "Bayyana da tantance raunin -- duba wurare dabam dabam, ji, motsi (CSM) nesa zuwa karaya kafin da bayan.",
+    "Sarrafa duk wani jini mai aiki kafin splint.",
+    "Pad kasusuwa suna da karimci don hana ciwon matsi.",
+    "Zaɓi kayan tsage tsayin daka don hana haɗin gwiwa a sama DA ƙasa da karaya.",
+    "Matsayin gaɓa a matsayi na jin daɗi ko daidaitawar jiki -- kar a tilasta.",
+    "Aiwatar da padding, sa'an nan splint kayan. Amintacce tare da bandeji ko tube masana'anta.",
+    "KADA ku nannade sosai -- bar yatsu/yatsu a fallasa don saka idanu CSM.",
+    "Sake tantance CSM bayan aikace-aikacen -- sassauta nan da nan idan ya lalace.",
+    "Haɓaka hannu idan zai yiwu don rage kumburi.",
+    "Lokacin daftarin aiki na splint."
+  ],
+  "warnings": [
+    "Sake tantance CSM kowane minti 15-30 -- kumburi na iya yin daidai tsatsa ya zama yawon shakatawa.",
+    "Bude karaya: rufe rauni da bakararre tufa tukuna, sa'an nan splint. KAR a tura kashi baya ciki.",
+    "Karyewar femur na iya rasa jini 1-2L zuwa cinya -- bi da karfi don girgiza.",
+    "Karyewar kashin baya da ake zargin: KADA a inganta tsatsa -- rage motsi, kiyaye kwanciyar hankali."
+  ],
+  "follows": [
+    "kai tsaye-matsi",
+    "yawon shakatawa-application"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Farantin girma a cikin yara sun fi rauni fiye da jijiya -- karyewar da ake zargin ko da da sassauƙa. Karyewar Torus (maƙarƙashiya) na iya samun ƙaramin kumburi."
+    },
+    "obstetric": {
+      "note": "Daidaitaccen tsaga ya shafi. Ka guji tsayawa tsayin daka -- karkatar da gefen hagu idan kana kwance."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

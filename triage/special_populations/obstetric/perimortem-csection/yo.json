@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Abala Cesarean Perimortem (PMCS)",
+  "category": "obstetric",
+  "skill_level": "oniwosan-abẹ",
+  "time_estimate": "3-5 iṣẹju",
+  "description": "Ifijiṣẹ cesarean pajawiri laarin awọn iṣẹju 4 ti idaduro ọkan ọkan iya lati gba CPR ti o munadoko ati iwalaaye ọmọ tuntun ti o pọju. Ile-ile ṣe compress aorta ati IVC - ifijiṣẹ tun jẹ imupadabọ fun iya.",
+  "equipment": [
+    "scalpel",
+    "ibọwọ",
+    "retractors",
+    "okun-clamps",
+    "omo tuntun-resuscitation-ẹrọ"
+  ],
+  "steps": [
+    "Tẹsiwaju CPR laisi idilọwọ.",
+    "Ṣe lila aarin inaro lati umbilicus si pubis nipasẹ awọ ara ati fascia.",
+    "Mu apa uterine isalẹ ni petele.",
+    "Pese ọmọ ikoko - akoko akiyesi.",
+    "Dimole ati ki o ge okun.",
+    "Fi ọwọ ọmọ si olupese keji fun isọdọtun ọmọ tuntun.",
+    "Yọ ibi-ọmọ kuro.",
+    "Pa ile-ile ati ikun ti pipade pataki ko ba ṣeeṣe lẹsẹkẹsẹ.",
+    "Tesiwaju isọdọtun ti iya -- ROSC ṣee ṣe diẹ sii lẹhin idinku uterine."
+  ],
+  "warnings": [
+    "Akoko ipinnu-si-ifijiṣẹ gbọdọ wa labẹ awọn iṣẹju 5 fun awọn abajade iya ati ọmọ inu oyun ti o dara julọ.",
+    "Ilana yii jẹ ibi-afẹde ikẹhin - nikan ti iya ba wa ni idaduro ọkan ati ifijiṣẹ ti sunmọ (> oyun ọsẹ 20).",
+    "Nbeere ikẹkọ ipele dokita. Awọn oogun ija yẹ ki o mura aaye ati atilẹyin, kii ṣe ni ominira."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

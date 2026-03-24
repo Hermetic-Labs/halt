@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Dexamethason",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Dekadron",
+    "DexPak"
+  ],
+  "description": "Langwirksames synthetisches Kortikosteroid. Wird bei Hirnödemen (Höhenhirnödem – HACE, TBI), schweren allergischen Reaktionen, Atemwegsödemen und Nebennierenkrise angewendet. Entzündungshemmend, nicht anabol.",
+  "indications": [
+    "Höhenhirnödem (HACE)",
+    "Atemwegsödem (Stridor nach Extubation, Kruppe)",
+    "Hirnödem durch Tumor oder Abszess",
+    "Schwere allergische Reaktionen (zusätzlich zu Adrenalin)",
+    "Nebennierenkrise",
+    "Antiemetischer Zusatz (perioperativ)"
+  ],
+  "dose": "Hirnödem/HACE: anfangs 8–10 mg i.v./i.m., dann 4 mg alle 6 Stunden. Atemwegsödem: 10 mg i.v. einmalig. Kruppe: 0,6 mg/kg IM/PO (max. 16 mg). Nebennierenkrise: 4 mg i.v.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO"
+  ],
+  "window": "HACE: Geben Sie so früh wie möglich zusammen mit sofortigem Abstieg.",
+  "contraindications": [
+    "Systemische Pilzinfektionen (ohne antimykotische Abdeckung)",
+    "Lebendvirusimpfstoffe innerhalb von 30 Tagen (relativ)"
+  ],
+  "warnings": [
+    "Ersetzt keinen Abstieg und Sauerstoff bei HACE – nur als Ergänzung verwenden.",
+    "Hyperglykämie – Überwachen Sie den Blutzucker bei Diabetikern.",
+    "Immunsuppression bei längerer Anwendung.",
+    "Einzeldosen für Notfälle sind im Allgemeinen sehr sicher."
+  ],
+  "regional_names": {
+    "generic": "Dexamethason"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Kruppe: 0,6 mg/kg PO/IM (max. 16 mg). Hirnödem: 0,5–1 mg/kg i.v. (max. 10 mg). Atemwegsödem: 0,5 mg/kg i.v.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM alle 24 Stunden x 2 Dosen zur Beschleunigung der fetalen Lungenreife in der 24.–34. Schwangerschaftswoche bei Frühgeburten. Besprechen Sie dies mit dem höchsten verfügbaren Anbieter."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

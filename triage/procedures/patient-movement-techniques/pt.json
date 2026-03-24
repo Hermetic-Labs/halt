@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Técnicas de movimentação do paciente",
+  "category": "casualty-movement",
+  "skill_level": "Básico",
+  "time_estimate": "1-30 min dependendo da distância e método",
+  "description": "Mover uma vítima sob fogo ou para um local mais seguro para tratamento. O método depende do terreno, da distância, do número de socorristas e dos ferimentos da vítima. Velocidade versus precaução espinhal é uma decisão tática – no TCCC, a ameaça tem prioridade.",
+  "equipment": [
+    "Ninhada SKED (preferencial)",
+    "Maca NATO / maca portátil",
+    "Cama improvisada: bastões + jaquetas/ponchos",
+    "Alças de arrasto (uniforme ou arnês)",
+    "Funda TACEVAC"
+  ],
+  "steps": [
+    "CUIDADOS SOB FOGO: Retorne o fogo primeiro se estiver armado. Mova a vítima usando o método de arrasto mais rápido – não pare para tratar na zona de morte.",
+    "HASTY DRAG (um socorrista): agarrar a gola/alça de arrasto nos ombros, arrastar nas costas. Proteja a cabeça do impacto.",
+    "CARREGAMENTO DE BOMBEIRO (um socorrista): levantar a vítima sobre os ombros por distâncias maiores – requer que a vítima esteja inconsciente ou cooperativa.",
+    "TRANSPORTE PARA DUAS PESSOAS: os socorristas unem os braços sob as costas e os joelhos da vítima. Mais rápido que arrastar para distâncias curtas.",
+    "LIXO IMPROVISADO: coloque dois postes com 18 polegadas de distância. Tecer jaquetas através de postes com botões dentro. Teste antes de carregar a vítima.",
+    "LIXO SKED: desenrole, deslize sob a vítima, embrulhe e prenda com tiras. Requer 2 a 4 operadoras.",
+    "Ao carregar: levante contando até 3, mantenha o alinhamento cabeça/corpo, minimize o movimento da coluna quando possível.",
+    "Se houver suspeita de lesão medular e não houver ameaça: mantenha a estabilização em linha durante todo o movimento. Uma pessoa dedicada ao controle da cabeça.",
+    "Vá para a cobertura e reavalie o ABC."
+  ],
+  "warnings": [
+    "Prioridade do TCCC: vida > membro > precaução espinhal. Não atrase o movimento de uma zona de morte por precauções na coluna.",
+    "O transporte de bombeiro é contra-indicado em caso de suspeita de lesão medular, fratura de fêmur ou trauma abdominal penetrante.",
+    "Ninhadas improvisadas: teste a capacidade de peso antes de confiar uma vítima.",
+    "Mover uma vítima com torniquete: verifique se o torniquete não se soltou durante o movimento."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "As crianças são mais leves – um socorrista carrega por mais tempo. Mantenha a cabeça proporcionalmente maior – centro de gravidade mais alto durante o transporte."
+    },
+    "obstetric": {
+      "note": "Evite posicionamento de bruços ou pressão no abdômen. Transporte lateral (de preferência lado esquerdo) ou supino com cunha do quadril esquerdo."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

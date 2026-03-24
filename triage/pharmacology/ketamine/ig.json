@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Anestetiiki dissociative na-enye analgesia, ịhịa aka n'ahụ, na amnesia ka ị na-echekwa ntụgharị ikuku na nkwụsi ike hemodynamic. Ihe mgbakasị ahụ ahọpụtara na TCCC - na-akwado BP n'adịghị ka opioids. A na-ejikwa ya maka ịhịa aka n'ahụ na RSI.",
+  "indications": [
+    "Nlekọta mgbu na-agafeghị oke na nke siri ike",
+    "Usoro ịhịa aka n'ahụ (ịkwakọba ọnya, mbelata mgbaji)",
+    "Onye nnọchi anya nnabata maka RSI",
+    "Ọgụ anesthesia"
+  ],
+  "dose": "Analgesia: 0.1-0.3 mg / kg IV / IO (ngwa ngwa ngwa ngwa) | 0.5 mg / kg IM. Usoro nchịkwa usoro: 1-2 mg / kg IV | 4-6 mg/kg IM. Ntinye RSI: 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "N'ime"
+  ],
+  "window": "",
+  "contraindications": [
+    "A maara schizophrenia ma ọ bụ psychosis na-arụ ọrụ",
+    "ICP dị elu na-enweghị nchebe ụgbọ elu (ndị ikwu)"
+  ],
+  "warnings": [
+    "Mmeghachi omume mberede (delirium/hallucinations) -- belata site na midazolam 1-2mg IV ma ọ bụrụ na ọ dị.",
+    "Na-abawanye ihe nzuzo -- nwee njikere iri ahụ.",
+    "Laryngospasm dị ụkọ mana enwere ike --dobe BVM dị."
+  ],
+  "regional_names": {
+    "generic": "ketamine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesia: 0.5 mg / kg IV. Usoro nchịkwa usoro: 1-2 mg / kg IV | 4-5 mg / kg IM.",
+      "note": "A mụrụ nke ọma na pediatrics. Mmasị maka usoro mgbu."
+    },
+    "obstetric": {
+      "note": "Ọ dị mma maka analgesia nke nne na obere doses. Enwere ike ịkpata ịda mbà n'obi iku ume nwa ọhụrụ na oke doses ma ọ bụrụ na ewepụta ya nso oge ọmụmụ."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

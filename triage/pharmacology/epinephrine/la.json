@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinephrine (Adrenaline)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalin"
+  ],
+  "description": "Catecholamina endogenosa cum alpha et beta adrenergicam actionem. Curatio prima-linea pro anaphylaxi et cardiaca comprehensio. In anaphylaxi IM femur praeponitur IV (tutius, efficacia aequipollens). Ne differas IV accessum in anaphylaxi.",
+  "indications": [
+    "Anaphylaxis (prima versus)",
+    "Apprehendere cardiacum -- pulsile VF/VT/PEA/asystole",
+    "Gravis bronchospasm",
+    "Hypotension refractarium ad humores"
+  ],
+  "dose": "Anaphylaxis: 0.3-0.5 mg IM (femur anterolateralis) | Auto-injector 0.3 mg IM. Itera q5-15 min prn. Comprehensio cardiac: 1 mg IV/IO q3-5 min in CPR. Gravis bronchospasmus est: 0.3 mg IM.",
+  "route": [
+    "IM",
+    "IV",
+    "IO"
+  ],
+  "window": "In anaphylaxi: IM protinus da - ne differas accessum IV.",
+  "contraindications": [
+    "Non absolutae contraindicationes in subitis vitae comminationibus"
+  ],
+  "warnings": [
+    "IV epinephrine ad anaphylaxem adhibenda non est nisi in comprehensione cardiaca vel inpulsa profunda — periculosa, si detur IV impulsu aegroti conscio.",
+    "Extravasatio textus necrosis causat - curandi IV patentiam.",
+    "Incrementum oxygenii myocardiale auget -- cautio uti in notis morbo coronario extra comprehensionem."
+  ],
+  "regional_names": {
+    "generic": "epinephrine",
+    "UK": "adrenaline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anaphylaxis: 0.01 mg/kg IM (max 0.5 mg). EpiPen Jr (0.15 mg) pro 15-30 kg. Prensio cardiac: 0.01 mg/kg IV/IO q3-5 min.",
+      "note": "Utere pondere dosing substructio. Broselow taenia referentia commendatur."
+    },
+    "obstetric": {
+      "note": "Vexillum usus anaphylaxis dosing -- materna superstes precipua est. Epinephrine tuta est in graviditate ad vitae minas casus."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s52226b",
+    "icd10":  "S52226B",
+    "name":  "Nondisplaced transverse fracture of shaft of unspecified ulna, initial encounter for open fracture type I or II",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced transverse fracture of shaft of unspecified ulna, initial encounter for open fracture type I or II",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

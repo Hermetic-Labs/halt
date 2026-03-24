@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t543x2s",
+    "icd10":  "T543X2S",
+    "name":  "Toxic effect of corrosive alkalis and alkali-like substances, intentional self-harm, sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Toxic effect of corrosive alkalis and alkali-like substances, intentional self-harm, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

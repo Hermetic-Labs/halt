@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s5332xd",
+    "icd10":  "S5332XD",
+    "name":  "Traumatic rupture of left ulnar collateral ligament, subsequent encounter",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Traumatic rupture of left ulnar collateral ligament, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

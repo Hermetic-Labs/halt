@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s72135a",
+    "icd10":  "S72135A",
+    "name":  "Nondisplaced apophyseal fracture of left femur, initial encounter for closed fracture",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced apophyseal fracture of left femur, initial encounter for closed fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

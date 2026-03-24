@@ -1,0 +1,34 @@
+﻿{
+    "id":  "chest-seal-application",
+    "name":  "Occlusive Chest Seal Application",
+    "category":  "respiration",
+    "skill_level":  "combat-lifesaver",
+    "time_estimate":  "1-2 min",
+    "description":  "Sealing a sucking chest wound (open pneumothorax) with a vented chest seal to prevent air entry while allowing pressure release.",
+    "equipment":  [
+                      "vented-chest-seal",
+                      "gloves",
+                      "trauma-shears"
+                  ],
+    "steps":  [
+                  "Expose the wound -- cut away or remove clothing.",
+                  "Wipe the skin around the wound as dry as possible (blood, sweat prevent adhesion).",
+                  "Open the vented chest seal package.",
+                  "Place the seal over the wound, centered on the hole. Press firmly, ensuring all edges adhere.",
+                  "Check valve orientation -- the vent must face outward (away from skin) and remain unobstructed.",
+                  "Reassess breath sounds. If deterioration continues after sealing, consider tension pneumothorax -- perform NCD.",
+                  "If a vented seal is unavailable, a non-vented seal can be used but MUST be monitored for tension pneumothorax development."
+              ],
+    "warnings":  [
+                     "Non-vented seals can convert a simple pneumothorax to a tension pneumothorax -- use vented seals only in field.",
+                     "Three-sided taping (improvised seal) is no longer recommended by CoTCCC -- use commercial vented chest seal.",
+                     "Always apply a seal to ENTRANCE and EXIT wounds."
+                 ],
+    "follows":  [
+
+                ],
+    "precedes":  [
+                     "needle-decompression"
+                 ],
+    "source":  "TCCC / JTS CPG / CoTCCC"
+}

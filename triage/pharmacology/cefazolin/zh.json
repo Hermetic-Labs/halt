@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "头孢唑林",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "安塞夫",
+    "凯夫佐尔"
+  ],
+  "description": "第一代头孢菌素。用于严重伤口感染和手术预防的一线肠外抗生素。良好的革兰氏阳性菌覆盖率，包括 MSSA。手术切口后 60 分钟内给药以进行预防。",
+  "indications": [
+    "手术伤口预防",
+    "严重的软组织感染",
+    "开放性骨折的预防",
+    "皮肤和皮肤结构感染"
+  ],
+  "dose": "1-2g IV/IM 每 8 小时一次。手术预防：切开前60分钟内静脉注射2g。如果手术 > 4 小时，则重复 2g。",
+  "route": [
+    "四号",
+    "我是"
+  ],
+  "window": "对于手术预防：切开后 60 分钟内给予。",
+  "contraindications": [
+    "已知头孢菌素过敏",
+    "严重青霉素过敏（5-10% 交叉反应）"
+  ],
+  "warnings": [
+    "与青霉素过敏的交叉反应：青霉素过敏患者慎用。",
+    "肾功能损害时调整剂量。"
+  ],
+  "regional_names": {
+    "generic": "头孢唑林"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM q8h（最大 2g/剂）。预防：切开前 30 mg/kg（最大 2g）。",
+      "note": "安全且在儿科领域得到充分研究。"
+    },
+    "obstetric": {
+      "note": "怀孕期和哺乳期安全。产科手术的首选肠外抗生素。"
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

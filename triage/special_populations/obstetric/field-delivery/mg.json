@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Fanaterana saha vonjy maika",
+  "category": "obstetric",
+  "skill_level": "combat-medic",
+  "time_estimate": "Miovaova -- 20+ min",
+  "description": "Fitantanana ny fanaterana haingana na tsy voaomana amin'ny tontolo henjana.",
+  "equipment": [
+    "fonon-tanana",
+    "bodofotsy-lamba madio",
+    "cord-clamps-na-fatorana",
+    "hety",
+    "bulb-syringe"
+  ],
+  "steps": [
+    "Apetraho amin'ny toerana ambony na semi-reclined ny reniny. Aleo mitongilana miankavia raha tsy mahatsiaro tena (manakana ny fanerena aortocaval).",
+    "Mifehy ny fanaterana ny loha -- fanohanana amin'ny rofia. AZA misintona.",
+    "Rehefa avy naterina ny loha dia jereo ny tadin'ny nuchal (manodidina ny tenda). Raha misy, dia atsofohy amin'ny loha. Raha tery dia fehezo ary tapaho.",
+    "Tsentsitra ny vava avy eo ny orona amin'ny bulb syringe raha misy.",
+    "Tariho ny fanaterana ny soroka aloha amin'ny alàlan'ny fisintonana malefaka midina eo amin'ny loha, avy eo miakatra ho an'ny soroka aoriana.",
+    "Alefaso ny vatana -- mariho ny fotoana fanaterana.",
+    "Hamaina sy hafana avy hatrany ny zaza. Manentana amin'ny fanosehana ny lamosina.",
+    "Ampidiro ary tapaho ny tady (miandrasa 1-2 minitra raha toa ka milamina ny zaza).",
+    "Alefaso ny placenta miaraka amin'ny traction mora voafehy -- aza manery.",
+    "Asio oxytocine (raha misy) mba hisorohana ny fandosirana aorian'ny fiterahana aorian'ny fiterahana.",
+    "Tombanana ho an'ny fandehanan-dra aorian'ny fiterahana - fanorana fond, famatrarana bimanual raha ilaina.",
+    "Tombanana ny isa Apgar amin'ny 1 sy 5 minitra."
+  ],
+  "warnings": [
+    "Raha tsy akaiky ny fanaterana -- AZA manandrana. Rapid MEDEVAC no tiana.",
+    "Ny dystocia amin'ny soroka: raha mihintsana ny soroka dia ampiharo ny McRoberts maneuver (hyperflex hips) sy ny tsindry suprapubic.",
+    "Ny fandosirana aorian'ny fiterahana no antony voalohany mahatonga ny fahafatesan'ny reny azo sorohina - manana oxytocine vonona."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

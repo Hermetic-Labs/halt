@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t673xxd",
+    "icd10":  "T673XXD",
+    "name":  "Heat exhaustion, anhydrotic, subsequent encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Heat exhaustion, anhydrotic, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

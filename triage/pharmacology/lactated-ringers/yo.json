@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Ojutu Ringer ti Lactated (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Hartmann ká Solusan",
+    "Lactated Ringer ká abẹrẹ"
+  ],
+  "description": "Iwontunwonsi isotonic crystalloid ito. Ayanfẹ ju iyọ deede fun isọdọtun ibalokanjẹ iwọn-nla - iwọntunwọnsi ti ẹkọ-ara diẹ sii, ewu ti o dinku ti hyperchloremic acidosis. Ni iṣuu soda, potasiomu, kalisiomu, lactate.",
+  "indications": [
+    "Isọdọtun ibalokanjẹ ( crystalloid ti o fẹ ninu mọnamọna ẹjẹ)",
+    "Burns isọdọtun omi (agbekalẹ Parkland)",
+    "Hypovolemia",
+    "Itọju ito"
+  ],
+  "dose": "Ibanujẹ iṣọn-ẹjẹ: Idiwọn si 1L max ṣaaju iyipada si awọn ọja ẹjẹ. Àfojúsùn SBP 80-90 mmHg ti nwọle ibalokanje, 90 mmHg TBI. Burns (Parkland): 4 milimita x kg x % TBSA sun lori 24h (idaji ni 8h akọkọ).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hyperkalemia (ni potasiomu ninu)",
+    "Ikuna ẹdọ ti o lagbara (iṣelọpọ iṣelọpọ lactate ti bajẹ - ibatan)"
+  ],
+  "warnings": [
+    "Sibẹ crystalloid -- ko le gbe atẹgun. Awọn ọja ẹjẹ ga julọ fun mọnamọna ẹjẹ. LR jẹ afara nikan.",
+    "Maṣe dapọ pẹlu awọn ọja ẹjẹ ni laini kanna (kalisiomu nfa didi).",
+    "Ma ṣe tun-pada sipo ni ibalokanjẹ ibalokanjẹ ṣaaju iṣakoso iṣọn-ẹjẹ."
+  ],
+  "regional_names": {
+    "generic": "lactated Ringer ká ojutu",
+    "UK": "Hartmann ká ojutu"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 milimita / kg bolus, tun ṣe ayẹwo. Ayanfẹ ju NS fun ibalokanjẹ paediatric.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Omi IV ti o fẹ ni iṣẹ ati ifijiṣẹ. Ti o yẹ fun isọdọtun iṣọn-ẹjẹ obstetric."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

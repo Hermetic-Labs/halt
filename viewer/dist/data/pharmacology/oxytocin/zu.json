@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "I-Oxytocin",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "I-Pitocin",
+    "I-Syntocinon"
+  ],
+  "description": "I-Endogenous peptide hormone. I-uterotonic yomugqa wokuqala wokuvimbela nokwelashwa kwe-postpartum hemorrhage (PPH). Ibangela ukufinyela kwesibeletho futhi kunciphisa ukulahlekelwa igazi ngemva kokubeletha. Inikezwa NGEMVA kokulethwa kwe-placenta.",
+  "indications": [
+    "Ukuvimbela ukopha kwangemva kokubeletha (isimiso ngemva kokubeletha)",
+    "Ukwelashwa kwe-postpartum hemorrhage (i-uterine atony)",
+    "Ukwethulwa komsebenzi (isilungiselelo esilawulwayo kuphela)"
+  ],
+  "dose": "Ukuvimbela i-PPH: amayunithi angu-10 e-IM ngokushesha ngemva kokulethwa kwe-placenta (umzila wensimu okhethwayo). Ukwelashwa kwe-PPH: amayunithi angu-10-40 ku-1L IV, faka ku-40-80 mU/min. Uma IV ingatholakali: 10 amayunithi IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Nikeza NGEMVA kokubeletha kwe-placenta -- ukunikeza ngaphambi kokubeletha kungabamba i-placenta.",
+  "contraindications": [
+    "Ngaphambi kokulethwa kwe-placenta (ungabamba i-placenta)",
+    "Ukucindezeleka kwengane enekhanda elingalethiwe",
+    "I-hypersensitivity eyaziwa"
+  ],
+  "warnings": [
+    "ZINIKEZA NGEMVA KOKULETHWA KWE-PLACENTA -- ukubamba i-placenta kuyinkimbinkimbi esongela ukuphila.",
+    "I-IV bolus ingabangela i-hypotension eqinile kanye ne-cardiac arrhythmia -- njalo ihlanjululwe futhi ifake kancane.",
+    "Umphumela we-antidiuretic ngamavolumu amakhulu - qapha i-hyponatremia."
+  ],
+  "regional_names": {
+    "generic": "i-oxytocin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A -- ukusetshenziswa kokubelethisa kuphela.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "I-uterotonic eyinhloko. Uma i-atony yesibeletho ingaphenduli, cabanga nge-misoprostol, i-tranexamic acid (TXA), ukucindezela kwesibeletho se-bimanual, kanye ne-MEDEVAC esheshayo."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

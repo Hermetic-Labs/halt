@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s42351k",
+    "icd10":  "S42351K",
+    "name":  "Displaced comminuted fracture of shaft of humerus, right arm, subsequent encounter for fracture with nonunion",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Displaced comminuted fracture of shaft of humerus, right arm, subsequent encounter for fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Xirmooyinka Hemostatic Nabarka",
+  "category": "hemorrhage-control",
+  "skill_level": "dagaal-naf-badbaadiye",
+  "time_estimate": "3-5 daqiiqo",
+  "description": "Ku xidhid boogta aan la isku dhejin karin ama isgoysyada leh faashad dhiig-baxa si loo xakameeyo dhiig-baxa halkaasoo aan dalxiiska lagu isticmaali karin.",
+  "equipment": [
+    "hemostatic-gauze",
+    "nitrile-gloves",
+    "jug-goyn",
+    "cadaadiska-faashada"
+  ],
+  "steps": [
+    "Don galoofyada Si buuxda u soo bandhig nabarka adiga oo isticmaalaya xiirid dhaawacyada.",
+    "Aqoonso isha dhiigbaxa firfircoon ee ku dhex jirta daloolka dhaawaca.",
+    "Fur faashad hemostatic ah oo si adag ugu xir nabarka fartaada, adigoo si toos ah ugu riixaya isha dhiigbaxa.",
+    "Sii wad xirxirida ilaa daloosha dhaawaca si buuxda loo buuxiyo.",
+    "Ku mari cadaadis toos ah oo joogto ah ciribta gacantaada ugu yaraan 3 daqiiqo.",
+    "Ha ka saarin wax baakad ah marka aad codsato.",
+    "Ku dabool faashad cadaadis ah nabarka baakadaysan.",
+    "Ku calaamadee wakhtiga kaadhka TCCC ama foodda bukaanka (tusaale, 'PKD 0145')."
+  ],
+  "warnings": [
+    "Ha xirin nabarrada laabta gala -- isticmaal shaabadda laabta beddelkeeda.",
+    "Haddii aad xidhidhaysid nabar qoorta ah, cadaadis saar adigoon isku cadaadin labadaba carotids isku mar.",
+    "Dib u qiimee 5 daqiiqo gudahood haddii isha halbowlaha laga shakiyo."
+  ],
+  "follows": [
+    "cadaadis toos ah"
+  ],
+  "precedes": [
+    "dalxiis-codsi"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Isticmaal faashad saami ahaan ka yar. Codso cadaadis khafiif ah si aad uga fogaato isku-buuqa laabta ee dhallaanka."
+    },
+    "obstetric": {
+      "note": "Ka fogow cadaadiska baakad qoto dheer ama gardarro ah oo u dhow caloosha gravid. Kordhinta degdega ah ayaa la door bidaa."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

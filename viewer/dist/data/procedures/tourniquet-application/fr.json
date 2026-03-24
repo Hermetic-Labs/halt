@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Application de garrot (Garrot d'application de combat -- CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "n'importe quel répondeur",
+  "time_estimate": "30-60 secondes",
+  "description": "Contrôle définitif des hémorragies en cas de saignement des extrémités potentiellement mortel. Postulez tôt – ne tardez pas.",
+  "equipment": [
+    "garrot pour chat",
+    "marqueur-permanent"
+  ],
+  "steps": [
+    "Appliquez un garrot à 2-3 pouces (5-7 cm) proximal (au-dessus) de la plaie – par-dessus les vêtements est acceptable.",
+    "Faites passer la bande auto-adhésive autour du membre et passez-la dans la boucle de l'adaptateur à friction.",
+    "Tirez fermement sur la bande et fixez-la sur elle-même.",
+    "Tournez la tige du guindeau jusqu’à ce que le saignement s’arrête ou que le pouls distal soit absent.",
+    "Verrouillez le guindeau dans le clip du guindeau.",
+    "Appliquez la sangle du guindeau sur la tige du guindeau pour la fixer.",
+    "Inscrivez l'heure d'application directement sur le garrot (utiliser un marqueur) ET sur la carte TCCC.",
+    "Exposez et réévaluez la plaie. Réévaluez après 5 minutes."
+  ],
+  "warnings": [
+    "Ne retirez PAS un garrot une fois appliqué sur le terrain – uniquement du personnel médical qualifié dans un environnement contrôlé.",
+    "Le temps est crucial : un garrot > 2 heures augmente considérablement le risque de perte de membre. Enregistrez l'heure immédiatement.",
+    "Ne PAS appliquer sur un joint. Si le membre présente des plaies à plusieurs niveaux, appliquer de manière proximale sur toutes les plaies.",
+    "Les garrots improvisés (ceintures, cordes) sont nettement moins efficaces."
+  ],
+  "follows": [
+    "pression directe",
+    "pansement des plaies"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Utilisez un garrot pédiatrique étroit si disponible. Le CAT standard peut être utilisé mais serrez avec précaution. Les membres sont plus petits – vérifiez soigneusement le pouls distal."
+    },
+    "obstetric": {
+      "note": "Application standard pour les plaies des extrémités. Ne pas appliquer sur l'abdomen ou le bassin."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

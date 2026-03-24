@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oxytocine",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocin",
+    "Syntocinon"
+  ],
+  "description": "Endogeen peptidehormoon. Eerstelijns uterotonisch voor de preventie en behandeling van postpartumbloeding (PPH). Veroorzaakt samentrekking van de baarmoeder en vermindert bloedverlies na de bevalling. Gegeven NA placentale bevalling.",
+  "indications": [
+    "Preventie van postpartumbloedingen (routinematig na de bevalling)",
+    "Behandeling van postpartumbloeding (uteriene atonie)",
+    "Inductie van de bevalling (alleen gecontroleerde setting)"
+  ],
+  "dose": "PPH-preventie: 10 eenheden IM onmiddellijk na de bevalling via de placenta (voorkeursroute in het veld). PPH-behandeling: 10-40 eenheden in 1L IV, infusie met 40-80 mU/min. Indien IV niet beschikbaar: 10 eenheden IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Geef NA de bevalling uit de placenta - geven voordat de placenta wordt afgeleverd, kan de placenta in de val lokken.",
+  "contraindications": [
+    "Vóór de bevalling via de placenta (kan de placenta vasthouden)",
+    "Foetale nood met hoofd niet afgeleverd",
+    "Bekende overgevoeligheid"
+  ],
+  "warnings": [
+    "GEEF NADAT PLACENTA IS TOEGEVOEGD -- het vastlopen van de placenta is een levensbedreigende complicatie.",
+    "IV-bolus kan ernstige hypotensie en hartritmestoornissen veroorzaken - altijd verdunnen en langzaam infunderen.",
+    "Antidiuretisch effect met grote volumes - controleer op hyponatriëmie."
+  ],
+  "regional_names": {
+    "generic": "oxytocine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N.v.t. – uitsluitend voor verloskundig gebruik.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Primair uterotonisch. Als de atonie van de baarmoeder niet reageert, overweeg dan misoprostol, tranexaminezuur (TXA), bimanuele baarmoedercompressie en snelle MEDEVAC."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

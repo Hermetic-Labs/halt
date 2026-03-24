@@ -1,0 +1,6 @@
+{
+  "id": "medevac-9line",
+  "name": "Permintaan MEDEVAC 9 Jalur",
+  "description": "Format standar NATO untuk meminta evakuasi medis. Ditransmisikan secara berurutan, baris 1-9. Jalur 1-5 dikirimkan segera (tidak terenkripsi diperbolehkan). Baris 6-9 menyusul. Garis 9 yang benar akan membuat burung terbang ke udara. Yang tidak lengkap menundanya.",
+  "source": "FM 3-04.301 / ATP 4-02.2 / NATO STANAG 3204"
+}

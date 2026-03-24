@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "地塞米松",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "十卡龙",
+    "德克斯包"
+  ],
+  "description": "长效合成皮质类固醇。用于脑水肿（高原脑水肿——HACE、TBI）、严重过敏反应、气道水肿、肾上腺危象。抗炎，非合成代谢。",
+  "indications": [
+    "高原脑水肿（HACE）",
+    "气道水肿（拔管后喘鸣、哮吼）",
+    "肿瘤或脓肿引起的脑水肿",
+    "严重过敏反应（辅助肾上腺素）",
+    "肾上腺危象",
+    "止吐辅助（围手术期）"
+  ],
+  "dose": "脑水肿/HACE：初始 8-10 mg IV/IM，然后 4 mg q6h。气道水肿：10mg静注一次。哮吼：0.6 mg/kg IM/PO（最大 16mg）。肾上腺危象：4 mg IV。",
+  "route": [
+    "四号",
+    "IO",
+    "我是",
+    "采购订单"
+  ],
+  "window": "HACE：尽早给予并立即下降。",
+  "contraindications": [
+    "全身性真菌感染（无抗真菌治疗）",
+    "30天内接种活病毒疫苗（相对）"
+  ],
+  "warnings": [
+    "不能替代 HACE 的下降和氧气——仅用作辅助手段。",
+    "高血糖——监测糖尿病患者的血糖。",
+    "长期使用会产生免疫抑制作用。",
+    "紧急情况下的单剂量通常非常安全。"
+  ],
+  "regional_names": {
+    "generic": "地塞米松"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "哮吼：0.6 mg/kg PO/IM（最大 16 mg）。脑水肿：0.5-1 mg/kg IV（最大10 mg）。气道水肿：0.5 mg/kg IV。",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM q24h x 2 剂量用于加速早产中妊娠 24-34 周的胎肺成熟。与最高可用的提供商讨论。"
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

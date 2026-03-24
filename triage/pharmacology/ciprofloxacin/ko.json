@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "시프로플록사신",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "시프로"
+  ],
+  "description": "광범위한 그람 음성 적용 범위를 갖는 플루오로퀴놀론 항생제. 심각한 상처 감염, 관통성 복부 외상(GI균총 적용) 및 요로 감염에 사용됩니다. PO 및 IV를 사용할 수 있습니다.",
+  "indications": [
+    "관통 복부 외상(GI 오염 제거)",
+    "심각한 상처 감염",
+    "그람 음성 감염",
+    "요로 감염"
+  ],
+  "dose": "400mg IV q8-12h. PO: 500-750 mg q12h.",
+  "route": [
+    "IV",
+    "포"
+  ],
+  "window": "",
+  "contraindications": [
+    "알려진 플루오로퀴놀론 알레르기",
+    "18세 미만의 어린이 및 청소년(상대적 - 건병증 위험)",
+    "임신(친척)"
+  ],
+  "warnings": [
+    "힘줄 파열 위험, 특히 아킬레스건. 힘줄 통증이 발생하면 중단하십시오.",
+    "QT 간격을 연장할 수 있습니다. 다른 QT 연장 약물에는 주의가 필요합니다.",
+    "대안이 있다면 임신 중에는 피하세요."
+  ],
+  "regional_names": {
+    "generic": "시프로플록사신"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV q8-12h (최대 400 mg/용량). PO: 10-20 mg/kg q12h (최대 750 mg/용량).",
+      "note": "유익성이 건병증 위험보다 클 경우에만 사용하십시오. 심각한 감염에 대비하십시오."
+    },
+    "obstetric": {
+      "note": "대안이 있다면 임신 중에는 피하세요. 위험보다 이익이 더 큰 생명을 위협하는 감염에만 사용하십시오."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

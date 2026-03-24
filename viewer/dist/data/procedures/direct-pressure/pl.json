@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Bezpośredni ucisk w celu opanowania krwotoku",
+  "category": "hemorrhage-control",
+  "skill_level": "dowolny odpowiadający",
+  "time_estimate": "3-5 minut",
+  "description": "Tamowanie krwotoku pierwszego rzutu w przypadku dostępnych ran kończyn i ciała.",
+  "equipment": [
+    "rękawiczki",
+    "opatrunki urazowe",
+    "krawat-bandaż"
+  ],
+  "steps": [
+    "Załóż rękawiczki, jeśli są dostępne.",
+    "Odsłoń ranę, odcinając ubranie.",
+    "Załóż opatrunek urazowy lub złożoną szmatkę bezpośrednio na ranę.",
+    "Naciśnij mocno nasadą dłoni. Wykorzystaj masę ciała, a nie tylko siłę ramion.",
+    "Utrzymuj ciągły, nieprzerwany ucisk przez co najmniej 3 minuty.",
+    "NIE podnosić opatrunku w celu sprawdzenia – zakłóca to tworzenie się skrzepów.",
+    "Jeśli krwawienie przesiąknie, nałóż na wierzch kolejny opatrunek. Nie usuwaj pierwszego.",
+    "Zabezpieczyć bandażem uciskowym, jeśli jest dostępny, a jeśli krwawienie nie ustępuje, przenieść do opatrunku na ranę lub opaski uciskowej."
+  ],
+  "warnings": [
+    "Sam bezpośredni ucisk nie jest wystarczający w przypadku krwawień tętniczych – należy go zwiększyć do opatrzenia rany lub założenia opaski uciskowej.",
+    "Rany łączne (pachwina, pacha, szyja) wymagają opatrzenia rany, a nie samego ucisku zewnętrznego."
+  ],
+  "follows": [],
+  "precedes": [
+    "opatrywanie ran",
+    "aplikacja opaski uciskowej"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Tylko ciśnienie proporcjonalne. U niemowląt należy unikać uciskania klatki piersiowej."
+    },
+    "obstetric": {
+      "note": "Unikaj silnego ucisku na ciężarną macicę. W przypadku rany łączącej w pobliżu miednicy należy zastosować opatrunek boczny."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

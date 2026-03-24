@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Tusmada Naxdinta",
+  "category": "circulatory",
+  "description": "Tilmaanta hal-lambar ee degdega ah ee xasilloonida hemodynamic. Waxaa loo xisaabiyaa sida HR / SBP. Caadi ahaan waa 0.5-0.7.",
+  "instructions": "U qaybi garaaca wadnaha cadaadiska dhiigga ee systolic. Tusmada shoogga ee kor u kacaya ayaa muujinaya xumaan.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Caadi -- hemodynamic ahaan deggan"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Naxdin khafiif ah -- si dhow ula soco"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Naxdin dhexdhexaad ah -- gelitaan IV, dareerayaal"
+    },
+    {
+      "range": ">1.4",
+      "label": "Naxdin daran -- kicin degdeg ah, wax soo saarka dhiigga"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Tusaha shoogga dhalmada (OSI) waxay isticmaashaa isla qaacido isku mid ah. SI> 0.9 bukaanada uurka leh ayaa muhiim ah. HR ee caadiga ah ayaa ka sarreeya uurka (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

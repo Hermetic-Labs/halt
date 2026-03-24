@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Césarienne péri-mortem (PMCS)",
+  "category": "obstetric",
+  "skill_level": "médecin-chirurgien",
+  "time_estimate": "3-5 minutes",
+  "description": "Césarienne d'urgence dans les 4 minutes suivant un arrêt cardiaque maternel pour permettre une RCP efficace et une survie néonatale potentielle. L'utérus comprime l'aorte et la VCI – l'accouchement est également un moyen de réanimation pour la mère.",
+  "equipment": [
+    "scalpel",
+    "gants",
+    "écarteurs",
+    "serre-câbles",
+    "equipement-de-resanimation-neonatale"
+  ],
+  "steps": [
+    "Continuez la RCP sans interruption.",
+    "Faites une incision médiane verticale de l’ombilic au pubis en passant par la peau et le fascia.",
+    "Incisez le segment utérin inférieur horizontalement.",
+    "Accouchez du bébé – notez l’heure.",
+    "Serrez et coupez le cordon.",
+    "Remettre le nourrisson au deuxième prestataire pour une réanimation néonatale.",
+    "Retirez le placenta.",
+    "Emballez l'utérus et l'abdomen si la fermeture définitive n'est pas immédiatement possible.",
+    "Poursuivre la réanimation maternelle – le ROSC est plus probable après une décompression utérine."
+  ],
+  "warnings": [
+    "Le délai de décision avant l'accouchement doit être inférieur à 5 minutes pour obtenir les meilleurs résultats maternels et fœtaux.",
+    "Cette procédure est un dernier recours – uniquement si la mère est en arrêt cardiaque et que l'accouchement est imminent (> 20 semaines de gestation).",
+    "Nécessite une formation de niveau médecin. Les médecins de combat doivent préparer le terrain et apporter leur soutien, et non agir de manière indépendante."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

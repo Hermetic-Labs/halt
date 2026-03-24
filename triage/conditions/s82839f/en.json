@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s82839f",
+    "icd10":  "S82839F",
+    "name":  "Other fracture of upper and lower end of unspecified fibula, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with routine healing",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Other fracture of upper and lower end of unspecified fibula, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with routine healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

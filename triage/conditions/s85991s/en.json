@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s85991s",
+    "icd10":  "S85991S",
+    "name":  "Other specified injury of unspecified blood vessel at lower leg level, right leg, sequela",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Other specified injury of unspecified blood vessel at lower leg level, right leg, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t85110s",
+    "icd10":  "T85110S",
+    "name":  "Breakdown (mechanical) of implanted electronic neurostimulator of brain electrode (lead), sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Breakdown (mechanical) of implanted electronic neurostimulator of brain electrode (lead), sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

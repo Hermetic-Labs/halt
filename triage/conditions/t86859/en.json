@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t86859",
+    "icd10":  "T86859",
+    "name":  "Unspecified complication of intestine transplant",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Unspecified complication of intestine transplant",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

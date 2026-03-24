@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxon",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "Kloxxado"
+  ],
+  "description": "Thuốc đối kháng thụ thể opioid cạnh tranh. Nhanh chóng đảo ngược tình trạng ức chế hô hấp, an thần và giảm đau do opioid gây ra. Khởi phát IV: 2 phút, IM: 5 phút, IN: 8-13 phút. Thời gian ngắn hơn hầu hết các loại thuốc phiện - có thể cần phải dùng lại liều.",
+  "indications": [
+    "Quá liều opioid hoặc suy hô hấp",
+    "Đảo ngược thuốc an thần opioid",
+    "Nghi ngờ nạn nhân do opioid"
+  ],
+  "dose": "0,4-2 mg IV/IO/IM/IN. Lặp lại q2-3 phút nếu cần. Tối đa 10 mg. Thuốc xịt mũi (IN): 2mg mỗi lỗ mũi.",
+  "route": [
+    "IV",
+    "IO",
+    "TÔI",
+    "TRONG",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Không có chống chỉ định tuyệt đối khi dùng quá liều"
+  ],
+  "warnings": [
+    "Thời gian tác dụng (30-90 phút) ngắn hơn hầu hết các opioid - bệnh nhân có thể tái nghiện. Theo dõi ít ​​nhất 1 giờ sau liều cuối cùng.",
+    "Thúc đẩy quá trình cai nghiện opioid cấp tính - có thể gây kích động, nhịp tim nhanh, phù phổi ở những bệnh nhân phụ thuộc opioid.",
+    "Sẽ đảo ngược tác dụng giảm đau - bệnh nhân có thể trở nên phản kháng gay gắt vì đau."
+  ],
+  "regional_names": {
+    "generic": "naloxone",
+    "US": "Narcan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,01 mg/kg IV/IM/IN (tối đa 0,4 mg). Lặp lại PRN mỗi 2-3 phút.",
+      "note": "Trẻ sơ sinh: 0,01 mg/kg để đảo ngược opioid của mẹ."
+    },
+    "obstetric": {
+      "note": "An toàn trong thai kỳ. Nếu cho mẹ uống gần lúc sinh, hãy theo dõi trẻ sơ sinh để phát hiện tình trạng cai thuốc."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

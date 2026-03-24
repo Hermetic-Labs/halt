@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoksisilin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoksil",
+    "Trimoks"
+  ],
+  "description": "Geniş spektrumlu aminopenisilin antibiyotik. Yara enfeksiyonu için oral profilaktik antibiyotik. Ciddi olmayan yaralanmalarda yara profilaksisine yönelik TCCC savaş hapı paketinin bir parçası.",
+  "indications": [
+    "Yara enfeksiyonu profilaksisi (hafif-orta yaralar, ağızdan alınan hap paketi)",
+    "Yumuşak doku enfeksiyonları",
+    "Solunum yolu enfeksiyonları"
+  ],
+  "dose": "Her 8 saatte bir 7 günde bir 500 mg PO (yara profilaksisi). Alternatif olarak her 12 saatte bir 875 mg PO.",
+  "route": [
+    "PO"
+  ],
+  "window": "Yara profilaksisine yaralanmadan sonraki 3 saat içinde başlayın.",
+  "contraindications": [
+    "Bilinen penisilin alerjisi (bunun yerine doksisiklin kullanın)",
+    "Mononükleoz (döküntü riski)"
+  ],
+  "warnings": [
+    "Penisilin alerjisi varsa: doksisiklin yerine 100 mg PO BID kullanın.",
+    "Yalnızca oral yol - ciddi yaralar için veya oral yoldan tolere edilmiyorsa IV antibiyotik (sefazolin/siprofloksasin) kullanın."
+  ],
+  "regional_names": {
+    "generic": "amoksisilin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/gün, 8 saatte bir bölünmüş (en fazla 500 mg/doz). Ağırlığa dayalı Broselow referansını kullanın.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Hamilelikte güvenli. Doksisikline (hamilelikte kontrendikedir) tercih edilir."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

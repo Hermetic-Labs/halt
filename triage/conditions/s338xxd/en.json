@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s338xxd",
+    "icd10":  "S338XXD",
+    "name":  "Sprain of other parts of lumbar spine and pelvis, subsequent encounter",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Sprain of other parts of lumbar spine and pelvis, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

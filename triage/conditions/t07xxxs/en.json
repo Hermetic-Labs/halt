@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t07xxxs",
+    "icd10":  "T07XXXS",
+    "name":  "Unspecified multiple injuries, sequela",
+    "category":  "crush-amputation",
+    "triage_priority":  "",
+    "description":  "Unspecified multiple injuries, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

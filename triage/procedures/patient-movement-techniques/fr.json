@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Techniques de mouvement des patients",
+  "category": "casualty-movement",
+  "skill_level": "De base",
+  "time_estimate": "1-30 min selon la distance et la méthode",
+  "description": "Déplacer une victime sous le feu ou vers un endroit plus sûr pour y être soignée. La méthode dépend du terrain, de la distance, du nombre de sauveteurs et des blessures de la victime. La vitesse par rapport à la précaution vertébrale est une décision tactique : dans le TCCC, la menace est prioritaire.",
+  "equipment": [
+    "Litière SKED (de préférence)",
+    "Litière OTAN / civière portative",
+    "Litière improvisée : bâtons + vestes/ponchos",
+    "Poignées de déplacement (uniforme ou harnais)",
+    "Élingue TACEVAC"
+  ],
+  "steps": [
+    "SOINS SOUS LE FEU : ripostez en premier si vous êtes armé. Déplacez la victime en utilisant la méthode de traînée la plus rapide - ne vous arrêtez pas pour la soigner dans la zone de destruction.",
+    "DRAG HASTY (un sauveteur) : saisir le collier/poignée de traînée au niveau des épaules, traîner sur le dos. Protégez la tête des chocs.",
+    "TRANSPORT DE POMPIER (un sauveteur) : soulever la victime par-dessus les épaules sur de plus longues distances – nécessite que la victime soit inconsciente ou coopérative.",
+    "TRANSPORT POUR DEUX PERSONNES : les sauveteurs relient les bras sous le dos et les genoux de la victime. Plus rapide que la traînée sur de courtes distances.",
+    "LITIÈRE IMPROVISÉE : posez deux poteaux espacés de 18 pouces. Tissez les vestes à travers les poteaux avec des boutons à l'intérieur. Testez avant de charger la victime.",
+    "LITIÈRE SKED : déroulez, glissez sous la victime, enveloppez-la et fixez-la avec des sangles. Nécessite 2 à 4 transporteurs.",
+    "Lors du chargement : soulevez en comptant jusqu'à 3, maintenez l'alignement tête/corps, minimisez les mouvements de la colonne vertébrale lorsque cela est possible.",
+    "En cas de suspicion de blessure à la colonne vertébrale et sans menace : maintenir la stabilisation en ligne tout au long du mouvement. Une personne dédiée au contrôle de la tête.",
+    "Mettez-vous à couvert, puis réévaluez ABC."
+  ],
+  "warnings": [
+    "Priorité TCCC : vie > membre > précaution vertébrale. Ne retardez pas le mouvement depuis une zone mortelle pour des raisons de précaution pour la colonne vertébrale.",
+    "Le transport par pompier est contre-indiqué en cas de suspicion de blessure à la colonne vertébrale, de fracture du fémur ou de traumatisme abdominal pénétrant.",
+    "Portées improvisées : testez la capacité de poids avant de faire confiance à une victime.",
+    "Déplacement d'une victime avec garrot : vérifiez que le garrot ne s'est pas desserré pendant le mouvement."
+  ],
+  "precedes": [
+    "évacuation sanitaire-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Les enfants sont plus légers – un seul sauveteur peut les transporter plus longtemps. Maintenir la tête proportionnellement plus grande – centre de gravité plus élevé lors du transport."
+    },
+    "obstetric": {
+      "note": "Évitez la position couchée ou la pression sur l’abdomen. Transport latéral (côté gauche de préférence) ou en décubitus dorsal avec cale de hanche gauche."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

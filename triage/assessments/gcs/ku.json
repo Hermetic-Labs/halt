@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "Glasgow Coma Scale (GCS)",
+  "category": "neurological",
+  "description": "Pîvana neurolojîk a standardkirî ya hişmendiyê bi bersivên çav, devkî û motorê. Rêjeya xalê 3-15.",
+  "instructions": "Her yek ji sê domanan serbixwe binirxînin. Ji bo GCS-ya tevahî her sê xalan berhev bikin.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Spontane"
+        },
+        {
+          "score": 3,
+          "label": "Deng"
+        },
+        {
+          "score": 2,
+          "label": "Ji bo êşê"
+        },
+        {
+          "score": 1,
+          "label": "Tune"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "Oriented"
+        },
+        {
+          "score": 4,
+          "label": "Tevlihevî"
+        },
+        {
+          "score": 3,
+          "label": "Peyvên negunca"
+        },
+        {
+          "score": 2,
+          "label": "Dengên nefêmkirî"
+        },
+        {
+          "score": 1,
+          "label": "Tune"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "Fermanan pêk tîne"
+        },
+        {
+          "score": 5,
+          "label": "Êşê herêmî dike"
+        },
+        {
+          "score": 4,
+          "label": "Ji êşê vedikişe"
+        },
+        {
+          "score": 3,
+          "label": "Flexion anormal (decorticate)"
+        },
+        {
+          "score": 2,
+          "label": "Extension (decerebrate)"
+        },
+        {
+          "score": 1,
+          "label": "Tune"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "TBI nerm -- ji nêz ve bişopîne"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "TBI nerm - rêça hewayê amade bike"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "TBI giran - rêyên hewayê di xetereya lezgîn de, heke gengaz be întub bikin"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Ji bo zarokên di bin 2 salî de GCS-ya zarokan (pGCS) bikar bînin. Pûanên devkî ji bo zarokên berî devkî hatine sererast kirin."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Ringer-Laktat-Lösung (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Hartmanns Lösung",
+    "Ringer-Laktat-Injektion"
+  ],
+  "description": "Ausgewogene isotonische kristalloide Flüssigkeit. Bei großvolumiger Trauma-Wiederbelebung bevorzugt gegenüber normaler Kochsalzlösung – physiologisch ausgewogener, geringeres Risiko einer hyperchlorämischen Azidose. Enthält Natrium, Kalium, Kalzium, Laktat.",
+  "indications": [
+    "Trauma-Wiederbelebung (bevorzugt kristalloid bei hämorrhagischem Schock)",
+    "Flüssigkeitsreanimation bei Verbrennungen (Parkland-Formel)",
+    "Hypovolämie",
+    "Flüssigkeitspflege"
+  ],
+  "dose": "Hämorrhagischer Schock: Vor der Umstellung auf Blutprodukte auf maximal 1 l beschränken. Ziel-SBP 80–90 mmHg bei penetrierendem Trauma, 90 mmHg TBI. Verbrennungen (Parkland): 4 ml x kg x % TBSA verbrannten über 24 Stunden (die Hälfte in den ersten 8 Stunden).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hyperkaliämie (enthält Kalium)",
+    "Schweres Leberversagen (Störung des Laktatstoffwechsels – relativ)"
+  ],
+  "warnings": [
+    "Immer noch ein Kristalloid – kann keinen Sauerstoff transportieren. Blutprodukte sind bei hämorrhagischem Schock überlegen. LR ist nur eine Brücke.",
+    "Nicht mit Blutprodukten derselben Linie mischen (Kalzium verursacht Gerinnung).",
+    "Führen Sie bei einem penetrierenden Trauma vor der Blutungskontrolle KEINE übermäßige Wiederbelebung durch."
+  ],
+  "regional_names": {
+    "generic": "Laktat-Ringer-Lösung",
+    "UK": "Hartmanns Lösung"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 ml/kg Bolus, erneut beurteilen. Bei pädiatrischem Trauma gegenüber NS bevorzugt.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Bevorzugte intravenöse Flüssigkeit bei Wehen und Entbindung. Geeignet für die Wiederbelebung geburtshilflicher Blutungen."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

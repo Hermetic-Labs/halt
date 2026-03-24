@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Nnyefe ubi mberede",
+  "category": "obstetric",
+  "skill_level": "ọgụ-ọgwụ",
+  "time_estimate": "Ọdịiche -- 20+ nkeji",
+  "description": "Nlekọta nke nnyefe ngwa ngwa ma ọ bụ na-emeghị atụmatụ na gburugburu ebe dị egwu.",
+  "equipment": [
+    "uwe aka",
+    "akwa-ojide dị ọcha",
+    "ụdọ-mkpọchi-ma ọ bụ-nkwekọrịta",
+    "mkpa",
+    "bọlbụ-syringe"
+  ],
+  "steps": [
+    "Debe nne na-ehi ụra ma ọ bụ nke na-anọdụ ala. Ntugharị akụkụ aka ekpe na-ahọrọ ma ọ bụrụ na amaghị ihe ọ bụla (na-egbochi mkpakọ aortocaval).",
+    "Jikwaa nnyefe nke isi -- nkwado na nkwụ. Adọpụla.",
+    "Ozugbo ewepụtara isi, lelee eriri nuchal (n'olu). Ọ bụrụ na ọ dị, tụpụ n'isi. Ọ bụrụ na ọ siri ike, kpachie ma bee.",
+    "Were sirinji bọlbụ see ọnụ ya ma ọ bụrụ na ọ dị.",
+    "Na-eduzi nnyefe nke ubu ihu site n'iji nwayọọ na-agbada ala n'isi, wee gbagoo elu maka ubu azụ.",
+    "Napụta ahụ -- dee oge nnyefe.",
+    "Kpọọ ma kpoo nwa ọhụrụ ozugbo. Na-akpali site na-ete azụ.",
+    "Kpoo ma bepụ ụdọ (chere 1-2 min ma ọ bụrụ na nwa ọhụrụ kwụsiri ike).",
+    "Nyefee placenta na traction dị nro na-achịkwa --amanyela ya.",
+    "Na-elekọta oxytocin (ọ bụrụ na ọ dị) iji gbochie ọbara ọgbụgba mgbe a mụsịrị placenta.",
+    "Nyochaa maka ọbara ọgbụgba mgbe ọmụmụ -- ego ịhịa aka n'ahụ, mkpakọ bimanual ma ọ dị mkpa.",
+    "Nyochaa akara Apgar na nkeji 1 na 5."
+  ],
+  "warnings": [
+    "Ọ bụrụ na nnyefe adịghị nso -- anwala. Ngwa ngwa MEDEVAC ka ahọrọ.",
+    "Dystocia ubu: ọ bụrụ n'ubu rapaara, tinye McRoberts maneuver (hyperflex hips) na nrụgide suprapubic.",
+    "Ọbara ọgbụgba mgbe ọmụmụ nwa bụ isi ihe kpatara ọnwụ nne nwere ike igbochi -- nwee oxytocin dị njikere."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t20711s",
+    "icd10":  "T20711S",
+    "name":  "Corrosion of third degree of right ear [any part, except ear drum], sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Corrosion of third degree of right ear [any part, except ear drum], sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

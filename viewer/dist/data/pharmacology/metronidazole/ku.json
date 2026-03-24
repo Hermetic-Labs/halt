@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazole",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "Antîbiyotîka Nitroimidazole bi vegirtina anaerobîk û protozoal a hêja. Ji bo ketina trawmaya zikê/rovikê ji bo vegirtina flora rûvî ya anaerobî pêdivî ye. Bi gelemperî bi ciprofloxacin re tê bikar anîn.",
+  "indications": [
+    "Trawmaya zik / rovî ya penetratîv",
+    "Enfeksiyonên hundurê zikê",
+    "Enfeksiyonên tevna nerm ên anaerobî",
+    "enfeksiyonên C. difficile"
+  ],
+  "dose": "500 mg IV q6-8h. PO: 500 mg q8h (heke ji devkî were tolerans kirin).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Trimestra yekem a ducaniyê (xizm)",
+    "Alerjiya metronidazole an nitroimidazole tê zanîn"
+  ],
+  "warnings": [
+    "Reaksiyona mîna dîsulfîram a bi alkolê re - di dema dermankirinê de û 48 demjimêran piştî wê alkolê nexwin.",
+    "Bi karanîna dirêj ve dibe sedema neuropatiya periferîkî.",
+    "Ger gengaz be di tîrmeha yekem de dev jê berdin."
+  ],
+  "regional_names": {
+    "generic": "metronidazole"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7.5 mg/kg IV/PO q6h (max 500 mg/doz).",
+      "note": "Ewle di zarokên mezin de. Di nav neonatan de dûr bisekinin."
+    },
+    "obstetric": {
+      "note": "Ger gengaz be di tîrmeha yekem de dev jê berdin. Dema ku ji hêla bijîjkî ve pêdivî ye trimestra duyemîn/sêyemîn bikar bînin - feyde bi gelemperî xetera enfeksiyonên ciddî yên anaerobîk girantir dike."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

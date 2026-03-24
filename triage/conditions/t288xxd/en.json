@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t288xxd",
+    "icd10":  "T288XXD",
+    "name":  "Corrosion of internal genitourinary organs, subsequent encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Corrosion of internal genitourinary organs, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

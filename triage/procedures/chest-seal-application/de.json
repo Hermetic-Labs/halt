@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Okklusive Brustversiegelung",
+  "category": "respiration",
+  "skill_level": "Kampf-Lebensretter",
+  "time_estimate": "1-2 Minuten",
+  "description": "Verschließen einer saugenden Brustwunde (offener Pneumothorax) mit einer belüfteten Brustdichtung, um das Eindringen von Luft zu verhindern und gleichzeitig eine Druckentlastung zu ermöglichen.",
+  "equipment": [
+    "belüftete Brustdichtung",
+    "Handschuhe",
+    "Trauma-Schere"
+  ],
+  "steps": [
+    "Legen Sie die Wunde frei – schneiden Sie sie ab oder entfernen Sie die Kleidung.",
+    "Wischen Sie die Haut rund um die Wunde möglichst trocken ab (Blut, Schweiß verhindern das Anhaften).",
+    "Öffnen Sie die Verpackung der belüfteten Brustdichtung.",
+    "Platzieren Sie die Dichtung mittig auf dem Loch über der Wunde. Fest andrücken und darauf achten, dass alle Kanten haften.",
+    "Überprüfen Sie die Ventilausrichtung – die Entlüftung muss nach außen zeigen (von der Haut weg) und frei bleiben.",
+    "Atemgeräusche neu bewerten. Wenn die Verschlechterung nach der Versiegelung anhält, denken Sie an einen Spannungspneumothorax und führen Sie eine NCD durch.",
+    "Wenn keine belüftete Dichtung verfügbar ist, kann eine nicht belüftete Dichtung verwendet werden, MUSS jedoch auf die Entwicklung eines Spannungspneumothorax überwacht werden."
+  ],
+  "warnings": [
+    "Nicht belüftete Dichtungen können einen einfachen Pneumothorax in einen Spannungspneumothorax umwandeln – verwenden Sie belüftete Dichtungen nur im Feldeinsatz.",
+    "Dreiseitiges Taping (improvisierte Abdichtung) wird vom CoTCCC nicht mehr empfohlen – verwenden Sie eine handelsübliche belüftete Brustmanschette.",
+    "Tragen Sie immer eine Versiegelung auf EIN- und AUSGANGSwunden auf."
+  ],
+  "follows": [],
+  "precedes": [
+    "Nadel-Dekompression"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

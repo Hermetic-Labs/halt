@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t8142xa",
+    "icd10":  "T8142XA",
+    "name":  "Infection following a procedure, deep incisional surgical site, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Infection following a procedure, deep incisional surgical site, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

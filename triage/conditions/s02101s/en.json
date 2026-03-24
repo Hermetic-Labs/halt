@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s02101s",
+    "icd10":  "S02101S",
+    "name":  "Fracture of base of skull, right side, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Fracture of base of skull, right side, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

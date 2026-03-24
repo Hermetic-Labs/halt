@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t43226s",
+    "icd10":  "T43226S",
+    "name":  "Underdosing of selective serotonin reuptake inhibitors, sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Underdosing of selective serotonin reuptake inhibitors, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

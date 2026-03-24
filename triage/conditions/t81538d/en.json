@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t81538d",
+    "icd10":  "T81538D",
+    "name":  "Perforation due to foreign body accidentally left in body following other procedure, subsequent encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Perforation due to foreign body accidentally left in body following other procedure, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s72032r",
+    "icd10":  "S72032R",
+    "name":  "Displaced midcervical fracture of left femur, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with malunion",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Displaced midcervical fracture of left femur, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with malunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

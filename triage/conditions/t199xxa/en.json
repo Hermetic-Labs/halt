@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t199xxa",
+    "icd10":  "T199XXA",
+    "name":  "Foreign body in genitourinary tract, part unspecified, initial encounter",
+    "category":  "foreign-body",
+    "triage_priority":  "",
+    "description":  "Foreign body in genitourinary tract, part unspecified, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

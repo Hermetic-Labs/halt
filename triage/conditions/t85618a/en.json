@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t85618a",
+    "icd10":  "T85618A",
+    "name":  "Breakdown (mechanical) of other specified internal prosthetic devices, implants and grafts, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Breakdown (mechanical) of other specified internal prosthetic devices, implants and grafts, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

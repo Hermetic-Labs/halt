@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Yiyan 5-HT3 olugba antiemetic olugba. Giga munadoko fun ríru ati ìgbagbogbo. ODT (tabulẹti itọka ẹnu) wulo ni awọn eto aaye nigbati IV ko si. To wa ninu diẹ ninu awọn akopọ egbogi ija.",
+  "indications": [
+    "Riru ati eebi (kimoterapi, opioid-induced, post-isẹ, TBI jẹmọ)",
+    "Aisan išipopada",
+    "Riru lati isakoso ketamine"
+  ],
+  "dose": "4-8 mg IV/IO titari o lọra lori awọn iṣẹju 2-5. ODT: 4-8 mg tituka labẹ ahọn. IM: 4 mg.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ifarabalẹ ti a mọ si ondansetron tabi awọn alatako 5-HT3 miiran",
+    "Aisan QT gigun ti a bi (iwọn giga IV nikan)"
+  ],
+  "warnings": [
+    "Iwọn giga IV le fa aarin QT gun -- lo iwọn lilo to munadoko ti o kere julọ IV.",
+    "Ko rọpo iṣakoso oju-ofurufu ni alaisan obtunded pẹlu eebi - daabobo ọna atẹgun akọkọ."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.1-0.15 mg / kg IV (max 4 mg). ODT: 4mg fun awọn ọmọde> 4 ọdun.",
+      "note": "Lilo pupọ ati ti o farada ni awọn itọju ọmọde."
+    },
+    "obstetric": {
+      "note": "Lopin data ni oyun. Lo fun ríru / eebi pupọ lẹhin oṣu mẹta akọkọ nigbati awọn anfani ju awọn eewu lọ. Ko ṣe iṣeduro ni akọkọ trimester."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

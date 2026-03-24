@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazol",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "Antybiotyk nitroimidazolowy o doskonałym działaniu na bakterie beztlenowe i pierwotniakowe. Niezbędny przy penetracji urazów jamy brzusznej/jelit w celu pokrycia beztlenowej flory jelitowej. Często stosowany w połączeniu z cyprofloksacyną.",
+  "indications": [
+    "Penetrujący uraz brzucha/jelit",
+    "Zakażenia w obrębie jamy brzusznej",
+    "Beztlenowe zakażenia tkanek miękkich",
+    "Zakażenia C. difficile"
+  ],
+  "dose": "500 mg dożylnie co 6-8 godzin. PO: 500 mg co 8 godzin (jeśli tolerowane doustnie).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Pierwszy trymestr ciąży (krewny)",
+    "Znana alergia na metronidazol lub nitroimidazol"
+  ],
+  "warnings": [
+    "Reakcja podobna do disulfiramu z alkoholem – nie należy spożywać alkoholu w trakcie kuracji i 48h po niej.",
+    "Przy długotrwałym stosowaniu może powodować neuropatię obwodową.",
+    "Jeśli to możliwe, unikaj w pierwszym trymestrze ciąży."
+  ],
+  "regional_names": {
+    "generic": "metronidazol"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7,5 mg/kg dożylnie/doustnie co 6 godzin (maks. 500 mg/dawkę).",
+      "note": "Bezpieczny dla starszych dzieci. Unikać u noworodków."
+    },
+    "obstetric": {
+      "note": "Jeśli to możliwe, unikaj w pierwszym trymestrze ciąży. Stosuj w drugim/trzecim trymestrze, jeśli jest to konieczne z medycznego punktu widzenia – w przypadku poważnych infekcji beztlenowych korzyści zwykle przewyższają ryzyko."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

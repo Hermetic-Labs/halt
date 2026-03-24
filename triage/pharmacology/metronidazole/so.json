@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazole",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Calanka"
+  ],
+  "description": "Antibiyootiga Nitroimidazole oo leh caymis anaerobic iyo protozoal aad u fiican. Waxa lama huraan u ah dhexgalka caloosha iyo dhaawaca mindhicirka si loo daboolo flora mindhicirka anaerobic. Badanaa waxaa loo isticmaalaa in lagu daro ciprofloxacin.",
+  "indications": [
+    "Dhaawaca caloosha iyo mindhicirka oo gala",
+    "Caabuqyada caloosha ku jira",
+    "Infekshannada unugyada jilicsan anaerobic",
+    "C. caabuqyada adag"
+  ],
+  "dose": "500 mg IV q6-8h. PO: 500 mg q8h (haddii afka loo dulqaadan karo).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Saddexda bilood ee ugu horreeya uurka (qaraabo)",
+    "metronidazole la yaqaan ama xasaasiyadda nitroimidazole"
+  ],
+  "warnings": [
+    "Dareen-celinta Disulfiram-u-eg ee khamriga -- ha cabbin aalkolo inta lagu jiro daawaynta iyo 48 saacadood ka dib.",
+    "Waxa laga yaabaa inay keento neuropathy durugsan iyadoo la isticmaalayo wakhti dheer.",
+    "Ka fogow saddexda bilood ee hore haddii ay suurtagal tahay."
+  ],
+  "regional_names": {
+    "generic": "metronidazole"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7.5 mg/kg IV/PO q6h (ugu badnaan 500 mg/qiyaas).",
+      "note": "Badbaadada carruurta waaweyn. Ka fogow ilmaha dhasha."
+    },
+    "obstetric": {
+      "note": "Ka fogow saddexda bilood ee hore haddii ay suurtagal tahay. Isticmaal saddex-biloodlaha labaad/saddexaad marka caafimaad ahaan loo baahdo -- faa'iidada badiyaa way ka miisaan badan tahay khatarta caabuqyada anaerobic ee halista ah."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

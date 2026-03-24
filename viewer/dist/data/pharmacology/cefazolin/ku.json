@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Cefazolin",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Ancef",
+    "Kefzol"
+  ],
+  "description": "Cephalosporin nifşê yekem. Antîbiyotîka parenteral rêza yekem ji bo enfeksiyonên birînên giran û pêşîlêgirtina neştergerî. Veşartina gram-erênî ya baş tevî MSSA. Ji bo pêşîlêgirtinê di nav 60 hûrdeman de ji birîna emeliyatê bidin.",
+  "indications": [
+    "Pêşîlêgirtina birîna neştergerî",
+    "Enfeksiyonên giran ên nerm",
+    "Pêşîlêgirtina şikestê vekirî",
+    "Enfeksiyonên çerm û avahiya çerm"
+  ],
+  "dose": "1-2g IV/IM q8h. Pêşîlêgirtina neştergerî: 2 g IV di nav 60 hûrdeman de berî qutbûnê. Ger emeliyat> 4 saetan 2g dubare bikin.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Ji bo pêşîlêgirtina neştergerî: di nav 60 hûrdeman de piştî qutbûnê bidin.",
+  "contraindications": [
+    "Alerjiya cefalosporînê ya naskirî",
+    "Alerjiya giran a penîsîlînê (% 5-10 reaksiyona xaçerê)"
+  ],
+  "warnings": [
+    "Xaça-reaktîfbûna bi alerjiya penîsîlînê: di nexweşên alerjîk ên penîsîlînê de bi hişyarî bikar bînin.",
+    "Di kêmbûna gurçikê de dozê rast bikin."
+  ],
+  "regional_names": {
+    "generic": "cefazolin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM q8h (max 2g/doz). Pêşîlêgirtin: 30 mg/kg (herî zêde 2 g) berî birînê.",
+      "note": "Di pediatrîkê de ewledar û baş-xwendî."
+    },
+    "obstetric": {
+      "note": "Di ducanî û laktasyonê de ewle ye. Antîbiyotîka parenteral ji bo prosedurên welidandinê bijare."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "Kiwango cha AVPU",
+  "category": "neurological",
+  "description": "Tathmini ya haraka ya fahamu ya ngazi 4. Kasi kuliko GCS kwa majaribio ya awali.",
+  "instructions": "Tathmini kiwango cha juu cha majibu ambayo mgonjwa anaonyesha.",
+  "scoring": [
+    {
+      "code": "A",
+      "label": "Tahadhari",
+      "description": "Kiwango cha AVPU"
+    },
+    {
+      "code": "Tathmini ya haraka ya fahamu ya ngazi 4. Kasi kuliko GCS kwa majaribio ya awali.",
+      "label": "Tathmini kiwango cha juu cha majibu ambayo mgonjwa anaonyesha.",
+      "description": "A"
+    },
+    {
+      "code": "Tahadhari",
+      "label": "Mgonjwa yuko macho, anajua, na anajibu kawaida",
+      "description": "V"
+    },
+    {
+      "code": "Sauti",
+      "label": "Mgonjwa hujibu tu kwa kusisimua kwa maneno",
+      "description": "P"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "Maumivu",
+      "triage": "Mgonjwa hujibu tu kwa uchochezi wa uchungu (kusugua kwa mgongo, shinikizo la kitanda cha msumari)"
+    },
+    {
+      "code": "U",
+      "triage": "Kutoitikia"
+    },
+    {
+      "code": "Hakuna jibu kwa kichocheo chochote -- uingiliaji wa haraka wa njia ya hewa unahitajika",
+      "triage": "A"
+    },
+    {
+      "code": "Imara -- endelea na tathmini",
+      "triage": "V"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t464x6s",
+    "icd10":  "T464X6S",
+    "name":  "Underdosing of angiotensin-converting-enzyme inhibitors, sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Underdosing of angiotensin-converting-enzyme inhibitors, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Aplicación de torniquete (Torniquete de aplicación de combate - CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "cualquier respondedor",
+  "time_estimate": "30-60 segundos",
+  "description": "Control definitivo de hemorragias en extremidades que ponen en peligro la vida. Solicite temprano, no se demore.",
+  "equipment": [
+    "torniquete para gatos",
+    "marcador permanente"
+  ],
+  "steps": [
+    "Aplique el torniquete de 5 a 7 cm (2 a 3 pulgadas) proximal (arriba) de la herida; es aceptable sobre la ropa.",
+    "Pase la banda autoadhesiva alrededor de la extremidad y pásela a través de la hebilla del adaptador de fricción.",
+    "Apriete la banda y asegúrela sobre sí misma.",
+    "Gire la varilla del molinete hasta que se detenga el sangrado o desaparezca el pulso distal.",
+    "Bloquee el molinete en el clip del molinete.",
+    "Coloque la correa del molinete sobre la varilla del molinete para asegurarla.",
+    "Escriba el momento de aplicación directamente en el torniquete (use marcador) Y en la tarjeta TCCC.",
+    "Exponer y reevaluar la herida. Vuelva a evaluar después de 5 minutos."
+  ],
+  "warnings": [
+    "NO retire un torniquete una vez aplicado en el campo; solo personal médico capacitado en un entorno controlado.",
+    "El tiempo es fundamental: un torniquete >2 horas aumenta significativamente el riesgo de pérdida de una extremidad. Registre el tiempo inmediatamente.",
+    "NO aplicar sobre una junta. Si la extremidad tiene heridas en múltiples niveles, aplique proximal a todas las heridas.",
+    "Los torniquetes improvisados ​​(cinturones, cuerdas) son mucho menos eficaces."
+  ],
+  "follows": [
+    "presión directa",
+    "vendaje de heridas"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Utilice un torniquete pediátrico estrecho si está disponible. Se puede utilizar CAT estándar, pero apriételo con cuidado. Las extremidades son más pequeñas; controle cuidadosamente el pulso distal."
+    },
+    "obstetric": {
+      "note": "Aplicación estándar para heridas en las extremidades. No aplicar en abdomen o pelvis."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

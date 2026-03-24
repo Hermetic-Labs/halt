@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Mgbochi hypothermia (H -- MACH)",
+  "category": "temperature-management",
+  "skill_level": "onye ọ bụla na-aza",
+  "time_estimate": "Nkeji 2-3",
+  "description": "Mgbochi hypothermia bụ ihe na-ebute ụzọ na-egbu egbu na trauma. Triad na-egbu egbu: hypothermia + acidosis + coagulopathy. Gbochie na ụgwọ ọ bụla.",
+  "equipment": [
+    "ikpo ọkụ na-atụgharị uche-okpukpu",
+    "ngwa mgbochi hypothermia",
+    "mmiri ọkụ-iv-mmiri-ọ bụrụ na ọ dị"
+  ],
+  "steps": [
+    "Wepu uwe niile dị mmiri ozugbo enwere ike ime ya.",
+    "Jiri akwa mkpuchi okpomọkụ kpuchie onye ọrịa -- akụkụ na-egbuke egbuke IN n'ebe onye ọrịa nọ.",
+    "Kechie isi na olu (ebe okpomọkụ dị mkpa).",
+    "Mkpuchi si n'ala -- tinye ihe n'etiti onye ọrịa na oyi n'elu ala.",
+    "Nyefee mmiri mmiri IV ọkụ ma ọ bụrụ na ọ dị.",
+    "Ekwela ka onye ọrịa maa jijiji na-enweghị mkpuchi - ịma jijiji bụ akara ịdọ aka ná ntị mbụ.",
+    "Lelee okpomọkụ ma ọ bụrụ na temometa dị. N'okpuru 35°C (95°F) = hypothermia."
+  ],
+  "warnings": [
+    "Hypothermia na-akawanye njọ coagulopathy -- ndị ọrịa na-agba ọbara na-ajụ oyi ngwa ngwa ma na-ekekọtakwa nke ọma.",
+    "Mgbochi hypothermia ubi ga-amalite n'oge mmerụ ahụ, ọ bụghị na CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

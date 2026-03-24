@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s92302s",
+    "icd10":  "S92302S",
+    "name":  "Fracture of unspecified metatarsal bone(s), left foot, sequela",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Fracture of unspecified metatarsal bone(s), left foot, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

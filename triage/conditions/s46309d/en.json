@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s46309d",
+    "icd10":  "S46309D",
+    "name":  "Unspecified injury of muscle, fascia and tendon of triceps, unspecified arm, subsequent encounter",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified injury of muscle, fascia and tendon of triceps, unspecified arm, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

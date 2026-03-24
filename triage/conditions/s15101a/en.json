@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s15101a",
+    "icd10":  "S15101A",
+    "name":  "Unspecified injury of right vertebral artery, initial encounter",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified injury of right vertebral artery, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

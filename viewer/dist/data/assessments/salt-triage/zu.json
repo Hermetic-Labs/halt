@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "I-SALT Triage (Hlunga, Hlola, Ukungenelela Okusindisa Ukuphila, Ukwelashwa/Ezokuthutha)",
+  "category": "mass-casualty",
+  "description": "Iphrothokholi ye-mass casualty triage. Okujwayelekile kwemicimbi yezingozi eziningi kuzilungiselelo zezempi nezomphakathi.",
+  "instructions": "Isinyathelo 1: Ukuhlunga komhlaba wonke (ukuhamba, ukunyakazisa, ukunyakazisa). Isinyathelo sesi-2: Hlola ngokulandelana okubalulekile. Isinyathelo sesi-3: Yenza ukungenelela okusindisa impilo (lawula ukopha okukhulu, indlela yokuphefumula evulekile, ukucindezelwa kwezinaliti, izijovo ezizenzakalelayo). Isinyathelo sesi-4: Yabela isigaba.",
+  "categories": [
+    {
+      "color": "emnyama",
+      "label": "Owayelindelwe/Ongasekho",
+      "description": "Cishe ngeke uphile uma unikezwa izinsiza ezitholakalayo, noma umufi oqinisekisiwe"
+    },
+    {
+      "color": "okubomvu",
+      "label": "Ngokushesha (T1)",
+      "description": "Izingozi ezisongela ukuphila, zizosinda ngokungenelela ngokushesha"
+    },
+    {
+      "color": "okuphuzi",
+      "label": "Ibambezelekile (T2)",
+      "description": "Ukulimala okubi kakhulu kodwa okuzinzile, kungalinda ukunakekelwa"
+    },
+    {
+      "color": "okuluhlaza",
+      "label": "| Okuncane (T3)",
+      "description": "Ukulimala okuncane -- ukuhamba elimele"
+    },
+    {
+      "color": "okumpunga",
+      "label": "Okulindelekile",
+      "description": "Ukulimala okungenakuvinjelwa uma kunikezwe izinsiza zamanje -- ukunakekelwa kokunethezeka kuphela"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "I-JumpSTART triage algorithm ilungisa i-SALT ezigulini zezingane. Izilinganiso zesilinganiso sokuphefumula nezinyathelo zokuhlola ziyehluka ezinganeni ezingaphansi kweminyaka engu-8."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

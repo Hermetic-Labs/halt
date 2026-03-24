@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "Échelle de coma de Glasgow (GCS)",
+  "category": "neurological",
+  "description": "Notation neurologique standardisée de la conscience via les réponses oculaires, verbales et motrices. Plage de scores de 3 à 15.",
+  "instructions": "Notez chacun des trois domaines indépendamment. Additionnez les trois scores pour le GCS total.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Spontané"
+        },
+        {
+          "score": 3,
+          "label": "Pour exprimer"
+        },
+        {
+          "score": 2,
+          "label": "Faire souffrir"
+        },
+        {
+          "score": 1,
+          "label": "Aucun"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "Orienté"
+        },
+        {
+          "score": 4,
+          "label": "Confus"
+        },
+        {
+          "score": 3,
+          "label": "Mots inappropriés"
+        },
+        {
+          "score": 2,
+          "label": "Des sons incompréhensibles"
+        },
+        {
+          "score": 1,
+          "label": "Aucun"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "Obéit aux commandes"
+        },
+        {
+          "score": 5,
+          "label": "Localise la douleur"
+        },
+        {
+          "score": 4,
+          "label": "Se retire de la douleur"
+        },
+        {
+          "score": 3,
+          "label": "Flexion anormale (décortiquer)"
+        },
+        {
+          "score": 2,
+          "label": "Extension (décérébrer)"
+        },
+        {
+          "score": 1,
+          "label": "Aucun"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "TBI léger – surveiller de près"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "TBI modéré – préparer les voies respiratoires"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "TCC sévère – voies respiratoires à risque immédiat, intuber si possible"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Utilisez le GCS pédiatrique (pGCS) pour les enfants de moins de 2 ans. Notation verbale ajustée pour les enfants pré-verbaux."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Needle Chest Decompression (NCD)",
+  "category": "respiration",
+  "skill_level": "combat-medic",
+  "time_estimate": "1-2 min",
+  "description": "Pang-emerhensiyang lunas ng tension pneumothorax sa pamamagitan ng pagpasok ng karayom ​​sa ikalawang intercostal space. Interbensyon na nagliligtas ng buhay.",
+  "equipment": [
+    "14g-needle-catheter-3-25in",
+    "guwantes",
+    "chest-seal-opsyonal"
+  ],
+  "steps": [
+    "Tukuyin ang tension pneumothorax: absent breath sounds sa apektadong bahagi, tracheal deviation (late), respiratory distress, hypotension, JVD.",
+    "Ilantad ang dibdib sa apektadong bahagi.",
+    "Hanapin ang 2nd intercostal space, midclavicular line (alternatibo: 4th/5th ICS, anterior axillary line).",
+    "Maglagay ng 14g, 3.25-pulgada na needle-catheter na patayo sa dingding ng dibdib, sa ibabaw lamang ng TOP ng 3rd rib (naiwasan ang neurovascular bundle).",
+    "Mag-advance hanggang sa maramdaman o marinig ang pagsirit ng hangin.",
+    "Alisin ang karayom ​​at iwanan ang catheter sa lugar.",
+    "Makinig para sa pagpapabuti ng mga tunog ng hininga at pagsisikap sa paghinga.",
+    "I-secure ang catheter hub. HUWAG i-clamp o takpan ang bukas na dulo.",
+    "Muling suriin ang bawat 5 minuto -- ang catheter ay maaaring mabulok o mamuo, na nangangailangan ng paulit-ulit na decompression."
+  ],
+  "warnings": [
+    "Gumamit ng 3.25-pulgadang karayom ​​-- ang karaniwang 14g angiocatheter (1.5in) ay madalas na nabigo sa mga pasyente ng militar dahil sa sandata ng katawan at kalamnan.",
+    "Maaaring kailanganin ang bilateral NCD kung hindi tiyak kung aling panig ang apektado at ang pasyente ay peri-arrest.",
+    "Huwag ilagay sa magkabilang gilid ng pagsuso ng sugat sa dibdib nang hindi muna tinatakpan ang sugat."
+  ],
+  "follows": [],
+  "precedes": [
+    "chest-seal-application"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Gumamit ng isang angkop na laki ng karayom ​​(mas maliliit na pasyente, 1.5-2in ay maaaring sapat). Gumamit ng 2nd ICS MCL approach. Mas mahirap ang pagkilala sa landmark -- mag-ingat."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

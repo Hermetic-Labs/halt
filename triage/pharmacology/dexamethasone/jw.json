@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Deksametason",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Decadron",
+    "DexPak"
+  ],
+  "description": "Kortikosteroid sintetik long-acting. Digunakake kanggo edema serebral (edema serebral dhuwur - HACE, TBI), reaksi alergi abot, edema saluran napas, lan krisis adrenal. Anti-inflamasi, ora anabolik.",
+  "indications": [
+    "Edema serebral dhuwur (HACE)",
+    "Edema saluran napas (stridor pasca ekstubasi, croup)",
+    "Edema serebral saka tumor utawa abses",
+    "Reaksi alergi sing abot (tambahan epinefrin)",
+    "Krisis adrenal",
+    "Anti-emetik tambahan (perioperatif)"
+  ],
+  "dose": "Edema serebral / HACE: 8-10 mg IV / IM awal, banjur 4 mg saben 6 jam. Edema saluran napas: 10 mg IV sapisan. Kroup: 0,6 mg/kg IM/PO (maks 16mg). Krisis adrenal: 4 mg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO"
+  ],
+  "window": "HACE: Menehi minangka awal sabisa bebarengan karo keturunan langsung.",
+  "contraindications": [
+    "Infeksi jamur sistemik (tanpa jangkoan antijamur)",
+    "Vaksin virus urip sajrone 30 dina (relatif)"
+  ],
+  "warnings": [
+    "Ora ngganti keturunan lan oksigen kanggo HACE - mung digunakake minangka tambahan.",
+    "Hyperglycemia - monitor glukosa getih ing pasien diabetes.",
+    "Imunosupresi kanthi panggunaan sing dawa.",
+    "Dosis tunggal kanggo kahanan darurat umume aman banget."
+  ],
+  "regional_names": {
+    "generic": "deksametason"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Croup: 0,6 mg/kg PO/IM (maks 16 mg). Edema serebral: 0,5-1 mg / kg IV (maks 10 mg). Edema saluran napas: 0,5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM q24h x 2 dosis digunakake kanggo nyepetake kadewasan paru-paru janin ing gestasi 24-34 minggu ing tenaga kerja preterm. Rembugan karo panyedhiya paling dhuwur sing kasedhiya."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

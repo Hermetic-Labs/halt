@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t3271",
+    "icd10":  "T3271",
+    "name":  "Corrosions involving 70-79% of body surface with 10-19% third degree corrosion",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Corrosions involving 70-79% of body surface with 10-19% third degree corrosion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

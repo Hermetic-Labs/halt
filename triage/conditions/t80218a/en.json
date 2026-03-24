@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t80218a",
+    "icd10":  "T80218A",
+    "name":  "Other infection due to central venous catheter, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Other infection due to central venous catheter, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

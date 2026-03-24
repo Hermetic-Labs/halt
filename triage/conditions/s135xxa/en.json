@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s135xxa",
+    "icd10":  "S135XXA",
+    "name":  "Sprain of thyroid region, initial encounter",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Sprain of thyroid region, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

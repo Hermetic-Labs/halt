@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirina (ácido acetilsalicílico)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Aspirina Bayer",
+    "Ecotrina"
+  ],
+  "description": "Antiinflamatório não esteróide (AINE) com propriedades antiplaquetárias. Tratamento de primeira linha para suspeita de síndrome coronariana aguda (SCA). Inibe irreversivelmente a agregação plaquetária – o efeito dura toda a vida das plaquetas (7 a 10 dias).",
+  "indications": [
+    "Suspeita de infarto agudo do miocárdio (IM) – mastigar imediatamente",
+    "Angina instável/síndrome coronariana aguda",
+    "AVC (isquêmico -- após exclusão hemorrágica)",
+    "Febre e dor leve a moderada (analgésico)"
+  ],
+  "dose": "ACS: 325 mg PO - MASTIGAR (não engolir inteiro) imediatamente. Analgésico/antipirético: 325-650 mg PO q4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Dê o mais cedo possível – mastigue imediatamente se houver suspeita.",
+  "contraindications": [
+    "Sangramento GI ativo",
+    "AVC hemorrágico",
+    "Alergia conhecida à aspirina ou hipersensibilidade a AINEs",
+    "Sangramento grave não controlado – aspirina piora a hemorragia"
+  ],
+  "warnings": [
+    "NÃO administre em pacientes hemorrágicos – a aspirina prejudica irreversivelmente a função plaquetária e piora o sangramento.",
+    "NÃO dê a crianças <12 anos com doença viral - risco de síndrome de Reye.",
+    "Irritação gastrointestinal – tome com alimentos se não for emergente."
+  ],
+  "regional_names": {
+    "generic": "aspirina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgésico/antipirético: 10-15 mg/kg PO a cada 4-6h (máx. 650 mg/dose). NOTA: Contra-indicado em doenças virais (síndrome de Reye).",
+      "note": "Em vez disso, use paracetamol (paracetamol) para febre em crianças com doenças virais."
+    },
+    "obstetric": {
+      "note": "Evite durante a gravidez, especialmente no terceiro trimestre (fechamento prematuro do canal arterial). Dose baixa (81 mg) é usada para prevenção da pré-eclâmpsia apenas sob orientação médica."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

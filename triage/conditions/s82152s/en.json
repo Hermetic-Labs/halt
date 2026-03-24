@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s82152s",
+    "icd10":  "S82152S",
+    "name":  "Displaced fracture of left tibial tuberosity, sequela",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Displaced fracture of left tibial tuberosity, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

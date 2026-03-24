@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxycycline",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramycin",
+    "Doryx"
+  ],
+  "description": "Spectrum latum tetracyclinum antibioticum. Vulnus oralis prophylaxis alternative pro aegris penicillino-allergicis. Efficax etiam contra organismos atypicos et quosdam morbos vector-feros (prophylaxis malaria in locis endemicis).",
+  "indications": [
+    "Vulnus prophylaxis (allergy penicillin)",
+    "Mollis textus contagio",
+    "Vulnera morsu",
+    "Malaria prophylaxis in locis endemicis"
+  ],
+  "dose": "100 mg PO singulis horis 12 x 7 diebus.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Incipe intra 3 horas laesae vulneris prophylaxis.",
+  "contraindications": [
+    "Graviditas (causas dente foetus inhibitionis et ossis inhibitionis)",
+    "Liberi minores annos VIII (eadem causa)",
+    "Gravis hepatis molestiis"
+  ],
+  "warnings": [
+    "CONTINCTUS in graviditate -- utere amoxicillino loco.",
+    "CONTINCTUS in parvulis sub VIII annis.",
+    "Photosensitivity - patientem monere ne solis nuditatem.",
+    "Cibi calcii pinguia, antacida vel ferri non sumes effusio deterit."
+  ],
+  "regional_names": {
+    "generic": "doxycycline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Contraindicated sub annis VIII. Aevum 8+: 2-4 mg/kg/ dies dividitur q12h (max 100 mg/dosis).",
+      "note": "Utere amoxicillinum pro parvulis sub 8."
+    },
+    "obstetric": {
+      "note": "CONTINCTUS in graviditate -- laedat foetus. Amoxicillinum pro utere."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

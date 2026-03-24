@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t82828s",
+    "icd10":  "T82828S",
+    "name":  "Fibrosis due to vascular prosthetic devices, implants and grafts, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Fibrosis due to vascular prosthetic devices, implants and grafts, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

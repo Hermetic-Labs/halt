@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Entrega emergencial no terreno",
+  "category": "obstetric",
+  "skill_level": "médico-combate",
+  "time_estimate": "Varia -- 20+ min",
+  "description": "Gestão de entregas precipitadas ou não planejadas em ambiente austero.",
+  "equipment": [
+    "luvas",
+    "cobertores de pano limpo",
+    "braçadeiras ou laços para cabos",
+    "tesoura",
+    "seringa de bulbo"
+  ],
+  "steps": [
+    "Posicione a mãe em decúbito dorsal ou semi-reclinada. Inclinação lateral esquerda preferida se estiver inconsciente (evita compressão aortocaval).",
+    "Controle a entrega da cabeça – apoie com a palma da mão. NÃO puxe.",
+    "Assim que a cabeça for entregue, verifique se há cordão nucal (ao redor do pescoço). Se presente, deslize sobre a cabeça. Se estiver apertado, prenda e corte.",
+    "Aspire a boca e depois o nariz com uma seringa de bulbo, se disponível.",
+    "Oriente a entrega do ombro anterior por meio de uma tração suave para baixo na cabeça e depois para cima no ombro posterior.",
+    "Entregue o corpo - anote o horário da entrega.",
+    "Seque e aqueça o bebê imediatamente. Estimule esfregando as costas.",
+    "Prenda e corte o cordão (espere 1-2 minutos se o bebê estiver estável).",
+    "Liberte a placenta com uma tração suave e controlada – NÃO force.",
+    "Administre ocitocina (se disponível) para prevenir hemorragia pós-parto após a expulsão da placenta.",
+    "Avalie se há hemorragia pós-parto – massagem uterina, compressão bimanual, se necessário.",
+    "Avalie o índice de Apgar em 1 e 5 minutos."
+  ],
+  "warnings": [
+    "Se o parto não for iminente – NÃO tente. MEDEVAC rápido é o preferido.",
+    "Distócia de ombros: se os ombros estiverem presos, aplicar manobra de McRoberts (hiperflexão dos quadris) e pressão suprapúbica.",
+    "A hemorragia pós-parto é a principal causa de morte materna evitável – tenha oxitocina preparada."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Décompression thoracique à l'aiguille (NCD)",
+  "category": "respiration",
+  "skill_level": "médecin de combat",
+  "time_estimate": "1-2 minutes",
+  "description": "Soulagement d'urgence du pneumothorax sous tension par insertion d'une aiguille dans le deuxième espace intercostal. Intervention salvatrice.",
+  "equipment": [
+    "Cathéter-aiguille-14g-3-25 pouces",
+    "gants",
+    "joint thoracique-facultatif"
+  ],
+  "steps": [
+    "Identifier un pneumothorax sous tension : absence de bruits respiratoires du côté affecté, déviation trachéale (tardive), détresse respiratoire, hypotension, JVD.",
+    "Exposez la poitrine du côté affecté.",
+    "Localiser le 2ème espace intercostal, ligne médio-claviculaire (alternative : 4ème/5ème ICS, ligne axillaire antérieure).",
+    "Insérez un cathéter-aiguille de 14 g et 3,25 pouces perpendiculairement à la paroi thoracique, juste au-dessus du HAUT de la 3ème côte (évite le faisceau neurovasculaire).",
+    "Avancez jusqu’à ce qu’un souffle d’air soit ressenti ou un sifflement audible.",
+    "Retirez l'aiguille et laissez le cathéter en place.",
+    "Écoutez l’amélioration des bruits respiratoires et de l’effort respiratoire.",
+    "Fixez le moyeu du cathéter. Ne serrez PAS et ne couvrez PAS l’extrémité ouverte.",
+    "Réévaluez toutes les 5 minutes : le cathéter peut se plier ou coaguler, nécessitant une décompression répétée."
+  ],
+  "warnings": [
+    "Utilisez une aiguille de 3,25 pouces - l'angiocathéter standard de 14 g (1,5 pouces) échoue fréquemment chez les patients militaires en raison du gilet pare-balles et de la musculature.",
+    "Une MNT bilatérale peut être nécessaire en cas de doute sur le côté affecté et si le patient est en péri-arrestation.",
+    "Ne pas placer du même côté que la plaie thoracique sucée sans d'abord sceller la plaie."
+  ],
+  "follows": [],
+  "precedes": [
+    "application de joint thoracique"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Utilisez une aiguille de taille appropriée (pour les patients plus petits, 1,5 à 2 pouces peuvent suffire). Utilisez la 2ème approche ICS MCL. La reconnaissance des points de repère est plus difficile : soyez prudent."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

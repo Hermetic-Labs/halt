@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Klasifikasi Hemoragik (Kelas I-IV)",
+  "category": "circulatory",
+  "description": "Klasifikasi hemorrhage ATLS miturut perkiraan mundhut getih lan respon fisiologis.",
+  "instructions": "Ngira-ngira mundhut getih lan cocog tandha-tandha fisiologis menyang kelas. Perawatan urgensi mundhak kanthi kelas.",
+  "scoring": [
+    {
+      "class": "aku",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Normal",
+      "rr": "14-20",
+      "mental_status": "Normal",
+      "treatment": "Mirsani, cairan PO yen bisa"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Normal",
+      "rr": "20-30",
+      "mental_status": "Cemas",
+      "treatment": "Akses IV, kristaloid isotonik"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Suda",
+      "rr": "30-40",
+      "mental_status": "Bingung",
+      "treatment": "Cairan IV + produk getih, kontrol pendarahan langsung"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": "> 2000",
+      "blood_loss_pct": "> 40%",
+      "hr": "> 140",
+      "sbp": "Kurang banget",
+      "rr": "> 40",
+      "mental_status": "Lethargic / semaput",
+      "treatment": "Kontrol pendarahan bedhah langsung - ngancam nyawa"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Anak menehi ganti rugi luwih suwe sadurunge dekompensasi. Kelas III/IV bisa ngalami tekanan getih sing meh normal nganti tiba-tiba ambruk. Percaya tachycardia lan status mental liwat BP."
+    },
+    "obstetric": {
+      "note": "Pasien meteng ngalami 40-50% volume getih sing tambah. Bisa ngidinke mundhut luwih gedhe sadurunge nuduhake pratandha. Kacilakan janin bisa ndhisiki tandha-tandha ibu."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

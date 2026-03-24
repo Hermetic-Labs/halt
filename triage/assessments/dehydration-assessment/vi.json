@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Đánh giá tình trạng mất nước",
+  "category": "circulation",
+  "description": "Đánh giá hiện trường về tình trạng mất nước và mức độ nghiêm trọng của bệnh nhiệt. Màu nước tiểu là chỉ số thực tế nhất. Đánh giá tình trạng tâm thần như một dấu hiệu cho thấy tình trạng mất nước nghiêm trọng tiến triển đến say nắng.",
+  "instructions": "Kiểm tra màu sắc nước tiểu, độ đàn hồi của da, trạng thái tinh thần và các dấu hiệu sinh tồn. Nước tiểu sẫm màu, màng nhầy khô và nhịp tim nhanh cho thấy tình trạng mất nước đáng kể cần được bù nước tích cực.",
+  "categories": [
+    {
+      "color": "trong trẻo",
+      "label": "Dưỡng ẩm tốt",
+      "description": "Màu vàng nhạt để làm sạch nước tiểu. Không cần can thiệp."
+    },
+    {
+      "color": "màu vàng",
+      "label": "Mất nước nhẹ",
+      "description": "Nước tiểu màu vàng đậm, khát nước. Bù nước bằng đường uống. Khuyến khích 250-500 mL nước mỗi giờ."
+    },
+    {
+      "color": "màu nâu hổ phách",
+      "label": "Mất nước vừa phải-nặng",
+      "description": "Nước tiểu màu hổ phách, HR tăng, độ đàn hồi da giảm, khô miệng. Truyền dịch IV/IO nếu không dung nạp bằng đường uống. 1-2L LR hoặc NS."
+    },
+    {
+      "color": "đỏ",
+      "label": "Nguy hiểm -- Đột quỵ do nhiệt / Nặng",
+      "description": "Lượng nước tiểu ít, LOC thay đổi, da khô nóng. Cấp cứu y tế -- làm mát nhanh + truyền dịch IV + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Trẻ em mất nước nhanh hơn người lớn. Thóp trũng (trẻ sơ sinh), không có nước mắt và hôn mê là những dấu hiệu nguy kịch. Truyền tĩnh mạch theo cân nặng: 20 mL/kg bolus LR."
+    },
+    "obstetric": {
+      "note": "Phụ nữ mang thai cần tăng lượng chất lỏng. Mất nước có thể gây ra các cơn co thắt sinh non. Đầu tiên phải bù nước tích cực bằng đường uống; IV nếu không dung nạp bằng đường uống."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

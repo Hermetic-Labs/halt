@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Subitis Field Delivery",
+  "category": "obstetric",
+  "skill_level": "pugna-medic",
+  "time_estimate": "Varies - 20+ min",
+  "description": "Procuratio praecipiti vel non plani partus in ambitu austero.",
+  "equipment": [
+    "caestus",
+    "munda, tegumenta",
+    "funis-fibulatis vel necessitudines",
+    "forfex",
+    "bulb-syringe"
+  ],
+  "steps": [
+    "Positu matrem supinam vel semi-accumbentem. Sinistra lateralis benificium praeponitur, si inscius (prohibet compressionem aortae).",
+    "Partum capitis compesce — palmam sustenta. NON TRAHERE.",
+    "Semel liberato capite, ceptum funiculi nuchalci (circa collum). Si praesens, super caput lapsus. si arta, fibulae secare.",
+    "Exsugendo os deinde nasus cum bulbo clystere si in promptu est.",
+    "Recta traditio umeri anterioris a tractu leni deorsum a capite, tum sursum pro humero posteriori.",
+    "Libera corpus -- note tempus partus.",
+    "Arida et fove infanti protinus. Tergo incitare attritu.",
+    "Fibulae et funiculum secant (exspecta 1-2 min si infans stabilis est).",
+    "Placenta libera cum tractu molli moderata - non vis.",
+    "Administrare oxytocin (si available) ne postpartum sanguinis post partum placentae.",
+    "Assident pro haemorrhagia postpartum - Suspendisse fundalis, compressionem bimanualem si opus fuerit.",
+    "Assess Apgar ustulo ad 1 et 5 minuta."
+  ],
+  "warnings": [
+    "Si traditio non imminet - non tentet. Celeri MEDEVAC praeponitur.",
+    "Dystocia humeri: si humeri haesit, McRoberts decurrere (coxis hyperflex) et pressioni suprapubici applica.",
+    "Postpartum haemorrhagia prima est causa mortis maternae preventabilis — oxytocinum paratum habent."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

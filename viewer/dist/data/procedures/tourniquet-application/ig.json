@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Ngwa njem nlegharị anya (Nlegharị ngwa ọgụ -- CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "onye ọ bụla na-aza",
+  "time_estimate": "30-60 nkeji",
+  "description": "Nchicha ọbara ọgbụgba maka oke ọbara ọgbụgba na-eyi ndụ egwu. Tinye ngwa ngwa -- egbula oge.",
+  "equipment": [
+    "cat-tourniquet",
+    "akara na-adịgide adịgide"
+  ],
+  "steps": [
+    "Tinye ihe nlegharị anya 2-3 sentimita (5-7 cm) nso (n'elu) ọnya ahụ - n'elu uwe bụ ihe a na-anabata.",
+    "Tinye eriri na-ejide onwe ya n'akụkụ aka ya wee banye na eriri mgbaka esemokwu.",
+    "Dịrị eriri ahụ nke ọma ma chekwaa ya n'onwe ya.",
+    "Tụgharịa mkpanaka windlass ruo mgbe ọbara na-akwụsị ma ọ bụ pulse dị anya adịghị.",
+    "Kpọchie windo n'ime obere akpa ikuku.",
+    "Tinye eriri windlass n'elu mkpanaka windlass iji chekwaa.",
+    "Dee oge ngwa ozugbo na njem nlegharị anya (jiri akara) NA na kaadị TCCC.",
+    "Kpochapụ ma nyochaa ọnya ahụ ọzọ. Nyochaa ma nkeji 5 gachara."
+  ],
+  "warnings": [
+    "Ewepụla njem nlegharị anya ozugbo etinyere ya n'ọhịa - naanị ndị ọrụ ahụike zụrụ azụ n'ọnọdụ a na-achịkwa.",
+    "Oge dị oke egwu: njem nlegharị anya> awa 2 na-abawanye ohere ịnwụ n'ụkwụ. Tinye oge ozugbo.",
+    "E tinyekwala n'elu nkwonkwo. Ọ bụrụ na akụkụ ahụ nwere ọnya n'ọtụtụ ọkwa, tinye nso n'ọnya niile.",
+    "Njegharị nlegharị anya dị mma (belt, eriri) adịghị arụ ọrụ nke ọma."
+  ],
+  "follows": [
+    "ozugbo-nrụgide",
+    "mbukota ọnya"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Jiri njem nlegharị anya ụmụaka dị warara ma ọ bụrụ na ọ dị. Enwere ike iji CAT ọkọlọtọ mana jiri nlezianya mee ka ọ sie ike. Aka na ụkwụ dị obere -- lelee usu distal nke ọma."
+    },
+    "obstetric": {
+      "note": "Ngwa ọkọlọtọ maka ọnya nsọtụ. Adịnyela n'afọ ma ọ bụ pelvis."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s4291xb",
+    "icd10":  "S4291XB",
+    "name":  "Fracture of right shoulder girdle, part unspecified, initial encounter for open fracture",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Fracture of right shoulder girdle, part unspecified, initial encounter for open fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

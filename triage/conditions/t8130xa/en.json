@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t8130xa",
+    "icd10":  "T8130XA",
+    "name":  "Disruption of wound, unspecified, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Disruption of wound, unspecified, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

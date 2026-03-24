@@ -1,0 +1,27 @@
+﻿{
+    "id":  "hypothermia-prevention",
+    "name":  "Hypothermia Prevention (H -- MARCH)",
+    "category":  "temperature-management",
+    "skill_level":  "any-responder",
+    "time_estimate":  "2-3 min",
+    "description":  "Combat hypothermia is a leading preventable killer in trauma. The lethal triad: hypothermia + acidosis + coagulopathy. Prevent at all costs.",
+    "equipment":  [
+                      "heat-reflective-blanket",
+                      "hypothermia-prevention-kit",
+                      "warm-iv-fluids-if-available"
+                  ],
+    "steps":  [
+                  "Remove all wet clothing as soon as tactically feasible.",
+                  "Cover the patient with a heat-reflective (space) blanket -- shiny side IN toward patient.",
+                  "Wrap head and neck (significant heat loss site).",
+                  "Insulate from ground -- place something between patient and cold ground surface.",
+                  "Administer warm IV fluids if available.",
+                  "Do not allow patient to shiver without cover -- shivering is an early warning sign.",
+                  "Monitor temperature if thermometer available. Below 35°C (95°F) = hypothermia."
+              ],
+    "warnings":  [
+                     "Hypothermia worsens coagulopathy -- bleeding patients cool down faster and clot less effectively.",
+                     "Field hypothermia prevention must begin at point of injury, not at CCP."
+                 ],
+    "source":  "TCCC / JTS CPG"
+}

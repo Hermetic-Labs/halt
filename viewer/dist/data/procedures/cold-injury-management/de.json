@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Management von Kälteverletzungen",
+  "category": "environmental",
+  "skill_level": "Grundlegend",
+  "time_estimate": "Laufend",
+  "description": "Behandlung von Erfrierungen, Eintauchfuß (Grabenfuß) und Unterkühlung. Kälteverletzungen sind vermeidbar – erkennen Sie frühe Anzeichen, bevor Gewebeschäden irreversibel sind. Behandeln Sie erfrorenes Gewebe äußerst vorsichtig.",
+  "equipment": [
+    "Trockene isolierende Kleidung/Schlafsack",
+    "Warmes Wasser (38–42 °C/100–108 °F) zum Aufwärmen des Bades",
+    "Sterile Verbände",
+    "Ibuprofen 400 mg p.o. (falls verfügbar)",
+    "IV LR (wenn möglich warm)"
+  ],
+  "steps": [
+    "ZUERST HYPOTHERMIE: Messen Sie die Kerntemperatur mit einem Thermometer mit niedrigem Messwert. Leicht (32–35 °C): Schüttelfrost, Verwirrtheit. Mäßig (28–32 °C): kein Frösteln, starke Verwirrtheit. Schwerwiegend (<28 °C): bewusstlos, kein Puls erkennbar.",
+    "HYPOTHERMIE – Leicht/mäßig: Nasse Kleidung ausziehen, vom Boden isolieren, Umgebung erwärmen, süße Flüssigkeiten erwärmen, wenn man bei Bewusstsein ist, Packungen in den Achselhöhlen/Leistengegend erhitzen (nicht direkt auf der Haut). Gehen Sie vorsichtig damit um – Erschütterungen können VFib auslösen.",
+    "HYPOTHERMIE – Schwerwiegend: Gehen Sie SEHR vorsichtig damit um. Überprüfen Sie den Puls 60 Sekunden vor der Herz-Lungen-Wiederbelebung. Wenn kein Puls vorhanden ist, beginnen Sie mit der Herz-Lungen-Wiederbelebung. Warme Infusionen, falls verfügbar. MEDEVAC-Priorität – „nicht tot, bis es warm und tot ist“.",
+    "Erfrierungen: oberflächlich (Haut weiß/grau, darunter weich) vs. tief (hart, Holzgefühl, Blasenbildung). Reiben Sie den Bereich NICHT. Erwärmen Sie das Gerät NICHT erneut, wenn die Gefahr eines erneuten Einfrierens besteht. Ein erneutes Einfrieren verursacht schlimmere Schäden als ein verzögertes Wiedererwärmen.",
+    "Wiedererwärmung von FROSTBITE: 15–30 Minuten lang in 38–42 °C warmes Wasser (nicht heißer) eintauchen, bis das Gewebe weich und rot/violett ist. Sehr schmerzhaft – bieten Sie Analgetika (Ketamin oder Morphin) an.",
+    "Nach dem Aufwärmen: Zwischen den Zehen/Fingern sterile Gaze auflegen. Lassen Sie die Blasen NICHT platzen. Vor Druck schützen.",
+    "Eintauchfuß (Grabenfuß): Längere Einwirkung von Nässe/Kälte, Haut rot, dann blass, dann blasig. Füße trocknen, langsam erwärmen, hochlagern. Wenden Sie KEINE direkte Hitze an.",
+    "Dokumentieren Sie den Zeitpunkt der Verletzung und den Zeitpunkt des Wiederaufwärmens."
+  ],
+  "warnings": [
+    "Erwärmen Sie Erfrierungen NICHT erneut, wenn die Möglichkeit eines erneuten Gefrierens besteht – unvollständiges Erwärmen + erneutes Gefrieren = katastrophaler Gewebeverlust.",
+    "Schwere Unterkühlung kann den Tod vortäuschen. Überprüfen Sie den Puls 60 Sekunden lang. „Nicht tot, bis es warm und tot ist.“",
+    "Alkohol erhöht trotz Wärmeempfinden den Wärmeverlust – geben Sie keinen Alkohol.",
+    "Das VFib-Risiko ist bei mittelschwerer bis schwerer Hypothermie hoch – minimieren Sie Manipulationen und Erschütterungen des Patienten."
+  ],
+  "follows": [
+    "Unterkühlungsprävention"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Aufgrund des größeren Verhältnisses von Oberfläche zu Masse kühlen Kinder schneller ab. Die Unterkühlungsschwellen sind gleich. Warme Infusionen sind von entscheidender Bedeutung. Gewichtsabhängige Flüssigkeit: 20 ml/kg warmes LR."
+    },
+    "obstetric": {
+      "note": "Mütterliche Unterkühlung führt zu fetaler Bradykardie und Azidose. Eine aggressive mütterliche Wiedererwärmung ist eine fetale Behandlung. Fetale Überwachung, falls verfügbar."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

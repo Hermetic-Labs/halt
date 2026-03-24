@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Selectivum 5-HT3 receptor antiemeticae antiemeticae. Plurimum ad nauseam et vomitum valent. ODT (tabula viva voce dissoluta) utilis est in occasus campi cum IV unavailable. Comprehendo in aliqua pugna diripio sarcinas.",
+  "indications": [
+    "Nausea et vomitus (chemotherapy, opioideo inducta, post-operative, TBI relata)",
+    "Motus Infirmitatis",
+    "Nausea ab ketamine administrationis"
+  ],
+  "dose": "4-8 mg IV/IO super impulsum tardum 2-5 min. ODT: 4-8 Formulae sub lingua dissolutae. IM: 4 mg.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Nota hypersensibilitas ad ondansetron vel alios 5-HT3 antagonistae",
+    "longa QT syndrome congenita (summa dosis IV tantum)"
+  ],
+  "warnings": [
+    "Summus dosis IV prorogare potest QT intervallum - uti dosis efficacissima infima IV.",
+    "Aegrotus obtunsus vomitus non succedit in administratione airway - primum airway tueri."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.1-0.15 mg/kg IV (max 4 mg). ODT: 4mg for children > 4 years.",
+      "note": "Late usus et tolerandus in pediatricis."
+    },
+    "obstetric": {
+      "note": "Mauris in gravida purus. Utere ad nauseam gravem / vomitum post primum trimester cum utilitates periculum praeponderant. Non commendatur in primo trimester."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s42266p",
+    "icd10":  "S42266P",
+    "name":  "Nondisplaced fracture of lesser tuberosity of unspecified humerus, subsequent encounter for fracture with malunion",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of lesser tuberosity of unspecified humerus, subsequent encounter for fracture with malunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

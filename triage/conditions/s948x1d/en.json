@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s948x1d",
+    "icd10":  "S948X1D",
+    "name":  "Injury of other nerves at ankle and foot level, right leg, subsequent encounter",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Injury of other nerves at ankle and foot level, right leg, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

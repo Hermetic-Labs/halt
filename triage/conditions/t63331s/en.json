@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t63331s",
+    "icd10":  "T63331S",
+    "name":  "Toxic effect of venom of brown recluse spider, accidental (unintentional), sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Toxic effect of venom of brown recluse spider, accidental (unintentional), sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s06346a",
+    "icd10":  "S06346A",
+    "name":  "Traumatic hemorrhage of right cerebrum with loss of consciousness greater than 24 hours without return to pre-existing conscious level with patient surviving, initial encounter",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Traumatic hemorrhage of right cerebrum with loss of consciousness greater than 24 hours without return to pre-existing conscious level with patient surviving, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoksilini",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoksil",
+    "Trimox"
+  ],
+  "description": "Antibiotiki ya wigo mpana wa aminopenicillin. Antibiotic ya mdomo ya kuzuia maambukizi ya jeraha. Sehemu ya kifurushi cha kidonge cha TCCC cha kuzuia majeraha katika majeraha yasiyo makali.",
+  "indications": [
+    "Kuzuia maambukizi ya jeraha (majeraha ya wastani, pakiti ya vidonge vya mdomo)",
+    "Maambukizi ya tishu laini",
+    "Maambukizi ya njia ya upumuaji"
+  ],
+  "dose": "500 mg PO kila masaa 8 x siku 7 (kuzuia jeraha). 875 mg PO kila baada ya saa 12 mbadala.",
+  "route": [
+    "PO"
+  ],
+  "window": "Anza ndani ya masaa 3 baada ya kuumia kwa kuzuia jeraha.",
+  "contraindications": [
+    "Mzio wa penicillin unaojulikana (tumia doxycycline badala yake)",
+    "Mononucleosis (hatari ya upele)"
+  ],
+  "warnings": [
+    "Ikiwa penicillin ni mzio: badilisha doxycycline 100mg PO BID.",
+    "Njia ya kumeza pekee -- tumia viua vijasumu vya IV (cefazolin/ciprofloxacin) kwa majeraha makali au ikiwa mdomo haukubaliwi."
+  ],
+  "regional_names": {
+    "generic": "amoksilini"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/siku imegawanywa q8h (kiwango cha juu 500 mg/dozi). Tumia rejeleo la Broselow kulingana na uzito.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Salama katika ujauzito. Inapendekezwa zaidi ya doxycycline (ambayo ni kinyume chake wakati wa ujauzito)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

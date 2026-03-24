@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Kanama Kontrolü için Doğrudan Basınç",
+  "category": "hemorrhage-control",
+  "skill_level": "herhangi bir yanıt veren",
+  "time_estimate": "3-5 dakika",
+  "description": "Erişilebilir ekstremite ve vücut yaralarında birinci basamak kanama kontrolü.",
+  "equipment": [
+    "eldivenler",
+    "travma pansumanı",
+    "kravat-sargı"
+  ],
+  "steps": [
+    "Varsa eldiven giyin.",
+    "Giysileri keserek yarayı ortaya çıkarın.",
+    "Doğrudan yaranın üzerine travma pansumanı veya katlanmış bir bez uygulayın.",
+    "Avucunuzun içiyle sıkıca bastırın. Sadece kol gücünüzü değil, vücut ağırlığınızı kullanın.",
+    "En az 3 dakika boyunca sürekli ve kesintisiz baskı uygulayın.",
+    "Kontrol etmek için pansumanı kaldırmayın; bu, pıhtı oluşumunu bozar.",
+    "Kanama geçerse üstüne başka bir pansuman ekleyin. İlkini çıkarmayın.",
+    "Varsa basınçlı bandajla sabitleyin ve kanama devam ederse yara tamponuna veya turnikeye geçin."
+  ],
+  "warnings": [
+    "Arteriyel kanamalar için doğrudan basınç tek başına yeterli değildir; yara tamponuna veya turnikeye kadar ilerleyebilir.",
+    "Bağlantı yaraları (kasık, koltuk altı, boyun) yalnızca dış baskıyı değil, yaranın tamponlanmasını da gerektirir."
+  ],
+  "follows": [],
+  "precedes": [
+    "yara paketleme",
+    "turnike uygulaması"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Yalnızca orantılı basınç. Bebeklerde toraksa baskı yapmaktan kaçının."
+    },
+    "obstetric": {
+      "note": "Hamile uterusun aşırı kompresyonundan kaçının. Pelvis yakınında bağlantı yarası varsa lateral tampon kullanın."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

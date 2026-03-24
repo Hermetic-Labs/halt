@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Tranexaminezuur (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Cyklokapron",
+    "Lysteda"
+  ],
+  "description": "Antifibrinolytisch middel dat de afbraak van bloedstolsels remt. Vermindert de sterfte door hemorragische shock aanzienlijk als het vroeg wordt gegeven. Aanbevolen door CoTCCC voor alle slachtoffers met een aanzienlijke bloeding of met een risico op een aanzienlijke bloeding.",
+  "indications": [
+    "Aanzienlijke externe of vermoedelijke interne bloeding",
+    "Hemorragische shock",
+    "Hoog risico op bloeding (mechanisme van letsel)"
+  ],
+  "dose": "1g IV/IO gedurende 10 minuten, gevolgd door 1g IV/IO gedurende 8 uur. Indien IV/IO niet beschikbaar: 650 mg PO x2 (1,3 g totaal) -- TCCC PO-optie.",
+  "route": [
+    "IV",
+    "IO",
+    "PO"
+  ],
+  "window": "MOET binnen 3 uur na het letsel worden toegediend. Na 3 uur kan TXA de sterfte VERHOGEN – niet geven.",
+  "contraindications": [
+    "Geschiedenis van trombo-embolische aandoeningen (DVT, PE, beroerte)",
+    "Verspreide intravasculaire coagulatie (DIC)",
+    "> 3 uur na het letsel"
+  ],
+  "warnings": [
+    "Registreer het tijdstip van toediening onmiddellijk - het tijdsbestek is 3 uur vanaf het tijdstip van het letsel, niet het tijdstip van aankomst.",
+    "Verwar de IV-dosis (1 g) niet met de orale dosis."
+  ],
+  "regional_names": {
+    "generic": "tranexaminezuur",
+    "US": "Cyklokapron",
+    "UK": "Cyklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg IV (max. 1 g). Bewijs komt naar voren - gebruik klinisch oordeel.",
+      "note": "Hetzelfde venster van 3 uur is van toepassing."
+    },
+    "obstetric": {
+      "note": "Geïndiceerd voor postpartumbloedingen. Veilig tijdens de zwangerschap. Dezelfde dosering voor volwassenen is van toepassing."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

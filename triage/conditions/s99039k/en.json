@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s99039k",
+    "icd10":  "S99039K",
+    "name":  "Salter-Harris Type III physeal fracture of unspecified calcaneus, subsequent encounter for fracture with nonunion",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Salter-Harris Type III physeal fracture of unspecified calcaneus, subsequent encounter for fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

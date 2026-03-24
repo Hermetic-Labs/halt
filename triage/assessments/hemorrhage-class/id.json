@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Klasifikasi Perdarahan (Kelas I-IV)",
+  "category": "circulatory",
+  "description": "Klasifikasi perdarahan ATLS berdasarkan perkiraan kehilangan darah dan respon fisiologis.",
+  "instructions": "Perkirakan kehilangan darah dan cocokkan tanda fisiologis dengan kelas. Urgensi pengobatan meningkat seiring dengan bertambahnya kelas.",
+  "scoring": [
+    {
+      "class": "saya",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Biasa",
+      "rr": "14-20",
+      "mental_status": "Biasa",
+      "treatment": "Amati, cairan PO jika mampu"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Biasa",
+      "rr": "20-30",
+      "mental_status": "Cemas",
+      "treatment": "Akses IV, kristaloid isotonik"
+    },
+    {
+      "class": "AKU AKU AKU",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Menurun",
+      "rr": "30-40",
+      "mental_status": "Bingung",
+      "treatment": "Cairan IV + produk darah, pengendalian perdarahan segera"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Sangat rendah",
+      "rr": ">40",
+      "mental_status": "Lesu/tidak sadarkan diri",
+      "treatment": "Pengendalian perdarahan melalui pembedahan segera -- mengancam jiwa"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Anak-anak memberikan kompensasi lebih lama sebelum melakukan dekompensasi. Kelas III/IV dapat muncul dengan tekanan darah mendekati normal hingga kolaps mendadak. Percayai takikardia dan status mental dibandingkan tekanan darah."
+    },
+    "obstetric": {
+      "note": "Pasien hamil mengalami peningkatan volume darah sebesar 40-50%. Mungkin mentolerir kerugian yang lebih besar sebelum menunjukkan tanda-tanda. Gawat janin mungkin mendahului tanda-tanda ibu."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

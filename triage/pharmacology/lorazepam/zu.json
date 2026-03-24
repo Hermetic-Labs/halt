@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "I-Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "I-Ativan"
+  ],
+  "description": "I-benzodiazepine esebenza ngokumaphakathi. Umugqa wokuqala wokwelashwa kwe-IV/IM wesimo se-epilepticus kanye nokuquleka okunamandla. Ibuye isetshenziselwe ukudambisa inqubo kanye ne-anxiolysis.",
+  "indications": [
+    "Isimo se-epilepticus (umugqa wokuqala IV)",
+    "Ukuphathwa kokuquleka okunamandla",
+    "I-sedation yenqubo",
+    "Ukukhathazeka okukhulu noma ukuyaluza"
+  ],
+  "dose": "Ukubanjwa: 4 mg IV/IO push slow over 2 min. Phinda u-4 mg emizuzwini emi-5-10 uma ukuquleka kuqhubeka. I-IM: 4 mg uma i-IV ingatholakali.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "I-glaucoma ye-angle encane ebukhali",
+    "Ukucindezeleka okukhulu kokuphefumula",
+    "I-propylene glycol hypersensitivity"
+  ],
+  "warnings": [
+    "Idala ukudangala kokuphefumula -- yiba ne-BVM nemishini yomoya.",
+    "I-sedation ingathatha amahora angu-6-8 - qapha indlela yokuphefumula.",
+    "Ukuyaluza okuyindida kungenzeka, ikakhulukazi kubantu asebekhulile nasezinganeni."
+  ],
+  "regional_names": {
+    "generic": "i-lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV/IM (ubukhulu obungu-4 mg/umthamo). Phinda kanye emizuzwini engu-5-10 uma kudingeka.",
+      "note": "Kukhethwa ngaphezu kwe-diazepam yokulawulwa kokuthunjwa kwe-IV ezinganeni."
+    },
+    "obstetric": {
+      "note": "Iwela i-placenta - ukucindezeleka kokuphefumula kwezingane ezisanda kuzalwa kungenzeka. Sebenzisa esimweni sikamama i-epilepticus lapho inzuzo idlula ingozi."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s93412s",
+    "icd10":  "S93412S",
+    "name":  "Sprain of calcaneofibular ligament of left ankle, sequela",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Sprain of calcaneofibular ligament of left ankle, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

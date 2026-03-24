@@ -1,0 +1,63 @@
+{
+  "id": "broselow-tape",
+  "name": "Broselow 小児救急テープのリファレンス",
+  "description": "体重計が利用できない場合の小児薬剤投与用に、色分けされた重量と用量の基準。お子様の頭のてっぺんからかかとまでのサイズを測り、カラーバンドと一致させます。",
+  "note": "この参照は推定のみを目的としています。可能な場合は実際の重量を使用してください。",
+  "bands": [
+    {
+      "color": "灰色",
+      "weight_kg": "3-5",
+      "length_cm": "46-57",
+      "est_age": "新生児"
+    },
+    {
+      "color": "ピンク",
+      "weight_kg": "6-7",
+      "length_cm": "57-67",
+      "est_age": "3～6 か月"
+    },
+    {
+      "color": "赤",
+      "weight_kg": "8-9",
+      "length_cm": "67-74",
+      "est_age": "6～12か月"
+    },
+    {
+      "color": "紫",
+      "weight_kg": "10-11",
+      "length_cm": "74-83",
+      "est_age": "12 ～ 18 か月"
+    },
+    {
+      "color": "黄色",
+      "weight_kg": "12-14",
+      "length_cm": "83-95",
+      "est_age": "18 か月～3 年"
+    },
+    {
+      "color": "白",
+      "weight_kg": "15-18",
+      "length_cm": "95-107",
+      "est_age": "3～5 年"
+    },
+    {
+      "color": "青",
+      "weight_kg": "19-22",
+      "length_cm": "107-122",
+      "est_age": "5～7 年"
+    },
+    {
+      "color": "オレンジ色",
+      "weight_kg": "24-28",
+      "length_cm": "122-137",
+      "est_age": "7～9 歳"
+    },
+    {
+      "color": "緑",
+      "weight_kg": "30-36",
+      "length_cm": "137-152",
+      "est_age": "9～12歳"
+    }
+  ],
+  "source": "Broselow Pediatric Emergency Reference / PALS"
+}

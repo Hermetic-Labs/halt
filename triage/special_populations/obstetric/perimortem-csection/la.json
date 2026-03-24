@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Perimortem Cesarea (PMCS)",
+  "category": "obstetric",
+  "skill_level": "medicus",
+  "time_estimate": "3-5 min",
+  "description": "Subitis cesarea traditio intra 4 minuta comprehensio cardiaci materni ut CPR efficax et potentia neonatalis superesset ut permitteret. Uterus comprimit aortae et IVC - partus etiam resuscitativas matri.",
+  "equipment": [
+    "scalpello",
+    "caestus",
+    "retractores",
+    "funis-fibulatis",
+    "neonatales resuscitatio apparatu"
+  ],
+  "steps": [
+    "Perge CPR sine intermissione.",
+    "Incisionem verticalem midline ab umbilico ad pubem per cutem et fasciam fac.",
+    "Segmentum uteri inferioris incise horizontaliter.",
+    "Libera parvulum -- Nota tempus.",
+    "Fibulae et funiculum secant.",
+    "Infans manus secundae provisoris ad resuscitationem neonatalem.",
+    "placentam aufer.",
+    "Uteri et abdominis stipant, si clausura definitiva statim fieri non potest.",
+    "Perge materna resuscitatio -- ROSC verisimilius est post decompressionem uteri."
+  ],
+  "warnings": [
+    "Tempus deliberationis ad deliberandum sub 5 minutis esse debet pro melioribus eventibus maternis et foetus.",
+    "Haec ratio ultima est - tantum si mater in comprehensione cordis et partus imminente est (>20 septimanas gestationis).",
+    "Exercitatio graduum medicorum requirit. Certamina medici agrum praeparare et sustentare debent, independenter ne facere."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doksisiklin",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramisin",
+    "Doryx"
+  ],
+  "description": "Geniş spektrumlu tetrasiklin antibiyotik. Penisilin alerjisi olan hastalar için oral yara profilaksisi alternatifi. Ayrıca atipik organizmalara ve bazı vektör kaynaklı hastalıklara (endemik bölgelerde sıtma profilaksisi) karşı da etkilidir.",
+  "indications": [
+    "Yara profilaksisi (penisilin alerjisi)",
+    "Yumuşak doku enfeksiyonları",
+    "Isırık yaraları",
+    "Endemik bölgelerde sıtma profilaksisi"
+  ],
+  "dose": "Her 12 saatte bir 7 günde bir 100 mg PO.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Yara profilaksisine yaralanmadan sonraki 3 saat içinde başlayın.",
+  "contraindications": [
+    "Hamilelik (fetal diş renginin değişmesine ve kemik büyümesinin engellenmesine neden olur)",
+    "8 yaş altı çocuklar (aynı sebep)",
+    "Şiddetli karaciğer yetmezliği"
+  ],
+  "warnings": [
+    "Hamilelikte KONTRENDİKASYON - bunun yerine amoksisilin kullanın.",
+    "8 yaş altı çocuklarda KONTRENDİKTİR.",
+    "Işığa duyarlılık - hastaya güneşe maruz kalmaktan kaçınmasını önerin.",
+    "Kalsiyum açısından zengin gıdalar, antasitler veya demirle birlikte almayın; emilimi bozar."
+  ],
+  "regional_names": {
+    "generic": "doksisiklin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "8 yaşın altında kontrendikedir. 8+ yaş: 2-4 mg/kg/gün, 12 saate bölünmüş (maks. 100 mg/doz).",
+      "note": "8 yaşın altındaki çocuklar için amoksisilin kullanın."
+    },
+    "obstetric": {
+      "note": "Hamilelikte KONTRENDİKTİR - fetal zarara neden olur. Bunun yerine amoksisilin kullanın."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

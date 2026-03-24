@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Pengiriman Lapangan Darurat",
+  "category": "obstetric",
+  "skill_level": "pertempuran-medis",
+  "time_estimate": "Bervariasi -- 20+ mnt",
+  "description": "Pengelolaan persalinan yang tiba-tiba atau tidak terencana dalam lingkungan yang sulit.",
+  "equipment": [
+    "sarung tangan",
+    "selimut-kain-bersih",
+    "klem-atau-pengikat kabel",
+    "gunting",
+    "jarum suntik bohlam"
+  ],
+  "steps": [
+    "Posisikan ibu terlentang atau setengah bersandar. Kemiringan ke samping kiri lebih disukai jika tidak sadarkan diri (mencegah kompresi aortocaval).",
+    "Kontrol pengiriman kepala - dukungan dengan telapak tangan. JANGAN menarik.",
+    "Setelah kepala dilahirkan, periksa tali pusat (di sekitar leher). Jika ada, lewati kepala. Jika kencang, jepit dan potong.",
+    "Hisap mulut lalu hidung dengan bulb spuit jika tersedia.",
+    "Pandu pelahiran bahu anterior dengan traksi lembut ke bawah pada kepala, lalu ke atas pada bahu posterior.",
+    "Kirimkan jenazah -- catat waktu penyerahannya.",
+    "Segera keringkan dan hangatkan bayi. Rangsang dengan menggosok punggung.",
+    "Jepit dan potong tali pusatnya (tunggu 1-2 menit jika bayi stabil).",
+    "Keluarkan plasenta dengan traksi terkontrol secara lembut -- JANGAN memaksa.",
+    "Berikan oksitosin (jika tersedia) untuk mencegah perdarahan postpartum setelah lahirnya plasenta.",
+    "Kaji perdarahan postpartum - pijat fundus, kompresi bimanual jika diperlukan.",
+    "Nilai skor Apgar pada menit ke-1 dan ke-5."
+  ],
+  "warnings": [
+    "Jika pengiriman tidak segera dilakukan -- JANGAN mencobanya. MEDEVAC cepat lebih disukai.",
+    "Distosia bahu: jika bahu tersangkut, lakukan manuver McRoberts (pinggul hiperfleksi) dan tekanan suprapubik.",
+    "Perdarahan pascapersalinan adalah penyebab utama kematian ibu yang dapat dicegah -- siapkan oksitosin."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

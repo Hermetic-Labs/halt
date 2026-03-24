@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t372x5a",
+    "icd10":  "T372X5A",
+    "name":  "Adverse effect of antimalarials and drugs acting on other blood protozoa, initial encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Adverse effect of antimalarials and drugs acting on other blood protozoa, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

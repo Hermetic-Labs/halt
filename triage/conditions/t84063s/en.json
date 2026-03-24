@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t84063s",
+    "icd10":  "T84063S",
+    "name":  "Wear of articular bearing surface of internal prosthetic left knee joint, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Wear of articular bearing surface of internal prosthetic left knee joint, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

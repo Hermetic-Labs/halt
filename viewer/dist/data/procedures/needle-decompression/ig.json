@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Nkwụsị obi nke agịga (NCD)",
+  "category": "respiration",
+  "skill_level": "ọgụ-ọgwụ",
+  "time_estimate": "1-2 nkeji",
+  "description": "Ihe enyemaka mberede nke pneumothorax erughị ala site na ntinye agịga n'ime oghere intercostal nke abụọ. Ntinye aka na-azọpụta ndụ.",
+  "equipment": [
+    "14g- agịga-catheter-3-25in",
+    "uwe aka",
+    "obi-akara-nhọrọ"
+  ],
+  "steps": [
+    "Chọpụta pneumothorax erughị ala: ụda ume na-anọghị n'akụkụ emetụtara, tracheal deviation (mbubreyo), nsogbu iku ume, hypotension, JVD.",
+    "Kpochapụ obi n'akụkụ emetụtara.",
+    "Chọta oghere intercostal nke abụọ, ahịrị midclavicular (ọzọ: 4th/5th ICS, ahịrị axillary anterior).",
+    "Fanye 14g, 3.25-inch agịga-catheter perpendicular na mgbidi igbe, dị n'elu TOP nke ọgịrịga nke atọ (na-ezere ngwugwu neurovascular).",
+    "Na-aga n'ihu ruo mgbe a na-enwe mmetụta nke ikuku ma ọ bụ na-anụ ọkụ.",
+    "Wepu agịga ma hapụ catheter n'ebe.",
+    "Gee ntị maka mmelite ụda ume na mbọ iku ume.",
+    "Chekwaa oghere catheter. Ejikọla ma ọ bụ kpuchie njedebe mepere emepe.",
+    "Nyochaa kwa nkeji 5 ọ bụla -- catheter nwere ike ịgbachi ma ọ bụ mechie, na-achọ mgbakasị ahụ ugboro ugboro."
+  ],
+  "warnings": [
+    "Jiri agịga 3.25-inch - ọkọlọtọ 14g angiocatheter (1.5in) na-adakarị na ndị ọrịa agha n'ihi ihe agha ahụ na anụ ahụ.",
+    "Enwere ike ịchọrọ NCD nke abụọ ma ọ bụrụ na ejighị n'aka akụkụ nke emetụtara yana onye ọrịa na-ejide ya.",
+    "Edokwala n'otu akụkụ ahụ dị ka ịṅụ ara ọnya obi na-ebughị ụzọ mechie ọnya ahụ."
+  ],
+  "follows": [],
+  "precedes": [
+    "ngwa obi-akara"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Jiri agịga nha nke ọma (ndị ọrịa pere mpe, 1.5-2in nwere ike zuo oke). Jiri ụzọ ICS MCL nke abụọ. Nchọpụta akara ala siri ike karịa -- jiri nlezianya mee ihe."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

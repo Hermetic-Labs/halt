@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Dexamethasone",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Decadron",
+    "Dexamethasone"
+  ],
+  "description": "3264",
+  "indications": [
+    "Decadron",
+    "DexPak",
+    "Corticosteroid sintetiki ti n ṣiṣẹ pipẹ. Ti a lo fun edema cerebral (edema cerebral giga giga - HACE, TBI), awọn aati inira to lagbara, edema ọna atẹgun, ati idaamu adrenal. Anti-iredodo, kii ṣe anabolic.",
+    "Edema cerebral giga giga (HACE)",
+    "Edema oju ọna afẹfẹ (stridor lẹhin extubation, kúrùpù)",
+    "Edema cerebral lati tumo tabi abscess"
+  ],
+  "dose": "Awọn aati aleji ti o lagbara (ni afikun si efinifirini)",
+  "route": [
+    "Aawọ adrenal",
+    "Adjunct Anti-emetic (apapọ)",
+    "Edema cerebral / HACE: 8-10 mg IV / IM ni ibẹrẹ, lẹhinna 4 mg q6h. Edema ọna afẹfẹ: 10 mg IV lẹẹkan. Kúrùpù: 0.6 mg/kg IM/PO (max 16mg). Idaamu adrenal: 4 mg IV.",
+    "IV"
+  ],
+  "window": "IO",
+  "contraindications": [
+    "IM",
+    "PO"
+  ],
+  "warnings": [
+    "HACE: Fun ni kutukutu bi o ti ṣee ṣe pẹlu isọkalẹ lẹsẹkẹsẹ.",
+    "Awọn akoran olu eto eto (laisi agbegbe antifungal)",
+    "Awọn ajesara ọlọjẹ laaye laarin awọn ọjọ 30 (i ibatan)",
+    "Ko ropo iran ati atẹgun fun HACE -- lo bi afikun nikan."
+  ],
+  "regional_names": {
+    "generic": "Hyperglycemia - ṣe abojuto glukosi ẹjẹ ni awọn alakan."
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Ajẹsara ajẹsara pẹlu lilo gigun.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Awọn abere ẹyọkan fun awọn pajawiri ni gbogbogbo ailewu pupọ."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

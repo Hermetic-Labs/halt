@@ -1,0 +1,22 @@
+{
+  "id": "s0012xd",
+  "icd10": "S0012XD",
+  "name": "Stłuczenie lewej powieki i okolicy okołogałkowej, kolejne spotkanie",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Stłuczenie lewej powieki i okolicy okołogałkowej, kolejne spotkanie",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

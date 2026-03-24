@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxone",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "Kloxxado"
+  ],
+  "description": "Mifaninana opioid receptor antagonist. Mamadika haingana ny fahaketrahana amin'ny taovam-pisefoana vokatry ny opioid, ny fampitoniana ary ny analgesia. Manomboka IV: 2 min, IM: 5 min, IN: 8-13 min. Ny faharetana dia fohy kokoa noho ny ankamaroan'ny opioids - mety ilaina ny famerenana fatra.",
+  "indications": [
+    "Opioid overdose na fahaketrahana taovam-pisefoana",
+    "Famerenana ny sedation opioid",
+    "Ahiana ho nahafaty opioid"
+  ],
+  "dose": "0.4-2 mg IV/IO/IM/IN. Avereno q2-3 min raha ilaina. Max 10mg. Intranasal (IN): 2mg isaky ny vavorona.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Tsy misy contraindications tanteraka amin'ny fametrahana overdose"
+  ],
+  "warnings": [
+    "Ny faharetan'ny hetsika (30-90 min) dia fohy kokoa noho ny ankamaroan'ny opioids - ny marary dia mety hiverina amin'ny narcotise. Manara-maso mandritra ny adiny 1 farafahakeliny aorian'ny fatra farany.",
+    "Mampihena ny fisintonana opioid mahery vaika - mety miteraka fikorontanana, tachycardia, edema pulmonary amin'ny marary miankina amin'ny opioid.",
+    "Hanova ny analgesia - ny marary dia mety ho lasa miady mafy amin'ny fanaintainana."
+  ],
+  "regional_names": {
+    "generic": "naloxone",
+    "US": "Narcan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,01 mg/kg IV/IM/IN (max 0,4 mg). Avereno q2-3 min PRN.",
+      "note": "Neonatal: 0.01 mg/kg ho an'ny famerenana ny opioid reny."
+    },
+    "obstetric": {
+      "note": "Safe amin'ny fitondrana vohoka. Raha omena ny reny eo am-piterahana dia manara-maso ny fisintonana ny zaza vao teraka."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

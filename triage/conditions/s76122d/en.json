@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s76122d",
+    "icd10":  "S76122D",
+    "name":  "Laceration of left quadriceps muscle, fascia and tendon, subsequent encounter",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Laceration of left quadriceps muscle, fascia and tendon, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

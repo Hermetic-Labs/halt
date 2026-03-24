@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinefrina (adrenalina)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalina"
+  ],
+  "description": "Catecolamine endogene con attività alfa e beta adrenergica. Trattamento di prima linea per anafilassi e arresto cardiaco. Nell'anafilassi, la coscia IM è preferita rispetto alla IV (efficacia più sicura ed equivalente). Non ritardare l'accesso IV in caso di anafilassi.",
+  "indications": [
+    "Anafilassi (prima linea)",
+    "Arresto cardiaco: FV/TV/PEA/asistolia senza polso",
+    "Broncospasmo grave",
+    "Ipotensione refrattaria ai liquidi"
+  ],
+  "dose": "Anafilassi: 0,3-0,5 mg IM (coscia anterolaterale) | Autoiniettore da 0,3 mg IM. Ripetere ogni 5-15 minuti PRN. Arresto cardiaco: 1 mg EV/IO ogni 3-5 minuti durante la RCP. Broncospasmo grave: 0,3 mg IM.",
+  "route": [
+    "IM",
+    "IV",
+    "IO"
+  ],
+  "window": "In anafilassi: somministrare IM immediatamente – non ritardare l'accesso IV.",
+  "contraindications": [
+    "Nessuna controindicazione assoluta in caso di emergenza con pericolo di vita"
+  ],
+  "warnings": [
+    "L'epinefrina IV per l'anafilassi deve essere utilizzata solo in caso di arresto cardiaco o shock profondo: pericolosa se somministrata per via endovenosa a un paziente cosciente.",
+    "Lo stravaso causa la necrosi dei tessuti: garantisce la pervietà della flebo.",
+    "Aumenta la richiesta di ossigeno da parte del miocardio: prestare attenzione in caso di malattia coronarica nota al di fuori dell'arresto."
+  ],
+  "regional_names": {
+    "generic": "adrenalina",
+    "UK": "adrenalina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anafilassi: 0,01 mg/kg IM (max 0,5 mg). EpiPen Jr (0,15 mg) per 15-30 kg. Arresto cardiaco: 0,01 mg/kg EV/IO ogni 3-5 min.",
+      "note": "Utilizzare il dosaggio basato sul peso. Si consiglia il riferimento al nastro Broselow."
+    },
+    "obstetric": {
+      "note": "Utilizzare il dosaggio standard per l'anafilassi: la sopravvivenza materna è fondamentale. L'adrenalina è sicura in gravidanza per le emergenze potenzialmente letali."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

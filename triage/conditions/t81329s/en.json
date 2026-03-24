@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t81329s",
+    "icd10":  "T81329S",
+    "name":  "Deep disruption or dehiscence of operation wound, unspecified, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Deep disruption or dehiscence of operation wound, unspecified, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

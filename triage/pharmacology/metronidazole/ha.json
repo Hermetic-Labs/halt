@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazole",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "Kwayoyin Nitroimidazole tare da kyakkyawan tsarin anaerobic da protozoal. Mahimmanci don shiga cikin rauni na ciki / hanji don rufe furen gut anaerobic. Yawancin lokaci ana amfani dashi a hade tare da ciprofloxacin.",
+  "indications": [
+    "Ciwon ciki / hanji",
+    "Ciwon ciki-ciki",
+    "Anaerobic taushi nama cututtuka",
+    "C. cututtuka masu wahala"
+  ],
+  "dose": "500 MG IV q6-8h. PO: 500 mg q8h (idan an yarda da baki).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "farkon trimester na ciki (dangi)",
+    "An san metronidazole ko nitroimidazole alerji"
+  ],
+  "warnings": [
+    "Disulfiram-kamar amsa tare da barasa -- kar a cinye barasa yayin jiyya da 48h bayan.",
+    "Yana iya haifar da neuropathy na gefe tare da amfani mai tsawo.",
+    "Guji a farkon farkon watanni uku idan zai yiwu."
+  ],
+  "regional_names": {
+    "generic": "metronidazole"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7.5 mg/kg IV/PO q6h (max 500 mg/dose).",
+      "note": "Amintacce a cikin manyan yara. Guji a cikin jarirai."
+    },
+    "obstetric": {
+      "note": "Guji a farkon farkon watanni uku idan zai yiwu. Yi amfani da na biyu/na uku na uku lokacin da ya dace a likitanci -- fa'ida yawanci ya fi haɗarin kamuwa da cututtukan anaerobic mai tsanani."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

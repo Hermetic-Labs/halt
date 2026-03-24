@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s30844s",
+    "icd10":  "S30844S",
+    "name":  "External constriction of vagina and vulva, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "External constriction of vagina and vulva, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

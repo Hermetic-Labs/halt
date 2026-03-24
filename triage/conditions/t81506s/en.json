@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t81506s",
+    "icd10":  "T81506S",
+    "name":  "Unspecified complication of foreign body accidentally left in body following aspiration, puncture or other catheterization, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Unspecified complication of foreign body accidentally left in body following aspiration, puncture or other catheterization, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

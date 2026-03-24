@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Improwizowane szynowanie",
+  "category": "ortho-stabilization",
+  "skill_level": "Podstawowe",
+  "time_estimate": "5-10 minut",
+  "description": "Unieruchom złamania przy użyciu dostępnych materiałów, aby zapobiec dalszym urazom, zmniejszyć ból i ograniczyć utratę krwi do otaczających tkanek. Szyna w ustalonej pozycji, chyba że krążenie jest zakłócone – następnie delikatnie wyprostuj.",
+  "equipment": [
+    "Szyna SAM (preferowana)",
+    "Zwinięte magazynki, kije, maszty do namiotów (improwizacja w terenie)",
+    "Krawat / bandaże trójkątne",
+    "Wyściółka (odzież, pianka)",
+    "Taśma lub paski materiału"
+  ],
+  "steps": [
+    "Odsłoń i oceń uraz – sprawdź krążenie, czucie i ruch (CSM) dystalnie do złamania przed i po.",
+    "Przed założeniem szyny należy opanować wszelkie aktywne krwawienie.",
+    "Obficie wymasuj wypukłości kostne, aby zapobiec odleżynom.",
+    "Wybierz materiał szyny wystarczająco długi, aby unieruchomić staw powyżej ORAZ poniżej złamania.",
+    "Ułóż kończynę w wygodnej lub anatomicznej pozycji – nie używaj siły.",
+    "Zastosuj wyściółkę, a następnie materiał szynowy. Zabezpiecz bandażami lub paskami materiału.",
+    "NIE owijaj zbyt ciasno – pozostaw opuszki palców/palców odsłonięte w stosunku do monitora CSM.",
+    "Po zastosowaniu ponownie ocenić CSM – natychmiast poluzować, jeśli występuje zaburzenie krążenia.",
+    "Jeśli to możliwe, unieś kończynę, aby zmniejszyć obrzęk.",
+    "Udokumentuj czas założenia szyny."
+  ],
+  "warnings": [
+    "Ponawiaj ocenę CSM co 15–30 minut – obrzęk może spowodować, że prawidłowa szyna stanie się opaską uciskową.",
+    "Złamania otwarte: najpierw przykryć ranę jałowym opatrunkiem, a następnie zastosować szynę. NIE wpychaj kości z powrotem.",
+    "Złamania kości udowej mogą spowodować utratę 1–2 l krwi do uda – w przypadku wstrząsu należy leczyć agresywnie.",
+    "Podejrzenie złamania kręgosłupa: NIE improwizuj szyny – ogranicz ruch, utrzymuj stabilizację w linii prostej."
+  ],
+  "follows": [
+    "nacisk bezpośredni",
+    "aplikacja opaski uciskowej"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Płytki wzrostowe u dzieci są słabsze niż więzadła – istnieje podejrzenie złamania nawet przy łagodnym mechanizmie. Złamania torusa (klamry) mogą powodować minimalny obrzęk."
+    },
+    "obstetric": {
+      "note": "Obowiązuje standardowe szynowanie. Unikaj długotrwałego przebywania w pozycji leżącej – przechylenie na lewy bok, jeśli leżysz płasko."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

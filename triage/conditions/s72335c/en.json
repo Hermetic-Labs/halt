@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s72335c",
+    "icd10":  "S72335C",
+    "name":  "Nondisplaced oblique fracture of shaft of left femur, initial encounter for open fracture type IIIA, IIIB, or IIIC",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced oblique fracture of shaft of left femur, initial encounter for open fracture type IIIA, IIIB, or IIIC",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

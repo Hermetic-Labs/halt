@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t81718s",
+    "icd10":  "T81718S",
+    "name":  "Complication of other artery following a procedure, not elsewhere classified, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Complication of other artery following a procedure, not elsewhere classified, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

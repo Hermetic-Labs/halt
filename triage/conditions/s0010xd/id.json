@@ -1,0 +1,22 @@
+{
+  "id": "s0010xd",
+  "icd10": "S0010XD",
+  "name": "Memar pada kelopak mata dan area periokular yang tidak ditentukan, pertemuan selanjutnya",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Memar pada kelopak mata dan area periokular yang tidak diketahui, pertemuan berikutnya",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

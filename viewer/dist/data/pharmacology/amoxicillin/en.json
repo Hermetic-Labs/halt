@@ -1,0 +1,42 @@
+﻿{
+    "id":  "amoxicillin",
+    "name":  "Amoxicillin",
+    "category":  "antibiotic",
+    "rxnorm":  "723",
+    "brand_names":  [
+                        "Amoxil",
+                        "Trimox"
+                    ],
+    "description":  "Broad-spectrum aminopenicillin antibiotic. Oral prophylactic antibiotic for wound infection. Part of TCCC combat pill pack for wound prophylaxis in non-severe injuries.",
+    "indications":  [
+                        "Wound infection prophylaxis (mild-moderate wounds, oral pill pack)",
+                        "Soft tissue infections",
+                        "Respiratory tract infections"
+                    ],
+    "dose":  "500 mg PO every 8 hours x 7 days (wound prophylaxis). 875 mg PO every 12 hours alternative.",
+    "route":  [
+                  "PO"
+              ],
+    "window":  "Begin within 3 hours of injury for wound prophylaxis.",
+    "contraindications":  [
+                              "Known penicillin allergy (use doxycycline instead)",
+                              "Mononucleosis (risk of rash)"
+                          ],
+    "warnings":  [
+                     "If penicillin allergic: substitute doxycycline 100mg PO BID.",
+                     "Oral route only -- use IV antibiotics (cefazolin/ciprofloxacin) for severe wounds or if oral not tolerated."
+                 ],
+    "regional_names":  {
+                           "generic":  "amoxicillin"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "25-45 mg/kg/day divided q8h (max 500 mg/dose). Use weight-based Broselow reference.",
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  "Safe in pregnancy. Preferred over doxycycline (which is contraindicated in pregnancy)."
+                                    }
+                  },
+    "source":  "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

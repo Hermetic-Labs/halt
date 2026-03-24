@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Magnesium Sulfate (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Isku duro Magnesium Sulfate"
+  ],
+  "description": "Niyad-jabka CNS iyo anticonvulsant loo isticmaalo ka-hortagga iyo daawaynta qalalka eclamptic ( suuxdinta uurka ee ka timid pre-eclampsia). Sidoo kale loo isticmaalo neefta daran iyo torsades de pointes. Safka koowaad ee eclampsia ee ka sarreeya benzodiazepines.",
+  "indications": [
+    "Eclampsia (ka-hortagga suuxdinta iyo daawaynta ka hor-eclampsia daran)",
+    "Kahortagga kahor-eclampsia (sifado daran)",
+    "Torsades de Pointes (polymorphic V-tach ka hypomagnesemia)",
+    "Neefta daran oo daran (isku-dhafan)"
+  ],
+  "dose": "Qiyaasta qaadista Eclampsia: 4-6g IV riix tartiib ah 20 daqiiqo. Dayactirka: 1-2g/saac faleebo IV ah. Haddii suuxdintu soo noqoto: 2-4g IV in ka badan 5 daqiiqo. Soo dejinta IM (haddii IV la waayo): 5g IM badhida kasta (wadarta 10g) isku mar.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "Ka bilow bilawga suuxdintu ama marka la ogaado astaamaha cudurka pre-eclampsia daran.",
+  "contraindications": [
+    "Myasthenia gravis",
+    "Cilladaha marinka wadnaha",
+    "Kelyaha oo guuldarraystay (wuxuu ururiyaa -- dhimista qiyaasta)"
+  ],
+  "warnings": [
+    "Calaamadaha sunta: luminta reflex patellar (calaamada kowaad, 7-10 mEq/L), niyad-jabka neefsashada (> 10 mEq/L), wadnaha oo istaaga (> 15 mEq/L).",
+    "La soco falcelinta patellar 15kii daqiiqoba -- luminta falcelinta = joojinta faleebada.",
+    "Kahortaga sunta: Calcium gluconate 1g IV in ka badan 3 daqiiqo.",
+    "Iska yaree qiyaasta daciifnimada kelyaha -- la soco wax soo saarka kaadida."
+  ],
+  "regional_names": {
+    "generic": "magnesium sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg IV in ka badan 10-20 daqiiqo (ugu badnaan 2g). Neefta daran: 25-75 mg/kg IV (ugu badnaan 2g).",
+      "note": "Si dhif ah loo isticmaalo qalalka ee bukaanada aan umulaha ahayn ee carruurta --eclampsia waa calaamadda koowaad."
+    },
+    "obstetric": {
+      "note": "Tilmaamaha aasaasiga ah. Ka gudubta mandheerta -- hypermagnesemia ee dhallaanka oo suurtagal ah. Qiyaasta dhallaanka haddii niyad-jabka neefsashada: calcium gluconate 100 mg/kg IV. U sheeg kooxda NICU isticmaalka magnesium ee hooyada."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

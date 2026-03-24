@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t83418a",
+    "icd10":  "T83418A",
+    "name":  "Breakdown (mechanical) of other prosthetic devices, implants and grafts of genital tract, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Breakdown (mechanical) of other prosthetic devices, implants and grafts of genital tract, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

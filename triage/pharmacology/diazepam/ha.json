@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastat"
+  ],
+  "description": "benzodiazepine mai dogon aiki. An yi amfani da shi don sarrafa kamawa, spasm na tsoka, da anxiolysis. Gel na dubura (Diastat) yana da amfani a saitunan filin lokacin da babu IV. Tsawon lokaci fiye da lorazepam.",
+  "indications": [
+    "Gudanar da Kamewa ( dubura/IV)",
+    "Ciwon tsoka daga raunin kashin baya ko tetanus",
+    "Adjunct na maganin jijiya (a cikin CHEMPACK kits)",
+    "Cire barasa"
+  ],
+  "dose": "Kamewa: 5-10 MG IV jinkirin turawa. Maimaita q10-15 min (max 30 MG). Matsakaicin: 0.2-0.5 mg/kg. IM absorption na kuskure -- guje wa IM idan zai yiwu.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "M kunkuntar-kwana glaucoma",
+    "Ciwon hanta mai tsanani",
+    "Bacin rai na numfashi"
+  ],
+  "warnings": [
+    "Shanyewar IM na kuskure ne kuma mai raɗaɗi -- fi son IV, dubura, ko amfani da midazolam IM maimakon.",
+    "Tsawon lokaci na sedation (24-48h don maimaita allurai).",
+    "Masu raunin jijiya: an haɗa diazepam a cikin kayan CHEMPACK don kamawa daga rikicin cholinergic."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0.1-0.3 mg/kg (max 10 mg). Matsakaicin: 0.3-0.5 mg/kg. Yi amfani da hanyar dubura lokacin da babu IV.",
+      "note": "Gel diastat na dubura yana da amfani musamman ga ciwon yara a cikin saitunan filin."
+    },
+    "obstetric": {
+      "note": "Ketare mahaifa. Zai iya haifar da hypotonia na jariri, damuwa na numfashi. Yi amfani kawai don ciwon mahaifa wanda ba ya jin daɗin magnesium."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Ukukhetha i-5-HT3 receptor antagonist antiemetic. Isebenza kakhulu kwisicaphucaphu kunye nokuhlanza. I-ODT (ithebhulethi yokuchitha ngomlomo) iluncedo kwizicwangciso zentsimi xa i-IV ingafumaneki. Ifakwe kwezinye iipakethi zeepilisi zokulwa.",
+  "indications": [
+    "Isicaphucaphu kunye nokugabha (ichemotherapy, i-opioid-induced, post-operative, enxulumene ne-TBI)",
+    "Isigulo sokuhamba",
+    "I-nausea evela kulawulo lwe-ketamine"
+  ],
+  "dose": "I-4-8 mg IV / IO iqhube ngokukhawuleza ngaphezu kwe-2-5 min. I-ODT: 4-8 mg ichithwe phantsi kolwimi. IIM: 4 mg.",
+  "route": [
+    "IV",
+    "IO",
+    "I-IM",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "I-hypersensitivity eyaziwayo kwi-ondansetron okanye abanye abachasi be-5-HT3",
+    "I-Congenital long QT syndrome (idosi ephezulu IV kuphela)"
+  ],
+  "warnings": [
+    "Idosi ephezulu ye-IV inokwandisa ixesha le-QT -- sebenzisa idosi esebenzayo ephantsi IV.",
+    "Ayithathi indawo yolawulo lwendlela yomoya kwisigulana esivalekileyo ngokugabha -- khusela indlela yomoya kuqala."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.1-0.15 mg / kg IV (max 4 mg). I-ODT: 4mg kubantwana> iminyaka emi-4.",
+      "note": "Isetyenziswe ngokubanzi kwaye inyamezeleke kakuhle kwi-pediatrics."
+    },
+    "obstetric": {
+      "note": "Idatha encinci ekukhulelweni. Sebenzisa isicaphucaphu esiqatha/ukugabha emva kwekota yokuqala xa iinzuzo zodlula imingcipheko. Akukhuthazwa kwi-trimester yokuqala."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

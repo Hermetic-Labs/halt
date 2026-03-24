@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t23502s",
+    "icd10":  "T23502S",
+    "name":  "Corrosion of first degree of left hand, unspecified site, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Corrosion of first degree of left hand, unspecified site, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

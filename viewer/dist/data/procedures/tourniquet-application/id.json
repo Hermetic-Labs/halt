@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Aplikasi Tourniquet (Tourniquet Aplikasi Tempur -- CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "setiap responden",
+  "time_estimate": "30-60 detik",
+  "description": "Kontrol perdarahan definitif untuk perdarahan ekstremitas yang mengancam jiwa. Ajukan permohonan lebih awal -- jangan menunda.",
+  "equipment": [
+    "tourniquet kucing",
+    "spidol permanen"
+  ],
+  "steps": [
+    "Pasang tourniquet 2-3 inci (5-7 cm) proksimal (di atas) luka -- di atas pakaian diperbolehkan.",
+    "Rutekan pita perekat di sekitar dahan dan masukkan melalui gesper adaptor gesekan.",
+    "Tarik tali hingga kencang dan kencangkan kembali.",
+    "Putar batang mesin kerek sampai pendarahan berhenti atau denyut distal tidak ada.",
+    "Kunci mesin kerek di klip mesin kerek.",
+    "Pasang tali mesin kerek di atas batang mesin kerek untuk mengamankannya.",
+    "Tuliskan waktu pemasangan langsung pada tourniquet (gunakan spidol) DAN pada kartu TCCC.",
+    "Ekspos dan evaluasi ulang lukanya. Nilai kembali setelah 5 menit."
+  ],
+  "warnings": [
+    "JANGAN melepas tourniquet setelah dipasang di lapangan -- hanya personel medis yang terlatih dan dalam kondisi terkendali.",
+    "Waktu sangat penting: tourniquet >2 jam secara signifikan meningkatkan risiko kehilangan anggota tubuh. Segera catat waktu.",
+    "JANGAN terapkan pada sambungan. Jika anggota tubuh mempunyai luka pada beberapa tingkat, oleskan pada bagian proksimal semua luka.",
+    "Tourniquet improvisasi (ikat pinggang, tali) kurang efektif."
+  ],
+  "follows": [
+    "tekanan langsung",
+    "pengepakan luka"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Gunakan tourniquet pediatrik sempit jika tersedia. CAT standar dapat digunakan tetapi kencangkan dengan hati-hati. Anggota badan lebih kecil - periksa denyut nadi distal dengan hati-hati."
+    },
+    "obstetric": {
+      "note": "Aplikasi standar untuk luka ekstremitas. Jangan diterapkan pada perut atau panggul."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

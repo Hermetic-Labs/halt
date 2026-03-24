@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t8140xd",
+    "icd10":  "T8140XD",
+    "name":  "Infection following a procedure, unspecified, subsequent encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Infection following a procedure, unspecified, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

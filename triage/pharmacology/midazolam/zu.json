@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "I-Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Vered",
+    "Nayzilam"
+  ],
+  "description": "I-benzodiazepine esebenza isikhathi esifushane eqala ngokushesha. Kuncanyelwa ukulaliswa ngokwenqubo, i-RSI pre-mediation, kanye nokuphathwa kokubanjwa kwe-IM/IN. Imizila ye-IM neye-intranasal inikeza inzuzo enkulu kuzilungiselelo zenkambu.",
+  "indications": [
+    "I-sedation yenqubo",
+    "Ukwelashwa kwangaphambili kwe-RSI (nge-ketamine)",
+    "Ukuphathwa kokubanjwa (IM/IN uma i-IV ingatholakali)",
+    "Ukuphathwa kokuyaluza"
+  ],
+  "dose": "I-sedation: 0.05-0.1 mg/kg IV titrated. Inqubo: 1-5 mg IV push slow. I-IM: 0.2 mg/kg. IN: 0.2 mg/kg (ubukhulu obungu-10 mg). Isimo se-Epilepticus IM: 10 mg IM (omdala).",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN"
+  ],
+  "window": "",
+  "contraindications": [
+    "I-glaucoma ye-angle encane ebukhali",
+    "Ukudakwa kotshwala okunamandla okuhambisana nenhliziyo nemithambo yegazi",
+    "I-hypersensitivity eyaziwa"
+  ],
+  "warnings": [
+    "Ukudangala kokuphefumula -- qapha indlela yokuphefumula, ube ne-ejenti yokuhlehla (i-flumazenil) uma ikhona.",
+    "I-Hypotension ikakhulukazi ngokuphathwa ngokubambisana kwe-opioid.",
+    "Umjovo osheshayo we-IV udala i-apnea -- phusha kancane."
+  ],
+  "regional_names": {
+    "generic": "imidazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "I-sedation: 0.05-0.1 mg/kg IV. IM: 0.1-0.2 mg/kg. KU: 0.2-0.3 mg/kg. Ukubanjwa kwe-IM: 0.2 mg/kg (ubukhulu obungu-10 mg).",
+      "note": "Emzileni uwusizo ikakhulukazi ezinganeni -- ugwema ukufinyelela IV."
+    },
+    "obstetric": {
+      "note": "Iwela i-placenta. I-sedation ye-neonatal ingenzeka. Sebenzisa umthamo omncane osebenzayo; qaphela ingane esanda kuzalwa uma inikezwa eduze nokubeletha."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

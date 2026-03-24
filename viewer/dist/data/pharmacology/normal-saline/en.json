@@ -1,0 +1,43 @@
+﻿{
+    "id":  "normal-saline",
+    "name":  "Normal Saline (0.9% NaCl)",
+    "category":  "fluid-resuscitation",
+    "rxnorm":  "9863",
+    "brand_names":  [
+                        "0.9% Sodium Chloride Injection"
+                    ],
+    "description":  "Isotonic crystalloid fluid. Used for IV fluid resuscitation. In hemorrhagic shock, use cautiously -- large volumes worsen coagulopathy (hyperchloremic acidosis, dilutional coagulopathy). Permissive hypotension preferred in penetrating trauma pending hemorrhage control.",
+    "indications":  [
+                        "Fluid resuscitation (with caution in hemorrhagic shock)",
+                        "Medication diluent/flush",
+                        "Hypovolemia from non-hemorrhagic causes"
+                    ],
+    "dose":  "Hemorrhagic shock: Limit to 1L max pending hemorrhage control (permissive hypotension). Target SBP 80-90 mmHg in penetrating trauma, 90 mmHg in TBI. Non-hemorrhagic hypovolemia: 500 mL boluses, reassess.",
+    "route":  [
+                  "IV",
+                  "IO"
+              ],
+    "window":  "",
+    "contraindications":  [
+                              "Hypernatremia",
+                              "Fluid overload / pulmonary edema (relative)"
+                          ],
+    "warnings":  [
+                     "Large volumes cause hyperchloremic metabolic acidosis and dilutional coagulopathy -- worsens the lethal triad in trauma.",
+                     "Lactated Ringer\u0027s (LR) is preferred for large-volume trauma resuscitation.",
+                     "Do NOT over-resuscitate penetrating torso trauma before surgical hemorrhage control (permissive hypotension)."
+                 ],
+    "regional_names":  {
+                           "generic":  "sodium chloride 0.9%"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "20 mL/kg IV bolus, reassess. Repeat max x3 (60 mL/kg total) before considering blood products.",
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  "Standard resuscitation in obstetric hemorrhage. Aggressive fluid resuscitation appropriate for postpartum hemorrhage before blood products available."
+                                    }
+                  },
+    "source":  "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

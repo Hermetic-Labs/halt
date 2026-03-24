@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Ukuhlolwa Kokuphelelwa Amanzi",
+  "category": "circulation",
+  "description": "Ukuhlolwa kwendawo yokuphelelwa ngamanzi emzimbeni kanye nobunzima bokugula kokushisa. Umbala womchamo uyinkomba yensimu esebenza kakhulu. Hlola isimo somqondo njengomaka wokuphelelwa amanzi emzimbeni kakhulu okuqhubekela ekushiseni.",
+  "instructions": "Hlola umbala womchamo, i-skin turgor, isimo sengqondo, nezimpawu ezibalulekile. Umchamo omnyama, ulwelwesi lwamafinyila olomile, kanye ne-tachycardia kubonisa ukuphelelwa amanzi emzimbeni okudinga ukuvuselelwa okusebenzayo.",
+  "categories": [
+    {
+      "color": "clear-pale",
+      "label": "Igaywe Kahle",
+      "description": "Uphuzi ophuzi ukuze uhlanze umchamo. Akukho ukungenelela okudingekayo."
+    },
+    {
+      "color": "okuphuzi",
+      "label": "Ukuphelelwa amanzi kwamanzi Okumaphakathi",
+      "description": "Umchamo ophuzi ngokumnyama, womile. Ukubuyisela amanzi emanzini ngomlomo. Khuthaza u-250-500 ml wamanzi ngehora."
+    },
+    {
+      "color": "inhlaka-nsundu",
+      "label": "Ukuphelelwa Amanzi Okuqinile Okumaphakathi",
+      "description": "Umchamo we-amber, ukuphakama kwe-HR, i-skin turgor yehla, umlomo owomile. IV/IO uketshezi uma ngomlomo kungabekezeleleki. I-1-2L LR noma i-NS."
+    },
+    {
+      "color": "okubomvu",
+      "label": "Ingozi -- I-Heat Stroke / Enzima",
+      "description": "Ukukhipha umchamo okuncane, i-LOC eshintshile, isikhumba esomile esishisayo. Isimo esiphuthumayo sezokwelapha -- ukupholisa okusheshayo + uketshezi lwe-IV + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Izingane ziphelelwa amanzi ngokushesha kunabantu abadala. I-Sunken fontanelle (izinsana), izinyembezi ezingekho, nokukhathala kuyizimpawu ezibucayi. Isisindo esisekelwe ku-IV: 20 mL/kg LR bolus."
+    },
+    "obstetric": {
+      "note": "Abesifazane abakhulelwe badinga uketshezi olwandisiwe. Ukuphelelwa amanzi emzimbeni kungabangela ukufinyela ngaphambi kwesikhathi. Ukuvuselela ngomlomo ngomlomo kuqala; IV uma ungabekezeleli ngomlomo."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Magnesium sulfate (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Magnesium sulfate allura"
+  ],
+  "description": "CNS depressant da anticonvulsant amfani da rigakafi da kuma lura da eclamptic seizures (seizure a ciki daga pre-eclampsia). Hakanan ana amfani dashi don asma mai tsanani da torsades de pointes. Layin farko don eclampsia akan benzodiazepines.",
+  "indications": [
+    "Eclampsia (kariyar rigakafin kamuwa da cuta a cikin matsanancin pre-eclampsia)",
+    "Pre-eclampsia prophylaxis (fasaloli masu tsanani)",
+    "Torsades de Pointes (polymorphic V-tach daga hypomagnesemia)",
+    "Ciwon asma mai tsanani (adjunct)"
+  ],
+  "dose": "Adadin lodin Eclampsia: 4-6g IV jinkirin turawa sama da mintuna 20. Kulawa: 1-2g / awa IV jiko. Idan kamawa ya sake faruwa: 2-4g IV sama da mintuna 5. IM loading (idan babu IV): 5g IM kowane gindi (jimlar 10g) a lokaci guda.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "Fara a farkon kamawa ko kuma a gano ainihin abubuwan pre-eclampsia mai tsanani.",
+  "contraindications": [
+    "Myasthenia gravis",
+    "Lalacewar tafiyar da zuciya",
+    "Rashin gazawar koda (yana tara -- rage kashi)"
+  ],
+  "warnings": [
+    "Alamun guba: asarar patellar reflex (alamar farko, 7-10 mEq / L), damuwa na numfashi (> 10 mEq / L), kama zuciya (> 15 mEq / L).",
+    "Saka idanu patellar reflexes kowane minti 15 -- asarar reflex = dakatar da jiko.",
+    "antidote don guba: Calcium gluconate 1g IV sama da mintuna 3.",
+    "Rage kashi a cikin raunin koda -- saka idanu da fitowar fitsari."
+  ],
+  "regional_names": {
+    "generic": "magnesium sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg IV akan 10-20 min (max 2g). Tsananin asma: 25-75 mg/kg IV (max 2g).",
+      "note": "Ba kasafai ake amfani da shi ba don kamewa a cikin marasa lafiya na yara marasa haihuwa - eclampsia shine alamar farko."
+    },
+    "obstetric": {
+      "note": "Alamar farko. Ketare placenta - hypermagnesemia na jariri yana yiwuwa. Adadin jarirai idan bakin ciki na numfashi: calcium gluconate 100 mg/kg IV. Sanar da ƙungiyar NICU game da amfani da magnesium na uwa."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

@@ -1,0 +1,45 @@
+﻿{
+    "id":  "ondansetron",
+    "name":  "Ondansetron",
+    "category":  "antiemetic",
+    "rxnorm":  "26225",
+    "brand_names":  [
+                        "Zofran"
+                    ],
+    "description":  "Selective 5-HT3 receptor antagonist antiemetic. Highly effective for nausea and vomiting. ODT (orally disintegrating tablet) is useful in field settings when IV unavailable. Included in some combat pill packs.",
+    "indications":  [
+                        "Nausea and vomiting (chemotherapy, opioid-induced, post-operative, TBI-related)",
+                        "Motion sickness",
+                        "Nausea from ketamine administration"
+                    ],
+    "dose":  "4-8 mg IV/IO slow push over 2-5 min. ODT: 4-8 mg dissolved under tongue. IM: 4 mg.",
+    "route":  [
+                  "IV",
+                  "IO",
+                  "IM",
+                  "PO",
+                  "ODT"
+              ],
+    "window":  "",
+    "contraindications":  [
+                              "Known hypersensitivity to ondansetron or other 5-HT3 antagonists",
+                              "Congenital long QT syndrome (high-dose IV only)"
+                          ],
+    "warnings":  [
+                     "High-dose IV may prolong QT interval -- use lowest effective dose IV.",
+                     "Does not replace airway management in obtunded patient with vomiting -- protect airway first."
+                 ],
+    "regional_names":  {
+                           "generic":  "ondansetron"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "0.1-0.15 mg/kg IV (max 4 mg). ODT: 4mg for children \u003e 4 years.",
+                                        "note":  "Widely used and well-tolerated in pediatrics."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Limited data in pregnancy. Use for severe nausea/vomiting after first trimester when benefits outweigh risks. Not recommended in first trimester."
+                                    }
+                  },
+    "source":  "JTS CPG / Standard Emergency Pharmacology"
+}

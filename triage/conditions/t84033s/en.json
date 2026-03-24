@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t84033s",
+    "icd10":  "T84033S",
+    "name":  "Mechanical loosening of internal left knee prosthetic joint, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Mechanical loosening of internal left knee prosthetic joint, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Livraison d'urgence sur le terrain",
+  "category": "obstetric",
+  "skill_level": "médecin de combat",
+  "time_estimate": "Varie -- 20+ minutes",
+  "description": "Gestion des livraisons précipitées ou non planifiées dans un environnement austère.",
+  "equipment": [
+    "gants",
+    "couvertures-en tissu-propre",
+    "serre-cordons-ou-attaches",
+    "ciseaux",
+    "ampoule-seringue"
+  ],
+  "steps": [
+    "Positionnez la mère en décubitus dorsal ou semi-inclinée. Inclinaison latérale gauche préférée en cas d'inconscience (empêche la compression aorto-cave).",
+    "Contrôler le dégagement de la tête – appui avec la paume. Ne tirez PAS.",
+    "Une fois la tête délivrée, vérifiez la présence du cordon nucal (autour du cou). Si présent, glissez-le par-dessus la tête. S'il est serré, serrez et coupez.",
+    "Aspirer la bouche puis le nez avec une seringue à bulbe si disponible.",
+    "Guider la délivrance de l’épaule antérieure par une légère traction vers le bas sur la tête, puis vers le haut pour l’épaule postérieure.",
+    "Livrez le corps – notez l’heure de livraison.",
+    "Séchez et réchauffez immédiatement le nourrisson. Stimulez en frottant le dos.",
+    "Serrez et coupez le cordon (attendez 1 à 2 minutes si le nourrisson est stable).",
+    "Délivrez le placenta avec une traction douce et contrôlée – ne forcez PAS.",
+    "Administrer de l'ocytocine (si disponible) pour prévenir l'hémorragie post-partum après l'accouchement du placenta.",
+    "Évaluez l’hémorragie post-partum – massage fundique, compression bimanuelle si nécessaire.",
+    "Évaluez le score d’Apgar à 1 et 5 minutes."
+  ],
+  "warnings": [
+    "Si la livraison n’est pas imminente, n’essayez PAS. Une MEDEVAC rapide est préférable.",
+    "Dystocie des épaules : si les épaules sont coincées, appliquer la manœuvre de McRoberts (hanches hyperflexes) et une pression sus-pubienne.",
+    "L’hémorragie du post-partum est la principale cause de décès maternel évitable – préparez-vous à l’ocytocine."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

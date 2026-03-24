@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Fluoroquinolone antibiotica cum latioribus gram-negativae coverage. Usus est pro gravibus infectionibus vulneris, abdominis trauma penetrantibus (GI flora coverage), et infectiones tractus urinarii. Praesto PO et IV.",
+  "indications": [
+    "Abdominis trauma penetrans (GI decontaminatio)",
+    "Vulnus gravis contagio",
+    "Infectiones gram-negative",
+    "Tractus urinarii infectiones"
+  ],
+  "dose": "400 mg IV q8-12h. PO: 500-750 mg q12h.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Notum fluoroquinolone allergy",
+    "Pueri & adolescentes < 18 annis ( relativo - tendinopathiae periculo )",
+    "Graviditas (relativum)"
+  ],
+  "warnings": [
+    "Periculum rupturae tendinis, praesertim tendinis Achillis. Si tendinis dolor incidit.",
+    "Protrahat QT intervallum - cautela cum aliis medicamentis QT prolongandis.",
+    "Vitare in graviditate si utrumque available."
+  ],
+  "regional_names": {
+    "generic": "ciprofloxacin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV q8-12h (max 400 mg/dosis). PO: 10-20 mg/kg q12h (max 750 mg/dosis).",
+      "note": "Tantum utere cum prodest tendinopathiae periculum praeponderat. Subsidium pro gravibus vitiis."
+    },
+    "obstetric": {
+      "note": "Vitare in graviditate si utrumque available. Tantum utere ad infectiones vitae minaces ubi beneficium periculum praeponderat."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

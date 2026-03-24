@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s12291s",
+    "icd10":  "S12291S",
+    "name":  "Other nondisplaced fracture of third cervical vertebra, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Other nondisplaced fracture of third cervical vertebra, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

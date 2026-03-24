@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "AVPU 규모",
+  "category": "neurological",
+  "description": "신속한 4단계 의식 평가. 초기 분류에서는 GCS보다 빠릅니다.",
+  "instructions": "환자가 나타내는 최고 수준의 반응을 평가하십시오.",
+  "scoring": [
+    {
+      "code": "가",
+      "label": "경고",
+      "description": "환자가 깨어 있고, 인식하고 있으며, 정상적으로 반응하고 있습니다"
+    },
+    {
+      "code": "뷔",
+      "label": "음성",
+      "description": "환자가 언어 자극에만 반응함"
+    },
+    {
+      "code": "피",
+      "label": "고통",
+      "description": "환자는 고통스러운 자극(흉골 문지름, 손발톱바닥 압력)에만 반응합니다"
+    },
+    {
+      "code": "너",
+      "label": "응답하지 않음",
+      "description": "어떤 자극에도 반응하지 않음 - 즉각적인 기도 중재가 필요함"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "가",
+      "triage": "안정적 - 계속 평가"
+    },
+    {
+      "code": "뷔",
+      "triage": "관련하여 - 기도 모니터링"
+    },
+    {
+      "code": "피",
+      "triage": "심각 - 기도 위험, GCS 일반적으로 <= 8"
+    },
+    {
+      "code": "너",
+      "triage": "즉시 -- 지금 기도 관리"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

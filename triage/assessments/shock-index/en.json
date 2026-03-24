@@ -1,0 +1,31 @@
+﻿{
+    "id":  "shock-index",
+    "name":  "Shock Index",
+    "category":  "circulatory",
+    "description":  "Rapid single-number indicator of hemodynamic stability. Calculated as HR / SBP. Normal is 0.5-0.7.",
+    "instructions":  "Divide heart rate by systolic blood pressure. A rising shock index indicates deterioration.",
+    "scoring":  [
+                    {
+                        "range":  "\u003c0.6",
+                        "label":  "Normal -- hemodynamically stable"
+                    },
+                    {
+                        "range":  "0.6-1.0",
+                        "label":  "Mild shock -- monitor closely"
+                    },
+                    {
+                        "range":  "1.0-1.4",
+                        "label":  "Moderate shock -- IV access, fluids"
+                    },
+                    {
+                        "range":  "\u003e1.4",
+                        "label":  "Severe shock -- immediate resuscitation, blood products"
+                    }
+                ],
+    "modifiers":  {
+                      "obstetric":  {
+                                        "note":  "Obstetric Shock Index (OSI) uses same formula. SI \u003e 0.9 in pregnant patients is significant. Normal HR is higher in pregnancy (80-100 bpm)."
+                                    }
+                  },
+    "source":  "JTS CPG / PHTLS"
+}

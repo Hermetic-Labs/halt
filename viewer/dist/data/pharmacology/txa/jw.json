@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Asam Traneksamat (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Siklokapron",
+    "Listeda"
+  ],
+  "description": "Agen antifibrinolitik sing nyegah pemecahan gumpalan getih. Ngartekno nyuda mortalitas saka kejut hemorrhagic nalika diwenehi awal. Dianjurake dening CoTCCC kanggo kabeh korban kanthi pendarahan sing signifikan utawa kanthi risiko pendarahan sing signifikan.",
+  "indications": [
+    "Perdarahan internal utawa eksternal sing signifikan",
+    "Kejut hemoragik",
+    "Resiko dhuwur pendarahan (mekanisme cedera)"
+  ],
+  "dose": "1g IV/IO liwat 10 menit, banjur 1g IV/IO liwat 8 jam. Yen IV / IO ora kasedhiya: 650mg PO x2 (total 1,3g) - opsi TCCC PO.",
+  "route": [
+    "IV",
+    "IO",
+    "PO"
+  ],
+  "window": "MUST diterbitake ing 3 jam saka ciloko. Ngluwihi 3 jam, TXA bisa NANGKAT mortalitas -- aja menehi.",
+  "contraindications": [
+    "Riwayat penyakit tromboemboli (DVT, PE, stroke)",
+    "Disseminated Intravascular Coagulation (DIC)",
+    "> 3 jam sawise ciloko"
+  ],
+  "warnings": [
+    "Log wektu administrasi langsung - jendhela 3 jam saka wektu ciloko, dudu wektu tekan.",
+    "Aja bingung dosis IV (1g) karo dosis oral."
+  ],
+  "regional_names": {
+    "generic": "asam traneksamat",
+    "US": "Siklokapron",
+    "UK": "Siklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg IV (maks 1g). Bukti sing muncul -- gunakake pertimbangan klinis.",
+      "note": "Jendhela 3 jam sing padha ditrapake."
+    },
+    "obstetric": {
+      "note": "Dituduhake kanggo pendarahan postpartum. Aman nalika meteng. Dosis diwasa sing padha ditrapake."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

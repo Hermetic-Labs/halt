@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s24101s",
+    "icd10":  "S24101S",
+    "name":  "Unspecified injury at T1 level of thoracic spinal cord, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified injury at T1 level of thoracic spinal cord, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s97122d",
+    "icd10":  "S97122D",
+    "name":  "Crushing injury of left lesser toe(s), subsequent encounter",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Crushing injury of left lesser toe(s), subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

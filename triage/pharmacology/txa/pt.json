@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Ácido Tranexâmico (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Ciclocapron",
+    "Listeda"
+  ],
+  "description": "Agente antifibrinolítico que inibe a degradação de coágulos sanguíneos. Reduz significativamente a mortalidade por choque hemorrágico quando administrado precocemente. Recomendado pelo CoTCCC para todas as vítimas com hemorragia significativa ou em risco de hemorragia significativa.",
+  "indications": [
+    "Hemorragia externa significativa ou suspeita de hemorragia interna",
+    "Choque hemorrágico",
+    "Alto risco de hemorragia (mecanismo de lesão)"
+  ],
+  "dose": "1g IV/IO durante 10 minutos, seguido de 1g IV/IO durante 8 horas. Se IV/IO não estiver disponível: 650 mg PO x2 (1,3 g no total) - opção TCCC PO.",
+  "route": [
+    "IV",
+    "OI",
+    "PO"
+  ],
+  "window": "DEVE ser administrado dentro de 3 horas após a lesão. Após 3 horas, o TXA pode AUMENTAR a mortalidade – não dê.",
+  "contraindications": [
+    "História de doença tromboembólica (TVP, EP, acidente vascular cerebral)",
+    "Coagulação Intravascular Disseminada (CID)",
+    "> 3 horas após a lesão"
+  ],
+  "warnings": [
+    "Registre o horário da administração imediatamente - a janela é de 3 horas a partir do momento da lesão, não do horário de chegada.",
+    "Não confunda dose IV (1g) com dose oral."
+  ],
+  "regional_names": {
+    "generic": "ácido tranexâmico",
+    "US": "Ciclocapron",
+    "UK": "Ciclocapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg IV (máx. 1g). Evidências emergentes – use o julgamento clínico.",
+      "note": "A mesma janela de 3 horas se aplica."
+    },
+    "obstetric": {
+      "note": "Indicado para hemorragia pós-parto. Seguro na gravidez. Aplica-se a mesma dosagem para adultos."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

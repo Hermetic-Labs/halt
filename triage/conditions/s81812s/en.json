@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s81812s",
+    "icd10":  "S81812S",
+    "name":  "Laceration without foreign body, left lower leg, sequela",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Laceration without foreign body, left lower leg, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

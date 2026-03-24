@@ -1,0 +1,22 @@
+{
+  "id": "s00201d",
+  "icd10": "S00201D",
+  "name": "右まぶたと眼周囲領域の不特定の表面損傷、その後の遭遇",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "右まぶたと眼周囲領域の不特定の表面損傷、その後の遭遇",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

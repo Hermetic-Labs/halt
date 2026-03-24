@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t3250",
+    "icd10":  "T3250",
+    "name":  "Corrosions involving 50-59% of body surface with 0% to 9% third degree corrosion",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Corrosions involving 50-59% of body surface with 0% to 9% third degree corrosion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "Mchanganuo wa SALT (Panga, Tathmini, Afua za Kuokoa Maisha, Matibabu/Usafiri)",
+  "category": "mass-casualty",
+  "description": "Itifaki ya majaribio ya majeruhi wa wingi. Kawaida kwa matukio ya majeruhi wengi katika mazingira ya kijeshi na kiraia.",
+  "instructions": "Hatua ya 1: Aina ya kimataifa (kutembea, kupunga mkono, tuli). Hatua ya 2: Tathmini kwa mpangilio wa kipaumbele. Hatua ya 3: Tekeleza afua za kuokoa maisha (dhibiti uvujaji wa damu nyingi, njia ya hewa wazi, upunguzaji wa sindano, sindano za kiotomatiki). Hatua ya 4: Weka kategoria.",
+  "categories": [
+    {
+      "color": "nyeusi",
+      "label": "Mtarajiwa/Marehemu",
+      "description": "Haiwezekani kuishi kutokana na rasilimali zilizopo, au marehemu aliyethibitishwa"
+    },
+    {
+      "color": "nyekundu",
+      "label": "Papo Hapo (T1)",
+      "description": "Majeraha ya kutishia maisha, yatasalimika kwa uingiliaji kati wa haraka"
+    },
+    {
+      "color": "njano",
+      "label": "Imechelewa (T2)",
+      "description": "Majeraha makubwa lakini thabiti, yanaweza kusubiri huduma"
+    },
+    {
+      "color": "kijani",
+      "label": "Ndogo (T3)",
+      "description": "Majeraha madogo -- kutembea akiwa amejeruhiwa"
+    },
+    {
+      "color": "kijivu",
+      "label": "Anayetarajiwa",
+      "description": "Jeraha lisiloweza kuepukika kutokana na rasilimali za sasa -- utunzaji wa faraja pekee"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "JumpSTART triage algoriti hurekebisha SALT kwa wagonjwa wa watoto. Viwango vya kiwango cha kupumua na hatua za tathmini hutofautiana kwa watoto walio chini ya miaka 8."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

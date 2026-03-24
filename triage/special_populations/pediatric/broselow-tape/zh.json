@@ -1,0 +1,63 @@
+{
+  "id": "broselow-tape",
+  "name": "Broselow 儿科急救胶带参考",
+  "description": "当没有秤时，颜色编码的体重与剂量参考用于儿科给药。测量孩子从头顶到脚后跟的尺寸，并与色带相匹配。",
+  "note": "此参考仅用于估计。如果有的话，使用实际重量。",
+  "bands": [
+    {
+      "color": "灰色",
+      "weight_kg": "3-5",
+      "length_cm": "46-57",
+      "est_age": "新生儿"
+    },
+    {
+      "color": "粉色",
+      "weight_kg": "6-7",
+      "length_cm": "57-67",
+      "est_age": "3-6 个月"
+    },
+    {
+      "color": "红色",
+      "weight_kg": "8-9",
+      "length_cm": "67-74",
+      "est_age": "6-12 个月"
+    },
+    {
+      "color": "紫色",
+      "weight_kg": "10-11",
+      "length_cm": "74-83",
+      "est_age": "12-18 个月"
+    },
+    {
+      "color": "黄色",
+      "weight_kg": "12-14",
+      "length_cm": "83-95",
+      "est_age": "18个月-3年"
+    },
+    {
+      "color": "白色",
+      "weight_kg": "15-18",
+      "length_cm": "95-107",
+      "est_age": "3-5年"
+    },
+    {
+      "color": "蓝色",
+      "weight_kg": "19-22",
+      "length_cm": "107-122",
+      "est_age": "5-7年"
+    },
+    {
+      "color": "橙色",
+      "weight_kg": "24-28",
+      "length_cm": "122-137",
+      "est_age": "7-9岁"
+    },
+    {
+      "color": "绿色",
+      "weight_kg": "30-36",
+      "length_cm": "137-152",
+      "est_age": "9-12岁"
+    }
+  ],
+  "source": "Broselow Pediatric Emergency Reference / PALS"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "broselow-tape",
+  "name": "Ireferensi Yetheyiphu Yezimo Eziphuthumayo ye-Broselow",
+  "description": "Ireferensi enekhodi yombala yesisindo somthamo yokulawulwa kwezidakamizwa zezingane uma isikali singatholakali. Linganisa ingane kusukela phezulu kwekhanda kuye esithendeni bese uqondanisa nebhande lombala.",
+  "note": "Lesi sithenjwa ngese-ESTIMATION kuphela. Sebenzisa isisindo sangempela uma sitholakala.",
+  "bands": [
+    {
+      "color": "impunga",
+      "weight_kg": "3-5",
+      "length_cm": "46-57",
+      "est_age": "Osanda kuzalwa"
+    },
+    {
+      "color": "pink",
+      "weight_kg": "6-7",
+      "length_cm": "57-67",
+      "est_age": "3-6 izinyanga"
+    },
+    {
+      "color": "ebomvu",
+      "weight_kg": "8-9",
+      "length_cm": "67-74",
+      "est_age": "6-12 izinyanga"
+    },
+    {
+      "color": "onsomi",
+      "weight_kg": "10-11",
+      "length_cm": "74-83",
+      "est_age": "Izinyanga eziyi-12-18"
+    },
+    {
+      "color": "ophuzi",
+      "weight_kg": "12-14",
+      "length_cm": "83-95",
+      "est_age": "Izinyanga eziyi-18 - iminyaka emi-3"
+    },
+    {
+      "color": "mhlophe",
+      "weight_kg": "15-18",
+      "length_cm": "95-107",
+      "est_age": "Iminyaka engu-3-5"
+    },
+    {
+      "color": "eluhlaza okwesibhakabhaka",
+      "weight_kg": "19-22",
+      "length_cm": "107-122",
+      "est_age": "Iminyaka engu-5-7"
+    },
+    {
+      "color": "iwolintshi",
+      "weight_kg": "24-28",
+      "length_cm": "122-137",
+      "est_age": "Iminyaka engu-7-9"
+    },
+    {
+      "color": "eluhlaza",
+      "weight_kg": "30-36",
+      "length_cm": "137-152",
+      "est_age": "Iminyaka engu-9-12"
+    }
+  ],
+  "source": "Broselow Pediatric Emergency Reference / PALS"
+}

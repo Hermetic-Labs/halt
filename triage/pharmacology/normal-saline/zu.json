@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Usawoti Ojwayelekile (0.9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "0.9% Umjovo we-Sodium Chloride"
+  ],
+  "description": "I-Isotonic crystalloid fluid. Isetshenziselwa i-IV fluid resuscitation. Lapho ushaqeka okopha, sebenzisa ngokucophelela -- amavolumu amakhulu enza i-coagulopathy ibe yimbi kakhulu (hyperchloremic acidosis, dilutional coagulopathy). I-permissive hypotension ikhethwa ekuhlukumezekeni okungena ngaphakathi kusalindwe ukulawula ukopha.",
+  "indications": [
+    "Ukuvuselela uketshezi (ngokuqaphela ekushayweni ukopha)",
+    "I-diluent/flush yomuthi",
+    "I-Hypovolemia ebangelwa yizimbangela ezingezona ukopha"
+  ],
+  "dose": "Ukushaqeka ukopha: Umkhawulo ku-1L ubukhulu kusalindile ukulawulwa ukopha (permissive hypotension). Ithagethi ye-SBP 80-90 mmHg ekuhlukumezekeni okungenayo, 90 mmHg ku-TBI. I-Non-hemorrhagic hypovolemia: 500 mL boluses, phinda uhlole.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "I-Hypernatremia",
+    "Ukugcwala koketshezi oluningi / i-pulmonary edema (isihlobo)"
+  ],
+  "warnings": [
+    "Umthamo omkhulu udala i-hyperchloremic metabolic acidosis kanye ne-dilutional coagulopathy -- yenza kube kubi kakhulu u-triad obulalayo ekuhlukumezekeni.",
+    "I-Lactated Ringer's (LR) ikhethwa ekuvuseleleni ukuhlukumezeka kwevolumu enkulu.",
+    "UNGAVUMI ukuvuselela ngokweqile ukuhlukumezeka kwe-torso okungena ngaphakathi ngaphambi kokulawula ukopha kokuhlinzwa (i-permissive hypotension)."
+  ],
+  "regional_names": {
+    "generic": "i-sodium chloride 0.9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 mL/kg IV bolus, phinda uhlole. Phinda ubuningi x3 (60 mL/kg isiyonke) ngaphambi kokucabangela imikhiqizo yegazi.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Ukuvuselelwa okujwayelekile ekopheni kwe-obstetric. Ukuvuselela uketshezi olunamandla olufanele ukopha kwangemva kokubeletha ngaphambi kokuba kutholakale imikhiqizo yegazi."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

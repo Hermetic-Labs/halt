@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Ọkpụkpụ emelitere",
+  "category": "ortho-stabilization",
+  "skill_level": "Ihe ndabere",
+  "time_estimate": "5-10 nkeji",
+  "description": "Mee ka mgbaji kpụ ọkụ n'ọnụ site na iji ihe dịnụ iji gbochie mmerụ ahụ ọzọ, belata ihe mgbu, ma kpachie mfu ọbara n'ime anụ ahụ gbara ya gburugburu. Achọpụtara splint n'ọnọdụ ọ gwụla ma mgbasa ozi mebiri - wee gbatịa nwayọ.",
+  "equipment": [
+    "SAM splint (kacha mma)",
+    "Akwụkwọ akụkọ akpọgharịrị, osisi, mkpanaka ụlọ ntu (ubi emelitere)",
+    "bandeeji Cravat / triangular",
+    "Mkpuchi (akwa, ụfụfụ)",
+    "Teepu ma ọ bụ ibe akwa"
+  ],
+  "steps": [
+    "Gosipụta ma chọpụta mmerụ ahụ - lelee mgbasa ozi, mmetụta, mmegharị ahụ (CSM) ka ọ gbajie tupu na mgbe ọ gasịrị.",
+    "Jikwaa ọbara ọgbụgba ọ bụla na-arụsi ọrụ ike tupu ịgbawa ahụ.",
+    "Pad ọkpụkpụ a ma ama na-emesapụ aka iji gbochie ọnya nrụgide.",
+    "Họrọ ihe splint ogologo oge iji mee ka nkwonkwo dị n'elu NA n'okpuru mgbaji.",
+    "Ọnọdụ ọnọdụ n'ọnọdụ ntụsara ahụ ma ọ bụ nhazi anatomical --amanyela.",
+    "Tinye padding, wee gbasaa ihe. Chekwaa ya na bandeeji ma ọ bụ ibe akwa.",
+    "Ekechiela nke ọma -- hapụ mkpịsị aka mkpisi aka ka ekpughere CSM.",
+    "Nyochaa CSM ka emechara ngwa -- tọpụ ozugbo ma ọ bụrụ na mgbasa ozi adịghị.",
+    "Welie ụkwụ ma ọ bụrụ na ọ ga-ekwe omume iji belata ọzịza.",
+    "Akwụkwọ oge nke ngwa splint."
+  ],
+  "warnings": [
+    "Na-enyocha CSM kwa nkeji 15-30 ọ bụla -- ọzịza nwere ike ime ka splint ziri ezi bụrụ ihe nlegharị anya.",
+    "Mepee mgbajiri agbaji: na-ebu ụzọ kpuchie ọnya na mgbakwasa na-adịghị mma, wee gbasaa. Akwụghachila ọkpụkpụ azụ n'ime",
+    "Ọkpụkpụ femur nwere ike tufuo 1-2L ọbara n'apata -- na-emeso ike ike maka ujo.",
+    "Ọkpụkpụ azụ a na-enyo enyo: emela ka splint dịkwuo mma -- wedata mmegharị ahụ, jikwaa nkwụsi ike inline."
+  ],
+  "follows": [
+    "ozugbo-nrụgide",
+    "ngwa tourniquet"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Efere ntolite n'ime ụmụaka adịghị ike karịa njikọ -- mgbaji a na-enyo enyo ọbụlagodi na usoro dị nro. Ọkpụkpụ Torus (kechie) nwere ike inwe ọzịza pere mpe."
+    },
+    "obstetric": {
+      "note": "Ọkọlọtọ splinting na-emetụta. Zenarị ịnọdụ ala azụ ogologo oge -- ndakpọ akuku aka ekpe ma ọ bụrụ na ị dinara ala."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

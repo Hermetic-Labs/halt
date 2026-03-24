@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Iyọ deede (0.9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "0,9% iṣuu soda kiloraidi abẹrẹ"
+  ],
+  "description": "Isotonic crystalloid ito. Ti a lo fun isọdọtun omi IV. Ninu mọnamọna iṣọn-ẹjẹ, lo ni iṣọra - awọn iwọn nla ti o buru si coagulopathy (hyperchloremic acidosis, dilutional coagulopathy). Ilọkuro iyọọda fẹ ni ibalokan ibalokanjẹ ni isunmọtosi iṣakoso ẹjẹ.",
+  "indications": [
+    "Isọdọtun omi (pẹlu iṣọra ni mọnamọna ẹjẹ)",
+    "Oogun diluent / danu",
+    "Hypovolemia lati awọn okunfa ti kii-ẹjẹ-ẹjẹ"
+  ],
+  "dose": "Ibanujẹ iṣọn-ẹjẹ: Idiwọn si 1L max ni isunmọtosi iṣakoso ẹjẹ (haipatensonu iyọọda). Ifojusi SBP 80-90 mmHg ni ibalokanjẹ ti nwọle, 90 mmHg ni TBI. Hypovolemia ti kii-ẹjẹ-ẹjẹ: 500 milimita boluses, tun ṣe ayẹwo.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hypernatremia",
+    "Apọju omi / edema ẹdọforo (ojulumo)"
+  ],
+  "warnings": [
+    "Awọn iwọn nla nfa hyperchloremic metabolic acidosis ati coagulopathy dilutional -- buru si triad apaniyan ni ibalokanje.",
+    "Lactated Ringer's (LR) jẹ ayanfẹ fun isọdọtun ibalokanjẹ iwọn didun nla.",
+    "MAA ṢE ṣe ifọkanbalẹ ti nwọle torso ibalokanjẹ ṣaaju iṣakoso iṣọn-ẹjẹ ti iṣẹ abẹ (hypotension iyọọda)."
+  ],
+  "regional_names": {
+    "generic": "iṣuu soda kiloraidi 0.9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 milimita / kg IV bolus, tun ṣe ayẹwo. Tun max x3 (60 milimita/kg lapapọ) ṣe ṣaaju ṣiṣero awọn ọja ẹjẹ.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Imupadabọ deede ni iṣọn-ẹjẹ obstetric. Atunlọ omi ibinu ti o yẹ fun isun ẹjẹ lẹhin ibimọ ṣaaju awọn ọja ẹjẹ ti o wa."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Ossitocina",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocino",
+    "Sintocino"
+  ],
+  "description": "Ormone peptidico endogeno. Uterotonico di prima linea per la prevenzione e il trattamento dell'emorragia postpartum (PPH). Provoca la contrazione uterina e riduce la perdita di sangue dopo il parto. Dato DOPO il parto placentare.",
+  "indications": [
+    "Prevenzione dell'emorragia postpartum (routine dopo il parto)",
+    "Trattamento dell'emorragia postpartum (atonia uterina)",
+    "Induzione del travaglio (solo ambiente controllato)"
+  ],
+  "dose": "Prevenzione della PPH: 10 unità IM immediatamente dopo il parto placentare (percorso sul campo preferito). Trattamento PPH: 10-40 unità in 1 litro IV, infondere a 40-80 mU/min. Se IV non disponibile: 10 unità IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Somministrare DOPO il parto placentare: donare prima del parto può intrappolare la placenta.",
+  "contraindications": [
+    "Prima del parto placentare (può intrappolare la placenta)",
+    "Sofferenza fetale con testa non consegnata",
+    "Ipersensibilità nota"
+  ],
+  "warnings": [
+    "DARE DOPO CHE LA PLACENTA È STATA CONSEGNA - intrappolare la placenta è una complicazione pericolosa per la vita.",
+    "Il bolo IV può causare grave ipotensione e aritmia cardiaca: diluire e infondere sempre lentamente.",
+    "Effetto antidiuretico con grandi volumi: monitoraggio dell'iponatriemia."
+  ],
+  "regional_names": {
+    "generic": "ossitocina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A: solo per uso ostetrico.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Uterotonico primario. Se l'atonia uterina non risponde, prendere in considerazione il misoprostolo, l'acido tranexamico (TXA), la compressione uterina bimanuale e il MEDEVAC rapido."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

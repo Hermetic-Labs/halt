@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Sefazolin",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Terserah",
+    "Kefzol"
+  ],
+  "description": "Sefalosporin generasi pertama. Antibiotik parenteral lini pertama untuk infeksi luka serius dan profilaksis bedah. Cakupan gram positif yang baik termasuk MSSA. Berikan dalam waktu 60 menit setelah sayatan bedah untuk profilaksis.",
+  "indications": [
+    "Profilaksis luka operasi",
+    "Infeksi jaringan lunak yang serius",
+    "Profilaksis fraktur terbuka",
+    "Infeksi kulit dan struktur kulit"
+  ],
+  "dose": "1-2g IV/IM setiap 8 jam. Profilaksis bedah: 2g IV dalam waktu 60 menit sebelum sayatan. Ulangi 2g jika operasi > 4 jam.",
+  "route": [
+    "IV",
+    "SAYA"
+  ],
+  "window": "Untuk profilaksis bedah: berikan dalam waktu 60 menit setelah sayatan.",
+  "contraindications": [
+    "Alergi sefalosporin yang diketahui",
+    "Alergi penisilin parah (reaktivitas silang 5-10%)"
+  ],
+  "warnings": [
+    "Reaktivitas silang dengan alergi penisilin: gunakan dengan hati-hati pada pasien alergi penisilin.",
+    "Sesuaikan dosis pada gangguan ginjal."
+  ],
+  "regional_names": {
+    "generic": "cefazolin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM setiap 8 jam (maks 2g/dosis). Profilaksis: 30 mg/kg (maks 2g) sebelum sayatan.",
+      "note": "Aman dan dipelajari dengan baik di bidang pediatri."
+    },
+    "obstetric": {
+      "note": "Aman pada kehamilan dan menyusui. Antibiotik parenteral pilihan untuk prosedur obstetrik."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

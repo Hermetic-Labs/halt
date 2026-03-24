@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxycycline",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramycin",
+    "Doryx"
+  ],
+  "description": "Antibiotik tetrasiklin spektrum luas. Alternatif profilaksis tatu lisan kanggo pasien alergi penisilin. Uga efektif tumrap organisme atipikal lan sawetara penyakit sing ditularake vektor (profilaksis malaria ing wilayah endemik).",
+  "indications": [
+    "profilaksis tatu (alergi penisilin)",
+    "Infeksi jaringan alus",
+    "tatu cokotan",
+    "Profilaksis malaria ing wilayah endemik"
+  ],
+  "dose": "100 mg PO saben 12 jam x 7 dina.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Mulai ing 3 jam saka ciloko kanggo profilaksis tatu.",
+  "contraindications": [
+    "Kandhutan (nyebabake warna untu janin lan nyegah pertumbuhan balung)",
+    "Anak ing 8 taun (alasan padha)",
+    "Gagal ati sing abot"
+  ],
+  "warnings": [
+    "KONTRAINDIKASI nalika meteng - gunakake amoxicillin.",
+    "KONTRAINDIKASI ing bocah-bocah ing umur 8 taun.",
+    "Photosensitivity - menehi saran supaya pasien ora kena sinar srengenge.",
+    "Aja njupuk karo panganan sing sugih kalsium, antacid, utawa wesi - ngganggu penyerapan."
+  ],
+  "regional_names": {
+    "generic": "doksisiklin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Contraindicated ing 8 taun. Umur 8+: 2-4 mg / kg / dina dibagi saben 12 jam (maks 100 mg / dosis).",
+      "note": "Gunakake amoxicillin kanggo bocah-bocah ing umur 8 taun."
+    },
+    "obstetric": {
+      "note": "KONTRAINDIKASI nalika meteng - nyebabake cilaka janin. Gunakake amoxicillin tinimbang."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

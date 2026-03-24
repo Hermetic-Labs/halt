@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Farsamooyinka Dhaqdhaqaaqa Bukaanka",
+  "category": "casualty-movement",
+  "skill_level": "Aasaaska",
+  "time_estimate": "1-30 min iyadoo ku xiran masaafada iyo habka",
+  "description": "U rarida dhaawaca dabka hoostiisa ama meel nabdoon si loogu daweeyo. Habkani wuxuu ku xiran yahay dhulka, fogaanta, tirada samatabbixiyeyaasha, iyo dhaawacyada dhaawaca. Taxadirka xawaaraha iyo laf dhabarta waa go'aan xeeladeed -- TCCC, khatartu waxay qaadataa mudnaanta.",
+  "equipment": [
+    "Qashin SKED (doorbiday)",
+    "Qashinka NATO / Sariiraha la qaadi karo",
+    "Qashinka la hagaajiyay: tiirarka + jaakadaha / ponchos",
+    "Gacan-ku-jiid (direys ama suunka)",
+    "dharbaaxada TACEVAC"
+  ],
+  "steps": [
+    "DARYEELKA DABKA KU HOOS YAHAY: Soo celi dabka marka hore haddii aad hubaysan. Dhaqdhaqaaqa dhaawaca adigoo isticmaalaya habka ugu dhaqsaha badan ee jiidid -- ha u joogsan in lagu daweeyo aagga dilka.",
+    "DEJINTA DEGDEGGA AH (hal samatabbixiye): qabso kuleej/jiid garbaha, dhabarka u jiid. Ka ilaali madaxa saamaynta.",
+    "DABKA QAADASHADA (hal samatabbixiye): dhaawaca garbaha korkiisa masaafo dheer -- waxay u baahan tahay dhaawacu inuu miyir daboolmo ama la kaashado.",
+    "LABA QOF BAA: samatabbixiyeyaashu waxay isku xiraan gacmaha dhabarka iyo jilbaha dhaawaca. Ka dhaqsiyaha badan u jiidida masaafo gaaban.",
+    "QASHINKA LA HORMARAY: dhig laba tiir oo 18 inji u dhexeeya. Ku dheji jaakadaha tirarka leh badhamada gudaha. Tijaabi ka hor inta aanad shubin dhaawaca.",
+    "QASHIN QABSIGA AH: is-rog-rog, hoos gal dhaawacyada, duub oo ku xafid xarkaha. Waxay u baahan tahay 2-4 sideyaal.",
+    "Marka la raraynayo: kor u qaad tirinta 3, ilaali isku toosinta madaxa/jirka, yaree dhaqdhaqaaqa laf dhabarta marka ay suurtagal tahay.",
+    "Haddii dhaawaca laf-dhabarta laga shakiyo oo aan khatar ahayn: sii wad xasilinta khadka inta dhaqdhaqaaqa oo dhan. Hal qof oo u heellan xakamaynta madaxa.",
+    "U dhaqaaq daboolka, ka dibna dib u qiimee ABC."
+  ],
+  "warnings": [
+    "Mudnaanta TCCC: nolosha> addimada> taxadarka laf dhabarta. Ha dib u dhigin dhaqdhaqaaqa aagga dilaaga ah ee taxaddarrada laf dhabarta.",
+    "Qaadashada dabdemiska waa ka hortag looga shakisan yahay dhaawaca laf dhabarta, jabka femur, ama dhaawaca caloosha oo gala.",
+    "Qashin-qubka oo la hagaajiyay: tijaabi awoodda miisaanka ka hor intaadan ku kalsoonayn qof dhaawac ah.",
+    "U guurista dhibbanaha dalxiiska: hubi dalxiiska ma dabcin inta lagu jiro dhaqdhaqaaqa."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Carruurtu way ka fudud yihiin -- samatabbixiye keliya ayaa qaada muddo dheer. Ilaali madaxa qiyaas ahaan ka weyn -- xarunta sare ee cufisjiidka marka aad qaadid."
+    },
+    "obstetric": {
+      "note": "Ka fogow meelaynta u nugul ama cadaadiska caloosha. Xagga dambe (dhinaca bidix ee la door bidaayo) ama gaadiidka dhabarka oo leh miskaha bidix."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

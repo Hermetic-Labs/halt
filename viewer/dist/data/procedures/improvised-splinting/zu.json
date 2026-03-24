@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Ukuhlukaniswa Okuthuthukisiwe",
+  "category": "ortho-stabilization",
+  "skill_level": "Okuyisisekelo",
+  "time_estimate": "5-10 imiz",
+  "description": "Khipha ukuphuka usebenzisa izinto ezitholakalayo ukuze uvimbele ukulimala okwengeziwe, unciphise ubuhlungu, futhi ukhawule ukulahleka kwegazi ezicubu ezizungezile. I-Splint endaweni itholakele ngaphandle uma ukujikeleza kusengozini -- bese uqondisa kahle.",
+  "equipment": [
+    "I-SAM splint (kuyakhethwa)",
+    "Omagazini abagoqiwe, izinti, izigxobo zamatende (insimu ethuthukisiwe)",
+    "Amabhandeshi e-Cravat / angunxantathu",
+    "I-padding (izingubo, igwebu)",
+    "Itheyiphu noma imicu yendwangu"
+  ],
+  "steps": [
+    "Veza futhi uhlole ukulimala -- hlola ukujikeleza, ukuzwa, ukunyakaza (CSM) kude ukuze kuphuke ngaphambi nangemuva.",
+    "Lawula noma yikuphi ukopha okusebenzayo ngaphambi kokuhlukana.",
+    "I-Pad bony ivelele ngokukhululekile ukuvimbela izilonda zokucindezela.",
+    "Khetha impahla ephothiweyo isikhathi eside ngokwanele ukuthi inganyakazi ilunga ngenhla NAngaphansi kokuphuka.",
+    "Isikhundla somlenze endaweni yokunethezeka noma ukuqondanisa kwe-anatomical -- ungaphoqi.",
+    "Faka izinto zokunamathisela, bese unamathisela. Vikela ngamabhandeshi noma imichilo yendwangu.",
+    "UNGAQONGQWANGA kakhulu -- shiya iminwe/izinzwane zivezwe ukuze ugade i-CSM.",
+    "Phinda uhlole i-CSM ngemva kokufaka isicelo -- xegisa ngokushesha uma ukujikeleza konakala.",
+    "Phakamisa isitho uma kungenzeka ukunciphisa ukuvuvukala.",
+    "Isikhathi sedokhumenti sohlelo lokusebenza oluhlukene."
+  ],
+  "warnings": [
+    "Phinda uhlole i-CSM njalo emizuzwini eyi-15-30 -- ukuvuvukala kungenza i-splint efanele ibe i-tourniquet.",
+    "Ukuqhekeka okuvulekile: vala inxeba ngendwangu eyinyumba kuqala, bese ugoqa. UNGABUYI ithambo libuyele phakathi.",
+    "Ukuphuka kwe-femur kungalahlekelwa yigazi elingu-1-2L ethangeni -- phatha kabi ukushaqeka.",
+    "Okusoleka ukuthi kuphuka umgogodla: ungathuthukisi ukuhlukaniswa -- nciphisa ukunyakaza, gcina ukuzinza okusemgqeni."
+  ],
+  "follows": [
+    "ingcindezi eqondile",
+    "tourniquet-uhlelo lokusebenza"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Amapuleti okukhula ezinganeni abuthakathaka kunemigqa -- ukuphuka okusolakalayo ngisho nangendlela encane. Ukuphuka kwe-Torus (ibhande) kungase kube nokuvuvukala okuncane."
+    },
+    "obstetric": {
+      "note": "Kusebenza ukuhlukaniswa okujwayelekile. Gwema ukuma okude kwe-supine -- ukutsheka kwesobunxele kwesobunxele uma ilele phansi."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "s0007xa",
+  "icd10": "S0007XA",
+  "name": "ሌላ ላይ ላዩን የራስ ቆዳ ንክሻ፣ የመጀመሪያ ገጠመኝ",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "ሌላ ላዩን የራስ ቆዳ ንክሻ፣ የመጀመሪያ ገጠመኝ",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

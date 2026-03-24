@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s72334q",
+    "icd10":  "S72334Q",
+    "name":  "Nondisplaced oblique fracture of shaft of right femur, subsequent encounter for open fracture type I or II with malunion",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced oblique fracture of shaft of right femur, subsequent encounter for open fracture type I or II with malunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

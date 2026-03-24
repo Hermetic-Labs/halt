@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "versatus",
+    "Nayzilam"
+  ],
+  "description": "Breve-agens benzodiazepine cum rapido impetu. Praelatus pro sedatione processuali, RSI prae-medicationis, et IM/IN administratione captionis. IM et itinera intranasalia significantem commoditatem in campi occasus praebent.",
+  "indications": [
+    "Sedation processualis",
+    "RSI pre-medicamentum (cum ketamine)",
+    "Captio procuratio (IM / IN cum IV unavailable)",
+    "Agitatio procuratio"
+  ],
+  "dose": "Sedation: 0.05-0.1 mg/kg IV titratas. Processus: 1-5 mg IV tardus dis. IM: 0.2 mg/kg. IN: 0.2 mg/kg (max 10 mg). Status epilepticus IM: 10 mg IM (adulta).",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN'"
+  ],
+  "window": "",
+  "contraindications": [
+    "Acutus angustus glaucoma",
+    "Vinolentiae alcoholis acutus cum compromisso cardiovasculares",
+    "Nota hypersensitivity"
+  ],
+  "warnings": [
+    "Depressione respiratorii -- monitor airway, agente inversio (flumazenil) si available.",
+    "Hypotensio praesertim cum coadministratione opioidali.",
+    "Celeri IV iniectio apnea facit - lente dis."
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Sedation: 0.05-0.1 mg/kg IV. IM: 0.1-0.2 mg/kg. IN: 0.2-0.3 mg/kg. Captio IM: 0.2 mg/kg (max 10 mg).",
+      "note": "IN itinere usui in pueris praecipue -- vitat IV accessum."
+    },
+    "obstetric": {
+      "note": "Cruces placentae. Sedation neonatales datur. Utere dosi minimum efficax; Monitor neonate si detur prope partus."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

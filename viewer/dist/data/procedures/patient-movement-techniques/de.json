@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Patientenbewegungstechniken",
+  "category": "casualty-movement",
+  "skill_level": "Grundlegend",
+  "time_estimate": "1-30 Min. je nach Entfernung und Methode",
+  "description": "Einen unter Beschuss geratenen Unfallopfer zur Behandlung an einen sichereren Ort bringen. Die Methode hängt vom Gelände, der Entfernung, der Anzahl der Retter und den Verletzungen des Unfallopfers ab. Geschwindigkeit vs. Vorsicht vor der Wirbelsäule ist eine taktische Entscheidung – bei TCCC hat die Bedrohung Vorrang.",
+  "equipment": [
+    "SKED-Wurf (bevorzugt)",
+    "NATO-Trage / tragbare Trage",
+    "Improvisierter Wurf: Stöcke + Jacken/Ponchos",
+    "Ziehgriffe (Uniform oder Geschirr)",
+    "TACEVAC-Schlinge"
+  ],
+  "steps": [
+    "VORSICHT UNTER FEUER: Erwidern Sie zuerst das Feuer, wenn Sie bewaffnet sind. Bewegen Sie den Verletzten mit der schnellsten Zugmethode – halten Sie die Behandlung nicht in der Todeszone an.",
+    "HASTY DRAG (ein Retter): Kragen/Ziehgriff an den Schultern fassen, am Rücken ziehen. Kopf vor Stößen schützen.",
+    "FEUERWEHRMANN-TRAGEN (ein Retter): Verletzte über längere Strecken über die Schulter heben – erfordert, dass der Verletzte bewusstlos oder kooperativ ist.",
+    "ZWEI-PERSONEN-TRAGEN: Retter verbinden die Arme unter dem Rücken und den Knien des Verletzten. Für kurze Distanzen schneller als Schleppen.",
+    "IMPROVISIERTER EINSATZ: Legen Sie zwei Stangen im Abstand von 18 Zoll auseinander. Weben Sie Jacken durch Stangen mit Knöpfen innen. Testen Sie vor dem Verladen des Unfallopfers.",
+    "Abtransport der Streu: ausrollen, unter den Verletzten schieben, einwickeln und mit Gurten sichern. Benötigt 2-4 Träger.",
+    "Beim Beladen: Heben Sie das Gewicht bis 3 an, behalten Sie die Ausrichtung von Kopf und Körper bei und minimieren Sie die Bewegung der Wirbelsäule, wenn möglich.",
+    "Bei Verdacht auf eine Wirbelsäulenverletzung und keine Gefahr: Halten Sie während der gesamten Bewegung die Inline-Stabilisierung aufrecht. Eine Person, die sich der Kopfkontrolle widmet.",
+    "Gehen Sie in Deckung und bewerten Sie dann ABC neu."
+  ],
+  "warnings": [
+    "TCCC-Priorität: Leben > Gliedmaßen > Wirbelsäulenvorsorge. Verzögern Sie die Bewegung aus einer Todeszone nicht aus Vorsichtsgründen für die Wirbelsäule.",
+    "Das Tragen als Feuerwehrmann ist bei Verdacht auf eine Wirbelsäulenverletzung, einen Oberschenkelbruch oder ein penetrierendes Bauchtrauma kontraindiziert.",
+    "Improvisierte Würfe: Testen Sie die Gewichtskapazität, bevor Sie sich einem Verletzten anvertrauen.",
+    "Transport eines Verletzten mit Blutsperre: Überprüfen Sie, ob sich die Blutsperre während der Bewegung gelockert hat."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Kinder sind leichter – ein einziger Retter trägt länger. Den Kopf proportional größer halten – höherer Schwerpunkt beim Tragen."
+    },
+    "obstetric": {
+      "note": "Vermeiden Sie Bauchlage oder Druck auf den Bauch. Seitlicher (linke Seite bevorzugt) oder Rückentransport mit linkem Hüftkeil."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

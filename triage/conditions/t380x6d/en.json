@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t380x6d",
+    "icd10":  "T380X6D",
+    "name":  "Underdosing of glucocorticoids and synthetic analogues, subsequent encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Underdosing of glucocorticoids and synthetic analogues, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

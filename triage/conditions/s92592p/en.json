@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s92592p",
+    "icd10":  "S92592P",
+    "name":  "Other fracture of left lesser toe(s), subsequent encounter for fracture with malunion",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Other fracture of left lesser toe(s), subsequent encounter for fracture with malunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Prevención de hipotermia (H -- MARZO)",
+  "category": "temperature-management",
+  "skill_level": "cualquier respondedor",
+  "time_estimate": "2-3 minutos",
+  "description": "Combatir la hipotermia es una de las principales causas de muerte prevenibles en traumatismos. La tríada letal: hipotermia + acidosis + coagulopatía. Prevenir a toda costa.",
+  "equipment": [
+    "manta reflectante del calor",
+    "kit-de-prevención-de-hipotermia",
+    "líquidos-iv-tibios-si-disponibles"
+  ],
+  "steps": [
+    "Quítese toda la ropa mojada tan pronto como sea tácticamente posible.",
+    "Cubra al paciente con una manta (espacial) reflectante del calor, con el lado brillante hacia adentro, hacia el paciente.",
+    "Envolver cabeza y cuello (lugar de pérdida importante de calor).",
+    "Aísle del suelo: coloque algo entre el paciente y la superficie fría del suelo.",
+    "Administre líquidos intravenosos tibios si están disponibles.",
+    "No permita que el paciente tiemble sin protección: los escalofríos son una señal de advertencia temprana.",
+    "Controle la temperatura si hay un termómetro disponible. Por debajo de 35°C (95°F) = hipotermia."
+  ],
+  "warnings": [
+    "La hipotermia empeora la coagulopatía: los pacientes sangrantes se enfrían más rápido y coagulan con menos eficacia.",
+    "La prevención de la hipotermia de campo debe comenzar en el punto de la lesión, no en el PCC."
+  ],
+  "source": "TCCC / JTS CPG"
+}

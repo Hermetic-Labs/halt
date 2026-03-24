@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Laktatlı Ringer Solüsyonu (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Hartmann'ın Çözümü",
+    "Laktatlı Ringer Enjeksiyonu"
+  ],
+  "description": "Dengeli izotonik kristalloid sıvı. Büyük hacimli travma resüsitasyonunda normal salin yerine tercih edilir; fizyolojik olarak daha dengeli, daha az hiperkloremik asidoz riski. Sodyum, potasyum, kalsiyum, laktat içerir.",
+  "indications": [
+    "Travma resüsitasyonu (hemorajik şokta tercih edilen kristaloid)",
+    "Yanık sıvısı resüsitasyonu (Parkland formülü)",
+    "Hipovolemi",
+    "Sıvı bakımı"
+  ],
+  "dose": "Hemorajik şok: Kan ürünlerine geçmeden önce maksimum 1 L ile sınırlandırın. Hedef SBP 80-90 mmHg penetran travma, 90 mmHg TBI. Yanıklar (Parkland): 4 mL x kg x %TBSA 24 saatte yandı (yarısı ilk 8 saatte).",
+  "route": [
+    "IV",
+    "Giriş Çıkış"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hiperkalemi (potasyum içerir)",
+    "Şiddetli karaciğer yetmezliği (bozulmuş laktat metabolizması - göreceli)"
+  ],
+  "warnings": [
+    "Hala kristaloid, oksijen taşıyamıyor. Kan ürünleri hemorajik şokta üstündür. LR yalnızca bir köprüdür.",
+    "Aynı hattaki kan ürünleriyle karıştırmayınız (kalsiyum pıhtılaşmaya neden olur).",
+    "Penetran travmada kanama kontrolünden önce aşırı canlandırma yapmayın."
+  ],
+  "regional_names": {
+    "generic": "laktatlı Ringer solüsyonu",
+    "UK": "Hartmann'ın çözümü"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 mL/kg bolus, yeniden değerlendirin. Pediatrik travmada NS'ye tercih edilir.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Doğum ve doğumda tercih edilen IV sıvı. Obstetrik kanama resüsitasyonu için uygundur."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

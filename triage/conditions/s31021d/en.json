@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s31021d",
+    "icd10":  "S31021D",
+    "name":  "Laceration with foreign body of lower back and pelvis with penetration into retroperitoneum, subsequent encounter",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Laceration with foreign body of lower back and pelvis with penetration into retroperitoneum, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

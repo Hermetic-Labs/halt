@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t80a11s",
+    "icd10":  "T80A11S",
+    "name":  "Non-ABO incompatibility with delayed hemolytic transfusion reaction, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Non-ABO incompatibility with delayed hemolytic transfusion reaction, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "Isikali se-AVPU",
+  "category": "neurological",
+  "description": "Ukuhlolwa kokuqaphela okushesha kwamaleveli angu-4. Ishesha kune-GCS ekuhlolweni kokuqala.",
+  "instructions": "Hlola izinga eliphezulu lokuphendula isiguli esilibonisayo.",
+  "scoring": [
+    {
+      "code": "A",
+      "label": "Isexwayiso",
+      "description": "Isiguli siphapheme, siyazi, futhi siphendula ngokujwayelekile"
+    },
+    {
+      "code": "V",
+      "label": "Izwi",
+      "description": "Isiguli siphendula kuphela ekushukunyisweni ngamazwi"
+    },
+    {
+      "code": "P",
+      "label": "Ubuhlungu",
+      "description": "Isiguli sisabela kuphela ekushukunyisweni okubuhlungu (ukuhlikihlwa komgogodla, ukucindezela kombhede wezinzipho)"
+    },
+    {
+      "code": "U",
+      "label": "Ayiphenduli",
+      "description": "Akukho mpendulo kunoma yisiphi isisusa -- ukungenelela okusheshayo kwendlela yomoya edingekayo"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "A",
+      "triage": "Izinzile -- qhubeka nokuhlola"
+    },
+    {
+      "code": "V",
+      "triage": "Mayelana -- qapha indlela yomoya"
+    },
+    {
+      "code": "P",
+      "triage": "Okubalulekile -- indlela yomoya esengozini, i-GCS ngokuvamile <= 8"
+    },
+    {
+      "code": "U",
+      "triage": "Ngokushesha -- phatha indlela yomoya manje"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

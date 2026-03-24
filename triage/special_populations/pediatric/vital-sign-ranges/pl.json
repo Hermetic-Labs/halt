@@ -1,0 +1,43 @@
+{
+  "id": "pediatric-vital-sign-ranges",
+  "name": "Zakresy prawidłowych parametrów życiowych u dzieci",
+  "description": "Odniesienie dostosowane do wieku dla HR, RR i SBP. Ma kluczowe znaczenie dla prawidłowej klasyfikacji segregacji pacjentów pediatrycznych – zakresy normy u dorosłych są nieprawidłowe w przypadku dzieci.",
+  "ranges": [
+    {
+      "age": "Noworodek (0-1 miesiąc)",
+      "hr": "100-160",
+      "rr": "30-60",
+      "sbp_mmhg": "60-90",
+      "gcs_min": 15
+    },
+    {
+      "age": "Niemowlę (1-12 miesięcy)",
+      "hr": "90-150",
+      "rr": "30-60",
+      "sbp_mmhg": "70-100",
+      "gcs_min": 15
+    },
+    {
+      "age": "Małe dziecko (1-3 lata)",
+      "hr": "80-130",
+      "rr": "24-40",
+      "sbp_mmhg": "80-110",
+      "gcs_min": 15
+    },
+    {
+      "age": "Dziecko (3-12 lat)",
+      "hr": "70-120",
+      "rr": "18-30",
+      "sbp_mmhg": "80-120",
+      "gcs_min": 15
+    },
+    {
+      "age": "Młodzież (>12 lat)",
+      "hr": "60-100",
+      "rr": "12-20",
+      "sbp_mmhg": "90-130",
+      "gcs_min": 15
+    }
+  ],
+  "source": "PALS Guidelines / JTS Pediatric CPG"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "ሚዳዞላም",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "ጥቅስ",
+    "ናይዚላም"
+  ],
+  "description": "ፈጣን ጅምር ያለው አጭር እርምጃ ቤንዞዲያዜፔይን። ለሂደት ማስታገሻ፣ RSI ቅድመ-መድሀኒት እና IM/IN የሚጥል አስተዳደር ተመራጭ። IM እና intranasal መስመሮች በመስክ ቅንብሮች ውስጥ ጉልህ ጥቅም ይሰጣሉ.",
+  "indications": [
+    "የሂደት ማስታገሻ",
+    "RSI ቅድመ-መድሃኒት (ከኬቲን ጋር)",
+    "የሚጥል አስተዳደር (አይኤም/ኢን IV በማይገኝበት ጊዜ)",
+    "የቅስቀሳ አስተዳደር"
+  ],
+  "dose": "ማስታገሻ: 0.05-0.1 mg / ኪግ IV titrated. የአሰራር ሂደት: 1-5 mg IV የዘገየ ግፊት. IM: 0.2 mg/kg. ውስጥ: 0.2 mg / ኪግ (ከፍተኛ 10 mg). የሚጥል በሽታ IM: 10 mg IM (አዋቂ)።",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "ውስጥ"
+  ],
+  "window": "",
+  "contraindications": [
+    "አጣዳፊ ጠባብ-አንግል ግላኮማ",
+    "የልብና የደም ሥር (cardiovascular) ችግር ያለበት አልኮል መመረዝ",
+    "የሚታወቅ hypersensitivity"
+  ],
+  "warnings": [
+    "የአተነፋፈስ ጭንቀት - የአየር መንገዱን ይቆጣጠሩ ፣ የሚገኝ ከሆነ ተገላቢጦሽ ወኪል (flumazenil) ይኑርዎት።",
+    "ሃይፖታቴሽን በተለይ ከኦፒዮይድ ጋር።",
+    "ፈጣን IV መርፌ አፕኒያን ያስከትላል - ቀስ ብለው ይግፉ።"
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "ማስታገሻ: 0.05-0.1 mg / ኪግ IV. IM: 0.1-0.2 mg / ኪግ. ውስጥ: 0.2-0.3 mg / ኪግ. የሚጥል IM፡ 0.2 mg/kg (ከፍተኛ 10 mg)።",
+      "note": "በመንገድ ላይ በተለይ በልጆች ላይ ጠቃሚ - IV መድረስን ያስወግዳል።"
+    },
+    "obstetric": {
+      "note": "የእንግዴ ልጅን ይሻገራል. አራስ ማስታገሻ ይቻላል. አነስተኛውን ውጤታማ መጠን ይጠቀሙ; በአራስ መወለድ አቅራቢያ ከተሰጠን ይቆጣጠሩ።"
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

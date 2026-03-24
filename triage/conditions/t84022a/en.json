@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t84022a",
+    "icd10":  "T84022A",
+    "name":  "Instability of internal right knee prosthesis, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Instability of internal right knee prosthesis, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

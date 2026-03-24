@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirina (ácido acetilsalicílico)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Aspirina Bayer",
+    "Ecotrina"
+  ],
+  "description": "Medicamento antiinflamatorio no esteroideo (AINE) con propiedades antiplaquetarias. Tratamiento de primera línea ante la sospecha de síndrome coronario agudo (SCA). Inhibe irreversiblemente la agregación plaquetaria; el efecto dura toda la vida útil de las plaquetas (7 a 10 días).",
+  "indications": [
+    "Sospecha de infarto agudo de miocardio (IM): mastique inmediatamente",
+    "Angina inestable/síndrome coronario agudo",
+    "Accidente cerebrovascular (isquémico, después de excluir el hemorrágico)",
+    "Fiebre y dolor leve-moderado (analgésico)"
+  ],
+  "dose": "ACS: 325 mg VO - MASTICAR (no tragar entero) inmediatamente. Analgésico/antipirético: 325-650 mg VO cada 4-6 h PRN.",
+  "route": [
+    "orden de compra"
+  ],
+  "window": "SCA: Administre lo más pronto posible; mastique inmediatamente si sospecha.",
+  "contraindications": [
+    "Sangrado gastrointestinal activo",
+    "Accidente cerebrovascular hemorrágico",
+    "Alergia conocida a la aspirina o hipersensibilidad a los AINE",
+    "Sangrado grave incontrolado: la aspirina empeora la hemorragia"
+  ],
+  "warnings": [
+    "NO administrar a pacientes hemorrágicos: la aspirina afecta irreversiblemente la función plaquetaria y empeora el sangrado.",
+    "NO administrar a niños menores de 12 años con enfermedades virales: riesgo de síndrome de Reye.",
+    "Irritación gastrointestinal: tómelo con alimentos si no es de emergencia."
+  ],
+  "regional_names": {
+    "generic": "aspirina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgésico/antipirético: 10-15 mg/kg VO cada 4-6 h (máx. 650 mg/dosis). NOTA: Contraindicado en enfermedades virales (síndrome de Reye).",
+      "note": "En su lugar, utilice acetaminofén (paracetamol) para la fiebre en niños con enfermedades virales."
+    },
+    "obstetric": {
+      "note": "Evitar en el embarazo especialmente en el tercer trimestre (cierre prematuro del conducto arterioso). La dosis baja (81 mg) se utiliza para la prevención de la preeclampsia únicamente bajo orientación médica."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

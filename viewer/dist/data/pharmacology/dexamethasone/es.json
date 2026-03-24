@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Dexametasona",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Decadrón",
+    "DexPak"
+  ],
+  "description": "Corticosteroide sintético de acción prolongada. Se utiliza para el edema cerebral (edema cerebral de gran altitud - HACE, TBI), reacciones alérgicas graves, edema de las vías respiratorias y crisis suprarrenal. Antiinflamatorio, no anabólico.",
+  "indications": [
+    "Edema cerebral de altura (HACE)",
+    "Edema de las vías respiratorias (estridor post-extubación, crup)",
+    "Edema cerebral por tumor o absceso",
+    "Reacciones alérgicas graves (complementario de epinefrina)",
+    "Crisis suprarrenal",
+    "Complemento antiemético (perioperatorio)"
+  ],
+  "dose": "Edema cerebral/HACE: 8-10 mg IV/IM inicial, luego 4 mg cada 6 h. Edema de las vías respiratorias: 10 mg IV una vez. Grupa: 0,6 mg/kg IM/VO (máx. 16 mg). Crisis suprarrenal: 4 mg IV.",
+  "route": [
+    "IV",
+    "OI",
+    "IM",
+    "orden de compra"
+  ],
+  "window": "HACE: Dar lo antes posible junto con el descenso inmediato.",
+  "contraindications": [
+    "Infecciones fúngicas sistémicas (sin cobertura antimicótica)",
+    "Vacunas de virus vivos en un plazo de 30 días (relativa)"
+  ],
+  "warnings": [
+    "No reemplaza el descenso y el oxígeno para HACE; úselo solo como complemento.",
+    "Hiperglucemia: controle la glucosa en sangre en los diabéticos.",
+    "Inmunosupresión con uso prolongado.",
+    "Las dosis únicas para emergencias generalmente son muy seguras."
+  ],
+  "regional_names": {
+    "generic": "dexametasona"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Grupa: 0,6 mg/kg VO/IM (máx. 16 mg). Edema cerebral: 0,5-1 mg/kg IV (máx. 10 mg). Edema de las vías respiratorias: 0,5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM cada 24 h x 2 dosis utilizadas para acelerar la madurez pulmonar fetal entre las 24 y 34 semanas de gestación en trabajo de parto prematuro. Discuta con el proveedor más alto disponible."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

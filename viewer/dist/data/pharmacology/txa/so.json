@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Tranexamic Acid (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Cyklokapron",
+    "Lysteda"
+  ],
+  "description": "Walaxda Antifibrinolytic ee joojisa burburka xinjirowga dhiigga. Waxay si weyn u yaraynaysaa dhimashada shoogga dhiigbaxa marka hore loo bixiyo. Ay ku taliso CoTCCC dhammaan dhaawacyada leh dhiigbax weyn ama halis ugu jira dhiigbax weyn.",
+  "indications": [
+    "Dhiigbax gudaha ah oo muuqda ama looga shakisan yahay",
+    "Hemorrhagic shock",
+    "Khatarta sare ee dhiigbaxa (farsamaynta dhaawaca)"
+  ],
+  "dose": "1g IV/IO in ka badan 10 daqiiqo, oo ay ku xigto 1g IV/IO in ka badan 8 saacadood. Haddii IV/IO aan la heli karin: 650mg PO x2 (1.3g wadarta) -- TCCC PO doorashada.",
+  "route": [
+    "IV",
+    "IO",
+    "PO"
+  ],
+  "window": "WAA in lagu maamulaa 3 saacadood gudahooda ka dib dhaawac. Wixii ka dambeeya 3 saacadood, TXA waxa laga yaabaa inay kordhiso dhimashada -- ha bixin.",
+  "contraindications": [
+    "Taariikhda cudurka thromboembolic (DVT, PE, stroke)",
+    "Xididdada Xididka Xididka Xididka Xididka Xididka ee La Faafiyay (DIC)",
+    "> 3 saacadood ka dib dhaawaca"
+  ],
+  "warnings": [
+    "Log Time Time-ka isla markiiba -- daaqadu waa 3 saacadood wakhtiga dhaawaca, ma aha wakhtiga imaatinka.",
+    "Ha ku khaldin qiyaasta IV-ga (1g) iyo qiyaasta afka."
+  ],
+  "regional_names": {
+    "generic": "tranexamic acid",
+    "US": "Cyklokapron",
+    "UK": "Cyklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg IV (ugu badnaan 1g). Caddeymo soo baxaya -- isticmaal xukun caafimaad.",
+      "note": "Isla daaqad 3-saac ah ayaa quseysa."
+    },
+    "obstetric": {
+      "note": "Lagu tilmaamay dhiigbaxa dhalmada ka dib. Badbaadada uurka. Isla qiyaas qaangaar ah ayaa khuseysa."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "Iyatọ SALT (Iwọn, Ayẹwo, Awọn Itumọ Igbalaaye, Itọju/ Irinna)",
+  "category": "mass-casualty",
+  "description": "Ilana iyasọ olupaniyan pupọ. Iwọnwọn fun awọn iṣẹlẹ ipaniyan pupọ ni ologun ati awọn eto ara ilu.",
+  "instructions": "Igbesẹ 1: too agbaye (nrin, fifẹ, ṣi). Igbesẹ 2: Ṣe ayẹwo ni aṣẹ pataki. Igbesẹ 3: Ṣe awọn ilowosi igbala (ṣakoso iṣakoso ẹjẹ nla, ọna atẹgun ṣiṣi, idinku abẹrẹ, awọn abẹrẹ adaṣe). Igbesẹ 4: Fi ẹka sọtọ.",
+  "categories": [
+    {
+      "color": "dudu",
+      "label": "Oreti/Oku",
+      "description": "Ko ṣee ṣe lati yege awọn orisun ti o wa, tabi ti o ti jẹrisi oku"
+    },
+    {
+      "color": "pupa",
+      "label": "Lẹsẹkẹsẹ (T1)",
+      "description": "Awọn ipalara ti o lewu igbesi aye, yoo ye pẹlu ilowosi lẹsẹkẹsẹ"
+    },
+    {
+      "color": "ofeefee",
+      "label": "Idaduro (T2)",
+      "description": "Awọn ipalara to ṣe pataki ṣugbọn iduroṣinṣin, le duro fun itọju"
+    },
+    {
+      "color": "alawọ ewe",
+      "label": "Pọọku (T3)",
+      "description": "Awọn ipalara kekere -- nrin ti o gbọgbẹ"
+    },
+    {
+      "color": "grẹy",
+      "label": "Ireti",
+      "description": "Ipalara ti ko le yege fun awọn orisun lọwọlọwọ - itọju itunu nikan"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "JumpSTART triage algorithm ṣe atunṣe SALT fun awọn alaisan ọmọde. Awọn iloro oṣuwọn atẹgun ati awọn igbesẹ igbelewọn yatọ fun awọn ọmọde labẹ ọdun 8."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

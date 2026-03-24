@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "Nleta SALT (ụdị, nyocha, ntinye aka na-azọpụta ndụ, ọgwụgwọ / njem)",
+  "category": "mass-casualty",
+  "description": "Protocol ịnyapụta oke ọnwụ. Ọkọlọtọ maka ihe omume ọtụtụ ihe owuwu na ntọala ndị agha na ndị nkịtị.",
+  "instructions": "Kwụpụ 1: Ụdị zuru ụwa ọnụ (ịje ije, ife efe, ka). Nzọụkwụ 2: Nyochaa n'usoro ka mkpa. Kwụpụ 3: Mee ihe enyemaka na-azọpụta ndụ (jikwaa nnukwu ọbara ọgbụgba, ụzọ ikuku mepere emepe, mgbaka agịga, ndị na-etinye onwe). Nzọụkwụ 4: Kenye udi.",
+  "categories": [
+    {
+      "color": "nwa",
+      "label": "Onye tụrụ anya/Nwụrụ anwụ",
+      "description": "O yighị ka ị ga-adị ndụ enyere akụrụngwa dịnụ, ma ọ bụ kwenye na ọ nwụrụ anwụ"
+    },
+    {
+      "color": "uhie",
+      "label": "Ngwa ngwa (T1)",
+      "description": "Mmerụ ahụ na-eyi ndụ egwu ga-adị ndụ site na ntinye aka ozugbo"
+    },
+    {
+      "color": "odo",
+      "label": "Egbutere (T2)",
+      "description": "Ahụhụ siri ike mana kwụsiri ike, nwere ike ichere nlekọta"
+    },
+    {
+      "color": "akwụkwọ ndụ akwụkwọ ndụ",
+      "label": "Obere (T3)",
+      "description": "Obere mmerụ -- ije merụrụ"
+    },
+    {
+      "color": "agba ntụ",
+      "label": "Onye tụrụ anya",
+      "description": "Mmerụ ahụ na-agaghị anwụ anwụ nyere akụrụngwa ugbu a -- nlekọta nkasi obi naanị"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "JumpSTART triage algọridim na-agbanwe SALT maka ndị ọrịa ụmụaka. Ọnụ ụzọ iku ume na usoro ntule dị iche iche maka ụmụaka na-erubeghị afọ 8."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

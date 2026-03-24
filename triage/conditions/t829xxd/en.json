@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t829xxd",
+    "icd10":  "T829XXD",
+    "name":  "Unspecified complication of cardiac and vascular prosthetic device, implant and graft, subsequent encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Unspecified complication of cardiac and vascular prosthetic device, implant and graft, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

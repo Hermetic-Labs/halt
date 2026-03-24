@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Ativan"
+  ],
+  "description": "Medium-agens benzodiazepine. Curatio prima-linea IV/IM pro statu epileptico et caducis acutis. Item ad sedationem processualem et anxiolysin adhibita.",
+  "indications": [
+    "Status epilepticus (prima linea IV)",
+    "Acute captionis procuratio",
+    "Sedation processualis",
+    "Sollicitudo seu agitatio"
+  ],
+  "dose": "Captio: 4 mg IV/IO in 2 min dis tardus. Repetere 4 mg in 5-10 min si occupatio pergit. IM: 4 mg si IV unavailable.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "Acutus angulus angustus glaucoma",
+    "Gravis respiratorii tristitia",
+    "Propylene glycol hypersensitivity"
+  ],
+  "warnings": [
+    "Causae tristitia respiratoriae -- BVM et airway apparatu parata habent.",
+    "Sedation perennet 6-8 horas - monitor airway.",
+    "agitatio paradoxa fieri potest, praesertim in senibus et pueris."
+  ],
+  "regional_names": {
+    "generic": "lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV/IM (max 4 mg/dosis). Iterare semel in 5-10 min si opus fuerit.",
+      "note": "Maluit super diazepam pro IV captionis administratione in pueris."
+    },
+    "obstetric": {
+      "note": "Cruces placentae - depressio respiratorii neonatalis possibilis. Utere in statu materno epileptico cum beneficium periculum praeponderat."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

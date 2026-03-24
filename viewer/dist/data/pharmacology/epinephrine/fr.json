@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Épinéphrine (Adrénaline)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrénaline"
+  ],
+  "description": "Catécholamine endogène à activité alpha et bêta-adrénergique. Traitement de première intention de l'anaphylaxie et de l'arrêt cardiaque. En cas d'anaphylaxie, la cuisse IM est préférable à la méthode IV (plus sûre, efficacité équivalente). Ne retardez pas l’accès IV en cas d’anaphylaxie.",
+  "indications": [
+    "Anaphylaxie (première intention)",
+    "Arrêt cardiaque -- FV/TV/PEA/asystolie sans pouls",
+    "Bronchospasme sévère",
+    "Hypotension réfractaire aux liquides"
+  ],
+  "dose": "Anaphylaxie : 0,3-0,5 mg IM (cuisse antérolatérale) | Auto-injecteur 0,3 mg IM. Répétez toutes les 5 à 15 minutes PRN. Arrêt cardiaque : 1 mg IV/IO toutes les 3 à 5 min pendant la RCP. Bronchospasme sévère : 0,3 mg IM.",
+  "route": [
+    "MI",
+    "IV",
+    "OI"
+  ],
+  "window": "En cas d'anaphylaxie : administrez immédiatement par voie IM - ne tardez pas pour l'accès IV.",
+  "contraindications": [
+    "Aucune contre-indication absolue en cas d'urgence mettant en jeu le pronostic vital"
+  ],
+  "warnings": [
+    "L'épinéphrine IV pour l'anaphylaxie ne doit être utilisée qu'en cas d'arrêt cardiaque ou de choc profond - dangereuse si elle est administrée par voie IV à un patient conscient.",
+    "L'extravasation provoque une nécrose des tissus - assure la perméabilité IV.",
+    "Augmente la demande en oxygène du myocarde – soyez prudent en cas de maladie coronarienne connue en dehors de l’arrêt."
+  ],
+  "regional_names": {
+    "generic": "épinéphrine",
+    "UK": "adrénaline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anaphylaxie : 0,01 mg/kg IM (max 0,5 mg). EpiPen Jr (0,15 mg) pour 15-30 kg. Arrêt cardiaque : 0,01 mg/kg IV/IO q3-5 min.",
+      "note": "Utilisez un dosage basé sur le poids. Référence de bande Broselow recommandée."
+    },
+    "obstetric": {
+      "note": "Utilisez le dosage standard pour l’anaphylaxie – la survie maternelle est primordiale. L'épinéphrine est sans danger pendant la grossesse en cas d'urgence mettant la vie en danger."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

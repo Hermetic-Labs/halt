@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oksytocyna",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocin",
+    "Syntocynon"
+  ],
+  "description": "Endogenny hormon peptydowy. Środek maciczny pierwszego rzutu w profilaktyce i leczeniu krwotoku poporodowego (PPH). Powoduje skurcze macicy i zmniejsza utratę krwi po porodzie. Podawany PO porodzie łożyskowym.",
+  "indications": [
+    "Zapobieganie krwotokom poporodowym (codziennie po porodzie)",
+    "Leczenie krwotoku poporodowego (atonia macicy)",
+    "Indukcja porodu (tylko ustawienie kontrolowane)"
+  ],
+  "dose": "Zapobieganie PPH: 10 jednostek domięśniowo bezpośrednio po porodzie łożyska (preferowana droga terenowa). Leczenie PPH: 10-40 jednostek w 1 l IV, podawać w infuzji z szybkością 40-80 mU/min. Jeśli IV jest niedostępne: 10 jednostek IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Podaj PO porodzie łożyskowym – podanie przed porodem może spowodować uwięzienie łożyska.",
+  "contraindications": [
+    "Przed porodem łożyskowym (może uwięzić łożysko)",
+    "Niepokój płodu z niedostarczoną głową",
+    "Znana nadwrażliwość"
+  ],
+  "warnings": [
+    "PODAJ PO DOSTARZENIU ŁOŻYSKA – uwięzienie łożyska jest powikłaniem zagrażającym życiu.",
+    "Bolus dożylny może powodować ciężkie niedociśnienie i arytmię serca – zawsze należy go rozcieńczać i podawać powoli.",
+    "Działanie antydiuretyczne przy dużych objętościach – monitorować pod kątem hiponatremii."
+  ],
+  "regional_names": {
+    "generic": "oksytocyna"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Nie dotyczy – wyłącznie do użytku położniczego.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Pierwotny macioryczny. Jeżeli atonia macicy nie ustępuje, należy rozważyć zastosowanie mizoprostolu, kwasu traneksamowego (TXA), dwuręcznego ucisku macicy i szybkiego zastosowania MEDEVAC."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

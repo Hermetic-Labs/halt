@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Empaque hemostático para heridas",
+  "category": "hemorrhage-control",
+  "skill_level": "salvavidas de combate",
+  "time_estimate": "3-5 minutos",
+  "description": "Taponado de una herida no compresible o de unión con gasa hemostática para controlar la hemorragia donde no se puede aplicar el torniquete.",
+  "equipment": [
+    "gasa hemostática",
+    "guantes-de-nitrilo",
+    "tijeras de trauma",
+    "vendaje compresivo"
+  ],
+  "steps": [
+    "Ponte guantes. Exponga la herida completamente usando tijeras para traumatismos.",
+    "Identifique la fuente de sangrado activo dentro de la cavidad de la herida.",
+    "Abra la gasa hemostática y colóquela firmemente en la herida con el dedo, empujándola directamente hacia la fuente de sangrado.",
+    "Continúe empacando hasta que la cavidad de la herida esté completamente llena.",
+    "Aplique presión directa firme y continua con la palma de la mano durante un mínimo de 3 minutos.",
+    "NO retire ningún material de embalaje una vez aplicado.",
+    "Aplique un vendaje de presión sobre la herida empaquetada.",
+    "Marque la hora en la tarjeta TCCC o en la frente del paciente (por ejemplo, 'PKD 0145')."
+  ],
+  "warnings": [
+    "NO empaquete las heridas penetrantes en el pecho; en su lugar, utilice un sello para el pecho.",
+    "Si cubre una herida en el cuello, aplique presión sin comprimir ambas carótidas simultáneamente.",
+    "Vuelva a evaluar dentro de los 5 minutos si se sospecha una fuente arterial."
+  ],
+  "follows": [
+    "presión directa"
+  ],
+  "precedes": [
+    "aplicación-de-torniquete"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Utilice proporcionalmente menos gasa. Aplique una presión más ligera para evitar la compresión torácica en los bebés."
+    },
+    "obstetric": {
+      "note": "Evite una presión profunda o agresiva cerca del abdomen grávido. Se prefiere una escalada rápida."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

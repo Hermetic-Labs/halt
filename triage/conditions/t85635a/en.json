@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t85635a",
+    "icd10":  "T85635A",
+    "name":  "Leakage of other nervous system device, implant or graft, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Leakage of other nervous system device, implant or graft, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

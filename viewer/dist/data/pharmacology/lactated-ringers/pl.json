@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Roztwór Ringera z dodatkiem mleczanu (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Rozwiązanie Hartmanna",
+    "Zastrzyk Ringera z dodatkiem mleczanu"
+  ],
+  "description": "Zrównoważony izotoniczny płyn krystaloidowy. Preferowany zamiast zwykłej soli fizjologicznej do resuscytacji urazów o dużej objętości – bardziej zrównoważony fizjologicznie, mniejsze ryzyko kwasicy hiperchloremicznej. Zawiera sód, potas, wapń, mleczan.",
+  "indications": [
+    "Resuscytacja urazowa (preferowany krystaloid we wstrząsie krwotocznym)",
+    "Resuscytacja płynowa (wzór Parklanda)",
+    "Hipowolemia",
+    "Konserwacja płynów"
+  ],
+  "dose": "Wstrząs krwotoczny: przed przejściem na produkty krwiopochodne ograniczyć maksymalnie do 1 l. Docelowe SBP 80-90 mmHg uraz penetrujący, 90 mmHg TBI. Oparzenia (Parkland): 4 ml x kg x % TBSA spalone w ciągu 24 godzin (połowa w ciągu pierwszych 8 godzin).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hiperkaliemia (zawiera potas)",
+    "Ciężka niewydolność wątroby (zaburzony metabolizm mleczanu – względny)"
+  ],
+  "warnings": [
+    "Wciąż krystaloid - nie może przenosić tlenu. Produkty krwiopochodne są lepsze w przypadku wstrząsu krwotocznego. LR to tylko mostek.",
+    "Nie mieszać z produktami krwiopochodnymi w tej samej linii (wapń powoduje krzepnięcie).",
+    "NIE należy nadmiernie reanimować w przypadku urazów penetrujących przed opanowaniem krwotoku."
+  ],
+  "regional_names": {
+    "generic": "mleczanowy roztwór Ringera",
+    "UK": "Rozwiązanie Hartmanna"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Bolus 20 ml/kg, ponownie ocenić. Preferowany zamiast NS w przypadku urazów pediatrycznych.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Preferowany płyn dożylny podczas porodu. Nadaje się do resuscytacji krwotoku położniczego."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

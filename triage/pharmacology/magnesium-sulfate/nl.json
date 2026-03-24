@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Magnesiumsulfaat (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Magnesiumsulfaatinjectie"
+  ],
+  "description": "CZS-depressivum en anticonvulsivum gebruikt voor de preventie en behandeling van eclamptische aanvallen (aanvallen tijdens de zwangerschap als gevolg van pre-eclampsie). Wordt ook gebruikt bij ernstige astma en torsades de pointes. Eerstelijns voor eclampsie boven benzodiazepinen.",
+  "indications": [
+    "Eclampsie (preventie en behandeling van aanvallen bij ernstige pre-eclampsie)",
+    "Profylaxe van pre-eclampsie (ernstige kenmerken)",
+    "Torsades de Pointes (polymorfe V-tach van hypomagnesiëmie)",
+    "Ernstig acuut astma (aanvullend)"
+  ],
+  "dose": "Oplaaddosis eclampsie: 4-6 g IV langzaam duwen gedurende 20 minuten. Onderhoud: 1-2 g/uur IV-infusie. Als de aanval terugkeert: 2-4g IV gedurende 5 minuten. IM-belasting (indien geen IV): 5 g IM elke bil (10 g totaal) tegelijkertijd.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "Begin bij het begin van de aanval of bij de diagnose van ernstige pre-eclampsie-kenmerken.",
+  "contraindications": [
+    "Myasthenia gravis",
+    "Hartgeleidingsdefecten",
+    "Nierfalen (accumuleert - dosis verlagen)"
+  ],
+  "warnings": [
+    "Tekenen van toxiciteit: verlies van patellareflex (eerste teken, 7-10 mEq/L), ademhalingsdepressie (> 10 mEq/L), hartstilstand (> 15 mEq/L).",
+    "Controleer de patellareflexen elke 15 minuten – verlies van reflex = stop de infusie.",
+    "ANTIDID voor toxiciteit: Calciumgluconaat 1 g IV gedurende 3 minuten.",
+    "Verlaag de dosis bij nierinsufficiëntie – controleer de urineproductie."
+  ],
+  "regional_names": {
+    "generic": "magnesiumsulfaat"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg IV gedurende 10-20 minuten (max. 2 g). Ernstig astma: 25-75 mg/kg IV (max. 2 g).",
+      "note": "Zelden gebruikt voor epileptische aanvallen bij niet-verloskundige pediatrische patiënten – eclampsie is de primaire indicatie."
+    },
+    "obstetric": {
+      "note": "Primaire indicatie. Passeert de placenta - neonatale hypermagnesiëmie mogelijk. Dosis bij pasgeborenen bij ademhalingsdepressie: calciumgluconaat 100 mg/kg IV. Informeer het NICU-team over magnesiumgebruik door de moeder."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

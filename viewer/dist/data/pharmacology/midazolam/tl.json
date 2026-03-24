@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Sanay",
+    "Nayzilam"
+  ],
+  "description": "Ang short-acting benzodiazepine na may mabilis na pagsisimula. Mas gusto para sa procedural sedation, RSI pre-medication, at IM/IN seizure management. Ang mga ruta ng IM at intranasal ay nagbibigay ng makabuluhang kalamangan sa mga setting ng field.",
+  "indications": [
+    "Procedural na pagpapatahimik",
+    "RSI pre-medication (may ketamine)",
+    "Pamamahala ng seizure (IM/IN kapag hindi available ang IV)",
+    "Pamamahala ng pagkabalisa"
+  ],
+  "dose": "Pagpapatahimik: 0.05-0.1 mg/kg IV titrated. Pamamaraan: 1-5 mg IV mabagal na pagtulak. IM: 0.2 mg/kg. IN: 0.2 mg/kg (max 10 mg). Status epilepticus IM: 10 mg IM (pang-adulto).",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "SA"
+  ],
+  "window": "",
+  "contraindications": [
+    "Talamak na narrow-angle glaucoma",
+    "Talamak na pagkalasing sa alak na may kompromiso sa cardiovascular",
+    "Kilalang hypersensitivity"
+  ],
+  "warnings": [
+    "Respiratory depression -- subaybayan ang daanan ng hangin, magkaroon ng reversal agent (flumazenil) kung magagamit.",
+    "Hypotension lalo na sa opioid coadministration.",
+    "Ang mabilis na IV injection ay nagdudulot ng apnea -- itulak nang dahan-dahan."
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Pagpapatahimik: 0.05-0.1 mg/kg IV. IM: 0.1-0.2 mg/kg. IN: 0.2-0.3 mg/kg. Pang-aagaw IM: 0.2 mg/kg (max 10 mg).",
+      "note": "IN ruta partikular na kapaki-pakinabang sa mga bata -- iniiwasan ang IV access."
+    },
+    "obstetric": {
+      "note": "Tumawid sa inunan. Posible ang neonatal sedation. Gumamit ng pinakamababang epektibong dosis; subaybayan ang neonate kung ibinigay malapit sa panganganak."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

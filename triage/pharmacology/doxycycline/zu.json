@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "I-Doxycycline",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "I-Vibramycin",
+    "Doryx"
+  ],
+  "description": "I-Broad-spectrum tetracycline antibiotic. I-Oral ulcer prophylaxis ehlukile yeziguli ze-penicillin-allergic. Isebenza futhi ngokumelene nezidalwa ezingavamile kanye nezinye izifo ezithwalwa yizilwane (umalaleveva prophylaxis ezindaweni ezihlala njalo).",
+  "indications": [
+    "I-prophylaxis yesilonda (i-penicillin yokungezwani komzimba)",
+    "Ukutheleleka kwezicubu ezithambile",
+    "Amanxeba okuluma",
+    "I-Malaria prophylaxis ezindaweni ezihlala njalo"
+  ],
+  "dose": "100 mg PO njalo ngamahora angu-12 x izinsuku ezingu-7.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Qala phakathi kwamahora angu-3 wokulimala ukuze uthole i-nxeba prophylaxis.",
+  "contraindications": [
+    "Ukukhulelwa (kwenza izinyo le-fetus lishintshe umbala kanye nokuvimbela ukukhula kwamathambo)",
+    "Izingane ezingaphansi kweminyaka engu-8 (isizathu esifanayo)",
+    "Ukukhubazeka okukhulu kwe-hepatic"
+  ],
+  "warnings": [
+    "OKUNGAVIMBIWE ngesikhathi sokukhulelwa -- sebenzisa i-amoxicillin esikhundleni salokho.",
+    "IYAQINWA ezinganeni ezingaphansi kweminyaka engu-8.",
+    "I-Photosensitivity - yeluleka isiguli ukuthi sigweme ukuchayeka elangeni.",
+    "Ungathathi nokudla okunothe nge-calcium, ama-antacid, noma i-iron -- kuphazamisa ukumuncwa."
+  ],
+  "regional_names": {
+    "generic": "i-doxycycline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Contraindicated ngaphansi kweminyaka engu-8. Iminyaka engu-8+: 2-4 mg/kg/ngosuku ihlukaniswe i-q12h (ubukhulu obungu-100 mg/umthamo).",
+      "note": "Sebenzisa i-amoxicillin ezinganeni ezingaphansi kweminyaka engu-8."
+    },
+    "obstetric": {
+      "note": "KUVIMBIWE ekukhulelweni -- kubangela ukulimala kwengane. Kunalokho sebenzisa i-amoxicillin."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

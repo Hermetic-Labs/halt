@@ -1,0 +1,22 @@
+{
+  "id": "s0005xs",
+  "icd10": "S0005XS",
+  "name": "Superficiale corpus alienum cutem, sequela",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Superficiale corpus alienum cuticulae, sequelae",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

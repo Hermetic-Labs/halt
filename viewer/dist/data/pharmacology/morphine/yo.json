@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Sulfate Morphine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Tẹsiwaju",
+    "Morphine Sulfate Abẹrẹ"
+  ],
+  "description": "Opioid analgesic. Pese iderun irora ti o munadoko ṣugbọn o fa vasodilation ati hypotension -- lo pẹlu iṣọra ni mọnamọna ẹjẹ. Ketamine jẹ ayanfẹ ni awọn eto ija. Lo morphine nikan ni awọn alaisan iduroṣinṣin hemodynamically.",
+  "indications": [
+    "Irora iwọntunwọnsi-si-irora ninu awọn alaisan iduroṣinṣin hemodynamically",
+    "Kii ṣe laini akọkọ ni TCCC - fẹ ketamine"
+  ],
+  "dose": "2-4 mg IV / IO q4h PRN. Titrate si ipa. IM: 5-10 mg q4h PRN.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Aisedeede hemodynamic / mọnamọna ẹjẹ",
+    "Ibanujẹ atẹgun",
+    "Ipalara ori pẹlu LOC ti o yipada (ẹlumọ)"
+  ],
+  "warnings": [
+    "O nfa vasodilation - le buru si mọnamọna ẹjẹ. Ṣe ayẹwo BP ṣaaju ati lẹhin.",
+    "Ni naloxone lẹsẹkẹsẹ wa.",
+    "Ibanujẹ atẹgun - oṣuwọn atẹle."
+  ],
+  "regional_names": {
+    "generic": "morphine imi-ọjọ"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg / kg IV q2-4h PRN. Iwọn ẹyọkan ti o pọju 2mg IV ni ọmọ opioid-naive.",
+      "note": "Ṣe abojuto oṣuwọn atẹgun ni pẹkipẹki. Neonates ni o wa lalailopinpin kókó."
+    },
+    "obstetric": {
+      "note": "Rekọja placenta. Ibanujẹ atẹgun ọmọ tuntun ṣee ṣe ti o ba fun ni laarin awọn wakati 2-4 ti ifijiṣẹ. Ṣe naloxone ṣetan fun ọmọ tuntun."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

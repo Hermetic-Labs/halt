@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Ukuvimbela I-Hypothermia (H -- MARCH)",
+  "category": "temperature-management",
+  "skill_level": "noma yimuphi-umphenduli",
+  "time_estimate": "2-3 amaminithi",
+  "description": "I-Combat hypothermia ingumbulali ohamba phambili ovinjelwa ekuhlukumezeni. I-triad ebulalayo: hypothermia + acidosis + coagulopathy. Vimbela ngazo zonke izindleko.",
+  "equipment": [
+    "ingubo yokulala ekhombisa ukushisa",
+    "I-hypothermia-prevention-kit",
+    "ukufudumala-iv-uketshezi-uma-kukhona"
+  ],
+  "steps": [
+    "Susa zonke izingubo ezimanzi ngokushesha ngangokunokwenzeka.",
+    "Mboza isiguli ngengubo ebonisa ukushisa (isikhala) -- uhlangothi olucwebezelayo IN olubheke esigulini.",
+    "Goqa ikhanda nentamo (indawo ebalulekile yokulahlekelwa ukushisa).",
+    "Faka i-insulate kusuka emhlabathini -- beka okuthile phakathi kwesiguli nendawo ebandayo.",
+    "Faka uketshezi olufudumele lwe-IV uma lukhona.",
+    "Ungavumeli isiguli siqhaqhazele ngaphandle kokumboza -- ukuqhaqhazela kuwuphawu lwesixwayiso sangaphambi kwesikhathi.",
+    "Gada izinga lokushisa uma i-thermometer ikhona. Ngaphansi kuka-35°C (95°F) = hypothermia."
+  ],
+  "warnings": [
+    "I-Hypothermia iba yimbi kakhulu i-coagulopathy -- iziguli ezophayo ziphola ngokushesha futhi zihluleke ngokuyimpumelelo.",
+    "Ukuvimbela i-Field hypothermia kufanele kuqale endaweni yokulimala, hhayi ku-CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

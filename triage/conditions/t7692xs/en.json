@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t7692xs",
+    "icd10":  "T7692XS",
+    "name":  "Unspecified child maltreatment, suspected, sequela",
+    "category":  "environmental-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified child maltreatment, suspected, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

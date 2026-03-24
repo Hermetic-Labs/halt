@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Maareynta Dhaawaca Qabowga",
+  "category": "environmental",
+  "skill_level": "Aasaaska",
+  "time_estimate": "socota",
+  "description": "Maareynta dhaxan, cagta immersion (cagta la jiido), iyo hypothermia. Dhaawacyada qabow waa laga hortegi karaa -- ogow calaamadaha hore ka hor inta aan burburka unugyadu soo noqon karin. Si tartiib ah u qabooji unugyada dhaxan.",
+  "equipment": [
+    "Dharka dahaarka qalalan/bacda hurdada",
+    "Biyo diiran (38-42C/100-108F) ee qubeyska dib u diirinta",
+    "Labbisyada wasakhaysan",
+    "Ibuprofen 400mg PO (haddii la heli karo)",
+    "IV LR (kuleyl hadday suurtagal tahay)"
+  ],
+  "steps": [
+    "HYPOTHERMIA KOWAAD: Ku qiimee heerkulka ubucda leh heerkulbeeg wax-akhris hooseeya. Fudud (32-35C): gariir, wareer. Dhexdhexaad (28-32C): Gariir la'aan, jahawareer daran. Daran (<28C): miyir la'aan, garaac garaaca wadnaha lama ogaan karo.",
+    "HYPOTHERMIA -- Fudud/ Dhexdhexaad: Ka saar dharka qoyan, ka dahaadhid dhulka, jawi diiran, dareere macaan diiran haddii uu miyir qabo, kulaylka baakadaha axillae/ gumaarka (ma aha si toos ah maqaarka). Si tartiib ah u qabooji -- jeexjeexintu waxay kicin kartaa VFib.",
+    "HYPOTHERMIA -- daran: si tartiib ah ula qabso. Hubi garaaca garaaca 60 ilbiriqsi buuxa ka hor CPR. Bilow CPR haddii aanay wadno xanuun lahayn. Dheecaannada faleebbaha diirran haddii la heli karo. mudnaanta MEDEVAC -- 'ma dhiman ilaa diirran oo dhintay'.",
+    "FROSTBITE: Maqaar ah (cadaan maqaarka, hoostiisa jilicsan) vs. qoto dheer (dareen adag, alwaax, finan). Ha xoqin aagga. Dib ha u diirin haddii khatarta dib u qaboojinta -- barafaynta dib-u-celinta ay keento dhaawac ka sii daran dib u kululaynta.",
+    "Dib u diirinta FROSTBITE: Ku dhex geli biyaha 38-42C (aan ka kululayn) 15-30 daqiiqo ilaa unuggu jilicsan yahay oo casaan/guduud yahay. Aad u xanuun badan - bixi xanuunka (ketamine ama morphine).",
+    "Dib u diirinta ka dib: ku dheji suulasha dhexdooda/faraha dhexdooda oo leh faashad nadiif ah. Ha soo kicin nabaro. Ka ilaali cadaadiska.",
+    "CAGTA IMMERSION (Trench Foot): soo-gaadhista qoyan/qabow daba dheeraatay, maqaarku guduudan yahay ka dibna guduudan ka dibna finan. Cagaha qallalan, si tartiib ah u diirran, kor u qaad. Ha codsan kuleyl toos ah.",
+    "Diiwaangeli wakhtiga dhaawaca iyo wakhtiga dib u kululaynta."
+  ],
+  "warnings": [
+    "Dib ha u diirin dhaxan haddii ay jirto wax fursad ah oo dib u qaboojin ah -- dib u kululayn aan dhamaystirnayn + dib u celin = lumis unug musiibo ah.",
+    "Hypothermia daran waxay u ekaan kartaa dhimasho. Iska hubi garaaca wadnaha 60 ilbiriqsi. \"Ma dhiman ilaa diirimaad iyo dhimasho.\"",
+    "Khamrigu wuxuu kordhiyaa luminta kulaylka inkasta oo la dareemay diirimaadka - ha siin khamriga.",
+    "Khatarta VFib waxay ku badan tahay hypothermia dhexdhexaad ah oo daran -- yarayso wax-is-daba-marinta iyo jahawareerka bukaanka."
+  ],
+  "follows": [
+    "hypothermia-ka hortagga"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Carruurtu si dhaqsiyo leh ayay u qaboojiyaan sababtoo ah bedka dhulka oo sarreeya iyo saamiga tirada. Heerarka Hypothermia waa isku mid. Dheecaannada faleebbaha diirran ee muhiimka ah. Dheecaan miisaanka ku salaysan: 20 mL/kg LR diiran."
+    },
+    "obstetric": {
+      "note": "Hypothermia hooyada waxay keentaa bradycardia uurjiifka iyo acidosis. Dib u kululaynta hooyadu waa daawaynta uurjiifka. La socodka uurjiifka haddii la heli karo."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

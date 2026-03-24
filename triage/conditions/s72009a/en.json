@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s72009a",
+    "icd10":  "S72009A",
+    "name":  "Fracture of unspecified part of neck of unspecified femur, initial encounter for closed fracture",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Fracture of unspecified part of neck of unspecified femur, initial encounter for closed fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "AVPU Scale",
+  "category": "neurological",
+  "description": "Celeri 4-gradu conscientiae taxatio. Citius quam GCS pro initiali triage.",
+  "instructions": "Assident summis responsionis aeger demonstrat.",
+  "scoring": [
+    {
+      "code": "A",
+      "label": "erecti",
+      "description": "Patiens vigilat, sciens, et regulariter respondet"
+    },
+    {
+      "code": "V",
+      "label": "Vox",
+      "description": "Patientes respondet solum ad excitanda verba"
+    },
+    {
+      "code": "P",
+      "label": "Dolor",
+      "description": "Patiens tantum stimulis molestis respondet (frica sterna, cubile clavum pressum)"
+    },
+    {
+      "code": "U",
+      "label": "Gratus",
+      "description": "Nulla responsio ad stimulos aliquos -- immediata airway interventus requiritur"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "A",
+      "triage": "Stabilis -- continue taxationem"
+    },
+    {
+      "code": "V",
+      "triage": "De - monitor airway"
+    },
+    {
+      "code": "P",
+      "triage": "Critica -- airway in periculo, GCS typice <= 8"
+    },
+    {
+      "code": "U",
+      "triage": "Immediata - nunc administrare airway"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

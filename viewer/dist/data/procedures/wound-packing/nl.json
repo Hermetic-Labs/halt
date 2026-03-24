@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Hemostatische wondverpakking",
+  "category": "hemorrhage-control",
+  "skill_level": "gevechtsredder",
+  "time_estimate": "3-5 minuten",
+  "description": "Het verpakken van een niet-samendrukbare of verbindingswond met hemostatisch gaas om bloedingen onder controle te houden waar een tourniquet niet kan worden aangebracht.",
+  "equipment": [
+    "hemostatisch gaas",
+    "nitrilhandschoenen",
+    "traumaschaar",
+    "drukverband"
+  ],
+  "steps": [
+    "Trek handschoenen aan. Maak de wond volledig bloot met behulp van een traumaschaar.",
+    "Identificeer de actieve bloedingsbron in de wondholte.",
+    "Open het hemostatisch gaasje en druk het met uw vinger stevig in de wond, waarbij u het rechtstreeks naar de bloedende bron duwt.",
+    "Ga door met het inpakken totdat de wondholte volledig gevuld is.",
+    "Oefen stevige, continue directe druk uit met de muis van uw hand gedurende minimaal 3 minuten.",
+    "Verwijder GEEN verpakkingsmateriaal nadat het is aangebracht.",
+    "Breng een drukverband aan over de verpakte wond.",
+    "Markeer de tijd op de TCCC-kaart of op het voorhoofd van de patiënt (bijvoorbeeld 'PKD 0145')."
+  ],
+  "warnings": [
+    "Verpak GEEN doordringende borstwonden; gebruik in plaats daarvan een borstafdichting.",
+    "Als er sprake is van een nekwond, oefen dan druk uit zonder beide halsslagaders tegelijkertijd samen te drukken.",
+    "Beoordeel binnen 5 minuten opnieuw als er sprake is van een arteriële bron."
+  ],
+  "follows": [
+    "directe druk"
+  ],
+  "precedes": [
+    "tourniquet-applicatie"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Gebruik proportioneel minder gaas. Oefen lichtere druk uit om thoracale compressie bij zuigelingen te voorkomen."
+    },
+    "obstetric": {
+      "note": "Vermijd diepe of agressieve druk in de buurt van de zwangere buik. Snelle escalatie heeft de voorkeur."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

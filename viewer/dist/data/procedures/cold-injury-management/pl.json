@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Zarządzanie urazami spowodowanymi zimnem",
+  "category": "environmental",
+  "skill_level": "Podstawowe",
+  "time_estimate": "W toku",
+  "description": "Postępowanie w przypadku odmrożeń, stopy zanurzeniowej (stopy okopowej) i hipotermii. Obrażeniom spowodowanym zimnem można zapobiec — rozpoznaj wczesne objawy, zanim uszkodzenie tkanki stanie się nieodwracalne. Z odmrożoną tkanką należy obchodzić się niezwykle delikatnie.",
+  "equipment": [
+    "Sucha odzież izolacyjna/śpiwór",
+    "Ciepła woda (38–42°C/100–108°F) do kąpieli rozgrzewającej",
+    "Opatrunki sterylne",
+    "Ibuprofen 400 mg doustnie (jeśli jest dostępny)",
+    "IV LR (jeśli to możliwe, ciepłe)"
+  ],
+  "steps": [
+    "NAJPIERW HIPOTERMIA: Oceń temperaturę rdzenia za pomocą termometru o niskim odczycie. Łagodny (32-35°C): dreszcze, dezorientacja. Umiarkowany (28-32°C): brak dreszczy, silne splątanie. Ciężki (<28°C): nieprzytomny, brak wyczuwalnego tętna.",
+    "HIPOTERMIA – Łagodna/Umiarkowana: Zdjąć mokre ubranie, odizolować od podłoża, ciepłe otoczenie, rozgrzać słodkie płyny, jeśli jest przytomny, okłady cieplne pach/pachwin (nie bezpośrednio na skórę). Obchodź się delikatnie – wstrząsy mogą wywołać VFib.",
+    "HIPOTERMIA – Ciężka: Postępować BARDZO delikatnie. Sprawdź tętno na 60 pełnych sekund przed resuscytacją. Rozpocznij resuscytację krążeniowo-oddechową, jeśli nie ma tętna. Ciepłe płyny dożylne, jeśli są dostępne. Priorytet MEDEVAC – „nie martwy, dopóki nie będzie ciepły i martwy”.",
+    "ODMRAŻENIE: Powierzchowne (skóra biała/szara, miękka pod spodem) vs. głębokie (twarde, w dotyku przypominające drewno, pęcherze). NIE pocieraj tego obszaru. NIE podgrzewaj, jeśli istnieje ryzyko ponownego zamrożenia – ponowne zamrożenie powoduje większe szkody niż opóźnione podgrzewanie.",
+    "Rozgrzewanie FROSTBITE: Zanurz w wodzie o temperaturze 38–42°C (nie cieplejszej) na 15–30 minut, aż tkanka stanie się miękka i będzie czerwona/fioletowa. Bardzo bolesne – zastosować środek przeciwbólowy (ketamina lub morfina).",
+    "Po ogrzaniu: opatrunek między palcami/palcami sterylnym gazikiem. NIE pękać pęcherzy. Chronić przed uciskiem.",
+    "STOPA IMERCYJNA (stopa okopowa): długotrwałe narażenie na wilgoć/zimno, skóra zaczerwieniona, następnie blada, a następnie pęcherze. Osusz stopy, rozgrzej je powoli, unieś. NIE stosuj bezpośredniego ciepła.",
+    "Dokumentuj czas urazu i czas rekonwalescencji."
+  ],
+  "warnings": [
+    "NIE rozgrzewaj odmrożonego miejsca, jeśli istnieje ryzyko ponownego zamrożenia – niepełne ogrzanie + ponowne zamrożenie = katastrofalna utrata tkanki.",
+    "Ciężka hipotermia może imitować śmierć. Sprawdź puls przez 60 sekund. — Nie martwy, dopóki nie będzie ciepły i martwy.",
+    "Alkohol zwiększa utratę ciepła pomimo odczuwania ciepła – nie podawaj alkoholu.",
+    "Ryzyko VFib jest wysokie w przypadku średnio-ciężkiej hipotermii – należy zminimalizować manipulacje i wstrząsy pacjenta."
+  ],
+  "follows": [
+    "zapobieganie hipotermii"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Dzieci schładzają się szybciej ze względu na większy stosunek powierzchni do masy. Progi hipotermii takie same. Ciepłe płyny dożylne są krytyczne. Płyn zależny od masy: 20 ml/kg ciepłego LR."
+    },
+    "obstetric": {
+      "note": "Hipotermia u matki powoduje bradykardię i kwasicę u płodu. Agresywne rozgrzewanie matki to leczenie płodu. Monitorowanie płodu, jeśli jest dostępne."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Rarraba maganin sa barci yana ba da analgesia, kwantar da hankali, da amnesia yayin da ake kiyaye motsin iska da kwanciyar hankali na hemodynamic. An fi son analgesic a cikin TCCC -- yana kula da BP sabanin opioids. Har ila yau ana amfani da shi don kwantar da hankali da kuma RSI.",
+  "indications": [
+    "Matsakaici-zuwa-tsananin kula da ciwo",
+    "Maganganun tsari (cutar rauni, raguwar karaya)",
+    "Wakilin ƙaddamarwa don RSI",
+    "Yaƙi maganin sa barci"
+  ],
+  "dose": "Analgesia: 0.1-0.3 mg/kg IV/IO (jinkirin turawa) | 0.5 mg/kg IM. Ƙwararren tsari: 1-2 mg / kg IV | 4-6 mg/kg IM. Gabatarwar RSI: 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN"
+  ],
+  "window": "",
+  "contraindications": [
+    "Sanin schizophrenia ko psychosis mai aiki",
+    "ICP mai girma ba tare da kariya ta iska ba (dangi)"
+  ],
+  "warnings": [
+    "Halayen gaggawa (delirium/hallucinations) -- rage tare da midazolam 1-2mg IV idan akwai.",
+    "Yana ƙara ɓarna -- a shirya tsotsa.",
+    "Laryngospasm ba kasafai bane amma mai yiwuwa - ci gaba da samun BVM."
+  ],
+  "regional_names": {
+    "generic": "ketamine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesia: 0.5 mg/kg IV. Ƙwararren tsari: 1-2 mg / kg IV | 4-5 mg/kg IM.",
+      "note": "Yayi karatu sosai a fannin ilimin yara. An fi so don hanyoyi masu raɗaɗi."
+    },
+    "obstetric": {
+      "note": "Amintacce don ciwon ciwon ciki a ƙananan allurai. Zai iya haifar da baƙin ciki ga jariri a yawan allurai idan an kawo shi kusa da lokacin haihuwa."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Tranexamic Acid (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Cyklokapron",
+    "Lysteda"
+  ],
+  "description": "Wani wakili na antifibrinolytic wanda ke hana rushewar jini. Mahimmanci yana rage mace-mace daga bugun jini idan aka ba da shi da wuri. CoTCCC ya ba da shawarar ga duk waɗanda suka yi rauni tare da babban zubar jini ko kuma ke cikin haɗarin babban zubar jini.",
+  "indications": [
+    "Muhimmanci na waje ko wanda ake zargi da zubar jini na ciki",
+    "Maganin zubar jini",
+    "Haɗarin zubar jini (hanyoyin rauni)"
+  ],
+  "dose": "1g IV/IO sama da mintuna 10, sannan kuma 1g IV/IO sama da awanni 8. Idan IV/IO ba ya samuwa: 650mg PO x2 (1.3g duka) -- zaɓi na TCCC PO.",
+  "route": [
+    "IV",
+    "IO",
+    "PO"
+  ],
+  "window": "Dole ne a gudanar da shi a cikin sa'o'i 3 na rauni. Bayan awanni 3, TXA na iya ARA mace-mace -- kar a bayar.",
+  "contraindications": [
+    "Tarihin cututtukan thromboembolic (DVT, PE, bugun jini)",
+    "Rarraba Intravascular Coagulation (DIC)",
+    "> Sa'o'i 3 bayan rauni"
+  ],
+  "warnings": [
+    "Login lokacin gudanarwa nan da nan - taga yana da awanni 3 daga lokacin rauni, ba lokacin isowa ba.",
+    "Kada ku dame kashi na IV (1g) tare da kashi na baki."
+  ],
+  "regional_names": {
+    "generic": "tranexamic acid",
+    "US": "Cyklokapron",
+    "UK": "Cyklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg IV (max 1g). Shaida tana fitowa -- yi amfani da hukuncin asibiti.",
+      "note": "Taga na awa 3 iri ɗaya ya shafi."
+    },
+    "obstetric": {
+      "note": "An nuna don zubar da jini bayan haihuwa. Amintacce a cikin ciki. Adadin manya iri ɗaya ya shafi."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

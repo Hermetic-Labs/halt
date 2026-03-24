@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t85328a",
+    "icd10":  "T85328A",
+    "name":  "Displacement of other ocular prosthetic devices, implants and grafts, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Displacement of other ocular prosthetic devices, implants and grafts, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

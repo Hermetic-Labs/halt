@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Fluoroquinolone antibiotic na may malawak na gram-negative na saklaw. Ginagamit para sa mga seryosong impeksyon sa sugat, nakakapasok na trauma sa tiyan (GI flora coverage), at mga impeksyon sa ihi. Available ang PO at IV.",
+  "indications": [
+    "Nakakapasok na trauma sa tiyan (GI decontamination)",
+    "Malubhang impeksyon sa sugat",
+    "Mga impeksyong gram-negatibo",
+    "Mga impeksyon sa ihi"
+  ],
+  "dose": "400 mg IV q8-12h. PO: 500-750 mg q12h.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Kilalang fluoroquinolone allergy",
+    "Mga bata at kabataan < 18 taon (kamag-anak -- panganib ng tendinopathy)",
+    "Pagbubuntis (kamag-anak)"
+  ],
+  "warnings": [
+    "Ang panganib ng pagkalagot ng litid, lalo na ang Achilles tendon. Itigil kung lumaki ang pananakit ng litid.",
+    "Maaaring pahabain ang pagitan ng QT -- mag-ingat sa iba pang mga gamot na nagpapahaba ng QT.",
+    "Iwasan sa pagbubuntis kung magagamit ang mga alternatibo."
+  ],
+  "regional_names": {
+    "generic": "ciprofloxacin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV q8-12h (max na 400 mg/dosis). PO: 10-20 mg/kg q12h (max 750 mg/dosis).",
+      "note": "Gamitin lamang kapag ang mga benepisyo ay mas malaki kaysa sa panganib ng tendinopathy. Reserve para sa malubhang impeksyon."
+    },
+    "obstetric": {
+      "note": "Iwasan sa pagbubuntis kung magagamit ang mga alternatibo. Gamitin lamang para sa mga impeksyon na nagbabanta sa buhay kung saan ang benepisyo ay mas malaki kaysa sa panganib."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

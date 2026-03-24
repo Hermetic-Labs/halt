@@ -1,0 +1,46 @@
+﻿{
+    "id":  "aspirin",
+    "name":  "Aspirin (Acetylsalicylic Acid)",
+    "category":  "antiplatelet",
+    "rxnorm":  "1191",
+    "brand_names":  [
+                        "Bayer Aspirin",
+                        "Ecotrin"
+                    ],
+    "description":  "Non-steroidal anti-inflammatory drug (NSAID) with antiplatelet properties. First-line treatment for suspected acute coronary syndrome (ACS). Irreversibly inhibits platelet aggregation -- effect lasts for platelet lifespan (7-10 days).",
+    "indications":  [
+                        "Suspected acute myocardial infarction (MI) -- chew immediately",
+                        "Unstable angina / acute coronary syndrome",
+                        "Stroke (ischemic -- after hemorrhagic excluded)",
+                        "Fever and mild-moderate pain (analgesic)"
+                    ],
+    "dose":  "ACS: 325 mg PO -- CHEW (do not swallow whole) immediately. Analgesic/antipyretic: 325-650 mg PO q4-6h PRN.",
+    "route":  [
+                  "PO"
+              ],
+    "window":  "ACS: Give as early as possible -- chew immediately on suspicion.",
+    "contraindications":  [
+                              "Active GI bleeding",
+                              "Hemorrhagic stroke",
+                              "Known aspirin allergy or NSAID hypersensitivity",
+                              "Severe uncontrolled bleeding -- aspirin worsens hemorrhage"
+                          ],
+    "warnings":  [
+                     "Do NOT give in hemorrhagic patients -- aspirin irreversibly impairs platelet function and worsens bleeding.",
+                     "Do NOT give to children \u003c 12 years with viral illness -- risk of Reye\u0027s syndrome.",
+                     "GI irritation -- take with food if non-emergent."
+                 ],
+    "regional_names":  {
+                           "generic":  "aspirin"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "Analgesic/antipyretic: 10-15 mg/kg PO q4-6h (max 650 mg/dose). NOTE: Contraindicated in viral illness (Reye syndrome).",
+                                        "note":  "Use acetaminophen (paracetamol) for fever in children with viral illness instead."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Avoid in pregnancy especially third trimester (premature closure of ductus arteriosus). Low-dose (81mg) is used for pre-eclampsia prevention under physician guidance only."
+                                    }
+                  },
+    "source":  "Standard Emergency Pharmacology / ACS Guidelines"
+}

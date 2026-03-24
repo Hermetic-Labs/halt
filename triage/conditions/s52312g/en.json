@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s52312g",
+    "icd10":  "S52312G",
+    "name":  "Greenstick fracture of shaft of radius, left arm, subsequent encounter for fracture with delayed healing",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Greenstick fracture of shaft of radius, left arm, subsequent encounter for fracture with delayed healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

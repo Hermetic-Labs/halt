@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Solución de Ringer lactato (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "La solución de Hartmann",
+    "Inyección de Ringer lactato"
+  ],
+  "description": "Fluido cristaloide isotónico equilibrado. Se prefiere a la solución salina normal para la reanimación de traumatismos de gran volumen: es más equilibrada fisiológicamente y tiene menos riesgo de acidosis hiperclorémica. Contiene sodio, potasio, calcio, lactato.",
+  "indications": [
+    "Reanimación de traumatismos (cristaloides preferidos en shock hemorrágico)",
+    "Reanimación con líquidos para quemaduras (fórmula Parkland)",
+    "Hipovolemia",
+    "Mantenimiento de fluidos"
+  ],
+  "dose": "Choque hemorrágico: limite a 1 litro como máximo antes de realizar la transición a productos sanguíneos. Objetivo PAS 80-90 mmHg traumatismo penetrante, 90 mmHg TBI. Quemaduras (Parkland): 4 ml x kg x %TBSA quemado en 24 h (la mitad en las primeras 8 h).",
+  "route": [
+    "IV",
+    "OI"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hiperpotasemia (contiene potasio)",
+    "Insuficiencia hepática grave (metabolismo del lactato alterado - relativo)"
+  ],
+  "warnings": [
+    "Sigue siendo un cristaloide: no puede transportar oxígeno. Los productos sanguíneos son superiores para el shock hemorrágico. LR es sólo un puente.",
+    "No mezclar con productos sanguíneos en la misma línea (el calcio provoca coagulación).",
+    "NO sobreresucite en caso de traumatismo penetrante antes de controlar la hemorragia."
+  ],
+  "regional_names": {
+    "generic": "solución de Ringer lactato",
+    "UK": "La solución de Hartmann"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Bolo de 20 ml/kg, reevaluar. Preferido sobre NS para traumatismos pediátricos.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Líquido intravenoso preferido durante el trabajo de parto y el parto. Apropiado para la reanimación de hemorragias obstétricas."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

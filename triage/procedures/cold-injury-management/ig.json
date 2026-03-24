@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Nlekọta mmerụ ahụ oyi",
+  "category": "environmental",
+  "skill_level": "Ihe ndabere",
+  "time_estimate": "Na-aga n'ihu",
+  "description": "Nlekọta nke frostbite, imikpu ụkwụ (ụkwụ trench), na hypothermia. Enwere ike igbochi mmerụ ahụ oyi -- mara ihe ịrịba ama mbụ tupu mmebi anụ ahụ enweghị ike ịtụgharị. Jikwaa anụ ahụ oyi kpọnwụrụ nke ukwuu nke ukwuu.",
+  "equipment": [
+    "Uwe mkpuchi / akpa ihi ụra nke akọrọ",
+    "Mmiri ọkụ (38-42C / 100-108F) maka ịsa ahụ na-ekpo ọkụ",
+    "Uwe na-adịghị mma",
+    "Ibuprofen 400mg PO (ọ bụrụ na ọ dị)",
+    "IV LR (ọkụ ma ọ bụrụ na ọ ga-ekwe omume)"
+  ],
+  "steps": [
+    "HYPOTHERMIA nke Mbụ: Jiri temometa na-agụ ihe dị obere nyochaa ọnọdụ okpomọkụ. Dị nwayọọ (32-35C): ịma jijiji, mgbagwoju anya. Na-agafeghị oke (28-32C): enweghị ịma jijiji, ọgba aghara siri ike. Ihe siri ike (<28C): amaghị ihe ọ bụla, enweghị ike ịhụ usu.",
+    "HYPOTHERMIA - Ọ dị nro / dị oke ala: Wepu uwe mmiri, kpochie n'ala, gburugburu ebe ọkụ, mmiri na-ekpo ọkụ na-ekpo ọkụ ma ọ bụrụ na ị maara, ngwugwu okpomọkụ na axillae / ukwu (ọ bụghị kpọmkwem na akpụkpọ ahụ). Jikwaa nwayọ --ịkụda mmụọ nwere ike ịkpalite VFib.",
+    "HYPOTHERMIA -- siri ike: Jikwaa nwayọ. Lelee pulse 60 zuru sekọnd tupu CPR. Malite CPR ma ọ bụrụ na ọ nweghị ụbụrụ. Mmiri IV na-ekpo ọkụ ma ọ bụrụ na ọ dị. MEDEVAC mkpa -- 'anaghị anwụ anwụ ruo mgbe ọkụ ma nwụọ'.",
+    "FROSTBITE: Elu elu (akpụkpọ ahụ na-acha ọcha / isi awọ, dị nro n'okpuru) vs. miri (ike, osisi mmetụta, ọnya). Ehichala ebe ahụ. AKWỤKWỌ KWESỊRỊ ma ọ bụrụ na ihe ize ndụ nke refrizing -- refrizing na-akpata mmebi dị njọ karịa iweghachite oge.",
+    "FROSTBITE rewarming: Na-emikpu n'ime mmiri 38-42C (ọ bụghị ọkụ) maka 15-30 min ruo mgbe anụ ahụ dị nro na ọbara ọbara / odo odo. Na-egbu mgbu --enye analgesia (ketamine ma ọ bụ morphine).",
+    "Mgbe emechara ọkụ: pad n'etiti mkpịsị ụkwụ/mkpịsị aka nwere gauze na-adịghị mma. Akwụsịla ọnya ọnya. Chebe site na nrụgide.",
+    "Ụkwụ IMMERSION (Trench Foot): ikpughe mmiri/oyi dị ogologo, akpụkpọ ahụ na-acha uhie uhie wee chachachaa wee chachaa. Ụkwụ kpọrọ nkụ, kpoo ọkụ nwayọ, bulie elu. E tinyela ọkụ ọkụ ozugbo.",
+    "Dekọọ oge mmerụ ahụ na oge mmeghari ohuru."
+  ],
+  "warnings": [
+    "Akụnyeghachila ntu oyi ma ọ bụrụ na enwere ohere ịmegharị -- rewarming na-ezughị ezu + refrizing = mfu anụ ahụ dị egwu.",
+    "Nnukwu hypothermia nwere ike iṅomi ọnwụ. Lelee pulse maka sekọnd 60. 'Anwụghị anwụ ruo mgbe ọkụ ma nwụọ.'",
+    "Ihe ọṅụṅụ na-aba n'anya na-abawanye okpomọkụ n'agbanyeghị echiche nke ikpo ọkụ - enyela mmanya.",
+    "Ihe ize ndụ VFib dị elu na hypothermia siri ike na-agafeghị oke -- wedata aghụghọ na imebi onye ọrịa."
+  ],
+  "follows": [
+    "mgbochi mgbochi hypothermia"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Ụmụaka na-ajụ oyi ngwa ngwa n'ihi oke elu dị elu na oke oke. Hypothermia na-agbadata n'otu ụzọ ahụ. Mmiri IV na-ekpo ọkụ dị oke egwu. Mmiri dabere na ibu: 20 ml / kg ọkụ LR."
+    },
+    "obstetric": {
+      "note": "Ọdịda mmụọ nke nne na-ebute bradycardia nke nwa ebu n'afọ na acidosis. Iweghachi nne na-eme ihe ike bụ ọgwụgwọ nwa ebu n'afọ. Nleba anya nwa ebu n'afọ ma ọ bụrụ na ọ dị."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

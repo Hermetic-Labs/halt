@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s62185b",
+    "icd10":  "S62185B",
+    "name":  "Nondisplaced fracture of trapezoid [smaller multangular], left wrist, initial encounter for open fracture",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of trapezoid [smaller multangular], left wrist, initial encounter for open fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

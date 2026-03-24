@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t783xxs",
+    "icd10":  "T783XXS",
+    "name":  "Angioneurotic edema, sequela",
+    "category":  "adverse-effects",
+    "triage_priority":  "",
+    "description":  "Angioneurotic edema, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

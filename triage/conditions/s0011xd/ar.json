@@ -1,0 +1,22 @@
+{
+  "id": "s0011xd",
+  "icd10": "S0011XD",
+  "name": "كدمة في الجفن الأيمن والمنطقة المحيطة بالعين، مواجهة لاحقة",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "كدمة في الجفن الأيمن والمنطقة المحيطة بالعين، لقاء لاحق",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

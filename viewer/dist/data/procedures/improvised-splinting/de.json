@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Improvisierte Schienung",
+  "category": "ortho-stabilization",
+  "skill_level": "Grundlegend",
+  "time_estimate": "5-10 Minuten",
+  "description": "Immobilisieren Sie Frakturen mit verfügbaren Materialien, um weitere Verletzungen zu verhindern, Schmerzen zu lindern und den Blutverlust in das umliegende Gewebe zu begrenzen. Positionieren Sie die Schiene, sofern die Durchblutung nicht beeinträchtigt ist – und richten Sie sie dann vorsichtig auf.",
+  "equipment": [
+    "SAM-Schiene (bevorzugt)",
+    "Gerollte Magazine, Stöcke, Zeltstangen (im Feld improvisiert)",
+    "Krawatte / Dreiecksbinden",
+    "Polsterung (Kleidung, Schaumstoff)",
+    "Klebeband oder Stoffstreifen"
+  ],
+  "steps": [
+    "Legen Sie die Verletzung frei und beurteilen Sie sie. Überprüfen Sie vorher und nachher die Durchblutung, das Gefühl und die Bewegung distal der Fraktur.",
+    "Kontrollieren Sie jede aktive Blutung vor der Schienung.",
+    "Polstern Sie Knochenvorsprünge großzügig aus, um Druckstellen vorzubeugen.",
+    "Wählen Sie ausreichend langes Schienenmaterial, um das Gelenk oberhalb UND unterhalb der Fraktur zu immobilisieren.",
+    "Positionieren Sie das Glied in einer bequemen oder anatomisch ausgerichteten Position – üben Sie keine Gewalt aus.",
+    "Polsterung und dann Schienenmaterial auftragen. Mit Bandagen oder Stoffstreifen fixieren.",
+    "Wickeln Sie es NICHT zu fest – lassen Sie die Fingerspitzen/Zehen dem CSM des Monitors ausgesetzt.",
+    "Bewerten Sie CSM nach der Anwendung erneut – lockern Sie es sofort, wenn die Durchblutung beeinträchtigt ist.",
+    "Wenn möglich, die Extremität hochlagern, um die Schwellung zu reduzieren.",
+    "Dokumentieren Sie den Zeitpunkt der Schienenanwendung."
+  ],
+  "warnings": [
+    "Überprüfen Sie den CSM alle 15–30 Minuten erneut – eine Schwellung kann dazu führen, dass eine korrekte Schiene zu einem Tourniquet wird.",
+    "Offene Frakturen: Wunde zuerst mit sterilem Verband, dann Schiene abdecken. Drücken Sie den Knochen NICHT zurück.",
+    "Femurfrakturen können 1–2 Liter Blut in den Oberschenkel verlieren – bei Schock muss aggressiv behandelt werden.",
+    "Verdacht auf Wirbelsäulenfraktur: KEINE Schiene improvisieren – Bewegung minimieren, Inline-Stabilisierung beibehalten."
+  ],
+  "follows": [
+    "Direktdruck",
+    "Tourniquet-Anwendung"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Wachstumsfugen bei Kindern sind schwächer als Bänder – selbst bei mildem Mechanismus besteht Verdacht auf eine Fraktur. Torusfrakturen (Schnallenfrakturen) können eine minimale Schwellung aufweisen."
+    },
+    "obstetric": {
+      "note": "Es gilt die Standardschiene. Vermeiden Sie eine längere Rückenlage – bei flachem Liegen eine Neigung nach links."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

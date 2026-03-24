@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Magnesium Sulfate (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Magnesium Sulfate Injection"
+  ],
+  "description": "CNS depressans et anticonvulsans adhibita ad praeventionis et curationis captiones eclampticas (captiones in graviditate ex prae-eclampsia). Adhibetur etiam gravibus suspiriis et torsades de punctis. Prima acies pro eclampsia super benzodiazepinos.",
+  "indications": [
+    "Eclampsia (captio praeventionis et curatio in gravi prae-eclampsia)",
+    "Pre-eclampsia prophylaxis (gravida)",
+    "Torsades de Pointes (polymorphic V-tach ex hypomagnesemia)",
+    "Gravi asthma acutum (adjunctum)"
+  ],
+  "dose": "Eclampsia loading dosis: 4-6g IV tardus dis super 20 minuta. Tutela: 1-2g/hora IV infusio. Si captio recurrat: 2-4g IV super 5 min. IM loading (si non IV): 5g IM singulas clunes (10g total) simul.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "Incipe a captione, impetu vel diagnosi gravium notarum prae-eclampsiarum.",
+  "contraindications": [
+    "Myasthenia gravis",
+    "Defectus cordis conductio",
+    "Renal defect (accumulat - reduce dose)"
+  ],
+  "warnings": [
+    "Signa toxicity: amissio reflexorum patellaris (signum primum 7-10 mEq/L), depressionis respiratoriae (> 10 mEq/L), comprehensio cardiaci (> 15 mEq/L).",
+    "Monitor patellar reflexes per 15 minuta singula - damnum reflexum = stop infusionem.",
+    "ANTIDOTUS ad toxicitatem: Calcium gluconatum 1g IV supra 3 minuta.",
+    "Dosem reducere in detrimentum renum - monitor urinae output."
+  ],
+  "regional_names": {
+    "generic": "magnesium sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg IV super 10-20 min (max 2g). Gravi asthma: 25-75 mg/kg IV (max 2g).",
+      "note": "Raro ad captiones in aegris pediatricis non obstetricibus adhibitis — eclampsia prima significatio est."
+    },
+    "obstetric": {
+      "note": "Prima significatio. Cruces placentae - hypermagnesemia neonatales potest. Dosis neonatalis si depressio respiratorii: calcium gluconatum 100 mg/kg IV. Inform NICU manipulus maternae magnesii usus."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

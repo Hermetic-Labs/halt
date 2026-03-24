@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Doğaçlama Splintleme",
+  "category": "ortho-stabilization",
+  "skill_level": "Temel",
+  "time_estimate": "5-10 dk",
+  "description": "Daha fazla yaralanmayı önlemek, ağrıyı azaltmak ve çevredeki dokuya kan kaybını sınırlamak için mevcut malzemeleri kullanarak kırıkları hareketsiz hale getirin. Dolaşım tehlikeye girmediği sürece atel yerinde bulundu - ardından yavaşça düzeltin.",
+  "equipment": [
+    "SAM ateli (tercih edilir)",
+    "Rulo şarjörler, sopalar, çadır direkleri (sahada doğaçlama)",
+    "Kravat / üçgen bandajlar",
+    "Dolgu (giysi, köpük)",
+    "Bant veya kumaş şeritleri"
+  ],
+  "steps": [
+    "Yaralanmayı ortaya çıkarın ve değerlendirin - önce ve sonra kırığın distalindeki dolaşımı, hissi, hareketi (CSM) kontrol edin.",
+    "Splintlemeden önce aktif kanamayı kontrol edin.",
+    "Basınç yaralarını önlemek için kemik çıkıntılarını cömertçe tamponlayın.",
+    "Eklemi kırığın üstünde VE altında hareketsiz hale getirecek kadar uzun atel malzemesi seçin.",
+    "Uzvunuzu rahat veya anatomik hizalama pozisyonunda konumlandırın; zorlamayın.",
+    "Dolgu uygulayın, ardından splint malzemesini uygulayın. Bandaj veya kumaş şeritlerle sabitleyin.",
+    "Çok sıkı SARMAYIN; parmak uçlarınızı/ayak parmaklarınızı monitör CSM'ye açıkta bırakmayın.",
+    "Uygulamadan sonra CSM'yi yeniden değerlendirin; dolaşım bozulursa hemen gevşetin.",
+    "Şişliği azaltmak için mümkünse uzvunuzu yükseltin.",
+    "Splint uygulamasının zamanını belgeleyin."
+  ],
+  "warnings": [
+    "CSM'yi her 15-30 dakikada bir yeniden değerlendirin; şişlik, doğru ateli turnike haline getirebilir.",
+    "Açık kırıklar: Yarayı önce steril pansumanla örtün, ardından splintleyin. Kemiği tekrar içeri itmeyin.",
+    "Femur kırıkları uyluğa 1-2 L kan kaybedebilir; şok için agresif tedavi uygulayın.",
+    "Omurga kırığı şüphesi: splint yapmayın - hareketi en aza indirin, hat içi stabilizasyonu koruyun."
+  ],
+  "follows": [
+    "doğrudan basınç",
+    "turnike uygulaması"
+  ],
+  "precedes": [
+    "tıbbi tahliye-9 hattı"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Çocuklarda büyüme plakları bağlardan daha zayıftır; hafif mekanizmalarda bile kırık şüphesi vardır. Torus (toka) kırıklarında şişlik minimal düzeyde olabilir."
+    },
+    "obstetric": {
+      "note": "Standart splintleme geçerlidir. Uzun süreli sırtüstü pozisyondan kaçının; düz yatıyorsanız sola doğru eğilin."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

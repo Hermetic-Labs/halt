@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "Glasgow Coma Schaal (GCS)",
+  "category": "neurological",
+  "description": "Gestandaardiseerde neurologische score van bewustzijn via oog-, verbale en motorische reacties. Scorebereik 3-15.",
+  "instructions": "Geef elk van de drie domeinen een onafhankelijke score. Tel alle drie de scores op voor de totale GCS.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Spontaan"
+        },
+        {
+          "score": 3,
+          "label": "Om"
+        },
+        {
+          "score": 2,
+          "label": "uit te spreken Pijn doen"
+        },
+        {
+          "score": 1,
+          "label": "Geen"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "Georiënteerd"
+        },
+        {
+          "score": 4,
+          "label": "Verward"
+        },
+        {
+          "score": 3,
+          "label": "Ongepaste woorden"
+        },
+        {
+          "score": 2,
+          "label": "Onbegrijpelijke geluiden"
+        },
+        {
+          "score": 1,
+          "label": "Geen"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "Gehoorzaamt commando's"
+        },
+        {
+          "score": 5,
+          "label": "Lokaliseert pijn"
+        },
+        {
+          "score": 4,
+          "label": "Trekt zich terug uit pijn"
+        },
+        {
+          "score": 3,
+          "label": "Abnormale flexie (decorticeren)"
+        },
+        {
+          "score": 2,
+          "label": "Extensie (decerebraten)"
+        },
+        {
+          "score": 1,
+          "label": "Geen"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "Milde TBI - nauwlettend in de gaten houden"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "Matig traumatisch hersenletsel - bereid de luchtweg voor"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "Ernstig traumatisch hersenletsel - luchtwegen in direct gevaar, intuberen indien mogelijk"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Gebruik Pediatric GCS (pGCS) voor kinderen jonger dan 2 jaar. Verbale score aangepast voor pre-verbale kinderen."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

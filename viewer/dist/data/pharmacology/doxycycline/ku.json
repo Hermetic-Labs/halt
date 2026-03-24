@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxycycline",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramycin",
+    "Doryx"
+  ],
+  "description": "Antîbiyotîka tetracycline ya berfireh. Ji bo nexweşên alerjîk ên penîsîlînê alternatîfa pêşîlêgirtina birîna devkî. Di heman demê de li dijî organîzmayên atîpîkî û hin nexweşiyên vektorî (prophylaxia malaria li herêmên endemîk) jî bandorker e.",
+  "indications": [
+    "Pêşîlêgirtina birînê (alerjiya penîsîlînê)",
+    "Enfeksiyonên tevna nerm",
+    "Birînên birîn",
+    "Pêşîlêgirtina malaria li herêmên endemîk"
+  ],
+  "dose": "100 mg PO her 12 saetan x 7 rojan.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Ji bo pêşîlêgirtina birînê di nav 3 saetan piştî birîndariyê de dest pê bikin.",
+  "contraindications": [
+    "Ducanî (dibe ku rengê diranê fetusê û astengkirina mezinbûna hestî)",
+    "Zarokên di bin 8 salî de (eynî sedem)",
+    "Kêmasiya giran a kezebê"
+  ],
+  "warnings": [
+    "Di dema ducaniyê de KOVALE - li şûna wê amoxicillin bikar bînin.",
+    "Li zarokên di bin 8 salî de berevajîkirin.",
+    "Wêneya hestiyar - ji nexweşan re şîret bikin ku xwe ji tavê dûr bigirin.",
+    "Bi xwarinên bi kalsiyûmê dewlemend, antasîdan an hesin re nexwin -- vegirtinê asteng dike."
+  ],
+  "regional_names": {
+    "generic": "doxycycline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Di bin 8 salî de berevajîkirin. Temen 8+: 2-4 mg/kg/roj q12h dabeşkirî (max 100 mg/doz).",
+      "note": "Ji bo zarokên di bin 8 salî de amoxicillin bikar bînin."
+    },
+    "obstetric": {
+      "note": "Di ducaniyê de KOVANIYA - dibe sedema zirara fetusê. Li şûna wê amoxicillin bikar bînin."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

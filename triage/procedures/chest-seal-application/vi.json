@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Ứng dụng bịt kín ngực",
+  "category": "respiration",
+  "skill_level": "cứu cánh chiến đấu",
+  "time_estimate": "1-2 phút",
+  "description": "Bịt kín vết thương hút ở ngực (tràn khí màng phổi hở) bằng miếng bịt ngực có lỗ thông hơi để ngăn không khí lọt vào đồng thời cho phép giải phóng áp lực.",
+  "equipment": [
+    "lỗ-ngực-bịt",
+    "găng tay",
+    "kéo cắt chấn thương"
+  ],
+  "steps": [
+    "Để lộ vết thương - cắt bỏ hoặc cởi bỏ quần áo.",
+    "Lau vùng da xung quanh vết thương càng khô càng tốt (máu, mồ hôi ngăn ngừa sự bám dính).",
+    "Mở gói niêm phong ngực có lỗ thông hơi.",
+    "Đặt miếng dán lên vết thương, chính giữa lỗ. Nhấn mạnh, đảm bảo tất cả các cạnh đều dính chặt.",
+    "Kiểm tra hướng van - lỗ thông hơi phải hướng ra ngoài (cách xa da) và không bị cản trở.",
+    "Đánh giá lại âm thanh hơi thở. Nếu tình trạng xấu đi vẫn tiếp tục sau khi bịt kín, hãy xem xét tràn khí màng phổi áp lực - thực hiện NCD.",
+    "Nếu không có đệm kín thông hơi, có thể sử dụng đệm kín không thông hơi nhưng PHẢI được theo dõi sự phát triển tràn khí màng phổi do áp lực."
+  ],
+  "warnings": [
+    "Các đệm kín không thông hơi có thể chuyển tràn khí màng phổi đơn giản thành tràn khí màng phổi căng thẳng - chỉ sử dụng các đệm kín có thông hơi tại hiện trường.",
+    "Việc dán băng keo ba mặt (con dấu ngẫu hứng) không còn được CoTCCC khuyến nghị nữa - hãy sử dụng miếng đệm ngực có lỗ thông hơi thương mại.",
+    "Luôn dán vết thương vào và ra."
+  ],
+  "follows": [],
+  "precedes": [
+    "kim giải nén"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

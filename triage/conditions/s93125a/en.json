@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s93125a",
+    "icd10":  "S93125A",
+    "name":  "Dislocation of metatarsophalangeal joint of left lesser toe(s), initial encounter",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "Dislocation of metatarsophalangeal joint of left lesser toe(s), initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Magnesiumsulfat (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Magnesiumsulfat-Injektion"
+  ],
+  "description": "ZNS-Depressivum und Antikonvulsivum zur Vorbeugung und Behandlung von eklamptischen Anfällen (Anfälle in der Schwangerschaft aufgrund von Präeklampsie). Wird auch bei schwerem Asthma und Torsades de pointes eingesetzt. Erstbehandlung bei Eklampsie aufgrund von Benzodiazepinen.",
+  "indications": [
+    "Eklampsie (Anfallsprävention und -behandlung bei schwerer Präeklampsie)",
+    "Präeklampsie-Prophylaxe (schwerwiegende Symptome)",
+    "Torsades de Pointes (polymorpher V-Tachus aufgrund von Hypomagnesiämie)",
+    "Schweres akutes Asthma (Zusatz)"
+  ],
+  "dose": "Eklampsie-Aufsättigungsdosis: 4–6 g intravenös, langsamer Druck über 20 Minuten. Erhaltungstherapie: 1-2 g/Stunde IV-Infusion. Wenn der Anfall erneut auftritt: 2–4 g i.v. über 5 Minuten. IM-Beladung (wenn keine IV): 5 g IM jedes Gesäß (insgesamt 10 g) gleichzeitig.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "Beginnen Sie mit dem Beginn des Anfalls oder bei der Diagnose schwerer Präeklampsie-Merkmale.",
+  "contraindications": [
+    "Myasthenia gravis",
+    "Herzleitungsstörungen",
+    "Nierenversagen (häuft sich an – Dosis reduzieren)"
+  ],
+  "warnings": [
+    "Toxizitätszeichen: Verlust des Patellareflexes (erstes Anzeichen, 7–10 mÄq/l), Atemdepression (> 10 mÄq/l), Herzstillstand (> 15 mÄq/l).",
+    "Überwachen Sie die Patellareflexe alle 15 Minuten – Reflexverlust = Infusion stoppen.",
+    "GEGENMITTEL gegen Toxizität: Calciumgluconat 1 g i.v. über 3 Minuten.",
+    "Reduzieren Sie die Dosis bei eingeschränkter Nierenfunktion – überwachen Sie die Urinausscheidung."
+  ],
+  "regional_names": {
+    "generic": "Magnesiumsulfat"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25–50 mg/kg i.v. über 10–20 Minuten (maximal 2 g). Schweres Asthma: 25–75 mg/kg i.v. (max. 2 g).",
+      "note": "Wird selten bei Anfällen bei nicht geburtshilflichen pädiatrischen Patienten eingesetzt – Eklampsie ist die Hauptindikation."
+    },
+    "obstetric": {
+      "note": "Primäre Indikation. Plazentagängig – neonatale Hypermagnesiämie möglich. Neugeborene Dosis bei Atemdepression: Calciumgluconat 100 mg/kg i.v. Informieren Sie das NICU-Team über den mütterlichen Magnesiumkonsum."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

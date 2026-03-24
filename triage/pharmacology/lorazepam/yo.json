@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Ativan"
+  ],
+  "description": "Benzodiazepine ti n ṣiṣẹ ni agbedemeji. Itọju ila akọkọ IV/IM fun warapa ipo ati awọn ijagba nla. Tun lo fun sedation ilana ati anxiolysis.",
+  "indications": [
+    "Ipo warapa (ila akọkọ IV)",
+    "Itoju ijagba nla",
+    "sedation ti ilana",
+    "Ibanujẹ pupọ tabi aibalẹ"
+  ],
+  "dose": "Imudani: 4 miligiramu IV/IO titari lọra lori awọn iṣẹju 2. Tun 4 miligiramu ni iṣẹju 5-10 ti ijagba ba tẹsiwaju. IM: 4 mg ti IV ko ba si.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaucoma igun-igun ti o tobi",
+    "Ibanujẹ atẹgun nla",
+    "Propylene glycol hypersensitivity"
+  ],
+  "warnings": [
+    "O nfa ibanujẹ atẹgun -- ni BVM ati ohun elo ọna atẹgun ti ṣetan.",
+    "Sesedation le ṣiṣe ni awọn wakati 6-8 - ṣe abojuto ọna atẹgun.",
+    "Paradoxical agitation ṣee ṣe, paapaa ni agbalagba ati awọn ọmọde."
+  ],
+  "regional_names": {
+    "generic": "lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV/IM (o pọju 4 mg / iwọn lilo). Tun lẹẹkan ni iṣẹju 5-10 ti o ba nilo.",
+      "note": "Ayanfẹ ju diazepam fun iṣakoso ijagba IV ninu awọn ọmọde."
+    },
+    "obstetric": {
+      "note": "Rekoja ibi-ọmọ -- Ibanujẹ atẹgun ọmọ tuntun ṣee ṣe. Lo warapa ipo iya nigbati anfani ba ju eewu lọ."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

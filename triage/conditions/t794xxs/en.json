@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t794xxs",
+    "icd10":  "T794XXS",
+    "name":  "Traumatic shock, sequela",
+    "category":  "adverse-effects",
+    "triage_priority":  "",
+    "description":  "Traumatic shock, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

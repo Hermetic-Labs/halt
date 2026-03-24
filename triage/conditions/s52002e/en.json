@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s52002e",
+    "icd10":  "S52002E",
+    "name":  "Unspecified fracture of upper end of left ulna, subsequent encounter for open fracture type I or II with routine healing",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified fracture of upper end of left ulna, subsequent encounter for open fracture type I or II with routine healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

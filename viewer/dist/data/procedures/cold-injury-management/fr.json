@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Gestion des blessures causées par le froid",
+  "category": "environmental",
+  "skill_level": "De base",
+  "time_estimate": "En cours",
+  "description": "Prise en charge des engelures, du pied d'immersion (pied de tranchée) et de l'hypothermie. Les blessures causées par le froid sont évitables : identifiez les premiers signes avant que les lésions tissulaires ne soient irréversibles. Manipulez les tissus gelés avec une extrême douceur.",
+  "equipment": [
+    "Vêtements isolants secs/sac de couchage",
+    "Eau tiède (38-42C/100-108F) pour bain chauffant",
+    "Pansements stériles",
+    "Ibuprofène 400 mg PO (si disponible)",
+    "IV LR (chaud si possible)"
+  ],
+  "steps": [
+    "L'HYPOTHERMIE D'ABORD : Évaluez la température centrale avec un thermomètre à faible lecture. Léger (32-35°C) : frissons, confusion. Modérée (28-32°C) : pas de frissons, confusion sévère. Sévère (<28 °C) : inconscient, aucun pouls détectable.",
+    "HYPOTHERMIE - Légère/Modérée : Retirez les vêtements mouillés, isolez du sol, d'un environnement chaud, réchauffez les liquides sucrés si vous êtes conscient, chauffez des compresses sur les aisselles/l'aine (pas directement sur la peau). Manipulez doucement – ​​les secousses peuvent déclencher VFib.",
+    "HYPOTHERMIE – Grave : Manipuler TRÈS doucement. Vérifiez le pouls 60 secondes complètes avant la RCP. Commencez la RCP s’il n’y a pas de pouls. Liquides IV chauds si disponibles. Priorité MEDEVAC – « pas mort tant qu'il n'est pas chaud et mort ».",
+    "GELURES : superficielles (peau blanche/grise, dessous mou) ou profondes (dure, sensation de bois, cloques). Ne frottez PAS la zone. NE PAS réchauffer en cas de risque de recongélation -- la recongélation provoque des dommages plus graves qu'un réchauffement retardé.",
+    "Réchauffement des engelures : plonger dans de l'eau à 38-42 °C (pas plus chaude) pendant 15 à 30 minutes jusqu'à ce que le tissu soit mou et rouge/violet. Très douloureux – proposez une analgésie (kétamine ou morphine).",
+    "Après réchauffement : tamponner entre les orteils/doigts avec une gaze stérile. Ne faites PAS éclater les ampoules. Protéger de la pression.",
+    "PIED D'IMMERSION (Pied de Tranchée) : exposition prolongée à l'humidité/au froid, peau rouge puis pâle puis cloquée. Séchez les pieds, réchauffez-les lentement, élevez-les. Ne PAS appliquer de chaleur directe.",
+    "Documentez l’heure de la blessure et l’heure du réchauffement."
+  ],
+  "warnings": [
+    "Ne réchauffez PAS les engelures s'il y a un risque de recongélation - réchauffement incomplet + recongélation = perte catastrophique de tissus.",
+    "Une hypothermie sévère peut imiter la mort. Vérifiez le pouls pendant 60 secondes. \"Pas mort tant qu'il n'est pas chaud et mort.\"",
+    "L'alcool augmente la perte de chaleur malgré la perception de chaleur - ne donnez pas d'alcool.",
+    "Le risque de VFib est élevé en cas d'hypothermie modérée à sévère : minimisez les manipulations et les secousses du patient."
+  ],
+  "follows": [
+    "prévention de l'hypothermie"
+  ],
+  "precedes": [
+    "évacuation sanitaire-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Les enfants refroidissent plus rapidement en raison d’un rapport surface/masse plus élevé. Seuils d'hypothermie identiques. Liquides IV chauds essentiels. Fluide basé sur le poids : 20 mL/kg de LR chaud."
+    },
+    "obstetric": {
+      "note": "L'hypothermie maternelle provoque une bradycardie et une acidose fœtales. Le réchauffement maternel agressif est un traitement fœtal. Surveillance fœtale si disponible."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Perimortaler Kaiserschnitt (PMCS)",
+  "category": "obstetric",
+  "skill_level": "Arzt-Chirurg",
+  "time_estimate": "3-5 Minuten",
+  "description": "Notfallkaiserschnitt innerhalb von 4 Minuten nach dem mütterlichen Herzstillstand, um eine wirksame Wiederbelebung und ein potenzielles Überleben des Neugeborenen zu ermöglichen. Die Gebärmutter komprimiert die Aorta und den IVC – die Entbindung ist auch für die Mutter wiederbelebend.",
+  "equipment": [
+    "Skalpell",
+    "Handschuhe",
+    "Retraktoren",
+    "Kabelklemmen",
+    "Wiederbelebungsgeräte für Neugeborene"
+  ],
+  "steps": [
+    "Setzen Sie die HLW ohne Unterbrechung fort.",
+    "Machen Sie einen vertikalen Mittellinienschnitt vom Nabel bis zum Schambein durch Haut und Faszie.",
+    "Das untere Uterussegment horizontal einschneiden.",
+    "Bringen Sie das Kind zur Welt – beachten Sie die Uhrzeit.",
+    "Klemmen Sie das Kabel fest und schneiden Sie es ab.",
+    "Übergabe des Säuglings an einen Zweitversorger zur Wiederbelebung des Neugeborenen.",
+    "Entfernen Sie die Plazenta.",
+    "Packen Sie die Gebärmutter und den Bauch aus, wenn ein endgültiger Verschluss nicht sofort möglich ist.",
+    "Setzen Sie die mütterliche Wiederbelebung fort – ROSC ist nach einer Uterusdekompression wahrscheinlicher."
+  ],
+  "warnings": [
+    "Um die besten Ergebnisse für Mutter und Fötus zu erzielen, muss die Zeit von der Entscheidung bis zur Entbindung weniger als 5 Minuten betragen.",
+    "Dieses Verfahren ist der letzte Ausweg – nur wenn die Mutter einen Herzstillstand erlitten hat und die Entbindung unmittelbar bevorsteht (>20. Schwangerschaftswoche).",
+    "Erfordert eine ärztliche Ausbildung. Kampfsanitäter sollten das Feld vorbereiten und unterstützen, nicht selbstständig handeln."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

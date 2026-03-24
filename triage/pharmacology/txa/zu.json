@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "I-Tranexamic Acid (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "I-Cyklokapron",
+    "I-Lysteda"
+  ],
+  "description": "I-Antifibrinolytic ejenti evimbela ukuqhekeka kwamahlule egazi. Kunciphisa kakhulu ukufa okubangelwa ukushaqeka okubangelwa ukopha lapho kunikezwa kusenesikhathi. Kunconywe i-CoTCCC kubo bonke abalimele abopha kakhulu noma abasengozini yokopha okukhulu.",
+  "indications": [
+    "Ukopha okukhulu kwangaphandle noma okusolwayo ngaphakathi",
+    "Ukushaqeka kwe-hemorrhagic",
+    "Ingozi ephezulu yokopha (indlela yokulimala)"
+  ],
+  "dose": "I-1g IV/IO ngaphezu kwemizuzu eyi-10, ilandelwa yi-1g IV/IO ngaphezulu kwamahora ayi-8. Uma i-IV/IO ingatholakali: 650mg PO x2 (1.3g inani) -- Inketho ye-TCCC PO.",
+  "route": [
+    "IV",
+    "IO",
+    "PO"
+  ],
+  "window": "KUMELE inikezwe kungakapheli amahora ama-3 okulimala. Ngaphansi kwamahora angu-3, ​​i-TXA INGAKHULISA izinga lokufa kwabantu -- unganikeli.",
+  "contraindications": [
+    "Umlando wesifo se-thromboembolic (DVT, PE, stroke)",
+    "I-Disseminated Intravascular Coagulation (DIC)",
+    "> 3 amahora ngemuva kokulimala"
+  ],
+  "warnings": [
+    "Isikhathi sokungena ngemvume ngokushesha -- iwindi amahora angu-3 kusukela ngesikhathi sokulimala, hhayi isikhathi sokufika.",
+    "Ungaphambanisi umthamo we-IV (1g) nomthamo womlomo."
+  ],
+  "regional_names": {
+    "generic": "i-tranexamic acid",
+    "US": "I-Cyklokapron",
+    "UK": "I-Cyklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg IV (ubukhulu obungu-1g). Ubufakazi obuvelayo -- sebenzisa ukwahlulela komtholampilo.",
+      "note": "Iwindi elifanayo lamahora angu-3 liyasebenza."
+    },
+    "obstetric": {
+      "note": "Ikhonjiswe ukopha kwangemva kokubeletha. Kuphephile ekukhulelweni. Umthamo ofanayo womuntu omdala uyasebenza."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

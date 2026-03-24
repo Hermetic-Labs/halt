@@ -1,0 +1,63 @@
+{
+  "id": "broselow-tape",
+  "name": "Broselow Pediatric Emergency Tape הפניה",
+  "description": "התייחסות מקודדת משקל למנה עבור מתן תרופות לילדים כאשר סולם אינו זמין. מדדו את הילד מהחלק העליון של הראש ועד העקב והתאימו לרצועת הצבע.",
+  "note": "הפניה זו מיועדת להערכה בלבד. השתמש במשקל בפועל כאשר זמין.",
+  "bands": [
+    {
+      "color": "אפור",
+      "weight_kg": "3-5",
+      "length_cm": "46-57",
+      "est_age": "יילוד"
+    },
+    {
+      "color": "ורוד",
+      "weight_kg": "6-7",
+      "length_cm": "57-67",
+      "est_age": "3-6 חודשים"
+    },
+    {
+      "color": "אדום",
+      "weight_kg": "8-9",
+      "length_cm": "67-74",
+      "est_age": "6-12 חודשים"
+    },
+    {
+      "color": "סגול",
+      "weight_kg": "10-11",
+      "length_cm": "74-83",
+      "est_age": "12-18 חודשים"
+    },
+    {
+      "color": "צהוב",
+      "weight_kg": "12-14",
+      "length_cm": "83-95",
+      "est_age": "18 חודשים-3 שנים"
+    },
+    {
+      "color": "לבן",
+      "weight_kg": "15-18",
+      "length_cm": "95-107",
+      "est_age": "3-5 שנים"
+    },
+    {
+      "color": "כחול",
+      "weight_kg": "19-22",
+      "length_cm": "107-122",
+      "est_age": "5-7 שנים"
+    },
+    {
+      "color": "כתום",
+      "weight_kg": "24-28",
+      "length_cm": "122-137",
+      "est_age": "7-9 שנים"
+    },
+    {
+      "color": "ירוק",
+      "weight_kg": "30-36",
+      "length_cm": "137-152",
+      "est_age": "9-12 שנים"
+    }
+  ],
+  "source": "Broselow Pediatric Emergency Reference / PALS"
+}

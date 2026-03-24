@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s58122a",
+    "icd10":  "S58122A",
+    "name":  "Partial traumatic amputation at level between elbow and wrist, left arm, initial encounter",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Partial traumatic amputation at level between elbow and wrist, left arm, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

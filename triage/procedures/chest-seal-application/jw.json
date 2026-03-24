@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Aplikasi Segel Dada Occlusive",
+  "category": "respiration",
+  "skill_level": "tempur-lifesaver",
+  "time_estimate": "1-2 min",
+  "description": "Nyegel tatu dada sing nyedhot (pneumothorax mbukak) kanthi segel dada sing dibuwang kanggo nyegah mlebu udara nalika ngidini ngeculake tekanan.",
+  "equipment": [
+    "vented-dodo-segel",
+    "sarung tangan",
+    "trauma-gunting"
+  ],
+  "steps": [
+    "Mbukak tatu - potong utawa copot sandhangan.",
+    "Ngilangke kulit sak tatu minangka garing sabisa (getih, kringet nyegah adhesion).",
+    "Bukak paket segel dada vented.",
+    "Selehake segel ing tatu, tengah ing bolongan. Pencet kanthi kuat, priksa manawa kabeh pinggiran nempel.",
+    "Priksa orientasi katup - ventilasi kudu madhep metu (adoh saka kulit) lan tetep ora ana alangan.",
+    "Kaji maneh swara napas. Yen rusak terus sawise sealing, nimbang tension pneumothorax -- nindakake NCD.",
+    "Yen segel vented ora kasedhiya, segel non-vented bisa digunakake nanging kudu dipantau kanggo pangembangan tension pneumothorax."
+  ],
+  "warnings": [
+    "Segel non-vented bisa ngowahi pneumothorax prasaja dadi pneumothorax tension - nggunakake segel vented mung ing lapangan.",
+    "Taping telung sisi (segel improvisasi) ora dianjurake maneh dening CoTCCC - gunakake segel dada vented komersial.",
+    "Tansah masang segel kanggo ENTRANCE lan EXIT wounds."
+  ],
+  "follows": [],
+  "precedes": [
+    "jarum-dekompresi"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

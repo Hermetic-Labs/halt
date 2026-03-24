@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s23140s",
+    "icd10":  "S23140S",
+    "name":  "Subluxation of T6/T7 thoracic vertebra, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Subluxation of T6/T7 thoracic vertebra, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

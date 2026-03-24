@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "I-Fluoroquinolone i-antibiotic kunye nokhuseleko olubanzi lwegram-negative. Isetyenziselwa ukusuleleka kwizilonda ezinobungozi, ukungena kwintlungu yesisu (i-GI flora coverage), kunye nosulelo lwe-urinary tract. I-PO ekhoyo kunye ne-IV.",
+  "indications": [
+    "Umonzakalo ogqobhozayo wesisu (GI decontamination)",
+    "Usulelo olumandundu lwamanxeba",
+    "Usulelo lwegram-negative",
+    "Usulelo lomjelo womchamo"
+  ],
+  "dose": "400 mg IV q8-12h. PO: 500-750 mg q12h.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ukwaliwa yifluoroquinolone okwaziwayo",
+    "Abantwana kunye nolutsha olukwiminyaka eyi-18 (isihlobo -- umngcipheko we-tendinopathy)",
+    "Ukukhulelwa (isihlobo)"
+  ],
+  "warnings": [
+    "Umngcipheko wokuqhekeka kwe-tendon, ngakumbi i-tendon ye-Achilles. Yeka ukuba intlungu ye-tendon ikhula.",
+    "Inokwandisa ixesha le-QT -- isilumkiso kunye namanye amachiza okwandisa i-QT.",
+    "Kuphephe ukukhulelwa ukuba ezinye iindlela zikhona."
+  ],
+  "regional_names": {
+    "generic": "ciprofloxacin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg / kg IV q8-12h (max 400 mg / idosi). PO: 10-20 mg / kg q12h (max 750 mg / umthamo).",
+      "note": "Sebenzisa kuphela xa iinzuzo zodlula umngcipheko we-tendinopathy. Ugcino usulelo olumandundu."
+    },
+    "obstetric": {
+      "note": "Kuphephe ukukhulelwa ukuba ezinye iindlela zikhona. Sebenzisa kuphela usulelo olubeka ubomi esichengeni apho inzuzo yodlula umngcipheko."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

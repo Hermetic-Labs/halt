@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t5811xa",
+    "icd10":  "T5811XA",
+    "name":  "Toxic effect of carbon monoxide from utility gas, accidental (unintentional), initial encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Toxic effect of carbon monoxide from utility gas, accidental (unintentional), initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

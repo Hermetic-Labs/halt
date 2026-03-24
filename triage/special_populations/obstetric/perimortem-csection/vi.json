@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Mổ lấy thai chu sinh (PMCS)",
+  "category": "obstetric",
+  "skill_level": "bác sĩ-bác sĩ phẫu thuật",
+  "time_estimate": "3-5 phút",
+  "description": "Mổ lấy thai khẩn cấp trong vòng 4 phút sau khi mẹ ngừng tim để cho phép CPR hiệu quả và khả năng sống sót của trẻ sơ sinh. Tử cung chèn ép động mạch chủ và IVC - việc sinh nở cũng có tác dụng hồi sức cho người mẹ.",
+  "equipment": [
+    "dao mổ",
+    "găng tay",
+    "máy rút",
+    "kẹp dây",
+    "thiết bị hồi sức sơ sinh"
+  ],
+  "steps": [
+    "Tiếp tục CPR mà không bị gián đoạn.",
+    "Thực hiện một đường rạch dọc ở giữa từ rốn đến xương mu qua da và cân.",
+    "Rạch đoạn dưới tử cung theo chiều ngang.",
+    "Đẻ trẻ sơ sinh - lưu ý thời gian.",
+    "Kẹp và cắt dây.",
+    "Giao trẻ sơ sinh cho nhà cung cấp dịch vụ thứ hai để hồi sức sơ sinh.",
+    "Loại bỏ nhau thai.",
+    "Đắp tử cung và bụng nếu không thể đóng kín ngay lập tức.",
+    "Tiếp tục hồi sức cho bà mẹ - ROSC có nhiều khả năng xảy ra sau khi giảm áp lực tử cung."
+  ],
+  "warnings": [
+    "Thời gian quyết định sinh phải dưới 5 phút để mang lại kết quả tốt nhất cho mẹ và thai nhi.",
+    "Thủ tục này là biện pháp cuối cùng - chỉ khi người mẹ bị ngừng tim và sắp sinh (thai > 20 tuần).",
+    "Yêu cầu đào tạo trình độ bác sĩ. Lực lượng y tế chiến đấu nên chuẩn bị hiện trường và hỗ trợ, không nên thực hiện độc lập."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

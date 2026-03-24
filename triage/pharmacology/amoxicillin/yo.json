@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicillin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "Trimox"
+  ],
+  "description": "Awọn oogun aporo ajẹsara aminopenicillin gbooro. Awọn oogun ajẹsara ti ẹnu fun ikolu ọgbẹ. Apakan ti idii egbogi ija TCCC fun prophylaxis ọgbẹ ni awọn ipalara ti kii ṣe pataki.",
+  "indications": [
+    "Ilana ikọlu ọgbẹ (awọn ọgbẹ kekere-iwọnwọn, idii oogun ẹnu)",
+    "Awọn àkóràn àsopọ asọ",
+    "Awọn àkóràn atẹgun atẹgun"
+  ],
+  "dose": "500 miligiramu PO ni gbogbo wakati 8 x 7 ọjọ (ọgbẹ prophylaxis). 875 mg PO ni gbogbo wakati 12 ni yiyan.",
+  "route": [
+    "PO"
+  ],
+  "window": "Bẹrẹ laarin awọn wakati 3 ti ipalara fun prophylaxis ọgbẹ.",
+  "contraindications": [
+    "Aleji penicillin ti a mọ (lo doxycycline dipo)",
+    "Mononucleosis (ewu sisu)"
+  ],
+  "warnings": [
+    "Ti o ba jẹ inira penicillin: aropo doxycycline 100mg PO BID.",
+    "Ona ẹnu nikan -- lo awọn egboogi IV (cefazolin/ciprofloxacin) fun awọn ọgbẹ ti o lagbara tabi ti ẹnu ko ba farada."
+  ],
+  "regional_names": {
+    "generic": "amoxicillin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg / kg fun ọjọ kan pin q8h (max 500 mg / iwọn lilo). Lo itọkasi Broselow orisun iwuwo.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Ailewu ninu oyun. Ayanfẹ ju doxycycline (eyiti o jẹ contraindicated ni oyun)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "劳拉西泮",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "阿蒂万"
+  ],
+  "description": "中效苯二氮卓类药物。癫痫持续状态和急性癫痫发作的一线 IV/IM 治疗。也用于程序镇静和抗焦虑。",
+  "indications": [
+    "癫痫持续状态（一线 IV）",
+    "急性癫痫发作管理",
+    "程序镇静",
+    "严重焦虑或激动"
+  ],
+  "dose": "癫痫发作：4 mg IV/IO 缓慢推注超过 2 分钟。如果癫痫发作持续，请在 5-10 分钟内重复 4 mg。 IM：4 mg（如果无法静脉注射）。",
+  "route": [
+    "四",
+    "IO",
+    "即时通讯"
+  ],
+  "window": "",
+  "contraindications": [
+    "急性窄角型青光眼",
+    "严重呼吸抑制",
+    "丙二醇过敏"
+  ],
+  "warnings": [
+    "导致呼吸抑制——准备好 BVM 和气道设备。",
+    "镇静可能持续 6-8 小时——监测气道。",
+    "可能会出现矛盾的躁动，尤其是老年人和儿童。"
+  ],
+  "regional_names": {
+    "generic": "劳拉西泮"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV/IM（最大 4 mg/剂）。如果需要，5-10 分钟重复一次。",
+      "note": "对于儿童静脉注射癫痫发作的治疗，优于地西泮。"
+    },
+    "obstetric": {
+      "note": "穿过胎盘——可能会抑制新生儿呼吸。当益处大于风险时用于母亲癫痫持续状态。"
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

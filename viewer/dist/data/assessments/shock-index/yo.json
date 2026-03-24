@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "mọnamọna Atọka",
+  "category": "circulatory",
+  "description": "Atọka nọmba ẹyọkan ni iyara ti iduroṣinṣin hemodynamic. Iṣiro bi HR / SBP. Deede jẹ 0.5-0.7.",
+  "instructions": "Pin oṣuwọn ọkan nipasẹ titẹ ẹjẹ systolic. Atọka mọnamọna ti nyara tọkasi ibajẹ.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Deede - hemodynamically idurosinsin"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Irẹwẹsi kekere -- atẹle ni pẹkipẹki"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Ibanujẹ iwọntunwọnsi - Wiwọle IV, awọn omi-omi"
+    },
+    {
+      "range": ">1.4",
+      "label": "Ibalẹ nla -- isọdọtun lẹsẹkẹsẹ, awọn ọja ẹjẹ"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Atọka Shock Obstetric (OSI) nlo agbekalẹ kanna. SI> 0.9 ninu awọn alaisan aboyun jẹ pataki. HR deede ga julọ ni oyun (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Ukufakwa kweNasopharyngeal Airway (NPA).",
+  "category": "airway",
+  "skill_level": "ukulwa-ukusindisa impilo",
+  "time_estimate": "1 iminithi",
+  "description": "Ukufakwa kwesengezo somzila womoya wamakhala oguqukayo ukuze kugcinwe amandla omoya esigulini esiqulekile noma esingazi lutho.",
+  "equipment": [
+    "i-npa-nge-safety-pin",
+    "okokugcoba"
+  ],
+  "steps": [
+    "Khetha usayizi we-NPA ofanele (linganisa ukusuka ekhaleni kuye endlebeni).",
+    "Gcoba i-NPA ngesandla esivulekile nge-lubricant encibilika emanzini noma ngosawoti.",
+    "Faka iphinikhodi yokuphepha nge-flange uma ingekho kakade (ivimbela ukulangazelela).",
+    "Faka ngobumnene ekhaleni elingakwesokudla (i-bevel ibheke ku-septum), uye phambili ngokuhambisana nolwanga.",
+    "Hamba kuze kube yilapho i-flange ihlezi ngokumelene nekhala.",
+    "Beka kabusha isiguli (indawo yokululama uma kungekho ukukhathazeka komgogodla) bese uhlola kabusha indlela yokuphefumula.",
+    "Uma ukumelana kuhlangatshezwana nayo, zama ikhala lesobunxele."
+  ],
+  "warnings": [
+    "Kunqatshelwe ekuqhekekeni kogebhezi lwe-basilar okusolakala ukuthi (amehlo e-raccoon, uphawu lweMpi, i-CSF rhinorrhea).",
+    "I-NPA iyindlela yokuqala yokuphefumula ehamba phambili yesiguli equlekile -- I-OPA ingabangela ukuhlanza ezigulini ezingezwa lutho."
+  ],
+  "source": "TCCC / JTS CPG"
+}

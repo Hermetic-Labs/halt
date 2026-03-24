@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Cefazolin",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Ancef",
+    "Kefzol"
+  ],
+  "description": "Cephalosporin jiilka kowaad. Antibiyootiga safka hore ee waalidka ee caabuqyada dhaawaca halista ah iyo kahortaga qalliinka. Caymis wanaagsan oo garaam-positive ah oo ay ku jirto MSSA. Ku bixi 60 daqiiqo gudahood qalliinka la qalay si looga hortago.",
+  "indications": [
+    "Ka hortagga dhaawaca qalliinka",
+    "Infekshannada unugyada jilicsan ee halista ah",
+    "Ka hortagga jabka furan",
+    "Infekshannada qaabka maqaarka iyo maqaarka"
+  ],
+  "dose": "1-2g IV/IM q8h. Kahortagga qalliinka: 2g IV 60 daqiiqo gudahood ka hor inta aan la jarjarin. Ku celi 2g haddii qalliinka> 4 saacadood.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Kahortagga qalliinka: ku bixi 60 daqiiqo gudahood marka la qalayo.",
+  "contraindications": [
+    "Xasaasiyadda cephalosporin ee la yaqaan",
+    "Xasaasiyad daran oo penicillin ah (5-10% falcelinta isdhaafsiga)"
+  ],
+  "warnings": [
+    "Falcelinta falcelinta xasaasiyadda penicillin: si taxaddar leh u isticmaal bukaannada xasaasiyadda leh ee penicillin.",
+    "Hagaajin qiyaasta daciifnimada kelyaha."
+  ],
+  "regional_names": {
+    "generic": "cefazolin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM q8h (ugu badnaan 2g/qiyaas). Kahortagga: 30 mg/kg (ugu badnaan 2g) ka hor intaan la jeexin.",
+      "note": "Badbaadada oo si fiican looga bartay caafimaadka carruurta."
+    },
+    "obstetric": {
+      "note": "Badbaadada uurka iyo nuujinta. Antibiyootiga waalidka ee la door bidayay ee hababka umulisada."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

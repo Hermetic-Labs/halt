@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s68628a",
+    "icd10":  "S68628A",
+    "name":  "Partial traumatic transphalangeal amputation of other finger, initial encounter",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Partial traumatic transphalangeal amputation of other finger, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

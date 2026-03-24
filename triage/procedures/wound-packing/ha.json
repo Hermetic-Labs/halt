@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Shirye-shiryen Rauni na Hemostatic",
+  "category": "hemorrhage-control",
+  "skill_level": "fama-ceton rai",
+  "time_estimate": "3-5 min",
+  "description": "Ɗaukar raunin da ba ya matsawa ko haɗin gwiwa tare da gauze na hemostatic don sarrafa zubar jini inda ba za a iya amfani da yawon shakatawa ba.",
+  "equipment": [
+    "hemostatic gauze",
+    "nitrile-safofin hannu",
+    "rauni-shears",
+    "matsa lamba-bandeji"
+  ],
+  "steps": [
+    "Don safar hannu. Fitar da rauni sosai ta amfani da raunin rauni.",
+    "Gano tushen zub da jini mai aiki a cikin ramin rauni.",
+    "Bude gauze na hemostatic kuma shirya shi da kyau a cikin rauni da yatsa, tura shi kai tsaye zuwa tushen zub da jini.",
+    "Ci gaba da tattarawa har sai rami mai rauni ya cika gaba daya.",
+    "Aiwatar da ƙarfi, ci gaba da matsa lamba kai tsaye tare da diddigin hannunka na akalla mintuna 3.",
+    "KAR a cire kowane kayan tattarawa da zarar an yi amfani da shi.",
+    "Aiwatar da bandeji mai matsa lamba akan cushewar rauni.",
+    "Alama lokacin akan katin TCCC ko goshin mara lafiya (misali, 'PKD 0145')."
+  ],
+  "warnings": [
+    "KADA KA tattara raunuka masu shiga ƙirji -- yi amfani da hatimin ƙirji maimakon.",
+    "Idan shirya raunin wuyan wuyansa, yi matsa lamba ba tare da matsawa duka carotids lokaci guda ba.",
+    "Sake tantancewa a cikin mintuna 5 idan ana zargin tushen jijiya."
+  ],
+  "follows": [
+    "kai tsaye-matsi"
+  ],
+  "precedes": [
+    "yawon shakatawa-application"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Yi amfani da ƙarancin gauze daidai gwargwado. Aiwatar da matsi mai sauƙi don guje wa matsewar thoracic a cikin jarirai."
+    },
+    "obstetric": {
+      "note": "Guji matsi mai zurfi ko matsananciyar tattarawa kusa da babban ciki. An fi son haɓaka cikin sauri."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

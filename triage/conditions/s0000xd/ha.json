@@ -1,0 +1,22 @@
+{
+  "id": "s0000xd",
+  "icd10": "S0000XD",
+  "name": "Rauni na sama wanda ba a bayyana ba, gamuwa ta gaba",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Raunin da ba a fayyace ba na fatar kai, gamuwa ta gaba",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

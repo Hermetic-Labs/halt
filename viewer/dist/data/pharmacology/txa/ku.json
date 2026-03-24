@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Asîda Tranexamîk (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Cyklokapron",
+    "Lysteda"
+  ],
+  "description": "Dermanek antîfîbrînolîtîk ku perçebûna girêkên xwînê asteng dike. Dema ku zû tê dayîn mirina ji şokê hemorrajîk bi girîngî kêm dike. Ji hêla CoTCCC ve ji bo hemî mexdûrên bi xwînrêjiya girîng an di xetereya xwînrêjiya girîng de tê pêşniyar kirin.",
+  "indications": [
+    "Hemorrajiya navxweyî ya girîng a derveyî an gumanbar",
+    "Şoka hemorrajîk",
+    "Rîska bilind a hemorrajiyê (mekanîzmaya birînê)"
+  ],
+  "dose": "1g IV/IO di nav 10 hûrdeman de, li dûv 1g IV/IO di nav 8 demjimêran de. Ger IV/IO tune be: 650mg PO x2 (bi tevahî 1.3g) -- Vebijarka TCCC PO.",
+  "route": [
+    "IV",
+    "IO",
+    "PO"
+  ],
+  "window": "DIVÊ di nav 3 saetan piştî birîndarbûnê de were derman kirin. Ji 3 saetan wêdetir, TXA dikare mirinê Zêde bike - nede.",
+  "contraindications": [
+    "Dîroka nexweşiya tromboembolîk (DVT, PE, stok)",
+    "Coagulation Intravascular Belavbûyî (DIC)",
+    "> 3 saet piştî birîndarbûnê"
+  ],
+  "warnings": [
+    "Demjimêra rêveberiyê tavilê têketin - pace ji dema birîndarbûnê 3 demjimêran e, ne dema gihîştinê.",
+    "Doza IV (1g) bi doza devkî re tevlihev nekin."
+  ],
+  "regional_names": {
+    "generic": "asîda tranexamîk",
+    "US": "Cyklokapron",
+    "UK": "Cyklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg IV (max 1g). Delîlên derketine - daraza klînîkî bikar bînin.",
+      "note": "Heman pencereya 3-saetan derbas dibe."
+    },
+    "obstetric": {
+      "note": "Ji bo hemorrajiya piştî zayînê tê destnîşan kirin. Ewle di ducaniyê de. Heman dozkirina mezinan derbas dibe."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Splinting Improvisasi",
+  "category": "ortho-stabilization",
+  "skill_level": "dhasar",
+  "time_estimate": "5-10 min",
+  "description": "Imobilisasi fraktur nggunakake bahan sing kasedhiya kanggo nyegah cedera luwih lanjut, nyuda rasa nyeri, lan mbatesi mundhut getih menyang jaringan sekitar. Splint ing posisi ditemokake kajaba sirkulasi dikompromi -- banjur lurusake alon-alon.",
+  "equipment": [
+    "SAM splint (luwih disenengi)",
+    "Majalah gulung, tongkat, tiang tenda (improvisasi lapangan)",
+    "Perban Cravat / segitiga",
+    "Padding (sandhangan, busa)",
+    "Tape utawa ngudani saka kain"
+  ],
+  "steps": [
+    "Mbukak lan netepake ciloko - mriksa sirkulasi, sensasi, gerakan (CSM) distal menyang fraktur sadurunge lan sawise.",
+    "Ngontrol perdarahan aktif sadurunge splinting.",
+    "Pad bony prominences generously kanggo nyegah pain meksa.",
+    "Pilih bahan splint cukup dawa kanggo immobilize peserta ndhuwur lan ngisor fraktur.",
+    "Posisi anggota awak ing posisi nyaman utawa alignment anatomi -- aja meksa.",
+    "Gunakake padding, banjur bahan splint. Aman nganggo bandage utawa strip kain.",
+    "AJA mbungkus kenceng -- ninggalake pucuk driji/jempol sikil kanggo monitor CSM.",
+    "Reassess CSM sawise aplikasi - loosen langsung yen sirkulasi mboten saget.",
+    "Angkat awak yen bisa kanggo nyuda bengkak.",
+    "Dokumen wektu aplikasi splint."
+  ],
+  "warnings": [
+    "Kaji maneh CSM saben 15-30 menit -- bengkak bisa nggawe splint sing bener dadi tourniquet.",
+    "Patah mbukak: nutupi tatu nganggo balutan steril dhisik, banjur splint. Aja push balung bali.",
+    "Fraktur femur bisa ilang getih 1-2L menyang paha - nambani kanthi agresif kanggo kejut.",
+    "Diduga fraktur balung mburi: Aja improvisasi splint - nyilikake gerakan, njaga stabilisasi inline."
+  ],
+  "follows": [
+    "tekanan langsung",
+    "tourniquet-aplikasi"
+  ],
+  "precedes": [
+    "baris medevac-9"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Piring pertumbuhan ing bocah-bocah luwih lemah tinimbang ligamen - curiga fraktur sanajan kanthi mekanisme sing entheng. Fraktur Tors (gesper) bisa uga duwe pembengkakan minimal."
+    },
+    "obstetric": {
+      "note": "Splinting standar ditrapake. Ngindhari posisi supine sing dawa -- miringake sisih kiwa yen ngapusi."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

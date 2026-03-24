@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxycycline",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramycin",
+    "Doryx"
+  ],
+  "description": "I-Broad-spectrum ye-tetracycline antibiotics. Enye indlela yokuthintela inxeba lomlomo kwi-penicillin-aleji yezigulana. Ikwasebenza ngokuchasene nezinto eziphilayo ezingaqhelekanga kunye nezifo ezithwalwa zizilwanyana (i-malaria prophylaxis kwiindawo ezihlala zikho).",
+  "indications": [
+    "Ukuthintela inxeba (i-penicillin aleji)",
+    "Usulelo kwiithishu ezithambileyo",
+    "Amanxeba okuluma",
+    "I-Malaria prophylaxis kwiindawo ezixhaphakileyo"
+  ],
+  "dose": "100 mg PO rhoqo 12 iiyure x 7 iintsuku.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Qalisa kwiiyure ze-3 zokulimala kwi-nxeba prophylaxis.",
+  "contraindications": [
+    "Ukukhulelwa (kubangela ukubola kwezinyo lomntwana kunye nokuthintela ukukhula kwamathambo)",
+    "Abantwana abangaphantsi kweminyaka eyi-8 (isizathu esifanayo)",
+    "Ukukhubazeka okukhulu kwesibindi"
+  ],
+  "warnings": [
+    "I-CONTRAINDICATED ekukhulelweni--sebenzisa i-amoxicillin endaweni yoko.",
+    "I-CONTRAINDICATED kubantwana abangaphantsi kweminyaka eyi-8.",
+    "I-Photosensitivity - cebisa isigulana ukuba siphephe ukukhanya kwelanga.",
+    "Musa ukuthatha ukutya okutyebileyo nge-calcium, ii-antacids, okanye i-iron-- iyonakalisa ukufunxa."
+  ],
+  "regional_names": {
+    "generic": "doxycycline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Contraindicated phantsi kweminyaka 8. Ubudala be-8 +: 2-4 mg / kg / usuku lwahlulwe q12h (max 100 mg / dose).",
+      "note": "Sebenzisa i-amoxicillin kubantwana abangaphantsi kwe-8."
+    },
+    "obstetric": {
+      "note": "I-CONTRAINDICATED ekukhulelweni -- kubangela ingozi kumntwana. Sebenzisa i-amoxicillin endaweni yoko."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

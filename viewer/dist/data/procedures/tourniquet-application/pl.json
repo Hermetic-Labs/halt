@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Aplikacja opaski uciskowej (opaska uciskowa – CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "dowolny odpowiadający",
+  "time_estimate": "30-60 sek",
+  "description": "Ostateczna kontrola krwotoku w przypadku zagrażających życiu krwawień do kończyn. Złóż wniosek wcześniej – nie zwlekaj.",
+  "equipment": [
+    "opaska uciskowa dla kota",
+    "znacznik stały"
+  ],
+  "steps": [
+    "Załóż opaskę uciskową w odległości 5–7 cm (2–3 cali) proksymalnie (powyżej) rany – dopuszczalne jest na ubranie.",
+    "Poprowadź samoprzylepną opaskę wokół kończyny i przewlecz ją przez klamrę adaptera ciernego.",
+    "Zaciągnij mocno opaskę i zamocuj ją z powrotem.",
+    "Przekręcaj pręt windy kotwicznej, aż krwawienie ustanie lub brak będzie tętna w dystalnej części ciała.",
+    "Zablokuj windę kotwiczną w klipsie windy kotwicznej.",
+    "Załóż pasek windy kotwicznej na pręt windy kotwicznej, aby zabezpieczyć.",
+    "Zapisz godzinę aplikacji bezpośrednio na opasce uciskowej (użyj znacznika) ORAZ na karcie TCCC.",
+    "Odsłoń i ponownie oceń ranę. Oceń ponownie po 5 minutach."
+  ],
+  "warnings": [
+    "NIE zdejmować opaski uciskowej po jej założeniu w terenie – wyłącznie przeszkolony personel medyczny w kontrolowanych warunkach.",
+    "Czas ma kluczowe znaczenie: opaska uciskowa > 2 godziny znacznie zwiększa ryzyko utraty kończyny. Natychmiast zarejestruj czas.",
+    "NIE nakładać na staw. Jeśli kończyna ma rany na wielu poziomach, nałóż proksymalnie na wszystkie rany.",
+    "Improwizowane opaski uciskowe (pasy, liny) są znacznie mniej skuteczne."
+  ],
+  "follows": [
+    "nacisk bezpośredni",
+    "opatrywanie ran"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Jeśli to możliwe, użyj wąskiej opaski uciskowej dla dzieci. Można zastosować standardowy CAT, ale dokręcaj ostrożnie. Kończyny są mniejsze – sprawdź dokładnie tętno na dystalnej części ciała."
+    },
+    "obstetric": {
+      "note": "Standardowe zastosowanie na rany kończyn. Nie stosować na brzuch i miednicę."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

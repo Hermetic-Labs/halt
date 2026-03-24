@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastat"
+  ],
+  "description": "benzodiazepine na-arụ ọrụ ogologo oge. A na-eji ya maka njikwa ọdịdọ, spasm muscle, na anxiolysis. Gel rectal (Diastat) bara uru na ntọala ubi mgbe IV adịghị. Ogologo oge karịa lorazepam.",
+  "indications": [
+    "Nlekọta ọdịdọ (mmanụ/IV)",
+    "Ọkpụkpụ akwara site na ọnya azụ azụ ma ọ bụ tetanus",
+    "Mgbochi ọgwụ mgbochi akwara (na ngwa CHEMPACK)",
+    "Mwepụ mmanya"
+  ],
+  "dose": "Njide: 5-10 mg IV ngwa ngwa push. Tinyegharịa q10-15 min (max 30 mg). Mkpịsị aka: 0.2-0.5 mg / kg. IM absorption na-adịghị agbanwe agbanwe -- zere IM ma ọ ga-ekwe omume.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "Nnukwu glaucoma dị warara-n'akuku",
+    "Ọrịa ịba ọcha n'anya",
+    "Mmetụta iku ume"
+  ],
+  "warnings": [
+    "Ntinye IM adịghị agbanwe agbanwe ma na-egbu mgbu --ahọrọ IV, rectal, ma ọ bụ jiri midazolam IM kama.",
+    "Ogologo oge nkwụsịtụ (24-48h maka usoro ugboro ugboro).",
+    "Ndị merụrụ ahụ akwara: diazepam gụnyere na ngwa CHEMPACK maka ọdịdọ site na nsogbu cholinergic."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0.1-0.3 mg/kg (kacha 10 mg). Mkpịsị aka: 0.3-0.5 mg/kg. Jiri ụzọ rectal mgbe IV adịghị.",
+      "note": "Gel diastat rectal bara uru karịsịa maka ọdịdọ ụmụaka na ntọala ubi."
+    },
+    "obstetric": {
+      "note": "Na-agafe placenta. Enwere ike ibute hypotonia nke nwa ọhụrụ, ịda mbà n'obi nke iku ume. Jiri naanị maka ọdịdọ nne na-anabataghị magnesium."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

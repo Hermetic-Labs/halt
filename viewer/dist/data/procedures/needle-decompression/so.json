@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Irbada Xabadka oo Dempress (NCD)",
+  "category": "respiration",
+  "skill_level": "dagaal-daaw",
+  "time_estimate": "1-2 daqiiqo",
+  "description": "Gurmadka degdega ah ee pneumothorax kacsanaanta iyadoo irbad la geliyo booska labaad ee intercostal. Faragelinta naf-badbaadinta.",
+  "equipment": [
+    "14g-cirbad-catheter-3-25in",
+    "galoofyada",
+    "laabta-shaab-ikhtiyaar"
+  ],
+  "steps": [
+    "Aqoonso pneumothorax kacsan: dhawaaqa neefta maqan ee dhinaca ay saamaysay, tracheal weecan (daahitaan), xanuunka neefsashada, hypotension, JVD.",
+    "U muuji laabta dhinaca ay saamaysay.",
+    "Soo hel booska 2aad ee intercostal-ka, xariiqda dhexe ee clavicular (ka duwan: 4th/5th ICS, line axillary anterior).",
+    "Geli 14g, 3.25-inji irbad-catheter oo ku qotonta gidaarka laabta, wax yar ka sarreeya TOP ee feeraha 3aad (waxay ka fogaataa xirmada neerfaha).",
+    "Hore u soco ilaa hawada degdega ah laga dareemo ama foodh la maqlo.",
+    "Ka saar irbadda oo kateetarka ku dhaaf meesha.",
+    "Dhegayso hagaajinta dhawaaqa neefsiga iyo dadaalka neefsiga.",
+    "Hubi xudunta tuubada. Ha isku dhejin ama ha daboolin dhamaadka furan.",
+    "Dib u qiimee 5tii daqiqiba kasta -- kateeteradu way qanci kartaa ama xinjiroobin kartaa, una baahan dib-u-dejinta."
+  ],
+  "warnings": [
+    "Isticmaal irbad 3.25-inji ah -- heerka 14g angiocatheter (1.5in) ayaa si joogta ah ugu fashilma bukaanada milatariga sababtoo ah hubka jirka iyo muruqa.",
+    "NCD-da laba geesoodka ah ayaa laga yaabaa in loo baahdo haddii aan la hubin dhinaca ay saamaysay iyo bukaanku waa la xidhay.",
+    "Ha dhigin isla dhinac ka nuugta nabarka xabadka adigoon marka hore xirin dhaawaca."
+  ],
+  "follows": [],
+  "precedes": [
+    "laabta-shabaynta-codsiga"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Isticmaal irbad cabbirkeedu ku habboon yahay (bukaannada yaryar, 1.5-2in ayaa ku filan). Isticmaal habka 2aad ee ICS MCL. Aqoonsiga astaanta guud ayaa aad u adag -- isticmaal taxaddar."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

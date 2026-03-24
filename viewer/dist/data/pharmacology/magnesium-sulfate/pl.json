@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Siarczan Magnezu (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Wtrysk siarczanu magnezu"
+  ],
+  "description": "Leki działające depresyjnie na ośrodkowy układ nerwowy i przeciwdrgawkowe stosowane w zapobieganiu i leczeniu napadów rzucawkowych (napady w stanie przedrzucawkowym w czasie ciąży). Stosowany również w przypadku ciężkiej astmy i torsades de pointes. Pierwsza linia w rzucawce zamiast benzodiazepin.",
+  "indications": [
+    "Rzucawka (zapobieganie napadom i leczenie ciężkiego stanu przedrzucawkowego)",
+    "Profilaktyka stanu przedrzucawkowego (ciężkie cechy)",
+    "Torsades de Pointes (polimorficzny V-tach wynikający z hipomagnezemii)",
+    "Ciężka, ostra astma (dodatkowo)"
+  ],
+  "dose": "Dawka nasycająca dla rzucawki: 4-6 g powolne wstrzyknięcie dożylne przez 20 minut. Konserwacja: 1-2 g/godzinę wlewu dożylnego. W przypadku nawrotu napadu: 2-4 g dożylnie przez 5 min. Ładowanie domięśniowe (jeśli nie dożylnie): 5 g domięśniowo na każdy pośladek (łącznie 10 g) jednocześnie.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "Rozpocząć w momencie wystąpienia napadu lub po rozpoznaniu ciężkich objawów stanu przedrzucawkowego.",
+  "contraindications": [
+    "Miastenia gravis",
+    "Wady przewodzenia serca",
+    "Niewydolność nerek (narasta – zmniejszyć dawkę)"
+  ],
+  "warnings": [
+    "Objawy toksyczności: utrata odruchu rzepkowego (pierwszy objaw, 7-10 mEq/L), depresja oddechowa (> 10 mEq/L), zatrzymanie akcji serca (> 15 mEq/L).",
+    "Monitoruj odruchy rzepkowe co 15 minut – utrata odruchu = przerwanie infuzji.",
+    "ANTIDOTE na toksyczność: Glukonian wapnia 1 g dożylnie przez 3 minuty.",
+    "Zmniejszyć dawkę w przypadku zaburzeń czynności nerek – monitorować wydalanie moczu."
+  ],
+  "regional_names": {
+    "generic": "siarczan magnezu"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg dożylnie przez 10-20 min (maks. 2 g). Ciężka astma: 25-75 mg/kg dożylnie (maks. 2 g).",
+      "note": "Rzadko stosowany w leczeniu napadów u dzieci i młodzieży w wieku pozapołożniczym – głównym wskazaniem jest rzucawka."
+    },
+    "obstetric": {
+      "note": "Wskazanie podstawowe. Przechodzi przez łożysko – możliwa hipermagnezemia u noworodków. Dawka dla noworodków w przypadku depresji oddechowej: glukonian wapnia 100 mg/kg dożylnie. Poinformuj zespół OITN o stosowaniu magnezu przez matkę."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s89211g",
+    "icd10":  "S89211G",
+    "name":  "Salter-Harris Type I physeal fracture of upper end of right fibula, subsequent encounter for fracture with delayed healing",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Salter-Harris Type I physeal fracture of upper end of right fibula, subsequent encounter for fracture with delayed healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

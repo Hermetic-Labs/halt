@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Morfin Sulfat",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Lanjutan",
+    "Injeksi Morfin Sulfat"
+  ],
+  "description": "Analgesik opioid. Memberikan pereda nyeri yang efektif namun menyebabkan vasodilatasi dan hipotensi - gunakan dengan hati-hati pada syok hemoragik. Ketamine lebih disukai dalam situasi pertempuran. Gunakan morfin hanya pada pasien dengan hemodinamik stabil.",
+  "indications": [
+    "Nyeri sedang hingga berat pada pasien dengan hemodinamik stabil",
+    "Bukan lini pertama di TCCC -- lebih memilih ketamin"
+  ],
+  "dose": "2-4 mg IV/IO setiap 4 jam PRN. Titrasi hingga efeknya tercapai. IM: 5-10 mg setiap 4 jam PRN.",
+  "route": [
+    "IV",
+    "aku",
+    "SAYA",
+    "meter persegi"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ketidakstabilan hemodinamik/syok hemoragik",
+    "Depresi pernafasan",
+    "Cedera kepala dengan perubahan LOC (relatif)"
+  ],
+  "warnings": [
+    "Menyebabkan vasodilatasi -- dapat memperburuk syok hemoragik. Kaji tekanan darah sebelum dan sesudahnya.",
+    "Segera sediakan nalokson.",
+    "Depresi pernafasan – pantau frekuensinya."
+  ],
+  "regional_names": {
+    "generic": "morfin sulfat"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV setiap 2-4 jam PRN. Dosis tunggal maks 2mg IV pada anak yang belum pernah menggunakan opioid.",
+      "note": "Pantau laju pernapasan dengan cermat. Neonatus sangat sensitif."
+    },
+    "obstetric": {
+      "note": "Melewati plasenta. Depresi pernapasan neonatal mungkin terjadi jika diberikan dalam waktu 2-4 jam setelah melahirkan. Siapkan nalokson untuk bayi baru lahir."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

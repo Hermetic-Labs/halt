@@ -1,0 +1,22 @@
+{
+  "id": "s0004xd",
+  "icd10": "S0004XD",
+  "name": "Idinku ita ti apakan ti irun ori, ipade ti o tẹle",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Idinku ita ti apakan ti awọ-ori, ipade ti o tẹle",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

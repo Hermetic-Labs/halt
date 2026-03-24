@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Gaarsiinta Goobta Degdegga ah",
+  "category": "obstetric",
+  "skill_level": "dagaal-daaw",
+  "time_estimate": "Kala duwan -- 20+ daqiiqo",
+  "description": "Maareynta dhalmada degdega ah ama aan qorshaysnayn ee deegaanka qallafsan.",
+  "equipment": [
+    "galoofyada",
+    "marada-maro- nadiif ah",
+    "xadhkaha-isku-xidhka-ama-xidhaalaha",
+    "maqas",
+    "guluubka-saliingaha"
+  ],
+  "steps": [
+    "Dhig hooyadu mid fadhida ama mid fadhida. U janjeersiga bidix ee bidix ayaa la door bidaa haddii miyir la'aan (waxay ka hortagtaa isku-duubnaanta aortocaval).",
+    "Xakamee dhalmada madaxa -- taageero timireed. Ha jiidin.",
+    "Marka madaxa la keeno, ka hubi xudunta nuchal (qoorta). Haddi ay jirto, madaxa ka siib. Haddii ay adag tahay, xaji oo jar.",
+    "Ka nuugi afka ka dibna sanka saliingaha guluubka haddii la heli karo.",
+    "Hagaha gaarsiinta garabka hore iyadoo si tartiib ah hoos ugu jiidan madaxa, ka dibna kor loogu qaado garabka dambe.",
+    "Bixi jidhka -- ogow wakhtiga dhalmada.",
+    "U qalaji oo diiri dhallaanka isla markiiba. Kicin adigoo dhabarka xoqaya.",
+    "Xaji oo jar xadhigga (sug 1-2 daqiiqo haddii ilmuhu deggan yahay).",
+    "Ku bixi mandheerta si tartiib ah loo xakameeyo --ha xoogin.",
+    "Maamul oxytocin (haddii la heli karo) si looga hortago dhiig-baxa dhalmada kadib dhalmada mandheerta.",
+    "Qiimee dhiigbaxa dhalmada ka dib -- duugista aasaasiga ah, cadaadis laba-laab ah haddii loo baahdo.",
+    "Qiimee dhibcaha Apgar 1 iyo 5 daqiiqo."
+  ],
+  "warnings": [
+    "Haddi keenid aanay dhawayn -- ha isku dayin. MEDEVAC degdeg ah ayaa la door bidaa.",
+    "Dystocia garabka: haddii garbaha ay xayiran yihiin, mari McRoberts maneuver (misigta hyperflex) iyo cadaadiska suprapubic.",
+    "Dhiigbaxa dhalmada ka dib ayaa ah sababta ugu weyn ee dhimashada hooyada laga hortagi karo -- diyaar ha u ahaato oxytocin."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

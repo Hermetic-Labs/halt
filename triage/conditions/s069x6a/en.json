@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s069x6a",
+    "icd10":  "S069X6A",
+    "name":  "Unspecified intracranial injury with loss of consciousness greater than 24 hours without return to pre-existing conscious level with patient surviving, initial encounter",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified intracranial injury with loss of consciousness greater than 24 hours without return to pre-existing conscious level with patient surviving, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

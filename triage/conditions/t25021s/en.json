@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t25021s",
+    "icd10":  "T25021S",
+    "name":  "Burn of unspecified degree of right foot, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Burn of unspecified degree of right foot, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

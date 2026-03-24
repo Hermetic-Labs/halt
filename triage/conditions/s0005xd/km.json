@@ -1,0 +1,22 @@
+{
+  "id": "s0005xd",
+  "icd10": "S0005XD",
+  "name": "រូបរាងកាយបរទេស ស្បែកក្បាល ជួបជាបន្តបន្ទាប់",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "រាងកាយបរទេសនៃស្បែកក្បាល, ការជួបជាបន្តបន្ទាប់",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

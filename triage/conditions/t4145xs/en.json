@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t4145xs",
+    "icd10":  "T4145XS",
+    "name":  "Adverse effect of unspecified anesthetic, sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Adverse effect of unspecified anesthetic, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

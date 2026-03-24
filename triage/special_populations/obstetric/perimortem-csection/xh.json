@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "I-Perimortem Cesarean Section (PMCS)",
+  "category": "obstetric",
+  "skill_level": "ugqirha-utyando",
+  "time_estimate": "3-5 imiz",
+  "description": "Unikezelo lotyando olungxamisekileyo phakathi kwemizuzu emi-4 yokubanjwa kwentliziyo kamama ukuvumela iCPR esebenzayo kunye nokusinda komntwana osanda kuzalwa. Isibeleko sicinezela i-aorta kunye ne-IVC -- unikezelo luphinda luvuselele umama.",
+  "equipment": [
+    "i-scalpel",
+    "iiglavu",
+    "iiretractors",
+    "intambo-izibambiso",
+    "izixhobo zokuvuselela abantwana abasandul' ukuvuswa"
+  ],
+  "steps": [
+    "Qhubeka ne-CPR ngaphandle kokuphazamiseka.",
+    "Yenza umgca ophakathi othe nkqo ukusuka kwi-umbilicus ukuya kwi-pubis ngokusebenzisa ulusu kunye ne-fascia.",
+    "Gcoba inxalenye yesibeleko esisezantsi ngokuthe tye.",
+    "Zisa usana -- ixesha lokuqaphela.",
+    "Bamba kwaye unqumle intambo.",
+    "Sandisa usana kumboneleli wesibini kumboneleli-nkonzo wovuselelo lwemveku.",
+    "Susa i-placenta.",
+    "Pakisha isibeleko kunye nesisu ukuba ukuvala ngokuqinisekileyo akunakwenzeka ngokukhawuleza.",
+    "Qhubeka nokuvuselela umama -- i-ROSC inokwenzeka ngakumbi emva kokunyanzeliswa kwesibeleko."
+  ],
+  "warnings": [
+    "Ixesha lesigqibo sokubeleka kufuneka libe ngaphantsi kwemizuzu emi-5 ngezona ziphumo zingcono zikamama kunye nosana olungekazalwa.",
+    "Le nkqubo licebo lokugqibela -- kuphela ukuba umama ubanjwe yintliziyo kwaye ukubeleka sekusondele (>iiveki ezingama-20 zokumitha).",
+    "Ifuna uqeqesho lwenqanaba lobugqirha. Amayeza okulwa kufuneka alungiselele intsimi kunye nenkxaso, angenzi ngokuzimeleyo."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

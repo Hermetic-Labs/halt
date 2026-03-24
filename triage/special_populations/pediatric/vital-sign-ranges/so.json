@@ -1,0 +1,43 @@
+{
+  "id": "pediatric-vital-sign-ranges",
+  "name": "Calaamadaha Calaamadaha Muhiimka ah ee Caadiga ah ee Carruurta",
+  "description": "Tixraaca da'da lagu hagaajiyay ee HR, RR, iyo SBP. Muhiim u ah kala soocida saxda ah ee bukaanka carruurta -- tirada caadiga ah ee qaangaarka waa khalad carruurta.",
+  "ranges": [
+    {
+      "age": "Dhallaan (0-1 bilood)",
+      "hr": "100-160",
+      "rr": "30-60",
+      "sbp_mmhg": "60-90",
+      "gcs_min": 15
+    },
+    {
+      "age": "Dhallaanka (1-12 bilood)",
+      "hr": "90-150",
+      "rr": "30-60",
+      "sbp_mmhg": "70-100",
+      "gcs_min": 15
+    },
+    {
+      "age": "socod baradka (1-3 sano)",
+      "hr": "80-130",
+      "rr": "24-40",
+      "sbp_mmhg": "80-110",
+      "gcs_min": 15
+    },
+    {
+      "age": "Ilmo (3-12 jir)",
+      "hr": "70-120",
+      "rr": "18-30",
+      "sbp_mmhg": "80-120",
+      "gcs_min": 15
+    },
+    {
+      "age": "Dhalinyaro (>12 jir)",
+      "hr": "60-100",
+      "rr": "12-20",
+      "sbp_mmhg": "90-130",
+      "gcs_min": 15
+    }
+  ],
+  "source": "PALS Guidelines / JTS Pediatric CPG"
+}

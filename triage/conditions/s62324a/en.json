@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s62324a",
+    "icd10":  "S62324A",
+    "name":  "Displaced fracture of shaft of fourth metacarpal bone, right hand, initial encounter for closed fracture",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Displaced fracture of shaft of fourth metacarpal bone, right hand, initial encounter for closed fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

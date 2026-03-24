@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t184xxs",
+    "icd10":  "T184XXS",
+    "name":  "Foreign body in colon, sequela",
+    "category":  "foreign-body",
+    "triage_priority":  "",
+    "description":  "Foreign body in colon, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

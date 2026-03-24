@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s8252xs",
+    "icd10":  "S8252XS",
+    "name":  "Displaced fracture of medial malleolus of left tibia, sequela",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Displaced fracture of medial malleolus of left tibia, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

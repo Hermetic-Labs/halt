@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Isicelo se-Tourniquet (I-Combat Application Tourniquet -- CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "noma yimuphi-umphenduli",
+  "time_estimate": "30-60 isekhondi",
+  "description": "Ukulawula ukopha okuqinisekile kokopha okusongela ukuphila. Faka isicelo kusenesikhathi -- ungalibali.",
+  "equipment": [
+    "ikati-tourniquet",
+    "umaka unomphela"
+  ],
+  "steps": [
+    "Gcoba i-tourniquet 2-3 amayintshi (5-7 cm) eduze (ngaphezulu) kwenxeba -- phezu kwezingubo kuyamukeleka.",
+    "Zulazula ibhande elizinamathelayo eduze nengalo bese uxhuma kubhande le-adaptha yokushayisana.",
+    "Donsa ibhande liqine futhi ulivikele futhi kulona uqobo.",
+    "Phequlula induku ye-windlass kuze kuphele ukopha noma i-distal pulse ingekho.",
+    "Khiya ingilazi yomoya kukliphu yengilasi yomoya.",
+    "Faka ibhande le-windlass phezu kwenduku ye-windlass ukuze uvikeleke.",
+    "Bhala isikhathi sokufaka isicelo ngqo ku-tourniquet (sebenzisa umaka) KANYE nasekhadini le-TCCC.",
+    "Veza futhi uphinde uhlole isilonda. Phinda uhlole ngemva kwemizuzu emi-5."
+  ],
+  "warnings": [
+    "UNGAYIkhiphi i-tourniquet uma isisetshenziswe emkhakheni -- abasebenzi bezokwelapha abaqeqeshiwe kuphela esimeni esilawulwayo.",
+    "Isikhathi sibalulekile: i-tourniquet> amahora angu-2 inyusa kakhulu ingozi yokulahlekelwa izitho. Log isikhathi ngokushesha.",
+    "Ungasifaki isicelo phezu kwelunga. Uma isitho sinezilonda emazingeni amaningi, sebenzisa i-proximal kuwo wonke amanxeba.",
+    "Ama-tourniquets athuthukisiwe (amabhande, izintambo) awasebenzi kahle kakhulu."
+  ],
+  "follows": [
+    "ingcindezi eqondile",
+    "ukupakisha amanxeba"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Sebenzisa i-tourniquet yezingane encane uma ikhona. I-CAT evamile ingasetshenziswa kodwa iqinise ngokucophelela. Izitho zincane -- hlola i-distal pulse ngokucophelela."
+    },
+    "obstetric": {
+      "note": "Ukusetshenziswa okujwayelekile kwamanxeba asemaphethelweni. Ungayifaki esiswini noma okhalweni."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

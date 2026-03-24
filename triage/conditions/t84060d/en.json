@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t84060d",
+    "icd10":  "T84060D",
+    "name":  "Wear of articular bearing surface of internal prosthetic right hip joint, subsequent encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Wear of articular bearing surface of internal prosthetic right hip joint, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

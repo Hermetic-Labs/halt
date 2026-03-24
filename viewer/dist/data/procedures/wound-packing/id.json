@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Pengepakan Luka Hemostatik",
+  "category": "hemorrhage-control",
+  "skill_level": "penyelamat tempur",
+  "time_estimate": "3-5 menit",
+  "description": "Bungkus luka yang tidak dapat dikompresi atau luka sambungan dengan kain kasa hemostatik untuk mengontrol perdarahan di mana tourniquet tidak dapat dipasang.",
+  "equipment": [
+    "kain kasa hemostatik",
+    "sarung tangan nitril",
+    "gunting trauma",
+    "perban tekanan"
+  ],
+  "steps": [
+    "Kenakan sarung tangan. Buka luka sepenuhnya menggunakan gunting trauma.",
+    "Identifikasi sumber perdarahan aktif di dalam rongga luka.",
+    "Buka kain kasa hemostatik dan tempelkan dengan kuat ke dalam luka dengan jari Anda, dorong langsung ke sumber pendarahan.",
+    "Lanjutkan pengepakan hingga rongga luka terisi penuh.",
+    "Berikan tekanan langsung yang kuat dan terus menerus dengan tumit tangan Anda selama minimal 3 menit.",
+    "JANGAN lepaskan bahan kemasan apa pun setelah diterapkan.",
+    "Oleskan perban bertekanan pada luka yang terbungkus.",
+    "Tandai waktu pada kartu TCCC atau dahi pasien (misalnya, 'PKD 0145')."
+  ],
+  "warnings": [
+    "JANGAN membalut luka tembus dada -- gunakanlah penutup dada.",
+    "Jika terdapat luka di leher, berikan tekanan tanpa menekan kedua karotis secara bersamaan.",
+    "Nilai kembali dalam waktu 5 menit jika dicurigai sumber arteri."
+  ],
+  "follows": [
+    "tekanan langsung"
+  ],
+  "precedes": [
+    "aplikasi tourniquet"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Gunakan kain kasa secara proporsional lebih sedikit. Berikan tekanan yang lebih ringan untuk menghindari kompresi dada pada bayi."
+    },
+    "obstetric": {
+      "note": "Hindari tekanan pengepakan yang dalam atau agresif di dekat perut buncit. Eskalasi yang cepat lebih disukai."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

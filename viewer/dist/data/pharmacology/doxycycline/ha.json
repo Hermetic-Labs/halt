@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxycycline",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramycin",
+    "Doryx"
+  ],
+  "description": "Magungunan rigakafi na tetracycline mai girma. Maganganun ciwon ciwon baki ga marasa lafiya na penicillin. Har ila yau yana da tasiri a kan kwayoyin da ba su da kyau da kuma wasu cututtukan da ke haifar da ƙwayar cuta (malaria prophylaxis a wuraren da ke da yawa).",
+  "indications": [
+    "Prophylaxis na rauni (allergy na penicillin)",
+    "Cututtuka masu laushi",
+    "Cizon raunuka",
+    "Maganin cutar zazzabin cizon sauro a wuraren da ake fama da shi"
+  ],
+  "dose": "100 MG PO kowane awanni 12 x 7 kwanaki.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Fara a cikin sa'o'i 3 na rauni don rigakafin rauni.",
+  "contraindications": [
+    "Ciki (yana haifar da canza launin haƙorin tayi da hana haɓakar ƙashi)",
+    "Yara kasa da shekaru 8 (dalilin daya)",
+    "Mummunan nakasar hanta"
+  ],
+  "warnings": [
+    "RASHIN TSARI a ciki -- yi amfani da amoxicillin maimakon.",
+    "CONTRAINDICATED a yara a karkashin 8 years.",
+    "Hankalin hoto -- nasiha ga majiyyaci don gujewa faɗuwar rana.",
+    "Kada a sha tare da abinci mai wadatar calcium, antacids, ko baƙin ƙarfe - yana lalata sha."
+  ],
+  "regional_names": {
+    "generic": "Doxycycline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Contraindicated a karkashin shekaru 8. Shekaru 8+: 2-4 mg/kg/rana raba q12h (max 100 mg/dose).",
+      "note": "Yi amfani da amoxicillin ga yara a ƙarƙashin 8."
+    },
+    "obstetric": {
+      "note": "RASHIN CIWON ciki -- yana haifar da cutar da tayi. Yi amfani da amoxicillin maimakon."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

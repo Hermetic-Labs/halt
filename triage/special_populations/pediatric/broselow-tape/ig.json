@@ -1,0 +1,63 @@
+{
+  "id": "broselow-tape",
+  "name": "Akwụkwọ ntụaka teepu ihe mberede ụmụaka Broselow",
+  "description": "Ntụaka nrụbama n'ịdị arọ na-atụ maka nchịkwa ụmụaka mgbe ọnụọgụ na-adịghị. tụọ nwa site n'elu isi ruo ikiri ụkwụ wee dakọọ na agba agba.",
+  "note": "Ntụaka a bụ maka ESTIMATION naanị. Jiri ezigbo ịdị arọ mgbe ọ dị.",
+  "bands": [
+    {
+      "color": "agba ntụ",
+      "weight_kg": "3-5",
+      "length_cm": "46-57",
+      "est_age": "A mụrụ ọhụrụ"
+    },
+    {
+      "color": "pink",
+      "weight_kg": "6-7",
+      "length_cm": "57-67",
+      "est_age": "Ọnwa 3-6"
+    },
+    {
+      "color": "uhie",
+      "weight_kg": "8-9",
+      "length_cm": "67-74",
+      "est_age": "Ọnwa 6-12"
+    },
+    {
+      "color": "odo odo",
+      "weight_kg": "10-11",
+      "length_cm": "74-83",
+      "est_age": "Ọnwa 12-18"
+    },
+    {
+      "color": "edo edo",
+      "weight_kg": "12-14",
+      "length_cm": "83-95",
+      "est_age": "Ọnwa 18-3 afọ"
+    },
+    {
+      "color": "ọcha",
+      "weight_kg": "15-18",
+      "length_cm": "95-107",
+      "est_age": "3-5 afọ"
+    },
+    {
+      "color": "acha anụnụ anụnụ",
+      "weight_kg": "19-22",
+      "length_cm": "107-122",
+      "est_age": "5-7 afọ"
+    },
+    {
+      "color": "oroma",
+      "weight_kg": "24-28",
+      "length_cm": "122-137",
+      "est_age": "7-9 afọ"
+    },
+    {
+      "color": "akwụkwọ ndụ akwụkwọ ndụ",
+      "weight_kg": "30-36",
+      "length_cm": "137-152",
+      "est_age": "9-12 afọ"
+    }
+  ],
+  "source": "Broselow Pediatric Emergency Reference / PALS"
+}

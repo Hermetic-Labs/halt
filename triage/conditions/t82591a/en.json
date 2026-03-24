@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t82591a",
+    "icd10":  "T82591A",
+    "name":  "Other mechanical complication of surgically created arteriovenous shunt, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Other mechanical complication of surgically created arteriovenous shunt, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

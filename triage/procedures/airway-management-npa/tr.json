@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Nazofaringeal Havayolu (NPA) Yerleştirilmesi",
+  "category": "airway",
+  "skill_level": "savaş cankurtaran",
+  "time_estimate": "1 dakika",
+  "description": "Bilinci kapalı veya yarı bilinçli bir hastada hava yolu açıklığını korumak için esnek bir nazal hava yolu eklentisinin yerleştirilmesi.",
+  "equipment": [
+    "emniyet pimli npa",
+    "yağlayıcı"
+  ],
+  "steps": [
+    "Uygun NPA boyutunu seçin (burun deliğinden kulak memesine kadar ölçün).",
+    "NPA'yı suda çözünür yağlayıcı veya salinle cömertçe yağlayın.",
+    "Henüz mevcut değilse emniyet pimini flanştan geçirin (aspirasyonu önler).",
+    "Damağa paralel ilerleyerek sağ burun deliğine (septuma doğru eğim vererek) yavaşça yerleştirin.",
+    "Flanş burun deliğine yaslanıncaya kadar ilerleyin.",
+    "Hastayı yeniden konumlandırın (omurga sorunu yoksa kurtarma pozisyonu) ve hava yolunu yeniden değerlendirin.",
+    "Dirençle karşılaşılırsa sol burun deliğini deneyin."
+  ],
+  "warnings": [
+    "Baziller kafatası kırığından şüphelenilen durumlarda kontrendikedir (rakun gözleri, Battle belirtisi, BOS rinore).",
+    "NPA, bilinci kapalı hastanın en iyi başlangıç ​​solunum yolu yardımcısıdır - OPA, yarı bilinçli hastalarda kusmayı tetikleyebilir."
+  ],
+  "source": "TCCC / JTS CPG"
+}

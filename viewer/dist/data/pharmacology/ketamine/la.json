@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Anasthetica dissociativa praebens analgesiam, sedationem, et lapsus lapsus dum reflexes et hemodynamicas stabilitatem airway conservans. Praefertur analgesica in TCCC -- servat BP opioidibus dissimilibus. Etiam pro sedatione processuali et RSI adhibita.",
+  "indications": [
+    "Dolor moderatus administratione",
+    "Sedation processualis (vulnus sarcina, fractura reductio)",
+    "Inductionem agentis RSI",
+    "Certamina anesthesia"
+  ],
+  "dose": "Analgesia: 0.1-0.3 mg/kg IV/IO (dis tarda) | 0.5 mg/kg IM. Proceduralis sedatio: 1-2 mg/kg IV | 4-6 mg/kg IM. RSI inductio: 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN'"
+  ],
+  "window": "",
+  "contraindications": [
+    "Nota SCHIZOPHRENIA vel activa psychosis",
+    "Elevatum ICP sine praesidio airway (relativum)"
+  ],
+  "warnings": [
+    "Motus subitis (delirium/halucinationes) -- mitiges cum midazolam 1-2mg IV si available.",
+    "Crescit secretiones - suctionis paratae sunt.",
+    "Laryngospasm rara sed possibilis -- custodi BVM in promptu."
+  ],
+  "regional_names": {
+    "generic": "ketamine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesia: 0.5 mg/kg IV. Proceduralis sedatio: 1-2 mg/kg IV | 4-5 mg/kg IM.",
+      "note": "Studiosus in pediatricis. Maluit dolorum elit."
+    },
+    "obstetric": {
+      "note": "Tuta materna analgesia in humili dosibus. Depressione respiratoriae neonatales in altum dosibus facere possit, si prope tempus partus liberatur."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

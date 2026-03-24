@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t8690",
+    "icd10":  "T8690",
+    "name":  "Unspecified complication of unspecified transplanted organ and tissue",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Unspecified complication of unspecified transplanted organ and tissue",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

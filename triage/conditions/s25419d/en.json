@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s25419d",
+    "icd10":  "S25419D",
+    "name":  "Minor laceration of unspecified pulmonary blood vessels, subsequent encounter",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Minor laceration of unspecified pulmonary blood vessels, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

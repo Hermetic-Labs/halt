@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Ulawulo Lokulimala Okubandayo",
+  "category": "environmental",
+  "skill_level": "Isiseko",
+  "time_estimate": "Iyaqhuba",
+  "description": "Ukulawulwa kwe-frostbite, unyawo lokuntywiliselwa (unyawo lomsele), kunye ne-hypothermia. Ukonzakala okubandayo kuyathintelwa--qaphela iimpawu zakwangoko phambi kokuba umonakalo wezicubu ungalungiseki. Phatha izicubu ezineqabaka ngobunono.",
+  "equipment": [
+    "Impahla eyomileyo ekhuselayo/ingxowa yokulala",
+    "Amanzi ashushu (38-42C/100-108F) okuhlamba ukufudumala",
+    "Iilokhwe ezinyumba",
+    "Ibuprofen 400mg PO (ukuba ikhona)",
+    "IV LR (eshushu ukuba kunokwenzeka)"
+  ],
+  "steps": [
+    "I-HYPOTHERMIA KUQALA: Vavanya iqondo lobushushu elingundoqo ngethemomitha yokufunda ephantsi. Ubulali (32-35C): ukungcangcazela, ukudideka. Ephakathi (28-32C): akukho kungcangcazela, ukudideka okukhulu. Emandundu (<28C): akukho zingqondweni, akukho pulse ibonwa.",
+    "I-HYPOTHERMIA -- Iphakathi/Iphakathi: Susa impahla emanzi, igqume umhlaba, indawo efudumeleyo, ulwelo olushushu oluswiti ukuba uyazi, iipakethe zobushushu kwi-axillae/groin (hayi ngqo eluswini). Phatha ngobunono-i-jaring inokubangela iVFib.",
+    "I-HYPOTHERMIA -- Ebukhali: Yiphathe ngobunono KAKHULU. Jonga i-pulse 60 imizuzwana epheleleyo phambi kweCPR. Qalisa iCPR ukuba akukho pulse. Ulwelo olufudumeleyo lwe-IV ukuba lukhona. I-MEDEVAC ephambili -- 'ayifanga de ifudumale kwaye ifile'.",
+    "I-FROSTBITE: Ephezulu (isikhumba esimhlophe/engwevu, esithambileyo ngaphantsi) vs. Ubunzulu (ubunzima, ukuvakala komthi, ukudumba). SUKUHLANGANISA indawo. UNGAZIfudumezi kwakhona ukuba umngcipheko wokuphinda ube ngumkhenkce--ukukhenkceza kwakhona kubangela umonakalo ombi kunokulibaziseka ukufudumeza kwakhona.",
+    "Ukuvuselela i-FROSTBITE: Gxila kwi-38-42C yamanzi (engatshisi) kwi-15-30 min de izicubu zithambile kwaye zibomvu / ezimfusa. Ibuhlungu kakhulu -- nikeza i-analgesia (ketamine okanye imorphine).",
+    "Emva kokufudumeza kwakhona: iphedi phakathi kweenzwane/iminwe ene-gauze eyinyumba. SUKUQHUBA amadyungudyungu. Khusela kuxinzelelo.",
+    "UNYAWO LWEMIMERSION (Unyawo lomsele): ukuba sesichengeni okumanzi/okubandayo ixesha elide, ulusu lubomvu luze lube luhlaza emva koko lube namadyunguza. Iinyawo ezomileyo, zifudumale ngokukhawuleza, ziphakamise. MUSA ukusebenzisa ubushushu obuthe ngqo.",
+    "Uxwebhu lwexesha lokulimala kunye nexesha lokufudumala."
+  ],
+  "warnings": [
+    "Sukufudumeza umkhenkce ukuba kukho naliphi na ithuba lokuphinda umkhenkce -- ukufudumeza okungaphelelanga + ukukhenkceza = ukulahleka kwezicubu eziyingozi.",
+    "I-hypothermia enzima inokulinganisa ukufa. Jonga ukubetha kwentliziyo imizuzwana engama-60. 'Ayifanga de ifudumale ife.'",
+    "Utywala bonyusa ukulahleka kobushushu nangona ubona ubushushu -- musa ukunika utywala.",
+    "Umngcipheko we-VFib uphezulu kwi-hypothermia ephakathi-ebukhali--ukunciphisa ukukhohlisa kunye nokubethelwa kwesigulana."
+  ],
+  "follows": [
+    "ukuthintela i-hypothermia"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Abantwana baphole ngokukhawuleza ngenxa yendawo ephezulu yommandla ukuya kumlinganiselo wobunzima. I-Hypothermia thresholds iyafana. Ulwelo olufudumeleyo lwe-IV lubalulekile. Ulwelo olusekelwe kubunzima: 20 mL/kg eshushu LR."
+    },
+    "obstetric": {
+      "note": "I-hypothermia kamama ibangela i-fetal bradycardia kunye ne-acidosis. Ukufudumeza komama ondlongondlongo lunyango losana olungekazalwa. Ukujongwa kwe-Fetal ukuba ikhona."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

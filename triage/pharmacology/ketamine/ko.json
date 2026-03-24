@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "케타민",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "케탈라르"
+  ],
+  "description": "기도 반사와 혈역학적 안정성을 유지하면서 진통, 진정, 기억상실을 제공하는 해리성 마취제입니다. TCCC에서 선호되는 진통제 - 오피오이드와 달리 혈압을 유지합니다. 절차상 진정 및 RSI에도 사용됩니다.",
+  "indications": [
+    "중등도~중증 통증 관리",
+    "시술상 진정(상처 패킹, 골절 감소)",
+    "RSI 유도제",
+    "전투마취"
+  ],
+  "dose": "진통제: 0.1-0.3 mg/kg IV/IO(느린 푸시) | 0.5mg/kg IM. 절차상 진정: 1-2 mg/kg IV | 4-6mg/kg IM. RSI 유도: 1-2mg/kg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "메신저",
+    "안으로"
+  ],
+  "window": "",
+  "contraindications": [
+    "알려진 정신분열증 또는 활동성 정신병",
+    "기도 보호 없이 ICP 상승(상대)"
+  ],
+  "warnings": [
+    "출현 반응(섬망/환각) - 가능한 경우 midazolam 1-2mg IV로 완화합니다.",
+    "분비물 증가 - 흡입을 준비하십시오.",
+    "후두경련은 드물지만 가능합니다. BVM을 계속 사용할 수 있습니다."
+  ],
+  "regional_names": {
+    "generic": "케타민"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "진통제: 0.5mg/kg IV. 절차상 진정: 1-2 mg/kg IV | 4-5mg/kg IM.",
+      "note": "소아과에서 잘 공부했습니다. 고통스러운 시술에 선호됩니다."
+    },
+    "obstetric": {
+      "note": "저용량에서는 산모의 진통에 안전합니다. 분만 시기에 가까워지면 고용량으로 신생아 호흡 억제를 일으킬 수 있습니다."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

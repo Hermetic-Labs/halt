@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxycycline",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramycine",
+    "Doryx"
+  ],
+  "description": "Antibiotique tétracycline à large spectre. Alternative à la prophylaxie orale des plaies pour les patients allergiques à la pénicilline. Efficace également contre les organismes atypiques et certaines maladies à transmission vectorielle (prophylaxie du paludisme en zones endémiques).",
+  "indications": [
+    "Prophylaxie des plaies (allergie à la pénicilline)",
+    "Infections des tissus mous",
+    "Plaies par morsures",
+    "Prophylaxie du paludisme dans les zones d'endémie"
+  ],
+  "dose": "100 mg PO toutes les 12 heures x 7 jours.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Commencez dans les 3 heures suivant la blessure pour la prophylaxie des plaies.",
+  "contraindications": [
+    "Grossesse (provoque une décoloration des dents fœtales et une inhibition de la croissance osseuse)",
+    "Enfants de moins de 8 ans (même raison)",
+    "Insuffisance hépatique sévère"
+  ],
+  "warnings": [
+    "CONTRE-INDIQUÉ pendant la grossesse : utilisez plutôt l'amoxicilline.",
+    "CONTRE-INDIQUÉ chez les enfants de moins de 8 ans.",
+    "Photosensibilité – conseiller au patient d’éviter l’exposition au soleil.",
+    "Ne pas prendre avec des aliments riches en calcium, des antiacides ou du fer – cela nuit à l'absorption."
+  ],
+  "regional_names": {
+    "generic": "doxycycline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Contre-indiqué avant 8 ans. Âge 8 ans et plus : 2 à 4 mg/kg/jour divisé toutes les 12 h (max 100 mg/dose).",
+      "note": "Utilisez l'amoxicilline pour les enfants de moins de 8 ans."
+    },
+    "obstetric": {
+      "note": "CONTRE-INDIQUÉ pendant la grossesse – cause des dommages au fœtus. Utilisez plutôt l’amoxicilline."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

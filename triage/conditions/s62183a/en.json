@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s62183a",
+    "icd10":  "S62183A",
+    "name":  "Displaced fracture of trapezoid [smaller multangular], unspecified wrist, initial encounter for closed fracture",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Displaced fracture of trapezoid [smaller multangular], unspecified wrist, initial encounter for closed fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

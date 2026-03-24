@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Phòng chống hạ thân nhiệt (H -- MARCH)",
+  "category": "temperature-management",
+  "skill_level": "bất kỳ người trả lời nào",
+  "time_estimate": "2-3 phút",
+  "description": "Chống hạ thân nhiệt là nguyên nhân hàng đầu có thể ngăn ngừa được trong chấn thương. Bộ ba nguy hiểm: hạ thân nhiệt + nhiễm toan + rối loạn đông máu. Ngăn chặn bằng mọi giá.",
+  "equipment": [
+    "chăn phản nhiệt",
+    "hạ thân nhiệt-phòng ngừa-kit",
+    "ấm-iv-chất lỏng-nếu-có sẵn"
+  ],
+  "steps": [
+    "Cởi bỏ tất cả quần áo ướt ngay khi có thể về mặt chiến thuật.",
+    "Đắp cho bệnh nhân một tấm chăn (không gian) phản nhiệt - mặt sáng bóng hướng về phía bệnh nhân.",
+    "Quấn đầu và cổ (nơi mất nhiệt đáng kể).",
+    "Cách nhiệt với mặt đất - đặt vật gì đó giữa bệnh nhân và mặt đất lạnh.",
+    "Truyền dịch IV ấm nếu có.",
+    "Không để bệnh nhân run mà không che chắn - run là dấu hiệu cảnh báo sớm.",
+    "Theo dõi nhiệt độ nếu có nhiệt kế. Dưới 35°C (95°F) = hạ thân nhiệt."
+  ],
+  "warnings": [
+    "Hạ thân nhiệt làm rối loạn đông máu trở nên trầm trọng hơn - bệnh nhân chảy máu hạ nhiệt nhanh hơn và đông máu kém hiệu quả hơn.",
+    "Phòng ngừa hạ thân nhiệt tại hiện trường phải bắt đầu từ điểm bị thương chứ không phải ở CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

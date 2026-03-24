@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazolo",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "Antibiotico nitroimidazolico con eccellente copertura anaerobica e protozoaria. Essenziale per traumi penetranti addominali/intestinali per coprire la flora intestinale anaerobica. Spesso usato in combinazione con ciprofloxacina.",
+  "indications": [
+    "Trauma penetrante addominale/intestinale",
+    "Infezioni intraddominali",
+    "Infezioni anaerobiche dei tessuti molli",
+    "Infezioni da C. difficile"
+  ],
+  "dose": "500 mg e.v. ogni 6-8 ore. PO: 500 mg ogni 8 ore (se tollerato per via orale).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Primo trimestre di gravidanza (parente)",
+    "Allergia nota al metronidazolo o al nitroimidazolo"
+  ],
+  "warnings": [
+    "Reazione simile al disulfiram con l'alcol: non consumare alcol durante il trattamento e nelle 48 ore successive.",
+    "Può causare neuropatia periferica con l'uso prolungato.",
+    "Se possibile, evitare nel primo trimestre."
+  ],
+  "regional_names": {
+    "generic": "metronidazolo"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7,5 mg/kg IV/PO ogni 6 ore (max 500 mg/dose).",
+      "note": "Sicuro nei bambini più grandi. Evitare nei neonati."
+    },
+    "obstetric": {
+      "note": "Se possibile, evitare nel primo trimestre. Utilizzare il secondo/terzo trimestre quando necessario dal punto di vista medico: i benefici di solito superano il rischio di gravi infezioni anaerobiche."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

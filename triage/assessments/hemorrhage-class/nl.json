@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Classificatie van bloedingen (klasse I-IV)",
+  "category": "circulatory",
+  "description": "ATLS-bloedingclassificatie op basis van geschat bloedverlies en fysiologische respons.",
+  "instructions": "Schat het bloedverlies en stem de fysiologische symptomen af ​​op de klasse. De urgentie van de behandeling escaleert met de les.",
+  "scoring": [
+    {
+      "class": "ik",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Normaal",
+      "rr": "14-20",
+      "mental_status": "Normaal",
+      "treatment": "Observeer, PO-vloeistoffen indien mogelijk"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Normaal",
+      "rr": "20-30",
+      "mental_status": "Angstig",
+      "treatment": "IV-toegang, isotone kristalloïde"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Verlaagd",
+      "rr": "30-40",
+      "mental_status": "Verward",
+      "treatment": "IV-vloeistoffen + bloedproducten, onmiddellijke controle van bloedingen"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Zeer laag",
+      "rr": ">40",
+      "mental_status": "Lethargisch/bewusteloos",
+      "treatment": "Onmiddellijke chirurgische controle van bloedingen - levensbedreigend"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Kinderen compenseren langer voordat ze decompenseren. Klasse III/IV kan zich uiten met een bijna normale bloeddruk tot plotselinge ineenstorting. Vertrouw op tachycardie en mentale status boven bloeddruk."
+    },
+    "obstetric": {
+      "note": "Zwangere patiënten hebben een 40-50% verhoogd bloedvolume. Kan een groter verlies tolereren voordat het tekenen vertoont. Foetale nood kan aan de tekenen van de moeder voorafgaan."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

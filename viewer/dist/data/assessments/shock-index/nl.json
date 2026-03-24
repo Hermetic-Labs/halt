@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Schokindex",
+  "category": "circulatory",
+  "description": "Snelle indicator met één cijfer voor hemodynamische stabiliteit. Berekend als HR / SBP. Normaal is 0,5-0,7.",
+  "instructions": "Deel de hartslag door de systolische bloeddruk. Een stijgende shockindex duidt op verslechtering.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Normaal -- hemodynamisch stabiel"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Lichte schok -- nauwlettend in de gaten houden"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Matige shock -- IV-toegang, vloeistoffen"
+    },
+    {
+      "range": ">1.4",
+      "label": "Ernstige shock - onmiddellijke reanimatie, bloedproducten"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Obstetric Shock Index (OSI) gebruikt dezelfde formule. SI > 0,9 bij zwangere patiënten is significant. De normale hartslag is hoger tijdens de zwangerschap (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

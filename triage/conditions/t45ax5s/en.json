@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t45ax5s",
+    "icd10":  "T45AX5S",
+    "name":  "Adverse effect of immune checkpoint inhibitors and immunostimulant drugs, sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Adverse effect of immune checkpoint inhibitors and immunostimulant drugs, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

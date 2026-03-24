@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "传明酸 (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "环卡普隆",
+    "莱斯特达"
+  ],
+  "description": "抑制血栓分解的抗纤维蛋白溶解剂。早期给予可显着降低失血性休克的死亡率。 CoTCCC 推荐用于所有有严重出血或有严重出血风险的伤员。",
+  "indications": [
+    "明显的外部或疑似内部出血",
+    "失血性休克",
+    "高出血风险（损伤机制）"
+  ],
+  "dose": "10 分钟内 1g IV/IO，然后 8 小时内 1g IV/IO。如果 IV/IO 不可用：650mg PO x2（总共 1.3g）——TCCC PO 选项。",
+  "route": [
+    "四",
+    "IO",
+    "采购订单"
+  ],
+  "window": "必须在受伤后 3 小时内进行。超过 3 小时，TXA 可能会增加死亡率——请勿给予。",
+  "contraindications": [
+    "血栓栓塞性疾病史（DVT、PE、中风）",
+    "弥散性血管内凝血 (DIC)",
+    "> 受伤后 3 小时"
+  ],
+  "warnings": [
+    "立即记录给药时间——窗口是从受伤时间起 3 小时，而不是到达时间。",
+    "不要将静脉注射剂量 (1g) 与口服剂量混淆。"
+  ],
+  "regional_names": {
+    "generic": "氨甲环酸",
+    "US": "环卡普隆",
+    "UK": "环卡普隆"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg IV（最大 1g）。证据不断出现——使用临床判断。",
+      "note": "同样适用 3 小时窗口。"
+    },
+    "obstetric": {
+      "note": "适用于产后出血。怀孕期间安全。适用相同的成人剂量。"
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s42448p",
+    "icd10":  "S42448P",
+    "name":  "Incarcerated fracture (avulsion) of medial epicondyle of left humerus, subsequent encounter for fracture with malunion",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Incarcerated fracture (avulsion) of medial epicondyle of left humerus, subsequent encounter for fracture with malunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

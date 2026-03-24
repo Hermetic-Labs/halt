@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s81022s",
+    "icd10":  "S81022S",
+    "name":  "Laceration with foreign body, left knee, sequela",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Laceration with foreign body, left knee, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

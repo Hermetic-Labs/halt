@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxon",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "Kloxxado"
+  ],
+  "description": "Kompetitiver Opioidrezeptor-Antagonist. Beseitigt schnell Opioid-induzierte Atemdepression, Sedierung und Analgesie. Beginn IV: 2 Min., IM: 5 Min., IN: 8–13 Min. Die Wirkungsdauer ist kürzer als bei den meisten Opioiden – eine wiederholte Gabe kann erforderlich sein.",
+  "indications": [
+    "Opioid-Überdosis oder Atemdepression",
+    "Umkehrung der Opioid-Sedierung",
+    "Mutmaßlicher Opioid-Opfer"
+  ],
+  "dose": "0,4–2 mg IV/IO/IM/IN. Bei Bedarf alle 2–3 Minuten wiederholen. Maximal 10 mg. Intranasal (IN): 2 mg pro Nasenloch.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IM",
+    "Quadrat"
+  ],
+  "window": "",
+  "contraindications": [
+    "Keine absoluten Kontraindikationen bei Überdosierung"
+  ],
+  "warnings": [
+    "Die Wirkdauer (30–90 Minuten) ist kürzer als bei den meisten Opioiden – der Patient kann erneut narkotisieren. Nach der letzten Dosis mindestens 1 Stunde lang überwachen.",
+    "Beschleunigt einen akuten Opioid-Entzug – kann bei opioidabhängigen Patienten zu Unruhe, Tachykardie und Lungenödem führen.",
+    "Wird die Analgesie rückgängig machen – der Patient kann aufgrund der Schmerzen akut kämpferisch werden."
+  ],
+  "regional_names": {
+    "generic": "Naloxon",
+    "US": "Narcan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,01 mg/kg IV/IM/IN (maximal 0,4 mg). Wiederholen Sie die PRN alle 2–3 Minuten.",
+      "note": "Neugeborene: 0,01 mg/kg zur Aufhebung des mütterlichen Opioids."
+    },
+    "obstetric": {
+      "note": "Sicher in der Schwangerschaft. Wenn es der Mutter kurz vor der Entbindung verabreicht wird, ist das Neugeborene auf Entzug zu überwachen."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastaat"
+  ],
+  "description": "Langwerkende benzodiazepine. Gebruikt voor het behandelen van aanvallen, spierspasmen en anxiolyse. Rectale gel (Diastat) is nuttig in lokale instellingen wanneer IV niet beschikbaar is. Langere duur dan lorazepam.",
+  "indications": [
+    "Beheer van aanvallen (rectaal/IV)",
+    "Spierspasmen door ruggenmergletsel of tetanus",
+    "Hulpmiddel tegen zenuwgas (in CHEMPACK-kits)",
+    "Alcoholontwenning"
+  ],
+  "dose": "Toeval: 5-10 mg IV langzaam duwen. Herhaal elke 10-15 minuten (max. 30 mg). Rectaal: 0,2-0,5 mg/kg. IM-absorptie grillig - vermijd IM indien mogelijk.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "Acuut nauwekamerhoekglaucoom",
+    "Ernstige leverziekte",
+    "Ademhalingsdepressie"
+  ],
+  "warnings": [
+    "IM-absorptie is grillig en pijnlijk - geef de voorkeur aan IV, rectaal of gebruik in plaats daarvan midazolam IM.",
+    "Lange duur van de sedatie (24-48 uur bij herhaalde doses).",
+    "Slachtoffers van zenuwgas: diazepam is opgenomen in CHEMPACK-kits voor epilepsieaanvallen als gevolg van een cholinerge crisis."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0,1-0,3 mg/kg (max. 10 mg). Rectaal: 0,3-0,5 mg/kg. Gebruik de rectale route als IV niet beschikbaar is.",
+      "note": "Rectale diastatgel is vooral nuttig bij pediatrische aanvallen in veldsituaties."
+    },
+    "obstetric": {
+      "note": "Kruist de placenta. Kan neonatale hypotonie en ademhalingsdepressie veroorzaken. Alleen gebruiken bij maternale aanvallen die niet reageren op magnesium."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

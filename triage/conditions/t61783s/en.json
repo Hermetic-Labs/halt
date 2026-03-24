@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t61783s",
+    "icd10":  "T61783S",
+    "name":  "Other shellfish poisoning, assault, sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Other shellfish poisoning, assault, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

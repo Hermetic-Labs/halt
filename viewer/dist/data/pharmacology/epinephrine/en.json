@@ -1,0 +1,46 @@
+﻿{
+    "id":  "epinephrine",
+    "name":  "Epinephrine (Adrenaline)",
+    "category":  "cardiac-emergency",
+    "rxnorm":  "3992",
+    "brand_names":  [
+                        "EpiPen",
+                        "Adrenalin"
+                    ],
+    "description":  "Endogenous catecholamine with alpha and beta adrenergic activity. First-line treatment for anaphylaxis and cardiac arrest. In anaphylaxis, IM thigh is preferred over IV (safer, equivalent efficacy). Do not delay for IV access in anaphylaxis.",
+    "indications":  [
+                        "Anaphylaxis (first-line)",
+                        "Cardiac arrest -- pulseless VF/VT/PEA/asystole",
+                        "Severe bronchospasm",
+                        "Hypotension refractory to fluids"
+                    ],
+    "dose":  "Anaphylaxis: 0.3-0.5 mg IM (anterolateral thigh) | Auto-injector 0.3 mg IM. Repeat q5-15 min PRN. Cardiac arrest: 1 mg IV/IO q3-5 min during CPR. Severe bronchospasm: 0.3 mg IM.",
+    "route":  [
+                  "IM",
+                  "IV",
+                  "IO"
+              ],
+    "window":  "In anaphylaxis: give IM immediately -- do not delay for IV access.",
+    "contraindications":  [
+                              "No absolute contraindications in life-threatening emergency"
+                          ],
+    "warnings":  [
+                     "IV epinephrine for anaphylaxis should only be used in cardiac arrest or profound shock -- dangerous if given IV push to a conscious patient.",
+                     "Extravasation causes tissue necrosis -- ensure IV patency.",
+                     "Increases myocardial oxygen demand -- use caution in known coronary disease outside arrest."
+                 ],
+    "regional_names":  {
+                           "generic":  "epinephrine",
+                           "UK":  "adrenaline"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "Anaphylaxis: 0.01 mg/kg IM (max 0.5 mg). EpiPen Jr (0.15 mg) for 15-30 kg. Cardiac arrest: 0.01 mg/kg IV/IO q3-5 min.",
+                                        "note":  "Use weight-based dosing. Broselow tape reference recommended."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Use standard anaphylaxis dosing -- maternal survival is paramount. Epinephrine is safe in pregnancy for life-threatening emergencies."
+                                    }
+                  },
+    "source":  "JTS CPG / ACLS / TCCC Guidelines"
+}

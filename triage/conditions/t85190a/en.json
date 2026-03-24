@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t85190a",
+    "icd10":  "T85190A",
+    "name":  "Other mechanical complication of implanted electronic neurostimulator of brain electrode (lead), initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Other mechanical complication of implanted electronic neurostimulator of brain electrode (lead), initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

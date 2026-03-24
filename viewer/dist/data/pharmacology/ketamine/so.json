@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Suuxinta kala-baxa oo bixisa xanuunka xanuunka, suuxinta, iyo amnesia iyadoo la ilaalinayo falcelinta marin-haweedka iyo xasilloonida hemodynamic. Xanuunada xanuunka ee la door biday ee TCCC -- waxay ilaalisaa BP ka duwan opioids. Sidoo kale loo isticmaalo suuxinta nidaamka iyo RSI.",
+  "indications": [
+    "Maareynta xanuunka dhexdhexaad-ilaa-daran",
+    "Habka suuxinta (baakaynta dhaawaca, dhimista jabka)",
+    "Wakiilka soo jeedinta ee RSI",
+    "suuxinta la dagaalanka"
+  ],
+  "dose": "Xannuunka: 0.1-0.3 mg/kg IV/IO ( riixid tartiib ah) | 0.5 mg/kg IM. Suuxinta nidaamka: 1-2 mg/kg IV | 4-6 mg/kg IM. Soo jeedinta RSI: 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN"
+  ],
+  "window": "",
+  "contraindications": [
+    "schizophrenia la yaqaan ama waallida firfircoon",
+    "Sare u kaca ICP iyada oo aan la ilaalin marin hawo-mareen (qaraabo)"
+  ],
+  "warnings": [
+    "Dareen-celinta soo-baxa (delirium/hallucinations) -- ku yareyso midazolam 1-2mg IV haddii la heli karo.",
+    "Waxay kordhisaa dheecaanka -- diyaar u ahaanshaha nuugista.",
+    "Laryngospasm naadir ah laakiin suurtagal ah -- hay BVM diyaar ah."
+  ],
+  "regional_names": {
+    "generic": "ketamiin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Xannuunka: 0.5 mg/kg IV. Suuxinta nidaamka: 1-2 mg/kg IV | 4-5 mg/kg IM.",
+      "note": "Si fiican u bartay cilmiga carruurta. Loo door biday hababka xanuunka badan."
+    },
+    "obstetric": {
+      "note": "Ammaan ka ah xanuunka hooyada marka qiyaas yar la qaato. Waxa laga yaabaa inay keento niyad-jabka neef-mareenka ee dhallaanka ah oo qiyaaso sarreeya haddii la dhasho wakhtiga dhalmada ku dhow."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

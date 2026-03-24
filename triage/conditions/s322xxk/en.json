@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s322xxk",
+    "icd10":  "S322XXK",
+    "name":  "Fracture of coccyx, subsequent encounter for fracture with nonunion",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Fracture of coccyx, subsequent encounter for fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

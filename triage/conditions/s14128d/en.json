@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s14128d",
+    "icd10":  "S14128D",
+    "name":  "Central cord syndrome at C8 level of cervical spinal cord, subsequent encounter",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Central cord syndrome at C8 level of cervical spinal cord, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

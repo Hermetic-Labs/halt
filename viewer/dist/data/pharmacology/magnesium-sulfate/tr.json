@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Magnezyum Sülfat (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Magnezyum Sülfat Enjeksiyonu"
+  ],
+  "description": "Eklamptik nöbetlerin (gebelikte preeklampsiden kaynaklanan nöbetler) önlenmesi ve tedavisinde kullanılan merkezi sinir sistemi depresanı ve antikonvülsan. Ayrıca şiddetli astım ve torsades de pointes tedavisinde de kullanılır. Eklampsi için benzodiazepinlere karşı ilk seçenek.",
+  "indications": [
+    "Eklampsi (şiddetli preeklampside nöbet önleme ve tedavisi)",
+    "Preeklampsi profilaksisi (ciddi özellikler)",
+    "Torsades de Pointes (hipomagnezemiden kaynaklanan polimorfik V-tach)",
+    "Şiddetli akut astım (ek)"
+  ],
+  "dose": "Eklampsi yükleme dozu: 20 dakika boyunca 4-6 g IV yavaş itme. Bakım: 1-2g/saat IV infüzyon. Nöbet tekrarlanırsa: 5 dakika boyunca 2-4g IV. IM yükleme (IV yoksa): Her kalçaya aynı anda 5g IM (toplam 10g).",
+  "route": [
+    "IV",
+    "Giriş Çıkış",
+    "anlık ileti"
+  ],
+  "window": "Nöbet başlangıcında veya şiddetli preeklampsi özelliklerinin teşhisi üzerine başlayın.",
+  "contraindications": [
+    "Miyastenia gravis",
+    "Kardiyak iletim kusurları",
+    "Böbrek yetmezliği (birikiyor – dozu azaltın)"
+  ],
+  "warnings": [
+    "Toksisite belirtileri: patellar refleks kaybı (ilk belirti, 7-10 mEq/L), solunum depresyonu (> 10 mEq/L), kalp durması (> 15 mEq/L).",
+    "Patellar refleksleri her 15 dakikada bir izleyin; refleks kaybı = infüzyonu durdurun.",
+    "Toksisite için ANTİDOTU: Kalsiyum glukonat 1g IV, 3 dakika boyunca.",
+    "Böbrek yetmezliğinde dozu azaltın – idrar çıkışını izleyin."
+  ],
+  "regional_names": {
+    "generic": "magnezyum sülfat"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg IV, 10-20 dakika süreyle (maks. 2g). Şiddetli astım: 25-75 mg/kg IV (maks. 2g).",
+      "note": "Obstetrik olmayan pediatrik hastalardaki nöbetler için nadiren kullanılır; eklampsi birincil endikasyondur."
+    },
+    "obstetric": {
+      "note": "Birincil gösterge. Plasentayı geçer; neonatal hipermagnezemi mümkündür. Solunum depresyonu varsa yenidoğan dozu: kalsiyum glukonat 100 mg/kg IV. YYBÜ ekibini annenin magnezyum kullanımı konusunda bilgilendirin."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

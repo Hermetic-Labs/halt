@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "咪达唑仑",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "精通",
+    "奈吉拉姆"
+  ],
+  "description": "短效苯二氮卓类药物起效快。首选用于程序镇静、RSI 术前用药和 IM/IN 癫痫发作管理。 IM 和鼻内途径在现场设置中具有显着的优势。",
+  "indications": [
+    "程序镇静",
+    "RSI 术前用药（氯胺酮）",
+    "癫痫发作管理（IV 不可用时 IM/IN）",
+    "躁动管理"
+  ],
+  "dose": "镇静：0.05-0.1 mg/kg IV 滴定。程序：1-5 mg IV 缓慢推注。肌内注射：0.2毫克/千克。 IN：0.2 毫克/千克（最大 10 毫克）。癫痫持续状态 IM：10 mg IM（成人）。",
+  "route": [
+    "四",
+    "IO",
+    "即时通讯",
+    "在"
+  ],
+  "window": "",
+  "contraindications": [
+    "急性窄角型青光眼",
+    "急性酒精中毒与心血管损害",
+    "已知的过敏症"
+  ],
+  "warnings": [
+    "呼吸抑制——监测气道，如果有的话使用逆转剂（氟马西尼）。",
+    "低血压，尤其是与阿片类药物合用时。",
+    "快速静脉注射会导致呼吸暂停——缓慢推入。"
+  ],
+  "regional_names": {
+    "generic": "咪达唑仑"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "镇静：0.05-0.1 mg/kg IV。肌内注射：0.1-0.2毫克/千克。输入：0.2-0.3 毫克/千克。癫痫发作 IM：0.2 mg/kg（最大 10 mg）。",
+      "note": "IN 途径对儿童特别有用——避免静脉注射。"
+    },
+    "obstetric": {
+      "note": "穿过胎盘。可以进行新生儿镇静。使用最小有效剂量；如果临近分娩，应监测新生儿。"
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

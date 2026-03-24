@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Ukuphathwa Kokulimala Kokushisa",
+  "category": "environmental",
+  "skill_level": "Okuyisisekelo",
+  "time_estimate": "Kuqhubeka kuze kube yi-MEDEVAC noma ukuzinza kwesiguli",
+  "description": "Ukulawulwa kwamajaqamba okushisa, ukucikeka kokushisa, kanye ne-heat stroke. Ukushisa kohlangothi kuyisimo esiphuthumayo esisongela ukuphila -- ukupholisa ngokushesha ukwelashwa. Hlukanisa ukuphela kokushisa (ukukhuluma okuvamile) kusukela ekushayweni kokushisa (okushintshiwe i-LOC) ngokushesha.",
+  "equipment": [
+    "Amanzi (ngomlomo + ukupholisa)",
+    "Amaphakethe eqhwa noma izindwangu ezimanzi ezibandayo",
+    "Izinsiza ze-IV (LR noma NS)",
+    "Ifeni noma umthunzi",
+    "I-rectal thermometer (izinga lokushisa eliqondile eliyisisekelo)"
+  ],
+  "steps": [
+    "UKUHLOLA: Ingabe abalimele baqaphile futhi baqondise? Isikhumba esomile esishisayo ngokumelene nesikhumba esijulukayo esishisayo? Izinga lokushisa eliyisisekelo uma i-thermometer ikhona.",
+    "UKUSHISA OKUSHISA: Ukuqina kwemisipha, ukucabanga okuvamile. Phumula emthunzini, ukubuyisela amanzi emlonyeni nge-electrolyte, ukwelula kancane. Ayifaki impilo engozini.",
+    "UKUKHALA OKUSHISA: Ukujuluka kakhulu, ubuthakathaka, isiyezi, ukucabanga okuvamile noma okuseduze nokujwayelekile. Yiya endaweni enomthunzi/epholile. Susa izingubo ezingaphezulu. Uketshezi lomlomo (uma uyazi) noma IV LR 1L ngaphezu kwemizuzu engama-30-60. Gada ukuqhubekela phambili ekushiseni.",
+    "I-HEAT STROKE (isimo esiphuthumayo): I-LOC eshintshile, ukudideka, ukulwa, noma ukuquleka. Izinga lokushisa eliphakathi > 40C (104F). Isikhumba esishisayo (kungenzeka sibe manzi noma somile). QALA: Khipha ekushiseni ngokushesha, susa zonke izingubo, isikhumba esimanzi nesiphephetha-moya ngamandla. Gcoba amaphakethe e-ice entanyeni, e-axillae, nase-groin (izindawo ezine-vascular high). IV LR 1-2L. Vikela indlela yokuphefumula uma equlekile. MEDEVAC ngokushesha.",
+    "UNGAMniki i-aspirin noma i-acetaminophen yokushisa -- ayisizi, ingase ilimaze.",
+    "Iqapha: okubalulekile q15 min, indlela yomoya, isimo sengqondo. Isitayela sesikhathi sedokhumenti.",
+    "Qhubeka uphole ngesikhathi se-MEDEVAC -- ungami ezokuthutha."
+  ],
+  "warnings": [
+    "Ukushisa yisimo esiphuthumayo esisongela ukuphila -- ungaphazami njengokukhathala kokushisa. Hlola isimo sengqondo.",
+    "Ukupholisa ukwelapha okuwujuqu. Ungalibali ukupholisa ukuze uthole ukufinyelela kwe-IV.",
+    "Ukushisa okunamandla kungenzeka kubantu abalingana kahle -- ukuqina komzimba akuvikeli.",
+    "I-Hyponatremia (i-sodium ephansi) evela emanzini ngokweqile ngamanzi alula ingalingisa ukushisa -- nikeza isisombululo se-electrolyte hhayi amanzi kuphela."
+  ],
+  "follows": [
+    "ukuphelelwa amanzi emzimbeni-ukuhlola"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Izingane thermoregulate kancane kahle. Ukushisa kungathuthuka ngokushesha. Uketshezi olusekelwe isisindo: 20 mL/kg LR IV bolus. Izinga lokushisa eliyisisekelo nge-thermometer ye-rectal linembe kakhulu."
+    },
+    "obstetric": {
+      "note": "I-hyperthermia kamama (>39C) ingabangela ukukhubazeka kwe-fetus neural tube (ekuseni) kanye nokucindezeleka kwe-fetus (sekwephuzile). Ukupholisa okunamandla. Ukuqapha izinga lokushaya kwenhliziyo yengane uma kukhona."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

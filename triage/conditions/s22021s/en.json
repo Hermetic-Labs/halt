@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s22021s",
+    "icd10":  "S22021S",
+    "name":  "Stable burst fracture of second thoracic vertebra, sequela",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Stable burst fracture of second thoracic vertebra, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

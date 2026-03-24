@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Soğuk Yaralanması Yönetimi",
+  "category": "environmental",
+  "skill_level": "Temel",
+  "time_estimate": "Devam ediyor",
+  "description": "Donma, daldırma ayağı (hendek ayağı) ve hipoterminin yönetimi. Soğuk yaralanmaları önlenebilir; doku hasarı geri döndürülemez hale gelmeden önce erken belirtileri fark edin. Donmuş dokuyu son derece dikkatli bir şekilde tutun.",
+  "equipment": [
+    "Kuru yalıtımlı giysi/uyku tulumu",
+    "Banyoyu yeniden ısıtmak için ılık su (38-42C/100-108F)",
+    "Steril pansumanlar",
+    "İbuprofen 400mg PO (varsa)",
+    "IV LR (mümkünse sıcak)"
+  ],
+  "steps": [
+    "İLK HİPOTERMİ: Düşük okumalı termometreyle çekirdek sıcaklığını değerlendirin. Hafif (32-35C): titreme, kafa karışıklığı. Orta (28-32C): titreme yok, şiddetli kafa karışıklığı. Şiddetli (<28C): bilinci kapalı, nabız alınamıyor.",
+    "HİPOTERMİ - Hafif/Orta: Islak giysileri çıkarın, yerden yalıtın, sıcak ortamdan yararlanın, bilinci yerindeyse tatlı sıvıları ısıtın, koltuk altlarına/kasığa ısı paketleri (doğrudan cilt üzerinde değil). Nazikçe tutun; sarsıntı VFib'i tetikleyebilir.",
+    "HİPOTERMİ -- Şiddetli: ÇOK nazik davranın. Nabzı CPR'den 60 saniye önce kontrol edin. Nabız yoksa CPR'ye başlayın. Varsa sıcak IV sıvıları. MEDEVAC önceliği: 'ısınıp ölene kadar ölmez'.",
+    "DONMA: Yüzeysel (cildin beyaz/gri, alt kısmı yumuşak) ve derin (sert, ahşap hissi, kabarma). Bölgeyi OVMAYIN. Yeniden donma riski varsa yeniden ISITMAYIN; yeniden dondurma, gecikmiş yeniden ısıtmadan daha kötü hasara neden olur.",
+    "FROSTBITE yeniden ısıtma: Doku yumuşak ve kırmızı/mor olana kadar 15-30 dakika boyunca 38-42C suya (daha sıcak değil) batırın. Çok acı verici; analjezi önerin (ketamin veya morfin).",
+    "Yeniden ısıttıktan sonra: ayak parmakları/parmak aralarını steril gazlı bezle tamponlayın. Kabarcıkları patlatmayın. Basınçtan koruyun.",
+    "DALDIRMA AYAĞI (Hendek Ayağı): uzun süre ıslak/soğuğa maruz kalma, cilt önce kızarır, sonra soluklaşır, sonra kabarır. Ayakları kurulayın, yavaşça ısıtın, yükseltin. Doğrudan ısı UYGULAMAYIN.",
+    "Yaralanma zamanını ve yeniden ısınma zamanını belgeleyin."
+  ],
+  "warnings": [
+    "Yeniden donma şansı varsa donmayı yeniden ısıtmayın; eksik yeniden ısıtma + yeniden dondurma = yıkıcı doku kaybı.",
+    "Şiddetli hipotermi ölümü taklit edebilir. Nabzını 60 saniye boyunca kontrol edin. 'Isınıp ölene kadar ölmez.'",
+    "Alkol, sıcaklık algısına rağmen ısı kaybını artırır; alkol vermeyin.",
+    "Orta-şiddetli hipotermide VFib riski yüksektir; hastanın manipülasyonunu ve sarsılmasını en aza indirin."
+  ],
+  "follows": [
+    "hipotermi önleme"
+  ],
+  "precedes": [
+    "tıbbi tahliye-9 hattı"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Çocuklar daha yüksek yüzey alanı/kütle oranı nedeniyle daha hızlı soğurlar. Hipotermi eşikleri aynı. Sıcak IV sıvıları kritiktir. Ağırlığa dayalı sıvı: 20 mL/kg ılık LR."
+    },
+    "obstetric": {
+      "note": "Maternal hipotermi fetal bradikardi ve asidoza neden olur. Agresif anne ısıtması fetal tedavidir. Varsa fetal izleme."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

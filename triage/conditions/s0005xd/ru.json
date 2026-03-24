@@ -1,0 +1,22 @@
+{
+  "id": "s0005xd",
+  "icd10": "S0005XD",
+  "name": "Поверхностное инородное тело кожи головы, последующее обнаружение",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Поверхностное инородное тело кожи головы, последующая встреча",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "s0000xd",
+  "icd10": "S0000XD",
+  "name": "د سر غیر مشخص سطحي زخم، ورپسې مخامخ کیدل",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "د سر غیر مشخص سطحي زخم، ورپسې مخامخ کیدل",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

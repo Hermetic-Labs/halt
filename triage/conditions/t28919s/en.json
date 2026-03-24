@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t28919s",
+    "icd10":  "T28919S",
+    "name":  "Corrosions of unspecified ear drum, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Corrosions of unspecified ear drum, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

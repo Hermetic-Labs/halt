@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Tutu ifarapa Management",
+  "category": "environmental",
+  "skill_level": "Ipilẹṣẹ",
+  "time_estimate": "Ti nlọ lọwọ",
+  "description": "Itoju ti frostbite, ẹsẹ immersion (ẹsẹ trench), ati hypothermia. Awọn ipalara tutu jẹ idilọwọ -- ṣe idanimọ awọn ami kutukutu ṣaaju ibajẹ àsopọ jẹ aileyi pada. Mu awọn frostbitten àsopọ lalailopinpin rọra.",
+  "equipment": [
+    "Aso idabobo gbigbẹ / apo orun",
+    "Omi gbona (38-42C / 100-108F) fun iwẹ atunmọ",
+    "Awọn aṣọ wiwọ",
+    "Ibuprofen 400mg PO (ti o ba wa)",
+    "IV LR (gbona ti o ba ṣeeṣe)"
+  ],
+  "steps": [
+    "HYPOTHERMIA AKỌKỌ: Ṣe ayẹwo iwọn otutu mojuto pẹlu iwọn otutu-kika kekere. Ìwọnba (32-35C): gbigbọn, iporuru. Iwọntunwọnsi (28-32C): ko si gbigbọn, iporuru nla. Àìdá (<28C): daku, ko si pulse iwari.",
+    "HYPOTHERMIA - Irẹwẹsi/Iwọntunwọnsi: Yọ awọn aṣọ tutu kuro, ṣe idabobo lati ilẹ, agbegbe ti o gbona, awọn ito ti o gbona ti o ba ni imọran, awọn akopọ ooru si axillae / ikun (kii ṣe taara lori awọ ara). Mu rọra mu - jarring le ṣe okunfa VFib.",
+    "HYPOTHERMIA -- Àìdá: Mu rọra pupọ. Ṣayẹwo pulse ni iṣẹju-aaya 60 ni kikun ṣaaju CPR. Bẹrẹ CPR ti ko ba si pulse. Awọn fifa IV gbona ti o ba wa. MEDEVAC ayo -- 'ko ku titi ti o fi gbona ati ti o ku'.",
+    "FROSTBITE: Egbò (funfun awọ-awọ / grẹy, rirọ labẹ) la jin (lile, rilara igi, roro). MAA ṢE pa agbegbe naa. Ma ṣe tunru ti o ba jẹ eewu ti didi – atuntu fa ibaje ti o buru ju isọdọtun idaduro lọ.",
+    "FROSTBITE rewarming: Immerse ni 38-42C omi (ko gbona) fun 15-30 min titi ti àsopọ jẹ rirọ ati pupa / eleyi ti. Irora pupọ - pese analgesia (ketamini tabi morphine).",
+    "Lẹhin gbigbona: paadi laarin awọn ika ẹsẹ / ika pẹlu gauze ti ko ni ifo. Ma ṣe agbejade roro. Dabobo lati titẹ.",
+    "Ẹsẹ IMMERSION (Ẹsẹ Trench): ifarabalẹ tutu/tutu gigun, awọ ara pupa leyin naa bidi lẹhinna roro. Awọn ẹsẹ ti o gbẹ, gbona laiyara, gbe soke. Ma ṣe kan ooru taara.",
+    "Iwe akoko ti ipalara ati akoko ti rewarming."
+  ],
+  "warnings": [
+    "MAA ṢE tun tutu tutu bi o ba wa ni eyikeyi anfani lati tun didi -- atunṣe ti ko pe + refreezing = isonu tissu ti o buruju.",
+    "Àìdá hypothermia le fara wé iku. Ṣayẹwo pulse fun awọn aaya 60. 'Ko ku titi ti o gbona ati ti o ku.'",
+    "Ọti mimu nmu pipadanu ooru pọ si bi a ti rii ti igbona - maṣe fun ọti.",
+    "Ewu VFib ga ni iwọntunwọnsi-ailera hypothermia -- dinku ifọwọyi ati idẹruba alaisan."
+  ],
+  "follows": [
+    "hypothermia-idena"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Awọn ọmọde dara ni iyara nitori agbegbe dada ti o ga julọ si ipin pupọ. Iwọn hypothermia jẹ kanna. Awọn fifa IV gbona ṣe pataki. Omi ti o da lori iwuwo: 20 milimita / kg gbona LR."
+    },
+    "obstetric": {
+      "note": "Hypothermia ti iya nfa bradycardia ọmọ inu oyun ati acidosis. Isọdọtun iya ibinu jẹ itọju ọmọ inu oyun. Abojuto ọmọ inu oyun ti o ba wa."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

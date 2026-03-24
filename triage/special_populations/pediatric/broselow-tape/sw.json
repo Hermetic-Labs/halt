@@ -1,0 +1,63 @@
+{
+  "id": "broselow-tape",
+  "name": "Marejeleo ya Tepu ya Dharura ya Watoto ya Broselow",
+  "description": "Marejeleo yenye rangi ya uzito kwa dozi kwa usimamizi wa dawa za watoto wakati kipimo hakipo. Pima mtoto kutoka juu ya kichwa hadi kisigino na mechi kwa bendi ya rangi.",
+  "note": "Rejeleo hili ni la ESTIMATION pekee. Tumia uzito halisi unapopatikana.",
+  "bands": [
+    {
+      "color": "kijivu",
+      "weight_kg": "3-5",
+      "length_cm": "46-57",
+      "est_age": "Mtoto mchanga"
+    },
+    {
+      "color": "pink",
+      "weight_kg": "6-7",
+      "length_cm": "57-67",
+      "est_age": "Miezi 3-6"
+    },
+    {
+      "color": "nyekundu",
+      "weight_kg": "8-9",
+      "length_cm": "67-74",
+      "est_age": "Miezi 6-12"
+    },
+    {
+      "color": "zambarau",
+      "weight_kg": "10-11",
+      "length_cm": "74-83",
+      "est_age": "Miezi 12-18"
+    },
+    {
+      "color": "njano",
+      "weight_kg": "12-14",
+      "length_cm": "83-95",
+      "est_age": "Miezi 18 - miaka 3"
+    },
+    {
+      "color": "nyeupe",
+      "weight_kg": "15-18",
+      "length_cm": "95-107",
+      "est_age": "Miaka 3-5"
+    },
+    {
+      "color": "bluu",
+      "weight_kg": "19-22",
+      "length_cm": "107-122",
+      "est_age": "Miaka 5-7"
+    },
+    {
+      "color": "machungwa",
+      "weight_kg": "24-28",
+      "length_cm": "122-137",
+      "est_age": "Miaka 7-9"
+    },
+    {
+      "color": "kijani",
+      "weight_kg": "30-36",
+      "length_cm": "137-152",
+      "est_age": "Miaka 9-12"
+    }
+  ],
+  "source": "Broselow Pediatric Emergency Reference / PALS"
+}

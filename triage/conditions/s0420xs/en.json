@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s0420xs",
+    "icd10":  "S0420XS",
+    "name":  "Injury of trochlear nerve, unspecified side, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Injury of trochlear nerve, unspecified side, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

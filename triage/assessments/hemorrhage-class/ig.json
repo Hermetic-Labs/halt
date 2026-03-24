@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Nkewa ọbara ọgbụgba (Klas I-IV)",
+  "category": "circulatory",
+  "description": "Nhazi ọbara ọgbụgba ATLS site na atụmatụ mfu ọbara na nzaghachi anụ ahụ.",
+  "instructions": "Mee atụmatụ mfu ọbara ma dakọọ akara mmụta physiological na klaasị. Ngwa ngwa ọgwụgwọ na-abawanye na klas.",
+  "scoring": [
+    {
+      "class": "I",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Nkịtị",
+      "rr": "14-20",
+      "mental_status": "Nkịtị",
+      "treatment": "Lelee, PO mmiri mmiri ma ọ bụrụ na ọ nwere ike"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Nkịtị",
+      "rr": "20-30",
+      "mental_status": "Nchegbu",
+      "treatment": "Nweta IV, isotonic crystalloid"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Mbelata",
+      "rr": "30-40",
+      "mental_status": "Ọ gbagwojuru anya",
+      "treatment": "Mmiri IV + ngwaahịa ọbara, njikwa ọbara ọgbụgba ozugbo"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": "> 40%",
+      "hr": ">140",
+      "sbp": "Dị nnọọ ala",
+      "rr": ">40",
+      "mental_status": "Akwụsịghị/amaghị ihe ọ bụla",
+      "treatment": "Njikwa ọbara ọgbụgba ịwa ahụ ozugbo -- na-eyi ndụ egwu"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Ụmụaka na-akwụ ụgwọ ogologo oge tupu ha akwụ ụgwọ. Klas III/IV nwere ike ịpụta na BP dị nso na-adịkarị ruo mgbe ọdịda mberede. Tụkwasị obi tachycardia na ọnọdụ uche n'elu BP."
+    },
+    "obstetric": {
+      "note": "Ndị ọrịa dị ime nwere mmụba ọbara 40-50%. Enwere ike ịnabata mfu ka ukwuu tupu igosi akara. Nsogbu nwa ebu n'afọ nwere ike ibute akara nke nne."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

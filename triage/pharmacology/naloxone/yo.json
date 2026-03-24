@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxone",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "Kloxxado"
+  ],
+  "description": "Idije opioid olugba antagonist. Ni kiakia yiyipada ibanujẹ atẹgun ti o fa opioid, sedation, ati analgesia. Bibẹrẹ IV: 2 min, IM: 5 min, IN: 8-13 min. Iye akoko ti o kuru ju pupọ julọ awọn opioids -- iwọntunwọnsi le nilo.",
+  "indications": [
+    "Opioid apọju tabi ibanujẹ atẹgun",
+    "Iyipada ti sedation opioid",
+    "Ifura opioid ijamba"
+  ],
+  "dose": "0.4-2 mg IV/IO/IM/IN. Tun q2-3 min bi o ṣe nilo. O pọju 10mg. Intranasal (IN): 2mg fun iho imu.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ko si awọn ilodisi pipe ni eto iwọn apọju"
+  ],
+  "warnings": [
+    "Iye akoko iṣe (30-90 min) kuru ju pupọ julọ awọn opioids - alaisan le tun-narcotize. Ṣe abojuto o kere ju wakati 1 lẹhin iwọn lilo to kẹhin.",
+    "Yiyọkuro opioid nla le fa ijakadi, tachycardia, edema ẹdọforo ni awọn alaisan ti o gbẹkẹle opioid.",
+    "Yoo yiyipada analgesia pada - alaisan le di ija lile lati irora."
+  ],
+  "regional_names": {
+    "generic": "naloxone",
+    "US": "Narcan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.01 mg/kg IV/IM/IN (max 0.4 mg). Tun q2-3 min PRN.",
+      "note": "Ọmọ tuntun: 0.01 mg/kg fun iyipada ti opioid iya."
+    },
+    "obstetric": {
+      "note": "Ailewu ninu oyun. Ti a ba fun iya nitosi ibimọ, ṣe abojuto ọmọ tuntun fun yiyọ kuro."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Walium",
+    "Diastat"
+  ],
+  "description": "Długo działająca benzodiazepina. Stosowany w leczeniu napadów padaczkowych, skurczów mięśni i anksjolizy. Żel doodbytniczy (Diastat) jest przydatny w warunkach terenowych, gdy IV nie jest dostępna. Dłuższy czas działania niż lorazepam.",
+  "indications": [
+    "Postępowanie w przypadku napadów (doodbytniczo/IV)",
+    "Skurcz mięśni spowodowany urazem rdzenia kręgowego lub tężcem",
+    "Dodatkowa antidotum na środek nerwowy (w zestawach CHEMPACK)",
+    "Odstawienie alkoholu"
+  ],
+  "dose": "Napad drgawkowy: 5-10 mg dożylnie, powolne wciśnięcie. Powtarzaj co 10-15 minut (maks. 30 mg). Doodbytniczo: 0,2-0,5 mg/kg. Wchłanianie domięśniowe jest nieregularne – jeśli to możliwe, należy unikać domięśniowego podawania.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ostra jaskra z wąskim kątem",
+    "Ciężka choroba wątroby",
+    "Depresja oddechowa"
+  ],
+  "warnings": [
+    "Wchłanianie domięśniowe jest nieregularne i bolesne – należy preferować dożylne podanie doodbytnicze lub midazolam domięśniowy.",
+    "Długi czas trwania sedacji (24-48h przy dawkach powtarzanych).",
+    "Ofiary z powodu środków nerwowych: diazepam znajduje się w zestawach CHEMPACK do leczenia napadów padaczkowych w przebiegu przełomu cholinergicznego."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0,1-0,3 mg/kg (maks. 10 mg). Doodbytniczo: 0,3-0,5 mg/kg. Stosować doodbytniczo, jeśli IV nie jest dostępne.",
+      "note": "Żel do diastatu doodbytniczego jest szczególnie przydatny w leczeniu napadów u dzieci w warunkach terenowych."
+    },
+    "obstetric": {
+      "note": "Przechodzi przez łożysko. Może powodować hipotonię u noworodków, depresję oddechową. Stosować wyłącznie w przypadku napadów padaczkowych u matki niereagujących na magnez."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

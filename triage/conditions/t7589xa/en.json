@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t7589xa",
+    "icd10":  "T7589XA",
+    "name":  "Other specified effects of external causes, initial encounter",
+    "category":  "environmental-injury",
+    "triage_priority":  "",
+    "description":  "Other specified effects of external causes, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+    EVE OS iOS Companion - Info.plist additions
+    Merge these into ios/App/App/Info.plist after running `npx cap add ios`
+-->
+<plist version="1.0">
+<dict>
+    <!-- App Identity -->
+    <key>CFBundleDisplayName</key>
+    <string>EVE OS</string>
+    
+    <key>CFBundleIdentifier</key>
+    <string>com.hermeticlabs.eveos.companion</string>
+    
+    <!-- HealthKit Usage Descriptions -->
+    <key>NSHealthShareUsageDescription</key>
+    <string>EVE OS reads your health data including blood pressure, heart rate, and oxygen saturation to monitor your vitals and provide health insights. This data is processed locally and synced securely to your EVE OS dashboard.</string>
+    
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>EVE OS may save health-related information to Apple Health for your records and to enable trend analysis.</string>
+    
+    <!-- Required HealthKit Capability -->
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+        <string>healthkit</string>
+    </array>
+    
+    <!-- Background Modes -->
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>fetch</string>
+        <string>remote-notification</string>
+        <string>processing</string>
+    </array>
+    
+    <!-- Push Notifications -->
+    <key>UIUserNotificationSettings</key>
+    <dict>
+        <key>UIUserNotificationTypes</key>
+        <integer>7</integer>
+    </dict>
+    
+    <!-- Camera (optional - for future telemedicine) -->
+    <key>NSCameraUsageDescription</key>
+    <string>EVE OS uses the camera for optional telemedicine and document scanning features.</string>
+    
+    <!-- Microphone (optional - for voice commands) -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>EVE OS uses the microphone for voice commands and dictation.</string>
+    
+    <!-- Local Network -->
+    <key>NSLocalNetworkUsageDescription</key>
+    <string>EVE OS connects to your local EVE backend server for data synchronization.</string>
+    
+    <key>NSBonjourServices</key>
+    <array>
+        <string>_http._tcp</string>
+        <string>_https._tcp</string>
+        <string>_eveos._tcp</string>
+    </array>
+    
+    <!-- App Transport Security -->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsLocalNetworking</key>
+        <true/>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>localhost</key>
+            <dict>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+        </dict>
+    </dict>
+    
+    <!-- Export Compliance -->
+    <key>ITSAppUsesNonExemptEncryption</key>
+    <false/>
+    
+    <!-- URL Schemes -->
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>com.hermeticlabs.eveos.companion</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>eveos</string>
+                <string>eve-companion</string>
+            </array>
+        </dict>
+    </array>
+    
+    <!-- Supported Orientations -->
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationPortraitUpsideDown</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+</dict>
+</plist>

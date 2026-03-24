@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Solution saline normale (0,9 % NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "Injection de chlorure de sodium à 0,9 %"
+  ],
+  "description": "Fluide cristalloïde isotonique. Utilisé pour la réanimation liquidienne IV. En cas de choc hémorragique, utiliser avec prudence : de grands volumes aggravent la coagulopathie (acidose hyperchlorémique, coagulopathie de dilution). Hypotension permissive préférée en cas de traumatisme pénétrant en attendant le contrôle de l'hémorragie.",
+  "indications": [
+    "Réanimation liquidienne (avec prudence en cas de choc hémorragique)",
+    "Diluant/rinçage du médicament",
+    "Hypovolémie d'origine non hémorragique"
+  ],
+  "dose": "Choc hémorragique : Limiter à 1L max en attendant le contrôle de l'hémorragie (hypotension permissive). Cibler une PAS de 80 à 90 mmHg en cas de traumatisme pénétrant, 90 mmHg en cas de traumatisme crânien. Hypovolémie non hémorragique : bolus de 500 mL, réévaluer.",
+  "route": [
+    "IV",
+    "OI"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hypernatrémie",
+    "Surcharge liquidienne/œdème pulmonaire (relatif)"
+  ],
+  "warnings": [
+    "De grands volumes provoquent une acidose métabolique hyperchlorémique et une coagulopathie de dilution – aggravant la triade mortelle en cas de traumatisme.",
+    "Le Ringer lactate (LR) est préféré pour la réanimation de traumatismes de grand volume.",
+    "NE PAS réanimer de manière excessive un traumatisme pénétrant du torse avant le contrôle chirurgical de l’hémorragie (hypotension permissive)."
+  ],
+  "regional_names": {
+    "generic": "chlorure de sodium 0,9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Bolus IV de 20 mL/kg, réévaluer. Répétez max x3 (60 mL/kg au total) avant d’envisager les produits sanguins.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Réanimation standard en cas d'hémorragie obstétricale. Réanimation liquidienne agressive appropriée en cas d'hémorragie du post-partum avant la disponibilité des produits sanguins."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

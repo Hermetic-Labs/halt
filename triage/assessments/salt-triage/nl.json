@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "ZOUTtriage (sorteren, beoordelen, levensreddende interventies, behandeling/transport)",
+  "category": "mass-casualty",
+  "description": "Protocol voor de triage van massaslachtoffers. Standaard voor evenementen met meerdere slachtoffers in militaire en civiele omgevingen.",
+  "instructions": "Stap 1: Globaal sorteren (lopen, zwaaien, stil). Stap 2: Beoordeel in volgorde van prioriteit. Stap 3: Voer levensreddende interventies uit (controle van grote bloedingen, open luchtweg, decompressie van de naald, auto-injectoren). Stap 4: Categorie toewijzen.",
+  "categories": [
+    {
+      "color": "zwart",
+      "label": "Aanstaande/overleden",
+      "description": "Het is onwaarschijnlijk dat dit zal overleven gezien de beschikbare middelen, of bevestigde overleden"
+    },
+    {
+      "color": "rood",
+      "label": "Onmiddellijk (T1)",
+      "description": "Levensbedreigende verwondingen, zullen overleven met onmiddellijke interventie"
+    },
+    {
+      "color": "geel",
+      "label": "Vertraagd (T2)",
+      "description": "Ernstige maar stabiele verwondingen, kan wachten op zorg"
+    },
+    {
+      "color": "groen",
+      "label": "Minimaal (T3)",
+      "description": "Lichte verwondingen - gewond lopen"
+    },
+    {
+      "color": "grijs",
+      "label": "Aanstaande",
+      "description": "Onoverkomelijk letsel gezien de huidige middelen – alleen comfortzorg"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Het JumpSTART-triage-algoritme wijzigt SALT voor pediatrische patiënten. Ademhalingsfrequentiedrempels en beoordelingsstappen verschillen voor kinderen jonger dan 8 jaar."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

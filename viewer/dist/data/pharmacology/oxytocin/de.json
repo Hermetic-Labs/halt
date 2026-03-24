@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oxytocin",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocin",
+    "Syntocinon"
+  ],
+  "description": "Endogenes Peptidhormon. Uterotonikum der ersten Wahl zur Vorbeugung und Behandlung von postpartalen Blutungen (PPH). Verursacht eine Kontraktion der Gebärmutter und verringert den Blutverlust nach der Entbindung. Wird NACH der Plazentageburt verabreicht.",
+  "indications": [
+    "Prävention von postpartalen Blutungen (Routine nach der Entbindung)",
+    "Behandlung von postpartalen Blutungen (Uterusatonie)",
+    "Geburtseinleitung (nur kontrollierte Einstellung)"
+  ],
+  "dose": "PPH-Prävention: 10 Einheiten IM unmittelbar nach der Plazentageburt (bevorzugter Feldweg). PPH-Behandlung: 10–40 Einheiten in 1 l intravenös, Infusion mit 40–80 mU/min. Wenn IV nicht verfügbar ist: 10 Einheiten IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Geben Sie NACH der Geburt der Plazenta – wenn Sie vor der Geburt der Plazenta geben, kann dies dazu führen, dass die Plazenta eingeklemmt wird.",
+  "contraindications": [
+    "Vor der Plazentageburt (kann die Plazenta einklemmen)",
+    "Fötales Unwohlsein mit nicht entbundenem Kopf",
+    "Bekannte Überempfindlichkeit"
+  ],
+  "warnings": [
+    "Nach der Geburt der Plazenta abgeben – das Einklemmen der Plazenta ist eine lebensbedrohliche Komplikation.",
+    "Ein intravenöser Bolus kann schwere Hypotonie und Herzrhythmusstörungen verursachen – immer verdünnen und langsam infundieren.",
+    "Antidiuretische Wirkung bei großen Mengen – auf Hyponatriämie achten."
+  ],
+  "regional_names": {
+    "generic": "Oxytocin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A – nur für geburtshilfliche Zwecke.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Primär uterotonisch. Wenn die Uterusatonie nicht anspricht, sollten Misoprostol, Tranexamsäure (TXA), bimanuelle Uteruskompression und schnelle MEDEVAC in Betracht gezogen werden."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

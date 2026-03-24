@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s90842s",
+    "icd10":  "S90842S",
+    "name":  "External constriction, left foot, sequela",
+    "category":  "ankle-foot-injury",
+    "triage_priority":  "",
+    "description":  "External constriction, left foot, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

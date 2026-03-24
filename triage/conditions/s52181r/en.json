@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s52181r",
+    "icd10":  "S52181R",
+    "name":  "Other fracture of upper end of right radius, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with malunion",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "Other fracture of upper end of right radius, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with malunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "I-Perimortem Cesarean Section (PMCS)",
+  "category": "obstetric",
+  "skill_level": "udokotela-udokotela ohlinzayo",
+  "time_estimate": "3-5 imiz",
+  "description": "Ukulethwa kokuhlinzwa okuphuthumayo kungakapheli imizuzu emi-4 yokuboshwa kwenhliziyo kamama ukuze kuvunyelwe i-CPR esebenzayo kanye nokusinda kwengane esanda kuzalwa. Isibeletho sicindezela i-aorta kanye ne-IVC -- ukubeletha nakho kuvuselela umama.",
+  "equipment": [
+    "i-scalpel",
+    "amagilavu",
+    "ama-retractors",
+    "izintambo-izinsimbi",
+    "izinsiza-kusebenza zokuvuselela izingane"
+  ],
+  "steps": [
+    "Qhubeka ne-CPR ngaphandle kokuphazamiseka.",
+    "Yenza ukusika umugqa omaphakathi oqondile ukusuka enkabeni uye ku-pubis ngokusebenzisa isikhumba ne-fascia.",
+    "Gcoba ingxenye yesibeletho engezansi ivundlile.",
+    "Letha usana -- isikhathi sokuphawula.",
+    "Bamba futhi usike intambo.",
+    "Hambisa usana kumhlinzeki wesibili ukuze uthole ukuvuselelwa kwengane.",
+    "Susa i-placenta.",
+    "Pakisha isibeletho nesisu uma ukuvala okuqinisekile kungenzeki ngokushesha.",
+    "Qhubeka nokuvuselela komama -- I-ROSC maningi amathuba okuba ngemuva kokuwohloka kwesibeletho."
+  ],
+  "warnings": [
+    "Isikhathi sesinqumo sokubeletha kufanele sibe ngaphansi kwemizuzu emi-5 ukuze uthole imiphumela engcono kakhulu kamama nengane.",
+    "Le nqubo iyisinyathelo sokugcina -- kuphela uma umama ebanjwe inhliziyo futhi ukubeletha sekuseduze (>emavikini angu-20 okukhulelwa).",
+    "Idinga ukuqeqeshwa kwezinga likadokotela. Imithi yokulwa kufanele ilungiselele inkundla nosekelo, hhayi ukusebenza ngokuzimela."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

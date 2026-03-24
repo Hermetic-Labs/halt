@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Cefazolin",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Ancef",
+    "Kefzol"
+  ],
+  "description": "Unang henerasyong cephalosporin. First-line parenteral antibiotic para sa malubhang impeksyon sa sugat at surgical prophylaxis. Magandang gram-positive coverage kabilang ang MSSA. Ibigay sa loob ng 60 minuto ng surgical incision para sa prophylaxis.",
+  "indications": [
+    "Prophylaxis sa sugat sa operasyon",
+    "Malubhang impeksyon sa malambot na tisyu",
+    "Open fracture prophylaxis",
+    "Mga impeksyon sa balat at istraktura ng balat"
+  ],
+  "dose": "1-2g IV/IM q8h. Surgical prophylaxis: 2g IV sa loob ng 60 minuto bago maghiwa. Ulitin ang 2g kung ang operasyon ay > 4 na oras.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Para sa surgical prophylaxis: magbigay sa loob ng 60 minuto ng paghiwa.",
+  "contraindications": [
+    "Kilalang cephalosporin allergy",
+    "Malubhang allergy sa penicillin (5-10% cross-reactivity)"
+  ],
+  "warnings": [
+    "Cross-reactivity na may allergy sa penicillin: gamitin nang may pag-iingat sa mga pasyenteng allergy sa penicillin.",
+    "Ayusin ang dosis sa kapansanan sa bato."
+  ],
+  "regional_names": {
+    "generic": "cefazolin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM q8h (max 2g/dosis). Prophylaxis: 30 mg/kg (max 2g) bago maghiwa.",
+      "note": "Ligtas at mahusay na pinag-aralan sa pediatrics."
+    },
+    "obstetric": {
+      "note": "Ligtas sa pagbubuntis at paggagatas. Mas gustong parenteral na antibiotic para sa obstetric procedure."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

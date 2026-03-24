@@ -1,0 +1,63 @@
+{
+  "id": "broselow-tape",
+  "name": "Broselow Pediatrik Acil Bant Referansı",
+  "description": "Bir ölçek mevcut olmadığında pediatrik ilaç uygulaması için renk kodlu doz-ağırlık referansı. Çocuğu başının üstünden topuğa kadar ölçün ve renk bandıyla eşleştirin.",
+  "note": "Bu referans yalnızca TAHMİN içindir. Mümkün olduğunda gerçek ağırlığı kullanın.",
+  "bands": [
+    {
+      "color": "gri",
+      "weight_kg": "3-5",
+      "length_cm": "46-57",
+      "est_age": "Yenidoğan"
+    },
+    {
+      "color": "pembe",
+      "weight_kg": "6-7",
+      "length_cm": "57-67",
+      "est_age": "3-6 ay"
+    },
+    {
+      "color": "kırmızı",
+      "weight_kg": "8-9",
+      "length_cm": "67-74",
+      "est_age": "6-12 ay"
+    },
+    {
+      "color": "mor",
+      "weight_kg": "10-11",
+      "length_cm": "74-83",
+      "est_age": "12-18 ay"
+    },
+    {
+      "color": "sarı",
+      "weight_kg": "12-14",
+      "length_cm": "83-95",
+      "est_age": "18 ay-3 yıl"
+    },
+    {
+      "color": "beyaz",
+      "weight_kg": "15-18",
+      "length_cm": "95-107",
+      "est_age": "3-5 yıl"
+    },
+    {
+      "color": "mavi",
+      "weight_kg": "19-22",
+      "length_cm": "107-122",
+      "est_age": "5-7 yıl"
+    },
+    {
+      "color": "turuncu",
+      "weight_kg": "24-28",
+      "length_cm": "122-137",
+      "est_age": "7-9 yaş"
+    },
+    {
+      "color": "yeşil",
+      "weight_kg": "30-36",
+      "length_cm": "137-152",
+      "est_age": "9-12 yaş"
+    }
+  ],
+  "source": "Broselow Pediatric Emergency Reference / PALS"
+}

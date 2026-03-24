@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Sulfate de Morphine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Contin",
+    "Injection de sulfate de morphine"
+  ],
+  "description": "Analgésique opioïde. Fournit un soulagement efficace de la douleur mais provoque une vasodilatation et une hypotension – à utiliser avec prudence en cas de choc hémorragique. La kétamine est préférée dans les contextes de combat. Utilisez la morphine uniquement chez les patients hémodynamiquement stables.",
+  "indications": [
+    "Douleur modérée à sévère chez les patients hémodynamiquement stables",
+    "Pas de première intention dans le TCCC – préférez la kétamine"
+  ],
+  "dose": "2-4 mg IV/IO toutes les 4 heures PRN. Titrer pour obtenir l'effet. IM : 5 à 10 mg toutes les 4 heures PRN.",
+  "route": [
+    "IV",
+    "OI",
+    "MI",
+    "QS"
+  ],
+  "window": "",
+  "contraindications": [
+    "Instabilité hémodynamique / choc hémorragique",
+    "Dépression respiratoire",
+    "Blessure à la tête avec altération du LOC (relatif)"
+  ],
+  "warnings": [
+    "Provoque une vasodilatation – peut aggraver le choc hémorragique. Évaluez la pression artérielle avant et après.",
+    "Ayez de la naloxone à disposition immédiatement.",
+    "Dépression respiratoire – surveiller le taux."
+  ],
+  "regional_names": {
+    "generic": "sulfate de morphine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV toutes les 2 à 4 heures PRN. Dose unique maximale de 2 mg IV chez un enfant naïf d'opioïdes.",
+      "note": "Surveillez de près la fréquence respiratoire. Les nouveau-nés sont extrêmement sensibles."
+    },
+    "obstetric": {
+      "note": "Traverse le placenta. Dépression respiratoire néonatale possible si administrée dans les 2 à 4 heures suivant l'accouchement. Préparez de la naloxone pour le nouveau-né."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

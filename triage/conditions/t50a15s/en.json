@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t50a15s",
+    "icd10":  "T50A15S",
+    "name":  "Adverse effect of pertussis vaccine, including combinations with a pertussis component, sequela",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Adverse effect of pertussis vaccine, including combinations with a pertussis component, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

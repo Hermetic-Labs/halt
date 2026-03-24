@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t80911a",
+    "icd10":  "T80911A",
+    "name":  "Delayed hemolytic transfusion reaction, unspecified incompatibility, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Delayed hemolytic transfusion reaction, unspecified incompatibility, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

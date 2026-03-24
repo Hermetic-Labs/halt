@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t886xxa",
+    "icd10":  "T886XXA",
+    "name":  "Anaphylactic reaction due to adverse effect of correct drug or medicament properly administered, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Anaphylactic reaction due to adverse effect of correct drug or medicament properly administered, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

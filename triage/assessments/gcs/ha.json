@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "Glasgow Coma Scale (GCS)",
+  "category": "neurological",
+  "description": "Daidaitaccen makin jijiya na sani ta hanyar ido, magana, da martanin mota. Maki 3-15.",
+  "instructions": "Yi maki kowane yanki guda uku da kansa. Tara dukkan maki uku don jimlar GCS.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Kwatsam"
+        },
+        {
+          "score": 3,
+          "label": "Don murya"
+        },
+        {
+          "score": 2,
+          "label": "Don zafi"
+        },
+        {
+          "score": 1,
+          "label": "Babu"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "Daidaitawa"
+        },
+        {
+          "score": 4,
+          "label": "A rude"
+        },
+        {
+          "score": 3,
+          "label": "Kalmomin da ba su dace ba"
+        },
+        {
+          "score": 2,
+          "label": "Sautunan da ba za a iya fahimta ba"
+        },
+        {
+          "score": 1,
+          "label": "Babu"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "Yana biyayya ga umarni"
+        },
+        {
+          "score": 5,
+          "label": "Yana bayyana zafi"
+        },
+        {
+          "score": 4,
+          "label": "Janyewa daga ciwo"
+        },
+        {
+          "score": 3,
+          "label": "Juyawa mara al'ada (na ado)"
+        },
+        {
+          "score": 2,
+          "label": "Tsawaita (raguwa)"
+        },
+        {
+          "score": 1,
+          "label": "Babu"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "M TBI -- saka idanu sosai"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "TBI matsakaici -- shirya hanyar iska"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "TBI mai tsanani - hanyar iska a cikin haɗari nan da nan, shigar da shi idan zai yiwu"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Yi amfani da GCS na Yara (pGCS) ga yara a ƙarƙashin shekaru 2. Maki na magana da aka daidaita don yara kafin magana."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s79012a",
+    "icd10":  "S79012A",
+    "name":  "Salter-Harris Type I physeal fracture of upper end of left femur, initial encounter for closed fracture",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Salter-Harris Type I physeal fracture of upper end of left femur, initial encounter for closed fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

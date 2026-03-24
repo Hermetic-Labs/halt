@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Cefazolin",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Ancef",
+    "Kefzol"
+  ],
+  "description": "I-cephalosporin yesizukulwana sokuqala. I-antibiotic yomgca wokuqala we-parenteral yosulelo oluyingozi lwamanxeba kunye ne-prophylaxis yotyando. Ukhuselo olulungileyo lwegram-positive kuquka ne-MSSA. Nika kwisithuba semizuzu engama-60 yokusikwa kotyando ukwenzela ukuthintela.",
+  "indications": [
+    "Iprophylaxis yesilonda sotyando",
+    "Usulelo lwezicubu ezithambileyo ezinzulu",
+    "Vula i-fracture prophylaxis",
+    "Usulelo lwesikhumba kunye nesakhiwo solusu"
+  ],
+  "dose": "1-2g IV/IM q8h. Iprophylaxis yokuhlinzwa: 2g IV ngaphakathi kwemizuzu engama-60 ngaphambi kokusikwa. Phinda 2g ukuba utyando> 4 iiyure.",
+  "route": [
+    "IV",
+    "I-IM"
+  ],
+  "window": "Ngeprophylaxis yotyando: nika phakathi kwemizuzu engama-60 yokusikwa.",
+  "contraindications": [
+    "Ukwaliwa yi-cephalosporin eyaziwayo",
+    "Ukwalana okumandundu kwepenicillin (5-10% ye-cross-reactivity)"
+  ],
+  "warnings": [
+    "I-Cross-reactivity kunye ne-penicillin allergy: sebenzisa ngokuqaphela kwizigulane ze-penicillin-alergic.",
+    "Lungisa idosi kumonakalo wezintso."
+  ],
+  "regional_names": {
+    "generic": "cefazolin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg / kg IV / IM q8h (max 2g / umthamo). I-Prophylaxis: I-30 mg / kg (ubuninzi be-2g) ngaphambi kokusikwa.",
+      "note": "Ikhuselekile kwaye ifundwe kakuhle kwi-pediatrics."
+    },
+    "obstetric": {
+      "note": "Ikhuselekile ekukhulelweni nasekuncanciseni. I-antibiotic ekhethiweyo ye-parenteral kwiinkqubo zokubeleka."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

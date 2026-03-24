@@ -1,0 +1,22 @@
+{
+  "id": "s0010xa",
+  "icd10": "S0010XA",
+  "name": "Contusión de párpado y zona periocular no especificada, contacto inicial",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Contusión de párpado y área periocular no especificada, contacto inicial",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

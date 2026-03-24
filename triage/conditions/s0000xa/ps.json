@@ -1,0 +1,22 @@
+{
+  "id": "s0000xa",
+  "icd10": "S0000XA",
+  "name": "د سر غیر مشخص سطحي زخم، ابتدايي مخامخ",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "د سر غیر مشخص سطحي زخم، ابتدايي مخامخ",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

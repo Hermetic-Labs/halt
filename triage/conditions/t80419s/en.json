@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t80419s",
+    "icd10":  "T80419S",
+    "name":  "Rh incompatibility with hemolytic transfusion reaction, unspecified, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Rh incompatibility with hemolytic transfusion reaction, unspecified, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

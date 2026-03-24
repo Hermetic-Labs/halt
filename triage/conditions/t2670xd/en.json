@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t2670xd",
+    "icd10":  "T2670XD",
+    "name":  "Corrosion with resulting rupture and destruction of unspecified eyeball, subsequent encounter",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Corrosion with resulting rupture and destruction of unspecified eyeball, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

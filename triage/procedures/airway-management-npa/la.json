@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Nasopharyngeal Airway (NPA ) Insertion",
+  "category": "airway",
+  "skill_level": "combat-lifesaver",
+  "time_estimate": "1 min",
+  "description": "Insertio flexibilis airway adiuncti nasi ad obtinendum patentiam airway in patiente inscio vel semiconscio.",
+  "equipment": [
+    "npa-cum-salus-pin",
+    "ducatus"
+  ],
+  "steps": [
+    "Elige apta magnitudine NPA (mensura a naribus ad auriculam).",
+    "NPA cum aqua solubili ducatus vel salina largiter praestringe.",
+    "Acus per LABIUM salutem inserere nisi iam aderat (prohibet aspirationem).",
+    "Leniter in narem dextram (reveles versus septum), insito in palato parallelo.",
+    "Prodeum, donec contra narem LABIUM.",
+    "Repositio aegrum (si locus receptae sine medulla cura est) et candam airway.",
+    "Si resistitur, nare sinis- tram tenta."
+  ],
+  "warnings": [
+    "Contraindicated in suspecta fractura cranii basilaris (oculi lotoris, signum Proelii, CSF rhinorrhoea).",
+    "NPA est inscius aegri optimum initiale airway adiunctum -- OPA in aegros semiconscious vomitum trigger."
+  ],
+  "source": "TCCC / JTS CPG"
+}

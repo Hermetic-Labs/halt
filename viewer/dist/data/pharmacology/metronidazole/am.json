@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazole",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "ባንዲራ"
+  ],
+  "description": "በጣም ጥሩ የአናይሮቢክ እና የፕሮቶዞል ሽፋን ያለው ናይትሮይሚዳዶል አንቲባዮቲክ። የአናይሮቢክ አንጀት እፅዋትን ለመሸፈን የሆድ/የሆድ ቁስለት ውስጥ ለመግባት አስፈላጊ። ብዙውን ጊዜ ከ ciprofloxacin ጋር ተጣምሮ ጥቅም ላይ ይውላል.",
+  "indications": [
+    "ወደ ውስጥ ዘልቆ የሚገባ የሆድ/የሆድ ቁስለት",
+    "የሆድ ውስጥ ኢንፌክሽኖች",
+    "Anaerobic soft tissue infections",
+    "ሐ. አስቸጋሪ ኢንፌክሽኖች"
+  ],
+  "dose": "500 mg IV q6-8h. ፖስታ፡ 500 mg q8h (በአፍ የሚፈቀድ ከሆነ)።",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "የእርግዝና የመጀመሪያ ሶስት ወር (ዘመድ)",
+    "የሚታወቅ metronidazole ወይም nitroimidazole አለርጂ"
+  ],
+  "warnings": [
+    "Disulfiram ከአልኮል ጋር የሚመሳሰል ምላሽ - በሕክምናው ወቅት እና ከ 48 ሰአታት በኋላ አልኮል አይጠጡ።",
+    "ለረጅም ጊዜ ጥቅም ላይ የሚውል የነርቭ ሕመም (neuropathy) ሊያስከትል ይችላል.",
+    "ከተቻለ በመጀመሪያ ሶስት ወር ውስጥ ያስወግዱ."
+  ],
+  "regional_names": {
+    "generic": "metronidazole"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7.5 mg/kg IV/PO q6h (ከፍተኛ 500 mg/dose)።",
+      "note": "በትልልቅ ልጆች ውስጥ ደህንነቱ የተጠበቀ. በአራስ ሕፃናት ውስጥ ያስወግዱ."
+    },
+    "obstetric": {
+      "note": "ከተቻለ በመጀመሪያ ሶስት ወር ውስጥ ያስወግዱ. ለህክምና አስፈላጊ ሆኖ ሲገኝ ሁለተኛ/ሶስተኛ ወር ሶስት ወራትን ይጠቀሙ -- ጥቅማጥቅሙ ብዙውን ጊዜ ለከባድ የአናይሮቢክ ኢንፌክሽኖች ተጋላጭነት ይበልጣል።"
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

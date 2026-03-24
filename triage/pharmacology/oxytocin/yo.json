@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oxytocin",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocin",
+    "Syntocinon"
+  ],
+  "description": "Awọn homonu peptide ti o ni opin. Uterotonic laini akọkọ fun idena ati itọju ti iṣọn-ẹjẹ lẹhin ibimọ (PPH). O fa ihamọ uterine ati dinku isonu ẹjẹ lẹhin ibimọ. Fi fun LEHIN placental ifijiṣẹ.",
+  "indications": [
+    "Idena ti iṣọn-ẹjẹ lẹhin ibimọ (itọju deede lẹhin ibimọ)",
+    "Itoju isun ẹjẹ lẹhin ibimọ (atony uterine)",
+    "Ifilọlẹ iṣẹ (eto iṣakoso nikan)"
+  ],
+  "dose": "Idena PPH: Awọn ẹya 10 IM lẹsẹkẹsẹ lẹhin ifijiṣẹ placental (ọna aaye ti o fẹ). Itọju PPH: Awọn ẹya 10-40 ni 1L IV, fi sii ni 40-80 mU / min. Ti IV ko ba si: 10 sipo IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Fifunni LEHIN ifijiṣẹ ibi-ọmọ -- fifunni ṣaaju ifijiṣẹ ibi-ọmọ le dẹkun ibi-ọmọ.",
+  "contraindications": [
+    "Ṣaaju ifijiṣẹ placental (le di pakute placenta)",
+    "Ibanujẹ oyun pẹlu ori ti a ko fi jiṣẹ",
+    "hypersensitivity ti a mọ"
+  ],
+  "warnings": [
+    "FÚN LẸ́YÌN TÍ A GBÌSÍṢẸ́ PLACENTA -- ìdẹkùn ibi-ọmọ jẹ ilolu ti o lewu.",
+    "IV bolus le fa haipatensonu nla ati arrhythmia ọkan ọkan - nigbagbogbo dilute ati fi sii laiyara.",
+    "Ipa antidiuretic pẹlu awọn iwọn nla - atẹle fun hyponatremia."
+  ],
+  "regional_names": {
+    "generic": "oxytocin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A -- lilo oyun nikan.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Uterotonic akọkọ. Ti atony uterine ko ba dahun, ronu misoprostol, tranexamic acid (TXA), funmorawon uterine bimanual, ati MEDEVAC ti o yara."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s42431s",
+    "icd10":  "S42431S",
+    "name":  "Displaced fracture (avulsion) of lateral epicondyle of right humerus, sequela",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Displaced fracture (avulsion) of lateral epicondyle of right humerus, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

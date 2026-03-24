@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t271xxs",
+    "icd10":  "T271XXS",
+    "name":  "Burn involving larynx and trachea with lung, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Burn involving larynx and trachea with lung, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

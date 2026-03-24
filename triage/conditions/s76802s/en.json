@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s76802s",
+    "icd10":  "S76802S",
+    "name":  "Unspecified injury of other specified muscles, fascia and tendons at thigh level, left thigh, sequela",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified injury of other specified muscles, fascia and tendons at thigh level, left thigh, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

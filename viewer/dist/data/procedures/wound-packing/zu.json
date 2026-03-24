@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Ukupakisha Inxeba Le-Hemostatic",
+  "category": "hemorrhage-control",
+  "skill_level": "ukulwa-ukusindisa impilo",
+  "time_estimate": "3-5 imiz",
+  "description": "Ukupakishwa kwesilonda esingacindezeli noma esihlanganayo nge-hemostatic gauze ukulawula ukopha lapho i-tourniquet ingeke isetshenziswe khona.",
+  "equipment": [
+    "i-hemostatic-gauze",
+    "amagilavu ​​e-nitrile",
+    "ama-trauma-shears",
+    "i-pressure-bandage"
+  ],
+  "steps": [
+    "Don amagilavu. Veza isilonda ngokugcwele usebenzisa izikele zokuhlukumezeka.",
+    "Khomba umthombo wokopha osebenzayo ngaphakathi kwesikhala senxeba.",
+    "Vula i-hemostatic gauze bese uyipakisha iqine enxebeni ngomunwe wakho, uyiphushele ngqo emthonjeni wokopha.",
+    "Qhubeka nokupakisha kuze kube yilapho imbobo yesilonda isigcwele ngokuphelele.",
+    "Faka ingcindezi eqondile, eqhubekayo ngesithende sesandla sakho okungenani imizuzu emi-3.",
+    "UNGAKUSUSI noma yikuphi ukupakisha uma sekusetshenzisiwe.",
+    "Faka ibhandishi lokucindezela phezu kwesilonda esigcwele.",
+    "Maka isikhathi ekhadini le-TCCC noma esiphongweni sesiguli (isb., 'PKD 0145')."
+  ],
+  "warnings": [
+    "UNGApakishi amanxeba angena esifubeni -- sebenzisa i-chest seal esikhundleni salokho.",
+    "Uma upakisha inxeba lentamo, faka ingcindezi ngaphandle kokucindezela womabili ama-carotid ngesikhathi esisodwa.",
+    "Phinda uhlole phakathi nemizuzu emi-5 uma kusolwa umthombo we-arterial."
+  ],
+  "follows": [
+    "ingcindezi eqondile"
+  ],
+  "precedes": [
+    "tourniquet-uhlelo lokusebenza"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Sebenzisa i-gauze encane ngokulinganayo. Faka ingcindezi elula ukuze ugweme ukucindezelwa kwe-thoracic ezinganeni."
+    },
+    "obstetric": {
+      "note": "Gwema ukucindezela kokupakisha okujulile noma okunamandla eduze kwesisu se-gravid. Ukukhuphuka okusheshayo kuyakhethwa."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

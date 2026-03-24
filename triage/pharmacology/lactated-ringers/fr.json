@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Solution de Ringer lactée (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "La solution de Hartmann",
+    "Injection de Ringer lactate"
+  ],
+  "description": "Fluide cristalloïde isotonique équilibré. Préféré à la solution saline normale pour la réanimation de traumatismes de grand volume - plus équilibré physiologiquement, moins de risque d'acidose hyperchlorémique. Contient du sodium, du potassium, du calcium et du lactate.",
+  "indications": [
+    "Réanimation traumatologique (cristalloïde préféré en cas de choc hémorragique)",
+    "Réanimation liquidienne des brûlures (formule Parkland)",
+    "Hypovolémie",
+    "Entretien des fluides"
+  ],
+  "dose": "Choc hémorragique : Limiter à 1 L max avant de passer aux produits sanguins. Cibler une PAS de 80 à 90 mmHg pour un traumatisme pénétrant, un TBI de 90 mmHg. Brûlures (Parkland) : 4 mL x kg x % TBSA brûlés sur 24 h (la moitié au cours des 8 premières heures).",
+  "route": [
+    "IV",
+    "OI"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hyperkaliémie (contient du potassium)",
+    "Insuffisance hépatique sévère (altération du métabolisme du lactate -- relatif)"
+  ],
+  "warnings": [
+    "Encore un cristalloïde – ne peut pas transporter l'oxygène. Les produits sanguins sont supérieurs en cas de choc hémorragique. LR est uniquement un pont.",
+    "Ne pas mélanger avec des produits sanguins présents dans la même ligne (le calcium provoque la coagulation).",
+    "NE PAS réanimer excessivement en cas de traumatisme pénétrant avant le contrôle de l’hémorragie."
+  ],
+  "regional_names": {
+    "generic": "solution de Ringer lactée",
+    "UK": "La solution de Hartmann"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Bolus de 20 mL/kg, réévaluer. Préféré au NS pour les traumatismes pédiatriques.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Liquide IV préféré pendant le travail et l'accouchement. Convient pour la réanimation des hémorragies obstétricales."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

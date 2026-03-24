@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "Kala soocida SALT (Nooc, Qiimee, Waxqabadyada Badbaadinta Nolosha, Daaweynta/Gaadiidka)",
+  "category": "mass-casualty",
+  "description": "Nidaamka kala soocidda khasaaraha tirada badan. Halbeegga dhacdooyinka khasaaraha badan ee ciidamada iyo goobaha rayidka.",
+  "instructions": "Talaabada 1: Kala soocida caalamka (socod, gacan haadin, weli). Tallaabada 2: Ku qiimee siday u kala horreeyaan. Talaabada 3: Samee waxqabadyo nafo-badbaadin ah (xakameyn dhiigbaxa weyn, marin hawo furan, irbad depression, auto-injectors). Tallaabada 4: U qoondee qaybta.",
+  "categories": [
+    {
+      "color": "madow",
+      "label": "Marxuumka la filayo",
+      "description": "Uma badna in lagu noolaado agab la heli karo, ama la xaqiijiyay inuu dhintay"
+    },
+    {
+      "color": "cas",
+      "label": "Degdeg ah (T1)",
+      "description": "Dhaawacyada naf-gooyada ah, waxay ku badbaadi doonaan faragelin degdeg ah"
+    },
+    {
+      "color": "jaalle",
+      "label": "Dib udhacday (T2)",
+      "description": "Dhaawacyo halis ah laakiin deggan, waxay sugi karaan daryeelka"
+    },
+    {
+      "color": "cagaaran",
+      "label": "Ugu Yar (T3)",
+      "description": "Dhaawacyo fudud -- dhaawac socod ah"
+    },
+    {
+      "color": "cawlan",
+      "label": "La filayo",
+      "description": "Dhaawac aan la badbaadin karin oo la siiyay agabka hadda jira -- daryeelka raaxada kaliya"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "JumpSTART kala soocidda algorithm waxay wax ka beddeshaa SALT ee bukaannada carruurta. Heerarka heerka neefsiga iyo tillaabooyinka qiimayntu way ku kala duwan yihiin carruurta ka yar 8."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

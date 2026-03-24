@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Decompressione toracica con ago (NCD)",
+  "category": "respiration",
+  "skill_level": "medico da combattimento",
+  "time_estimate": "1-2 minuti",
+  "description": "Sollievo d'emergenza del pneumotorace iperteso mediante inserimento dell'ago nel secondo spazio intercostale. Intervento salvavita.",
+  "equipment": [
+    "14g-ago-catetere-3-25 pollici",
+    "guanti",
+    "sigillo-petto-opzionale"
+  ],
+  "steps": [
+    "Identificare il pneumotorace tensivo: suoni respiratori assenti sul lato interessato, deviazione tracheale (tardiva), distress respiratorio, ipotensione, JVD.",
+    "Esporre il torace dal lato interessato.",
+    "Individuare il 2o spazio intercostale, linea emiclaveare (alternativa: 4o/5o ICS, linea ascellare anteriore).",
+    "Inserire un ago-catetere da 14 g e 3,25 pollici perpendicolare alla parete toracica, appena sopra la parte superiore della terza costola (evita il fascio neurovascolare).",
+    "Avanzare finché non si avverte un flusso d'aria o un sibilo udibile.",
+    "Rimuovere l'ago e lasciare il catetere in posizione.",
+    "Ascolta il miglioramento dei suoni respiratori e dello sforzo respiratorio.",
+    "Fissare il raccordo del catetere. NON bloccare o coprire l'estremità aperta.",
+    "Rivalutare ogni 5 minuti: il catetere può attorcigliarsi o coagularsi, richiedendo una decompressione ripetuta."
+  ],
+  "warnings": [
+    "Utilizzare un ago da 3,25 pollici: l'angiocatetere standard da 14 g (1,5 pollici) spesso fallisce nei pazienti militari a causa dell'armatura e della muscolatura.",
+    "Può essere necessaria una NCD bilaterale se non si è sicuri di quale lato sia interessato e il paziente è peri-arresto.",
+    "Non posizionare sullo stesso lato della ferita al torace da suzione senza prima sigillare la ferita."
+  ],
+  "follows": [],
+  "precedes": [
+    "applicazione di sigillo toracico"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Utilizzare un ago di dimensioni adeguate (per i pazienti più piccoli, 1,5-2 pollici potrebbero essere sufficienti). Utilizzare il 2° approccio ICS MCL. Il riconoscimento dei punti di riferimento è più difficile: fai attenzione."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s62131k",
+    "icd10":  "S62131K",
+    "name":  "Displaced fracture of capitate [os magnum] bone, right wrist, subsequent encounter for fracture with nonunion",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Displaced fracture of capitate [os magnum] bone, right wrist, subsequent encounter for fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

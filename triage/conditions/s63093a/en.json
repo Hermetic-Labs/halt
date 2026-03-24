@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s63093a",
+    "icd10":  "S63093A",
+    "name":  "Other subluxation of unspecified wrist and hand, initial encounter",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Other subluxation of unspecified wrist and hand, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

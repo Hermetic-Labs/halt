@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Ativan"
+  ],
+  "description": "Benzodiazepine mai matsakaici. Magani na farko na IV/IM don matsayi na epilepticus da m seizures. Hakanan ana amfani dashi don kwantar da hankali da anxiolysis.",
+  "indications": [
+    "Halin epilepticus (layi na farko IV)",
+    "Gudanar da kamuwa da cuta mai tsanani",
+    "Hanyar kwantar da hankali",
+    "Damuwa mai tsanani ko tashin hankali"
+  ],
+  "dose": "Kamewa: 4 mg IV/IO jinkirin turawa akan 2 min. Maimaita 4 MG a cikin mintuna 5-10 idan an ci gaba da kamawa. IM: 4 MG idan IV ba ya samuwa.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "M kunkuntar-kwana glaucoma",
+    "Tsananin bakin ciki na numfashi",
+    "Propylene glycol hypersensitivity"
+  ],
+  "warnings": [
+    "Yana haifar da baƙin ciki na numfashi -- an shirya kayan aikin BVM da hanyar iska.",
+    "Kwanciyar hankali na iya ɗaukar awanni 6-8 -- duba hanyar iska.",
+    "Paradoxical tashin hankali zai yiwu, musamman a cikin tsofaffi da yara."
+  ],
+  "regional_names": {
+    "generic": "lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV/IM (max 4 mg/dose). Maimaita sau ɗaya a cikin mintuna 5-10 idan an buƙata.",
+      "note": "An fi so fiye da diazepam don sarrafa kamawar IV a cikin yara."
+    },
+    "obstetric": {
+      "note": "Ketare mahaifa -- bakin ciki na numfashi na jariri mai yiwuwa. Yi amfani da farfaɗowa a yanayin haihuwa lokacin da fa'idar ta zarce haɗari."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

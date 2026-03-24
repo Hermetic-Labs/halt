@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triage — AI Field Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #080c10;
+            --surface: #0d1117;
+            --card: #111823;
+            --border: #1e2d3d;
+            --text: #c9d1d9;
+            --dim: #4d6077;
+            --green: #39d353;
+            --red: #f85149;
+            --amber: #e3b341;
+            --blue: #58a6ff;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* ── Header ──────────────────────────────── */
+        header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 18px;
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+            flex-shrink: 0;
+        }
+
+        .logo {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: var(--green);
+        }
+
+        .sep {
+            width: 1px;
+            height: 24px;
+            background: var(--border);
+        }
+
+        select {
+            background: var(--card);
+            color: var(--text);
+            border: 1px solid var(--border);
+            padding: 4px 8px;
+            font-size: 11px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            max-width: 240px;
+        }
+
+        select:focus {
+            border-color: var(--green);
+            outline: none;
+        }
+
+        /* voice selector */
+        #voice-select {
+            max-width: 160px;
+        }
+
+        /* Status */
+        .status-group {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 10px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--dim);
+            flex-shrink: 0;
+        }
+
+        .dot.on {
+            background: var(--green);
+            box-shadow: 0 0 6px var(--green);
+        }
+
+        .dot.err {
+            background: var(--red);
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--dim);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2px 8px;
+        }
+
+        .badge.ok {
+            color: var(--green);
+            border-color: #1a3a1a;
+        }
+
+        .badge.err {
+            color: var(--red);
+            border-color: #3a1010;
+        }
+
+        /* ── Messages ────────────────────────────── */
+        #messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 18px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            scroll-behavior: smooth;
+        }
+
+        #messages::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        #messages::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 2px;
+        }
+
+        #welcome {
+            margin: auto;
+            text-align: center;
+            color: var(--dim);
+        }
+
+        #welcome .big {
+            font-size: 32px;
+            letter-spacing: 8px;
+            color: var(--green);
+            opacity: .25;
+            margin-bottom: 8px;
+        }
+
+        #welcome p {
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .row.user {
+            align-items: flex-end;
+        }
+
+        .row.ai {
+            align-items: flex-start;
+        }
+
+        .lbl {
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: var(--dim);
+            padding: 0 4px;
+        }
+
+        .row.user .lbl {
+            color: var(--green);
+        }
+
+        .bubble {
+            max-width: 74%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            line-height: 1.65;
+            word-break: break-word;
+        }
+
+        .bubble.user {
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: #cdd6f4;
+        }
+
+        .bubble.ai {
+            background: var(--surface);
+            border: 1px solid var(--border);
+        }
+
+        .bubble.dim {
+            color: var(--dim);
+            font-style: italic;
+        }
+
+        .bubble.err {
+            color: var(--red);
+            border-color: #3a1010;
+        }
+
+        /* TTS play pill under AI bubble */
+        .play-btn {
+            font-size: 10px;
+            padding: 2px 10px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: none;
+            color: var(--dim);
+            cursor: pointer;
+            font-family: inherit;
+            transition: color .15s, border-color .15s;
+            align-self: flex-start;
+        }
+
+        .play-btn:hover {
+            color: var(--green);
+            border-color: var(--green);
+        }
+
+        .play-btn.playing {
+            color: var(--amber);
+            border-color: var(--amber);
+        }
+
+        /* Inline diagram trigger — appears after **bold** steps */
+        .diag-btn {
+            display: inline-flex;
+            align-items: center;
+            font-size: 11px;
+            padding: 1px 5px;
+            margin-left: 6px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: none;
+            color: var(--dim);
+            cursor: pointer;
+            font-family: inherit;
+            transition: color .15s, border-color .15s;
+            vertical-align: middle;
+        }
+
+        .diag-btn:hover {
+            color: var(--blue);
+            border-color: var(--blue);
+        }
+
+        .diag-btn.loading {
+            color: var(--amber);
+            border-color: var(--amber);
+            pointer-events: none;
+        }
+
+        /* ── Footer ──────────────────────────────── */
+        footer {
+            padding: 12px 18px;
+            border-top: 1px solid var(--border);
+            background: var(--surface);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 8px;
+            align-items: flex-end;
+        }
+
+        /* Mic button */
+        #mic-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--dim);
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .15s;
+        }
+
+        #mic-btn:hover {
+            border-color: var(--green);
+            color: var(--green);
+        }
+
+        #mic-btn.rec {
+            background: rgba(248, 81, 73, .12);
+            border-color: var(--red);
+            color: var(--red);
+            animation: pulse-ring 1.2s ease infinite;
+        }
+
+        /* Diagram button */
+        #img-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--dim);
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .15s;
+        }
+
+        #img-btn:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        #img-btn.active {
+            border-color: var(--blue);
+            color: var(--blue);
+            background: rgba(88, 166, 255, .1);
+        }
+
+        @keyframes pulse-ring {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(248, 81, 73, .4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(248, 81, 73, 0);
+            }
+        }
+
+        textarea {
+            flex: 1;
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 9px 13px;
+            border-radius: 7px;
+            font-size: 13px;
+            font-family: inherit;
+            resize: none;
+            outline: none;
+            line-height: 1.5;
+        }
+
+        textarea:focus {
+            border-color: var(--green);
+        }
+
+        textarea::placeholder {
+            color: var(--dim);
+        }
+
+        #send-btn {
+            background: var(--green);
+            color: #040f04;
+            border: none;
+            padding: 9px 20px;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: opacity .15s;
+            align-self: flex-end;
+            white-space: nowrap;
+        }
+
+        #send-btn:hover {
+            opacity: .85;
+        }
+
+        #send-btn:disabled {
+            opacity: .35;
+            cursor: not-allowed;
+        }
+
+        /* Bottom bar */
+        .foot-bar {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 10px;
+            color: var(--dim);
+        }
+
+        #stt-bar {
+            flex: 1;
+        }
+
+        .toggle-wrap {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .pill {
+            width: 30px;
+            height: 16px;
+            border-radius: 8px;
+            background: var(--border);
+            position: relative;
+            transition: background .2s;
+            flex-shrink: 0;
+        }
+
+        .pill.on {
+            background: var(--green);
+        }
+
+        .pill::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+            transition: transform .2s;
+        }
+
+        .pill.on::after {
+            transform: translateX(14px);
+        }
+
+        /* Token fade-in during streaming */
+        @keyframes tok-fade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .tok {
+            animation: tok-fade 0.25s ease;
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <span class="logo">TRIAGE</span>
+        <div class="sep"></div>
+
+        <select id="model-select">
+            <option value="">loading…</option>
+        </select>
+        <select id="voice-select">
+            <option value="af_heart">Heart (US-F)</option>
+        </select>
+
+        <div class="status-group">
+            <div class="badge" id="llm-badge">
+                <div class="dot" id="llm-dot"></div><span id="llm-txt">LLM</span>
+            </div>
+            <div class="badge" id="tts-badge">
+                <div class="dot" id="tts-dot"></div><span id="tts-txt">TTS</span>
+            </div>
+            <div class="badge" id="stt-badge">
+                <div class="dot" id="stt-dot"></div><span id="stt-txt">STT</span>
+            </div>
+            <div class="badge" id="img-badge">
+                <div class="dot" id="img-dot"></div><span id="img-txt">IMG</span>
+            </div>
+        </div>
+    </header>
+
+    <div id="messages">
+        <div id="welcome">
+            <div class="big">TRIAGE</div>
+            <p>Ask any clinical question. Press <strong>🎙</strong> to speak. Toggle <strong>Auto-speak</strong> for
+                voice responses.<br>
+                Type <strong>/draw &lt;procedure&gt;</strong> to generate an instructional diagram.<br>
+                All processing is local &mdash; no internet required.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="input-row">
+            <button id="mic-btn" onclick="toggleMic()" title="Voice input">🎙</button>
+            <button id="img-btn" onclick="activateDiagram()" title="Generate instructional diagram">🖼</button>
+            <textarea id="input" rows="2" placeholder="Ask anything clinical…"></textarea>
+            <button id="send-btn" onclick="send()">Send</button>
+        </div>
+        <div class="foot-bar">
+            <span id="stt-bar">● ready</span>
+            <div class="toggle-wrap" onclick="toggleAutoSpeak()">
+                <div class="pill" id="speak-pill"></div>
+                <span>Auto-speak</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── State ─────────────────────────────────────────────────────────────
+        const hist = [];
+        let autoSpeak = false;
+        let isRecording = false;
+        let mediaRec = null;
+        let audioChunks = [];
+        let _wsSpeak = null;
+        let _audioCtx = null;
+        let _nextTime = 0;
+        let _ttsQueue = [];
+
+        // ── Init ──────────────────────────────────────────────────────────────
+        async function init() {
+            try {
+                const [mRes, hRes, iRes] = await Promise.all([
+                    fetch('/models').catch(() => null),
+                    fetch('/health').catch(() => null),
+                    fetch('/image/health').catch(() => null)
+                ]);
+
+                // Models dropdown
+                if (mRes && mRes.ok) {
+                    const md = await mRes.json();
+                    const sel = document.getElementById('model-select');
+                    sel.innerHTML = (md.models || []).map(m =>
+                        `<option value="${m.name}" ${m.name === md.loaded ? 'selected' : ''}>${m.name} (${m.size_gb}GB)</option>`
+                    ).join('') || '<option>— no models —</option>';
+                }
+
+                // Health badges
+                if (hRes && hRes.ok) {
+                    const hd = await hRes.json();
+                    const hasLlm = hd.gguf && hd.gguf.length > 0;
+                    const hasTts = hd.onnx && hd.onnx.length > 0;
+                    setBadge('llm', hasLlm, hasLlm ? hd.gguf[0].replace('.gguf', '') : 'LLM');
+                    setBadge('tts', hasTts, 'TTS');
+                    setBadge('stt', hd.whisper === true, 'STT');
+                }
+
+                if (iRes && iRes.ok) {
+                    const idata = await iRes.json();
+                    setBadge('img', idata.loaded, 'IMG');
+                }
+            } catch (e) {
+                console.error("Health fetch error:", e);
+                setBadge('llm', false, 'offline');
+            }
+
+            // Load voices
+            try {
+                const vr = await fetch('/tts/voices');
+                if (vr.ok) {
+                    const vd = await vr.json();
+                    const sel = document.getElementById('voice-select');
+                    sel.innerHTML = (vd.voices || []).map(v =>
+                        `<option value="${v.id}">${v.name} (${v.language[0]}${v.gender[0]})</option>`
+                    ).join('');
+                }
+            } catch { }
+        }
+
+        function setBadge(id, ok, label) {
+            document.getElementById(`${id}-dot`).className = 'dot ' + (ok ? 'on' : 'err');
+            document.getElementById(`${id}-txt`).textContent = label;
+            document.getElementById(`${id}-badge`).className = 'badge ' + (ok ? 'ok' : 'err');
+        }
+        // ── Markdown renderer ─────────────────────────────────────────────────
+        function renderMd(text) {
+            let h = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            h = h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+            h = h.replace(/\*(?!\*)(.+?)(?<!\*)\*/g, '<em>$1</em>');
+            h = h.replace(/^[\*\-•] +(.+)$/gm, '<li>$1</li>');
+            h = h.replace(/\n/g, '<br>');
+            return h;
+        }
+
+        // Strip markdown syntax for clean TTS text
+        function stripMd(text) {
+            return text
+                .replace(/\*\*(.+?)\*\*/g, '$1')
+                .replace(/\*(.+?)\*/g, '$1')
+                .replace(/#{1,6}\s+/g, '')
+                .replace(/`(.+?)`/g, '$1')
+                .replace(/[*_#`]/g, '') // brute force catch any stragglers (multiline etc)
+                .trim();
+        }
+
+        // Play an audio chunk from the TTS WebSocket
+        async function _playChunk(buf) {
+            if (!_audioCtx) return;
+            try {
+                const dec = await _audioCtx.decodeAudioData(buf);
+                const src = _audioCtx.createBufferSource();
+                src.buffer = dec;
+                src.connect(_audioCtx.destination);
+                src.start(Math.max(_nextTime, _audioCtx.currentTime));
+                _nextTime = Math.max(_nextTime, _audioCtx.currentTime) + dec.duration;
+            } catch { }
+        }
+
+        // Ensure WS is open and drain queue; returns the ws
+        function _ensureTtsWs() {
+            if (_wsSpeak && _wsSpeak.readyState === WebSocket.OPEN) return _wsSpeak;
+            if (_wsSpeak && _wsSpeak.readyState === WebSocket.CONNECTING) return _wsSpeak;
+            if (!_audioCtx) { _audioCtx = new AudioContext(); _nextTime = _audioCtx.currentTime + 0.1; }
+            const ws = new WebSocket(`ws://${location.host}/tts/ws`);
+            ws.binaryType = 'arraybuffer';
+            _wsSpeak = ws;
+            ws.onopen = () => {
+                const v = document.getElementById('voice-select').value || 'af_heart';
+                _ttsQueue.forEach(t => ws.send(JSON.stringify({ text: t, voice: v, speed: 1.0 })));
+                _ttsQueue = [];
+            };
+            ws.onmessage = async (e) => {
+                if (e.data instanceof ArrayBuffer) _playChunk(e.data);
+            };
+            ws.onerror = ws.onclose = () => { };
+            return ws;
+        }
+
+        // Queue a sentence for live TTS output
+        function liveSpeak(text) {
+            const clean = stripMd(text).trim();
+            if (!clean) return;
+            const v = document.getElementById('voice-select').value || 'af_heart';
+            const msg = JSON.stringify({ text: clean, voice: v, speed: 1.0 });
+            const ws = _ensureTtsWs();
+            if (ws.readyState === WebSocket.OPEN) ws.send(msg);
+            else _ttsQueue.push(clean);
+        }
+
+        // ── Chat ──────────────────────────────────────────────────────────────
+        function addRow(role, text, cls = '') {
+            document.getElementById('welcome')?.remove();
+            const row = document.createElement('div');
+            row.className = `row ${role === 'user' ? 'user' : 'ai'}`;
+
+            const lbl = document.createElement('div');
+            lbl.className = 'lbl';
+            lbl.textContent = role === 'user' ? 'YOU' : 'TRIAGE AI';
+
+            const bub = document.createElement('div');
+            bub.className = `bubble ${role === 'user' ? 'user' : 'ai'} ${cls}`;
+            bub.textContent = text;
+
+            row.appendChild(lbl);
+            row.appendChild(bub);
+            document.getElementById('messages').appendChild(row);
+            row.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            return bub;
+        }
+
+        async function send() {
+            const inp = document.getElementById('input');
+            const txt = inp.value.trim();
+            if (!txt) return;
+            inp.value = '';
+            inp.style.height = '';
+            document.getElementById('send-btn').disabled = true;
+
+            addRow('user', txt);
+
+            // ── Image Generation Intercept ──
+            if (txt.toLowerCase().startsWith('/draw ')) {
+                const prompt = txt.substring(6).trim();
+                const bub = addRow('ai', 'Drawing...', 'dim');
+                try {
+                    const r = await fetch('/image/generate', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ prompt, steps: 4 })
+                    });
+                    if (!r.ok) {
+                        const err = await r.json().catch(() => ({}));
+                        throw new Error(err.detail || `${r.status} ${r.statusText}`);
+                    }
+                    const blob = await r.blob();
+                    const url = URL.createObjectURL(blob);
+
+                    bub.textContent = '';
+                    bub.className = 'bubble ai';
+                    const img = document.createElement('img');
+                    img.src = url;
+                    img.style.maxWidth = '100%';
+                    img.style.borderRadius = '4px';
+                    img.style.display = 'block';
+                    img.style.marginTop = '4px';
+                    bub.appendChild(img);
+                    bub.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                } catch (e) {
+                    bub.textContent = `Error: ${e.message}`;
+                    bub.className = 'bubble ai err';
+                }
+                document.getElementById('send-btn').disabled = false;
+                inp.focus();
+                return;
+            }
+
+            hist.push({ role: 'user', content: txt });
+
+            const bub = addRow('ai', '…', 'dim');
+
+            const messages = [...hist];
+            // Gemma models lack a 'system' role. To ensure it NEVER gives disclaimers, 
+            // we ruthlessly inject the persona directly into the final user query.
+            const lastIdx = messages.length - 1;
+            if (lastIdx >= 0) {
+                messages[lastIdx] = {
+                    role: 'user',
+                    content: `<context>\nYou are a field medic AI in a survival kit. Give direct, actionable clinical information only. NO disclaimers, NO suggestions to see a doctor, NO hedging.\n</context>\n\nQuery: ${messages[lastIdx].content}`
+                };
+            }
+
+            try {
+                const r = await fetch('/inference/stream', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ messages, max_tokens: 512, temperature: 0.7 })
+                });
+                if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+
+                bub.className = 'bubble ai';
+                bub.textContent = '';
+                const reader = r.body.getReader();
+                const dec = new TextDecoder();
+                let full = '';
+                let sentBuf = '';  // accumulates tokens until sentence boundary
+
+                // Open TTS WS early if auto-speak is on
+                if (autoSpeak) _ensureTtsWs();
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    for (const line of dec.decode(value).split('\n')) {
+                        if (!line.startsWith('data: ')) continue;
+                        try {
+                            const d = JSON.parse(line.slice(6));
+                            if (d.type === 'token') {
+                                const tok = d.token;
+                                full += tok;
+                                sentBuf += tok;
+
+                                // Append fading token span
+                                const sp = document.createElement('span');
+                                sp.className = 'tok';
+                                sp.textContent = tok;
+                                bub.appendChild(sp);
+                                bub.scrollIntoView();
+
+                                // Pipe completed sentences to TTS — split on .,!?;: and long commas
+                                if (autoSpeak) {
+                                    const m = sentBuf.match(/^([\s\S]*?[.!?;:\u2014]|[\s\S]{60,}?,)\s+([\s\S]*)$/);
+                                    if (m) { liveSpeak(m[1]); sentBuf = m[2]; }
+                                }
+                            }
+                        } catch { }
+                    }
+                }
+
+                // Send any remaining sentence fragment to TTS
+                if (autoSpeak && sentBuf.trim()) liveSpeak(sentBuf);
+
+                // Replace token spans with clean markdown render + inline diagram buttons
+                bub.innerHTML = renderMd(full).replace(
+                    /\*\*([^*\n]+)\*\*/g,
+                    (_, label) => `<strong>${label}</strong><button class="diag-btn" onclick="generateDiagram(this,'${label.replace(/'/g, "&apos;").trim()}')">🖼</button>`
+                );
+
+                hist.push({ role: 'assistant', content: full });
+
+                // Speak button
+                if (full) {
+                    const btn = document.createElement('button');
+                    btn.className = 'play-btn';
+                    btn.textContent = '▶ Speak';
+                    btn.onclick = () => speak(full, btn);
+                    bub.parentElement.appendChild(btn);
+                }
+
+            } catch (e) {
+                bub.className = 'bubble ai err';
+                bub.textContent = `Error: ${e.message}`;
+            } finally {
+                document.getElementById('send-btn').disabled = false;
+            }
+        }
+
+        // ── TTS via WebSocket ──────────────────────────────────────────────────
+        function stopSpeak(btn) {
+            if (_wsSpeak) { try { _wsSpeak.close(); } catch { } _wsSpeak = null; }
+            if (_audioCtx) { try { _audioCtx.close(); } catch { } _audioCtx = null; }
+            if (btn) { btn.textContent = '▶ Speak'; btn.classList.remove('playing'); }
+            document.querySelectorAll('.play-btn.playing').forEach(b => {
+                b.textContent = '▶ Speak';
+                b.classList.remove('playing');
+            });
+        }
+
+        async function speak(text, btn) {
+            stopSpeak(btn);   // kill any previous playback
+
+            const cleanText = stripMd(text);
+            if (!cleanText) return;
+
+            const voice = document.getElementById('voice-select').value || 'af_heart';
+            if (btn) { btn.textContent = '◼ Stop'; btn.classList.add('playing'); }
+
+            _audioCtx = new AudioContext();
+            _nextTime = _audioCtx.currentTime + 0.05;
+
+            const ws = new WebSocket(`ws://${location.host}/tts/ws`);
+            _wsSpeak = ws;
+            ws.binaryType = 'arraybuffer';
+
+            ws.onopen = () => ws.send(JSON.stringify({ text: cleanText, voice, speed: 1.0 }));
+
+            ws.onmessage = async (e) => {
+                if (e.data instanceof ArrayBuffer) {
+                    try {
+                        const decoded = await _audioCtx.decodeAudioData(e.data);
+                        const src = _audioCtx.createBufferSource();
+                        src.buffer = decoded;
+                        src.connect(_audioCtx.destination);
+                        src.start(Math.max(_nextTime, _audioCtx.currentTime));
+                        _nextTime = Math.max(_nextTime, _audioCtx.currentTime) + decoded.duration;
+                    } catch { }
+                } else {
+                    // JSON control message (done/error)
+                    try {
+                        const d = JSON.parse(e.data);
+                        if (d.type === 'done') {
+                            const remaining = (_nextTime - _audioCtx.currentTime) * 1000;
+                            setTimeout(() => stopSpeak(btn), Math.max(remaining, 0));
+                        }
+                    } catch { }
+                }
+            };
+
+            ws.onerror = () => stopSpeak(btn);
+            ws.onclose = () => { if (btn && btn.classList.contains('playing')) stopSpeak(btn); };
+        }
+
+        // ── Auto-speak toggle ─────────────────────────────────────────────────
+        function toggleAutoSpeak() {
+            autoSpeak = !autoSpeak;
+            document.getElementById('speak-pill').classList.toggle('on', autoSpeak);
+        }
+
+        // ── STT — mic ─────────────────────────────────────────────────────────
+        async function toggleMic() {
+            if (isRecording) { stopRecording(); return; }
+
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                // Prefer audio/webm; fallback to default
+                let mimeType = 'audio/webm';
+                if (!MediaRecorder.isTypeSupported(mimeType)) mimeType = '';
+
+                mediaRec = new MediaRecorder(stream, mimeType ? { mimeType } : {});
+                audioChunks = [];
+
+                mediaRec.ondataavailable = e => { if (e.data.size > 0) audioChunks.push(e.data); };
+                mediaRec.onstop = async () => {
+                    stream.getTracks().forEach(t => t.stop());
+                    const blob = new Blob(audioChunks, { type: mediaRec.mimeType || 'audio/webm' });
+                    await transcribe(blob);
+                };
+
+                mediaRec.start();
+                isRecording = true;
+                document.getElementById('mic-btn').className = 'rec';
+                document.getElementById('mic-btn').textContent = '⏹';
+                setSttBar('● recording…');
+            } catch (e) {
+                setSttBar(`Mic: ${e.message}`, 3000);
+            }
+        }
+
+        function stopRecording() {
+            if (mediaRec && isRecording) {
+                mediaRec.stop();
+                isRecording = false;
+                document.getElementById('mic-btn').className = '';
+                document.getElementById('mic-btn').textContent = '🎙';
+                setSttBar('● transcribing…');
+            }
+        }
+
+        async function transcribe(blob) {
+            const fd = new FormData();
+            // Send as WAV extension even if it's webm — Whisper handles it via ffmpeg
+            fd.append('audio', blob, 'recording.webm');
+
+            try {
+                const r = await fetch('/stt/listen', { method: 'POST', body: fd });
+                if (!r.ok) throw new Error(`${r.status}`);
+                const d = await r.json();
+                const txt = d.text || '';
+                if (txt) {
+                    const inp = document.getElementById('input');
+                    inp.value = inp.value ? inp.value + ' ' + txt : txt;
+                    autoSize(inp);
+                }
+                setSttBar(`● transcribed (${d.language || 'auto'})`, 3000);
+            } catch (e) {
+                setSttBar(`STT failed: ${e.message}`, 4000);
+            }
+        }
+
+        // ── Diagram button ────────────────────────────────────────────────────
+        async function activateDiagram() {
+            const inp = document.getElementById('input');
+            const btn = document.getElementById('img-btn');
+            const prompt = inp.value.trim();
+
+            if (!prompt) {
+                // Nothing typed — focus the box and hint the user
+                inp.placeholder = 'Type a procedure (e.g. tourniquet application)…';
+                btn.classList.add('active');
+                inp.dataset.diagramMode = '1';
+                inp.focus();
+                return;
+            }
+
+            // Fire immediately
+            inp.dataset.diagramMode = '';
+            btn.classList.remove('active');
+            inp.value = '';
+            inp.style.height = '';
+            inp.placeholder = 'Ask anything clinical…';
+            document.getElementById('send-btn').disabled = true;
+
+            addRow('user', `🖼 ${prompt}`);
+            const bub = addRow('ai', 'Generating diagram…', 'dim');
+
+            try {
+                const r = await fetch('/image/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt, steps: 4 })
+                });
+                if (!r.ok) {
+                    const err = await r.json().catch(() => ({}));
+                    throw new Error(err.detail || `${r.status}`);
+                }
+                const blob = await r.blob();
+                const url = URL.createObjectURL(blob);
+                bub.textContent = '';
+                bub.className = 'bubble ai';
+                const img = document.createElement('img');
+                img.src = url;
+                img.alt = prompt;
+                img.style.cssText = 'max-width:100%;border-radius:4px;display:block;margin-top:4px;filter:contrast(1.15)';
+                bub.appendChild(img);
+                bub.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            } catch (e) {
+                bub.textContent = `Image error: ${e.message}`;
+                bub.className = 'bubble ai err';
+            }
+            document.getElementById('send-btn').disabled = false;
+            inp.focus();
+        }
+
+        // Called by inline 🖼 buttons after **bold** text in AI responses
+        async function generateDiagram(btn, prompt) {
+            if (!prompt) return;
+            btn.classList.add('loading');
+            btn.textContent = '⏳';
+            const imgBub = addRow('ai', 'Drawing…', 'dim');
+            try {
+                const r = await fetch('/image/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt, steps: 4 })
+                });
+                if (!r.ok) { const e = await r.json().catch(() => ({})); throw new Error(e.detail || r.status); }
+                const url = URL.createObjectURL(await r.blob());
+                imgBub.textContent = '';
+                imgBub.className = 'bubble ai';
+                const img = document.createElement('img');
+                img.src = url; img.alt = prompt;
+                img.style.cssText = 'max-width:100%;border-radius:4px;display:block;margin-top:4px;filter:contrast(1.15)';
+                imgBub.appendChild(img);
+                imgBub.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                btn.textContent = '✓';
+                btn.style.cssText = 'color:var(--green);border-color:var(--green)';
+            } catch (e) {
+                imgBub.textContent = `Image error: ${e.message}`;
+                imgBub.className = 'bubble ai err';
+                btn.textContent = '🖼'; btn.classList.remove('loading');
+            }
+        }
+
+        // ── Helpers ───────────────────────────────────────────────────────────
+        function setSttBar(msg, clearMs = 0) {
+            document.getElementById('stt-bar').textContent = msg;
+            if (clearMs) setTimeout(() => document.getElementById('stt-bar').textContent = '● ready', clearMs);
+        }
+
+        function autoSize(el) {
+            el.style.height = 'auto';
+            el.style.height = Math.min(el.scrollHeight, 140) + 'px';
+        }
+
+        document.getElementById('input').addEventListener('keydown', e => {
+            if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); }
+        });
+        document.getElementById('input').addEventListener('input', function () { autoSize(this); });
+
+        init().then(() => _ensureTtsWs());  // pre-warm TTS socket
+        // Refresh health every 20s
+        setInterval(async () => {
+            try {
+                const [r, iR] = await Promise.all([
+                    fetch('/health').catch(() => null),
+                    fetch('/image/health').catch(() => null)
+                ]);
+
+                if (r && r.ok) {
+                    const d = await r.json();
+                    const hasLlm = d.gguf && d.gguf.length > 0;
+                    setBadge('llm', hasLlm, hasLlm ? d.gguf[0].replace('.gguf', '') : 'LLM');
+                    setBadge('tts', d.onnx && d.onnx.length > 0, 'TTS');
+                    setBadge('stt', d.whisper === true, 'STT');
+                }
+
+                if (iR && iR.ok) {
+                    const iData = await iR.json();
+                    setBadge('img', iData.loaded, 'IMG');
+                }
+            } catch { }
+        }, 20000);
+    </script>
+</body>
+
+</html>

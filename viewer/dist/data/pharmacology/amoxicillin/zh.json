@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "阿莫西林",
+  "category": "antibiotic",
+  "rxnorm": "第723章",
+  "brand_names": [
+    "阿莫西尔",
+    "三莫克斯"
+  ],
+  "description": "广谱氨基青霉素抗生素。口服预防性抗生素治疗伤口感染。 TCCC 战斗药包的一部分，用于非严重损伤的伤口预防。",
+  "indications": [
+    "伤口感染预防（轻中度伤口、口服药包）",
+    "软组织感染",
+    "呼吸道感染"
+  ],
+  "dose": "500 mg PO 每 8 小时 x 7 天（伤口预防）。 875 mg PO 每 12 小时替代。",
+  "route": [
+    "采购订单"
+  ],
+  "window": "受伤后 3 小时内开始进行伤口预防。",
+  "contraindications": [
+    "已知青霉素过敏（使用强力霉素代替）",
+    "单核细胞增多症（皮疹风险）"
+  ],
+  "warnings": [
+    "如果青霉素过敏：用强力霉素 100mg PO BID 替代。",
+    "仅口服途径——对于严重伤口或口服不耐受时使用静脉注射抗生素（头孢唑啉/环丙沙星）。"
+  ],
+  "regional_names": {
+    "generic": "阿莫西林"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/天，每 8 小时一次（最大 500 mg/剂量）。使用基于权重的 Broselow 参考。",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "怀孕期间安全。优于多西环素（怀孕期间禁用）。"
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Garam Normal (NaCl 0,9%)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "Injeksi Natrium Klorida 0,9%"
+  ],
+  "description": "Cairan kristaloid isotonik. Digunakan untuk resusitasi cairan IV. Pada syok hemoragik, gunakan dengan hati-hati -- volume besar memperburuk koagulopati (asidosis hiperkloremik, koagulopati dilusional). Hipotensi permisif lebih disukai pada trauma tembus sambil menunggu pengendalian perdarahan.",
+  "indications": [
+    "Resusitasi cairan (dengan hati-hati pada syok hemoragik)",
+    "Pengencer/penyiram obat",
+    "Hipovolemia akibat penyebab non-hemoragik"
+  ],
+  "dose": "Syok hemoragik: Batasi hingga 1L maks sambil menunggu pengendalian perdarahan (hipotensi permisif). Targetkan SBP 80-90 mmHg pada trauma tembus, 90 mmHg pada TBI. Hipovolemia non-hemoragik: bolus 500 mL, kaji ulang.",
+  "route": [
+    "IV",
+    "aku"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hipernatremia",
+    "Kelebihan cairan/edema paru (relatif)"
+  ],
+  "warnings": [
+    "Volume besar menyebabkan asidosis metabolik hiperkloremik dan koagulopati dilusional -- memperburuk triad mematikan pada trauma.",
+    "Ringer Laktat (LR) lebih disukai untuk resusitasi trauma volume besar.",
+    "JANGAN melakukan resusitasi berlebihan pada trauma tembus batang tubuh sebelum pengendalian perdarahan melalui pembedahan (hipotensi permisif)."
+  ],
+  "regional_names": {
+    "generic": "natrium klorida 0,9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 mL/kg IV bolus, nilai kembali. Ulangi maks x3 (total 60 mL/kg) sebelum mempertimbangkan produk darah.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Resusitasi standar pada perdarahan obstetrik. Resusitasi cairan agresif yang tepat untuk perdarahan postpartum sebelum produk darah tersedia."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

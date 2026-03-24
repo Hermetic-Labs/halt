@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "SALT Triage (Pagbukud-bukurin, Pagsusuri, Pagliligtas ng Buhay, Paggamot/Transportasyon)",
+  "category": "mass-casualty",
+  "description": "Protocol ng pagsubok ng mass casualty. Standard para sa mga multi-casualty na kaganapan sa mga setting ng militar at sibilyan.",
+  "instructions": "Hakbang 1: Global sort (paglalakad, kumakaway, pa rin). Hakbang 2: Magsuri sa pagkakasunud-sunod ng priyoridad. Hakbang 3: Magsagawa ng mga interbensyon na nagliligtas ng buhay (kontrolin ang malaking pagdurugo, bukas na daanan ng hangin, decompression ng karayom, mga auto-injector). Hakbang 4: Magtalaga ng kategorya.",
+  "categories": [
+    {
+      "color": "itim",
+      "label": "Umaasam/Namatay",
+      "description": "Malamang na hindi makaligtas sa mga magagamit na mapagkukunan, o nakumpirmang namatay"
+    },
+    {
+      "color": "pula",
+      "label": "Kaagad (T1)",
+      "description": "Mga pinsalang nagbabanta sa buhay, mabubuhay nang may agarang interbensyon"
+    },
+    {
+      "color": "dilaw",
+      "label": "Naantala (T2)",
+      "description": "Malubha ngunit matatag na pinsala, maaaring maghintay para sa pangangalaga"
+    },
+    {
+      "color": "berde",
+      "label": "Minimal (T3)",
+      "description": "Maliit na pinsala -- naglalakad na sugatan"
+    },
+    {
+      "color": "kulay abo",
+      "label": "Inaasahan",
+      "description": "Hindi mabubuhay na pinsala dahil sa kasalukuyang mga mapagkukunan -- pangangalaga sa kaginhawaan lamang"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Binabago ng jumpSTART triage algorithm ang SALT para sa mga pediatric na pasyente. Ang mga limitasyon ng rate ng paghinga at mga hakbang sa pagtatasa ay naiiba para sa mga batang wala pang 8 taong gulang."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

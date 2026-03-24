@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Zorientowany",
+    "Nayzilam"
+  ],
+  "description": "Krótko działająca benzodiazepina o szybkim początku. Preferowany do sedacji proceduralnej, premedykacji RSI i leczenia napadów domięśniowych/dożylnych. Podanie domięśniowe i donosowe zapewnia znaczną przewagę w warunkach terenowych.",
+  "indications": [
+    "Sedacja proceduralna",
+    "Premedykacja RSI (z ketaminą)",
+    "Zarządzanie napadami (IM/IN, gdy IV nie jest dostępna)",
+    "Zarządzanie agitacją"
+  ],
+  "dose": "Sedacja: 0,05-0,1 mg/kg dożylnie, miareczkowane. Proceduralnie: powolne wciśnięcie dożylne 1-5 mg. IM: 0,2 mg/kg. IN: 0,2 mg/kg (maks. 10 mg). Stan padaczkowy IM: 10 mg IM (dorośli).",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "W"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ostra jaskra z wąskim kątem",
+    "Ostre zatrucie alkoholem z zaburzeniami sercowo-naczyniowymi",
+    "Znana nadwrażliwość"
+  ],
+  "warnings": [
+    "Depresja oddechowa – monitoruj drogi oddechowe, jeśli to możliwe, zastosuj środek odwracający (flumazenil).",
+    "Niedociśnienie, zwłaszcza podczas jednoczesnego stosowania opioidów.",
+    "Szybkie wstrzyknięcie dożylne powoduje bezdech – naciskaj powoli."
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Sedacja: 0,05-0,1 mg/kg IV. IM: 0,1-0,2 mg/kg. IN: 0,2-0,3 mg/kg. Napad domięśniowy: 0,2 mg/kg (maks. 10 mg).",
+      "note": "Droga IN szczególnie przydatna u dzieci – pozwala uniknąć dostępu dożylnego."
+    },
+    "obstetric": {
+      "note": "Przechodzi przez łożysko. Możliwość sedacji noworodków. Stosować minimalną skuteczną dawkę; monitorować noworodka, jeśli zostanie podany w pobliżu porodu."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

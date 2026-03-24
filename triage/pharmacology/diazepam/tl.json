@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastat"
+  ],
+  "description": "Long-acting benzodiazepine. Ginagamit para sa pamamahala ng seizure, kalamnan spasm, at anxiolysis. Ang rectal gel (Diastat) ay kapaki-pakinabang sa mga setting ng field kapag hindi available ang IV. Mas mahaba ang tagal kaysa sa lorazepam.",
+  "indications": [
+    "Pamamahala ng seizure (rectal/IV)",
+    "Muscle spasm dahil sa pinsala sa spinal cord o tetanus",
+    "Nerve agent antidote adjunct (sa CHEMPACK kit)",
+    "Pag-alis ng alak"
+  ],
+  "dose": "Pag-agaw: 5-10 mg IV mabagal na pagtulak. Ulitin q10-15 min (max 30 mg). Rectal: 0.2-0.5 mg/kg. Mali-mali ang pagsipsip ng IM -- iwasan ang IM kung maaari.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "Talamak na narrow-angle glaucoma",
+    "Malubhang sakit sa atay",
+    "Depresyon sa paghinga"
+  ],
+  "warnings": [
+    "Ang pagsipsip ng IM ay mali-mali at masakit -- mas gusto ang IV, rectal, o gumamit ng midazolam IM sa halip.",
+    "Mahabang tagal ng sedation (24-48h para sa paulit-ulit na dosis).",
+    "Mga kaswalti ng ahente ng nerbiyos: ang diazepam ay kasama sa mga CHEMPACK kit para sa seizure mula sa cholinergic crisis."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0.1-0.3 mg/kg (max 10 mg). Rectal: 0.3-0.5 mg/kg. Gumamit ng rectal route kapag hindi available ang IV.",
+      "note": "Ang rectal diastat gel ay partikular na kapaki-pakinabang para sa mga pediatric seizure sa mga setting ng field."
+    },
+    "obstetric": {
+      "note": "Tumawid sa inunan. Maaaring magdulot ng neonatal hypotonia, respiratory depression. Gamitin lamang para sa maternal seizure na hindi tumutugon sa magnesium."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

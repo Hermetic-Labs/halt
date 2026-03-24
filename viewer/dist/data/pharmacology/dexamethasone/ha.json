@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Dexamethasone",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Decadron",
+    "DexPak"
+  ],
+  "description": "Corticosteroid roba na dogon lokaci. An yi amfani da shi don edema na cerebral (high altitude cerebral edema - HACE, TBI), rashin lafiyar jiki mai tsanani, edema na iska, da rikicin adrenal. Anti-mai kumburi, ba anabolic ba.",
+  "indications": [
+    "Babban hawan edema na cerebral (HACE)",
+    "Edema na iska (post-extubation stridor, croup)",
+    "Cerebral edema daga ƙari ko kumburi",
+    "Mummunan rashin lafiyar jiki (haɗe da epinephrine)",
+    "Rikicin adrenal",
+    "Anti-emetic adjunct (na gefe)"
+  ],
+  "dose": "Cerebral edema / HACE: 8-10 mg IV / IM farko, sannan 4 mg q6h. Hanyar iska: 10 MG IV sau ɗaya. Croup: 0.6 mg/kg IM/PO (max 16mg). Rikicin adrenal: 4 MG IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO"
+  ],
+  "window": "HACE: Ba da wuri-wuri tare da saukowa kai tsaye.",
+  "contraindications": [
+    "Cutar cututtukan fungal (ba tare da ɗaukar hoto ba)",
+    "Alurar rigakafin ƙwayoyin cuta masu rai a cikin kwanaki 30 (dangi)"
+  ],
+  "warnings": [
+    "Baya maye gurbin zuriya da iskar oxygen don HACE -- yi amfani da shi azaman ƙari kawai.",
+    "Hyperglycemia -- saka idanu glucose na jini a cikin masu ciwon sukari.",
+    "Immunosuppression tare da dogon amfani.",
+    "Magunguna guda ɗaya don gaggawa gabaɗaya lafiyayye."
+  ],
+  "regional_names": {
+    "generic": "dexamethasone"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Croup: 0.6 mg/kg PO/IM (max 16 mg). Cerebral edema: 0.5-1 mg / kg IV (max 10 mg). edema na iska: 0.5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM q24h x 2 allurai da aka yi amfani da su don hanzarta balaga huhu na tayin a cikin makonni 24-34 na ciki a cikin aikin da ba a kai ba. Tattauna tare da mafi kyawun mai samarwa."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

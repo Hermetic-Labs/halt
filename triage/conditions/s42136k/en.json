@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s42136k",
+    "icd10":  "S42136K",
+    "name":  "Nondisplaced fracture of coracoid process, unspecified shoulder, subsequent encounter for fracture with nonunion",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of coracoid process, unspecified shoulder, subsequent encounter for fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

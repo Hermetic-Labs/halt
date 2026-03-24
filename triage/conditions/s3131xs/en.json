@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s3131xs",
+    "icd10":  "S3131XS",
+    "name":  "Laceration without foreign body of scrotum and testes, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Laceration without foreign body of scrotum and testes, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

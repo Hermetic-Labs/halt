@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oksitosin",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocin",
+    "Syntocinon"
+  ],
+  "description": "Hormon peptida endogen. First-line uterotonic kanggo Nyegah lan perawatan saka postpartum hemorrhage (PPH). Nimbulake kontraksi uterus lan nyuda mundhut getih sawise nglairake. Diwenehake sawise pangiriman plasenta.",
+  "indications": [
+    "Nyegah pendarahan postpartum (rutin sawise nglairake)",
+    "Perawatan saka pendarahan postpartum (atony uterus)",
+    "Induksi persalinan (mung setelan sing dikontrol)"
+  ],
+  "dose": "Nyegah PPH: 10 unit IM sanalika sawise pangiriman plasenta (rute lapangan sing disenengi). Perawatan PPH: 10-40 unit ing 1L IV, infus ing 40-80 mU / min. Yen IV ora kasedhiya: 10 unit IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Menehi sawise plasenta plasenta - menehi sadurunge plasenta ngirim bisa njebak plasenta.",
+  "contraindications": [
+    "Sadurunge nglairake plasenta (bisa njebak plasenta)",
+    "Fetal distress karo sirah ora dikirim",
+    "Hipersensitifitas sing dikenal"
+  ],
+  "warnings": [
+    "MEMBERI SAwise plasenta dikirim -- njebak plasenta minangka komplikasi sing ngancam nyawa.",
+    "Bolus IV bisa nyebabake hipotensi abot lan aritmia jantung - tansah diencerke lan infus alon-alon.",
+    "Efek antidiuretik kanthi volume gedhe - monitor hiponatremia."
+  ],
+  "regional_names": {
+    "generic": "oksitosin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A -- mung nggunakake obstetrik.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Uterotonik primer. Yen atonia uterus ora nanggapi, nimbang misoprostol, asam traneksamat (TXA), kompresi uterus bimanual, lan MEDEVAC kanthi cepet."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

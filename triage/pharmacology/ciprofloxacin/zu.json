@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "I-Ciprofloxacin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "I-Fluoroquinolone antibiotic enekhava ebanzi ye-gram-negative. Isetshenziselwa izifo zezilonda ezinzima, ukuhlukumezeka kwesisu okungena ngaphakathi (i-GI flora coverage), kanye nezifo ze-urinary tract. Itholakala i-PO ne-IV.",
+  "indications": [
+    "I-Penetrating abdominal trauma (GI decontamination)",
+    "Ukutheleleka kwezilonda ezimbi kakhulu",
+    "Ukutheleleka nge-Gram-negative",
+    "Izifo zomgudu womchamo"
+  ],
+  "dose": "400 mg IV q8-12h. PO: 500-750 mg q12h.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ukwaliwa yi-fluoroquinolone okwaziwayo",
+    "Izingane kanye nentsha engaphansi kweminyaka engu-18 (isihlobo -- ingozi ye-tendinopathy)",
+    "Ukukhulelwa (isihlobo)"
+  ],
+  "warnings": [
+    "Ingozi yokuphuka kwe-tendon, ikakhulukazi i-Achilles tendon. Yeka uma ubuhlungu be-tendon bukhula.",
+    "Ingase yelule isikhawu se-QT -- isexwayiso nezinye izidakamizwa ezandisa i-QT.",
+    "Gwema ekukhulelweni uma ezinye izindlela zikhona."
+  ],
+  "regional_names": {
+    "generic": "i-ciprofloxacin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV q8-12h (ubukhulu obungu-400 mg/umthamo). I-PO: 10-20 mg/kg q12h (ubukhulu obungu-750 mg/umthamo).",
+      "note": "Sebenzisa kuphela uma izinzuzo zidlula ingozi ye-tendinopathy. Igcinelwe izifo ezimbi kakhulu."
+    },
+    "obstetric": {
+      "note": "Gwema ekukhulelweni uma ezinye izindlela zikhona. Sebenzisa kuphela izifo ezisongela ukuphila lapho inzuzo idlula ingozi."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

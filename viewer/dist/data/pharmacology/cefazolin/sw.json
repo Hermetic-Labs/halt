@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Cefazolini",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Ancef",
+    "Kefzol"
+  ],
+  "description": "Cephalosporin ya kizazi cha kwanza. Antibiotiki ya uzazi wa mstari wa kwanza kwa maambukizi makubwa ya jeraha na prophylaxis ya upasuaji. Chanjo nzuri ya gram-positive ikiwa ni pamoja na MSSA. Toa ndani ya dakika 60 baada ya chale ya upasuaji kwa kuzuia.",
+  "indications": [
+    "Uzuiaji wa jeraha la upasuaji",
+    "Maambukizi makubwa ya tishu laini",
+    "Fungua prophylaxis ya fracture",
+    "Maambukizi ya muundo wa ngozi na ngozi"
+  ],
+  "dose": "1-2g IV/IM q8h. Kinga ya upasuaji: 2g IV ndani ya dakika 60 kabla ya chale. Rudia 2g ikiwa upasuaji ni zaidi ya masaa 4.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Kwa prophylaxis ya upasuaji: toa ndani ya dakika 60 baada ya kukatwa.",
+  "contraindications": [
+    "Mzio unaojulikana wa cephalosporin",
+    "Mzio mkubwa wa penicillin (asilimia 5-10 ya utendakazi mtambuka)"
+  ],
+  "warnings": [
+    "Reactivity msalaba na mzio wa penicillin: tumia kwa tahadhari kwa wagonjwa wa penicillin-mzio.",
+    "Kurekebisha kipimo katika kuharibika kwa figo."
+  ],
+  "regional_names": {
+    "generic": "cefazolini"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM q8h (kiwango cha juu cha 2g/dozi). Kinga: 30 mg/kg (max 2g) kabla ya chale.",
+      "note": "Salama na alisoma vizuri katika watoto."
+    },
+    "obstetric": {
+      "note": "Salama katika ujauzito na lactation. Antibiotic ya uzazi inayopendekezwa kwa taratibu za uzazi."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

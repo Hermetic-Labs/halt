@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s0521xs",
+    "icd10":  "S0521XS",
+    "name":  "Ocular laceration and rupture with prolapse or loss of intraocular tissue, right eye, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Ocular laceration and rupture with prolapse or loss of intraocular tissue, right eye, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

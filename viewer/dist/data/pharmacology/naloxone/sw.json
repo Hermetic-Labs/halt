@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxone",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "Kloxxado"
+  ],
+  "description": "Mpinzani wa kipokezi cha opioid. Hurudisha haraka unyogovu wa kupumua unaosababishwa na opioid, kutuliza, na kutuliza maumivu. Mwanzo wa IV: Dak 2, IM: dk 5, IN: 8-13 min. Muda mfupi kuliko opioid nyingi -- kurudia kipimo kunaweza kuhitajika.",
+  "indications": [
+    "Overdose ya opioid au unyogovu wa kupumua",
+    "Marekebisho ya sedation ya opioid",
+    "Mtu anayeshukiwa kuwa na afyuni"
+  ],
+  "dose": "0.4-2 mg IV/IO/IM/IN. Rudia dakika q2-3 kama inahitajika. Kiwango cha juu cha 10 mg. Ndani ya pua (IN): 2mg kwa kila pua.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "KATIKA",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hakuna contraindications kabisa katika kuweka overdose"
+  ],
+  "warnings": [
+    "Muda wa kitendo (dakika 30-90) ni mfupi kuliko afyuni nyingi -- mgonjwa anaweza kutumia tena dawa za kulevya. Fuatilia kwa angalau saa 1 baada ya kipimo cha mwisho.",
+    "Husababisha uondoaji mkali wa opioid -- inaweza kusababisha fadhaa, tachycardia, uvimbe wa mapafu kwa wagonjwa wanaotegemea opioid.",
+    "Itabadilisha analgesia -- mgonjwa anaweza kukabiliana na maumivu makali."
+  ],
+  "regional_names": {
+    "generic": "naloxone",
+    "US": "Narcan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.01 mg/kg IV/IM/IN (kiwango cha juu 0.4 mg). Rudia dk2-3 PRN.",
+      "note": "Mtoto mchanga: 0.01 mg/kg kwa kubadilisha opioid ya mama."
+    },
+    "obstetric": {
+      "note": "Salama katika ujauzito. Iwapo atapewa mama karibu na kuzaa, fuatilia mtoto mchanga ili kujiondoa."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

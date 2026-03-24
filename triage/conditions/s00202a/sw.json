@@ -1,0 +1,22 @@
+{
+  "id": "s00202a",
+  "icd10": "S00202A",
+  "name": "Jeraha la juu juu lisilojulikana la kope la kushoto na eneo la pembeni, tukio la awali",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Jeraha la juu juu lisilojulikana la kope la kushoto na eneo la periocular, tukio la awali",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

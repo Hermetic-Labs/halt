@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Cefazolin",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Ancef",
+    "Kefzol"
+  ],
+  "description": "cephalosporin nke ọgbọ mbụ. Ọgwụ nje parenteral nke mbụ maka ọrịa ọnya dị njọ na mgbochi ịwa ahụ. Ezigbo mkpuchi gram-nke gụnyere MSSA. Nye n'ime nkeji 60 nke mbepụ ịwa ahụ maka prophylaxis.",
+  "indications": [
+    "Prophylaxis ọnya ịwa ahụ",
+    "Ọrịa anụ ahụ dị nro dị egwu",
+    "Mepee prophylaxis mgbaji",
+    "Akpụkpọ anụ na akpụkpọ Ọdịdị ọrịa"
+  ],
+  "dose": "1-2g IV/IM q8h. Prophylaxis nke ịwa ahụ: 2g IV n'ime nkeji 60 tupu mbepụ ya. Tinyegharịa 2g ma ọ bụrụ na ịwa ahụ> 4 awa.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Maka prophylaxis ịwa ahụ: nye n'ime nkeji 60 nke mbepụ.",
+  "contraindications": [
+    "A maara cephalosporin allergies",
+    "Ihe nfụkasị nke penicillin siri ike (5-10% cross-reactivity)"
+  ],
+  "warnings": [
+    "Mmeghachi omume na-aga n'ihu na nrịanrịa penicillin: jiri nlezianya mee ihe na ndị ọrịa na-ahụ nfụkasị penicillin.",
+    "Gbanwee dose na nkwarụ gbasara akụrụ."
+  ],
+  "regional_names": {
+    "generic": "cefazolin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM q8h (max 2g/ dose). Prophylaxis: 30 mg / kg (max 2g) tupu mbepụ ya.",
+      "note": "Nchekwa na mụọ nke ọma na pediatrics."
+    },
+    "obstetric": {
+      "note": "Nchekwa na ime na lactation. Ọgwụ nje parenteral ahọrọ maka usoro ọmụmụ."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

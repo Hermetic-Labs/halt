@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirin (Acetylsalicylic Acid)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Bayer Aspirin",
+    "Ecotrin"
+  ],
+  "description": "Non-steroidal anti-inflammatory drug (NSAID) na may mga katangian ng antiplatelet. First-line na paggamot para sa pinaghihinalaang acute coronary syndrome (ACS). Hindi maibabalik na pinipigilan ang pagsasama-sama ng platelet -- ang epekto ay tumatagal ng habang-buhay ng platelet (7-10 araw).",
+  "indications": [
+    "Pinaghihinalaang acute myocardial infarction (MI) -- nguya agad",
+    "Hindi matatag na angina / acute coronary syndrome",
+    "Stroke (ischemic -- pagkatapos hindi kasama ang hemorrhagic)",
+    "Lagnat at banayad hanggang katamtamang pananakit (analgesic)"
+  ],
+  "dose": "ACS: 325 mg PO -- NGUNGUYA (huwag lunukin ng buo) kaagad. Analgesic/antipyretic: 325-650 mg PO q4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Magbigay nang maaga hangga't maaari -- nguya agad sa hinala.",
+  "contraindications": [
+    "Aktibong GI na dumudugo",
+    "Hemorrhagic stroke",
+    "Kilalang aspirin allergy o NSAID hypersensitivity",
+    "Matinding hindi makontrol na pagdurugo -- pinalala ng aspirin ang pagdurugo"
+  ],
+  "warnings": [
+    "HUWAG magbigay sa mga pasyenteng may hemorrhagic -- ang aspirin ay hindi maibabalik na nakakapinsala sa platelet function at nagpapalala ng pagdurugo.",
+    "HUWAG magbigay sa mga batang <12 taong gulang na may sakit na viral -- panganib ng Reye's syndrome.",
+    "GI irritation -- dalhin kasama ng pagkain kung hindi lumilitaw."
+  ],
+  "regional_names": {
+    "generic": "aspirin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesic/antipyretic: 10-15 mg/kg PO q4-6h (max 650 mg/dosis). TANDAAN: Contraindicated sa viral disease (Reye syndrome).",
+      "note": "Gumamit ng acetaminophen (paracetamol) para sa lagnat sa mga batang may sakit na viral sa halip."
+    },
+    "obstetric": {
+      "note": "Iwasan sa pagbubuntis lalo na sa ikatlong trimester (napaaga na pagsasara ng ductus arteriosus). Ang mababang dosis (81mg) ay ginagamit para sa pag-iwas sa pre-eclampsia sa ilalim ng gabay ng manggagamot lamang."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t385x2s",
+    "icd10":  "T385X2S",
+    "name":  "Poisoning by other estrogens and progestogens, intentional self-harm, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Poisoning by other estrogens and progestogens, intentional self-harm, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

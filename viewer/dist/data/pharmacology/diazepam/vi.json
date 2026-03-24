@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Đường kính"
+  ],
+  "description": "Thuốc benzodiazepin tác dụng kéo dài. Được sử dụng để kiểm soát cơn động kinh, co thắt cơ và giải lo âu. Gel trực tràng (Diastat) rất hữu ích trong cài đặt hiện trường khi không có IV. Thời gian dài hơn lorazepam.",
+  "indications": [
+    "Quản lý cơn động kinh (trực tràng/IV)",
+    "Co thắt cơ do chấn thương tủy sống hoặc uốn ván",
+    "Thuốc hỗ trợ giải độc thần kinh (trong bộ CHEMPACK)",
+    "Cai rượu"
+  ],
+  "dose": "Co giật: tiêm tĩnh mạch chậm 5-10 mg. Lặp lại mỗi 10-15 phút (tối đa 30 mg). Trực tràng: 0,2-0,5 mg/kg. Hấp thụ IM thất thường - tránh IM nếu có thể.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "Bệnh tăng nhãn áp góc hẹp cấp tính",
+    "Bệnh gan nặng",
+    "Suy hô hấp"
+  ],
+  "warnings": [
+    "Sự hấp thụ IM không ổn định và đau đớn - thay vào đó nên sử dụng IV, trực tràng hoặc sử dụng midazolam IM.",
+    "Thời gian an thần kéo dài (24-48h đối với liều lặp lại).",
+    "Tổn thương do tác nhân thần kinh: diazepam được bao gồm trong bộ dụng cụ CHEMPACK dùng để điều trị co giật do cơn cholinergic."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0,1-0,3 mg/kg (tối đa 10 mg). Trực tràng: 0,3-0,5 mg/kg. Sử dụng đường trực tràng khi không có IV.",
+      "note": "Gel diastat trực tràng đặc biệt hữu ích cho các cơn động kinh ở trẻ em tại hiện trường."
+    },
+    "obstetric": {
+      "note": "Đi qua nhau thai. Có thể gây hạ huyết áp ở trẻ sơ sinh, suy hô hấp. Chỉ sử dụng cho các cơn động kinh của mẹ không đáp ứng với magie."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

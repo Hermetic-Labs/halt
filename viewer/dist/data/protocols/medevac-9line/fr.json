@@ -1,0 +1,6 @@
+{
+  "id": "medevac-9line",
+  "name": "Demande MEDEVAC 9 lignes",
+  "description": "Format OTAN standardisé pour demander une évacuation médicale. Transmis dans l'ordre, lignes 1 à 9. Lignes 1 à 5 transmises immédiatement (non cryptées autorisées). Les lignes 6 à 9 suivent. Une ligne 9 correcte fait voler l’oiseau dans les airs. Un texte incomplet le retarde.",
+  "source": "FM 3-04.301 / ATP 4-02.2 / NATO STANAG 3204"
+}

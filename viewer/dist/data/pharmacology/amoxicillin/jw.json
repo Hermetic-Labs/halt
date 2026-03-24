@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicillin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "Trimox"
+  ],
+  "description": "Antibiotik aminopenisilin spektrum amba. Antibiotik profilaksis oral kanggo infeksi tatu. Bagéyan saka paket pil tempur TCCC kanggo profilaksis tatu ing ciloko sing ora abot.",
+  "indications": [
+    "Profilaksis infeksi luka (luka ringan-sedang, paket pil oral)",
+    "Infeksi jaringan alus",
+    "Infeksi saluran pernapasan"
+  ],
+  "dose": "500 mg PO saben 8 jam x 7 dina (profilaksis tatu). 875 mg PO saben 12 jam alternatif.",
+  "route": [
+    "PO"
+  ],
+  "window": "Mulai ing 3 jam saka ciloko kanggo profilaksis tatu.",
+  "contraindications": [
+    "Alergi penisilin sing dikenal (gunakake doxycycline tinimbang)",
+    "Mononukleosis (risiko ruam)"
+  ],
+  "warnings": [
+    "Yen alergi penisilin: ganti doxycycline 100mg PO BID.",
+    "Mung rute lisan - nggunakake antibiotik IV (cefazolin / ciprofloxacin) kanggo tatu abot utawa yen lisan ora ditoleransi."
+  ],
+  "regional_names": {
+    "generic": "amoxicillin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg / kg / dina dibagi q8h (maks 500 mg / dosis). Gunakake referensi Broselow adhedhasar bobot.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Aman nalika meteng. Preferred saka doxycycline (kang contraindicated ing meteng)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

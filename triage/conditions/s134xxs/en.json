@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s134xxs",
+    "icd10":  "S134XXS",
+    "name":  "Sprain of ligaments of cervical spine, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Sprain of ligaments of cervical spine, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

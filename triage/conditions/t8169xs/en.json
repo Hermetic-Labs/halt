@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t8169xs",
+    "icd10":  "T8169XS",
+    "name":  "Other acute reaction to foreign substance accidentally left during a procedure, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Other acute reaction to foreign substance accidentally left during a procedure, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

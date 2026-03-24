@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastat"
+  ],
+  "description": "Ibenzodiazepine esebenza ixesha elide. Isetyenziselwa ukulawula ukuhlutha, i-muscle spasm, kunye ne-anxiolysis. Ijeli yeRectal (Diastat) iluncedo kwizicwangciso zentsimi xa i-IV ingafumaneki. Ixesha elide kunelorazepam.",
+  "indications": [
+    "Ulawulo lokuxhuzula (i-rectal/IV)",
+    "Ukuqhawuka kwezihlunu ngenxa yokwenzakala komnqonqo okanye i-tetanus",
+    "Isincedisi se-antidote ye-Nerve (kwiikhithi ze-CHEMPACK)",
+    "Ukurhoxiswa kotywala"
+  ],
+  "dose": "Ukubamba: 5-10 mg IV tyhala kancinci. Phinda u-q10-15 min (ubuninzi be-30 mg). I-Rectal: 0.2-0.5 mg / kg. Ukufunxwa kwe-IM kuyaguquguquka -- yiphephe i-IM ukuba kuyenzeka.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "I-Acute-angle-angle glaucoma",
+    "Isifo esibi kakhulu se-hepatic",
+    "Ukudakumba kokuphefumla"
+  ],
+  "warnings": [
+    "Ukufunxa kwe-IM kuyaguquguquka kwaye kubuhlungu -- khetha i-IV, irectal, okanye usebenzise i-midazolam IM endaweni yoko.",
+    "Ixesha elide le-sedation (24-48h kwiidosi eziphindaphindiweyo).",
+    "Ukwenzakala kwe-Nerve agent: i-diazepam ibandakanyiwe kwiikhithi ze-CHEMPACK zokuxhuzula kwi-cholinergic crisis."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0.1-0.3 mg / kg (max 10 mg). I-Rectal: 0.3-0.5 mg / kg. Sebenzisa indlela yomqolo xa i-IV ingekho.",
+      "note": "Ijeli ye-diastat ye-rectal ibaluleke kakhulu ekubanjweni kwabantwana kwiisethingi zentsimi."
+    },
+    "obstetric": {
+      "note": "Unqumla i-placenta. Inokubangela i-hypotonia yosana, ukudakumba kokuphefumla. Sebenzisa kuphela ukuxhuzula komama ongaphenduliyo kwi-magnesium."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

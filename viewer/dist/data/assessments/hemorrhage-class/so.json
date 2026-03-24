@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Kala-soocidda Dhiig-baxa (Fasalka I-IV)",
+  "category": "circulatory",
+  "description": "Kala soocida dhiigbaxa ATLS iyadoo lagu qiyaasay luminta dhiiga iyo jawaabta jireed.",
+  "instructions": "Qiyaas dhiiga lumaya oo ku dhig calaamadaha jireed fasalka. Degdega daawaynta ayaa ku sii kordheysa fasalka.",
+  "scoring": [
+    {
+      "class": "I",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Caadi ah",
+      "rr": "14-20",
+      "mental_status": "Caadi ah",
+      "treatment": "U fiirso, dareerayaasha PO haddii ay awoodaan"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Caadi ah",
+      "rr": "20-30",
+      "mental_status": "Walaac",
+      "treatment": "Helitaanka IV, crystalloid isotonic"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Hoos u dhacay",
+      "rr": "30-40",
+      "mental_status": "Jahawareer",
+      "treatment": "Dheecaannada IV + alaabada dhiigga, xakamaynta dhiigbaxa degdega ah"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Aad u hooseeya",
+      "rr": ">40",
+      "mental_status": "caajisnimo/ miyir la'aan",
+      "treatment": "Xakamaynta dhiigbaxa qaliinka ee degdega ah -- nafta halis gelisa"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Carruurtu waxay magdhow bixiyaan waqti dheer ka hor inta aan la dhimin. Fasalka III/IV waxaa laga yaabaa inuu la yimaado BP caadi ah oo u dhow ilaa burbur lama filaan ah. Ku kalsoonow tachycardia iyo heerka maskaxda ee BP."
+    },
+    "obstetric": {
+      "note": "Bukaannada uurka leh waxay leeyihiin 40-50% korodhka mugga dhiigga. Waxay u dulqaadan kartaa khasaare weyn ka hor inta aan la muujin calaamadaha. Dhibaatada uurjiifka ayaa laga yaabaa inay ka horreyso calaamadaha hooyada."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Dexamethasone",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Decadron",
+    "DexPak"
+  ],
+  "description": "Kortîkosteroîdên sentetîk ên demdirêj. Ji bo edema mêjî (edema mêjî ya bilind - HACE, TBI), reaksiyonên alerjîk ên giran, edema rêyên hewayê, û krîza adrenal tê bikar anîn. Dij-înflamatuar, ne anabolic.",
+  "indications": [
+    "Edema mêjî ya bilind (HACE)",
+    "edema rêyên hewayê (strîdora piştî extubation, croup)",
+    "Edema mêjî ya ji tîmor an jî abscess",
+    "Reaksiyonên alerjîk ên giran (girêdayî epinephrine)",
+    "Krîza adrenal",
+    "Alîkariya dijî-emetîk (perioperative)"
+  ],
+  "dose": "Edema mêjî / HACE: 8-10 mg IV/IM destpêkê, paşê 4 mg q6h. Edema rêyên hewayê: 10 mg IV carekê. Croup: 0.6 mg/kg IM/PO (max 16mg). Krîza adrenal: 4 mg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO"
+  ],
+  "window": "HACE: Bi daketina tavilê re bi zûtirîn dem bidin.",
+  "contraindications": [
+    "Enfeksiyonên fungal ên pergalî (bêyî vegirtina antifungal)",
+    "Di nav 30 rojan de derziyên vîrusê yên zindî (xizm)"
+  ],
+  "warnings": [
+    "Ji bo HACE daketin û oksîjenê nagire - tenê wekî pêvek bikar tîne.",
+    "Hîperglycemia - di diyabetîkan de asta glukozê ya xwînê bişopîne.",
+    "Immunosuppression bi karanîna dirêj ve.",
+    "Dozên yekane ji bo rewşên awarte bi gelemperî pir ewledar in."
+  ],
+  "regional_names": {
+    "generic": "dexamethasone"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Croup: 0.6 mg/kg PO/IM (max 16 mg). Edema mêjî: 0,5-1 mg/kg IV (max 10 mg). Edema rêyên hewayê: 0,5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM q24h x 2 doz ji bo lezkirina mezinbûna pişika fetusê di hefteyên 24-34-ê ducaniyê de di dema zayîna pêşwext de tê bikar anîn. Bi pêşkêşkarê herî berdest re gotûbêj bikin."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

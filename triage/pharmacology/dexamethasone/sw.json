@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Deksamethasoni",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Dekadroni",
+    "DexPak"
+  ],
+  "description": "Corticosteroid ya synthetic ya muda mrefu. Inatumika kwa uvimbe wa ubongo (uvimbe wa juu wa ubongo -- HACE, TBI), athari kali ya mzio, uvimbe wa njia ya hewa, na shida ya adrenal. Kupambana na uchochezi, sio anabolic.",
+  "indications": [
+    "Uvimbe wa juu wa ubongo (HACE)",
+    "Edema ya njia ya hewa (stridor baada ya extubation, croup)",
+    "Edema ya ubongo kutoka kwa tumor au jipu",
+    "Athari kali za mzio (kiambatanisho na epinephrine)",
+    "Mgogoro wa adrenal",
+    "Kiambatanisho cha kupambana na kutapika (perioperative)"
+  ],
+  "dose": "Edema ya ubongo/HACE: 8-10 mg IV/IM mwanzo, kisha 4 mg q6h. Edema ya njia ya hewa: 10 mg IV mara moja. Croup: 0.6 mg/kg IM/PO (kiwango cha juu cha 16mg). Mgogoro wa adrenal: 4 mg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO"
+  ],
+  "window": "HACE: Toa mapema iwezekanavyo pamoja na kushuka mara moja.",
+  "contraindications": [
+    "Maambukizi ya kimfumo ya kuvu (bila chanjo ya antifungal)",
+    "Chanjo za virusi hai ndani ya siku 30 (jamaa)"
+  ],
+  "warnings": [
+    "Haichukui nafasi ya kushuka na oksijeni kwa HACE -- tumia kama kiambatanisho pekee.",
+    "Hyperglycemia - kufuatilia sukari ya damu kwa wagonjwa wa kisukari.",
+    "Immunosuppression na matumizi ya muda mrefu.",
+    "Dozi moja ya dharura kwa ujumla ni salama sana."
+  ],
+  "regional_names": {
+    "generic": "deksamethasoni"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Croup: 0.6 mg/kg PO/IM (kiwango cha juu cha 16 mg). Edema ya ubongo: 0.5-1 mg/kg IV (max 10 mg). Edema ya njia ya hewa: 0.5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM q24h x 2 dozi zinazotumika kuharakisha ukomavu wa mapafu ya fetasi katika wiki 24-34 za ujauzito katika leba kabla ya wakati. Jadili na mtoaji anayepatikana zaidi."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

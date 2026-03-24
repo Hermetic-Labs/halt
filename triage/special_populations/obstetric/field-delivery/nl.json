@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Noodlevering ter plaatse",
+  "category": "obstetric",
+  "skill_level": "gevechtsmedicijn",
+  "time_estimate": "Varieert -- 20+ min",
+  "description": "Beheer van overhaaste of ongeplande leveringen in een sobere omgeving.",
+  "equipment": [
+    "handschoenen",
+    "schone stoffen dekens",
+    "koordklemmen of -banden",
+    "schaar",
+    "bol-spuit"
+  ],
+  "steps": [
+    "Plaats de moeder in rugligging of half achterover. Bij bewusteloosheid wordt de voorkeur gegeven aan laterale kanteling naar links (voorkomt aortocavale compressie).",
+    "Controleer de plaatsing van het hoofd - ondersteun met de handpalm. NIET trekken.",
+    "Zodra het hoofd is afgeleverd, controleert u op nekkoord (rond de nek). Indien aanwezig, over het hoofd glijden. Indien strak, vastklemmen en afsnijden.",
+    "Zuig de mond en vervolgens de neus af met een bolspuit, indien beschikbaar.",
+    "Begeleid de bevalling van de voorste schouder door zachte neerwaartse tractie op het hoofd en vervolgens naar boven voor de achterste schouder.",
+    "Lever het lichaam af - noteer het tijdstip van bezorging.",
+    "Droog en verwarm het kind onmiddellijk. Stimuleer door over de rug te wrijven.",
+    "Klem het snoer vast en knip het door (wacht 1-2 minuten als de baby stabiel is).",
+    "Breng de placenta met zachte, gecontroleerde tractie naar buiten - forceer NIET.",
+    "Dien oxytocine toe (indien beschikbaar) om postpartumbloeding na de bevalling van de placenta te voorkomen.",
+    "Beoordeel op postpartumbloeding - fundusmassage, bimanuele compressie indien nodig.",
+    "Beoordeel de Apgar-score na 1 en 5 minuten."
+  ],
+  "warnings": [
+    "Als de levering niet op handen is, probeer het dan NIET. Snelle MEDEVAC heeft de voorkeur.",
+    "Schouderdystocie: als de schouders vastzitten, pas dan de McRoberts-manoeuvre toe (hyperflex heupen) en suprapubische druk.",
+    "Postpartumbloedingen zijn de belangrijkste oorzaak van vermijdbare moedersterfte; zorg ervoor dat u oxytocine bij de hand heeft."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

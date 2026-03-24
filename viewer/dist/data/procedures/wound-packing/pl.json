@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Opatrywanie ran hemostatycznych",
+  "category": "hemorrhage-control",
+  "skill_level": "ratownik bojowy",
+  "time_estimate": "3-5 minut",
+  "description": "Opatrunek nieściśliwej lub łączącej rany gazą hemostatyczną w celu zatamowania krwotoku tam, gdzie nie można zastosować opaski uciskowej.",
+  "equipment": [
+    "gaza hemostatyczna",
+    "rękawiczki nitrylowe",
+    "nożyce urazowe",
+    "bandaż uciskowy"
+  ],
+  "steps": [
+    "Załóż rękawiczki. Całkowicie odsłonij ranę za pomocą nożyc urazowych.",
+    "Zidentyfikować aktywne źródło krwawienia w jamie rany.",
+    "Otworzyć gazę hemostatyczną i mocno wcisnąć ją palcem w ranę, dociskając ją bezpośrednio do źródła krwawienia.",
+    "Kontynuuj pakowanie, aż jama rany zostanie całkowicie wypełniona.",
+    "Zastosuj mocny, ciągły, bezpośredni ucisk nasadą dłoni przez co najmniej 3 minuty.",
+    "NIE usuwaj żadnego materiału opakowaniowego po nałożeniu.",
+    "Załóż bandaż uciskowy na opakowaną ranę.",
+    "Zaznacz godzinę na karcie TCCC lub na czole pacjenta (np. „PKD 0145”)."
+  ],
+  "warnings": [
+    "NIE opakowywać ran penetrujących klatkę piersiową – zamiast tego użyj uszczelki klatki piersiowej.",
+    "W przypadku opatrywania rany szyi należy zastosować ucisk, nie ściskając jednocześnie obu tętnic szyjnych.",
+    "Jeśli podejrzewasz źródło tętnicze, dokonaj ponownej oceny w ciągu 5 minut."
+  ],
+  "follows": [
+    "nacisk bezpośredni"
+  ],
+  "precedes": [
+    "aplikacja opaski uciskowej"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Użyj proporcjonalnie mniej gazy. Zastosuj mniejszy ucisk, aby uniknąć ucisku klatki piersiowej u niemowląt."
+    },
+    "obstetric": {
+      "note": "Unikaj głębokiego lub agresywnego ucisku w pobliżu ciężarnego brzucha. Preferowana jest szybka eskalacja."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

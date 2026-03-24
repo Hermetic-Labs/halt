@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Beheer van hitteschade",
+  "category": "environmental",
+  "skill_level": "Basis",
+  "time_estimate": "Lopend tot MEDEVAC of patiënt stabiel",
+  "description": "Beheer van hittekrampen, hitte-uitputting en hitteberoerte. Een hitteberoerte is een levensbedreigende noodsituatie; snelle afkoeling is de behandeling. Maak onmiddellijk onderscheid tussen hitte-uitputting (normale vermelding) en hitteberoerte (gewijzigde LOC).",
+  "equipment": [
+    "Water (oraal + koeling)",
+    "IJspakketten of koude, natte doeken",
+    "IV-voorzieningen (LR of NS)",
+    "Waaier of schaduw",
+    "Rectale thermometer (definitieve kerntemperatuur)"
+  ],
+  "steps": [
+    "BEOORDEEL: Is het slachtoffer alert en georiënteerd? Hete, droge huid versus hete, zweterige huid? Kerntemperatuur indien thermometer beschikbaar.",
+    "HITTEKRAMPS: Spierspasmen, normale mentale toestand. Rust in de schaduw, orale rehydratatie met elektrolyten, voorzichtig strekken. Niet levensbedreigend.",
+    "HITTE-UITLAAT: Zwaar zweten, zwakte, duizeligheid, normale of bijna normale stemming. Verplaats naar een schaduw/koele plek. Verwijder overtollige kleding. Orale vloeistoffen (indien bij bewustzijn) of IV LR 1L gedurende 30-60 minuten. Monitor de progressie naar een hitteberoerte.",
+    "Hitteberoerte (noodsituatie): Veranderde LOC, verwarring, strijdlust of bewusteloosheid. Kerntemperatuur > 40C (104F). Hete huid (kan nat of droog zijn). BEGIN: Haal onmiddellijk van het vuur, verwijder alle kleding, maak de huid nat en ventilator agressief. Breng ijspakken aan op de nek, oksel en liezen (hoge vasculaire gebieden). IVLR 1-2L. Bescherm de luchtwegen bij bewusteloosheid. MEDEVAC onmiddellijk.",
+    "Geef GEEN aspirine of paracetamol bij een hitteberoerte - helpt niet, kan schadelijk zijn.",
+    "Monitor: vitale functies q15 min, luchtwegen, mentale status. Trend documenttemperatuur.",
+    "Ga door met afkoelen tijdens MEDEVAC – stop niet voor transport."
+  ],
+  "warnings": [
+    "Een hitteberoerte is een levensbedreigende noodsituatie; verwar het niet met hitte-uitputting. Controleer de mentale status.",
+    "Koelen is de definitieve behandeling. Stel het afkoelen niet uit om IV-toegang tot stand te brengen.",
+    "Bij fitte personen kan een hitteberoerte bij inspanning optreden; fysieke fitheid biedt geen bescherming.",
+    "Hyponatriëmie (laag natriumgehalte) door overhydratatie met gewoon water kan een zonnesteek nabootsen - geef een elektrolytoplossing en niet alleen water."
+  ],
+  "follows": [
+    "uitdrogingsbeoordeling"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Kinderen thermoreguleren minder efficiënt. Een hitteberoerte kan sneller verlopen. Vloeistof op gewichtsbasis: 20 ml/kg LR IV-bolus. Kerntemperatuur via rectale thermometer meest nauwkeurig."
+    },
+    "obstetric": {
+      "note": "Maternale hyperthermie (>39C) kan foetale neurale buisdefecten (vroeg) en foetale nood (laat) veroorzaken. Agressieve koeling. Foetale hartslagmonitoring, indien beschikbaar."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

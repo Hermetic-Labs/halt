@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Dung dịch Lactate Ringer (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Giải pháp của Hartmann",
+    "Thuốc tiêm Lactate Ringer"
+  ],
+  "description": "Chất lỏng tinh thể đẳng trương cân bằng. Được ưa chuộng hơn nước muối thông thường để hồi sức chấn thương với khối lượng lớn - cân bằng sinh lý hơn, ít nguy cơ nhiễm toan tăng clo máu. Chứa natri, kali, canxi, lactate.",
+  "indications": [
+    "Hồi sức chấn thương (hỗ trợ dịch tinh thể trong sốc mất máu)",
+    "Truyền dịch hồi sức bỏng (công thức Parkland)",
+    "Giảm thể tích máu",
+    "Bảo trì chất lỏng"
+  ],
+  "dose": "Sốc xuất huyết: Giới hạn tối đa 1L trước khi chuyển sang chế phẩm máu. Mục tiêu chấn thương xuyên thấu SBP 80-90 mmHg, TBI 90 mmHg. Vết bỏng (Parkland): 4 mL x kg x %TBSA bị cháy trong 24 giờ (một nửa trong 8 giờ đầu).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Tăng kali máu (chứa kali)",
+    "Suy gan nặng (suy giảm chuyển hóa lactate -- tương đối)"
+  ],
+  "warnings": [
+    "Vẫn là chất tinh thể - không thể mang oxy. Các sản phẩm máu có tác dụng tốt hơn đối với sốc mất máu. LR chỉ là một cây cầu.",
+    "Không trộn chung với các sản phẩm máu cùng dòng (canxi gây đông máu).",
+    "KHÔNG hồi sức quá mức trong chấn thương xuyên thấu trước khi kiểm soát xuất huyết."
+  ],
+  "regional_names": {
+    "generic": "dung dịch Ringer lactate",
+    "UK": "Lời giải của Hartmann"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Tiêm nhanh 20 mL/kg, đánh giá lại. Được ưu tiên hơn NS đối với chấn thương ở trẻ em.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Chất lỏng IV được ưu tiên khi chuyển dạ và sinh nở. Thích hợp cho hồi sức xuất huyết sản khoa."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

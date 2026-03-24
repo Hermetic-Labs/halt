@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t84011s",
+    "icd10":  "T84011S",
+    "name":  "Broken internal left hip prosthesis, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Broken internal left hip prosthesis, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

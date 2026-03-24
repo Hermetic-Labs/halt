@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s12290a",
+    "icd10":  "S12290A",
+    "name":  "Other displaced fracture of third cervical vertebra, initial encounter for closed fracture",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Other displaced fracture of third cervical vertebra, initial encounter for closed fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

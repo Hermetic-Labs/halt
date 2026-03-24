@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t79a0xa",
+    "icd10":  "T79A0XA",
+    "name":  "Compartment syndrome, unspecified, initial encounter",
+    "category":  "adverse-effects",
+    "triage_priority":  "",
+    "description":  "Compartment syndrome, unspecified, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Pangiriman Lapangan Darurat",
+  "category": "obstetric",
+  "skill_level": "tempur-medic",
+  "time_estimate": "Beda-beda -- 20+ min",
+  "description": "Manajemen pangiriman precipious utawa unplanned ing lingkungan austere.",
+  "equipment": [
+    "sarung tangan",
+    "resik-kain-selimut",
+    "tali-clamps-utawa-tali",
+    "gunting",
+    "bolam-syringe"
+  ],
+  "steps": [
+    "Posisi ibu supine utawa semi-reclined. Ngiringake sisih kiwa luwih disenengi yen ora sadar (nyegah kompresi aortocaval).",
+    "Ngontrol pangiriman sirah - dhukungan nganggo sawit. Aja narik.",
+    "Sawise sirah dikirim, priksa tali nuchal (ing gulu). Yen ana, nyelehake ing sirah. Yen nyenyet, clamp lan Cut.",
+    "Nyedhot tutuk banjur irung nganggo jarum suntik bohlam yen kasedhiya.",
+    "Pandhuan pangiriman pundhak anterior kanthi traksi mudhun sing lembut ing sirah, banjur munggah kanggo pundhak posterior.",
+    "Ngirim awak - cathetan wektu pangiriman.",
+    "Garing lan anget bayi langsung. Ngrangsang kanthi ngusap punggung.",
+    "Jepit lan potong kabel (ngenteni 1-2 menit yen bayi stabil).",
+    "Kirimake plasenta kanthi traksi sing dikontrol alus -- aja dipeksa.",
+    "Nyedhiyakake oxytocin (yen kasedhiya) kanggo nyegah pendarahan postpartum sawise plasenta.",
+    "Kaji perdarahan postpartum - pijet fundus, kompresi bimanual yen perlu.",
+    "Evaluasi skor Apgar ing menit 1 lan 5."
+  ],
+  "warnings": [
+    "Yen pangiriman ora cedhak -- aja nyoba. Rapid MEDEVAC luwih disenengi.",
+    "Distosia bahu: yen pundhak macet, gunakake maneuver McRoberts (hips hiperflex) lan tekanan suprapubik.",
+    "Pendarahan postpartum minangka panyebab utama kematian ibu sing bisa dicegah - duwe oksitosin siap."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

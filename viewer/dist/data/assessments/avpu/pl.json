@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "Skala AVPU",
+  "category": "neurological",
+  "description": "Szybka 4-stopniowa ocena świadomości. Szybciej niż GCS w przypadku wstępnej selekcji.",
+  "instructions": "Oceń najwyższy poziom reakcji, jaki wykazuje pacjent.",
+  "scoring": [
+    {
+      "code": "",
+      "label": "Alarm",
+      "description": "Pacjent nie śpi, jest świadomy i reaguje normalnie"
+    },
+    {
+      "code": "V",
+      "label": "Głos",
+      "description": "Pacjent reaguje jedynie na stymulację werbalną"
+    },
+    {
+      "code": "P",
+      "label": "Ból",
+      "description": "Pacjentka reaguje jedynie na bodźce bólowe (pocieranie mostka, nacisk łożyska paznokcia)"
+    },
+    {
+      "code": "Ty",
+      "label": "Nie odpowiada",
+      "description": "Brak reakcji na bodźce – wymagana natychmiastowa interwencja w drogi oddechowe"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "",
+      "triage": "Stabilny — kontynuuj ocenę"
+    },
+    {
+      "code": "V",
+      "triage": "Dotyczy -- monitoruj drogi oddechowe"
+    },
+    {
+      "code": "P",
+      "triage": "Krytyczny — zagrożone drogi oddechowe, GCS typowo <= 8"
+    },
+    {
+      "code": "Ty",
+      "triage": "Natychmiast — natychmiast udrożnij drogi oddechowe"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s82862h",
+    "icd10":  "S82862H",
+    "name":  "Displaced Maisonneuve\u0027s fracture of left leg, subsequent encounter for open fracture type I or II with delayed healing",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Displaced Maisonneuve\u0027s fracture of left leg, subsequent encounter for open fracture type I or II with delayed healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

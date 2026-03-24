@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Tranexamic asidra (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Cyklokapron",
+    "Lysteda"
+  ],
+  "description": "Antifibrinolytic agent izay manakana ny firodanan'ny ra clots. Mampihena be ny fahafatesana vokatry ny fahatafintohinana hemorrhagic rehefa omena aloha. Natolotry ny CoTCCC ho an'ireo tra-boina rehetra voan'ny rà mandriaka na atahorana ho voan'ny hemorrhage lehibe.",
+  "indications": [
+    "Fidiran'ny rà ivelany na ahiahiana lehibe",
+    "fahatafintohinana hemorrhagic",
+    "Atahorana ho voan'ny hemorrhage (mekanisma ratra)"
+  ],
+  "dose": "1g IV/IO mandritra ny 10 minitra, arahin’ny 1g IV/IO mandritra ny 8 ora. Raha tsy misy IV/IO: 650mg PO x2 (total 1.3g) -- TCCC PO safidy.",
+  "route": [
+    "IV",
+    "IO",
+    "PO"
+  ],
+  "window": "TSY MAINTSY omena ao anatin'ny 3 ora aorian'ny ratra. Mihoatra ny 3 ora, TXA dia mety hampitombo ny fahafatesana -- aza manome.",
+  "contraindications": [
+    "Tantaran'ny aretina thromboembolic (DVT, PE, tapaka lalan-dra)",
+    "Disseminated Intravascular Coagulation (DIC)",
+    "> 3 ora aorian'ny ratra"
+  ],
+  "warnings": [
+    "Fotoana fitantanana avy hatrany - ny varavarankely dia 3 ora manomboka amin'ny fotoana ratra, fa tsy amin'ny fotoana hahatongavana.",
+    "Aza afangaro ny fatra IV (1g) amin'ny fatra am-bava."
+  ],
+  "regional_names": {
+    "generic": "tranexamic acid",
+    "US": "Cyklokapron",
+    "UK": "Cyklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg IV (max 1g). Ny porofo mipoitra - mampiasa fitsarana klinika.",
+      "note": "Ny varavarankely 3 ora mitovy ihany no mihatra."
+    },
+    "obstetric": {
+      "note": "Aseho ho an'ny hemorrhage postpartum. Safe amin'ny fitondrana vohoka. Mitovy amin'ny fatran'ny olon-dehibe ihany koa."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

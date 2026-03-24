@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t85612a",
+    "icd10":  "T85612A",
+    "name":  "Breakdown (mechanical) of permanent sutures, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Breakdown (mechanical) of permanent sutures, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Nalokson",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narkan",
+    "Kloxxado"
+  ],
+  "description": "Konkurencyjny antagonista receptora opioidowego. Szybko odwraca depresję oddechową, sedację i działanie przeciwbólowe wywołane opioidami. Początek IV: 2 min, IM: 5 min, IN: 8-13 min. Czas trwania krótszy niż w przypadku większości opioidów – może być konieczne powtórzenie dawki.",
+  "indications": [
+    "Przedawkowanie opioidów lub depresja oddechowa",
+    "Odwrócenie sedacji opioidowej",
+    "Podejrzewany wypadek po opioidach"
+  ],
+  "dose": "0,4-2 mg IV/IO/IM/IN. W razie potrzeby powtarzaj co 2–3 minuty. Maks. 10 mg. Donosowo (IN): 2 mg na nozdrze.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "W",
+    "KW"
+  ],
+  "window": "",
+  "contraindications": [
+    "Brak bezwzględnych przeciwwskazań w przypadku przedawkowania"
+  ],
+  "warnings": [
+    "Czas działania (30-90 min) jest krótszy niż w przypadku większości opioidów – pacjent może ponownie się narkotyzować. Monitorować przez co najmniej 1 godzinę po ostatniej dawce.",
+    "Wywołuje ostre odstawienie opioidów – może powodować pobudzenie, tachykardię i obrzęk płuc u pacjentów uzależnionych od opioidów.",
+    "Odwróci działanie przeciwbólowe – pacjent może zacząć gwałtownie walczyć z bólem."
+  ],
+  "regional_names": {
+    "generic": "nalokson",
+    "US": "Narkan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,01 mg/kg IV/IM/IN (maks. 0,4 mg). Powtórz q2-3 min PRN.",
+      "note": "Noworodki: 0,01 mg/kg w celu odwrócenia działania opioidów matki."
+    },
+    "obstetric": {
+      "note": "Bezpieczny w ciąży. W przypadku podania matce w pobliżu porodu należy monitorować noworodka pod kątem odstawienia."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

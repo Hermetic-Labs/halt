@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Saline nkịtị (0.9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "0.9% sodium chloride injection"
+  ],
+  "description": "Isotonic crystalloid mmiri mmiri. A na-eji maka mmụghachi mmiri mmiri IV. Na ujo hemorrhagic, jiri nlezianya mee ihe - nnukwu mpịakọta na-akawanye njọ coagulopathy (hyperchloremic acidosis, dilutional coagulopathy). A na-ahọrọ hypotension na-ekwe ka ọ banye n'ime trauma na-echere njikwa ọbara ọgbụgba.",
+  "indications": [
+    "Mweghachi mmiri mmiri (na ịkpachara anya na ujo hemorrhagic)",
+    "Ngwọta ọgwụ na-agbaze/nwụpụ",
+    "Hypovolemia sitere na ihe ndị na-abụghị hemorrhagic"
+  ],
+  "dose": "Ujo hemorrhagic: Oke na 1L max na-echere njikwa ọbara ọgbụgba (hypotension na-enye ohere). Ebumnuche SBP 80-90 mmHg n'ime trauma, 90 mmHg na TBI. Hypovolemia na-abụghị hemorrhagic: 500 ml boluses, nyochaghachi.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hypernatremia",
+    "Ibu oke mmiri / pulmonary edema (ihe metụtara)"
+  ],
+  "warnings": [
+    "Nnukwu mpịakọta na-akpata hyperchloremic metabolic acidosis na dilutional coagulopathy -- na-akawanye njọ triad na-egbu egbu na trauma.",
+    "A na-ahọrọ Lactated Ringer's (LR) maka iweghachite trauma buru ibu.",
+    "Akwụghachila iweghachite n'ime oke trauma tupu ịwa ahụ (hypotension na-enye ohere)."
+  ],
+  "regional_names": {
+    "generic": "sodium chloride 0.9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 ml/kg IV bolus, nyochaghachi. Tinyegharịa max x3 (60 ml/kg mkpokọta) tupu ịtụle ngwaahịa ọbara.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Ntugharị ọkọlọtọ na ọbara ọgbụgba nwa. Mweghachi nke mmiri na-eme ihe ike kwesịrị ekwesị maka ọbara ọgbụgba mgbe amuchara nwa tupu ngwaahịa ọbara dị."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

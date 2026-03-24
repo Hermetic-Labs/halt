@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Pemasangan Saluran Nafas Nasofaring (NPA)",
+  "category": "airway",
+  "skill_level": "penyelamat tempur",
+  "time_estimate": "1 menit",
+  "description": "Pemasangan saluran napas hidung yang fleksibel untuk menjaga patensi jalan napas pada pasien tidak sadar atau setengah sadar.",
+  "equipment": [
+    "npa-dengan-peniti",
+    "pelumas"
+  ],
+  "steps": [
+    "Pilih ukuran NPA yang sesuai (diukur dari lubang hidung hingga daun telinga).",
+    "Lumasi NPA secukupnya dengan pelumas atau garam yang larut dalam air.",
+    "Masukkan peniti melalui flensa jika belum ada (mencegah aspirasi).",
+    "Masukkan perlahan ke dalam lubang hidung kanan (miring ke arah septum), maju sejajar dengan langit-langit mulut.",
+    "Maju hingga flensa menempel pada lubang hidung.",
+    "Ubah posisi pasien (posisi pemulihan jika tidak ada masalah tulang belakang) dan nilai kembali jalan napas.",
+    "Jika resistensi ditemui, coba lubang hidung kiri."
+  ],
+  "warnings": [
+    "Kontraindikasi pada dugaan fraktur tengkorak basilar (mata rakun, tanda Battle, rinore CSF).",
+    "NPA adalah bantuan jalan napas awal yang terbaik bagi pasien yang tidak sadarkan diri -- OPA dapat memicu muntah pada pasien yang setengah sadar."
+  ],
+  "source": "TCCC / JTS CPG"
+}

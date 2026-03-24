@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Aplikasi Tourniquet (Combat Application Tourniquet -- CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "sembarang-responder",
+  "time_estimate": "30-60 detik",
+  "description": "Kontrol pendarahan definitif kanggo pendarahan ekstrem sing ngancam nyawa. Aplikasi luwih awal - aja tundha.",
+  "equipment": [
+    "kucing-tourniquet",
+    "tandha permanen"
+  ],
+  "steps": [
+    "Aplikasi tourniquet 2-3 inci (5-7 cm) proksimal (ing ndhuwur) tatu - liwat sandhangan ditrima.",
+    "Rute pita adhering dhewe ing sakubenge awak lan benang liwat gesper adaptor gesekan.",
+    "Tarik band sing nyenyet lan ngamanake maneh.",
+    "Puterake rod windlass nganti getihen mandheg utawa pulsa distal ora ana.",
+    "Kunci windlass ing klip windlass.",
+    "Pasang tali windlass ing rod windlass kanggo ngamanake.",
+    "Tulis wektu aplikasi langsung ing tourniquet (nggunakake panandha) LAN ing kertu TCCC.",
+    "Mbukak lan evaluasi maneh tatu kasebut. Reassess sawise 5 menit."
+  ],
+  "warnings": [
+    "Aja mbusak tourniquet sawise ditrapake ing lapangan - mung personel medis sing dilatih ing setelan sing dikontrol.",
+    "Wektu kritis: tourniquet> 2 jam kanthi signifikan nambah risiko mundhut anggota awak. Log wektu langsung.",
+    "Aja aplikasi liwat joints. Yen awak duwe tatu ing pirang-pirang tingkat, aplikasi proksimal kanggo kabeh tatu.",
+    "Tourniquets improvisasi (sabuk, tali) kurang efektif."
+  ],
+  "follows": [
+    "tekanan langsung",
+    "pambungkus tatu"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Gunakake tourniquet pediatrik sing sempit yen kasedhiya. CAT standar bisa digunakake nanging kenceng kanthi ati-ati. Anggota awak luwih cilik - priksa denyut nadi distal kanthi ati-ati."
+    },
+    "obstetric": {
+      "note": "Aplikasi standar kanggo tatu ekstremitas. Aja ditrapake ing weteng utawa pelvis."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

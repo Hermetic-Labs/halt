@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s069x9s",
+    "icd10":  "S069X9S",
+    "name":  "Unspecified intracranial injury with loss of consciousness of unspecified duration, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified intracranial injury with loss of consciousness of unspecified duration, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

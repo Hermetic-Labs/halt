@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "Glasgow Coma Scale (GCS)",
+  "category": "neurological",
+  "description": "Standardisierte neurologische Bewertung des Bewusstseins anhand von Augen-, verbalen und motorischen Reaktionen. Punktebereich 3–15.",
+  "instructions": "Bewerten Sie jede der drei Domänen unabhängig. Summieren Sie alle drei Ergebnisse für den gesamten GCS.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Spontan"
+        },
+        {
+          "score": 3,
+          "label": ""
+        },
+        {
+          "score": 2,
+          "label": "aussprechen Schmerzen"
+        },
+        {
+          "score": 1,
+          "label": "Keine"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "Orientiert"
+        },
+        {
+          "score": 4,
+          "label": "Verwirrt"
+        },
+        {
+          "score": 3,
+          "label": "Unangemessene Wörter"
+        },
+        {
+          "score": 2,
+          "label": "Unverständliche Geräusche"
+        },
+        {
+          "score": 1,
+          "label": "Keine"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "Befolgt Befehle"
+        },
+        {
+          "score": 5,
+          "label": "Lokalisiert den Schmerz"
+        },
+        {
+          "score": 4,
+          "label": "Entzieht sich dem Schmerz"
+        },
+        {
+          "score": 3,
+          "label": "Abnormale Beugung (dekortizieren)"
+        },
+        {
+          "score": 2,
+          "label": "Erweiterung (decerebrate)"
+        },
+        {
+          "score": 1,
+          "label": "Keine"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "Leichtes Schädel-Hirn-Trauma – sorgfältig überwachen"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "Mäßiges Schädel-Hirn-Trauma – Atemwege vorbereiten"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "Schwere Schädel-Hirn-Trauma – Atemwege unmittelbar gefährdet, wenn möglich intubieren"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Verwenden Sie pädiatrisches GCS (pGCS) für Kinder unter 2 Jahren. Die verbale Bewertung wurde für präverbale Kinder angepasst."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

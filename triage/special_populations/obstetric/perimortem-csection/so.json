@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Qaybta qalliinka ee xilliga dhalmada (PMCS)",
+  "category": "obstetric",
+  "skill_level": "dhakhtar-qaliin",
+  "time_estimate": "3-5 daqiiqo",
+  "description": "Dhalmada qalliinka degdega ah 4 daqiiqo gudahooda ee xiritaanka wadnaha hooyada si loogu oggolaado CPR waxtar leh iyo badbaadada dhallaanka ee suurtagalka ah. Ilmo galeenka ayaa isku cadaadiya halbowlaha iyo IVC -- dhalmada sidoo kale waxay soo nooleeyaan hooyada.",
+  "equipment": [
+    "maqaarka maqaarka",
+    "galoofyada",
+    "dib u soo celinta",
+    "xadhkaha isku xidha",
+    "Qalabka dib-u-soo-nooleynta- dhallaanka"
+  ],
+  "steps": [
+    "Sii wad CPR iyada oo aan la joojin",
+    "Samee jeexitaan toosan oo dhexda ah min xudunta ilaa pubis iyada oo loo marayo maqaarka iyo faashad.",
+    "Kordhi qaybta ilmo-galeenka hoose si siman.",
+    "Bixi ilmaha -- wakhtiga xusuusinta.",
+    "Xaji oo jar xadhigga.",
+    "U gacan geli bixiye labaad si loo soo nooleeyo dhallaanka cusub.",
+    "Ka saar mandheerta.",
+    "Xidho ilmo-galeenka iyo caloosha haddii xidhitaan dhab ah aysan isla markiiba suurtogal ahayn.",
+    "Sii wad dib u soo kicinta hooyada -- ROSC waxay u badan tahay inay u badan tahay ka-baxa ilmo-galeenka."
+  ],
+  "warnings": [
+    "Wakhtiga go'aanka-gaabinta waa inuu ahaadaa wax kayar 5 daqiiqo natiijada ugu fiican ee hooyada iyo uurjiifka.",
+    "Habkani waa habka ugu dambeeya -- kaliya haddii hooyadu wadnuhu istaago oo ay umusho dhowdahay (> 20 toddobaad oo uur ah).",
+    "Wuxuu u baahan yahay tababar heer-dhakhtar ah. Dhakhaatiirta dagaalku waa inay diyaariyaan goobta iyo taageerada, ee maaha inay si madax-bannaan u qabtaan."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

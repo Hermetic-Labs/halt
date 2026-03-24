@@ -1,0 +1,22 @@
+{
+  "id": "s0007xd",
+  "icd10": "S0007XD",
+  "name": "Miiran Egbò ojola ti scalp, tetele pade",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Miiran Egbò ojola ti scalp, tetele pade",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "s00201s",
+  "icd10": "S00201S",
+  "name": "Dhaawac dusha sare ah oo aan la cayimin ee daboolka isha midig iyo aagga periocular, sequela",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Dhaawac sare oo aan la cayimin ee daboolka isha midig iyo aagga periocular, sequela",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

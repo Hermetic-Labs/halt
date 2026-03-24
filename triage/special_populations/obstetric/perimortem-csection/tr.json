@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Perimortem Sezaryen (PMCS)",
+  "category": "obstetric",
+  "skill_level": "doktor-cerrah",
+  "time_estimate": "3-5 dakika",
+  "description": "Etkili CPR ve potansiyel neonatal sağ kalımı sağlamak için annenin kalp durmasından sonraki 4 dakika içinde acil sezaryen doğum. Rahim aortu ve IVC'yi sıkıştırır; doğum aynı zamanda anne için de canlandırıcıdır.",
+  "equipment": [
+    "neşter",
+    "eldivenler",
+    "retraktörler",
+    "kablo kelepçeleri",
+    "yenidoğan-resüsitasyon-ekipmanları"
+  ],
+  "steps": [
+    "CPR'ye ara vermeden devam edin.",
+    "Deri ve fasya yoluyla göbekten pubise kadar dikey bir orta hat kesisi yapın.",
+    "Alt uterus segmentini yatay olarak kesin.",
+    "Bebeği teslim edin - zamanı not edin.",
+    "Kabloyu kelepçeleyin ve kesin.",
+    "Yenidoğan canlandırma için bebeği ikinci sağlayıcıya verin.",
+    "Plasentayı çıkarın.",
+    "Kesin kapatma hemen mümkün değilse uterusu ve karnı paketleyin.",
+    "Anne resüsitasyonuna devam edin - ROSC, uterus dekompresyonundan sonra daha olasıdır."
+  ],
+  "warnings": [
+    "En iyi anne ve fetus sonuçları için doğuma karar verme süresi 5 dakikanın altında olmalıdır.",
+    "Bu prosedür, yalnızca annenin kalp krizi geçirmesi ve doğumun yakın olması durumunda (>20 hafta gebelik) son çaredir.",
+    "Hekim düzeyinde eğitim gerektirir. Savaş doktorları sahayı hazırlamalı ve bağımsız olarak görev yapmamalı, destek sağlamalıdır."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Nirxandina Dehydration",
+  "category": "circulation",
+  "description": "Nirxandina zeviyê ji bo dehydration û giraniya nexweşiya germê. Rengê mîzê nîşana qada herî pratîkî ye. Rewşa derûnî wekî nîşanek ji bo dehîdrasyona giran a ku berbi germahiyê pêşve diçe binirxînin.",
+  "instructions": "Rengê mîzê, turgora çerm, rewşa derûnî, û nîşanên jiyanî kontrol bikin. Mîza tarî, parzûnên mukozê yên hişk, û takîkardiya dehydration girîng nîşan dide ku hewcedariya rehydration çalak heye.",
+  "categories": [
+    {
+      "color": "zelal-pale",
+      "label": "Baş Hydrated",
+      "description": "Zerê zer ji mîzê zelal. Mudaxele hewce nake."
+    },
+    {
+      "color": "zer",
+      "label": "Dehydration Sivik",
+      "description": "Mîza zer a tarî, tî ye. Rehydration devkî. Di saetekê de 250-500 ml avê teşwîq bikin."
+    },
+    {
+      "color": "qehweyî-qehweyî",
+      "label": "Dehydration Moderate-Gund",
+      "description": "Mîza qehweyî, HR zêde, turgora çerm kêm bû, devê zuwa. IV/IO şikilên ger devkî neyên tolerans kirin. 1-2L LR an NS."
+    },
+    {
+      "color": "sor",
+      "label": "Xetere - Germbûn / Xetere",
+      "description": "Hilberîna mîzê ya hindiktirîn, LOC-ya guheztin, çermê ziwa germ. Rewşa acîl ya bijîjkî - sarbûna bilez + şilavên IV + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Zarok ji mezinan zûtir dehydrate dibin. Fontanelle (pitik), tunebûna hêstiran, û bêhalî nîşanên krîtîk in. IV-based weight: 20 mL/kg LR bolus."
+    },
+    "obstetric": {
+      "note": "Pêdiviya jinên ducanî zêde vexwarina şilavê heye. Dehydration dikare girêbestên pêşdemî çêbike. Pêşî rehydration devkî Aggressive; IV heke devkî tehemûl neke."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

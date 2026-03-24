@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t85738d",
+    "icd10":  "T85738D",
+    "name":  "Infection and inflammatory reaction due to other nervous system device, implant or graft, subsequent encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Infection and inflammatory reaction due to other nervous system device, implant or graft, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

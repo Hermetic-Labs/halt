@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Schockindex",
+  "category": "circulatory",
+  "description": "Schneller Einzelzahlindikator für die hämodynamische Stabilität. Berechnet als HR / SBP. Normal ist 0,5-0,7.",
+  "instructions": "Teilen Sie die Herzfrequenz durch den systolischen Blutdruck. Ein steigender Schockindex deutet auf eine Verschlechterung hin.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Normal – hämodynamisch stabil"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Leichter Schock – genau beobachten"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Mäßiger Schock – Infusionszugang, Flüssigkeiten"
+    },
+    {
+      "range": ">1.4",
+      "label": "Schwerer Schock – sofortige Wiederbelebung, Blutprodukte"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Der Obstetric Shock Index (OSI) verwendet dieselbe Formel. Ein SI > 0,9 bei schwangeren Patientinnen ist signifikant. Die normale Herzfrequenz ist in der Schwangerschaft höher (80–100 Schläge pro Minute)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

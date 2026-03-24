@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Anesteziya veqetandî dema ku refleksên rêyên hewayê û aramiya hemodînamîk diparêze analjezî, sedebûn û amneziyê peyda dike. Di TCCC de analjezika bijarte - berevajî afyonan BP-ê diparêze. Di heman demê de ji bo sedasyona pêvajoyê û RSI jî tê bikar anîn.",
+  "indications": [
+    "Rêvebiriya êşa navîn-bi-giran",
+    "Sedationa prosedural (paqijkirina birînan, kêmkirina şikestin)",
+    "Nûnerê induction ji bo RSI",
+    "Anesthesiya şer"
+  ],
+  "dose": "Analgesia: 0.1-0.3 mg/kg IV/IO (pişka hêdî) | 0,5 mg/kg IM. Bêdengkirina pêvajoyê: 1-2 mg/kg IV | 4-6 mg/kg IM. Induction RSI: 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN"
+  ],
+  "window": "",
+  "contraindications": [
+    "Şîzofreniya naskirî an psîkoza çalak",
+    "ICP bilindkirî bêyî parastina rêyên hewayê (xizm)"
+  ],
+  "warnings": [
+    "Reaksiyonên derketinê (delirîyûm/halûsînasyon) - heke hebe bi midazolam 1-2 mg IV kêm bikin.",
+    "Veşartinê zêde dike - şûştinê amade ye.",
+    "Laryngospasm kêm e lê mimkun e - BVM peyda bikin."
+  ],
+  "regional_names": {
+    "generic": "ketamine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesia: 0.5 mg/kg IV. Bêdengkirina pêvajoyê: 1-2 mg/kg IV | 4-5 mg/kg IM.",
+      "note": "Di pediatrîkê de baş xwendiye. Ji bo pêvajoyên bi êş têne tercîh kirin."
+    },
+    "obstetric": {
+      "note": "Di dozên kêm de ji bo analjeziya dayikê ewle ye. Heke di nêzîkê dema zayînê de were radest kirin, dibe ku bi dozên bilind bibe sedema depresyona nefesê ya neonatal."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

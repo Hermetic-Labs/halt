@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Manajemen ciloko kadhemen",
+  "category": "environmental",
+  "skill_level": "dhasar",
+  "time_estimate": "lumaku",
+  "description": "Manajemen saka frostbite, immersion foot (trench foot), lan hipotermia. Ciloko kadhemen bisa dicegah - ngenali pratandha awal sadurunge karusakan jaringan ora bisa dibalèkaké. Nangani tissue frostbitten banget alon-alon.",
+  "equipment": [
+    "Busana insulasi garing / kantong turu",
+    "Banyu anget (38-42C / 100-108F) kanggo rewarming siram",
+    "Sandhangan steril",
+    "Ibuprofen 400mg PO (yen kasedhiya)",
+    "IV LR (anget yen bisa)"
+  ],
+  "steps": [
+    "HIPOTERMIA KAwitan: Netepake suhu inti kanthi thermometer maca sithik. entheng (32-35C): merinding, bingung. Moderate (28-32C): ora medeni, kebingungan abot. Parah (<28C): semaput, ora ana pulsa sing bisa dideteksi.",
+    "HIPOTERMIA -- Ringan / Sedheng: Copot sandhangan sing teles, insulasi saka lemah, lingkungan sing anget, cairan manis sing anget yen sadar, bungkus panas menyang aksila / pangkal paha (ora langsung ing kulit). Nangani alon-alon - jarring bisa micu VFib.",
+    "HIPOTERMIA -- Parah: Tangani alon-alon. Priksa pulsa 60 detik lengkap sadurunge CPR. Miwiti CPR yen ora ana pulsa. Cairan IV anget yen kasedhiya. Prioritas MEDEVAC -- 'ora mati nganti anget lan mati'.",
+    "FROSTBITE: Superficial (kulit putih/abu-abu, alus ing ngisor) vs jero (atos, rasa kayu, blistering). Aja gosok wilayah kasebut. Aja dipanasake maneh yen ana risiko pembekuan maneh -- pembekuan maneh nyebabake karusakan sing luwih elek tinimbang pemanasan maneh sing ditundha.",
+    "FROSTBITE rewarming: Rendhem ing banyu 38-42C (ora panas) suwene 15-30 menit nganti jaringan alus lan abang/ungu. Nyeri banget - menehi analgesia (ketamin utawa morfin).",
+    "Sawise anget maneh: pad antarane driji sikil / driji nganggo kasa steril. Aja pop blisters. Nglindhungi saka tekanan.",
+    "KAKI IMMERSION (Trench Foot): paparan teles/dingin sing dawa, kulit abang banjur pucet banjur blistered. Kaki garing, anget alon-alon, angkat. Aja nggunakake panas langsung.",
+    "Dokumen wektu ciloko lan wektu rewarming."
+  ],
+  "warnings": [
+    "Aja rewarm frostbite yen ana kemungkinan refreezing - rewarming ora lengkap + refreezing = karusakan jaringan catastrophic.",
+    "Hipotermia abot bisa niru pati. Priksa pulsa kanggo 60 detik. 'Ora mati nganti anget lan mati.'",
+    "Alkohol nambah mundhut panas sanajan ana rasa anget - aja menehi alkohol.",
+    "Risiko VFib dhuwur ing hipotermia moderat-berat - nyilikake manipulasi lan jarring pasien."
+  ],
+  "follows": [
+    "hipotermia-nyegah"
+  ],
+  "precedes": [
+    "baris medevac-9"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Anak-anak luwih cepet kelangan amarga rasio area permukaan lan massa sing luwih dhuwur. Ambang hipotermia padha. Cairan IV panas kritis. Cairan adhedhasar bobot: 20 mL/kg LR anget."
+    },
+    "obstetric": {
+      "note": "Hipotermia ibu nyebabake bradikardia janin lan acidosis. Rewarming ibu sing agresif yaiku perawatan janin. Ngawasi janin yen kasedhiya."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

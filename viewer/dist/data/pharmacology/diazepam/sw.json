@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastat"
+  ],
+  "description": "Benzodiazepine ya muda mrefu. Inatumika kwa udhibiti wa mshtuko, mshtuko wa misuli, na wasiwasi. Geli ya rectal (Diastat) ni muhimu katika mipangilio ya sehemu wakati IV haipatikani. Muda mrefu kuliko lorazepam.",
+  "indications": [
+    "Udhibiti wa mshtuko (rectal/IV)",
+    "Mkazo wa misuli kutokana na kuumia kwa uti wa mgongo au pepopunda",
+    "Kiambatanisho cha dawa ya wakala wa neva (katika vifaa vya CHEMPACK)",
+    "Uondoaji wa pombe"
+  ],
+  "dose": "Mshtuko wa moyo: 5-10 mg IV kusukuma polepole. Rudia q10-15 min (kiwango cha juu 30 mg). Rectal: 0.2-0.5 mg / kg. Unyonyaji wa IM ni wa kusuasua -- epuka IM ikiwezekana.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaucoma ya papo hapo yenye pembe nyembamba",
+    "Ugonjwa mkali wa ini",
+    "Unyogovu wa kupumua"
+  ],
+  "warnings": [
+    "Ufyonzwaji wa IM hauna mpangilio na unaumiza -- pendelea IV, rectal, au tumia midazolam IM badala yake.",
+    "Muda mrefu wa sedation (24-48h kwa dozi zinazorudiwa).",
+    "Majeruhi wa wakala wa neva: diazepam imejumuishwa katika vifaa vya CHEMPACK kwa ajili ya kukamata kutokana na mgogoro wa kipindupindu."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0.1-0.3 mg/kg (kiwango cha juu cha 10 mg). Rectal: 0.3-0.5 mg / kg. Tumia njia ya puru wakati IV haipatikani.",
+      "note": "Geli ya rectal diastat ni muhimu sana kwa mishtuko ya moyo kwa watoto katika mipangilio ya shamba."
+    },
+    "obstetric": {
+      "note": "Inavuka placenta. Inaweza kusababisha hypotonia ya watoto wachanga, unyogovu wa kupumua. Tumia tu kwa mshtuko wa mama bila kujibu magnesiamu."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinefrine (adrenaline)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenaline"
+  ],
+  "description": "Endogeen catecholamine met alfa- en bèta-adrenerge activiteit. Eerstelijnsbehandeling voor anafylaxie en hartstilstand. Bij anafylaxie heeft IM dij de voorkeur boven IV (veiliger, gelijkwaardige werkzaamheid). Stel de IV-toegang bij anafylaxie niet uit.",
+  "indications": [
+    "Anafylaxie (eerstelijns)",
+    "Hartstilstand -- polsloze VF/VT/PEA/asystolie",
+    "Ernstige bronchospasme",
+    "Hypotensie die ongevoelig is voor vloeistoffen"
+  ],
+  "dose": "Anafylaxie: 0,3-0,5 mg IM (antolaterale dij) | Auto-injector 0,3 mg IM. Herhaal q5-15 min PRN. Hartstilstand: 1 mg IV/IO q3-5 min tijdens reanimatie. Ernstige bronchospasme: 0,3 mg IM.",
+  "route": [
+    "IM",
+    "IV",
+    "IO"
+  ],
+  "window": "Bij anafylaxie: geef onmiddellijk IM – wacht niet tot IV-toegang.",
+  "contraindications": [
+    "Geen absolute contra-indicaties bij levensbedreigende noodsituatie"
+  ],
+  "warnings": [
+    "IV-epinefrine voor anafylaxie mag alleen worden gebruikt bij hartstilstand of diepe shock - gevaarlijk als IV-push wordt gegeven aan een patiënt die bij bewustzijn is.",
+    "Extravasatie veroorzaakt weefselnecrose - zorg voor doorgankelijkheid van de IV.",
+    "Verhoogt de zuurstofbehoefte van het myocard - wees voorzichtig bij bekende coronaire aandoeningen buiten arrestatie."
+  ],
+  "regional_names": {
+    "generic": "epinefrine",
+    "UK": "adrenaline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anafylaxie: 0,01 mg/kg IM (max. 0,5 mg). EpiPen Jr (0,15 mg) voor 15-30 kg. Hartstilstand: 0,01 mg/kg IV/IO q3-5 min.",
+      "note": "Gebruik een op gewicht gebaseerde dosering. Broselow-tapereferentie aanbevolen."
+    },
+    "obstetric": {
+      "note": "Gebruik de standaarddosering voor anafylaxie - de overleving van de moeder is van het grootste belang. Epinefrine is veilig tijdens de zwangerschap voor levensbedreigende noodsituaties."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

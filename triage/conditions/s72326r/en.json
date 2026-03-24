@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s72326r",
+    "icd10":  "S72326R",
+    "name":  "Nondisplaced transverse fracture of shaft of unspecified femur, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with malunion",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced transverse fracture of shaft of unspecified femur, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with malunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

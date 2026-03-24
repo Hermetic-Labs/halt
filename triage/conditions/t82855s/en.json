@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t82855s",
+    "icd10":  "T82855S",
+    "name":  "Stenosis of coronary artery stent, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Stenosis of coronary artery stent, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

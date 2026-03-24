@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s73121a",
+    "icd10":  "S73121A",
+    "name":  "Ischiocapsular ligament sprain of right hip, initial encounter",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Ischiocapsular ligament sprain of right hip, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

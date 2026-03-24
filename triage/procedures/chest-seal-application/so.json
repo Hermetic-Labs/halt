@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Codsiga Shaabada laabta Daahsoon",
+  "category": "respiration",
+  "skill_level": "dagaal-naf-badbaadiye",
+  "time_estimate": "1-2 daqiiqo",
+  "description": "Ku xidhida boogta feedhaha ee nuugista ah (pneumothorax furan) oo leh shaabad laabta laga soo saaray si looga hortago in hawada soo gasho iyada oo ogolaanaysa in cadaadiska la sii daayo.",
+  "equipment": [
+    "daboolay-xabad-shaabeedka",
+    "galoofyada",
+    "jug-goyn"
+  ],
+  "steps": [
+    "Soo bandhig nabarka -- jar ama ka saar dharka.",
+    "Masixi maqaarka ku wareegsan nabarka sida engegan ee suurtogalka ah (dhiig, dhididka ayaa ka hortagaya isku dhejinta).",
+    "Fur baakadda daboolka laabta ee hawada laga saaray.",
+    "Shaabadda dul saar nabarka, adigoo dul saaran daloolka. Si adag u cadaadi, adoo hubinaya in dhammaan cidhifyada ay ku dheggan yihiin.",
+    "Hubi jihada valve -- hawadu waa inay u jeeddaa dibadda (ka fog maqaarka) oo ay ahaato mid aan xannibnayn.",
+    "Dib u qiimee dhawaaqa neefta. Haddii xumaantu sii socoto xiritaanka ka dib, tixgeli pneumothorax kacsan - samee NCD.",
+    "Haddii shaabad la sii daayay la waayo, shaabad aan hawada lahayn ayaa la isticmaali karaa laakiin waa in lala socdo horumarka pneumothorax kacsanaanta."
+  ],
+  "warnings": [
+    "Shaabadihii aan hawada lahayni waxay u rogi karaan pneumothorax fudud una beddelaan pneumothorax kacsan -- isticmaal shaabadihii hawada laga saaray oo keliya garoonka dhexdiisa.",
+    "Wax duubista saddex-geesood ah (shaabbad la hagaajiyay) kuma talinayso CoTCCC -- isticmaal shaabadda laabta laga soo daayay ee ganacsiga.",
+    "Had iyo jeer shaabad mari galka iyo ka bixida boogaha."
+  ],
+  "follows": [],
+  "precedes": [
+    "irbad-depression"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

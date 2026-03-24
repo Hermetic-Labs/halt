@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "乳酸林格氏液 (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "哈特曼的解决方案",
+    "乳酸林格注射液"
+  ],
+  "description": "平衡等渗晶体液。与生理盐水相比，更适合用于大容量创伤复苏——生理上更平衡，高氯性酸中毒的风险更低。含有钠、钾、钙、乳酸。",
+  "indications": [
+    "创伤复苏（失血性休克首选晶体）",
+    "烧伤液体复苏（帕克兰公式）",
+    "血容量不足",
+    "流体维护"
+  ],
+  "dose": "失血性休克：在转用血液制品之前，最大限制为 1L。目标 SBP 80-90 mmHg 穿透性创伤，90 mmHg TBI。烧伤（Parkland）：4 mL x kg x %TBSA 燃烧超过 24 小时（前 8 小时减半）。",
+  "route": [
+    "四",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "高钾血症（含有钾）",
+    "严重肝功能衰竭（乳酸代谢受损——相对）"
+  ],
+  "warnings": [
+    "仍然是晶体——不能携带氧气。血液制品对于失血性休克效果更佳。 LR只是一个桥梁。",
+    "请勿与同一管路中的血液制品混合（钙会导致凝血）。",
+    "在出血控制之前，不要对穿透性创伤进行过度复苏。"
+  ],
+  "regional_names": {
+    "generic": "乳酸林格氏溶液",
+    "UK": "哈特曼的解决方案"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 mL/kg 推注，重新评估。对于小儿创伤而言，优于 NS。",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "待产和分娩时首选静脉输液。适用于产科出血复苏。"
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

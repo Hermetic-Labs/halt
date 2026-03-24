@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Nalokson",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "Kloxxado"
+  ],
+  "description": "Rekabetçi opioid reseptör antagonisti. Opioid kaynaklı solunum depresyonunu, sedasyonu ve analjeziyi hızla tersine çevirir. Başlangıç ​​IV: 2 dk, IM: 5 dk, IN: 8-13 dk. Çoğu opioidden daha kısa süre; tekrar dozlama gerekebilir.",
+  "indications": [
+    "Opioid doz aşımı veya solunum depresyonu",
+    "Opioid sedasyonunun tersine çevrilmesi",
+    "Şüpheli opioid kazası"
+  ],
+  "dose": "0,4-2 mg IV/IO/IM/IN. Gerektiği kadar q2-3 dk'yı tekrarlayın. Maksimum 10 mg. İntranazal (IN): Burun deliği başına 2 mg.",
+  "route": [
+    "IV",
+    "Giriş Çıkış",
+    "anlık ileti",
+    "İÇİNDE",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Doz aşımı ayarında mutlak kontrendikasyon yoktur"
+  ],
+  "warnings": [
+    "Etki süresi (30-90 dakika) çoğu opioidden daha kısadır; hasta tekrar narkotize edebilir. Son dozdan sonra en az 1 saat süreyle izleyin.",
+    "Akut opioid yoksunluğunu hızlandırır - opioid bağımlısı hastalarda ajitasyon, taşikardi ve akciğer ödemine neden olabilir.",
+    "Analjeziyi tersine çevirecektir; hasta ağrıdan dolayı şiddetli bir şekilde mücadeleci hale gelebilir."
+  ],
+  "regional_names": {
+    "generic": "nalokson",
+    "US": "Narcan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,01 mg/kg IV/IM/IN (maks. 0,4 mg). q2-3 dk PRN'yi tekrarlayın.",
+      "note": "Yenidoğan: Maternal opioidin tersine çevrilmesi için 0,01 mg/kg."
+    },
+    "obstetric": {
+      "note": "Hamilelikte güvenli. Anneye doğuma yakın verilirse yenidoğanı çekilme açısından izleyin."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Cefazolin",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Ancef",
+    "Kefzol"
+  ],
+  "description": "Cephalosporin thế hệ thứ nhất. Kháng sinh đường tiêm hàng đầu trong điều trị nhiễm trùng vết thương nghiêm trọng và dự phòng phẫu thuật. Bảo hiểm gram dương tốt bao gồm MSSA. Dùng thuốc dự phòng trong vòng 60 phút sau vết mổ.",
+  "indications": [
+    "Dự phòng vết thương phẫu thuật",
+    "Nhiễm trùng mô mềm nghiêm trọng",
+    "Phòng ngừa gãy xương hở",
+    "Nhiễm trùng da và cấu trúc da"
+  ],
+  "dose": "1-2g IV/IM mỗi 8 giờ. Dự phòng phẫu thuật: 2g IV trong vòng 60 phút trước khi rạch da. Lặp lại 2g nếu phẫu thuật > 4 giờ.",
+  "route": [
+    "IV",
+    "TÔI"
+  ],
+  "window": "Đối với dự phòng phẫu thuật: tiêm trong vòng 60 phút sau vết mổ.",
+  "contraindications": [
+    "Đã biết dị ứng cephalosporin",
+    "Dị ứng penicillin nặng (phản ứng chéo 5-10%)"
+  ],
+  "warnings": [
+    "Phản ứng chéo với dị ứng penicillin: sử dụng thận trọng ở bệnh nhân dị ứng penicillin.",
+    "Điều chỉnh liều ở bệnh nhân suy thận."
+  ],
+  "regional_names": {
+    "generic": "cefazolin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM mỗi 8 giờ (tối đa 2g/liều). Dự phòng: 30 mg/kg (tối đa 2g) trước vết mổ.",
+      "note": "An toàn và được nghiên cứu kỹ lưỡng trong nhi khoa."
+    },
+    "obstetric": {
+      "note": "An toàn trong thai kỳ và cho con bú. Kháng sinh tiêm được ưu tiên cho các thủ thuật sản khoa."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

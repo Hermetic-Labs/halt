@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Shigar Nasopharyngeal Airway (NPA)",
+  "category": "airway",
+  "skill_level": "fama-ceton rai",
+  "time_estimate": "1 min",
+  "description": "Shigar da madaidaicin hanyar iska ta hanci mai sassauƙa don kula da patency na iska a cikin mara lafiya marar hankali ko mara hankali.",
+  "equipment": [
+    "npa-with-lafiya-pin",
+    "man shafawa"
+  ],
+  "steps": [
+    "Zaɓi girman NPA mai dacewa (auna daga hanci zuwa kunnuwa).",
+    "Lubricate NPA da karimci da mai mai mai narkewa ko gishiri.",
+    "Saka fil ɗin aminci ta cikin flange idan ba a rigaya ba (yana hana buri).",
+    "Saka a hankali a cikin hancin dama (bevel zuwa septum), yana ci gaba a layi daya zuwa ga baki.",
+    "Ci gaba har sai flange ya tsaya a kan hanci.",
+    "Mayar da majiyyaci (matsayin farfadowa idan babu damuwa na kashin baya) kuma sake tantance hanyar iska.",
+    "Idan juriya ta hadu, gwada hancin hagu."
+  ],
+  "warnings": [
+    "An haramta shi a cikin raunin da ake zargin basilar kwanyar (idanun raccoon, alamar yaƙi, rhinorrhea CSF).",
+    "NPA shine mafi kyawun haɗin hanyar iska na farko na mara lafiya -- OPA na iya haifar da amai a cikin marasa lafiya da basu san komai ba."
+  ],
+  "source": "TCCC / JTS CPG"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t71144d",
+    "icd10":  "T71144D",
+    "name":  "Asphyxiation due to smothering under another person\u0027s body (in bed), undetermined, subsequent encounter",
+    "category":  "environmental-injury",
+    "triage_priority":  "",
+    "description":  "Asphyxiation due to smothering under another person\u0027s body (in bed), undetermined, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

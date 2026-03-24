@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Amasu Okunyakaza Kwesiguli",
+  "category": "casualty-movement",
+  "skill_level": "Okuyisisekelo",
+  "time_estimate": "1-30 min kuye ngebanga nendlela",
+  "description": "Ukuhambisa olimele emlilweni noma endaweni ephephile ukuze alashwe. Indlela incike endaweni, ibanga, inani labatakuli, kanye nokulimala komuntu oshonile. Isivinini uma siqhathaniswa nokuqaphela umgogodla kuyisinqumo esihlakaniphile -- ku-TCCC, ukusongela kubaluleke kakhulu.",
+  "equipment": [
+    "Udoti we-SKED (okhethwayo)",
+    "Udoti we-NATO / uhlaka oluphathwayo",
+    "Udoti othuthukisiwe: izigxobo + amabhantshi/amaponcho",
+    "Hudula izibambo (iyunifomu noma ihhanisi)",
+    "TACEVAC isilingi"
+  ],
+  "steps": [
+    "UKUNAKEKELA NGAPHANSI KOMLILO: Buyisa umlilo kuqala uma uhlomile. Hambisa abalimele usebenzisa indlela yokudonsa eshesha kakhulu -- ungayeki ukwelapha endaweni yokubulala.",
+    "HUDULA NGOKUSHESHA (umhlengi oyedwa): bamba ikhola/hudula isibambo emahlombe, hudula ngemuva. Vikela ikhanda emthelela.",
+    "I-FIREMAN CARRY (umhlengi oyedwa): phakamisa olimele emahlombe amabanga amade -- kudinga ukuthi oshonile aquleke noma abambisane.",
+    "UKUTHWALA ABANTU ABABILI: abatakuli baxhuma izingalo ngaphansi komhlane nasemadolweni womuntu olimele. Ngokushesha kunokuhudula amabanga amafushane.",
+    "UDOTI ONGATHUNYIWE: beka izigxobo ezimbili ngamasentimitha angu-18 ukuhlukana. Weluka amajakhethi ngezigxobo ezinezinkinobho ngaphakathi. Hlola ngaphambi kokulayisha abalimele.",
+    "I-SKED LITTER: qaqa, slayida ngaphansi kokulimala, bopha futhi uvikeleke ngamabhande. Idinga abathwali abangu-2-4.",
+    "Uma ulayisha: phakamisa ukubala kwe-3, gcina ukuqondanisa kwekhanda / umzimba, unciphise ukunyakaza komgogodla uma kungenzeka.",
+    "Uma ukulimala komgogodla kusolwa futhi kungekho usongo: gcina ukuzinza okungaphakathi komugqa phakathi nokunyakaza. Umuntu oyedwa ozinikele ekulawuleni ikhanda.",
+    "Hambisa ikhava, bese uhlola kabusha i-ABC."
+  ],
+  "warnings": [
+    "Okubalulekile kwe-TCCC: impilo > isitho > ukunakekelwa komgogodla. Ungabambezeli ukunyakaza ukusuka endaweni yokubulala ukuze uthole izinyathelo zokuphepha zomgogodla.",
+    "I-Fireman carry ivinjelwa ngokusoleka kokulimala komgogodla, ukuphuka kwe-femur, noma ukuhlukumezeka okungena ngaphakathi kwesisu.",
+    "Ama-litter athuthukisiwe: hlola isisindo ngaphambi kokwethemba umuntu olimele.",
+    "Ukuhambisa umuntu oshonile nge-tourniquet: hlola i-tourniquet ayikakaxegi ngesikhathi sokunyakaza."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Izingane zilula -- umhlengi oyedwa uthwala isikhathi eside. Gcina ikhanda libe likhudlwana ngokulinganayo -- isikhungo esiphezulu samandla adonsela phansi lapho uphethe."
+    },
+    "obstetric": {
+      "note": "Gwema ukuma okuvamile noma ukucindezela kwesisu. I-Lateral (uhlangothi lwesobunxele luyakhethwa) noma ukuthutha okuphansi nge-hip wedge yesokunxele."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

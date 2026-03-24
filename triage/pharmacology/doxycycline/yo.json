@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxycycline",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramycin",
+    "Doryx"
+  ],
+  "description": "Gbooro-julọ.Oniranran tetracycline aporo. Yiyan profilasisi ọgbẹ ẹnu fun awọn alaisan penicillin-allerical. Paapaa ti o munadoko lodi si awọn oganisimu alaiṣedeede ati diẹ ninu awọn aarun ti o nfa-fekito (itọpa iba ni awọn agbegbe ti o lewu).",
+  "indications": [
+    "Idaabobo ọgbẹ (allergy penicillin)",
+    "Awọn àkóràn àsopọ asọ",
+    "Awọn ọgbẹ jáni",
+    "Idaabobo iba ni awọn agbegbe ti o wa ni opin"
+  ],
+  "dose": "100 mg PO ni gbogbo wakati 12 x 7 ọjọ.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Bẹrẹ laarin awọn wakati 3 ti ipalara fun prophylaxis ọgbẹ.",
+  "contraindications": [
+    "Oyun (o nfa awọ ehin oyun ati idinamọ idagbasoke egungun)",
+    "Awọn ọmọde labẹ ọdun 8 (idi kanna)",
+    "Ibanujẹ ẹdọforo nla"
+  ],
+  "warnings": [
+    "NIPA ni oyun -- lo amoxicillin dipo.",
+    "CONTRAINDICATED ninu awọn ọmọde labẹ ọdun 8.",
+    "Photosensitivity - gba alaisan ni imọran lati yago fun ifihan oorun.",
+    "Ma ṣe mu pẹlu awọn ounjẹ ti o ni kalisiomu, awọn antacids, tabi irin - ṣe ipalara gbigba."
+  ],
+  "regional_names": {
+    "generic": "doxycycline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Contraindicated labẹ ọdun 8. Ọjọ ori 8+: 2-4 mg / kg / ọjọ ti a pin q12h (max 100 mg / iwọn lilo).",
+      "note": "Lo amoxicillin fun awọn ọmọde labẹ ọdun 8."
+    },
+    "obstetric": {
+      "note": "NIPA ninu oyun -- fa ipalara ọmọ inu oyun. Lo amoxicillin dipo."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

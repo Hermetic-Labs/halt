@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Kabitaanka oo hagaagay",
+  "category": "ortho-stabilization",
+  "skill_level": "Aasaaska",
+  "time_estimate": "5-10 daqiiqo",
+  "description": "Dhaqdhaqaaqa jabka ka dhig adigoo isticmaalaya alaabta la heli karo si looga hortago dhaawac dheeraad ah, loo yareeyo xanuunka, oo loo xaddido lumista dhiigga ee unugyada ku wareegsan. Kabka booska la helo haddii aan wareegga wax laga qaban -- ka dibna si tartiib ah u toosi.",
+  "equipment": [
+    "Kabka SAM (doorbiday)",
+    "Joornaal duuban, ulo, tiirar teendho ah (goob la hagaajiyay)",
+    "Cravat / faashado saddex xagal ah",
+    "Maro (dhar, xumbo)",
+    "Cajalad ama xariijimo dhar ah"
+  ],
+  "steps": [
+    "Soo bandhig oo qiimee dhaawaca -- hubi wareegga, dareenka, dhaqdhaqaaqa (CSM) fogaan jabka ka hor iyo ka dib.",
+    "Xakamee dhiig-bax kasta oo firfircoon ka hor kabsashada.",
+    "Lafaha si deeqsinimo leh u yaqaan si looga hortago nabarrada cadaadiska.",
+    "Dooro walax kabida oo ku filan si ay u dhaqaajiso kala-goysyada sare IYO ka hooseeya jabka.",
+    "Meesha addinka ee booska raaxada ama toosinta anatomical -- ha xoogin.",
+    "Codso suufka, ka dibna kabida walxaha. Ku xafid faashado ama xariijimo dhar ah.",
+    "Si adag ha u duubin -- uga tag caarada faraha / lugaha si aad ula socoto CSM.",
+    "Dib u qiimee CSM ka dib codsiga -- isla markiiba dabacsan haddii wareeggu xumaado.",
+    "Kor u qaad addimada haddii ay suurtogal tahay si loo yareeyo bararka.",
+    "Diiwaangeli wakhtiga codsiga kabitaanka"
+  ],
+  "warnings": [
+    "Dib u qiimee CSM 15-30 daqiiqo kasta -- bararka ayaa ka dhigi kara kab sax ah inuu noqdo dalxiis.",
+    "Jabka furan: marka hore ku dabool nabarka dhaymo nadiif ah, ka dibna kab. Lafta dib ha u riixin",
+    "Jabka femur wuxuu lumin karaa 1-2L oo dhiiga bowdada -- si adag ula dhaqan shoogga.",
+    "Laf-dhabarta jaban ee la tuhunsan yahay: ha hagaajin kabyada -- yaree dhaqdhaqaaqa, ilaali xasilinta khadka."
+  ],
+  "follows": [
+    "cadaadis toos ah",
+    "dalxiis-codsi"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Taarikada korriinka ee carruurtu way ka daciifsan yihiin seedaha -- jabka laga shakiyo xitaa hab fudud. Burburka Torus (jilibka) ayaa laga yaabaa inay yeeshaan barar yar."
+    },
+    "obstetric": {
+      "note": "Kabitaanka caadiga ah ayaa khuseeya. Ka fogow meelaynta dhabarka oo dheer -- u janjeersiga bidix haddii si siman loo jiifsado."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

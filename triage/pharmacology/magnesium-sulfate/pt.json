@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Sulfato de magnésio (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Injeção de sulfato de magnésio"
+  ],
+  "description": "Depressor e anticonvulsivante do SNC usado para prevenção e tratamento de convulsões eclâmpticas (convulsões durante a gravidez por pré-eclâmpsia). Também usado para asma grave e torsades de pointes. Primeira linha para eclâmpsia em vez de benzodiazepínicos.",
+  "indications": [
+    "Eclâmpsia (prevenção de convulsões e tratamento na pré-eclâmpsia grave)",
+    "Profilaxia de pré-eclâmpsia (características graves)",
+    "Torsades de Pointes (taco-V polimórfico de hipomagnesemia)",
+    "Asma aguda grave (adjuvante)"
+  ],
+  "dose": "Dose de ataque para eclâmpsia: 4-6g IV, injeção lenta durante 20 minutos. Manutenção: infusão IV de 1-2g/hora. Se a convulsão recorrer: 2-4g IV durante 5 min. Carga IM (se não houver IV): 5g IM em cada nádega (10g no total) simultaneamente.",
+  "route": [
+    "IV",
+    "OI",
+    "Eu estou"
+  ],
+  "window": "Comece no início das crises ou no diagnóstico de características graves de pré-eclâmpsia.",
+  "contraindications": [
+    "Miastenia gravis",
+    "Defeitos de condução cardíaca",
+    "Insuficiência renal (acumula – reduzir dose)"
+  ],
+  "warnings": [
+    "Sinais de toxicidade: perda do reflexo patelar (primeiro sinal, 7-10 mEq/L), depressão respiratória (> 10 mEq/L), parada cardíaca (> 15 mEq/L).",
+    "Monitore os reflexos patelares a cada 15 minutos - perda de reflexo = interrompa a infusão.",
+    "ANTÍDOTO para toxicidade: Gluconato de cálcio 1g IV durante 3 minutos.",
+    "Reduza a dose na insuficiência renal - monitore a produção de urina."
+  ],
+  "regional_names": {
+    "generic": "sulfato de magnésio"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg IV durante 10-20 min (máximo 2g). Asma grave: 25-75 mg/kg IV (máximo 2g).",
+      "note": "Raramente usado para convulsões em pacientes pediátricos não obstétricos – a eclâmpsia é a principal indicação."
+    },
+    "obstetric": {
+      "note": "Indicação primária. Atravessa a placenta – possível hipermagnesemia neonatal. Dose neonatal em caso de depressão respiratória: gluconato de cálcio 100 mg/kg IV. Informar a equipe da UTIN sobre o uso materno de magnésio."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

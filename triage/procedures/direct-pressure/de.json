@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Direkter Druck zur Blutungskontrolle",
+  "category": "hemorrhage-control",
+  "skill_level": "Any-Responder",
+  "time_estimate": "3-5 Minuten",
+  "description": "Erstlinienblutungskontrolle bei zugänglichen Extremitäten- und Körperwunden.",
+  "equipment": [
+    "Handschuhe",
+    "Trauma-Verband",
+    "Krawattenbinde"
+  ],
+  "steps": [
+    "Ziehen Sie Handschuhe an, falls verfügbar.",
+    "Legen Sie die Wunde frei, indem Sie die Kleidung wegschneiden.",
+    "Legen Sie einen Traumaverband oder ein gefaltetes Tuch direkt auf die Wunde.",
+    "Drücken Sie fest mit dem Handballen. Nutzen Sie Ihr Körpergewicht – nicht nur die Armkraft.",
+    "Halten Sie den Druck mindestens 3 Minuten lang ununterbrochen aufrecht.",
+    "Heben Sie den Verband zur Kontrolle NICHT an – dies stört die Gerinnselbildung.",
+    "Wenn die Blutung durchdringt, legen Sie einen weiteren Verband darüber. Entfernen Sie nicht den ersten.",
+    "Falls verfügbar, mit einem Druckverband sichern und bei anhaltender Blutung eine Wundpackung oder ein Tourniquet anlegen."
+  ],
+  "warnings": [
+    "Direkter Druck allein reicht bei arteriellen Blutungen nicht aus – eskaliert zu Wundstau oder Stauung.",
+    "Bei Übergangswunden (Leiste, Achselhöhle, Hals) ist eine Wundversorgung erforderlich, nicht nur äußerer Druck."
+  ],
+  "follows": [],
+  "precedes": [
+    "Wundpackung",
+    "Tourniquet-Anwendung"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Nur Proportionaldruck. Vermeiden Sie es, den Brustkorb bei Säuglingen zu komprimieren."
+    },
+    "obstetric": {
+      "note": "Vermeiden Sie starke Kompression über der schwangeren Gebärmutter. Bei einer Verbindungswunde in der Nähe des Beckens eine seitliche Tamponade verwenden."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

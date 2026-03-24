@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Évaluation de la déshydratation",
+  "category": "circulation",
+  "description": "Évaluation sur le terrain de la gravité de la déshydratation et des maladies causées par la chaleur. La couleur de l’urine est l’indicateur de terrain le plus pratique. Évaluez l’état mental comme marqueur d’une déshydratation sévère évoluant vers un coup de chaleur.",
+  "instructions": "Vérifiez la couleur de l'urine, la turgescence cutanée, l'état mental et les signes vitaux. Une urine foncée, des muqueuses sèches et une tachycardie indiquent une déshydratation importante nécessitant une réhydratation active.",
+  "categories": [
+    {
+      "color": "clair-pâle",
+      "label": "Bien hydraté",
+      "description": "Jaune pâle pour clarifier l'urine. Aucune intervention nécessaire."
+    },
+    {
+      "color": "jaune",
+      "label": "Légère déshydratation",
+      "description": "Urine jaune foncé, assoiffée. Réhydratation orale. Encouragez 250 à 500 ml d’eau par heure."
+    },
+    {
+      "color": "brun ambré",
+      "label": "Déshydratation modérée à sévère",
+      "description": "Urine ambrée, FC élevée, turgescence cutanée diminuée, bouche sèche. Liquides IV/IO si oraux non tolérés. 1-2L LR ou NS."
+    },
+    {
+      "color": "rouge",
+      "label": "Danger -- Coup de chaleur / Grave",
+      "description": "Débit urinaire minimal, LOC altéré, peau chaude et sèche. Urgence médicale – refroidissement rapide + fluides IV + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Les enfants se déshydratent plus rapidement que les adultes. Fontanelle enfoncée (nourrissons), absence de larmes et léthargie sont des signes critiques. IV en fonction du poids : bolus LR de 20 mL/kg."
+    },
+    "obstetric": {
+      "note": "Les femmes enceintes ont besoin d’un apport hydrique accru. La déshydratation peut déclencher des contractions prématurées. Réhydratation orale agressive en premier ; IV si vous ne tolérez pas la voie orale."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

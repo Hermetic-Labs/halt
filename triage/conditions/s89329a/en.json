@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s89329a",
+    "icd10":  "S89329A",
+    "name":  "Salter-Harris Type II physeal fracture of lower end of unspecified fibula, initial encounter for closed fracture",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Salter-Harris Type II physeal fracture of lower end of unspecified fibula, initial encounter for closed fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

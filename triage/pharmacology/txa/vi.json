@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Axit Tranexamic (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Cyklokapron",
+    "Lysteda"
+  ],
+  "description": "Chất chống tiêu sợi huyết có tác dụng ức chế sự phân hủy cục máu đông. Giảm đáng kể tỷ lệ tử vong do sốc mất máu khi được điều trị sớm. Được CoTCCC khuyến nghị cho tất cả thương vong bị xuất huyết đáng kể hoặc có nguy cơ xuất huyết đáng kể.",
+  "indications": [
+    "Xuất huyết bên ngoài hoặc nghi ngờ xuất huyết bên trong đáng kể",
+    "Sốc mất máu",
+    "Nguy cơ xuất huyết cao (cơ chế chấn thương)"
+  ],
+  "dose": "1g IV/IO trong 10 phút, tiếp theo là 1g IV/IO trong 8 giờ. Nếu không có IV/IO: 650mg PO x2 (tổng cộng 1,3g) -- Tùy chọn TCCC PO.",
+  "route": [
+    "IV",
+    "IO",
+    "PO"
+  ],
+  "window": "PHẢI được tiêm trong vòng 3 giờ sau khi bị thương. Ngoài 3 giờ, TXA có thể TĂNG tỷ lệ tử vong -- đừng cho.",
+  "contraindications": [
+    "Tiền sử bệnh huyết khối (DVT, PE, đột quỵ)",
+    "Đông máu nội mạch lan tỏa (DIC)",
+    "> 3 giờ sau chấn thương"
+  ],
+  "warnings": [
+    "Ghi lại thời gian dùng thuốc ngay lập tức - khoảng thời gian là 3 giờ kể từ thời điểm bị thương, không phải thời điểm đến.",
+    "Đừng nhầm lẫn liều IV (1g) với liều uống."
+  ],
+  "regional_names": {
+    "generic": "axit tranexamic",
+    "US": "Cyklokapron",
+    "UK": "Cyklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg tiêm tĩnh mạch (tối đa 1g). Bằng chứng mới nổi - sử dụng phán đoán lâm sàng.",
+      "note": "Áp dụng khung thời gian 3 giờ tương tự."
+    },
+    "obstetric": {
+      "note": "Chỉ định cho băng huyết sau sinh. An toàn trong thai kỳ. Áp dụng liều lượng tương tự cho người lớn."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

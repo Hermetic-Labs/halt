@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s21219d",
+    "icd10":  "S21219D",
+    "name":  "Laceration without foreign body of unspecified back wall of thorax without penetration into thoracic cavity, subsequent encounter",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Laceration without foreign body of unspecified back wall of thorax without penetration into thoracic cavity, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

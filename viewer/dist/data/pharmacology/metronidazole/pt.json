@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazol",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagil"
+  ],
+  "description": "Antibiótico nitroimidazol com excelente cobertura anaeróbia e protozoária. Essencial para traumas penetrantes abdominais/intestinais para cobrir a flora intestinal anaeróbica. Freqüentemente usado em combinação com ciprofloxacina.",
+  "indications": [
+    "Trauma abdominal/intestinal penetrante",
+    "Infecções intra-abdominais",
+    "Infecções anaeróbias dos tecidos moles",
+    "Infecções por C. difficile"
+  ],
+  "dose": "500 mg IV a cada 6-8h. PO: 500 mg q8h (se tolerado por via oral).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Primeiro trimestre de gravidez (familiar)",
+    "Alergia conhecida ao metronidazol ou ao nitroimidazol"
+  ],
+  "warnings": [
+    "Reação tipo dissulfiram com álcool – não consumir álcool durante o tratamento e 48h após.",
+    "Pode causar neuropatia periférica com uso prolongado.",
+    "Evite no primeiro trimestre, se possível."
+  ],
+  "regional_names": {
+    "generic": "metronidazol"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7,5 mg/kg IV/PO q6h (máximo 500 mg/dose).",
+      "note": "Seguro em crianças mais velhas. Evite em neonatos."
+    },
+    "obstetric": {
+      "note": "Evite no primeiro trimestre, se possível. Use no segundo/terceiro trimestre quando clinicamente necessário – o benefício geralmente supera o risco de infecções anaeróbicas graves."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s30201s",
+    "icd10":  "S30201S",
+    "name":  "Contusion of unspecified external genital organ, male, sequela",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Contusion of unspecified external genital organ, male, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

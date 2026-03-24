@@ -1,0 +1,22 @@
+{
+  "id": "s0011xa",
+  "icd10": "S0011XA",
+  "name": "Contusion saka tlapukan tengen lan area periocular, ketemu awal",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "Contusion saka tlapukan tengen lan area periocular, ketemu awal",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

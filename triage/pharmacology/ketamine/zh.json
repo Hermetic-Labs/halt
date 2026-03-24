@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "氯胺酮",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "克塔拉尔"
+  ],
+  "description": "解离麻醉剂提供镇痛、镇静和遗忘作用，同时保持气道反射和血流动力学稳定性。 TCCC 中的首选镇痛药——与阿片类药物不同，可维持血压。也用于程序镇静和 RSI。",
+  "indications": [
+    "中度至重度疼痛管理",
+    "程序镇静（伤口填塞、骨折复位）",
+    "RSI诱导剂",
+    "战斗麻醉"
+  ],
+  "dose": "镇痛：0.1-0.3 mg/kg IV/IO（慢推）| 0.5毫克/公斤肌肉注射。程序镇静：1-2 mg/kg IV | 4-6 mg/kg 肌注。 RSI 诱导：1-2 mg/kg IV。",
+  "route": [
+    "四号",
+    "IO",
+    "我是",
+    "在"
+  ],
+  "window": "",
+  "contraindications": [
+    "已知的精神分裂症或活动性精神病",
+    "无气道保护时 ICP 升高（相对）"
+  ],
+  "warnings": [
+    "苏醒反应（谵妄/幻觉）——如果有的话，用咪达唑仑 1-2mg IV 缓解。",
+    "增加分泌物——准备好抽吸。",
+    "喉痉挛罕见但有可能发生——保持 BVM 可用。"
+  ],
+  "regional_names": {
+    "generic": "氯胺酮"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "镇痛：0.5 mg/kg IV。程序镇静：1-2 mg/kg IV | 4-5毫克/公斤肌肉注射。",
+      "note": "儿科研究颇丰。首选用于痛苦的手术。"
+    },
+    "obstetric": {
+      "note": "低剂量对产妇镇痛是安全的。如果在临近分娩时分娩，高剂量可能会导致新生儿呼吸抑制。"
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

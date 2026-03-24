@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oxytocin",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocin",
+    "Syntocinon"
+  ],
+  "description": "Endogenous peptide hormone. First-line uterotonic para sa pag-iwas at paggamot ng postpartum hemorrhage (PPH). Nagdudulot ng pag-urong ng matris at binabawasan ang pagkawala ng dugo pagkatapos ng panganganak. Ibinigay PAGKATAPOS ng paghahatid ng inunan.",
+  "indications": [
+    "Pag-iwas sa postpartum hemorrhage (routine pagkatapos ng panganganak)",
+    "Paggamot ng postpartum hemorrhage (uterine atony)",
+    "Induction of labor (controlled setting lang)"
+  ],
+  "dose": "Pag-iwas sa PPH: 10 units IM kaagad pagkatapos ng paghahatid ng inunan (ginustong ruta sa field). PPH treatment: 10-40 units sa 1L IV, infuse sa 40-80 mU/min. Kung hindi available ang IV: 10 units IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Magbigay PAGKATAPOS ng paghahatid ng inunan -- ang pagbibigay bago ang paghahatid ng inunan ay maaaring ma-trap ang inunan.",
+  "contraindications": [
+    "Bago ang paghahatid ng inunan (maaaring ma-trap ang inunan)",
+    "Fetal distress na hindi naihatid ang ulo",
+    "Kilalang hypersensitivity"
+  ],
+  "warnings": [
+    "MAGBIBIGAY PAGKATAPOS NA IPADALA ANG PLACENTA -- ang pag-trap sa inunan ay isang komplikasyon na nagbabanta sa buhay.",
+    "Ang IV bolus ay maaaring magdulot ng matinding hypotension at cardiac arrhythmia -- laging maghalo at mag-infuse nang dahan-dahan.",
+    "Antidiuretic effect na may malalaking volume -- subaybayan ang hyponatremia."
+  ],
+  "regional_names": {
+    "generic": "oxytocin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A -- obstetric na paggamit lang.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Pangunahing uterotonic. Kung hindi tumugon ang uterine atony, isaalang-alang ang misoprostol, tranexamic acid (TXA), bimanual uterine compression, at mabilis na MEDEVAC."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Dekompresi Dada Jarum (NCD)",
+  "category": "respiration",
+  "skill_level": "pertempuran-medis",
+  "time_estimate": "1-2 menit",
+  "description": "Bantuan darurat dari tension pneumothorax dengan memasukkan jarum ke dalam ruang interkostal kedua. Intervensi penyelamatan jiwa.",
+  "equipment": [
+    "14g-jarum-kateter-3-25 inci",
+    "sarung tangan",
+    "segel dada-opsional"
+  ],
+  "steps": [
+    "Identifikasi tension pneumothorax: tidak ada bunyi nafas pada sisi yang terkena, deviasi trakea (terlambat), distress pernafasan, hipotensi, JVD.",
+    "Paparkan dada pada sisi yang sakit.",
+    "Temukan ruang interkostal ke-2, garis midklavikula (alternatif: ICS ke-4/5, garis aksila anterior).",
+    "Masukkan jarum kateter 14g, 3,25 inci tegak lurus ke dinding dada, tepat di atas tulang rusuk ke-3 (hindari ikatan neurovaskular).",
+    "Majulah hingga hembusan udara terasa atau terdengar desisan.",
+    "Cabut jarum dan biarkan kateter di tempatnya.",
+    "Dengarkan peningkatan suara napas dan upaya pernapasan.",
+    "Amankan hub kateter. JANGAN menjepit atau menutup ujung yang terbuka.",
+    "Periksa kembali setiap 5 menit -- kateter dapat tertekuk atau menggumpal sehingga memerlukan dekompresi berulang."
+  ],
+  "warnings": [
+    "Gunakan jarum berukuran 3,25 inci -- angiokateter standar 14g (1,5 inci) sering kali gagal pada pasien militer karena pelindung tubuh dan otot.",
+    "NCD bilateral mungkin diperlukan jika tidak yakin sisi mana yang terkena dan pasien akan mengalami peri-arrest.",
+    "Jangan letakkan pada sisi yang sama dengan luka dada penghisap tanpa menutup luka terlebih dahulu."
+  ],
+  "follows": [],
+  "precedes": [
+    "aplikasi segel dada"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Gunakan jarum dengan ukuran yang sesuai (untuk pasien yang lebih kecil, 1,5-2 inci mungkin cukup). Gunakan pendekatan ICS MCL ke-2. Pengenalan bangunan terkenal lebih sulit -- berhati-hatilah."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

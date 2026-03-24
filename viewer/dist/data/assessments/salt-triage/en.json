@@ -1,0 +1,40 @@
+﻿{
+    "id":  "salt-triage",
+    "name":  "SALT Triage (Sort, Assess, Lifesaving Interventions, Treatment/Transport)",
+    "category":  "mass-casualty",
+    "description":  "Mass casualty triage protocol. Standard for multi-casualty events in military and civilian settings.",
+    "instructions":  "Step 1: Global sort (walking, waving, still). Step 2: Assess in priority order. Step 3: Perform lifesaving interventions (control major bleeding, open airway, needle decompression, auto-injectors). Step 4: Assign category.",
+    "categories":  [
+                       {
+                           "color":  "black",
+                           "label":  "Expectant/Deceased",
+                           "description":  "Unlikely to survive given available resources, or confirmed deceased"
+                       },
+                       {
+                           "color":  "red",
+                           "label":  "Immediate (T1)",
+                           "description":  "Life-threatening injuries, will survive with immediate intervention"
+                       },
+                       {
+                           "color":  "yellow",
+                           "label":  "Delayed (T2)",
+                           "description":  "Serious but stable injuries, can wait for care"
+                       },
+                       {
+                           "color":  "green",
+                           "label":  "Minimal (T3)",
+                           "description":  "Minor injuries -- walking wounded"
+                       },
+                       {
+                           "color":  "gray",
+                           "label":  "Expectant",
+                           "description":  "Unsurvivable injury given current resources -- comfort care only"
+                       }
+                   ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  "JumpSTART triage algorithm modifies SALT for pediatric patients. Respiratory rate thresholds and assessment steps differ for children under 8."
+                                    }
+                  },
+    "source":  "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

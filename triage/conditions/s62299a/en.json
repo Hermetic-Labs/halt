@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s62299a",
+    "icd10":  "S62299A",
+    "name":  "Other fracture of first metacarpal bone, unspecified hand, initial encounter for closed fracture",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Other fracture of first metacarpal bone, unspecified hand, initial encounter for closed fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

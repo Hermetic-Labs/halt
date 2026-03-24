@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Isar da Filin Gaggawa",
+  "category": "obstetric",
+  "skill_level": "fama-magungunan",
+  "time_estimate": "Ya bambanta -- 20+ min",
+  "description": "Gudanar da isar da sahihanci ko rashin shiri a cikin yanayi mai wahala.",
+  "equipment": [
+    "safar hannu",
+    "tsaftar-tufafi",
+    "igiya-ƙulle-ko-ƙulle",
+    "almakashi",
+    "sirinji kwan fitila"
+  ],
+  "steps": [
+    "Sanya uwa a kwance ko ta kwanta. An fi son karkatar da gefen hagu idan suma (yana hana matsi aortocaval).",
+    "Sarrafa isar da kai -- tallafi da dabino. KADA KA ja.",
+    "Da zarar an kai kai, a duba igiyar nuchal (a kusa da wuya). Idan akwai, zamewa a kan kai. Idan m, matsa kuma yanke.",
+    "Tsotsar baki sannan hanci da sirinji kwan fitila idan akwai.",
+    "Jagorar isar da kafada ta gaba ta hanyar lanƙwasa ƙasa a kai, sannan sama don kafaɗa ta baya.",
+    "Isar da jiki -- bayanin kula lokacin bayarwa.",
+    "Bushe da dumi jariri nan da nan. Ƙarfafa ta hanyar shafa baya.",
+    "Matsa kuma yanke igiyar (jira 1-2 min idan jaririn ya kasance barga).",
+    "Isar da mahaifa tare da jan hankali mai sarrafawa --KADA a tilasta.",
+    "Gudanar da oxytocin (idan akwai) don hana zubar jini bayan haihuwa bayan haihuwa.",
+    "Yi la'akari don zubar da jini bayan haihuwa -- tausar kuɗi, matsawa bi-manual idan an buƙata.",
+    "Auna maki Apgar a minti 1 da 5."
+  ],
+  "warnings": [
+    "Idan bayarwa ba ta kusa ba -- KADA a yi ƙoƙari. An fi son MEDEVAC mai sauri.",
+    "Dystocia kafada: idan kafadu sun makale, yi amfani da aikin McRoberts (hyperflex hips) da matsa lamba na suprapubic.",
+    "Zubar da jini bayan haihuwa shine babban dalilin da zai iya hana mace mutuwa -- a shirye oxytocin."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

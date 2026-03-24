@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "AVPU Scale",
+  "category": "neurological",
+  "description": "Mabilis na 4-level na pagtatasa ng kamalayan. Mas mabilis kaysa sa GCS para sa paunang pagsubok.",
+  "instructions": "Tayahin ang pinakamataas na antas ng tugon na ipinapakita ng pasyente.",
+  "scoring": [
+    {
+      "code": "Isang",
+      "label": "Alerto",
+      "description": "Ang pasyente ay gising, may kamalayan, at tumutugon nang normal"
+    },
+    {
+      "code": "V",
+      "label": "Boses",
+      "description": "Tumutugon lamang ang pasyente sa verbal stimulation"
+    },
+    {
+      "code": "P",
+      "label": "Sakit",
+      "description": "Tumutugon lamang ang pasyente sa masakit na stimuli (sternal rub, nail bed pressure)"
+    },
+    {
+      "code": "U",
+      "label": "Hindi tumutugon",
+      "description": "Walang tugon sa anumang stimuli -- kinakailangan ang agarang interbensyon sa daanan ng hangin"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "Isang",
+      "triage": "Matatag -- magpatuloy sa pagtatasa"
+    },
+    {
+      "code": "V",
+      "triage": "Tungkol sa -- subaybayan ang daanan ng hangin"
+    },
+    {
+      "code": "P",
+      "triage": "Kritikal -- nasa panganib ang daanan ng hangin, karaniwang GCS <= 8"
+    },
+    {
+      "code": "U",
+      "triage": "Kaagad -- pamahalaan ang daanan ng hangin ngayon"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

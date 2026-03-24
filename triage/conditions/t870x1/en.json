@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t870x1",
+    "icd10":  "T870X1",
+    "name":  "Complications of reattached (part of) right upper extremity",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Complications of reattached (part of) right upper extremity",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

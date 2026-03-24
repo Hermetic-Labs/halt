@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "Iwọn AVPU",
+  "category": "neurological",
+  "description": "Igbelewọn aiji ipele 4 iyara. Yiyara ju GCS fun ipin akọkọ.",
+  "instructions": "Ṣe ayẹwo ipele ti o ga julọ ti idahun ti alaisan ṣe afihan.",
+  "scoring": [
+    {
+      "code": "A",
+      "label": "Itaniji",
+      "description": "Alaisan wa ni asitun, mọ, ati idahun ni deede"
+    },
+    {
+      "code": "V",
+      "label": "Ohùn",
+      "description": "Alaisan dahun nikan si iyanju ọrọ"
+    },
+    {
+      "code": "P",
+      "label": "Irora",
+      "description": "Alaisan dahun nikan si awọn iyanju irora (sternal rub, titẹ ibusun àlàfo)"
+    },
+    {
+      "code": "U",
+      "label": "Aigbagbọ",
+      "description": "Ko si esi si eyikeyi awọn akikanju -- ilowosi oju-ofurufu lẹsẹkẹsẹ nilo"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "A",
+      "triage": "Iduroṣinṣin - tẹsiwaju igbelewọn"
+    },
+    {
+      "code": "V",
+      "triage": "Nipa -- atẹle ọna atẹgun"
+    },
+    {
+      "code": "P",
+      "triage": "Lominu ni --ọ̀nà atẹgun ninu ewu, GCS ni deede <= 8"
+    },
+    {
+      "code": "U",
+      "triage": "Lẹsẹkẹsẹ -- ṣakoso ọna atẹgun ni bayi"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

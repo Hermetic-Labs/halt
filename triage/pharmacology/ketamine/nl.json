@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Dissociatieve verdoving zorgt voor analgesie, sedatie en geheugenverlies, terwijl de luchtwegreflexen en hemodynamische stabiliteit behouden blijven. Geprefereerd analgeticum bij TCCC - handhaaft de bloeddruk in tegenstelling tot opioïden. Wordt ook gebruikt voor procedurele sedatie en RSI.",
+  "indications": [
+    "Matige tot ernstige pijnbestrijding",
+    "Procedurele sedatie (wondpakking, fractuurreductie)",
+    "Inductiemiddel voor RSI",
+    "Bestrijd anesthesie"
+  ],
+  "dose": "Analgesie: 0,1-0,3 mg/kg IV/IO (langzaam duwen) | 0,5 mg/kg IM. Procedurele sedatie: 1-2 mg/kg IV | 4-6 mg/kg IM. RSI-inductie: 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN"
+  ],
+  "window": "",
+  "contraindications": [
+    "Bekende schizofrenie of actieve psychose",
+    "Verhoogde ICP zonder luchtwegbescherming (relatief)"
+  ],
+  "warnings": [
+    "Opkomende reacties (delirium/hallucinaties) – verzachten met midazolam 1-2 mg IV, indien beschikbaar.",
+    "Verhoogt de afscheiding - zorg ervoor dat u de zuigkracht gereed heeft.",
+    "Laryngospasme zeldzaam maar mogelijk - houd BVM beschikbaar."
+  ],
+  "regional_names": {
+    "generic": "ketamine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesie: 0,5 mg/kg IV. Procedurele sedatie: 1-2 mg/kg IV | 4-5 mg/kg IM.",
+      "note": "Goed bestudeerd in de kindergeneeskunde. Bij voorkeur bij pijnlijke procedures."
+    },
+    "obstetric": {
+      "note": "Veilig voor maternale analgesie bij lage doses. Kan bij hoge doseringen neonatale ademhalingsdepressie veroorzaken als deze kort voor de bevalling wordt toegediend."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

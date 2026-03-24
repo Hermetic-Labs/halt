@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s23101a",
+    "icd10":  "S23101A",
+    "name":  "Dislocation of unspecified thoracic vertebra, initial encounter",
+    "category":  "thorax-injury",
+    "triage_priority":  "",
+    "description":  "Dislocation of unspecified thoracic vertebra, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

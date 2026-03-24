@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s63211s",
+    "icd10":  "S63211S",
+    "name":  "Subluxation of metacarpophalangeal joint of left index finger, sequela",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Subluxation of metacarpophalangeal joint of left index finger, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

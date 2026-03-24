@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Ntinye ikuku nke Nasopharyngeal (NPA)",
+  "category": "airway",
+  "skill_level": "ọgụ-ndụdu",
+  "time_estimate": "1 min",
+  "description": "Ntinye nke mgbakwụnye ikuku imi na-agbanwe agbanwe iji nọgide na-enwe patency ikuku n'ime onye ọrịa amaghị ama ma ọ bụ nke amaghị ihe ọ bụla.",
+  "equipment": [
+    "npa-with-safety-pin",
+    "mmanu"
+  ],
+  "steps": [
+    "Họrọ nha NPA kwesịrị ekwesị (tụlee site n'oghere imi ruo na ntị).",
+    "Rie NPA n'ụba na mmanu ma ọ bụ saline na-agbaze mmiri.",
+    "Tinye ntụtụ nchekwa site na flange ma ọ bụrụ na ọ dịbeghị (na-egbochi ọchịchọ).",
+    "Fanye nwayọ n'oghere imi aka nri (bevel n'akụkụ septum), na-aga n'ihu na ọnụ ọnụ ọnụ.",
+    "Gaa n'ihu ruo mgbe flange na-adabere n'oghere imi.",
+    "Tinyegharịa onye ọrịa (ọnọdụ mgbake ma ọ bụrụ na ọ nweghị nchegbu azụ azụ) wee nyochaa ụzọ ikuku.",
+    "Ọ bụrụ na ezutere nguzogide, nwalee imi aka ekpe."
+  ],
+  "warnings": [
+    "Akwụsịla ya na mgbawa okpokoro isi nke a na-enyo enyo (anya raccoon, akara agha, Rhinorrhea CSF).",
+    "NPA bụ ihe enyemaka mbụ kacha mma nke onye ọrịa amaghị ama -- OPA nwere ike ịkpalite ịgba agbọ n'ime ndị ọrịa na-amaghị ihe."
+  ],
+  "source": "TCCC / JTS CPG"
+}

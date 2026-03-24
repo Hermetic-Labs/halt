@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "AVPU Scale",
+  "category": "neurological",
+  "description": "Fanombanana ny fahatsiarovan-tena haingana 4. Haingana kokoa noho ny GCS ho an'ny fitsapana voalohany.",
+  "instructions": "Tombanana ny haavon'ny valinteny avo indrindra asehon'ny marary.",
+  "scoring": [
+    {
+      "code": "A",
+      "label": "Fanairana",
+      "description": "Mifoha ny marary, mahatsapa ary mamaly ara-dalàna"
+    },
+    {
+      "code": "V",
+      "label": "Feo",
+      "description": "Ny fanentanana am-bava ihany no mamaly ny marary"
+    },
+    {
+      "code": "P",
+      "label": "fanaintainana",
+      "description": "Tsy mamaly afa-tsy ny fihetsehana manaintaina (koso-drongony, fanerena amin'ny fantsika)"
+    },
+    {
+      "code": "U",
+      "label": "Tsy mamaly",
+      "description": "Tsy misy valiny amin'ny fanentanana rehetra -- ilaina ny fidirana an-dàlambe avy hatrany"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "A",
+      "triage": "Stable -- tohizo ny fanombanana"
+    },
+    {
+      "code": "V",
+      "triage": "Momba ny -- manara-maso ny lalan-drivotra"
+    },
+    {
+      "code": "P",
+      "triage": "Kritika -- atahorana ny lalan-drivotra, GCS matetika <= 8"
+    },
+    {
+      "code": "U",
+      "triage": "Avy hatrany - tantano ny lalan-drivotra izao"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

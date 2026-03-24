@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s72446s",
+    "icd10":  "S72446S",
+    "name":  "Nondisplaced fracture of lower epiphysis (separation) of unspecified femur, sequela",
+    "category":  "hip-thigh-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of lower epiphysis (separation) of unspecified femur, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

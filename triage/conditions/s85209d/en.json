@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s85209d",
+    "icd10":  "S85209D",
+    "name":  "Unspecified injury of peroneal artery, unspecified leg, subsequent encounter",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Unspecified injury of peroneal artery, unspecified leg, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Ityuwa eqhelekileyo (0.9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "0.9% Isitofu seSodium chloride"
+  ],
+  "description": "Isotonic crystalloid fluid. Isetyenziselwa i-IV fluid resuscitation. Kumothuko owophayo, sebenzisa ngononophelo -- imiqulu emikhulu iba worse icoagulopathy (hyperchloremic acidosis, dilutional coagulopathy). I-hypotension evumayo ekhethwayo ekungeneni kwintlungu elindele ukulawulwa kokuphuma kwegazi.",
+  "indications": [
+    "Ukuvuselela ulwelo (ngononophelo kumothuko owophayo)",
+    "Amayeza athambisayo/agungxulwayo",
+    "I-Hypovolemia evela kwizizathu ezingenayo igazi"
+  ],
+  "dose": "Umothuko we-Hemorrhagic: Umlinganiselo ukuya kwi-1L ubukhulu obulindelekileyo ekulawuleni ukopha (permissive hypotension). Ithagethi ye-SBP 80-90 mmHg kwi-trauma yokungena, i-90 mmHg kwi-TBI. I-non-hemorrhagic hypovolemia: 500 mL boluses, uphinde uhlolisise.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hypernatremia",
+    "Ukugcwala kolwelo / ukudumba kwemiphunga (isalamane)"
+  ],
+  "warnings": [
+    "Umthamo omkhulu ubangela i-hyperchloremic metabolic acidosis kunye ne-dilutional coagulopathy -- yenza mandundu isithathu esibulalayo kumonzakalo.",
+    "I-Lactated Ringer's (LR) ikhethwa kwivolomu enkulu yokuvuselela ukwenzakala.",
+    "UNGAVUMELI ngokugqithisileyo umonzakalo wokungena emzimbeni phambi kotyando lolawulo lokopha (i-permissive hypotension)."
+  ],
+  "regional_names": {
+    "generic": "sodium chloride 0.9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "I-20 mL / kg IV bolus, phinda uhlolisise. Phinda ubuninzi x3 (60 mL/kg iyonke) phambi kokuqwalasela iimveliso zegazi.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Ukuvuselelwa okusemgangathweni kwi-obstetric hemorrhage. Ukuvuselela ulwelo olunamandla olulungele ukopha kwasemva kokubeleka ngaphambi kokuba kufumaneke iimveliso zegazi."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

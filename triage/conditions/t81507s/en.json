@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t81507s",
+    "icd10":  "T81507S",
+    "name":  "Unspecified complication of foreign body accidentally left in body following removal of catheter or packing, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Unspecified complication of foreign body accidentally left in body following removal of catheter or packing, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

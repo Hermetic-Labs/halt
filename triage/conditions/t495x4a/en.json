@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t495x4a",
+    "icd10":  "T495X4A",
+    "name":  "Poisoning by ophthalmological drugs and preparations, undetermined, initial encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Poisoning by ophthalmological drugs and preparations, undetermined, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

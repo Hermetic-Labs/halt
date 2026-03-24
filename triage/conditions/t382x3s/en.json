@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t382x3s",
+    "icd10":  "T382X3S",
+    "name":  "Poisoning by antithyroid drugs, assault, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Poisoning by antithyroid drugs, assault, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

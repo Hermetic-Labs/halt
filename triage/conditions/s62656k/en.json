@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s62656k",
+    "icd10":  "S62656K",
+    "name":  "Nondisplaced fracture of middle phalanx of right little finger, subsequent encounter for fracture with nonunion",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of middle phalanx of right little finger, subsequent encounter for fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

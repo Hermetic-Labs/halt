@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxycyclin",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramycin",
+    "Doryx"
+  ],
+  "description": "Breitband-Tetracyclin-Antibiotikum. Orale Wundprophylaxe-Alternative für Patienten mit Penicillin-Allergie. Auch wirksam gegen atypische Organismen und einige durch Vektoren übertragene Krankheiten (Malariaprophylaxe in Endemiegebieten).",
+  "indications": [
+    "Wundprophylaxe (Penicillinallergie)",
+    "Weichteilinfektionen",
+    "Bisswunden",
+    "Malariaprophylaxe in Endemiegebieten"
+  ],
+  "dose": "100 mg PO alle 12 Stunden x 7 Tage.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Beginnen Sie innerhalb von 3 Stunden nach der Verletzung mit der Wundprophylaxe.",
+  "contraindications": [
+    "Schwangerschaft (verursacht eine Verfärbung der fetalen Zähne und eine Hemmung des Knochenwachstums)",
+    "Kinder unter 8 Jahren (gleicher Grund)",
+    "Schwere Leberfunktionsstörung"
+  ],
+  "warnings": [
+    "In der Schwangerschaft kontraindiziert – verwenden Sie stattdessen Amoxicillin.",
+    "KONTRAINDIZIERT bei Kindern unter 8 Jahren.",
+    "Lichtempfindlichkeit – raten Sie dem Patienten, Sonneneinstrahlung zu vermeiden.",
+    "Nicht zusammen mit kalziumreichen Lebensmitteln, Antazida oder Eisen einnehmen – die Absorption wird beeinträchtigt."
+  ],
+  "regional_names": {
+    "generic": "Doxycyclin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Kontraindiziert unter 8 Jahren. Alter 8+: 2–4 mg/kg/Tag, aufgeteilt alle 12 Stunden (maximal 100 mg/Dosis).",
+      "note": "Verwenden Sie Amoxicillin für Kinder unter 8 Jahren."
+    },
+    "obstetric": {
+      "note": "In der Schwangerschaft kontraindiziert – schädigt den Fötus. Verwenden Sie stattdessen Amoxicillin."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

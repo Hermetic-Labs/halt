@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirin (Acetylsalicylsäure)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Bayer Aspirin",
+    "Ecotrin"
+  ],
+  "description": "Nichtsteroidales entzündungshemmendes Medikament (NSAID) mit blutplättchenhemmenden Eigenschaften. Erstbehandlung bei Verdacht auf akutes Koronarsyndrom (ACS). Hemmt irreversibel die Blutplättchenaggregation – die Wirkung hält über die gesamte Lebensdauer der Blutplättchen an (7–10 Tage).",
+  "indications": [
+    "Verdacht auf akuten Myokardinfarkt (MI) – sofort kauen",
+    "Instabile Angina pectoris / akutes Koronarsyndrom",
+    "Schlaganfall (ischämisch – nach Hämorrhagie ausgeschlossen)",
+    "Fieber und leichte bis mäßige Schmerzen (Analgetikum)"
+  ],
+  "dose": "ACS: 325 mg PO – sofort kauen (nicht im Ganzen schlucken). Analgetikum/Antipyretikum: 325–650 mg p.o. alle 4–6 Stunden PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: So früh wie möglich verabreichen – bei Verdacht sofort kauen.",
+  "contraindications": [
+    "Aktive gastrointestinale Blutung",
+    "Hämorrhagischer Schlaganfall",
+    "Bekannte Aspirin-Allergie oder NSAID-Überempfindlichkeit",
+    "Schwere unkontrollierte Blutung – Aspirin verschlimmert die Blutung"
+  ],
+  "warnings": [
+    "Bei hämorrhagischen Patienten NICHT verabreichen – Aspirin beeinträchtigt die Thrombozytenfunktion irreversibel und verschlimmert die Blutung.",
+    "NICHT an Kinder unter 12 Jahren mit einer Viruserkrankung verabreichen – es besteht die Gefahr eines Reye-Syndroms.",
+    "Reizung des Magen-Darm-Trakts – zusammen mit einer Mahlzeit einnehmen, wenn sie nicht auftritt."
+  ],
+  "regional_names": {
+    "generic": "Aspirin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgetikum/Antipyretikum: 10–15 mg/kg p.o. alle 4–6 Stunden (maximal 650 mg/Dosis). HINWEIS: Kontraindiziert bei Viruserkrankungen (Reye-Syndrom).",
+      "note": "Verwenden Sie stattdessen Paracetamol (Paracetamol) gegen Fieber bei Kindern mit Viruserkrankungen."
+    },
+    "obstetric": {
+      "note": "Vermeiden Sie es in der Schwangerschaft, insbesondere im dritten Trimester (vorzeitiger Verschluss des Ductus arteriosus). Eine niedrige Dosis (81 mg) wird nur unter ärztlicher Anleitung zur Präeklampsieprävention eingesetzt."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Técnicas de movimiento del paciente",
+  "category": "casualty-movement",
+  "skill_level": "Básico",
+  "time_estimate": "1-30 min dependiendo de la distancia y el método",
+  "description": "Trasladar a una víctima bajo fuego o a un lugar más seguro para recibir tratamiento. El método depende del terreno, la distancia, el número de rescatistas y las lesiones de la víctima. Velocidad versus precaución espinal es una decisión táctica: en TCCC, la amenaza tiene prioridad.",
+  "equipment": [
+    "Camada SKED (preferida)",
+    "Camilla OTAN / camilla portátil",
+    "Basura improvisada: bastones + chaquetas/ponchos",
+    "Asas de arrastre (uniforme o arnés)",
+    "Eslinga TACEVAC"
+  ],
+  "steps": [
+    "CUIDADO BAJO FUEGO: Devuelva el fuego primero si está armado. Mueva a la víctima usando el método de arrastre más rápido; no se detenga para tratarla en la zona de muerte.",
+    "ARRASTRE RÁPIDO (un rescatista): agarrar el collar/arrastrar la manija por los hombros, arrastrar por la espalda. Proteger la cabeza del impacto.",
+    "TRANSPORTE DEL BOMBERO (un rescatista): levante a la víctima sobre los hombros para distancias más largas; requiere que la víctima esté inconsciente o coopere.",
+    "TRANSPORTE DE DOS PERSONAS: los rescatistas unen los brazos debajo de la espalda y las rodillas de la víctima. Más rápido que el arrastre para distancias cortas.",
+    "CAMA IMPROVISADA: coloque dos postes a una distancia de 18 pulgadas. Teje las chaquetas a través de postes con botones en el interior. Pruebe antes de cargar la víctima.",
+    "CAMA DESMONTADA: desenrolle, deslice debajo de la víctima, envuélvala y asegúrela con correas. Requiere 2-4 transportistas.",
+    "Al cargar: levante contando hasta 3, mantenga la alineación cabeza/cuerpo, minimice el movimiento de la columna cuando sea posible.",
+    "Si se sospecha una lesión en la columna y no hay amenaza: mantenga la estabilización en línea durante todo el movimiento. Una persona dedicada al control de cabeza.",
+    "Vaya hasta cubrir y luego vuelva a evaluar ABC."
+  ],
+  "warnings": [
+    "Prioridad TCCC: vida > extremidad > precaución de la columna. No demore el movimiento desde una zona de muerte para tomar precauciones en la columna.",
+    "El transporte por parte de un bombero está contraindicado en caso de sospecha de lesión en la columna, fractura de fémur o traumatismo abdominal penetrante.",
+    "Camadas improvisadas: comprobar la capacidad de peso antes de confiar a una víctima.",
+    "Traslado de un herido con torniquete: comprobar que el torniquete no se ha aflojado durante el movimiento."
+  ],
+  "precedes": [
+    "línea medevac-9"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Los niños son más livianos: es posible que un solo rescatador los lleve por más tiempo. Mantenga la cabeza proporcionalmente más grande: centro de gravedad más alto al transportarlo."
+    },
+    "obstetric": {
+      "note": "Evite la posición boca abajo o la presión sobre el abdomen. Transporte lateral (preferiblemente el lado izquierdo) o en decúbito supino con cuña de cadera izquierda."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Kepanasan Cilaka Manajemen",
+  "category": "environmental",
+  "skill_level": "dhasar",
+  "time_estimate": "Terus nganti MEDEVAC utawa stabil pasien",
+  "description": "Manajemen kram panas, kesel panas, lan stroke panas. Stroke panas minangka darurat sing ngancam nyawa - pendinginan kanthi cepet minangka perawatan. Mbedakake kekeselen panas (mentasi normal) saka stroke panas (LOC sing diowahi) langsung.",
+  "equipment": [
+    "Banyu (oral + cooling)",
+    "Ès tumênggung utawi lêbêt teles dhingin",
+    "Penyetor IV (LR utawa NS)",
+    "Kipas angin utawa awang-awang",
+    "Termometer rektal (suhu inti definitif)"
+  ],
+  "steps": [
+    "ASSESS: Apa korban waspada lan orientasi? Kulit garing panas vs kulit kringet panas? Suhu inti yen thermometer kasedhiya.",
+    "KRAM PANAS: Kejang otot, mental normal. Ngaso ing teduh, rehidrasi oral kanthi elektrolit, regangan sing lembut. Ora ngancam nyawa.",
+    "KESEHATAN PANAS: kringet abot, kekirangan, pusing, semedi normal utawa meh normal. Pindhah menyang teduh / wilayah sing adhem. Copot sandhangan sing berlebihan. Cairan lisan (yen sadar) utawa IV LR 1L liwat 30-60 min. Ngawasi kemajuan kanggo heat stroke.",
+    "HEAT STROKE (darurat): owah-owahan LOC, kebingungan, combativeness, utawa semaput. Suhu inti > 40C (104F). Kulit panas (bisa uga udan utawa garing). BEGIN: Langsung dibusak saka panas, copot kabeh sandhangan, kulit teles lan penggemar agresif. Pasang bungkus es ing gulu, aksila, lan groin (daerah pembuluh darah dhuwur). IV LR 1-2L. Nglindhungi saluran napas yen ora sadar. MEDEVAC langsung.",
+    "Aja menehi aspirin utawa acetaminophen kanggo stroke panas - ora mbantu, bisa cilaka.",
+    "Monitor: vital q15 menit, jalan nafas, status mental. Tren suhu dokumen.",
+    "Terusake adhem sajrone MEDEVAC - aja mandheg kanggo transportasi."
+  ],
+  "warnings": [
+    "Stroke panas minangka darurat sing ngancam nyawa - aja salah yen kesel panas. Priksa status mental.",
+    "Cooling minangka perawatan definitif. Aja tundha cooling kanggo netepake akses IV.",
+    "Stroke panas exertional bisa dumadi ing individu fit - fitness fisik ora nglindhungi.",
+    "Hyponatremia (sodium kurang) saka overhydration karo banyu kosong bisa niru stroke panas - menehi solusi elektrolit ora mung banyu."
+  ],
+  "follows": [
+    "dehidrasi-assessment"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Anak-anak thermoregulate kurang efisien. Heat stroke bisa maju luwih cepet. Cairan adhedhasar bobot: 20 mL/kg LR IV bolus. Suhu inti liwat termometer rektum paling akurat."
+    },
+    "obstetric": {
+      "note": "Hipertermia ibu (>39C) bisa nyebabake cacat tabung saraf janin (awal) lan gangguan janin (telat). Cooling agresif. Ngawasi denyut jantung janin yen kasedhiya."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oxytoxin",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocin",
+    "Syntocinon"
+  ],
+  "description": "Hormon peptide nội sinh. Thuốc co hồi tử cung hàng đầu để phòng ngừa và điều trị băng huyết sau sinh (BHSS). Gây co bóp tử cung và giảm mất máu sau sinh. Được cho SAU KHI sinh nhau thai.",
+  "indications": [
+    "Phòng ngừa băng huyết sau sinh (thường quy sau khi sinh)",
+    "Điều trị băng huyết sau sinh (đờ tử cung)",
+    "Kích thích chuyển dạ (chỉ cài đặt được kiểm soát)"
+  ],
+  "dose": "Phòng ngừa BHSS: 10 đơn vị tiêm bắp ngay sau khi sổ nhau thai (đường thực địa ưa thích). Điều trị PPH: 10-40 đơn vị trong 1L IV, truyền với tốc độ 40-80 mU/phút. Nếu không có IV: 10 đơn vị IM.",
+  "route": [
+    "IV",
+    "TÔI"
+  ],
+  "window": "Cho SAU KHI sổ nhau thai -- cho trước khi nhau thai ra có thể làm kẹt nhau thai.",
+  "contraindications": [
+    "Trước khi sinh nhau thai (có thể bẫy nhau thai)",
+    "Thai nhi đau khổ với cái đầu không được sinh ra",
+    "Đã biết quá mẫn"
+  ],
+  "warnings": [
+    "CHO SAU KHI NHAU ĐƯỢC GIAO - bẫy nhau thai là một biến chứng đe dọa tính mạng.",
+    "Tiêm tĩnh mạch có thể gây hạ huyết áp nghiêm trọng và rối loạn nhịp tim - phải pha loãng và truyền chậm.",
+    "Tác dụng chống bài niệu với lượng lớn - theo dõi tình trạng hạ natri máu."
+  ],
+  "regional_names": {
+    "generic": "oxytoxin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Không áp dụng -- chỉ sử dụng trong sản khoa.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Thuốc co tử cung nguyên phát. Nếu đờ tử cung không đáp ứng, hãy xem xét dùng misoprostol, axit tranexamic (TXA), ép tử cung bằng hai tay và MEDEVAC nhanh."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

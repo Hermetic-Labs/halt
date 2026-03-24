@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Normale Kochsalzlösung (0,9 % NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "0,9 % Natriumchlorid-Injektion"
+  ],
+  "description": "Isotonische kristalloide Flüssigkeit. Wird zur intravenösen Flüssigkeitsreanimation verwendet. Bei hämorrhagischem Schock vorsichtig anwenden – große Mengen verschlimmern die Koagulopathie (hyperchlorämische Azidose, Verdünnungskoagulopathie). Eine permissive Hypotonie wird bei penetrierenden Traumata bis zur Blutungskontrolle bevorzugt.",
+  "indications": [
+    "Flüssigkeitsreanimation (mit Vorsicht bei hämorrhagischem Schock)",
+    "Medikamentenverdünner/Spülmittel",
+    "Hypovolämie aus nicht hämorrhagischen Ursachen"
+  ],
+  "dose": "Hämorrhagischer Schock: Beschränkung auf maximal 1 l bis zur Blutungskontrolle (permissive Hypotonie). Ziel-SBP 80–90 mmHg bei penetrierendem Trauma, 90 mmHg bei TBI. Nicht-hämorrhagische Hypovolämie: 500-ml-Boli, erneute Beurteilung.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hypernatriämie",
+    "Flüssigkeitsüberladung / Lungenödem (relativ)"
+  ],
+  "warnings": [
+    "Große Mengen verursachen eine hyperchlorämische metabolische Azidose und eine Verdünnungskoagulopathie – was die tödliche Trias bei Traumata verschlimmert.",
+    "Für die Wiederbelebung großvolumiger Traumata wird die Laktat-Ringer-Therapie (LR) bevorzugt.",
+    "Vor der chirurgischen Blutungskontrolle (permissive Hypotonie) dürfen penetrierende Rumpfverletzungen NICHT übermäßig wiederbelebt werden."
+  ],
+  "regional_names": {
+    "generic": "Natriumchlorid 0,9 %"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 ml/kg intravenöser Bolus, erneut beurteilen. Wiederholen Sie dies maximal x3 (insgesamt 60 ml/kg), bevor Sie Blutprodukte in Betracht ziehen.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Standard-Wiederbelebung bei geburtshilflicher Blutung. Aggressive Flüssigkeitsreanimation, geeignet für postpartale Blutungen, bevor Blutprodukte verfügbar sind."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

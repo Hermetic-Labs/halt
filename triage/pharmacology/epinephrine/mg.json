@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinephrine (Adrénaline)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalina"
+  ],
+  "description": "Endogenous catecholamin amin'ny alpha sy beta adrenergic asa. Fitsaboana voalohany amin'ny anaphylaxis sy ny fijanonan'ny fo. Amin'ny anaphylaxis, ny fe IM dia tiana kokoa noho ny IV (tsara kokoa, mahomby kokoa). Aza tara amin'ny fidirana IV amin'ny anaphylaxis.",
+  "indications": [
+    "Anaphylaxis (andalana voalohany)",
+    "Fijanonan'ny fo -- tsy misy pulse VF/VT/PEA/asystole",
+    "bronchospasm mafy",
+    "Hypotension refractory amin'ny fluid"
+  ],
+  "dose": "Anaphylaxis: 0,3-0,5 mg IM (fe anterolateral) | Auto-injector 0.3 mg IM. Avereno q5-15 min PRN. Fijanonan'ny fo: 1 mg IV / IO q3-5 min mandritra ny CPR. bronchospasm mafy: 0,3 mg IM.",
+  "route": [
+    "IM",
+    "IV",
+    "IO"
+  ],
+  "window": "Amin'ny anaphylaxis: omeo IM avy hatrany - aza tara amin'ny fidirana IV.",
+  "contraindications": [
+    "Tsy misy contraindications tanteraka amin'ny vonjy taitra mampidi-doza"
+  ],
+  "warnings": [
+    "Ny epinephrine IV ho an'ny anaphylaxis dia tsy tokony hampiasaina afa-tsy amin'ny fijanonan'ny fo na fahatafintohinana lalina - mampidi-doza raha omena tosika IV amin'ny marary mahatsiaro tena.",
+    "Ny extravasation dia miteraka necrosis amin'ny tissue -- miantoka ny patency IV.",
+    "Mampitombo ny fangatahan'ny oksizenina myocardial -- mitandrema amin'ny areti-mifindra fantatra any ivelan'ny fisamborana."
+  ],
+  "regional_names": {
+    "generic": "epinephrine",
+    "UK": "adrenaline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anaphylaxis: 0,01 mg/kg IM (max 0,5 mg). EpiPen Jr (0.15 mg) ho an'ny 15-30 kg. Fijanonan'ny fo: 0,01 mg/kg IV/IO q3-5 min.",
+      "note": "Ampiasao ny dosie mifototra amin'ny lanja. Broselow horonam-peo soso-kevitra."
+    },
+    "obstetric": {
+      "note": "Mampiasà fatra anaphylaxis mahazatra - ny fahaveloman'ny reny no zava-dehibe indrindra. Ny epinephrine dia azo antoka amin'ny fitondrana vohoka amin'ny loza mety hitranga."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

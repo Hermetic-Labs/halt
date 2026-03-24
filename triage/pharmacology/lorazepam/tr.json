@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Ativan"
+  ],
+  "description": "Orta etkili benzodiazepin. Status epileptikus ve akut nöbetler için birinci basamak IV/IM tedavisi. Ayrıca prosedürel sedasyon ve anksiyoliz için de kullanılır.",
+  "indications": [
+    "Status epileptikus (birinci basamak IV)",
+    "Akut nöbet yönetimi",
+    "Prosedürel sedasyon",
+    "Şiddetli kaygı veya ajitasyon"
+  ],
+  "dose": "Nöbet: 4 mg IV/IO, 2 dakika boyunca yavaş itme. Nöbet devam ederse 4 mg'ı 5-10 dakikada tekrarlayın. IM: IV mevcut değilse 4 mg.",
+  "route": [
+    "IV",
+    "Giriş Çıkış",
+    "anlık ileti"
+  ],
+  "window": "",
+  "contraindications": [
+    "Akut dar açılı glokom",
+    "Şiddetli solunum depresyonu",
+    "Propilen glikol aşırı duyarlılığı"
+  ],
+  "warnings": [
+    "Solunum depresyonuna neden olur - BVM'yi ve hava yolu ekipmanını hazır bulundurun.",
+    "Sedasyon 6-8 saat sürebilir; hava yolunu izleyin.",
+    "Özellikle yaşlılarda ve çocuklarda paradoksal ajitasyon mümkündür."
+  ],
+  "regional_names": {
+    "generic": "lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV/IM (maks. 4 mg/doz). Gerekirse 5-10 dakikada bir tekrarlayın.",
+      "note": "Çocuklarda IV nöbet yönetimi için diazepam yerine tercih edilir."
+    },
+    "obstetric": {
+      "note": "Plasentayı geçer; yenidoğanda solunum depresyonu mümkündür. Maternal status epileptikusta faydanın riskten fazla olduğu durumlarda kullanın."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

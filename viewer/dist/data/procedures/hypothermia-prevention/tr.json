@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Hipoterminin Önlenmesi (H -- MART)",
+  "category": "temperature-management",
+  "skill_level": "herhangi bir yanıt veren",
+  "time_estimate": "2-3 dakika",
+  "description": "Savaş hipotermisi travmada önlenebilir bir öldürücüdür. Ölümcül üçlü: hipotermi + asidoz + koagülopati. Ne pahasına olursa olsun engelleyin.",
+  "equipment": [
+    "ısıyı yansıtan battaniye",
+    "hipotermi-önleme-kiti",
+    "sıcak-iv-sıvılar-mevcutsa"
+  ],
+  "steps": [
+    "Tüm ıslak giysileri taktik açıdan mümkün olan en kısa sürede çıkarın.",
+    "Hastayı ısıyı yansıtan (boşluk) bir battaniyeyle örtün; parlak tarafı hastaya doğru olacak şekilde.",
+    "Başınızı ve boynunuzu sarın (önemli miktarda ısı kaybı olan bölge).",
+    "Yerden yalıtın - hasta ile soğuk zemin yüzeyi arasına bir şey yerleştirin.",
+    "Varsa sıcak IV sıvıları uygulayın.",
+    "Hastanın üzerini örtmeden titremesine izin vermeyin; titreme bir erken uyarı işaretidir.",
+    "Termometre mevcutsa sıcaklığı izleyin. 35°C'nin (95°F) altında = hipotermi."
+  ],
+  "warnings": [
+    "Hipotermi koagülopatiyi kötüleştirir; kanayan hastalar daha hızlı soğur ve pıhtılaşma daha az etkili olur.",
+    "Sahada hipotermi önleme ÇKP'de değil, yaralanma noktasında başlamalıdır."
+  ],
+  "source": "TCCC / JTS CPG"
+}

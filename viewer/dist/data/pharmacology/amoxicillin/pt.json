@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicilina",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "Trimox"
+  ],
+  "description": "Antibiótico aminopenicilina de amplo espectro. Antibiótico profilático oral para infecção de feridas. Parte da embalagem de pílulas de combate TCCC para profilaxia de feridas não graves.",
+  "indications": [
+    "Profilaxia de infeções de feridas (feridas ligeiras a moderadas, cartela de comprimidos orais)",
+    "Infeções dos tecidos moles",
+    "Infeções das vias respiratórias"
+  ],
+  "dose": "500 mg PO a cada 8 horas x 7 dias (profilaxia de feridas). Alternativa de 875 mg PO a cada 12 horas.",
+  "route": [
+    "PO"
+  ],
+  "window": "Comece dentro de 3 horas após a lesão para profilaxia da ferida.",
+  "contraindications": [
+    "Alergia conhecida à penicilina (use doxiciclina)",
+    "Mononucleose (risco de erupção cutânea)"
+  ],
+  "warnings": [
+    "Se alérgico à penicilina: substituir doxiciclina 100mg PO BID.",
+    "Somente via oral – use antibióticos intravenosos (cefazolina/ciprofloxacina) para feridas graves ou se a via oral não for tolerada."
+  ],
+  "regional_names": {
+    "generic": "amoxicilina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/dia divididos a cada 8 horas (máximo de 500 mg/dose). Use referência Broselow baseada em peso.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Seguro na gravidez. Preferido à doxiciclina (que é contraindicada na gravidez)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

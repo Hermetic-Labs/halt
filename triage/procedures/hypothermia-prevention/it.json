@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Prevenzione dell'ipotermia (H -- MARZO)",
+  "category": "temperature-management",
+  "skill_level": "qualsiasi risponditore",
+  "time_estimate": "2-3 minuti",
+  "description": "L’ipotermia da combattimento è una delle principali cause di morte prevenibili nei traumi. La triade letale: ipotermia + acidosi + coagulopatia. Prevenire a tutti i costi.",
+  "equipment": [
+    "coperta termoriflettente",
+    "kit-prevenzione-ipotermia",
+    "fluidi-iv-caldi-se-disponibili"
+  ],
+  "steps": [
+    "Rimuovere tutti gli indumenti bagnati non appena tatticamente possibile.",
+    "Coprire il paziente con una coperta termoriflettente (spaziale), con il lato lucido rivolto verso il paziente.",
+    "Avvolgere testa e collo (sede di significativa perdita di calore).",
+    "Isolare da terra: posizionare qualcosa tra il paziente e la superficie fredda del terreno.",
+    "Se disponibili, somministrare liquidi caldi per via endovenosa.",
+    "Non permettere al paziente di tremare senza copertura: i brividi sono un segnale di allarme precoce.",
+    "Monitorare la temperatura se è disponibile un termometro. Sotto i 35°C (95°F) = ipotermia."
+  ],
+  "warnings": [
+    "L'ipotermia peggiora la coagulopatia: i pazienti sanguinanti si raffreddano più velocemente e coagulano meno efficacemente.",
+    "La prevenzione dell’ipotermia sul campo deve iniziare dal punto della lesione, non dal PCC."
+  ],
+  "source": "TCCC / JTS CPG"
+}

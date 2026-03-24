@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t86811",
+    "icd10":  "T86811",
+    "name":  "Lung transplant failure",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Lung transplant failure",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

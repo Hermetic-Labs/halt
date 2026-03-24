@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s62396k",
+    "icd10":  "S62396K",
+    "name":  "Other fracture of fifth metacarpal bone, right hand, subsequent encounter for fracture with nonunion",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Other fracture of fifth metacarpal bone, right hand, subsequent encounter for fracture with nonunion",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

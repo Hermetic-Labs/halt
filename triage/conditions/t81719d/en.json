@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t81719d",
+    "icd10":  "T81719D",
+    "name":  "Complication of unspecified artery following a procedure, not elsewhere classified, subsequent encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Complication of unspecified artery following a procedure, not elsewhere classified, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

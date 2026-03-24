@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t392x6s",
+    "icd10":  "T392X6S",
+    "name":  "Underdosing of pyrazolone derivatives, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Underdosing of pyrazolone derivatives, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

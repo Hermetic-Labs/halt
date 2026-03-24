@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s071xxs",
+    "icd10":  "S071XXS",
+    "name":  "Crushing injury of skull, sequela",
+    "category":  "head-neck-injury",
+    "triage_priority":  "",
+    "description":  "Crushing injury of skull, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

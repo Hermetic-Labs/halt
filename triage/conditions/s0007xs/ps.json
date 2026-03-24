@@ -1,0 +1,22 @@
+{
+  "id": "s0007xs",
+  "icd10": "S0007XS",
+  "name": "د سر د پوستکي نور سطحي ټوټې، سیکویلا",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "د سر د پوستکي نور سطحي ټوټې، sequela",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

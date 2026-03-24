@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t868421",
+    "icd10":  "T868421",
+    "name":  "Corneal transplant infection, right eye",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Corneal transplant infection, right eye",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

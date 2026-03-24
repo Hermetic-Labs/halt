@@ -1,0 +1,63 @@
+{
+  "id": "broselow-tape",
+  "name": "Tài liệu tham khảo băng khẩn cấp nhi khoa Broselow",
+  "description": "Tham khảo trọng lượng theo liều được mã hóa bằng màu để quản lý thuốc cho trẻ em khi không có thang đo. Đo trẻ từ đỉnh đầu đến gót chân và chọn dải màu phù hợp.",
+  "note": "Tài liệu tham khảo này chỉ dành cho ƯỚC TÍNH. Sử dụng trọng lượng thực tế khi có sẵn.",
+  "bands": [
+    {
+      "color": "màu xám",
+      "weight_kg": "3-5",
+      "length_cm": "46-57",
+      "est_age": "Sơ sinh"
+    },
+    {
+      "color": "hồng",
+      "weight_kg": "6-7",
+      "length_cm": "57-67",
+      "est_age": "3-6 tháng"
+    },
+    {
+      "color": "đỏ",
+      "weight_kg": "8-9",
+      "length_cm": "67-74",
+      "est_age": "6-12 tháng"
+    },
+    {
+      "color": "màu tím",
+      "weight_kg": "11-10",
+      "length_cm": "74-83",
+      "est_age": "12-18 tháng"
+    },
+    {
+      "color": "màu vàng",
+      "weight_kg": "14-12",
+      "length_cm": "83-95",
+      "est_age": "18 tháng-3 tuổi"
+    },
+    {
+      "color": "trắng",
+      "weight_kg": "15-18",
+      "length_cm": "95-107",
+      "est_age": "3-5 năm"
+    },
+    {
+      "color": "màu xanh",
+      "weight_kg": "19-22",
+      "length_cm": "107-122",
+      "est_age": "5-7 năm"
+    },
+    {
+      "color": "màu cam",
+      "weight_kg": "24-28",
+      "length_cm": "122-137",
+      "est_age": "7-9 tuổi"
+    },
+    {
+      "color": "màu xanh lá cây",
+      "weight_kg": "30-36",
+      "length_cm": "137-152",
+      "est_age": "9-12 tuổi"
+    }
+  ],
+  "source": "Broselow Pediatric Emergency Reference / PALS"
+}

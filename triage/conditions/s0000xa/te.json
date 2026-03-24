@@ -1,0 +1,22 @@
+{
+  "id": "s0000xa",
+  "icd10": "S0000XA",
+  "name": "నెత్తిమీద పేర్కొనబడని ఉపరితల గాయం, ప్రారంభ ఎన్‌కౌంటర్",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "నెత్తిమీద పేర్కొనబడని ఉపరితల గాయం, ప్రారంభ ఎన్‌కౌంటర్",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

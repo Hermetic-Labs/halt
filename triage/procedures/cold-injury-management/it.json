@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Gestione delle lesioni da freddo",
+  "category": "environmental",
+  "skill_level": "Base",
+  "time_estimate": "In corso",
+  "description": "Gestione del congelamento, del piede da immersione (piede da trincea) e dell'ipotermia. Le lesioni da freddo sono prevenibili: riconosci i primi segni prima che il danno ai tessuti sia irreversibile. Maneggiare il tessuto congelato con estrema delicatezza.",
+  "equipment": [
+    "Indumenti isolanti/sacco a pelo asciutti",
+    "Acqua calda (38-42°C/100-108°F) per il bagno riscaldante",
+    "Medicazioni sterili",
+    "Ibuprofene 400 mg PO (se disponibile)",
+    "IV LR (caldo se possibile)"
+  ],
+  "steps": [
+    "PRIMA L'IPOTERMIA: valutare la temperatura interna con un termometro a bassa lettura. Lieve (32-35°C): brividi, confusione. Moderato (28-32°C): nessun brivido, grave confusione. Grave (<28°C): incosciente, nessun polso rilevabile.",
+    "IPOTERMIA - Lieve/moderata: rimuovere gli indumenti bagnati, isolare dal terreno, dall'ambiente caldo, fluidi caldi e dolci se cosciente, impacchi riscaldanti su ascelle/inguine (non direttamente sulla pelle). Maneggiare delicatamente: le vibrazioni possono attivare la VFib.",
+    "IPOTERMIA – Grave: maneggiare MOLTO delicatamente. Controllare il polso 60 secondi interi prima della RCP. Iniziare la RCP in assenza di polso. Fluidi IV caldi se disponibili. Priorità MEDEVAC: \"non morto finché non sarà caldo e morto\".",
+    "CONGELAMENTO: superficiale (pelle bianca/grigia, morbida sotto) vs. profondo (duro, sensazione di legno, vesciche). NON strofinare la zona. NON riscaldare se esiste il rischio di ricongelamento: il ricongelamento provoca danni peggiori del riscaldamento ritardato.",
+    "Riscaldamento FROSTBITE: immergere in acqua a 38-42°C (non più calda) per 15-30 minuti fino a quando il tessuto diventa morbido e rosso/viola. Molto doloroso: offri analgesia (ketamina o morfina).",
+    "Dopo il riscaldamento: tamponare le dita dei piedi/dita con una garza sterile. NON far scoppiare le vesciche. Proteggere dalla pressione.",
+    "PIEDE DA IMMERSIONE (piede da trincea): esposizione prolungata al freddo/umido, pelle rossa poi pallida e poi vescica. Piedi asciutti, riscaldati lentamente, sollevati. NON applicare calore diretto.",
+    "Documentare l'ora dell'infortunio e l'ora del riscaldamento."
+  ],
+  "warnings": [
+    "NON riscaldare il congelamento se c'è qualche possibilità di ricongelamento: riscaldamento incompleto + ricongelamento = perdita catastrofica di tessuto.",
+    "Una grave ipotermia può simulare la morte. Controllare il polso per 60 secondi. \"Non morto finché non è caldo e morto.\"",
+    "L'alcol aumenta la perdita di calore nonostante la percezione del calore: non somministrare alcol.",
+    "Il rischio di fibrillazione ventricolare è elevato nell'ipotermia moderata-grave: ridurre al minimo la manipolazione e lo shock del paziente."
+  ],
+  "follows": [
+    "prevenzione-ipotermia"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "I bambini si raffreddano più velocemente grazie al maggiore rapporto superficie/massa. Soglie di ipotermia uguali. Fluidi IV caldi sono critici. Fluido in base al peso: 20 mL/kg LR caldo."
+    },
+    "obstetric": {
+      "note": "L'ipotermia materna provoca bradicardia e acidosi fetale. Il riscaldamento materno aggressivo è il trattamento del feto. Monitoraggio fetale se disponibile."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

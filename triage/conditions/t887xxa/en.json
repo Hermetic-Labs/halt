@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t887xxa",
+    "icd10":  "T887XXA",
+    "name":  "Unspecified adverse effect of drug or medicament, initial encounter",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Unspecified adverse effect of drug or medicament, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

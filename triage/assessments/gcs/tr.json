@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "Glasgow Koma Skalası (GCS)",
+  "category": "neurological",
+  "description": "Göz, sözel ve motor tepkiler aracılığıyla bilincin standartlaştırılmış nörolojik skorlaması. Puan aralığı 3-15.",
+  "instructions": "Üç alanın her birini bağımsız olarak puanlayın. Toplam GCS için üç puanı toplayın.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Spontane"
+        },
+        {
+          "score": 3,
+          "label": "Seslendirmek için"
+        },
+        {
+          "score": 2,
+          "label": "Acıya"
+        },
+        {
+          "score": 1,
+          "label": "Hiçbiri"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "Odaklı"
+        },
+        {
+          "score": 4,
+          "label": "Kafam karıştı"
+        },
+        {
+          "score": 3,
+          "label": "Uygunsuz kelimeler"
+        },
+        {
+          "score": 2,
+          "label": "Anlaşılmaz sesler"
+        },
+        {
+          "score": 1,
+          "label": "Hiçbiri"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "Komutlara uyar"
+        },
+        {
+          "score": 5,
+          "label": "Ağrıyı lokalize eder"
+        },
+        {
+          "score": 4,
+          "label": "Acıdan uzaklaşır"
+        },
+        {
+          "score": 3,
+          "label": "Anormal fleksiyon (dekortikasyon)"
+        },
+        {
+          "score": 2,
+          "label": "Uzatma (serebralleşme)"
+        },
+        {
+          "score": 1,
+          "label": "Hiçbiri"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "Hafif TBI -- yakından izleyin"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "Orta düzeyde TBI -- hava yolunu hazırlayın"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "Şiddetli TBI -- hava yolu acil risk altında, mümkünse entübe edin"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "2 yaşın altındaki çocuklar için Pediatrik GCS (pGCS) kullanın. Sözlü puanlama, sözel öncesi çocuklar için ayarlanmıştır."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Deksametazon",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Dekadron",
+    "DexPak"
+  ],
+  "description": "Długo działający syntetyczny kortykosteroid. Stosowany w leczeniu obrzęku mózgu (obrzęk mózgu na dużych wysokościach - HACE, TBI), ciężkich reakcji alergicznych, obrzęku dróg oddechowych i przełomu nadnerczowego. Działa przeciwzapalnie, a nie anabolicznie.",
+  "indications": [
+    "Obrzęk mózgu na dużych wysokościach (HACE)",
+    "Obrzęk dróg oddechowych (stridor poektubacyjny, zad)",
+    "Obrzęk mózgu spowodowany guzem lub ropniem",
+    "Ciężkie reakcje alergiczne (w uzupełnieniu epinefryny)",
+    "Kryzys nadnerczowy",
+    "Środek przeciwwymiotny wspomagający (okołooperacyjny)"
+  ],
+  "dose": "Obrzęk mózgu/HACE: początkowo 8–10 mg dożylnie/im., następnie 4 mg co 6 godzin. Obrzęk dróg oddechowych: jednorazowo 10 mg dożylnie. Zad: 0,6 mg/kg domięśniowo/doustnie (maks. 16 mg). Kryzys nadnerczowy: 4 mg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO"
+  ],
+  "window": "HACE: Podaj jak najwcześniej wraz z natychmiastowym zejściem.",
+  "contraindications": [
+    "Ogólnoustrojowe zakażenia grzybicze (bez leczenia przeciwgrzybiczego)",
+    "Szczepionki zawierające żywe wirusy w ciągu 30 dni (względne)"
+  ],
+  "warnings": [
+    "Nie zastępuje zejścia i tlenu w HACE – stosować wyłącznie jako dodatek.",
+    "Hiperglikemia – monitoruj poziom glukozy we krwi u chorych na cukrzycę.",
+    "Immunosupresja przy długotrwałym stosowaniu.",
+    "Pojedyncze dawki w sytuacjach awaryjnych są na ogół bardzo bezpieczne."
+  ],
+  "regional_names": {
+    "generic": "deksametazon"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Zad: 0,6 mg/kg doustnie/im. (maks. 16 mg). Obrzęk mózgu: 0,5-1 mg/kg dożylnie (maks. 10 mg). Obrzęk dróg oddechowych: 0,5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM co 24 godziny x 2 dawki stosowane w celu przyspieszenia dojrzałości płuc płodu w 24-34 tygodniu ciąży w przypadku porodu przedwczesnego. Porozmawiaj z najwyższym dostępnym dostawcą."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

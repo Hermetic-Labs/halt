@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Dawa ya upunguzaji wa maumivu inayotoa analgesia, kutuliza, na amnesia huku ikihifadhi hali ya hewa ya hewa na uthabiti wa hemodynamic. Dawa ya kutuliza maumivu inayopendelewa katika TCCC -- hudumisha BP tofauti na afyuni. Pia hutumiwa kwa sedation ya utaratibu na RSI.",
+  "indications": [
+    "Udhibiti wa maumivu ya wastani hadi makali",
+    "Sedation ya utaratibu (ufungashaji wa jeraha, kupunguza fracture)",
+    "Wakala wa utangulizi wa RSI",
+    "Kupambana na anesthesia"
+  ],
+  "dose": "Analgesia: 0.1-0.3 mg/kg IV/IO (kusukuma polepole) | 0.5 mg/kg IM. Utaratibu wa kutuliza: 1-2 mg/kg IV | 4-6 mg/kg IM. Uingizaji wa RSI: 1-2 mg / kg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "KATIKA"
+  ],
+  "window": "",
+  "contraindications": [
+    "skizofrenia inayojulikana au psychosis hai",
+    "ICP iliyoinuliwa bila ulinzi wa njia ya hewa (jamaa)"
+  ],
+  "warnings": [
+    "Athari za kujitokeza (delirium/hallucinations) -- punguza kwa midazolam 1-2mg IV ikiwa inapatikana.",
+    "Huongeza usiri -- uwe tayari kufyonza.",
+    "Laryngospasm ni nadra lakini inawezekana -- weka BVM inapatikana."
+  ],
+  "regional_names": {
+    "generic": "ketamine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesia: 0.5 mg/kg IV. Utaratibu wa kutuliza: 1-2 mg/kg IV | 4-5 mg/kg IM.",
+      "note": "Alisoma vizuri katika watoto. Inapendekezwa kwa taratibu za uchungu."
+    },
+    "obstetric": {
+      "note": "Ni salama kwa analgesia ya uzazi kwa viwango vya chini. Inaweza kusababisha unyogovu wa kupumua kwa watoto wachanga kwa viwango vya juu ikiwa itatolewa karibu na wakati wa kujifungua."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

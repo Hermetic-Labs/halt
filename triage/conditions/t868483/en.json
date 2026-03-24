@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t868483",
+    "icd10":  "T868483",
+    "name":  "Other complications of corneal transplant, bilateral",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "Other complications of corneal transplant, bilateral",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

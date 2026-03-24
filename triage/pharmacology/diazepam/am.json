@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "ቫሊየም",
+    "Diastat"
+  ],
+  "description": "ለረጅም ጊዜ የሚሠራ ቤንዞዲያዜፒን. ለመናድ አስተዳደር፣ ለጡንቻ መወጠር እና ለጭንቀት የሚዳርግ። ሬክታል ጄል (Diastat) IV በማይገኝበት ጊዜ በመስክ ቅንጅቶች ውስጥ ጠቃሚ ነው። ከ lorazepam የበለጠ ረጅም ጊዜ.",
+  "indications": [
+    "የሚጥል አስተዳደር (ሬክታል/IV)",
+    "የአከርካሪ ገመድ ጉዳት ወይም ቴታነስ ከ የጡንቻ spasm",
+    "የነርቭ ወኪል ፀረ-መድሃኒት ረዳት (በ CHEMPACK ኪት ውስጥ)",
+    "አልኮልን ማስወገድ"
+  ],
+  "dose": "መናድ: 5-10 mg IV የዘገየ ግፊት. q10-15 ደቂቃ መድገም (ቢበዛ 30 mg)። ቀጥተኛ: 0.2-0.5 mg / ኪግ. IM absorption erratic -- ከተቻለ IM ያስወግዱ።",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "አጣዳፊ ጠባብ-አንግል ግላኮማ",
+    "ከባድ የጉበት በሽታ",
+    "የመተንፈስ ችግር"
+  ],
+  "warnings": [
+    "IM መምጠጥ የተዛባ እና የሚያሰቃይ ነው -- IVን፣ rectalን፣ ወይም midazolam IMን በምትኩ ይጠቀሙ።",
+    "የረጅም ጊዜ ማስታገሻ (ለተደጋጋሚ መጠን 24-48h).",
+    "የነርቭ ወኪል ተጎጂዎች፡ ዳያዜፓም በ CHEMPACK ኪት ውስጥ ከ cholinergic ቀውስ ለመናድ ይካተታል።"
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0.1-0.3 mg/kg (ከፍተኛ 10 ሚ.ግ.) ቀጥተኛ: 0.3-0.5 mg / ኪግ. IV በማይገኝበት ጊዜ የሬክታል መንገድን ይጠቀሙ።",
+      "note": "የሬክታል ዲያስታት ጄል በተለይ በመስክ መቼቶች ውስጥ ለህፃናት መናድ ጠቃሚ ነው።"
+    },
+    "obstetric": {
+      "note": "የእንግዴ ልጅን ይሻገራል. አዲስ የተወለደ hypotonia, የመተንፈስ ጭንቀት ሊያስከትል ይችላል. ለማግኒዚየም ምላሽ የማይሰጡ የእናቶች መናድ ብቻ ይጠቀሙ."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

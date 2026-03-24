@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Cefazolina",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Ancef",
+    "Kefzol"
+  ],
+  "description": "Cefalosporine di prima generazione. Antibiotico parenterale di prima linea per infezioni gravi di ferite e profilassi chirurgica. Buona copertura gram-positiva incluso MSSA. Somministrare entro 60 minuti dall'incisione chirurgica per la profilassi.",
+  "indications": [
+    "Profilassi delle ferite chirurgiche",
+    "Infezioni gravi dei tessuti molli",
+    "Profilassi delle fratture aperte",
+    "Infezioni della pelle e della struttura cutanea"
+  ],
+  "dose": "1-2 g EV/IM ogni 8 ore. Profilassi chirurgica: 2 g IV entro 60 minuti prima dell'incisione. Ripetere 2 g se l'intervento dura > 4 ore.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Per la profilassi chirurgica: somministrare entro 60 minuti dall'incisione.",
+  "contraindications": [
+    "Allergia nota alle cefalosporine",
+    "Grave allergia alla penicillina (reattività crociata 5-10%)"
+  ],
+  "warnings": [
+    "Reattività crociata con allergia alla penicillina: usare con cautela nei pazienti allergici alla penicillina.",
+    "Aggiustare la dose in caso di insufficienza renale."
+  ],
+  "regional_names": {
+    "generic": "cefazolina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg EV/IM ogni 8 ore (max 2 g/dose). Profilassi: 30 mg/kg (max 2 g) prima dell'incisione.",
+      "note": "Sicuro e ben studiato in pediatria."
+    },
+    "obstetric": {
+      "note": "Sicuro in gravidanza e allattamento. Antibiotico parenterale preferito per le procedure ostetriche."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Wprowadzenie do dróg oddechowych nosowo-gardłowych (NPA)",
+  "category": "airway",
+  "skill_level": "ratownik bojowy",
+  "time_estimate": "1 minuta",
+  "description": "Zakładanie elastycznego urządzenia wspomagającego nosowe drogi oddechowe w celu utrzymania drożności dróg oddechowych u nieprzytomnego lub półprzytomnego pacjenta.",
+  "equipment": [
+    "npa-z-agrafką",
+    "smar"
+  ],
+  "steps": [
+    "Wybierz odpowiedni rozmiar NPA (mierz od nozdrza do płatka ucha).",
+    "Nasmaruj NPA obficie rozpuszczalnym w wodzie smarem lub solą fizjologiczną.",
+    "Włóż agrafkę przez kołnierz, jeśli jeszcze go nie ma (zapobiega aspiracji).",
+    "Włóż delikatnie do prawego nozdrza (ze skosem w stronę przegrody), wsuwając się równolegle do podniebienia.",
+    "Przesuwaj, aż kołnierz dotknie nozdrza.",
+    "Zmień ułożenie pacjenta (pozycja bezpieczna, jeśli nie dotyczy to kręgosłupa) i ponownie oceń drogi oddechowe.",
+    "Jeśli napotkasz opór, wypróbuj lewe nozdrze."
+  ],
+  "warnings": [
+    "Przeciwwskazane w przypadku podejrzenia złamania podstawy czaszki (oczy szopa, objaw Battle'a, wyciek z płynu mózgowo-rdzeniowego).",
+    "NPA jest najlepszym środkiem wspomagającym drogi oddechowe u nieprzytomnego pacjenta – OPA może wywołać wymioty u półprzytomnych pacjentów."
+  ],
+  "source": "TCCC / JTS CPG"
+}

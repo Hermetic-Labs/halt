@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Tourniquet-Anwendung (Combat Application Tourniquet – CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "Any-Responder",
+  "time_estimate": "30-60 Sek.",
+  "description": "Definitive Blutungskontrolle bei lebensbedrohlichen Extremitätenblutungen. Bewerben Sie sich frühzeitig – zögern Sie nicht.",
+  "equipment": [
+    "Katzen-Tourniquet",
+    "Permanentmarker"
+  ],
+  "steps": [
+    "Legen Sie das Tourniquet 2–3 Zoll (5–7 cm) proximal (oberhalb) der Wunde an – über der Kleidung ist akzeptabel.",
+    "Führen Sie das selbstklebende Band um die Gliedmaße und fädeln Sie es durch die Reibungsadapterschnalle.",
+    "Ziehen Sie das Band fest und befestigen Sie es wieder.",
+    "Drehen Sie die Ankerwindenstange, bis die Blutung aufhört oder kein distaler Puls mehr vorhanden ist.",
+    "Verriegeln Sie die Ankerwinde im Ankerwindenclip.",
+    "Bringen Sie den Ankerwindengurt zur Sicherung über der Ankerwindenstange an.",
+    "Schreiben Sie den Zeitpunkt der Anwendung direkt auf das Tourniquet (Markierung verwenden) UND auf die TCCC-Karte.",
+    "Legen Sie die Wunde frei und beurteilen Sie sie neu. Nach 5 Minuten erneut beurteilen."
+  ],
+  "warnings": [
+    "Entfernen Sie ein Tourniquet NICHT, nachdem es vor Ort angebracht wurde, sondern nur durch geschultes medizinisches Personal in einer kontrollierten Umgebung.",
+    "Zeit ist entscheidend: Ein Tourniquet >2 Stunden erhöht das Risiko für den Verlust von Gliedmaßen erheblich. Zeit sofort protokollieren.",
+    "NICHT auf eine Fuge auftragen. Wenn das Glied Wunden auf mehreren Ebenen aufweist, wenden Sie es proximal auf alle Wunden an.",
+    "Improvisierte Tourniquets (Gürtel, Seile) sind deutlich weniger effektiv."
+  ],
+  "follows": [
+    "Direktdruck",
+    "Wundpackung"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Verwenden Sie, sofern verfügbar, ein schmales Tourniquet für Kinder. Standard-CAT kann verwendet werden, aber vorsichtig anziehen. Die Gliedmaßen sind kleiner – überprüfen Sie sorgfältig den distalen Puls."
+    },
+    "obstetric": {
+      "note": "Standardanwendung bei Extremitätenwunden. Nicht auf Bauch oder Becken auftragen."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

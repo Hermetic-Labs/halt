@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "Babban darajar AVPU",
+  "category": "neurological",
+  "description": "Ƙimar sanin matakin 4 mai sauri. Ya fi GCS sauri don daidaitawa na farko.",
+  "instructions": "Yi la'akari da matakin mafi girma na amsa mai haƙuri ya nuna.",
+  "scoring": [
+    {
+      "code": "A",
+      "label": "Fadakarwa",
+      "description": "Mara lafiya a farke, sane, kuma yana amsawa kullum"
+    },
+    {
+      "code": "V",
+      "label": "Murya",
+      "description": "Mara lafiya yana amsawa ne kawai don ƙarfafawa ta baki"
+    },
+    {
+      "code": "P",
+      "label": "Ciwo",
+      "description": "Mara lafiya yana amsawa kawai ga abubuwan motsa jiki masu raɗaɗi (sternal rub, matsi na ƙusa)"
+    },
+    {
+      "code": "U",
+      "label": "Rashin amsawa",
+      "description": "Babu amsa ga duk wani kuzari -- ana buƙatar shiga tsakani na iska nan da nan"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "A",
+      "triage": "Stable -- ci gaba da kimantawa"
+    },
+    {
+      "code": "V",
+      "triage": "Game da -- duba hanyar iska"
+    },
+    {
+      "code": "P",
+      "triage": "Mahimmanci - hanyar iska a cikin haɗari, GCS yawanci <= 8"
+    },
+    {
+      "code": "U",
+      "triage": "Nan take -- sarrafa hanyar iska a yanzu"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

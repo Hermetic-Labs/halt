@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Motus Patiens Techniques",
+  "category": "casualty-movement",
+  "skill_level": "Basic",
+  "time_estimate": "1-30 min fretus longe & methodus",
+  "description": "Casu sub igne movere vel ad locum tutiorem curandi. Modus locorum, distantiae, numerus servatorum, casusque iniuriarum pendet. Celeritas spinalis praecavendum nobis est decisio imperatoria - in TCCC, comminatio prioritatem capit.",
+  "equipment": [
+    "SKED LITTER(e malebat)",
+    "NATO lectica / feretrum portatile",
+    "Improvised lectica: perticas + jackets/ponchos",
+    "Trahunt auriculas (uniformes vel phaleras)",
+    "fundam TACEVAC"
+  ],
+  "steps": [
+    "CURA IGNIS: Ignis prius armatus redde. Movere casus quam celerrime per modum drag - in zona occiditis tractare noli prohibere.",
+    "PRAECIPITIUM DRAG (unum servatorem): cape torquem/drag manubrium umeris, trahe supinum. Caput protege ab impulsu.",
+    "FIRMAN CARRY (unum servatorem): casus super humeros ad longiora distantias leva - casus postulat ut nescius vel cooperans sit.",
+    "DUABUS CARRY: servatores nectunt arma sub casu terga et genua. Citius trahunt pro brevibus intervallis.",
+    "LECTICULA IMPROVISED: duos perticas pone 18 pollices distantes. Texere tunicas perticas cum globulis intus. Test ante loading casus.",
+    "SKE LECTICULA: evolvere, sub casu labi, involvere et loris munire. Eget vehicula 2-4.",
+    "Cum loading: leva in comiti III, ponere caput / corpus noctis, minimize medullae motus cum fieri potest.",
+    "Si medulla iniuriae suspecta et nulla comminatio: conserva inline stabilizationem per motum. Una persona caput imperium dedicaverunt.",
+    "Movere operire, tum candam ABC."
+  ],
+  "warnings": [
+    "TCCC prior: vita > membri > cautio spinalis. Noli tardare motum a zona occidentis pro cautelis spinae.",
+    "Fireman gestus contraindicatur cum iniuriae spinalis suspecta, fractura femoris, vel penetrans abdominis trauma.",
+    "Improvised litters: test ponderis capacitas antequam casus confidat.",
+    "Movens casum cum tourniquet: perscriptio tourniquet in motu non solvitur."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Pueri leviores sunt -- unus servator diutius tuendo portat. Pone caput proportionaliter maius - superius centrum gravitatis portans."
+    },
+    "obstetric": {
+      "note": "Ne prone positus vel pressura in ventre. Lateralis (sinistrum latus maluit) seu supina oneraria cum cuneo coxae sinistro."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

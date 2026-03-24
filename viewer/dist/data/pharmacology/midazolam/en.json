@@ -1,0 +1,48 @@
+﻿{
+    "id":  "midazolam",
+    "name":  "Midazolam",
+    "category":  "sedation-seizure",
+    "rxnorm":  "41493",
+    "brand_names":  [
+                        "Versed",
+                        "Nayzilam"
+                    ],
+    "description":  "Short-acting benzodiazepine with rapid onset. Preferred for procedural sedation, RSI pre-medication, and IM/IN seizure management. IM and intranasal routes provide significant advantage in field settings.",
+    "indications":  [
+                        "Procedural sedation",
+                        "RSI pre-medication (with ketamine)",
+                        "Seizure management (IM/IN when IV unavailable)",
+                        "Agitation management"
+                    ],
+    "dose":  "Sedation: 0.05-0.1 mg/kg IV titrated. Procedural: 1-5 mg IV slow push. IM: 0.2 mg/kg. IN: 0.2 mg/kg (max 10 mg). Status epilepticus IM: 10 mg IM (adult).",
+    "route":  [
+                  "IV",
+                  "IO",
+                  "IM",
+                  "IN"
+              ],
+    "window":  "",
+    "contraindications":  [
+                              "Acute narrow-angle glaucoma",
+                              "Acute alcohol intoxication with cardiovascular compromise",
+                              "Known hypersensitivity"
+                          ],
+    "warnings":  [
+                     "Respiratory depression -- monitor airway, have reversal agent (flumazenil) if available.",
+                     "Hypotension especially with opioid coadministration.",
+                     "Rapid IV injection causes apnea -- push slowly."
+                 ],
+    "regional_names":  {
+                           "generic":  "midazolam"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "Sedation: 0.05-0.1 mg/kg IV. IM: 0.1-0.2 mg/kg. IN: 0.2-0.3 mg/kg. Seizure IM: 0.2 mg/kg (max 10 mg).",
+                                        "note":  "IN route particularly useful in children -- avoids IV access."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Crosses placenta. Neonatal sedation possible. Use minimum effective dose; monitor neonate if given near delivery."
+                                    }
+                  },
+    "source":  "JTS CPG / Standard Procedural Sedation Guidelines"
+}

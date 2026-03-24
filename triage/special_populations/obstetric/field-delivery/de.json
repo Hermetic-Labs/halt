@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Notfallzustellung vor Ort",
+  "category": "obstetric",
+  "skill_level": "Kampfmediziner",
+  "time_estimate": "Variiert – 20+ Min.",
+  "description": "Management überstürzter oder ungeplanter Lieferungen in rauen Umgebungen.",
+  "equipment": [
+    "Handschuhe",
+    "saubere Stoffdecken",
+    "Kabelklemmen oder Kabelbinder",
+    "Schere",
+    "Zwiebelspritze"
+  ],
+  "steps": [
+    "Positionieren Sie die Mutter auf dem Rücken oder halb zurückgelehnt. Bei Bewusstlosigkeit wird eine seitliche Neigung nach links bevorzugt (verhindert eine Kompression der Aortenhöhle).",
+    "Kontrollieren Sie die Bewegung des Kopfes – stützen Sie ihn mit der Handfläche ab. NICHT ziehen.",
+    "Überprüfen Sie nach der Entbindung des Kopfes, ob die Nackenschnur (um den Hals) vorhanden ist. Falls vorhanden, über den Kopf ziehen. Wenn es fest sitzt, klemmen und abschneiden.",
+    "Saugen Sie den Mund und dann die Nase mit einer Ballonspritze ab, falls verfügbar.",
+    "Führen Sie die Entbindung der vorderen Schulter durch sanften Zug am Kopf nach unten und dann nach oben zur hinteren Schulter.",
+    "Liefern Sie die Leiche ab – notieren Sie den Zeitpunkt der Lieferung.",
+    "Trocknen und wärmen Sie den Säugling sofort. Stimulieren Sie durch Reiben des Rückens.",
+    "Klemmen Sie die Schnur ab und schneiden Sie sie durch (warten Sie 1-2 Minuten, wenn das Kind stabil ist).",
+    "Bringen Sie die Plazenta mit sanftem, kontrolliertem Zug frei – üben Sie KEINE Gewalt aus.",
+    "Verabreichen Sie Oxytocin (falls verfügbar), um eine postpartale Blutung nach der Plazentageburt zu verhindern.",
+    "Auf postpartale Blutungen untersuchen – Fundusmassage, ggf. bimanuelle Kompression.",
+    "Bewerten Sie den Apgar-Score nach 1 und 5 Minuten."
+  ],
+  "warnings": [
+    "Wenn die Lieferung nicht unmittelbar bevorsteht, versuchen Sie es NICHT. Rapid MEDEVAC wird bevorzugt.",
+    "Schulterdystokie: Bei festsitzenden Schultern McRoberts-Manöver (Hüfthyperflexion) und suprapubischen Druck anwenden.",
+    "Postpartale Blutungen sind die häufigste Ursache vermeidbarer Müttersterblichkeit – halten Sie Oxytocin bereit."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

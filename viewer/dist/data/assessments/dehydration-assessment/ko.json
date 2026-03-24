@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "탈수 평가",
+  "category": "circulation",
+  "description": "탈수 및 열질환 심각도에 대한 현장 평가. 소변 색깔은 가장 실용적인 현장 지표입니다. 열사병으로 진행되는 심각한 탈수의 지표로서 정신 상태를 평가합니다.",
+  "instructions": "소변색, 피부팽만감, 정신상태, 활력징후 등을 확인합니다. 어두운 소변, 건조한 점막, 빈맥은 적극적인 재수화를 필요로 하는 심각한 탈수 상태를 나타냅니다.",
+  "categories": [
+    {
+      "color": "맑고 창백한",
+      "label": "수분이 잘 공급됨",
+      "description": "옅은 노란색으로 소변이 깨끗해집니다. 개입이 필요하지 않습니다."
+    },
+    {
+      "color": "노란색",
+      "label": "가벼운 탈수증",
+      "description": "짙은 노란색 소변, 목이 마르다. 구강 재수 화. 시간당 250~500mL의 물을 섭취하도록 권장합니다."
+    },
+    {
+      "color": "호박색",
+      "label": "중등도 탈수증",
+      "description": "황색 소변, HR 증가, 피부 긴장 감소, 구강 건조. 경구용 IV/IO 수액은 허용되지 않습니다. 1-2L LR 또는 NS."
+    },
+    {
+      "color": "빨간색",
+      "label": "위험 - 열사병/심각",
+      "description": "최소 소변량, LOC 변경, 뜨겁고 건조한 피부. 의료 응급 상황 - 급속 냉각 + IV 수액 + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "어린이는 성인보다 탈수 속도가 더 빠릅니다. 가라앉은 천문(유아), 눈물 없음, 무기력은 심각한 징후입니다. 체중 기반 IV: 20mL/kg LR 볼루스."
+    },
+    "obstetric": {
+      "note": "임산부는 수분 섭취를 늘려야 합니다. 탈수는 조기 수축을 유발할 수 있습니다. 먼저 적극적인 구강 재수화; IV(구강을 용납하지 않는 경우)."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

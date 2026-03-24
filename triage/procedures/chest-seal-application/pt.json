@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Aplicação de Selo Torácico Oclusivo",
+  "category": "respiration",
+  "skill_level": "salva-vidas de combate",
+  "time_estimate": "1-2 minutos",
+  "description": "Selar uma ferida torácica por sucção (pneumotórax aberto) com uma vedação torácica ventilada para evitar a entrada de ar e ao mesmo tempo permitir a liberação de pressão.",
+  "equipment": [
+    "vedação torácica ventilada",
+    "luvas",
+    "tesouras para traumas"
+  ],
+  "steps": [
+    "Exponha a ferida – corte ou remova a roupa.",
+    "Limpe a pele ao redor da ferida o mais seca possível (sangue e suor evitam a adesão).",
+    "Abra a embalagem da vedação torácica ventilada.",
+    "Coloque o selo sobre a ferida, centralizado no buraco. Pressione firmemente, garantindo que todas as bordas aderem.",
+    "Verifique a orientação da válvula – a ventilação deve estar voltada para fora (longe da pele) e permanecer desobstruída.",
+    "Reavalie os sons respiratórios. Se a deterioração continuar após a selagem, considerar pneumotórax hipertensivo – realizar NCD.",
+    "Se uma vedação ventilada não estiver disponível, uma vedação não ventilada pode ser usada, mas DEVE ser monitorada quanto ao desenvolvimento de pneumotórax hipertensivo."
+  ],
+  "warnings": [
+    "Vedações não ventiladas podem converter um pneumotórax simples em pneumotórax hipertensivo – use vedações ventiladas apenas em campo.",
+    "A gravação de três lados (selagem improvisada) não é mais recomendada pela CoTCCC – use vedação torácica ventilada comercial.",
+    "Sempre aplique um selo nas feridas de ENTRADA e SAÍDA."
+  ],
+  "follows": [],
+  "precedes": [
+    "descompressão com agulha"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

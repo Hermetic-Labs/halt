@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Morphine Sulfat",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Tiếp tục",
+    "Thuốc tiêm Morphine Sulfate"
+  ],
+  "description": "Thuốc giảm đau opioid. Giúp giảm đau hiệu quả nhưng gây giãn mạch và hạ huyết áp - thận trọng khi sử dụng trong sốc xuất huyết. Ketamine được ưa thích trong môi trường chiến đấu. Chỉ sử dụng morphin ở những bệnh nhân có huyết động ổn định.",
+  "indications": [
+    "Đau từ trung bình đến nặng ở bệnh nhân huyết động ổn định",
+    "Không phải hàng đầu trong TCCC -- thích ketamine"
+  ],
+  "dose": "2-4 mg IV/IO mỗi 4 giờ PRN. Chuẩn độ để có hiệu lực. Tiêm bắp: 5-10 mg PRN mỗi 4 giờ.",
+  "route": [
+    "IV",
+    "IO",
+    "TÔI",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Huyết động không ổn định/sốc mất máu",
+    "Suy hô hấp",
+    "Chấn thương đầu với LOC thay đổi (tương đối)"
+  ],
+  "warnings": [
+    "Gây giãn mạch - có thể làm nặng thêm tình trạng sốc xuất huyết. Đánh giá HA trước và sau.",
+    "Chuẩn bị sẵn naloxone ngay lập tức.",
+    "Suy hô hấp - theo dõi tỷ lệ."
+  ],
+  "regional_names": {
+    "generic": "morphin sunfat"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV q2-4h PRN. Liều duy nhất tối đa 2mg tiêm tĩnh mạch ở trẻ chưa từng dùng opioid.",
+      "note": "Theo dõi nhịp thở chặt chẽ. Trẻ sơ sinh cực kỳ nhạy cảm."
+    },
+    "obstetric": {
+      "note": "Đi qua nhau thai. Có thể gây suy hô hấp ở trẻ sơ sinh nếu dùng trong vòng 2-4 giờ sau khi sinh. Chuẩn bị sẵn naloxone cho trẻ sơ sinh."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

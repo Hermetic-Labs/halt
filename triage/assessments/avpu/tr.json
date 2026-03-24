@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "AVPU Ölçeği",
+  "category": "neurological",
+  "description": "Hızlı 4 seviyeli bilinç değerlendirmesi. İlk triyaj için GCS'den daha hızlı.",
+  "instructions": "Hastanın gösterdiği en yüksek yanıt düzeyini değerlendirin.",
+  "scoring": [
+    {
+      "code": "bir",
+      "label": "Uyarı",
+      "description": "Hasta uyanık, bilincinde ve normal yanıt veriyor"
+    },
+    {
+      "code": "V",
+      "label": "Ses",
+      "description": "Hasta yalnızca sözel uyarıya yanıt verir"
+    },
+    {
+      "code": "P",
+      "label": "Ağrı",
+      "description": "Hasta yalnızca ağrılı uyaranlara yanıt verir (göğüs kemiğinin sürtünmesi, tırnak yatağı basıncı)"
+    },
+    {
+      "code": "sen",
+      "label": "Yanıt vermiyor",
+      "description": "Herhangi bir uyarıya yanıt yok -- acil hava yolu müdahalesi gerekli"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "bir",
+      "triage": "Kararlı -- değerlendirmeye devam et"
+    },
+    {
+      "code": "V",
+      "triage": "İlgili -- hava yolunu izleyin"
+    },
+    {
+      "code": "P",
+      "triage": "Kritik - hava yolu risk altında, GCS tipik olarak <= 8"
+    },
+    {
+      "code": "sen",
+      "triage": "Derhal – hava yolunu hemen yönetin"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

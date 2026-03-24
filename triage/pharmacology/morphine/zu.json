@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "I-Morphine sulfate",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "I-MS Contin",
+    "I-Morphine Sulfate Injection"
+  ],
+  "description": "I-opioid analgesic. Inikeza ukukhululeka kobuhlungu okusebenzayo kodwa kubangela i-vasodilation kanye ne-hypotension - sebenzisa ngokuqapha ekushaqekeni okopha. I-Ketamine ikhethwa kuzilungiselelo zokulwa. Sebenzisa i-morphine kuphela ezigulini ezizinzile ngokwe-hemodynamically.",
+  "indications": [
+    "Ubuhlungu obuphakathi kuya kobunzima ezigulini ezizinzile ze-hemodynamically",
+    "Hhayi owokuqala ku-TCCC -- khetha i-ketamine"
+  ],
+  "dose": "2-4 mg IV/IO q4h PRN. Titrate ukuze usebenze. IM: 5-10 mg q4h PRN.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ukungazinzi kwe-Hemodynamic / ukushaqeka kwe-hemorrhagic",
+    "Ukucindezeleka kokuphefumula",
+    "Ukulimala ekhanda nge-LOC eshintshiwe (isihlobo)"
+  ],
+  "warnings": [
+    "Idala i-vasodilation -- ingakhuphula ukushaqeka okopha kakhulu. Hlola i-BP ngaphambi nangemuva.",
+    "Iba ne-naloxone etholakala ngokushesha.",
+    "Ukudangala kokuphefumula -- izinga lokuqapha."
+  ],
+  "regional_names": {
+    "generic": "i-morphine sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV q2-4h PRN. Umthamo owodwa omkhulu we-2mg IV enganeni engena-opioid.",
+      "note": "Gada izinga lokuphefumula eduze. Izingane ezisanda kuzalwa zizwela kakhulu."
+    },
+    "obstetric": {
+      "note": "Iwela i-placenta. Ukucindezeleka kokuphefumula kwengane esanda kuzalwa kungenzeka uma kunikezwa phakathi namahora angu-2-4 okubeletha. Yenza i-naloxone ilungele usana."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

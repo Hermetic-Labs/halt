@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Lactated Ringer's Solution (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Solusyon ni Hartmann",
+    "Iniksyon ng Lactated Ringer"
+  ],
+  "description": "Balanseng isotonic crystalloid fluid. Mas gusto kaysa sa normal na saline para sa malaking volume na trauma resuscitation -- mas balanseng pisyolohikal, mas mababa ang panganib ng hyperchloremic acidosis. Naglalaman ng sodium, potassium, calcium, lactate.",
+  "indications": [
+    "Trauma resuscitation (ginustong crystalloid sa hemorrhagic shock)",
+    "Nasusunog ang fluid resuscitation (Parkland formula)",
+    "Hypovolemia",
+    "Pagpapanatili ng likido"
+  ],
+  "dose": "Hemorrhagic shock: Limitahan sa 1L max bago lumipat sa mga produkto ng dugo. Target na SBP 80-90 mmHg penetrating trauma, 90 mmHg TBI. Mga Paso (Parkland): 4 mL x kg x %TBSA ang nasunog sa loob ng 24h (kalahati sa unang 8h).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hyperkalemia (naglalaman ng potassium)",
+    "Malubhang pagkabigo sa atay (may kapansanan sa metabolismo ng lactate -- kamag-anak)"
+  ],
+  "warnings": [
+    "Crystalloid pa rin -- hindi makapagdala ng oxygen. Ang mga produkto ng dugo ay higit na mahusay para sa hemorrhagic shock. Ang LR ay isang tulay lamang.",
+    "Huwag ihalo sa mga produkto ng dugo sa parehong linya (ang calcium ay nagdudulot ng clotting).",
+    "HUWAG mag-over-resuscitate sa matalim na trauma bago kontrolin ang pagdurugo."
+  ],
+  "regional_names": {
+    "generic": "lactated Ringer's solution",
+    "UK": "Ang solusyon ni Hartmann"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 mL/kg bolus, suriin muli. Mas gusto kaysa sa NS para sa pediatric trauma.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Mas gustong IV fluid sa panganganak at panganganak. Angkop para sa obstetric hemorrhage resuscitation."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

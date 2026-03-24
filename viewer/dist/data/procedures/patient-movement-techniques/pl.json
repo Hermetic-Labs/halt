@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Techniki poruszania się pacjenta",
+  "category": "casualty-movement",
+  "skill_level": "Podstawowe",
+  "time_estimate": "1-30 min w zależności od dystansu i metody",
+  "description": "Przeniesienie ofiary objętej ostrzałem lub w bezpieczniejsze miejsce w celu leczenia. Metoda zależy od terenu, odległości, liczby ratowników i obrażeń poszkodowanego. Szybkość a środki ostrożności dotyczące kręgosłupa to decyzja taktyczna – w TCCC zagrożenie ma pierwszeństwo.",
+  "equipment": [
+    "Żwirek SKED (preferowany)",
+    "Nosze NATO / przenośne",
+    "Improwizowane śmieci: kijki + kurtki/poncza",
+    "Uchwyty do przeciągania (mundur lub uprząż)",
+    "Chusta TACEVAC"
+  ],
+  "steps": [
+    "OPIEKA POD OGNIEM: Najpierw odpowiedz ogniem, jeśli jesteś uzbrojony. Przenieś ofiarę najszybszą metodą przeciągania – nie zatrzymuj się, aby leczyć w strefie śmierci.",
+    "SZYBKIE PRZECIĄGANIE (jeden ratownik): chwyć kołnierz/uchwyt na ramionach i przeciągnij za plecy. Chronić głowę przed uderzeniami.",
+    "PRZENOSZENIE STRAŻAKA (jeden ratownik): przenoszenie poszkodowanego przez ramiona na większe odległości – wymaga, aby ofiara była nieprzytomna lub współpracowała.",
+    "NOSZENIE DWÓCH OSÓB: ratownicy łączą ramiona pod plecami i kolanami poszkodowanego. Szybszy niż przeciąganie na krótkich dystansach.",
+    "IMPROWIZOWANY ŚWIAT: ułóż dwa słupki w odległości 18 cali od siebie. Przeplataj kurtki przez drążki z guzikami w środku. Przetestuj przed załadowaniem ofiary.",
+    "MIŚ SKED: rozwinąć, wsunąć pod poszkodowanego, owinąć i zabezpieczyć pasami. Wymaga 2-4 przewoźników.",
+    "Podczas załadunku: podnieś, licząc do 3, utrzymuj równowagę głowy i ciała, minimalizuj ruchy kręgosłupa, jeśli to możliwe.",
+    "Jeśli podejrzewasz uraz kręgosłupa i nie ma zagrożenia: utrzymuj stabilizację w linii podczas całego ruchu. Jedna osoba dedykowana do kontroli głowy.",
+    "Przejdź do osłony, a następnie ponownie oceń ABC."
+  ],
+  "warnings": [
+    "Priorytet TCCC: życie > kończyna > zabezpieczenie kręgosłupa. Nie opóźniaj ruchu ze strefy śmierci ze względu na środki ostrożności dla kręgosłupa.",
+    "Noszenie przez strażaka jest przeciwwskazane w przypadku podejrzenia urazu kręgosłupa, złamania kości udowej lub penetrującego urazu brzucha.",
+    "Improwizowane nosze: sprawdź udźwig, zanim zaufasz ofierze.",
+    "Przenoszenie poszkodowanego za pomocą opaski uciskowej: sprawdź, czy opaska uciskowa nie poluzowała się podczas ruchu."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Dzieci są lżejsze – jeden ratownik może nieść dłużej. Utrzymuj proporcjonalnie większą głowę - wyżej środek ciężkości podczas noszenia."
+    },
+    "obstetric": {
+      "note": "Unikaj pozycji na brzuchu i ucisku na brzuch. Transport boczny (preferowany lewy bok) lub na plecach z lewym klinem biodrowym."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

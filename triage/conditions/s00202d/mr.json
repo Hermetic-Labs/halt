@@ -1,0 +1,22 @@
+{
+  "id": "s00202d",
+  "icd10": "S00202D",
+  "name": "डाव्या पापणी आणि पेरीओक्युलर क्षेत्राची अनिर्दिष्ट वरवरची जखम, त्यानंतरची चकमक",
+  "category": "head-neck-injury",
+  "triage_priority": "",
+  "description": "डाव्या पापणी आणि पेरीओक्युलर क्षेत्राची अनिर्दिष्ट वरवरची जखम, त्यानंतरची चकमक",
+  "red_flags": [],
+  "assess_first": [],
+  "procedures": [],
+  "drugs": [],
+  "modifiers": {
+    "pediatric": {
+      "note": ""
+    },
+    "obstetric": {
+      "note": ""
+    }
+  },
+  "escalate_if": "",
+  "source": "ICD-10-CM FY2025"
+}

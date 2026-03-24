@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Nhọrọ 5-HT3 antagonist antiemetic. Dị nnọọ irè maka ọgbụgbọ na vomiting. ODT (mbadamba na-agbasa ọnụ) bara uru na ntọala ubi mgbe IV adịghị. Gụnyere na ụfọdụ ngwugwu pill ọgụ.",
+  "indications": [
+    "Ọgbụgbọ na ọgbụgbọ (chemotherapy, opioid-ebutere, post-operative, metụtara TBI)",
+    "Ọrịa mmegharị ahụ",
+    "Ọgbụgbọ sitere na nchịkwa ketamine"
+  ],
+  "dose": "4-8 mg IV/IO jiri nwayọ mee ihe karịrị nkeji 2-5. ODT: 4-8 mg agbaze n'okpuru ire. IM: 4 mg.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Amara hypersensitivity na ondansetron ma ọ bụ ndị ọzọ na-emegide 5-HT3",
+    "Congenital ogologo QT syndrome (oke dose IV naanị)"
+  ],
+  "warnings": [
+    "Ọgwụ dị elu nke IV nwere ike ịgbatị oge QT -- jiri ọgwụ IV kacha dị irè.",
+    "Anaghị eji vomiting dochie njikwa ụzọ ikuku n'ime onye ọrịa kpuchiri ekpuchi -- chebe ụzọ ikuku mbụ."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.1-0.15 mg / kg IV (max 4 mg). ODT: 4mg maka ụmụaka> 4 afọ.",
+      "note": "A na-eji ya nke ọma ma na-anabata ya na pediatrics."
+    },
+    "obstetric": {
+      "note": "Oke data n'ime afọ ime. Jiri maka ọgbụgbọ/ọgbụgbọ siri ike ka ọnwa atọ nke mbụ gasịrị mgbe uru karịrị ihe egwu. A naghị atụ aro ya n'ime ọnwa atọ mbụ."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

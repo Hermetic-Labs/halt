@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirini (Acetylsalicylic Acid)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Aspirini ya Bayer",
+    "Ekotini"
+  ],
+  "description": "Dawa isiyo ya steroidal ya kuzuia uchochezi (NSAID) yenye mali ya antiplatelet. Matibabu ya mstari wa kwanza kwa tuhuma za ugonjwa wa moyo wa papo hapo (ACS). Huzuia muunganisho wa chembe bila kutenduliwa -- athari hudumu kwa muda wa maisha ya chembe (siku 7-10).",
+  "indications": [
+    "Inashukiwa kuwa na infarction ya papo hapo ya myocardial (MI) -- tafuna mara moja",
+    "Angina isiyo na msimamo / ugonjwa wa ugonjwa wa papo hapo",
+    "Kiharusi (ischemic -- baada ya kutokwa na damu)",
+    "Homa na maumivu ya wastani (analgesic)"
+  ],
+  "dose": "ACS: 325 mg PO -- TAFUNA (usimeze mzima) mara moja. Analgesic/antipyretic: 325-650 mg PO q4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Toa mapema iwezekanavyo -- tafuna mara moja kwa tuhuma.",
+  "contraindications": [
+    "Kutokwa na damu kwa GI hai",
+    "Kiharusi cha hemorrhagic",
+    "Mzio unaojulikana wa aspirini au hypersensitivity ya NSAID",
+    "Kutokwa na damu nyingi bila kudhibitiwa -- aspirini huzidisha uvujaji wa damu"
+  ],
+  "warnings": [
+    "USIWAPE wagonjwa wanaovuja damu -- aspirini huharibu kazi ya chembe chembe na kuzidisha kutokwa na damu.",
+    "USIWAPE watoto chini ya miaka 12 walio na ugonjwa wa virusi - hatari ya ugonjwa wa Reye.",
+    "Kuwashwa kwa GI -- chukua pamoja na chakula ikiwa sio cha kujitokeza."
+  ],
+  "regional_names": {
+    "generic": "aspirini"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesic/antipyretic: 10-15 mg/kg PO q4-6h (kiwango cha juu cha 650 mg/dozi). KUMBUKA: Imechangiwa katika ugonjwa wa virusi (Reye syndrome).",
+      "note": "Tumia acetaminophen (paracetamol) kwa homa kwa watoto walio na ugonjwa wa virusi badala yake."
+    },
+    "obstetric": {
+      "note": "Epuka wakati wa ujauzito hasa trimester ya tatu (kufungwa mapema kwa ductus arteriosus). Dozi ya chini (81mg) hutumiwa kwa kuzuia priklampsia chini ya mwongozo wa daktari pekee."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

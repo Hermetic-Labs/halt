@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t422x2d",
+    "icd10":  "T422X2D",
+    "name":  "Poisoning by succinimides and oxazolidinediones, intentional self-harm, subsequent encounter",
+    "category":  "poisoning-adverse",
+    "triage_priority":  "",
+    "description":  "Poisoning by succinimides and oxazolidinediones, intentional self-harm, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

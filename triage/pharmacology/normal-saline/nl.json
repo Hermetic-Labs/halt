@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Normale zoutoplossing (0,9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "0,9% natriumchloride-injectie"
+  ],
+  "description": "Isotone kristalloïde vloeistof. Gebruikt voor IV-vloeistofreanimatie. Bij hemorragische shock dient men voorzichtig te gebruiken; grote volumes verergeren de coagulopathie (hyperchloremische acidose, verdunningscoagulopathie). Permissieve hypotensie heeft de voorkeur bij penetrerend trauma in afwachting van controle van de bloeding.",
+  "indications": [
+    "Vloeistofreanimatie (voorzichtigheid bij hemorragische shock)",
+    "Medicatieverdunningsmiddel/spoeling",
+    "Hypovolemie door niet-hemorragische oorzaken"
+  ],
+  "dose": "Hemorragische shock: Beperk tot maximaal 1 liter in afwachting van controle van de bloeding (tolerante hypotensie). Streef SBP 80-90 mmHg bij penetrerend trauma, 90 mmHg bij TBI. Niet-hemorragische hypovolemie: bolussen van 500 ml, opnieuw beoordelen.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hypernatriëmie",
+    "Vochtoverbelasting / longoedeem (relatief)"
+  ],
+  "warnings": [
+    "Grote volumes veroorzaken hyperchloremische metabole acidose en verdunningscoagulopathie – waardoor de dodelijke triade bij trauma wordt verergerd.",
+    "Ringerlactaat (LR) heeft de voorkeur voor reanimatie van grote trauma's.",
+    "Reanimatie van een penetrerend torsotrauma NIET vóór de operatieve controle van de bloeding (permissieve hypotensie)."
+  ],
+  "regional_names": {
+    "generic": "natriumchloride 0,9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 ml/kg IV bolus, opnieuw beoordelen. Herhaal maximaal x3 (60 ml/kg totaal) voordat u bloedproducten overweegt.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Standaard reanimatie bij obstetrische bloeding. Agressieve vloeistofreanimatie geschikt voor postpartumbloedingen voordat er bloedproducten beschikbaar zijn."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

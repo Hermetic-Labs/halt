@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Cefazolin",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Ancef",
+    "Kefzol"
+  ],
+  "description": "cephalosporin na farko. Magungunan rigakafi na mahaifa na farko don cututtuka masu tsanani da kuma rigakafin tiyata. Kyakkyawan ɗaukar hoto mai kyau gami da MSSA. Ba da cikin mintuna 60 na aikin tiyata don rigakafin.",
+  "indications": [
+    "Maganin raunin tiyata",
+    "Mummunan cututtuka masu laushi",
+    "Bude karaya prophylaxis",
+    "Cututtukan tsarin fata da fata"
+  ],
+  "dose": "1-2g IV/IM q8h. Prophylaxis na tiyata: 2g IV a cikin mintuna 60 kafin a yanka. Maimaita 2g idan tiyata> 4 hours.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Don rigakafin tiyata: ba a cikin mintuna 60 na ciki.",
+  "contraindications": [
+    "Sanin cephalosporin alerji",
+    "Rashin lafiyar penicillin mai tsanani (5-10% giciye-reactivity)"
+  ],
+  "warnings": [
+    "Reactivity tare da rashin lafiyar penicillin: yi amfani da taka tsantsan a cikin marasa lafiya na penicillin.",
+    "Daidaita kashi a cikin raunin koda."
+  ],
+  "regional_names": {
+    "generic": "cefazolin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM q8h (max 2g/dose). Prophylaxis: 30 mg/kg (max 2g) kafin yanka.",
+      "note": "Amintacce kuma an yi karatu sosai a fannin ilimin yara."
+    },
+    "obstetric": {
+      "note": "Safe a ciki da kuma lactation. Kwayoyin rigakafin mahaifa da aka fi so don hanyoyin haihuwa."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s36531a",
+    "icd10":  "S36531A",
+    "name":  "Laceration of transverse colon, initial encounter",
+    "category":  "abdomen-injury",
+    "triage_priority":  "",
+    "description":  "Laceration of transverse colon, initial encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Awọn ilana Iṣipopada Alaisan",
+  "category": "casualty-movement",
+  "skill_level": "Ipilẹṣẹ",
+  "time_estimate": "1-30 min da lori ijinna ati ọna",
+  "description": "Gbigbe eeyan labẹ ina tabi si ipo ailewu fun itọju. Ọna naa da lori ilẹ, ijinna, nọmba awọn olugbala, ati awọn ipalara ti olufaragba. Iyara la iṣọra ọpa-ẹhin jẹ ipinnu ọgbọn - ni TCCC, irokeke gba pataki.",
+  "equipment": [
+    "idalẹnu SKED (ti o fẹ)",
+    "idalẹnu NATO / agbeka stretcher",
+    "Awọn idalẹnu ti o ni ilọsiwaju: awọn ọpa + awọn jaketi / ponchos",
+    "Awọn ọwọ fa (aṣọ tabi ijanu)",
+    "TACEVAC sling"
+  ],
+  "steps": [
+    "Abojuto labẹ ina: Pada ina akọkọ ti o ba ni ihamọra. Gbe awọn olufaragba lọ nipa lilo ọna fifa ni iyara ju -- maṣe duro lati tọju ni agbegbe pipa.",
+    "HASTY DRAG (oludande kan): mu kola / fa mu ni awọn ejika, fa si ẹhin. Dabobo ori lati ipa.",
+    "FIREMAN CARRY (olugbala kan): gbe awọn eeyan soke lori awọn ejika fun awọn ijinna to gun - nilo olufaragba lati daku tabi ifowosowopo.",
+    "ENIYAN MEJI: Awọn olugbala ṣopọ mọ awọn apa labẹ ẹhin ati awọn ẽkun ti ipalara. Yiyara ju fifa fun awọn ijinna kukuru.",
+    "IDAGBASOKE TI O TUNTUN: gbe awọn ọpá meji si 18 inches yato si. Weave Jakẹti nipasẹ awọn ọpa pẹlu awọn bọtini inu. Idanwo ṣaaju ki o to ikojọpọ ijamba.",
+    "SKED LITTER: yi lọ silẹ, rọra labẹ ipalara, fi ipari si ati ni aabo pẹlu awọn okun. Nbeere 2-4 ti ngbe.",
+    "Nigbati o ba n ṣajọpọ: gbe soke lori kika ti 3, ṣetọju titete ori / ara, dinku gbigbe ọpa ẹhin nigbati o ṣee ṣe.",
+    "Ti o ba fura si ipalara ọpa ẹhin ati pe ko si ewu: ṣetọju imuduro inline jakejado gbigbe. Ọkan eniyan igbẹhin si ori Iṣakoso.",
+    "Gbe lọ si ideri, lẹhinna tun ṣe ayẹwo ABC."
+  ],
+  "warnings": [
+    "Ni ayo TCCC: igbesi aye> ẹsẹ> iṣọra ọpa ẹhin. Maṣe ṣe idaduro gbigbe lati agbegbe pipa fun awọn iṣọra ọpa-ẹhin.",
+    "Fireman gbe ti wa ni contraindicated pẹlu ifura ifarapa ọpa-ẹhin, ṣẹ egungun femur, tabi si inu ibalokanje inu.",
+    "Awọn idalẹnu ti o ni ilọsiwaju: idanwo agbara iwuwo ṣaaju ki o to ni igbẹkẹle pẹlu olufaragba kan.",
+    "Gbigbe eeyan kan pẹlu irin-ajo irin-ajo: ṣayẹwo irin-ajo ko tii tu lakoko gbigbe."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Awọn ọmọde fẹẹrẹfẹ - olugbala-ọkan gbejade ṣiṣe to gun. Ṣe itọju ori ni iwọn ti o tobi -- aarin giga ti walẹ nigba gbigbe."
+    },
+    "obstetric": {
+      "note": "Yago fun ipo ti o ni itara tabi titẹ lori ikun. Lateral (apa osi fẹ) tabi gbigbe gbigbe pẹlu apa osi."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

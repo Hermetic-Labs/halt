@@ -1,0 +1,43 @@
+{
+  "id": "pediatric-vital-sign-ranges",
+  "name": "Pediatrisch Normaal bereik van vitale functies",
+  "description": "Voor leeftijd gecorrigeerde referentie voor HR, RR en SBP. Cruciaal voor een correcte triageclassificatie bij pediatrische patiënten: de normale waarden voor volwassenen zijn onjuist voor kinderen.",
+  "ranges": [
+    {
+      "age": "Pasgeboren (0-1 maand)",
+      "hr": "100-160",
+      "rr": "30-60",
+      "sbp_mmhg": "60-90",
+      "gcs_min": 15
+    },
+    {
+      "age": "Baby (1-12 maanden)",
+      "hr": "90-150",
+      "rr": "30-60",
+      "sbp_mmhg": "70-100",
+      "gcs_min": 15
+    },
+    {
+      "age": "Peuter (1-3 jaar)",
+      "hr": "80-130",
+      "rr": "24-40",
+      "sbp_mmhg": "80-110",
+      "gcs_min": 15
+    },
+    {
+      "age": "Kind (3-12 jaar)",
+      "hr": "70-120",
+      "rr": "18-30",
+      "sbp_mmhg": "80-120",
+      "gcs_min": 15
+    },
+    {
+      "age": "Adolescent (>12 jaar)",
+      "hr": "60-100",
+      "rr": "12-20",
+      "sbp_mmhg": "90-130",
+      "gcs_min": 15
+    }
+  ],
+  "source": "PALS Guidelines / JTS Pediatric CPG"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "መደበኛ ሳላይን (0.9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "0.9% የሶዲየም ክሎራይድ መርፌ"
+  ],
+  "description": "ኢሶቶኒክ ክሪስታሎይድ ፈሳሽ. ለ IV ፈሳሽ ማስታገሻ ጥቅም ላይ ይውላል. በሄመሬጂክ ድንጋጤ ውስጥ, በጥንቃቄ ይጠቀሙ - ትላልቅ መጠኖች coagulopathy (hyperchloremic acidosis, dilutional coagulopathy) ያባብሰዋል. የሚፈቀደው hypotension የደም መፍሰስን መቆጣጠርን በመጠባበቅ ላይ ወደ ውስጥ በመግባት አሰቃቂ ሁኔታ ይመረጣል.",
+  "indications": [
+    "ፈሳሽ ማስታገሻ (በደም መፍሰስ ውስጥ በጥንቃቄ)",
+    "የመድሃኒት ማሟሟት/ማፍሰስ",
+    "ሃይፖቮልሚያ ከደም መፍሰስ ካልሆኑ ምክንያቶች"
+  ],
+  "dose": "ሄመሬጂክ ድንጋጤ፡- እስከ 1 ኤል ቢበዛ በመጠባበቅ ላይ ያለ የደም መፍሰስ ቁጥጥር (የሚፈቀድ ሃይፖቴንሽን) ይገድቡ። ዒላማ SBP 80-90 ሚሜ ኤችጂ ወደ ውስጥ በሚያስገባ አሰቃቂ, 90 ሚሜ ኤችጂ በ TBI ውስጥ. ሄመሬጂክ ያልሆነ hypovolemia: 500 ml boluses, እንደገና ይገምግሙ.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "ሃይፐርናታሬሚያ",
+    "ፈሳሽ ከመጠን በላይ መጫን / የ pulmonary edema (ዘመድ)"
+  ],
+  "warnings": [
+    "ትልቅ መጠን hyperchloremic ተፈጭቶ acidosis እና dilutional coagulopathy ያስከትላል -- በአሰቃቂ ሁኔታ ውስጥ ገዳይ triad ያባብሰዋል.",
+    "የላክቶትድ ሪንገር (LR) ለትልቅ መጠን የአሰቃቂ ህመም ማስታገሻ ይመረጣል።",
+    "ከቀዶ ሕክምና የደም መፍሰስ ቁጥጥር (የሚፈቀደው hypotension) በፊት ወደ ውስጥ የሚገባውን የአካል ጉዳትን ከመጠን በላይ አያድኑ።"
+  ],
+  "regional_names": {
+    "generic": "ሶዲየም ክሎራይድ 0.9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 ሚሊ ሊትር / ኪግ IV bolus, እንደገና ገምግም. የደም ምርቶችን ግምት ውስጥ ከማስገባትዎ በፊት ከፍተኛ x3 (60 ml/kg ጠቅላላ) ይድገሙት።",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "በወሊድ ደም መፍሰስ ውስጥ መደበኛ ማስታገሻ. የደም ምርቶች ከመገኘታቸው በፊት ለድህረ ወሊድ ደም መፍሰስ ተስማሚ የሆነ ኃይለኛ ፈሳሽ ማስታገሻ."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

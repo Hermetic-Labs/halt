@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Acide tranexamique (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Cyklokapron",
+    "Lystéda"
+  ],
+  "description": "Agent antifibrinolytique qui inhibe la dégradation des caillots sanguins. Réduit considérablement la mortalité due au choc hémorragique lorsqu’il est administré tôt. Recommandé par le CoTCCC pour toutes les victimes présentant une hémorragie importante ou présentant un risque d'hémorragie importante.",
+  "indications": [
+    "Hémorragie interne importante ou suspectée",
+    "Choc hémorragique",
+    "Risque élevé d'hémorragie (mécanisme de blessure)"
+  ],
+  "dose": "1 g IV/IO pendant 10 minutes, suivi de 1 g IV/IO pendant 8 heures. Si IV/IO indisponible : 650 mg PO x2 (1,3 g au total) -- option TCCC PO.",
+  "route": [
+    "IV",
+    "OI",
+    "PO"
+  ],
+  "window": "DOIT être administré dans les 3 heures suivant la blessure. Au-delà de 3 heures, le TXA peut AUGMENTER la mortalité – ne pas en administrer.",
+  "contraindications": [
+    "Antécédents de maladie thromboembolique (TVP, EP, accident vasculaire cérébral)",
+    "Coagulation intravasculaire disséminée (CIVD)",
+    "> 3 heures après la blessure"
+  ],
+  "warnings": [
+    "Enregistrez immédiatement l'heure de l'administration - la fenêtre est de 3 heures à partir du moment de la blessure, et non de l'heure d'arrivée.",
+    "Ne confondez pas la dose IV (1 g) avec la dose orale."
+  ],
+  "regional_names": {
+    "generic": "acide tranexamique",
+    "US": "Cyklokapron",
+    "UK": "Cyklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg IV (maximum 1 g). Preuves émergentes – utilisez votre jugement clinique.",
+      "note": "La même fenêtre de 3 heures s’applique."
+    },
+    "obstetric": {
+      "note": "Indiqué pour les hémorragies du post-partum. Sans danger pendant la grossesse. La même posologie pour adultes s’applique."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

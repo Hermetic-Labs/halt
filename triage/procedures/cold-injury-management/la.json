@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Frigus Iniuria Management",
+  "category": "environmental",
+  "skill_level": "Basic",
+  "time_estimate": "Permanentis",
+  "description": "Procuratio congelationis, immersio pedis (pes fossae), et hypothermia. Iniuriae frigidae sunt preventabiles -- agnosce signa mane antequam damnum TEXTUS irreversibilis est. Congelationis textus maxime leniter tractamus.",
+  "equipment": [
+    "Arida insulating indumentis / peram dormientes",
+    "Aquae calidae (38-42C/100-108F) ad balneum reparandum",
+    "Sterilis inponenda",
+    "Ibuprofen 400mg PO (si available)",
+    "IV LR (calidum si fieri potest)"
+  ],
+  "steps": [
+    "HYPOTHERMIA PRIMA: Assident core temp cum thermometrum humili lectione. mitis (32-35C): horror, confusio. Moderatus (28-32C): non horror, gravis confusio. Improbus (<28C): inscius, nulla pulsus detectabilis.",
+    "HYPOTHERMIA -- Mitis/Modesta: Aufer vestem humidam, insulam a terra, foveam foveam, calidas liquores dulces si conscius, aestus sarcinas ad axillas/inguen (non directe in cute). Leniter palpate - incongruentia potest trigger VFib.",
+    "HYPOTHERMIA -- Severe: Leniter palpate. Reprehendo legumina LX plena secundis ante CPR. CPR si no incipe pulsus. Calidum IV humores si available. MEDEVAC prioritas - 'non mortua quam calida et mortua'.",
+    "CONGRESSUS: Superficialis (cutis alba / grisea, subtus mollis) vs. profunde (durum, ligneum sentiunt, leunculi). Area non frica. Noli recompensare si periculum refrigerii - refrigerium causat gravius ​​damnum quam morae recompensatio.",
+    "CONGRESSIO recompensans: Immergere in aquam 38-42C (non calidior) per 15-30 min usque dum textus mollis et rubeus/purpureus est. Valde molesta - offer analgesia (ketamine vel morphine).",
+    "Post recompensando: codex inter digitos/digitos sterili specula. Noli pop pusulas. A pressura defendat.",
+    "IMMERSION PES (Trench Foot): diuturna humida/frigida detectio, cutis rubra tunc pallida tunc pusulata. Pedes siccos, fove lente, elevate. Calorem directum non applicamus.",
+    "Documento tempus iniuriae et tempus retributionis."
+  ],
+  "warnings": [
+    "Noli reficere congelationis, si casus est refricandi - incompleta recompensatio + refectio = detrimentum calamitosum.",
+    "Gravis hypothermia imitantia mortem potest. Reprehendo legumina ad LX seconds. \"Non mortuus nisi calidus et mortuus.\"",
+    "Sin calorem auget damnum quamvis perceptionem caloris - arcu non dant.",
+    "VFib periculum est altum in hypothermia temperata et gravi -- magna manipulatione et gravando patienti."
+  ],
+  "follows": [
+    "hypothermia-ne"
+  ],
+  "precedes": [
+    "medvac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Pueri citius refrigerant ob altiorem aream superficiei ad massam rationem. Eadem hypothermia liminum. Calidi iv humorum criticorum. Pondus-substructio fluida: 20 mL/kg calidum LR."
+    },
+    "obstetric": {
+      "note": "Materna hypothermia facit bradycardia foetus et acidosis. Petulantia materna recompensatio est curatio foetus. Foetus adipiscing si available."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "medevac-9line",
+  "name": "Yêu cầu MEDEVAC 9 dòng",
+  "description": "Định dạng tiêu chuẩn của NATO để yêu cầu sơ tán y tế. Truyền theo thứ tự, dòng 1-9. Dòng 1-5 được truyền ngay lập tức (cho phép không được mã hóa). Các dòng 6-9 tiếp theo. Một đường 9 đúng sẽ đưa con chim bay lên không trung. Một cái không đầy đủ sẽ trì hoãn nó.",
+  "source": "FM 3-04.301 / ATP 4-02.2 / NATO STANAG 3204"
+}

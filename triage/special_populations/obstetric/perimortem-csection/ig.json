@@ -1,0 +1,32 @@
+{
+  "id": "perimortem-csection",
+  "name": "Ngalaba Cesarean Perimortem (PMCS)",
+  "category": "obstetric",
+  "skill_level": "dibia- dọkịta na-awa",
+  "time_estimate": "Nkeji 3-5",
+  "description": "nnyefe cesarean mberede n'ime nkeji 4 nke njide obi nke nne iji nye ohere CPR dị irè na ndụ nwa ọhụrụ nwere ike. Akpa akpanwa na-echikota aorta na IVC -- nnyefe bụkwa ihe na-enye ume maka nne.",
+  "equipment": [
+    "akpụkpọ ụkwụ",
+    "uwe aka",
+    "ndị na-emegharị ihe",
+    "eriri-mkpọchi",
+    "ngwa-mmeghachite nwa ọhụrụ"
+  ],
+  "steps": [
+    "Gaa n'ihu CPR na-enweghị nkwụsị.",
+    "Mee mbepụ n'etiti ahịrị kwụ ọtọ site na umbilicus ruo pubis site na akpụkpọ ahụ na fascia.",
+    "Mee ka akụkụ akpanwa nke ala kwụ n'ahịrị.",
+    "Napụta nwa ọhụrụ -- oge ndetu.",
+    "Kpuchie ma bee ụdọ.",
+    "Nyefee nwa ọhụrụ n'aka onye na-eweta nke abụọ maka ịmaliteghachi nwa ọhụrụ.",
+    "Wepu placenta.",
+    "Kpochie akpanwa na afọ ma ọ bụrụ na mmechi doro anya agaghị ekwe omume ozugbo.",
+    "Gaa n'ihu ntọlite ​​nne -- ROSC ga-adị ka mgbe mgbawa nke uterine gasịrị."
+  ],
+  "warnings": [
+    "Oge mkpebi iji bufee ga-enwerịrị ihe na-erughị nkeji 5 maka nsonaazụ nne na nwa ebu n'afọ kacha mma.",
+    "Usoro a bụ usoro ikpeazụ -- naanị ma ọ bụrụ na nne na-ejide obi na ịmụ nwa dị nso (> izu 20 ime ime).",
+    "Na-achọ ọzụzụ-ọkwa dọkịta. Ndị dọkịta na-alụ ọgụ kwesịrị ịkwadebe ubi na nkwado, ọ bụghị ime onwe ha."
+  ],
+  "source": "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

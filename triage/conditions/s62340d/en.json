@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s62340d",
+    "icd10":  "S62340D",
+    "name":  "Nondisplaced fracture of base of second metacarpal bone, right hand, subsequent encounter for fracture with routine healing",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Nondisplaced fracture of base of second metacarpal bone, right hand, subsequent encounter for fracture with routine healing",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

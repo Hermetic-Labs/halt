@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Antîbiyotîka Fluoroquinolone bi vegirtina gram-neyînî ya berfireh. Ji bo enfeksiyonên birînên giran, travmaya zik a penetrîk (vegirtina flora GI), û enfeksiyonên rîya mîzê tê bikar anîn. PO û IV heye.",
+  "indications": [
+    "Trawmaya zik a penetratîkî (dekontamînasyona GI)",
+    "Enfeksiyonên birînên giran",
+    "Enfeksiyonên gram-neyînî",
+    "Enfeksiyonên mîzê"
+  ],
+  "dose": "400 mg IV q8-12h. PO: 500-750 mg q12h.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Alerjiya fluoroquinolone ya naskirî",
+    "Zarok û ciwan < 18 salî (xizm - xetereya tendinopatiyê)",
+    "Ducanî (xizm)"
+  ],
+  "warnings": [
+    "Rîska qutbûna tendon, nemaze tendona Achilles. Ger êşa tendonê çêbibe dev jê berdin.",
+    "Dikare navbera QT dirêj bike -- bi dermanên din ên dirêjkirina QT re hişyar be.",
+    "Ger alternatîf hebin, di ducaniyê de dûr bisekinin."
+  ],
+  "regional_names": {
+    "generic": "ciprofloxacin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV q8-12h (max 400 mg/doz). PO: 10-20 mg/kg q12h (max 750 mg/doz).",
+      "note": "Tenê gava ku feydeyên xetera tendinopatiyê girantir in bikar bînin. Ji bo enfeksiyonên giran rezerv bikin."
+    },
+    "obstetric": {
+      "note": "Ger alternatîf hebin, di ducaniyê de dûr bisekinin. Tenê ji bo enfeksiyonên xeternak ên jiyanê bikar bînin ku feyde ji xetereyê mezintir e."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

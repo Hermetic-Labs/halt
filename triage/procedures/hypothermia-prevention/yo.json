@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Idena Hypothermia (H -- MARCH)",
+  "category": "temperature-management",
+  "skill_level": "eyikeyi-oludahun",
+  "time_estimate": "2-3 iṣẹju",
+  "description": "Ija hypothermia jẹ apaniyan ti o le ṣe idiwọ ninu ibalokanjẹ. Triad apaniyan: hypothermia + acidosis + coagulopathy. Dena ni gbogbo owo.",
+  "equipment": [
+    "ooru-ifihan-ibora",
+    "hypothermia-idena ohun elo",
+    "gbona-iv-omi-ti o ba wa"
+  ],
+  "steps": [
+    "Yọ gbogbo aṣọ tutu kuro ni kete bi o ti ṣee ṣe.",
+    "Bo alaisan pẹlu ibora ti o tan-ooru (aaye) -- ẹgbẹ didan IN si alaisan.",
+    "Fi ipari si ori ati ọrun (ojula pipadanu ooru pataki).",
+    "Ya sọtọ lati ilẹ -- gbe nkankan laarin alaisan ati tutu ilẹ dada.",
+    "Ṣe abojuto awọn fifa IV gbona ti o ba wa.",
+    "Ma ṣe gba alaisan laaye lati mì laisi ideri --gbigbọn jẹ ami ikilọ kutukutu.",
+    "Bojuto iwọn otutu ti thermometer ba wa. Ni isalẹ 35°C (95°F) = hypothermia."
+  ],
+  "warnings": [
+    "Hypothermia buru si coagulopathy -- awọn alaisan ti o ṣan ẹjẹ jẹ tutu ni iyara ati didi dinku ni imunadoko.",
+    "Idena hypothermia aaye gbọdọ bẹrẹ ni aaye ipalara, kii ṣe ni CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

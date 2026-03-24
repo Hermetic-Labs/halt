@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Einführung der nasopharyngealen Atemwege (NPA)",
+  "category": "airway",
+  "skill_level": "Kampf-Lebensretter",
+  "time_estimate": "1 Minute",
+  "description": "Einsetzen eines flexiblen nasalen Atemwegszusatzes zur Aufrechterhaltung der Durchgängigkeit der Atemwege bei einem bewusstlosen oder halbbewussten Patienten.",
+  "equipment": [
+    "npa-mit-sicherheitsnadel",
+    "Schmiermittel"
+  ],
+  "steps": [
+    "Wählen Sie die passende NPA-Größe (vom Nasenloch bis zum Ohrläppchen messen).",
+    "Schmieren Sie den NPA großzügig mit wasserlöslichem Gleitmittel oder Kochsalzlösung.",
+    "Stecken Sie den Sicherheitsstift durch den Flansch, falls dieser noch nicht vorhanden ist (verhindert Aspiration).",
+    "Vorsichtig in das rechte Nasenloch einführen (Abschrägung zum Septum) und dabei parallel zum Gaumen vorrücken.",
+    "Vorschieben, bis der Flansch am Nasenloch anliegt.",
+    "Positionieren Sie den Patienten neu (stabile Seitenlage, wenn keine Wirbelsäulenprobleme vorliegen) und beurteilen Sie die Atemwege erneut.",
+    "Wenn Sie auf Widerstand stoßen, versuchen Sie es mit dem linken Nasenloch."
+  ],
+  "warnings": [
+    "Kontraindiziert bei Verdacht auf Schädelbasisfraktur (Waschbärenaugen, Battle-Zeichen, Liquor-Rhinorrhoe).",
+    "NPA ist die beste erste Atemwegshilfe für bewusstlose Patienten – OPA kann bei halbbewussten Patienten Erbrechen auslösen."
+  ],
+  "source": "TCCC / JTS CPG"
+}

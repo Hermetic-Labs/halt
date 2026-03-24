@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastat"
+  ],
+  "description": "Benzodiazepin kerja panjang. Digunakan untuk manajemen kejang, kejang otot, dan anxiolysis. Gel rektal (Diastat) berguna dalam pengaturan lapangan ketika IV tidak tersedia. Durasi lebih lama dibandingkan lorazepam.",
+  "indications": [
+    "Penatalaksanaan kejang (rektal/IV)",
+    "Kejang otot akibat cedera tulang belakang atau tetanus",
+    "Tambahan penawar racun saraf (dalam kit CHEMPACK)",
+    "Penarikan alkohol"
+  ],
+  "dose": "Kejang: 5-10 mg IV tekan perlahan. Ulangi setiap 10-15 menit (maks 30 mg). Rektal: 0,2-0,5 mg/kg. Penyerapan IM tidak menentu -- hindari IM jika memungkinkan.",
+  "route": [
+    "IV",
+    "aku",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaukoma sudut sempit akut",
+    "Penyakit hati yang parah",
+    "Depresi pernafasan"
+  ],
+  "warnings": [
+    "Penyerapan IM tidak menentu dan menyakitkan - lebih memilih IV, rektal, atau menggunakan midazolam IM sebagai gantinya.",
+    "Sedasi berdurasi lama (24-48 jam untuk dosis berulang).",
+    "Korban agen saraf: diazepam disertakan dalam kit CHEMPACK untuk kejang akibat krisis kolinergik."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0,1-0,3 mg/kg (maks 10 mg). Rektal: 0,3-0,5 mg/kg. Gunakan rute rektal bila IV tidak tersedia.",
+      "note": "Gel diastat rektal sangat berguna untuk kejang pediatrik di lapangan."
+    },
+    "obstetric": {
+      "note": "Melewati plasenta. Dapat menyebabkan hipotonia neonatal, depresi pernafasan. Gunakan hanya untuk kejang ibu yang tidak responsif terhadap magnesium."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

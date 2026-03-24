@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s88019s",
+    "icd10":  "S88019S",
+    "name":  "Complete traumatic amputation at knee level, unspecified lower leg, sequela",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Complete traumatic amputation at knee level, unspecified lower leg, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

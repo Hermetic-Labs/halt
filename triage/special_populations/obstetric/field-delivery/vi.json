@@ -1,0 +1,35 @@
+{
+  "id": "field-delivery",
+  "name": "Giao hàng khẩn cấp tại hiện trường",
+  "category": "obstetric",
+  "skill_level": "y tế chiến đấu",
+  "time_estimate": "Khác nhau -- Hơn 20 phút",
+  "description": "Quản lý việc sinh nở nhanh chóng hoặc không có kế hoạch trong môi trường khắc khổ.",
+  "equipment": [
+    "găng tay",
+    "chăn-vải-sạch",
+    "kẹp dây hoặc dây buộc",
+    "kéo",
+    "bóng đèn-ống tiêm"
+  ],
+  "steps": [
+    "Đặt mẹ nằm ngửa hoặc nửa ngả lưng. Nên nghiêng sang bên trái nếu bất tỉnh (ngăn chặn chèn ép động mạch chủ).",
+    "Kiểm soát việc đưa đầu ra - đỡ bằng lòng bàn tay. KHÔNG kéo.",
+    "Sau khi đưa đầu ra, hãy kiểm tra dây gáy (quanh cổ). Nếu có, trượt qua đầu. Nếu chặt thì kẹp và cắt.",
+    "Hút miệng rồi mũi bằng ống tiêm bóng đèn nếu có.",
+    "Hướng dẫn chuyển vai trước bằng cách kéo nhẹ đầu xuống dưới, sau đó hướng lên trên đối với vai sau.",
+    "Giao thi thể - lưu ý thời gian giao hàng.",
+    "Lau khô và ủ ấm cho trẻ ngay lập tức. Kích thích bằng cách xoa lưng.",
+    "Kẹp và cắt dây rốn (đợi 1-2 phút nếu trẻ ổn định).",
+    "Đẩy nhau thai ra bằng lực kéo được kiểm soát nhẹ nhàng - KHÔNG dùng lực.",
+    "Dùng oxytocin (nếu có) để ngăn ngừa xuất huyết sau sinh sau sổ nhau thai.",
+    "Đánh giá tình trạng xuất huyết sau sinh - xoa bóp vùng đáy chậu, nén bằng hai tay nếu cần.",
+    "Đánh giá điểm Apgar sau 1 và 5 phút."
+  ],
+  "warnings": [
+    "Nếu việc sinh nở chưa sắp xảy ra -- ĐỪNG cố gắng. MEDEVAC nhanh được ưu tiên.",
+    "Sinh khó ở vai: nếu vai bị kẹt, hãy áp dụng thao tác McRoberts (hông gấp) và áp lực lên xương mu.",
+    "Xuất huyết sau sinh là nguyên nhân hàng đầu gây tử vong ở bà mẹ có thể phòng ngừa được - hãy chuẩn bị sẵn oxytocin."
+  ],
+  "source": "JTS Obstetric CPG / PHTLS"
+}

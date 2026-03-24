@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Fluorchinolon-Antibiotikum mit breiter gramnegativer Abdeckung. Wird bei schweren Wundinfektionen, penetrierenden Bauchtraumata (Abdeckung der Magen-Darm-Flora) und Harnwegsinfektionen eingesetzt. Verfügbare PO und IV.",
+  "indications": [
+    "Penetrierendes Bauchtrauma (GI-Dekontamination)",
+    "Schwere Wundinfektionen",
+    "Gramnegative Infektionen",
+    "Harnwegsinfektionen"
+  ],
+  "dose": "400 mg i.v. alle 8–12 Stunden. PO: 500-750 mg alle 12 Stunden.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Bekannte Fluorchinolon-Allergie",
+    "Kinder und Jugendliche < 18 Jahre (relativ – Tendinopathie-Risiko)",
+    "Schwangerschaft (Verwandte)"
+  ],
+  "warnings": [
+    "Gefahr eines Sehnenrisses, insbesondere der Achillessehne. Unterbrechen Sie die Anwendung, wenn Sehnenschmerzen auftreten.",
+    "Kann das QT-Intervall verlängern – Vorsicht bei anderen QT-verlängernden Medikamenten.",
+    "In der Schwangerschaft vermeiden, wenn Alternativen verfügbar sind."
+  ],
+  "regional_names": {
+    "generic": "Ciprofloxacin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10–20 mg/kg i.v. alle 8–12 Stunden (maximal 400 mg/Dosis). PO: 10–20 mg/kg alle 12 Stunden (maximal 750 mg/Dosis).",
+      "note": "Nur anwenden, wenn der Nutzen das Risiko einer Tendinopathie überwiegt. Für schwere Infektionen vorbehalten."
+    },
+    "obstetric": {
+      "note": "In der Schwangerschaft vermeiden, wenn Alternativen verfügbar sind. Nur bei lebensbedrohlichen Infektionen anwenden, bei denen der Nutzen das Risiko überwiegt."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

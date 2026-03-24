@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Atiwan"
+  ],
+  "description": "Benzodiazepina o pośrednim działaniu. Leczenie pierwszego rzutu IV/IM w leczeniu stanu padaczkowego i ostrych napadów padaczkowych. Stosowany również do sedacji proceduralnej i anksjolizy.",
+  "indications": [
+    "Stan padaczkowy (I linia IV)",
+    "Postępowanie w ostrych napadach",
+    "Sedacja proceduralna",
+    "Silny niepokój lub pobudzenie"
+  ],
+  "dose": "Napad drgawkowy: 4 mg IV/IO powolne wciśnięcie przez 2 min. Jeżeli napady nie ustąpią, powtórzyć dawkę 4 mg w ciągu 5–10 minut. IM: 4 mg, jeśli IV nie jest dostępne.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ostra jaskra z wąskim kątem",
+    "Ciężka depresja oddechowa",
+    "Nadwrażliwość na glikol propylenowy"
+  ],
+  "warnings": [
+    "Powoduje depresję oddechową – przygotuj BVM i sprzęt do udrażniania dróg oddechowych.",
+    "Sedacja może trwać 6-8 godzin – należy monitorować drogi oddechowe.",
+    "Możliwe paradoksalne pobudzenie, zwłaszcza u osób starszych i dzieci."
+  ],
+  "regional_names": {
+    "generic": "lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV/IM (maks. 4 mg/dawkę). W razie potrzeby powtórz raz na 5–10 minut.",
+      "note": "Preferowany zamiast diazepamu w leczeniu napadów dożylnych u dzieci."
+    },
+    "obstetric": {
+      "note": "Przechodzi przez łożysko – możliwa depresja oddechowa u noworodków. Stosować w przypadku stanu padaczkowego u matki, gdy korzyści przewyższają ryzyko."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

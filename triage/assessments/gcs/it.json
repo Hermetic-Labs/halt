@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "Scala del coma di Glasgow (GCS)",
+  "category": "neurological",
+  "description": "Punteggio neurologico standardizzato della coscienza tramite risposte oculari, verbali e motorie. Intervallo di punteggio 3-15.",
+  "instructions": "Assegna un punteggio a ciascuno dei tre domini in modo indipendente. Somma tutti e tre i punteggi per il GCS totale.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Spontaneo"
+        },
+        {
+          "score": 3,
+          "label": "Dare voce"
+        },
+        {
+          "score": 2,
+          "label": "Far soffrire"
+        },
+        {
+          "score": 1,
+          "label": "Nessuno"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "Orientato"
+        },
+        {
+          "score": 4,
+          "label": "Confuso"
+        },
+        {
+          "score": 3,
+          "label": "Parole inappropriate"
+        },
+        {
+          "score": 2,
+          "label": "Suoni incomprensibili"
+        },
+        {
+          "score": 1,
+          "label": "Nessuno"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "Obbedisce ai comandi"
+        },
+        {
+          "score": 5,
+          "label": "Localizza il dolore"
+        },
+        {
+          "score": 4,
+          "label": "Si ritira dal dolore"
+        },
+        {
+          "score": 3,
+          "label": "Flessione anomala (decorticata)"
+        },
+        {
+          "score": 2,
+          "label": "Estensione (decerebrato)"
+        },
+        {
+          "score": 1,
+          "label": "Nessuno"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "Lieve trauma cranico: monitorare attentamente"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "TBI moderato: preparare le vie aeree"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "Grave trauma cranico: vie aeree a rischio immediato, intubare se possibile"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Utilizzare il GCS pediatrico (pGCS) per i bambini di età inferiore a 2 anni. Punteggio verbale aggiustato per i bambini pre-verbali."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

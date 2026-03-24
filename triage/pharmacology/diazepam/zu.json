@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "I-Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "I-Valium",
+    "I-Diastat"
+  ],
+  "description": "I-benzodiazepine esebenza isikhathi eside. Isetshenziselwa ukuphatha ukuquleka, i-muscle spasm, ne-anxiolysis. Ijeli ye-Rectal (Diastat) iwusizo kuzilungiselelo zenkambu lapho i-IV ingatholakali. Ubude besikhathi eside kune-lorazepam.",
+  "indications": [
+    "Ukuphathwa kokubanjwa (rectal/IV)",
+    "I-muscle spasm ngenxa yokulimala komgogodla noma i-tetanus",
+    "Isengezo se-antidote ye-nerve (kumakhithi we-CHEMPACK)",
+    "Ukuhoxiswa kotshwala"
+  ],
+  "dose": "Ukubanjwa: 5-10 mg IV push slow. Phinda u-q10-15 amaminithi (ubukhulu obungu-30 mg). I-Rectal: 0.2-0.5 mg/kg. Ukumuncwa kwe-IM kuyashintshashintsha -- gwema i-IM uma kungenzeka.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "I-glaucoma ye-angle encane ebukhali",
+    "Isifo se-hepatic esinzima",
+    "Ukucindezeleka kokuphefumula"
+  ],
+  "warnings": [
+    "Ukumuncwa kwe-IM kuyaguquguquka futhi kubuhlungu -- khetha i-IV, i-rectal, noma sebenzisa i-midazolam IM esikhundleni salokho.",
+    "Ubude besikhathi eside be-sedation (24-48h ngemithamo ephindaphindiwe).",
+    "Ukulimala komenzeli wezinzwa: i-diazepam ifakiwe kukhithi ye-CHEMPACK yokuquleka ngenxa yenkinga ye-cholinergic."
+  ],
+  "regional_names": {
+    "generic": "i-diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0.1-0.3 mg/kg (ubukhulu obungu-10 mg). I-Rectal: 0.3-0.5 mg/kg. Sebenzisa umzila we-rectal uma i-IV ingatholakali.",
+      "note": "Ijeli ye-diastat ye-rectal iwusizo ikakhulukazi ekubanjweni kwezingane kuzilungiselelo zenkambu."
+    },
+    "obstetric": {
+      "note": "Iwela i-placenta. Kungabangela hypotonia ezisanda kuzalwa, ukucindezeleka kokuphefumula. Sebenzisa kuphela ukuquleka komama okungaphenduli ku-magnesium."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Application d'un joint thoracique occlusif",
+  "category": "respiration",
+  "skill_level": "bouée de sauvetage",
+  "time_estimate": "1-2 minutes",
+  "description": "Scellement d'une plaie thoracique par succion (pneumothorax ouvert) avec un joint thoracique ventilé pour empêcher l'entrée d'air tout en permettant le relâchement de la pression.",
+  "equipment": [
+    "joint de poitrine ventilé",
+    "gants",
+    "cisailles de traumatologie"
+  ],
+  "steps": [
+    "Exposez la plaie – coupez ou retirez les vêtements.",
+    "Essuyez la peau autour de la plaie aussi sèche que possible (le sang et la sueur empêchent l'adhérence).",
+    "Ouvrez l’emballage du joint thoracique ventilé.",
+    "Placez le sceau sur la plaie, centré sur le trou. Appuyez fermement en vous assurant que tous les bords adhèrent.",
+    "Vérifiez l’orientation du clapet : l’évent doit être orienté vers l’extérieur (loin de la peau) et rester dégagé.",
+    "Réévaluez les bruits respiratoires. Si la détérioration persiste après le scellement, envisagez un pneumothorax sous tension – effectuez une MNT.",
+    "Si un joint ventilé n'est pas disponible, un joint non ventilé peut être utilisé mais DOIT être surveillé pour détecter le développement d'un pneumothorax sous tension."
+  ],
+  "warnings": [
+    "Les joints non ventilés peuvent convertir un simple pneumothorax en pneumothorax sous tension ; utilisez des joints ventilés uniquement sur le terrain.",
+    "Le ruban adhésif sur trois côtés (joint improvisé) n'est plus recommandé par le CoTCCC - utilisez un joint thoracique ventilé du commerce.",
+    "Appliquez toujours un sceau sur les plaies d’ENTRÉE et de SORTIE."
+  ],
+  "follows": [],
+  "precedes": [
+    "décompression à l'aiguille"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Ocytocine",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocine",
+    "Syntocinon"
+  ],
+  "description": "Hormone peptidique endogène. Utérotonique de première intention pour la prévention et le traitement de l'hémorragie du post-partum (HPP). Provoque des contractions utérines et réduit la perte de sang après l'accouchement. Administré APRÈS l'accouchement placentaire.",
+  "indications": [
+    "Prévention des hémorragies du post-partum (routine après l'accouchement)",
+    "Traitement de l'hémorragie du post-partum (atonie utérine)",
+    "Déclenchement du travail (environnement contrôlé uniquement)"
+  ],
+  "dose": "Prévention de l'HPP : 10 unités IM immédiatement après l'accouchement placentaire (voie de terrain privilégiée). Traitement PPH : 10 à 40 unités dans 1 L IV, perfuser à 40 - 80 mU/min. Si IV indisponible : 10 unités IM.",
+  "route": [
+    "IV",
+    "MI"
+  ],
+  "window": "Donnez APRÈS l'accouchement placentaire - donner avant l'accouchement du placenta peut piéger le placenta.",
+  "contraindications": [
+    "Avant l'accouchement placentaire (peut piéger le placenta)",
+    "Détresse fœtale avec tête non accouchée",
+    "Hypersensibilité connue"
+  ],
+  "warnings": [
+    "DONNER APRÈS LA LIVRAISON DU PLACENTA – le piégeage du placenta est une complication potentiellement mortelle.",
+    "Le bolus IV peut provoquer une hypotension grave et une arythmie cardiaque - toujours diluer et infuser lentement.",
+    "Effet antidiurétique avec de grands volumes - surveiller l'hyponatrémie."
+  ],
+  "regional_names": {
+    "generic": "ocytocine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A – usage obstétrical uniquement.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Utérotonique primaire. Si l’atonie utérine ne répond pas, envisagez le misoprostol, l’acide tranexamique (TXA), la compression utérine bimanuelle et l’évacuation sanitaire rapide."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

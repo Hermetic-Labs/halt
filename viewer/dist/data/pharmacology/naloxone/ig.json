@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxone",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "Kloxxado"
+  ],
+  "description": "Asọmpi opioid nnabata antagonist. Ngwa ngwa na-atụgharị opioid-ebutere ịda mbà n'obi iku ume, nkwụsịtụ, na analgesia. Mmalite IV: 2 min, IM: 5 min, IN: 8-13 min. Ogologo oge dị mkpụmkpụ karịa ọtụtụ opioids -- enwere ike ịchọọ usoro ọgwụgwọ ugboro ugboro.",
+  "indications": [
+    "Opioid ịdoụbiga mmanya ókè ma ọ bụ ịda mbà n'obi iku ume",
+    "Mgbanwe nke ịhịa aka n'ahụ opioid",
+    "A na-enyo enyo ihe ọghọm opioid"
+  ],
+  "dose": "0.4-2 mg IV/IO/IM/IN. Tinyegharịa q2-3 min dị ka achọrọ. Oke 10mg. Intranasal (IN): 2mg kwa imi.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "N'ime",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Enweghị contraindications zuru oke na ntọala ịdoụbiga mmanya ókè"
+  ],
+  "warnings": [
+    "Ogologo oge omume (30-90 min) dị mkpụmkpụ karịa ọtụtụ opioids - onye ọrịa nwere ike ịmaliteghachi narcotize. Nyochaa opekata mpe otu awa ka ọgwụ ikpeazụ gachara.",
+    "Na-ebute nnukwu mwepu opioid -- nwere ike ịkpata mkpasu iwe, tachycardia, edema akpa ume na ndị ọrịa dabere na opioid.",
+    "Ọ ga - ewepụ analgesia - onye ọrịa nwere ike ị nweta ezigbo ọgụ site na mgbu."
+  ],
+  "regional_names": {
+    "generic": "naloxone",
+    "US": "Narcan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.01 mg/kg IV/IM/IN (max 0.4 mg). Tinyegharịa q2-3 min PRN.",
+      "note": "Nwa ọhụrụ: 0.01 mg / kg maka ngbanwe nke opioid nne."
+    },
+    "obstetric": {
+      "note": "Nchekwa na ime ime. Ọ bụrụ na enyere nne na-eru nso ka a na-amụ nwa, nyochaa nwa ọhụrụ maka iwepụ ya."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

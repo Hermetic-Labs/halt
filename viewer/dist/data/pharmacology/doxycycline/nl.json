@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxycycline",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramycine",
+    "Dorix"
+  ],
+  "description": "Breedspectrumtetracycline-antibioticum. Alternatief voor orale wondprofylaxe voor penicilline-allergische patiënten. Ook effectief tegen atypische organismen en sommige door vectoren overgedragen ziekten (malariaprofylaxe in endemische gebieden).",
+  "indications": [
+    "Wondprofylaxe (penicilline-allergie)",
+    "Infecties van zacht weefsel",
+    "Bijtwonden",
+    "Malariaprofylaxe in endemische gebieden"
+  ],
+  "dose": "100 mg PO elke 12 uur x 7 dagen.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Begin binnen 3 uur na het letsel met wondprofylaxe.",
+  "contraindications": [
+    "Zwangerschap (veroorzaakt verkleuring van de tanden van de foetus en remming van de botgroei)",
+    "Kinderen jonger dan 8 jaar (zelfde reden)",
+    "Ernstige leverfunctiestoornis"
+  ],
+  "warnings": [
+    "GECONTRA-INDICEERD tijdens de zwangerschap - gebruik in plaats daarvan amoxicilline.",
+    "GECONTRA-INDICEERD bij kinderen jonger dan 8 jaar.",
+    "Lichtgevoeligheid - adviseer de patiënt om blootstelling aan de zon te vermijden.",
+    "Niet innemen met calciumrijk voedsel, maagzuurremmers of ijzer - schaadt de absorptie."
+  ],
+  "regional_names": {
+    "generic": "doxycycline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Gecontra-indiceerd onder de 8 jaar. Leeftijd 8+: 2-4 mg/kg/dag verdeeld om de 12 uur (max. 100 mg/dosis).",
+      "note": "Gebruik amoxicilline voor kinderen jonger dan 8 jaar."
+    },
+    "obstetric": {
+      "note": "GECONTRA-INDICEERD tijdens de zwangerschap - veroorzaakt schade aan de foetus. Gebruik in plaats daarvan amoxicilline."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

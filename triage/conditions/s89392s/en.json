@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s89392s",
+    "icd10":  "S89392S",
+    "name":  "Other physeal fracture of lower end of left fibula, sequela",
+    "category":  "knee-leg-injury",
+    "triage_priority":  "",
+    "description":  "Other physeal fracture of lower end of left fibula, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

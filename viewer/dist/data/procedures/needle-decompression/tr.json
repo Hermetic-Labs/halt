@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "İğne Göğsü Dekompresyonu (NCD)",
+  "category": "respiration",
+  "skill_level": "savaş doktoru",
+  "time_estimate": "1-2 dakika",
+  "description": "Tansiyon pnömotoraksın ikinci interkostal boşluğa iğne yerleştirilmesiyle acil olarak rahatlatılması. Hayat kurtaran müdahale.",
+  "equipment": [
+    "14g-iğne-kateter-3-25 inç",
+    "eldivenler",
+    "göğüs-mühür-isteğe bağlı"
+  ],
+  "steps": [
+    "Tansiyon pnömotoraksı tanımlayın: Etkilenen tarafta nefes seslerinin olmaması, trakeal deviasyon (geç), solunum sıkıntısı, hipotansiyon, JVD.",
+    "Etkilenen taraftaki göğsü açığa çıkarın.",
+    "2. interkostal boşluğu, midklaviküler çizgiyi bulun (alternatif: 4./5. ICS, anterior aksiller çizgi).",
+    "Göğüs duvarına dik olarak 3. kaburganın ÜST kısmının hemen üzerine 14 g, 3,25 inçlik bir iğne kateteri yerleştirin (nörovasküler demeti önleyin).",
+    "Hava akımı hissedilene veya tıslama sesi duyuluncaya kadar ilerleyin.",
+    "İğneyi çıkarın ve kateteri yerinde bırakın.",
+    "Nefes seslerindeki ve solunum çabasındaki iyileşmeyi dinleyin.",
+    "Kateter göbeğini sabitleyin. Açık ucu kelepçelemeyin veya kapatmayın.",
+    "Her 5 dakikada bir yeniden değerlendirin; kateter bükülebilir veya pıhtılaşabilir, bu da tekrar dekompresyon gerektirebilir."
+  ],
+  "warnings": [
+    "3,25 inçlik bir iğne kullanın - standart 14g anjiyokateter (1,5 inç), vücut zırhı ve kas yapısı nedeniyle askeri hastalarda sıklıkla başarısız olur.",
+    "Hangi tarafın etkilendiğinden emin değilseniz ve hastanın tutuklanma sırasında olduğu durumlarda iki taraflı BOH gerekli olabilir.",
+    "Yarayı kapatmadan, emici göğüs yarasıyla aynı tarafa yerleştirmeyin."
+  ],
+  "follows": [],
+  "precedes": [
+    "göğüs-mühür-uygulaması"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Uygun büyüklükte bir iğne kullanın (daha küçük hastalar için 1,5-2 inç yeterli olabilir). 2. ICS MCL yaklaşımını kullanın. Yer işaretinin tanınması daha zordur; dikkatli olun."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oxytocin",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocin",
+    "Syntonon"
+  ],
+  "description": "Hormoonka peptide ee endogenous. Uterotonic-ka koowaad ee ka-hortagga iyo daaweynta dhiig-baxa dhalmada kadib (PPH). Wuxuu keenaa foosha ilmo-galeenka wuxuuna yareeyaa daadinta dhiigga dhalmada ka dib. La siiyay dhalmada mandheerta ka dib.",
+  "indications": [
+    "Kahortagga dhiigbaxa dhalmada kadib (caadi ahaan dhalmada kadib)",
+    "Daawaynta dhiigbaxa dhalmada kadib (uterine atony)",
+    "Soo kicinta foosha (goobta la kantaroolo oo keliya)"
+  ],
+  "dose": "Kahortagga PPH: 10 unug IM isla markiiba ka dib dhalmada mandheerta (wadada goobta la door biday). Daaweynta PPH: 10-40 unug ee 1L IV, ku shub 40-80 mU/daqiiqo. Haddii IV la waayo: 10 unug IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Bixi dhalmada mandheerta ka dib -- bixinta ka hor intaanay mandheerta dhalin waxay dabin kartaa mandheerta.",
+  "contraindications": [
+    "Kahor dhalmada mandheerta (waxay dabin kartaa mandheerta)",
+    "Xanuunka uurjiifka oo aan madaxa la dhalin",
+    "Dareen-xumo la yaqaan"
+  ],
+  "warnings": [
+    "BIXI KA DIB MARKII PLACENTA LA SOO DHIIBO -- mandheerta oo dabintu waa dhibaato nafta halis gelisa.",
+    "IV bolus waxay keeni kartaa hypotension daran iyo arrhythmia wadnaha -- had iyo jeer milo oo si tartiib ah wax u geli.",
+    "Saamaynta antidiuretic oo leh tiro badan - la soco hyponatremia."
+  ],
+  "regional_names": {
+    "generic": "oxytocin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A -- isticmaalka dhalmada oo kaliya.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Uterotonic aasaasiga ah. Haddii atony uterineine uusan ka jawaabin, ka fiirso misoprostol, tranexamic acid (TXA), cadaadis ilmo-galeenka laba-geesoodka ah, iyo MEDEVAC degdeg ah."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

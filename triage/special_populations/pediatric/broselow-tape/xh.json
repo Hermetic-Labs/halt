@@ -1,0 +1,63 @@
+{
+  "id": "broselow-tape",
+  "name": "I-Broselow yabantwana yeTape eNgxamisekileyo ekubhekiselele kuyo",
+  "description": "Isalathiso esinekhowudi yombala-kwidosi yolawulo lwechiza labantwana xa isikali singekho. Ukulinganisa umntwana ukusuka phezulu kwentloko ukuya kwisithende kwaye udibanise nebhendi yombala.",
+  "note": "Le referensi yeye-ESTIMATION kuphela. Sebenzisa ubunzima bokwenene xa bukhona.",
+  "bands": [
+    {
+      "color": "ngwevu",
+      "weight_kg": "3-5",
+      "length_cm": "46-57",
+      "est_age": "Esandul' ukuzalwa"
+    },
+    {
+      "color": "pink",
+      "weight_kg": "6-7",
+      "length_cm": "57-67",
+      "est_age": "3-6 iinyanga"
+    },
+    {
+      "color": "bomvu",
+      "weight_kg": "8-9",
+      "length_cm": "67-74",
+      "est_age": "Iinyanga ezi-6-12"
+    },
+    {
+      "color": "mfusa",
+      "weight_kg": "10-11",
+      "length_cm": "74-83",
+      "est_age": "Iinyanga ezili-12-18"
+    },
+    {
+      "color": "lubhelu",
+      "weight_kg": "12-14",
+      "length_cm": "83-95",
+      "est_age": "Iinyanga ezili-18-3 iminyaka"
+    },
+    {
+      "color": "mhlophe",
+      "weight_kg": "15-18",
+      "length_cm": "95-107",
+      "est_age": "3-5 iminyaka"
+    },
+    {
+      "color": "luhlaza",
+      "weight_kg": "19-22",
+      "length_cm": "107-122",
+      "est_age": "5-7 iminyaka"
+    },
+    {
+      "color": "orenji",
+      "weight_kg": "24-28",
+      "length_cm": "122-137",
+      "est_age": "7-9 iminyaka"
+    },
+    {
+      "color": "luhlaza",
+      "weight_kg": "30-36",
+      "length_cm": "137-152",
+      "est_age": "I-9-12 iminyaka"
+    }
+  ],
+  "source": "Broselow Pediatric Emergency Reference / PALS"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "황산마그네슘(MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "황산마그네슘 주입"
+  ],
+  "description": "자간전증 발작(자간전증으로 인한 임신 중 발작)의 예방 및 치료에 사용되는 중추신경계 억제제 및 항경련제. 심한 천식과 torsades de pointes에도 사용됩니다. 벤조디아제핀에 대한 자간증의 1차 치료제.",
+  "indications": [
+    "자간증(심각한 전자간증의 발작 예방 및 치료)",
+    "자간전증 예방(심각한 특징)",
+    "Torsades de Pointes(저마그네슘혈증으로 인한 다형성 V-tach)",
+    "중증 급성 천식(부속)"
+  ],
+  "dose": "자간증 로딩 용량: 20분에 걸쳐 4-6g IV 천천히 밀어 넣습니다. 유지 관리: 1-2g/시간 IV 주입. 발작이 재발하는 경우: 5분에 걸쳐 2-4g IV. IM 로딩(IV가 없는 경우): 각 엉덩이에 5g(총 10g)을 동시에 IM합니다.",
+  "route": [
+    "IV",
+    "IO",
+    "메신저"
+  ],
+  "window": "발작이 시작되거나 심각한 자간전증 특징이 진단되면 시작하십시오.",
+  "contraindications": [
+    "중증근육무력증",
+    "심장 전도 결함",
+    "신부전(축적 - 복용량 감소)"
+  ],
+  "warnings": [
+    "독성 징후: 슬개골 반사 상실(첫 번째 징후, 7-10mEq/L), 호흡 억제(> 10mEq/L), 심장 마비(> 15mEq/L).",
+    "15분마다 슬개골 반사를 모니터링하십시오. 반사 상실 = 주입을 중단하십시오.",
+    "독성 해독제: 칼슘 글루코네이트 1g IV를 3분에 걸쳐 투여합니다.",
+    "신장애가 있는 경우 복용량을 줄이십시오. 소변량을 모니터링하십시오."
+  ],
+  "regional_names": {
+    "generic": "황산마그네슘"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 10-20분에 걸쳐 25-50mg/kg IV(최대 2g). 중증 천식: 25-75mg/kg IV(최대 2g).",
+      "note": "산과가 아닌 소아 환자의 발작에는 거의 사용되지 않습니다. 자간증이 주요 적응증입니다."
+    },
+    "obstetric": {
+      "note": "기본 표시. 태반 통과 - 신생아 고마그네슘혈증 가능. 호흡억제 시 신생아 투여량: 글루콘산칼슘 100mg/kg IV. 산모의 마그네슘 사용에 대해 NICU 팀에 알리십시오."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

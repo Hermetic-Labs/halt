@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Kahortagga Hypothermia (H -- MARCH)",
+  "category": "temperature-management",
+  "skill_level": "qof kasta oo u jawaaba",
+  "time_estimate": "2-3 daqiiqo",
+  "description": "La dagaalanka hypothermia waa dilaaga hormoodka ah ee lagaga hortagi karo dhaawaca. Triad-ka dilaaga ah: hypothermia + acidosis + coagulopathy. Ka hortag kharash kasta.",
+  "equipment": [
+    "kulaylka-milicsiga-bustaha",
+    "Qalabka-ka-hortagga hypothermia",
+    "diirran-iv- dareeraha-haddii la heli karo"
+  ],
+  "steps": [
+    "Ka saar dhammaan dharka qoyan sida ugu dhakhsaha badan ee suurtogalka ah.",
+    "Ku dabool buka bustaha kulaylka-milicsada (meel bannaan) -- dhinac dhalaalaya IN dhinaca bukaanka.",
+    "Ku duub madaxa iyo qoorta (goobta luminta kulaylka muhiimka ah).",
+    "Dahaarka dhulka -- dhig wax u dhexeeya bukaanka iyo dusha sare ee dhulka qabow.",
+    "Maamul dareere IV diiran haddii la heli karo.",
+    "Ha u oggolaan bukaanku inuu gariiro isagoon dabooli jirin --gariirku waa calaamad digniin hore.",
+    "La soco heerkulka haddii heerkulbeegga la heli karo. Ka hooseeya 35°C (95°F) = hypothermia."
+  ],
+  "warnings": [
+    "Hypothermia waxay ka sii daraysaa xinjirowga dhiigga -- bukaannada dhiigbaxa si dhakhso ah ayay u qaboojiyaan oo si aan waxtar lahayn u xinjiroobin.",
+    "Ka-hortagga hypothermia goobta waa inay ka bilaabataa goobta dhaawaca, maaha CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

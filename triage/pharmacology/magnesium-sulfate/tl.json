@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Magnesium Sulfate (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Magnesium Sulfate Injection"
+  ],
+  "description": "CNS depressant at anticonvulsant na ginagamit para sa pag-iwas at paggamot ng eclamptic seizure (mga seizure sa pagbubuntis mula sa pre-eclampsia). Ginagamit din para sa matinding hika at torsades de pointes. Unang linya para sa eclampsia sa benzodiazepines.",
+  "indications": [
+    "Eclampsia (pag-iwas sa seizure at paggamot sa malubhang pre-eclampsia)",
+    "Pre-eclampsia prophylaxis (severe features)",
+    "Torsades de Pointes (polymorphic V-tach mula sa hypomagnesemia)",
+    "Malubhang acute asthma (adjunct)"
+  ],
+  "dose": "Eclampsia loading dose: 4-6g IV mabagal na pagtulak sa loob ng 20 minuto. Pagpapanatili: 1-2g/oras na IV infusion. Kung umulit ang seizure: 2-4g IV sa loob ng 5 min. Naglo-load ng IM (kung walang IV): 5g IM bawat puwit (kabuuan ng 10g) nang sabay-sabay.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "Magsimula sa pagsisimula ng seizure o sa pagsusuri ng mga malubhang tampok na pre-eclampsia.",
+  "contraindications": [
+    "Myasthenia gravis",
+    "Mga depekto sa pagpapadaloy ng puso",
+    "Kabiguan ng bato (naiipon -- bawasan ang dosis)"
+  ],
+  "warnings": [
+    "Mga senyales ng toxicity: pagkawala ng patellar reflex (unang sign, 7-10 mEq/L), respiratory depression (> 10 mEq/L), cardiac arrest (> 15 mEq/L).",
+    "Subaybayan ang patellar reflexes tuwing 15 minuto -- pagkawala ng reflex = ihinto ang pagbubuhos.",
+    "ANTIDOTE para sa toxicity: Calcium gluconate 1g IV sa loob ng 3 minuto.",
+    "Bawasan ang dosis sa kapansanan sa bato -- subaybayan ang paglabas ng ihi."
+  ],
+  "regional_names": {
+    "generic": "magnesium sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg IV sa loob ng 10-20 min (max 2g). Malubhang hika: 25-75 mg/kg IV (max 2g).",
+      "note": "Bihirang ginagamit para sa mga seizure sa mga non-obstetric pediatric na pasyente -- eclampsia ang pangunahing indikasyon."
+    },
+    "obstetric": {
+      "note": "Pangunahing indikasyon. Tumawid sa inunan -- posible ang neonatal hypermagnesemia. Dosis ng neonatal kung respiratory depression: calcium gluconate 100 mg/kg IV. Ipaalam sa pangkat ng NICU ang paggamit ng magnesiyo ng ina."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

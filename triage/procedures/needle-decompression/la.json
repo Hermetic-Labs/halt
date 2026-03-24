@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Acus Archae Decompression (NCD)",
+  "category": "respiration",
+  "skill_level": "pugna-medic",
+  "time_estimate": "1-2 min",
+  "description": "Subitis levamen tensionis pneumothorax per acum insertionem in alterum spatium intercostale. Vitae salutaris interventus.",
+  "equipment": [
+    "14g-acus-catheter-3-25in",
+    "caestus",
+    "cista-sig-libitum"
+  ],
+  "steps": [
+    "COGNOSCO tensio pneumothorax: absentis spiritus sonat in parte affecta, deviatio arteriae (sero), angustia respiratoria, hypotension, JVD.",
+    "Pectus in parte affectata expone.",
+    "Pone spatium 2 intercostale, lineam clavicularem (alternam: 4th/5 ICS, lineam axillarem anteriorem).",
+    "Inserta 14g, 3.25-inch acus catheter perpendicularis ad parietem thoracis, supra verticem costae 3 (neurovascularis fasciculus vitat).",
+    "Progredior donec sentitur vel auditur sibilus impetus aeris.",
+    "Aufer acum, et dimitte cathetum in loco.",
+    "Audi pro emendatione spiritus soni et nisus respiratorii.",
+    "Secure centrum catheter. Ne fibulatis vel aperto fine operiat.",
+    "Singulis 5 minutis candam - catheter kink vel concretus potest, repetit decompressionem requirens."
+  ],
+  "warnings": [
+    "Utere 3.25 inch acus -- vexillum 14g angiocathetum (1.5in) saepe deficit in aegris militaribus propter loricam et musculaturam.",
+    "Bilateralis NCD quaeri potest, si incertum qua parte adficitur et aegrum peri- prehendatur.",
+    "Noli in eadem parte ponere, quod sugens pectus sine vulnere primum vulnus obsignans."
+  ],
+  "follows": [],
+  "precedes": [
+    "cista-sigillum"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Apte acus mediocri utere (aegris minoribus, 1.5-2in sufficiat). Utere ad 2 ICS MCL. Difficilior cognitio limes est - cautio utere."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

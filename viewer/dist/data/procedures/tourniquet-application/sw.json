@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Maombi ya Tourniquet (Mashindano ya Kupambana na Maombi -- CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "mjibu yeyote",
+  "time_estimate": "30-60 sek",
+  "description": "Udhibiti wa uhakika wa kuvuja damu kwa uvujaji wa damu unaotishia maisha. Omba mapema -- usicheleweshe.",
+  "equipment": [
+    "paka-tourniquet",
+    "alama ya kudumu"
+  ],
+  "steps": [
+    "Weka tourniquet inchi 2-3 (cm 5-7) karibu (juu) ya jeraha -- juu ya nguo inakubalika.",
+    "Elekeza mkanda unaojishikamanisha kwenye kiungo na uzi kupitia baki ya adapta ya msuguano.",
+    "Vuta mkanda kwa nguvu na uimarishe yenyewe.",
+    "Sogeza fimbo ya windlass hadi kutokwa na damu kukome au mapigo ya mbali yasiwepo.",
+    "Funga kioo cha upepo kwenye klipu ya kioo cha upepo.",
+    "Weka kamba ya windlass juu ya fimbo ya windlass ili salama.",
+    "Andika muda wa kutuma maombi moja kwa moja kwenye tourniquet (tumia alama) NA kwenye kadi ya TCCC.",
+    "Onyesha na tathmini tena jeraha. Tathmini tena baada ya dakika 5."
+  ],
+  "warnings": [
+    "USIONDOE tafrija mara tu inapotumika kwenye uwanja -- wafanyakazi wa matibabu waliofunzwa pekee katika mpangilio unaodhibitiwa.",
+    "Muda ni muhimu: ziara> saa 2 huongeza hatari ya kupoteza viungo. Ingia wakati mara moja.",
+    "Usitume maombi juu ya kiungo. Ikiwa kiungo kina majeraha katika viwango vingi, weka karibu na majeraha yote.",
+    "Tafrija zilizoboreshwa (mikanda, kamba) hazina ufanisi sana."
+  ],
+  "follows": [
+    "shinikizo la moja kwa moja",
+    "jeraha-kufunga"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Tumia tourniquet nyembamba ya watoto ikiwa inapatikana. CAT ya kawaida inaweza kutumika lakini kaza kwa uangalifu. Viungo ni vidogo -- angalia mapigo ya mbali kwa makini."
+    },
+    "obstetric": {
+      "note": "Maombi ya kawaida kwa majeraha ya mwisho. Usitumie kwa tumbo au pelvis."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

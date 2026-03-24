@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Cadaadiska Tooska ah ee Xakamaynta Dhiigbaxa",
+  "category": "hemorrhage-control",
+  "skill_level": "qof kasta oo u jawaaba",
+  "time_estimate": "3-5 daqiiqo",
+  "description": "Xakamaynta dhiigbaxa safka kowaad ee cidhifyada iyo boogaha jidhka ee la heli karo.",
+  "equipment": [
+    "galoofyada",
+    "jug-dhaqaale",
+    "faashad-cravat"
+  ],
+  "steps": [
+    "Don galoofyada haddii la heli karo.",
+    "Soo bandhig nabarka adigoo gooyay dharka.",
+    "Si toos ah u mari dhaymo dhaawac ah ama maro laalaaban oo dhaawaca korkooda.",
+    "Si adag ugu cadaadi ciribta gacantaada. Isticmaal miisaanka jidhkaaga -- kaliya ma aha xoogga cududda.",
+    "Qabo cadaadis joogto ah, oo aan kala go' lahayn ugu yaraan 3 daqiiqo.",
+    "Ha qaadin dhaymada si aad u hubiso -- tani waxay carqaladaynaysaa samaynta xinjirowga.",
+    "Haddii dhiiggu qooyo, ku dar dhaymo kale korka. Ha saarin kan ugu horreeya.",
+    "Ku xafid faashad cadaadis ah haddii la heli karo una guuri baakadaha dhaawaca ama dalxiiska haddii dhiiggu sii socdo."
+  ],
+  "warnings": [
+    "Cadaadiska tooska ah oo keliya kuma filna dhiig-baxa halbowlaha -- oo u kordho xirid nabar ama dalxiis.",
+    "Nabarada isgoysyada (gumaarka, axilla, luqunta) waxay u baahan yihiin xidhid nabar, maaha cadaadis dibadda ah oo keliya."
+  ],
+  "follows": [],
+  "precedes": [
+    "nabar xidhid",
+    "dalxiis-codsi"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Cadaadiska saamiga kaliya. Ka fogow inaad ku cadaadiyo dhuunta dhallaanka."
+    },
+    "obstetric": {
+      "note": "Ka fogow cadaadis culus oo ku dhaca ilmo galeenka gravid. Isticmaal baakad lateral ah haddii nabarka isgoysyada u dhow miskaha."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

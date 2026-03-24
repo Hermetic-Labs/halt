@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Fitantanana ratra amin'ny hafanana",
+  "category": "environmental",
+  "skill_level": "fototra",
+  "time_estimate": "Mitohy hatramin'ny MEDEVAC na marary stable",
+  "description": "Fitantanana ny hafanana, ny hafanana, ary ny hafanana. Fahamendrehana mampidi-doza ny fiakaran'ny hafanana - ny fampangatsiahana haingana no fitsaboana. Ampifanaraho avy hatrany ny faharerahana amin'ny hafanana (fiteny ara-dalàna) amin'ny fahatapahan'ny hafanana (LOC novaina).",
+  "equipment": [
+    "Rano (am-bava + mangatsiaka)",
+    "Fonosana gilasy na lamba mando mangatsiaka",
+    "Fitaovana IV (LR na NS)",
+    "Fan na aloka",
+    "thermomètre rectal (temperature core definitif)"
+  ],
+  "steps": [
+    "ASSESS: Efa mailo sy mitodika ve ny tra-boina? Hoditra maina mafana vs hoditra tsemboka mafana? Ny mari-pana fototra raha misy thermometer.",
+    "FAHAFANA: Mivonto hozatra, fisainana ara-dalàna. Mialà sasatra amin'ny alokaloka, rehydration am-bava miaraka amin'ny electrolytes, mihinjitra malefaka. Tsy mamono aina.",
+    "HAFANA REHETRA: tsemboka be, fahalemena, fanina, ara-dalàna na akaiky ara-dalàna. Mifindra any amin'ny faritra alokaloka/mangatsiaka. Esory ny akanjo tafahoatra. Rano-bava (raha mahatsiaro tena) na IV LR 1L mandritra ny 30-60 min. Manara-maso ny fivoaran'ny hafanana.",
+    "ADY AMIN'NY HAFANA (emergency): Fiovana LOC, fisavoritahana, ady, na tsy fahatsiarovan-tena. Ny mari-pana fototra > 40C (104F). Hoditra mafana (mety ho lena na maina). Manomboka: Esory avy hatrany amin'ny hafanana, esory ny akanjo rehetra, ny hoditra mando ary ny fantson-drano. Asio fonosana gilasy amin'ny tendany, ny axillae ary ny valahany (faritra avo amin'ny lalan-drà). IV LR 1-2L. Arovy ny lalan-drivotra raha tsy mahatsiaro tena. MEDEVAC avy hatrany.",
+    "TSY omena aspirine na acetaminophen ho an'ny fahatapahan'ny hafanana - tsy manampy, mety hanimba.",
+    "Monitor: vitals q15 min, lalan-drivotra, toe-tsaina. Antontan-taratasy fironan'ny maripana.",
+    "Tohizo ny fampangatsiahana mandritra ny MEDEVAC -- aza mijanona amin'ny fitaterana."
+  ],
+  "warnings": [
+    "Ny fahatapahan'ny hafanana dia vonjy taitra mampidi-doza -- aza atao diso tafahoatra ny hafanana. Jereo ny toe-tsaina.",
+    "Ny fampangatsiahana no fitsaboana farany. Aza ahemotra ny fampangatsiahana mba hametrahana fidirana IV.",
+    "Mety hitranga amin'ny olona salama tsara ny fahatapahan'ny hafanana tafahoatra - tsy miaro ny fahasalamana ara-batana.",
+    "Hyponatremia (ambany sodium) avy amin'ny overhydration amin'ny rano tsotra dia mety haka tahaka ny hafanana - manome vahaolana electrolyte fa tsy rano fotsiny."
+  ],
+  "follows": [
+    "fanombanana ny tsy fahampian-drano"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Tsy dia mahomby loatra ny thermoregulate ny ankizy. Mety hivoatra haingana kokoa ny famelezana hafanana. Ny ranon-javatra mifototra amin'ny lanja: 20 mL/kg LR IV bolus. Ny mari-pana fototra amin'ny alàlan'ny thermometer rectal marina indrindra."
+    },
+    "obstetric": {
+      "note": "Ny hyperthermie amin'ny reny (>39C) dia mety miteraka kilema amin'ny fantsona neural foetus (aloha) sy ny fahorian'ny foetus (tara). Mangatsiaka mahery vaika. Fanaraha-maso ny fitepon'ny foetus raha misy."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

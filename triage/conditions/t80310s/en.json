@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t80310s",
+    "icd10":  "T80310S",
+    "name":  "ABO incompatibility with acute hemolytic transfusion reaction, sequela",
+    "category":  "complications-treatment",
+    "triage_priority":  "",
+    "description":  "ABO incompatibility with acute hemolytic transfusion reaction, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

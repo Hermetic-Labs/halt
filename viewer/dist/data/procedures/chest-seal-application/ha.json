@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Aikace-aikacen Hatimin Ƙirji Mai Makowa",
+  "category": "respiration",
+  "skill_level": "fama-ceton rai",
+  "time_estimate": "1-2 min",
+  "description": "Rufe raunin ƙirji mai tsotsa (buɗe pneumothorax) tare da hatimin ƙirji mai huɗa don hana shiga iska yayin ba da izinin sakin matsa lamba.",
+  "equipment": [
+    "huce-kirji-hatimi",
+    "safar hannu",
+    "rauni-shears"
+  ],
+  "steps": [
+    "Bayyana raunin -- yanke ko cire tufafi.",
+    "Shafa fata a kusa da rauni kamar bushe kamar yadda zai yiwu (jini, gumi yana hana mannewa).",
+    "Buɗe fakitin hatimin ƙirji mai huɗa.",
+    "Sanya hatimin a kan raunin, a tsakiya a kan ramin. Latsa da ƙarfi, tabbatar da duk gefuna suna manne.",
+    "Bincika daidaitawar bawul -- dole ne hushin ya fuskanci waje (daga fata) kuma ya kasance ba tare da toshewa ba.",
+    "Sake tantance sautunan numfashi. Idan lalacewa ya ci gaba bayan rufewa, la'akari da pneumothorax tashin hankali - yi NCD.",
+    "Idan babu hatimin huɗawa, ana iya amfani da hatimin da ba a buɗe ba amma dole ne a sa ido don haɓakar pneumothorax tashin hankali."
+  ],
+  "warnings": [
+    "Hatimin da ba a buɗe ba na iya canza pneumothorax mai sauƙi zuwa pneumothorax na tashin hankali -- yi amfani da hatimin huɗa kawai a cikin fili.",
+    "CoTCCC ba ta ba da shawarar tapping gefe uku (ingantacciyar hatimi) -- yi amfani da hatimin ƙirji mai huɗa na kasuwanci.",
+    "Koyaushe sanya hatimi zuwa raunukan SHIGA da FITA."
+  ],
+  "follows": [],
+  "precedes": [
+    "allura-decompression"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

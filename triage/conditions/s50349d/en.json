@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s50349d",
+    "icd10":  "S50349D",
+    "name":  "External constriction of unspecified elbow, subsequent encounter",
+    "category":  "elbow-forearm-injury",
+    "triage_priority":  "",
+    "description":  "External constriction of unspecified elbow, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

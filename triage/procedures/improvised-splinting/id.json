@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Belat Improvisasi",
+  "category": "ortho-stabilization",
+  "skill_level": "Dasar",
+  "time_estimate": "5-10 menit",
+  "description": "Imobilisasi patah tulang menggunakan bahan yang tersedia untuk mencegah cedera lebih lanjut, mengurangi rasa sakit, dan membatasi kehilangan darah ke jaringan sekitarnya. Belat pada posisinya ditemukan kecuali sirkulasi terganggu -- kemudian luruskan secara perlahan.",
+  "equipment": [
+    "Belat SAM (lebih disukai)",
+    "Majalah gulung, tongkat, tiang tenda (lapangan seadanya)",
+    "Perban Cravat / Segitiga",
+    "Padding (pakaian, busa)",
+    "Pita atau potongan kain"
+  ],
+  "steps": [
+    "Paparkan dan nilai cedera -- periksa sirkulasi, sensasi, gerakan (CSM) distal hingga fraktur sebelum dan sesudah.",
+    "Kendalikan pendarahan aktif sebelum melakukan belat.",
+    "Padukan tulang yang menonjol dengan banyak untuk mencegah luka tekan.",
+    "Pilih bahan belat yang cukup panjang untuk melumpuhkan sendi di atas DAN di bawah fraktur.",
+    "Posisikan anggota tubuh pada posisi yang nyaman atau sejajar secara anatomis -- jangan dipaksakan.",
+    "Oleskan bantalan, lalu bahan belat. Amankan dengan perban atau potongan kain.",
+    "JANGAN membungkusnya terlalu rapat -- biarkan ujung jari/jari kaki terkena monitor CSM.",
+    "Nilai kembali CSM setelah aplikasi - segera kendurkan jika sirkulasi terganggu.",
+    "Tinggikan anggota badan jika memungkinkan untuk mengurangi pembengkakan.",
+    "Dokumentasikan waktu pemasangan belat."
+  ],
+  "warnings": [
+    "Periksa kembali CSM setiap 15-30 menit -- pembengkakan dapat membuat belat yang benar menjadi tourniquet.",
+    "Fraktur terbuka: tutupi luka dengan balutan steril terlebih dahulu, kemudian belat. JANGAN mendorong tulang kembali.",
+    "Patah tulang femur dapat menyebabkan kehilangan 1-2L darah ke paha -- obati secara agresif jika terjadi syok.",
+    "Dugaan patah tulang belakang: JANGAN melakukan improvisasi belat - minimalkan gerakan, pertahankan stabilisasi inline."
+  ],
+  "follows": [
+    "tekanan langsung",
+    "aplikasi tourniquet"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Lempeng pertumbuhan pada anak-anak lebih lemah dibandingkan ligamen -- dapat dicurigai adanya fraktur bahkan dengan mekanisme yang ringan. Fraktur torus (gesper) mungkin memiliki pembengkakan minimal."
+    },
+    "obstetric": {
+      "note": "Belat standar berlaku. Hindari posisi terlentang dalam waktu lama - miringkan ke samping kiri jika berbaring rata."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

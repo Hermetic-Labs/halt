@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Rarraba Hemorrhage (Ajin I-IV)",
+  "category": "circulatory",
+  "description": "Rarraba zubar jini na ATLS ta kiyasin asarar jini da amsawar jiki.",
+  "instructions": "Yi ƙididdige asarar jini kuma daidaita alamun ilimin lissafi zuwa aji. Gaggawar jiyya yana ƙaruwa tare da aji.",
+  "scoring": [
+    {
+      "class": "I",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Na al'ada",
+      "rr": "14-20",
+      "mental_status": "Na al'ada",
+      "treatment": "Kula, ruwan PO idan zai iya"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Na al'ada",
+      "rr": "20-30",
+      "mental_status": "Damuwa",
+      "treatment": "Samun damar IV, isotonic crystalloid"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Rage",
+      "rr": "30-40",
+      "mental_status": "A rude",
+      "treatment": "Ruwan IV + samfuran jini, sarrafa zubar jini nan da nan"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": "> 40%",
+      "hr": ">140",
+      "sbp": "Ƙananan sosai",
+      "rr": ">40",
+      "mental_status": "Lethargic/rashin sani",
+      "treatment": "Gyaran zubar jini na gaggawa na gaggawa -- barazanar rayuwa"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Yara suna rama tsawon lokaci kafin a yanke hukunci. Class III/IV na iya kasancewa tare da BP na kusa-na al'ada har sai an rugujewa kwatsam. Amincewa tachycardia da yanayin tunani akan BP."
+    },
+    "obstetric": {
+      "note": "Marasa lafiya masu ciki suna da 40-50% ƙara yawan adadin jini. Zai iya jure wa babban hasara kafin nuna alamun. Ciwon ciki na iya zuwa gaban alamun uwa."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

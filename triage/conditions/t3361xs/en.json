@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t3361xs",
+    "icd10":  "T3361XS",
+    "name":  "Superficial frostbite of right hip and thigh, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Superficial frostbite of right hip and thigh, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

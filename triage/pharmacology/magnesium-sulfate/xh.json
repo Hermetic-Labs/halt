@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "IMagnesium Sulfate (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Isitofu seMagnesium Sulfate"
+  ],
+  "description": "I-CNS depressant kunye ne-anticonvulsant esetyenziselwa ukuthintela kunye nokunyangwa kwe-eclamptic seizures (ukuxhatshazwa ekukhulelweni kwe-pre-eclampsia). Kwakhona isetyenziselwa i-asthma enzima kunye ne-torsades de pointes. Umgca wokuqala we-eclampsia ngaphezu kwe-benzodiazepines.",
+  "indications": [
+    "I-Eclampsia (uthintelo lokuxhuzula kunye nonyango kwi-pre-eclampsia eqatha)",
+    "Pre-eclampsia prophylaxis (iimpawu ezinzima)",
+    "Torsades de Pointes (polymorphic V-tach from hypomagnesemia)",
+    "Isifuba sombefu esimandundu (isincedisi)"
+  ],
+  "dose": "I-Eclampsia yokulayisha idosi: 4-6g IV tyhala kancinci ngaphezulu kwemizuzu engama-20. Ukugcinwa: 1-2g / iyure IV infusion. Ukuba i-seizure iphinda ibuye: 2-4g IV ngaphezu kwe-5 min. Ukulayishwa kwe-IM (ukuba akukho IV): 5g IM impundu nganye (i-10g iyonke) ngaxeshanye.",
+  "route": [
+    "IV",
+    "IO",
+    "I-IM"
+  ],
+  "window": "Qalisa ekuqaleni kokuxhuzula okanye xa ufunyaniswa iimpawu eziqatha ze-pre-eclampsia.",
+  "contraindications": [
+    "Myasthenia gravis",
+    "Iziphene zokuqhuba kwentliziyo",
+    "Ukusilela kwezintso (kuyaqokelela -- ukunciphisa ithamo)"
+  ],
+  "warnings": [
+    "Iimpawu ezinobuthi: ukulahleka kwe-patellar reflex (uphawu lokuqala, i-7-10 mEq / L), ukudakumba kokuphefumula (> 10 mEq / L), ukubanjwa kwentliziyo (> 15 mEq / L).",
+    "Ukubeka iliso kwi-patellar reflexes yonke imizuzu ye-15 - ukulahleka kwe-reflex = ukuyeka ukunyuswa.",
+    "I-ANTIDOTE yetyhefu: I-Calcium gluconate 1g IV ngaphezu kwemizuzu emi-3.",
+    "Nciphisa idosi kumonakalo wezintso -- jonga umchamo ophumayo."
+  ],
+  "regional_names": {
+    "generic": "magnesium sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg / kg IV phezu 10-20 min (max 2g). I-asthma enzima: 25-75 mg / kg IV (max 2g).",
+      "note": "Ayifane isetyenziselwe ukuxhuzula kwizigulana ezingezizo zokubelekisa -- i-eclampsia luphawu oluphambili."
+    },
+    "obstetric": {
+      "note": "Isalathiso sokuqala. Unqumla i-placenta -- i-hypermagnesemia yosana olunokwenzeka. Idosi yosana olusanda kuzalwa ukuba ukudakumba kokuphefumla: i-calcium gluconate 100 mg/kg IV. Yazisa iqela le-NICU ngokusetyenziswa kwe-magnesium yoomama."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "t23001s",
+    "icd10":  "T23001S",
+    "name":  "Burn of unspecified degree of right hand, unspecified site, sequela",
+    "category":  "burn-corrosion",
+    "triage_priority":  "",
+    "description":  "Burn of unspecified degree of right hand, unspecified site, sequela",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

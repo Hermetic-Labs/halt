@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s61041d",
+    "icd10":  "S61041D",
+    "name":  "Puncture wound with foreign body of right thumb without damage to nail, subsequent encounter",
+    "category":  "wrist-hand-injury",
+    "triage_priority":  "",
+    "description":  "Puncture wound with foreign body of right thumb without damage to nail, subsequent encounter",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

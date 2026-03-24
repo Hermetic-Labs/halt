@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Ƙirjin allura (NCD)",
+  "category": "respiration",
+  "skill_level": "fama-magungunan",
+  "time_estimate": "1-2 min",
+  "description": "Taimakon gaggawa na tashin hankali pneumothorax ta hanyar shigar da allura cikin sararin intercostal na biyu. Shisshigi mai ceton rai.",
+  "equipment": [
+    "14g-allura-catheter-3-25in",
+    "safar hannu",
+    "kirji-hatimin-na zaɓi"
+  ],
+  "steps": [
+    "Gano tashin hankali pneumothorax: rashi numfashi sautuka a gefen abin ya shafa, tracheal sabawa (marigayi), damuwa na numfashi, hypotension, JVD.",
+    "Fitar da kirji a gefen da abin ya shafa.",
+    "Gano wuri na intercostal na 2, layin tsakiya (madadin: 4th/5th ICS, layin axillary na gaba).",
+    "Saka 14g, 3.25-inch allura-catheter perpendicular zuwa bangon kirji, kusa da TOP na haƙarƙari na 3 (yana guje wa dam ɗin neurovascular).",
+    "Ci gaba har sai an ji saurin iska ko kuma a ji sauti.",
+    "Cire allurar kuma bar catheter a wurin.",
+    "Saurari don inganta sautin numfashi da ƙoƙarin numfashi.",
+    "Tabbatar da cibiyar catheter. KADA KA matsa ko rufe ƙarshen buɗewa.",
+    "Sake tantance kowane minti 5 -- catheter na iya yin kink ko gudan jini, yana buƙatar maimaita raguwa."
+  ],
+  "warnings": [
+    "Yi amfani da allura mai inci 3.25 - daidaitaccen 14g angiocatheter (1.5in) akai-akai yana kasawa a cikin marasa lafiya na soja saboda makamai na jiki da tsoka.",
+    "Ana iya buƙatar NCD na biyu idan ba a tabbatar da wane ɓangaren abin ya shafa ba kuma an kama majiyyaci.",
+    "Kada a sanya gefe ɗaya da tsotsan raunin ƙirji ba tare da rufe raunin ba."
+  ],
+  "follows": [],
+  "precedes": [
+    "kirji-hatimin-application"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Yi amfani da allura mai girman da ya dace (ƙananan marasa lafiya, 1.5-2in na iya isa). Yi amfani da hanyar ICS MCL ta biyu. Gane alamar ƙasa ya fi wahala -- yi amfani da hankali."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

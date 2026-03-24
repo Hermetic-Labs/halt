@@ -1,0 +1,30 @@
+﻿{
+    "id":  "s42133b",
+    "icd10":  "S42133B",
+    "name":  "Displaced fracture of coracoid process, unspecified shoulder, initial encounter for open fracture",
+    "category":  "shoulder-arm-injury",
+    "triage_priority":  "",
+    "description":  "Displaced fracture of coracoid process, unspecified shoulder, initial encounter for open fracture",
+    "red_flags":  [
+
+                  ],
+    "assess_first":  [
+
+                     ],
+    "procedures":  [
+
+                   ],
+    "drugs":  [
+
+              ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  ""
+                                    }
+                  },
+    "escalate_if":  "",
+    "source":  "ICD-10-CM FY2025"
+}

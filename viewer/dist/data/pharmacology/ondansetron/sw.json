@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Kinga vipokezi vya kuchagua 5-HT3 vya antiemetic. Ufanisi mkubwa kwa kichefuchefu na kutapika. ODT (kompyuta kibao inayosambaratika kwa mdomo) ni muhimu katika mipangilio ya uga wakati IV haipatikani. Imejumuishwa katika pakiti za vidonge vya kupambana.",
+  "indications": [
+    "Kichefuchefu na kutapika (chemotherapy, opioid-induced, post-operative, TBI-kuhusiana)",
+    "Ugonjwa wa mwendo",
+    "Kichefuchefu kutoka kwa utawala wa ketamine"
+  ],
+  "dose": "4-8 mg IV/IO msukuma polepole zaidi ya dakika 2-5. ODT: 4-8 mg kufutwa chini ya ulimi. IM: 4 mg.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hypersensitivity inayojulikana kwa ondansetron au wapinzani wengine wa 5-HT3",
+    "Ugonjwa wa kuzaliwa kwa muda mrefu wa QT (kiwango cha juu cha IV pekee)"
+  ],
+  "warnings": [
+    "Kiwango cha juu cha IV kinaweza kuongeza muda wa QT -- tumia kipimo cha chini kabisa cha IV.",
+    "Haichukui nafasi ya udhibiti wa njia ya hewa kwa mgonjwa aliyezibwa kwa kutapika -- hulinda njia ya hewa kwanza."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.1-0.15 mg/kg IV (max 4 mg). ODT: 4mg kwa watoto zaidi ya miaka 4.",
+      "note": "Inatumika sana na imevumiliwa vizuri katika watoto."
+    },
+    "obstetric": {
+      "note": "Data ndogo katika ujauzito. Tumia kwa kichefuchefu/kutapika sana baada ya miezi mitatu ya kwanza wakati manufaa yanazidi hatari. Haipendekezi katika trimester ya kwanza."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

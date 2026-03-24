@@ -1,0 +1,50 @@
+﻿{
+    "id":  "dexamethasone",
+    "name":  "Dexamethasone",
+    "category":  "corticosteroid",
+    "rxnorm":  "3264",
+    "brand_names":  [
+                        "Decadron",
+                        "DexPak"
+                    ],
+    "description":  "Long-acting synthetic corticosteroid. Used for cerebral edema (high altitude cerebral edema -- HACE, TBI), severe allergic reactions, airway edema, and adrenal crisis. Anti-inflammatory, not anabolic.",
+    "indications":  [
+                        "High altitude cerebral edema (HACE)",
+                        "Airway edema (post-extubation stridor, croup)",
+                        "Cerebral edema from tumor or abscess",
+                        "Severe allergic reactions (adjunct to epinephrine)",
+                        "Adrenal crisis",
+                        "Anti-emetic adjunct (perioperative)"
+                    ],
+    "dose":  "Cerebral edema/HACE: 8-10 mg IV/IM initial, then 4 mg q6h. Airway edema: 10 mg IV once. Croup: 0.6 mg/kg IM/PO (max 16mg). Adrenal crisis: 4 mg IV.",
+    "route":  [
+                  "IV",
+                  "IO",
+                  "IM",
+                  "PO"
+              ],
+    "window":  "HACE: Give as early as possible along with immediate descent.",
+    "contraindications":  [
+                              "Systemic fungal infections (without antifungal coverage)",
+                              "Live virus vaccines within 30 days (relative)"
+                          ],
+    "warnings":  [
+                     "Does not replace descent and oxygen for HACE -- use as adjunct only.",
+                     "Hyperglycemia -- monitor blood glucose in diabetics.",
+                     "Immunosuppression with prolonged use.",
+                     "Single doses for emergencies generally very safe."
+                 ],
+    "regional_names":  {
+                           "generic":  "dexamethasone"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "Croup: 0.6 mg/kg PO/IM (max 16 mg). Cerebral edema: 0.5-1 mg/kg IV (max 10 mg). Airway edema: 0.5 mg/kg IV.",
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  "12 mg IM q24h x 2 doses used to accelerate fetal lung maturity at 24-34 weeks gestation in preterm labor. Discuss with highest available provider."
+                                    }
+                  },
+    "source":  "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}
