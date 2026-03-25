@@ -95,12 +95,15 @@ def stage_app(version):
         shutil.rmtree(stage_dir)
     stage_dir.mkdir()
 
-    # Copy source directories into stage
+    # Copy source directories into stage.
+    # NOTE: triage/ has ~44K raw ICD-10 source files that are already compiled
+    # into viewer/dist/data/conditions-index.json. We only ship the backend
+    # code (triage_assistant/) — NOT the raw source data.
     copies = [
         (REPO_ROOT / "api", stage_dir / "api"),
         (REPO_ROOT / "electron", stage_dir / "electron"),
         (REPO_ROOT / "viewer", stage_dir / "viewer"),
-        (REPO_ROOT / "triage", stage_dir / "triage"),
+        (REPO_ROOT / "triage" / "triage_assistant", stage_dir / "triage" / "triage_assistant"),
         (REPO_ROOT / "models", stage_dir / "models"),
         (REPO_ROOT / "runtime", stage_dir / "runtime"),
     ]
@@ -256,10 +259,14 @@ def stage_macos(version):
         shutil.rmtree(stage_dir)
     stage_dir.mkdir(parents=True)
 
+    # Copy source directories into stage.
+    # NOTE: triage/ has ~44K raw ICD-10 source files that are already compiled
+    # into viewer/dist/data/conditions-index.json. We only ship the backend
+    # code (triage_assistant/) — NOT the raw source data.
     copies = [
         (REPO_ROOT / "api", stage_dir / "api"),
         (REPO_ROOT / "viewer", stage_dir / "viewer"),
-        (REPO_ROOT / "triage", stage_dir / "triage"),
+        (REPO_ROOT / "triage" / "triage_assistant", stage_dir / "triage" / "triage_assistant"),
         (REPO_ROOT / "runtime", stage_dir / "runtime"),
         (REPO_ROOT / "assets", stage_dir / "assets"),
     ]
@@ -285,16 +292,11 @@ def stage_macos(version):
     # Empty models dir (auto-downloads on first run)
     (stage_dir / "models").mkdir(exist_ok=True)
 
-    # Clean up __pycache__ and raw source data
+    # Clean up __pycache__
     for p in stage_dir.rglob("__pycache__"):
         shutil.rmtree(p, ignore_errors=True)
     for p in stage_dir.rglob("*.pyc"):
         p.unlink(missing_ok=True)
-    icd_dir = stage_dir / "triage" / "_source" / "icd10cm-2025"
-    if icd_dir.exists():
-        shutil.rmtree(icd_dir, ignore_errors=True)
-    icd_zip = stage_dir / "triage" / "_source" / "icd10cm-2025.zip"
-    icd_zip.unlink(missing_ok=True)
 
     print(f"  [OK]      macOS bundle staged: {stage_dir}")
     return stage_dir
