@@ -55,24 +55,23 @@ function getBackendPath() {
         };
     }
 
-    // In production, use the bundled exe
+    // In production, we use the bundled portable Python to run start.py
     const resourcesPath = process.resourcesPath || path.join(__dirname, '..', '..');
-    const exePath = path.join(resourcesPath, 'backend', 'halt-backend.exe');
+    
+    // The extraResources config puts our app-stage into resources/app/
+    const appPath = path.join(resourcesPath, 'app');
+    const pythonExe = process.platform === 'win32' 
+        ? path.join(appPath, 'runtime', 'python', 'python.exe')
+        : path.join(appPath, 'runtime', 'python', 'bin', 'python3'); // macOS/Linux fallback
+    const startScript = path.join(appPath, 'start.py');
 
-    // Fallback paths for different packaging layouts
-    const fallbackPaths = [
-        exePath,
-        path.join(__dirname, '..', 'backend', 'halt-backend.exe'),
-        path.join(app.getPath('exe'), '..', 'backend', 'halt-backend.exe')
-    ];
-
-    for (const p of fallbackPaths) {
-        if (fs.existsSync(p)) {
-            return { command: p, args: [], cwd: path.dirname(p), isExe: true };
-        }
-    }
-
-    return { command: exePath, args: [], cwd: path.dirname(exePath), isExe: true };
+    // Return the command to run Python with start.py
+    return {
+        command: pythonExe,
+        args: [startScript],
+        cwd: appPath,
+        isExe: true
+    };
 }
 
 /**
