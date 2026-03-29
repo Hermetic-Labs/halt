@@ -82,7 +82,7 @@ class ChatRequest(BaseModel):
 # ── Main Endpoint ──────────────────────────────────────────────────────────────
 @router.post("/inference/stream")
 async def inference_stream(req: ChatRequest):
-    global _queue_waiting, _queue_active, _active_user
+    global _queue_waiting
 
     # If lock is held, send queue position while waiting
     if _inference_lock.locked():

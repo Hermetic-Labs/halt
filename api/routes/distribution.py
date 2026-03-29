@@ -238,7 +238,6 @@ async def progress_stream():
     """SSE endpoint streaming download progress."""
 
     async def event_generator():
-        global _progress_queue
 
         # Wait for a download to start
         for _ in range(300):  # 30s max wait
@@ -319,6 +318,5 @@ async def get_checksums():
 @router.post("/api/distribution/checksums")
 async def set_checksums(data: dict[str, dict[str, str]]):
     """Set checksums for verification. Called during setup/release."""
-    global CHECKSUMS
     CHECKSUMS.update(data)
     return {"status": "ok", "packs_with_checksums": list(data.keys())}
