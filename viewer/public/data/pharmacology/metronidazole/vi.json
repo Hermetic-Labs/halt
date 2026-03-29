@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazol",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "Kháng sinh Nitroimidazole có khả năng bao phủ kỵ khí và nguyên sinh tuyệt vời. Cần thiết cho chấn thương xuyên bụng/ruột để che phủ hệ thực vật kỵ khí trong ruột. Thường được sử dụng kết hợp với ciprofloxacin.",
+  "indications": [
+    "Chấn thương xuyên bụng/ruột",
+    "Nhiễm trùng trong ổ bụng",
+    "Nhiễm trùng mô mềm kỵ khí",
+    "Nhiễm C. difficile"
+  ],
+  "dose": "500 mg tiêm tĩnh mạch mỗi 6-8 giờ. PO: 500 mg mỗi 8 giờ (nếu dung nạp bằng đường uống).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ba tháng đầu của thai kỳ (tương đối)",
+    "Đã biết dị ứng metronidazole hoặc nitroimidazole"
+  ],
+  "warnings": [
+    "Phản ứng giống disulfiram với rượu - không uống rượu trong khi điều trị và 48 giờ sau đó.",
+    "Có thể gây bệnh thần kinh ngoại biên khi sử dụng kéo dài.",
+    "Tránh trong ba tháng đầu nếu có thể."
+  ],
+  "regional_names": {
+    "generic": "metronidazole"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7,5 mg/kg IV/PO mỗi 6 giờ (tối đa 500 mg/liều).",
+      "note": "An toàn ở trẻ lớn. Tránh ở trẻ sơ sinh."
+    },
+    "obstetric": {
+      "note": "Tránh trong ba tháng đầu nếu có thể. Sử dụng trong tam cá nguyệt thứ hai/thứ ba khi cần thiết về mặt y tế - lợi ích thường lớn hơn nguy cơ nhiễm trùng kỵ khí nghiêm trọng."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

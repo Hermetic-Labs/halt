@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Upasuaji Ulioboreshwa",
+  "category": "ortho-stabilization",
+  "skill_level": "Msingi",
+  "time_estimate": "Dakika 5-10",
+  "description": "Zuia fractures kwa kutumia nyenzo zinazopatikana ili kuzuia majeraha zaidi, kupunguza maumivu, na kupunguza upotezaji wa damu kwenye tishu zinazozunguka. Banzi katika nafasi iliyopatikana isipokuwa mzunguko umetatizika -- kisha nyoosha kwa upole.",
+  "equipment": [
+    "Sehemu ya SAM (inapendekezwa)",
+    "Magazeti yaliyoviringishwa, vijiti, nguzo za hema (uwanja ulioboreshwa)",
+    "Bandeji za Cravat / triangular",
+    "Padding (mavazi, povu)",
+    "Tape au vipande vya kitambaa"
+  ],
+  "steps": [
+    "Fichua na tathmini jeraha -- angalia mzunguko, mhemko, harakati (CSM) ya mbali hadi kuvunjika kabla na baada.",
+    "Dhibiti kutokwa na damu yoyote kabla ya kuunganishwa.",
+    "Mfupa wa pedi hujulikana kwa ukarimu ili kuzuia vidonda vya shinikizo.",
+    "Chagua nyenzo ya banzi kwa muda wa kutosha kuzuia kiunganishi kilicho juu NA chini ya kuvunjika.",
+    "Weka kiungo katika nafasi ya kustarehesha au mpangilio wa anatomiki -- usilazimishe.",
+    "Omba pedi, kisha unganisha nyenzo. Salama na bandeji au vipande vya kitambaa.",
+    "USIFUNGE kwa kukaza sana -- acha ncha za vidole/vidole wazi ili kufuatilia CSM.",
+    "Tathmini tena CSM baada ya maombi -- legeza mara moja ikiwa mzunguko umeharibika.",
+    "Inua kiungo ikiwezekana ili kupunguza uvimbe.",
+    "Muda wa hati ya maombi ya banzi."
+  ],
+  "warnings": [
+    "Tathmini tena CSM kila baada ya dakika 15-30 -- uvimbe unaweza kufanya kifundo sahihi kiwe kitambo.",
+    "Fungua fractures: funika jeraha kwa mavazi ya kuzaa kwanza, kisha banzi. USIUSIKE mfupa ndani.",
+    "Kuvunjika kwa fupa la paja kunaweza kupoteza damu 1-2L kwenye paja -- kutibu kwa ukali kwa mshtuko.",
+    "Inashukiwa kuwa ni kuvunjika kwa uti wa mgongo: USIWEZE KUboresha banzi -- punguza msogeo, dumisha utulivu wa ndani."
+  ],
+  "follows": [
+    "shinikizo la moja kwa moja",
+    "tourniquet-maombi"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Sahani za ukuaji kwa watoto ni dhaifu kuliko mishipa -- inashukiwa kuvunjika hata kwa utaratibu mdogo. Torus (buckle) fractures inaweza kuwa na uvimbe mdogo."
+    },
+    "obstetric": {
+      "note": "Kuunganisha kwa kawaida kunatumika. Epuka nafasi ya chali kwa muda mrefu -- kuinama upande wa kushoto ikiwa imelala gorofa."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

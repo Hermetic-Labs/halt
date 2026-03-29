@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "昂丹司琼",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "佐夫兰"
+  ],
+  "description": "选择性5-HT3受体拮抗剂止吐药。对恶心、呕吐非常有效。当静脉注射不可用时，ODT（口腔崩解片）在现场非常有用。包含在一些战斗药包中。",
+  "indications": [
+    "恶心和呕吐（化疗、阿片类药物引起、术后、TBI 相关）",
+    "晕车",
+    "服用氯胺酮引起的恶心"
+  ],
+  "dose": "4-8 mg IV/IO 缓慢推注 2-5 分钟。 ODT：4-8 mg 溶解于舌下。肌肉注射：4毫克。",
+  "route": [
+    "四",
+    "IO",
+    "即时通讯",
+    "采购订单",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "已知对昂丹司琼或其他 5-HT3 拮抗剂过敏",
+    "先天性长 QT 综合征（仅高剂量静脉注射）"
+  ],
+  "warnings": [
+    "高剂量 IV 可能会延长 QT 间期——使用最低有效剂量 IV。",
+    "不能取代呕吐昏迷患者的气道管理——首先保护气道。"
+  ],
+  "regional_names": {
+    "generic": "昂丹司琼"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.1-0.15 mg/kg IV（最大 4 mg）。 ODT：4 岁以上儿童 4 毫克。",
+      "note": "在儿科广泛使用且耐受性良好。"
+    },
+    "obstetric": {
+      "note": "怀孕期间的数据有限。当益处大于风险时，用于妊娠早期后的严重恶心/呕吐。不建议在妊娠早期使用。"
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

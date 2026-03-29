@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Kupungua kwa Kifua cha Sindano (NCD)",
+  "category": "respiration",
+  "skill_level": "kupambana-daktari",
+  "time_estimate": "Dakika 1-2",
+  "description": "Msaada wa dharura wa pneumothorax ya mvutano kwa kuingizwa kwa sindano kwenye nafasi ya pili ya intercostal. Uingiliaji wa kuokoa maisha.",
+  "equipment": [
+    "14g-sindano-catheter-3-25in",
+    "kinga",
+    "muhuri wa kifua-hiari"
+  ],
+  "steps": [
+    "Tambua pneumothorax ya mvutano: sauti za kutokuwepo kwa pumzi kwa upande ulioathirika, kupotoka kwa tracheal (marehemu), shida ya kupumua, hypotension, JVD.",
+    "Fungua kifua kwenye upande ulioathirika.",
+    "Tafuta nafasi ya 2 ya kati, mstari wa midclavicular (mbadala: 4th/5th ICS, mstari wa mbele wa kwapa).",
+    "Ingiza katheta ya sindano ya 14g, 3.25-inch pembeni ya ukuta wa kifua, juu kidogo ya JUU ya mbavu ya 3 (epuka kifungu cha mishipa ya fahamu).",
+    "Kusonga mbele hadi kukimbilia kwa hewa kusikike au sauti inayosikika.",
+    "Ondoa sindano na kuacha catheter mahali.",
+    "Sikiliza uboreshaji wa sauti za kupumua na juhudi za kupumua.",
+    "Salama kitovu cha catheter. USIBANE au kufunika ncha iliyo wazi.",
+    "Tathmini tena kila baada ya dakika 5 -- catheter inaweza kuganda au kuganda, na kuhitaji mgandamizo wa kurudia."
+  ],
+  "warnings": [
+    "Tumia sindano ya inchi 3.25 -- angiocatheter ya kawaida ya 14g (inchi 1.5) mara nyingi hushindwa kwa wagonjwa wa kijeshi kwa sababu ya silaha za mwili na misuli.",
+    "NCD baina ya nchi mbili inaweza kuhitajika ikiwa hakuna uhakika ni upande gani umeathirika na mgonjwa yuko karibu kukamatwa.",
+    "Usiweke upande sawa na kunyonya jeraha la kifua bila kwanza kuifunga jeraha."
+  ],
+  "follows": [],
+  "precedes": [
+    "maombi ya muhuri wa kifua"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Tumia sindano ya ukubwa unaofaa (wagonjwa wadogo, 1.5-2in inaweza kutosha). Tumia mbinu ya 2 ya ICS MCL. Utambuzi wa alama kuu ni ngumu zaidi -- tumia tahadhari."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

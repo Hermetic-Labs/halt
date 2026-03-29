@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "Cân AVPU",
+  "category": "neurological",
+  "description": "Đánh giá ý thức 4 cấp độ nhanh chóng. Nhanh hơn GCS cho lần phân loại ban đầu.",
+  "instructions": "Đánh giá mức độ đáp ứng cao nhất mà bệnh nhân thể hiện.",
+  "scoring": [
+    {
+      "code": "Một",
+      "label": "Cảnh báo",
+      "description": "Bệnh nhân tỉnh, nhận thức và phản ứng bình thường"
+    },
+    {
+      "code": "V",
+      "label": "Giọng nói",
+      "description": "Bệnh nhân chỉ phản ứng với kích thích bằng lời nói"
+    },
+    {
+      "code": "P",
+      "label": "Đau đớn",
+      "description": "Bệnh nhân chỉ phản ứng với các kích thích gây đau (xoa xương ức, ấn vào giường móng tay)"
+    },
+    {
+      "code": "Bạn",
+      "label": "Không phản hồi",
+      "description": "Không phản ứng với bất kỳ kích thích nào - cần can thiệp đường thở ngay lập tức"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "Một",
+      "triage": "Ổn định - tiếp tục đánh giá"
+    },
+    {
+      "code": "V",
+      "triage": "Liên quan -- theo dõi đường thở"
+    },
+    {
+      "code": "P",
+      "triage": "Nguy kịch -- đường thở có nguy cơ, GCS thường <= 8"
+    },
+    {
+      "code": "Bạn",
+      "triage": "Ngay lập tức -- quản lý đường thở ngay"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

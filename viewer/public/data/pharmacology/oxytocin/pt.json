@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oxitocina",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocina",
+    "Sintocina"
+  ],
+  "description": "Hormônio peptídico endógeno. Uterotônico de primeira linha para prevenção e tratamento de hemorragia pós-parto (HPP). Causa contração uterina e reduz a perda de sangue após o parto. Administrado APÓS o parto placentário.",
+  "indications": [
+    "Prevenção de hemorragia pós-parto (rotina após o parto)",
+    "Tratamento da hemorragia pós-parto (atonia uterina)",
+    "Indução do parto (apenas ambiente controlado)"
+  ],
+  "dose": "Prevenção de HPP: 10 unidades IM imediatamente após a expulsão da placenta (via de campo preferida). Tratamento de HPP: 10-40 unidades em 1L IV, infundir a 40-80 mU/min. Se IV não estiver disponível: 10 unidades IM.",
+  "route": [
+    "IV",
+    "Eu estou"
+  ],
+  "window": "Administre APÓS a entrega da placenta - dar antes da liberação da placenta pode prender a placenta.",
+  "contraindications": [
+    "Antes do parto prematuro (pode prender a placenta)",
+    "Sofrimento fetal com cabeça não entregue",
+    "Hipersensibilidade conhecida"
+  ],
+  "warnings": [
+    "DAR APÓS A ENTREGA DA PLACENTA - prender a placenta é uma complicação com risco de vida.",
+    "O bolus IV pode causar hipotensão grave e arritmia cardíaca - sempre dilua e infunda lentamente.",
+    "Efeito antidiurético com grandes volumes – monitorar hiponatremia."
+  ],
+  "regional_names": {
+    "generic": "oxitocina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A – apenas para uso obstétrico.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Uterotônico primário. Se a atonia uterina não responder, considerar misoprostol, ácido tranexâmico (TXA), compressão uterina bimanual e MEDEVAC rápido."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

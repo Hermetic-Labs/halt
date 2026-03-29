@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinephrine (Adrenaline)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalin"
+  ],
+  "description": "Endogenous catecholamine tare da aikin alpha da beta adrenergic. Magani na farko don anaphylaxis da kama zuciya. A cikin anaphylaxis, an fi son cinyar IM akan IV (mafi aminci, daidaitaccen inganci). Kada ku jinkirta don samun damar IV a cikin anaphylaxis.",
+  "indications": [
+    "Anaphylaxis (layi na farko)",
+    "Kamewar zuciya -- mara ƙarfi VF/VT/PEA/asystole",
+    "Mai tsanani bronchospasm",
+    "Hypotension refractory zuwa ruwaye"
+  ],
+  "dose": "Anaphylaxis: 0.3-0.5 mg IM (cinyar gaba) | Mai allura ta atomatik 0.3 MG IM. Maimaita q5-15 min PRN. Kamewar zuciya: 1 mg IV/IO q3-5 min yayin CPR. Mai tsanani bronchospasm: 0.3 MG IM.",
+  "route": [
+    "IM",
+    "IV",
+    "IO"
+  ],
+  "window": "A cikin anaphylaxis: ba da IM nan da nan -- kar a jinkirta samun damar IV.",
+  "contraindications": [
+    "Babu cikakken contraindications a cikin gaggawa mai barazanar rai"
+  ],
+  "warnings": [
+    "Ya kamata a yi amfani da epinephrine na IV don anaphylaxis kawai a cikin kamawar zuciya ko girgiza mai zurfi - mai haɗari idan aka ba da turawa IV ga mara lafiya mai hankali.",
+    "Extravasation yana haifar da necrosis na nama - tabbatar da patency na IV.",
+    "Yana ƙara buƙatar iskar oxygen na zuciya -- yi amfani da taka tsantsan a sanannen cututtukan jini na waje kama."
+  ],
+  "regional_names": {
+    "generic": "epinephrine",
+    "UK": "adrenaline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anaphylaxis: 0.01 mg/kg IM (max 0.5 mg). EpiPen Jr (0.15 MG) don 15-30 kg. Kamewar zuciya: 0.01 mg/kg IV/IO q3-5 min.",
+      "note": "Yi amfani da kashi na tushen nauyi. Broselow kaset an ba da shawarar."
+    },
+    "obstetric": {
+      "note": "Yi amfani da daidaitaccen alluran anaphylaxis -- rayuwar mahaifiyar ita ce mafi mahimmanci. Epinephrine yana da lafiya a cikin ciki don abubuwan gaggawa masu barazana ga rayuwa."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

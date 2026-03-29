@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Desametasone",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Decadrone",
+    "DexPak"
+  ],
+  "description": "Corticosteroide sintetico a lunga durata d'azione. Utilizzato per l'edema cerebrale (edema cerebrale ad alta quota - HACE, TBI), reazioni allergiche gravi, edema delle vie aeree e crisi surrenale. Antinfiammatorio, non anabolico.",
+  "indications": [
+    "Edema cerebrale da alta quota (HACE)",
+    "Edema delle vie aeree (stridore post-estubazione, groppa)",
+    "Edema cerebrale da tumore o ascesso",
+    "Reazioni allergiche gravi (in aggiunta all'adrenalina)",
+    "Crisi surrenale",
+    "Coadiuvante antiemetico (perioperatorio)"
+  ],
+  "dose": "Edema cerebrale/HACE: 8-10 mg EV/IM iniziali, poi 4 mg ogni 6 ore. Edema delle vie aeree: 10 mg IV una volta. Groppa: 0,6 mg/kg IM/PO (max 16 mg). Crisi surrenale: 4 mg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO"
+  ],
+  "window": "HACE: somministrare il più presto possibile insieme alla discesa immediata.",
+  "contraindications": [
+    "Infezioni fungine sistemiche (senza copertura antifungina)",
+    "Vaccini con virus vivi entro 30 giorni (relativi)"
+  ],
+  "warnings": [
+    "Non sostituisce la discesa e l'ossigeno per l'HACE: utilizzare solo in aggiunta.",
+    "Iperglicemia: monitorare la glicemia nei diabetici.",
+    "Immunosoppressione con uso prolungato.",
+    "Le dosi singole per le emergenze sono generalmente molto sicure."
+  ],
+  "regional_names": {
+    "generic": "desametasone"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Groppa: 0,6 mg/kg PO/IM (max 16 mg). Edema cerebrale: 0,5-1 mg/kg IV (max 10 mg). Edema delle vie aeree: 0,5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM ogni 24 ore x 2 dosi utilizzate per accelerare la maturità polmonare del feto alla 24a-34a settimana di gestazione nel travaglio pretermine. Discuti con il miglior fornitore disponibile."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

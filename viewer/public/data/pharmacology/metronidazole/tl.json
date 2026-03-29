@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazole",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "Nitroimidazole antibiotic na may mahusay na anaerobic at protozoal coverage. Mahalaga para sa pagpasok ng trauma sa tiyan/bituka upang masakop ang anaerobic gut flora. Kadalasang ginagamit sa kumbinasyon ng ciprofloxacin.",
+  "indications": [
+    "Nakakapasok na trauma sa tiyan/bunutan",
+    "Mga impeksyon sa loob ng tiyan",
+    "Mga impeksyon sa anaerobic soft tissue",
+    "C. difficile infections"
+  ],
+  "dose": "500 mg IV q6-8h. PO: 500 mg q8h (kung pinahihintulutan ng bibig).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Unang trimester ng pagbubuntis (kamag-anak)",
+    "Kilalang metronidazole o nitroimidazole allergy"
+  ],
+  "warnings": [
+    "Disulfiram-like reaction with alcohol -- huwag uminom ng alak sa panahon ng paggamot at 48h pagkatapos.",
+    "Maaaring magdulot ng peripheral neuropathy sa matagal na paggamit.",
+    "Iwasan sa unang trimester kung maaari."
+  ],
+  "regional_names": {
+    "generic": "metronidazole"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7.5 mg/kg IV/PO q6h (max 500 mg/dosis).",
+      "note": "Ligtas sa mas matatandang bata. Iwasan sa mga bagong panganak."
+    },
+    "obstetric": {
+      "note": "Iwasan sa unang trimester kung maaari. Gumamit ng ikalawa/ikatlong trimester kapag medikal na kinakailangan -- ang benepisyo ay karaniwang mas malaki kaysa sa panganib para sa malubhang anaerobic na impeksyon."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxone",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "Kloxxado"
+  ],
+  "description": "Antagonis reseptor opioid sing kompetitif. Kanthi cepet mbalikke depresi pernapasan sing disebabake opioid, sedasi, lan analgesia. Onset IV: 2 min, IM: 5 min, IN: 8-13 min. Durasi luwih cendhek tinimbang umume opioid - dosis ulang bisa uga dibutuhake.",
+  "indications": [
+    "Overdosis opioid utawa depresi pernapasan",
+    "Pembalikan sedasi opioid",
+    "Diduga korban opioid"
+  ],
+  "dose": "0,4-2 mg IV/IO/IM/IN. Baleni q2-3 min yen perlu. Maks 10 mg. Intranasal (IN): 2 mg saben bolongan irung.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "ING",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ora ana contraindications mutlak ing setelan overdosis"
+  ],
+  "warnings": [
+    "Durasi tumindak (30-90 menit) luwih cendhek tinimbang umume opioid - pasien bisa narkotika maneh. Monitor paling sethithik 1 jam sawise dosis pungkasan.",
+    "Precipitates penarikan opioid akut - bisa nyebabake agitasi, tachycardia, edema paru ing pasien sing gumantung karo opioid.",
+    "Bakal mbalikke analgesia - pasien bisa dadi agresif amarga nyeri."
+  ],
+  "regional_names": {
+    "generic": "nalokson",
+    "US": "Narcan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,01 mg/kg IV/IM/IN (maks 0,4 mg). Baleni q2-3 min PRN.",
+      "note": "Neonatal: 0,01 mg/kg kanggo pembalikan opioid ibu."
+    },
+    "obstetric": {
+      "note": "Aman nalika meteng. Yen diwènèhaké marang ibu sing cedhak nglairake, monitor neonate kanggo mundur."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Đặt đường thở mũi họng (NPA)",
+  "category": "airway",
+  "skill_level": "cứu cánh chiến đấu",
+  "time_estimate": "1 phút",
+  "description": "Chèn một dụng cụ hỗ trợ đường thở qua mũi linh hoạt để duy trì sự thông thoáng của đường thở ở bệnh nhân bất tỉnh hoặc nửa tỉnh.",
+  "equipment": [
+    "npa-với-pin-an toàn",
+    "chất bôi trơn"
+  ],
+  "steps": [
+    "Chọn size NPA phù hợp (đo từ lỗ mũi đến dái tai).",
+    "Bôi trơn NPA nhiều bằng chất bôi trơn hòa tan trong nước hoặc nước muối.",
+    "Chèn chốt an toàn qua mặt bích nếu chưa có (ngăn chặn sự hít vào).",
+    "Đưa nhẹ nhàng vào lỗ mũi phải (vát về phía vách ngăn), tiến song song với vòm miệng.",
+    "Tiến tới cho đến khi mặt bích tựa vào lỗ mũi.",
+    "Định vị lại bệnh nhân (tư thế phục hồi nếu không có vấn đề về cột sống) và đánh giá lại đường thở.",
+    "Nếu gặp lực cản, hãy thử lỗ mũi trái."
+  ],
+  "warnings": [
+    "Chống chỉ định trong trường hợp nghi ngờ gãy xương sọ nền (mắt gấu trúc, dấu hiệu Battle, chảy nước mũi dịch não tuỷ).",
+    "NPA là phương pháp hỗ trợ đường thở ban đầu tốt nhất cho bệnh nhân bất tỉnh - OPA có thể gây nôn ở những bệnh nhân bất tỉnh."
+  ],
+  "source": "TCCC / JTS CPG"
+}

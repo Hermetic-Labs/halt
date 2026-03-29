@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Pencegahan Hipotermia (H -- MARET)",
+  "category": "temperature-management",
+  "skill_level": "setiap responden",
+  "time_estimate": "2-3 menit",
+  "description": "Memerangi hipotermia adalah penyebab utama trauma yang dapat dicegah. Tiga serangkai yang mematikan: hipotermia + asidosis + koagulopati. Cegah dengan cara apa pun.",
+  "equipment": [
+    "selimut reflektif panas",
+    "kit-pencegahan-hipotermia",
+    "hangat-iv-cairan-jika-tersedia"
+  ],
+  "steps": [
+    "Lepaskan semua pakaian basah sesegera mungkin.",
+    "Tutupi pasien dengan selimut yang memantulkan panas (ruang) -- sisi mengkilap menghadap pasien.",
+    "Bungkus kepala dan leher (tempat kehilangan panas secara signifikan).",
+    "Isolasi dari tanah -- letakkan sesuatu di antara permukaan tanah yang sakit dan dingin.",
+    "Berikan cairan IV hangat jika tersedia.",
+    "Jangan biarkan pasien menggigil tanpa penutup – menggigil adalah tanda peringatan dini.",
+    "Pantau suhu jika termometer tersedia. Di bawah 35°C (95°F) = hipotermia."
+  ],
+  "warnings": [
+    "Hipotermia memperburuk koagulopati -- pasien yang mengalami pendarahan menjadi lebih cepat dingin dan pembekuan darah menjadi kurang efektif.",
+    "Pencegahan hipotermia lapangan harus dimulai pada titik cedera, bukan pada CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

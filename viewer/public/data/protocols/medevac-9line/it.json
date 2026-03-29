@@ -1,0 +1,6 @@
+{
+  "id": "medevac-9line",
+  "name": "Richiesta MEDEVAC a 9 righe",
+  "description": "Formato NATO standardizzato per la richiesta di evacuazione medica. Trasmesso in ordine, righe 1-9. Le righe 1-5 vengono trasmesse immediatamente (è consentita la modalità non crittografata). Seguono le righe 6-9. Una riga 9 corretta fa volare l'uccello in aria. Uno incompleto lo ritarda.",
+  "source": "FM 3-04.301 / ATP 4-02.2 / NATO STANAG 3204"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Antibiotik fluoroquinolone kanthi cakupan gram-negatif sing amba. Digunakake kanggo infeksi tatu serius, trauma abdomen penetrating (liputan flora GI), lan infeksi saluran kemih. Kasedhiya PO lan IV.",
+  "indications": [
+    "Trauma abdomen penetrating (dekontaminasi GI)",
+    "Infèksi tatu serius",
+    "Infèksi gram-negatif",
+    "Infeksi saluran kemih"
+  ],
+  "dose": "400 mg IV q8-12h. PO: 500-750 mg saben 12 jam.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Dikenal alergi fluoroquinolone",
+    "Anak lan remaja <18 taun (relatif - risiko tendinopati)",
+    "Meteng (sederek)"
+  ],
+  "warnings": [
+    "Risiko pecah tendon, utamane tendon Achilles. Mungkasi yen nyeri tendon berkembang.",
+    "Bisa ndawakake interval QT - ati-ati karo obat sing nambah QT liyane.",
+    "Aja nalika meteng yen ana alternatif."
+  ],
+  "regional_names": {
+    "generic": "ciprofloxacin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV q8-12h (maks 400 mg/dosis). PO: 10-20 mg/kg q12h (maks 750 mg/dosis).",
+      "note": "Gunakake mung yen keuntungan luwih gedhe tinimbang risiko tendinopati. Cadangan kanggo infèksi serius."
+    },
+    "obstetric": {
+      "note": "Aja nalika meteng yen ana alternatif. Gunakake mung kanggo infèksi sing ngancam nyawa sing entuk manfaat luwih gedhe tinimbang risiko."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

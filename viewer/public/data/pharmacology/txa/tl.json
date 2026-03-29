@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Tranexamic Acid (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Cyklokapron",
+    "Listeda"
+  ],
+  "description": "Antifibrinolytic agent na pumipigil sa pagkasira ng mga namuong dugo. Makabuluhang binabawasan ang dami ng namamatay mula sa hemorrhagic shock kapag naibigay nang maaga. Inirerekomenda ng CoTCCC para sa lahat ng mga nasawi na may malaking pagdurugo o nasa panganib ng malaking pagdurugo.",
+  "indications": [
+    "Malaking panlabas o pinaghihinalaang internal hemorrhage",
+    "Hemorrhagic shock",
+    "Mataas ang panganib ng pagdurugo (mekanismo ng pinsala)"
+  ],
+  "dose": "1g IV/IO sa loob ng 10 minuto, na sinusundan ng 1g IV/IO sa loob ng 8 oras. Kung hindi available ang IV/IO: 650mg PO x2 (1.3g total) -- TCCC PO na opsyon.",
+  "route": [
+    "IV",
+    "IO",
+    "PO"
+  ],
+  "window": "DAPAT ibigay sa loob ng 3 oras ng pinsala. Lampas sa 3 oras, ang TXA ay maaaring DUMAAS ng dami ng namamatay -- huwag magbigay.",
+  "contraindications": [
+    "Kasaysayan ng sakit na thromboembolic (DVT, PE, stroke)",
+    "Disseminated Intravascular Coagulation (DIC)",
+    "> 3 oras pagkatapos ng pinsala"
+  ],
+  "warnings": [
+    "Mag-log oras ng pangangasiwa kaagad -- ang window ay 3 oras mula sa oras ng pinsala, hindi oras ng pagdating.",
+    "Huwag malito ang IV na dosis (1g) sa oral na dosis."
+  ],
+  "regional_names": {
+    "generic": "tranexamic acid",
+    "US": "Cyklokapron",
+    "UK": "Cyklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg IV (max 1g). Lumilitaw na ebidensya -- gumamit ng klinikal na paghatol.",
+      "note": "Nalalapat din ang parehong 3 oras na palugit."
+    },
+    "obstetric": {
+      "note": "Ipinahiwatig para sa postpartum hemorrhage. Ligtas sa pagbubuntis. Parehong pang-adultong dosing ang nalalapat."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oxytocin",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocin",
+    "Syntocinon"
+  ],
+  "description": "Endogenous peptide hormone. Primo-linea uterotonica pro praeventionis et curatione sanguinis postpartum (PPH). Uterinae contractionis causat et post partum damnum sanguinis minuit. DATUM POST PLACENTIAM PARTEM.",
+  "indications": [
+    "Praeventionis sanguinis postpartum (exercitatione post partum)",
+    "Curatio sanguinis postpartum (atonia uteri)",
+    "Inductio laboris (solum imperium continentis)"
+  ],
+  "dose": "PPH praeventionis: 10 unitates IM statim post partum placentalem (praelatum est iter campi). Curatio PPH: 10-40 unitates in 1L IV, infunde ad 40-80 m/min. Si IV unavailable: 10 unitates IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Post placentam dare partum - antequam placentam tradit dare potest placentam capere.",
+  "contraindications": [
+    "Ante partus placental (potest captionem placentam)",
+    "Foetus angustia capitis undelivered",
+    "Nota hypersensitivity"
+  ],
+  "warnings": [
+    "DATO PLACENTA TRADITA -- placenta captanda complicatio vitalis est.",
+    "IV bolus gravem hypotensionem et arrhythmia cardiaca causare potest - semper diluta et lente infundunt.",
+    "Effectus antidiureticus cum magnis voluminibus monitor pro hyponatremia."
+  ],
+  "regional_names": {
+    "generic": "oxytocin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A -- Obstetricante tantum.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Primae uterotonic. Si atonia uterina non respondet, considera misoprostolum, acidum trannexamicum (TXA), compressionem uterinam bimanalem et celeri MEDEVAC."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

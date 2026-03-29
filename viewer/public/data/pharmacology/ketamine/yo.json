@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamini",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Anesitetiki dissociative ti n pese analgesia, sedation, ati amnesia lakoko titọju awọn ifasilẹ ọna atẹgun ati iduroṣinṣin hemodynamic. Analgesic ti o fẹ ni TCCC - n ṣetọju BP laisi awọn opioids. Tun lo fun sedation ilana ati RSI.",
+  "indications": [
+    "Iṣeduro iwọntunwọnsi-si-itọju irora",
+    "Sisọdi ilana (ikojọpọ ọgbẹ, idinku fifọ)",
+    "Aṣoju ifasilẹ fun RSI",
+    "Akuniloorun ija"
+  ],
+  "dose": "Analgesia: 0.1-0.3 mg / kg IV / IO (titari lọra) | 0,5 mg / kg IM. Idaduro ilana: 1-2 mg / kg IV | 4-6 mg / kg IM. Idawọle RSI: 1-2 mg / kg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN"
+  ],
+  "window": "",
+  "contraindications": [
+    "schizophrenia ti a mọ tabi psychosis ti nṣiṣe lọwọ",
+    "ICP ti o ga laisi aabo oju-ofurufu (ẹ ibatan)"
+  ],
+  "warnings": [
+    "Awọn aati pajawiri (delirium/hallucinations) -- mitigate pẹlu midazolam 1-2mg IV ti o ba wa.",
+    "Ṣe alekun awọn aṣiri -- ni imurasilẹ afamora.",
+    "Laryngospasm toje ṣugbọn o ṣee ṣe - jẹ ki BVM wa."
+  ],
+  "regional_names": {
+    "generic": "ketamine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesia: 0.5 mg / kg IV. Idaduro ilana: 1-2 mg / kg IV | 4-5 mg / kg IM.",
+      "note": "Ti ṣe iwadi daradara ni awọn itọju ọmọde. Ayanfẹ fun awọn ilana irora."
+    },
+    "obstetric": {
+      "note": "Ailewu fun analgesia iya ni awọn iwọn kekere. Le fa ibanujẹ atẹgun ọmọ tuntun ni awọn iwọn giga ti o ba fi jiṣẹ nitosi akoko ifijiṣẹ."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

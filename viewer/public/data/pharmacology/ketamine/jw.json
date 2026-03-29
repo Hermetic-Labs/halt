@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Anestesi disosiatif nyedhiyakake analgesia, sedasi, lan amnesia nalika njaga refleks saluran napas lan stabilitas hemodinamik. Analgesik sing disenengi ing TCCC - njaga BP ora kaya opioid. Uga digunakake kanggo sedasi prosedural lan RSI.",
+  "indications": [
+    "Manajemen nyeri moderat nganti abot",
+    "Sedasi prosedural (pengemasan luka, pengurangan fraktur)",
+    "Agen induksi kanggo RSI",
+    "Nglawan anestesi"
+  ],
+  "dose": "Analgesia: 0,1-0,3 mg/kg IV/IO (slow push) | 0,5 mg/kg IM. Sedasi prosedural: 1-2 mg/kg IV | 4-6 mg/kg IM. Induksi RSI: 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "ING"
+  ],
+  "window": "",
+  "contraindications": [
+    "Dikenal skizofrenia utawa psikosis aktif",
+    "Peningkatan ICP tanpa perlindungan saluran napas (relatif)"
+  ],
+  "warnings": [
+    "Reaksi emergence (delirium/halusinasi) - ngurangi karo midazolam 1-2mg IV yen kasedhiya.",
+    "Nambah sekresi - duwe nyedhot siap.",
+    "Laryngospasm langka nanging bisa uga - tetep BVM kasedhiya."
+  ],
+  "regional_names": {
+    "generic": "ketamin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesia: 0,5 mg/kg IV. Sedasi prosedural: 1-2 mg/kg IV | 4-5 mg/kg IM.",
+      "note": "Sinau kanthi apik ing pediatri. Preferred kanggo prosedur nglarani."
+    },
+    "obstetric": {
+      "note": "Aman kanggo analgesia ibu ing dosis sing sithik. Bisa nyebabake depresi pernapasan neonatal ing dosis dhuwur yen dikirim cedhak wektu pangiriman."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

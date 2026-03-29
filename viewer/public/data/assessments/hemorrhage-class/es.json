@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Clasificación de hemorragias (Clase I-IV)",
+  "category": "circulatory",
+  "description": "Clasificación de hemorragias ATLS según pérdida de sangre estimada y respuesta fisiológica.",
+  "instructions": "Estime la pérdida de sangre y relacione los signos fisiológicos con la clase. La urgencia del tratamiento aumenta con la clase.",
+  "scoring": [
+    {
+      "class": "Yo",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Normal",
+      "rr": "14-20",
+      "mental_status": "Normal",
+      "treatment": "Observe, fluidos PO si es posible"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Normal",
+      "rr": "20-30",
+      "mental_status": "Ansioso",
+      "treatment": "Acceso intravenoso, cristaloide isotónico"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Disminuido",
+      "rr": "30-40",
+      "mental_status": "Confundido",
+      "treatment": "Líquidos intravenosos + hemoderivados, control inmediato de hemorragias"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Muy bajo",
+      "rr": ">40",
+      "mental_status": "Letárgico/inconsciente",
+      "treatment": "Control quirúrgico inmediato de la hemorragia: potencialmente mortal"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Los niños compensan más tiempo antes de descompensar. La clase III/IV puede presentarse con una PA casi normal hasta un colapso repentino. Confíe en la taquicardia y el estado mental antes que en la presión arterial."
+    },
+    "obstetric": {
+      "note": "Las pacientes embarazadas tienen entre un 40% y un 50% de aumento del volumen sanguíneo. Puede tolerar pérdidas mayores antes de mostrar signos. El sufrimiento fetal puede preceder a los signos maternos."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

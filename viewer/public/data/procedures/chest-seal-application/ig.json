@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Ngwa Akara Chest Occlusive",
+  "category": "respiration",
+  "skill_level": "ọgụ-ndụdu",
+  "time_estimate": "1-2 nkeji",
+  "description": "Ejikwa ihe mkpuchi igbe kpuchie ọnya obi na-aṅụ ara (oghe oghe pneumothorax) iji gbochie ịbanye ikuku ka ị na-ahapụ nrụgide.",
+  "equipment": [
+    "vented- chest-akara",
+    "uwe aka",
+    "trauma-shears"
+  ],
+  "steps": [
+    "Wepu ọnya ahụ -- bepụ ma ọ bụ wepụ uwe.",
+    "Hichapụ akpụkpọ ahụ n'akụkụ ọnya ahụ dịka nkụ dị ka o kwere mee (ọbara, ọsụsọ na-egbochi nrapanye).",
+    "Mepee ngwungwu akara igbe ikuku ikuku.",
+    "Tinye akara n'elu ọnya ahụ, dabere na oghere ahụ. Pịa aka ike, hụ na akụkụ niile na-agbaso.",
+    "Lelee nhazi valvụ - ikuku ikuku ga-eche ihu n'èzí (pụọ na akpụkpọ ahụ) wee nọgide na-enweghị mgbochi.",
+    "Nyochaa ụda iku ume. Ọ bụrụ na mmebi na-aga n'ihu mgbe akara akara, tụlee ihe mgbagwoju anya pneumothorax - rụọ NCD.",
+    "Ọ bụrụ na enweghị akara ventilashị, enwere ike iji akara na-enweghị ikuku mana a ga-enyocharịrị maka mmepe pneumothorax erughị ala."
+  ],
+  "warnings": [
+    "Akara na-abụghị nke ikuku nwere ike ịtụgharị pneumothorax dị mfe ka ọ bụrụ pneumothorax erughị ala --eji akara ventilashị naanị n'ọhịa.",
+    "CoTCCC anaghị akwadokwa taping nwere akụkụ atọ (akara emelitere) -- jiri akara igbe ventilashị azụmahịa.",
+    "Tinye akara mgbe niile na ọnya mbata na ọpụpụ."
+  ],
+  "follows": [],
+  "precedes": [
+    "agịga-decompression"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

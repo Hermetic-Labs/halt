@@ -21,15 +21,20 @@ import asyncio
 import base64
 import urllib.parse
 import time as _time
+import logging
 from datetime import datetime
 from typing import Optional
 
-from fastapi import APIRouter, HTTPException, WebSocket, WebSocketDisconnect, Query
+from fastapi import APIRouter, HTTPException, WebSocket, WebSocketDisconnect, Query, Request
 from pydantic import BaseModel
 
 from storage import DATA_DIR, read_json, write_json, roster_path, tasks_path, chat_path, thread_path
 
+logger = logging.getLogger("triage.mesh")
 router = APIRouter(tags=["mesh"])
+
+# ── Global TTS lock — serializes Kokoro access across all callers ──────────────
+_tts_lock = asyncio.Lock()
 
 # In-memory mesh state (no DB dependency — survives nothing, by design)
 MESH_CLIENTS: dict[str, dict] = {}  # client_id -> {role, name, connected_at, last_ping, ip}
@@ -64,16 +69,18 @@ class AlertRequest(BaseModel):
 
 
 class EmergencyRequest(BaseModel):
-    ward: str = ""
-    bed: str = ""
-    categories: list[str] = []
-    sender_name: str = "System"
-    notes: str = ""
+    ward: Optional[str] = None
+    bed: Optional[str] = None
+    categories: list[str]
+    sender_name: str
+    notes: Optional[str] = None
+    audio_b64: Optional[str] = None
 
 
 class AnnouncementRequest(BaseModel):
     message: str = ""
     sender_name: str = "System"
+    audio_b64: Optional[str] = None
 
 
 class ChatMessage(BaseModel):
@@ -95,7 +102,7 @@ class ReactRequest(BaseModel):
 async def broadcast_mesh(message: dict, exclude: str = None):
     """Send a message to all connected WebSocket clients."""
     dead = []
-    for cid, ws in MESH_WS.items():
+    for cid, ws in list(MESH_WS.items()):
         if cid == exclude:
             continue
         try:
@@ -104,6 +111,49 @@ async def broadcast_mesh(message: dict, exclude: str = None):
             dead.append(cid)
     for cid in dead:
         MESH_WS.pop(cid, None)
+
+
+async def _translate_and_broadcast(entry: dict):
+    """Background task: translate a chat message to all supported languages,
+    patch the stored entry, then push a chat_translated event to all clients."""
+    from routes.translate import _translate, NLLB_LANG_MAP  # lazy — avoids circular import risk
+
+    msg_id = entry["id"]
+    text = entry.get("message", "")
+    if not text.strip():
+        return
+
+    def _do_all():
+        results = {}
+        for lang_code in NLLB_LANG_MAP:
+            if lang_code == "en":
+                continue
+            try:
+                results[lang_code] = _translate(text, "en", lang_code)
+            except Exception:
+                pass
+        return results
+
+    try:
+        translations = await asyncio.to_thread(_do_all)
+    except Exception as e:
+        logger.warning(f"chat fan-out failed for {msg_id}: {e}")
+        return
+
+    # Patch the stored entry on disk
+    cp = chat_path()
+    if cp.exists():
+        try:
+            messages = json.loads(cp.read_text(encoding="utf-8"))
+            for m in messages:
+                if m["id"] == msg_id:
+                    m["translations"] = translations
+                    break
+            write_json(cp, messages)
+        except Exception as e:
+            logger.warning(f"chat fan-out disk patch failed: {e}")
+
+    await broadcast_mesh({"type": "chat_translated", "id": msg_id, "translations": translations})
 
 
 def _get_local_ip() -> str:
@@ -257,21 +307,20 @@ async def mesh_emergency(req: EmergencyRequest):
     cat_text = ", ".join(cat_labels.get(c, c) for c in req.categories) if req.categories else "General Emergency"
     emergency_msg = {
         "type": "emergency",
+        "message": f"EMERGENCY: {cat_text}",
+        "categories": req.categories,
         "ward": req.ward,
         "bed": req.bed,
-        "categories": req.categories,
-        "categories_text": cat_text,
-        "sender_name": req.sender_name,
         "notes": req.notes,
+        "sender_name": req.sender_name,
         "sound": "announcement",
+        "audio_b64": req.audio_b64,
         "timestamp": int(_time.time()),
     }
     await broadcast_mesh(emergency_msg)
     # Log to chat thread (broadcast to everyone)
-    ward_bed = f" — Ward: {req.ward}" if req.ward else ""
-    if req.bed:
-        ward_bed += f" Bed: {req.bed}"
-    notes_str = f" | {req.notes}" if req.notes else ""
+    ward_bed = f" — {req.ward}/{req.bed}" if req.ward else ""
+    notes_str = f": {req.notes}" if req.notes else ""
     chat_entry = {
         "id": f"EMG-{datetime.now().strftime('%Y%m%d-%H%M%S-%f')}",
         "sender_name": req.sender_name,
@@ -288,7 +337,6 @@ async def mesh_emergency(req: EmergencyRequest):
     write_json(cp, messages)
     return {"status": "broadcast", "recipients": len(MESH_WS), "categories": req.categories}
 
-
 @router.post("/api/mesh/announcement")
 async def mesh_announcement(req: AnnouncementRequest):
     """Broadcast a general announcement to ALL connected devices."""
@@ -297,6 +345,7 @@ async def mesh_announcement(req: AnnouncementRequest):
         "message": req.message,
         "sender_name": req.sender_name,
         "sound": "general",
+        "audio_b64": req.audio_b64,
         "timestamp": int(_time.time()),
     }
     await broadcast_mesh(announcement_msg)
@@ -307,6 +356,7 @@ async def mesh_announcement(req: AnnouncementRequest):
         "sender_role": "system",
         "message": f"📢 ANNOUNCEMENT: {req.message}",
         "target_name": "",
+        "translations": {},
         "timestamp": datetime.now().isoformat(),
     }
     cp = chat_path()
@@ -315,6 +365,7 @@ async def mesh_announcement(req: AnnouncementRequest):
     if len(messages) > 500:
         messages = messages[-500:]
     write_json(cp, messages)
+    asyncio.create_task(_translate_and_broadcast(chat_entry))
     return {"status": "broadcast", "recipients": len(MESH_WS)}
 
 
@@ -341,12 +392,16 @@ async def send_chat(msg: ChatMessage):
         "target_name": msg.target_name,
         "reply_to": msg.reply_to or "",
         "reactions": {},
+        "translations": {},
         "timestamp": datetime.now().isoformat(),
     }
     messages.append(entry)
     if len(messages) > 500:
         messages = messages[-500:]
     write_json(cp, messages)
+
+    # Fan-out translations to all 34 languages in the background
+    asyncio.create_task(_translate_and_broadcast(entry))
 
     # DM thread storage — write targeted messages to per-pair file
     if msg.target_name and msg.sender_name:
@@ -409,15 +464,15 @@ def react_to_message(msg_id: str, req: ReactRequest):
 
 @router.get("/api/mesh/qr")
 def mesh_qr(
-    ssid: str = Query("EVE_TRIAGE", description="WiFi SSID"),
+    request: Request,
+    ssid: str = Query("HALT_TRIAGE", description="WiFi SSID"),
     password: str = Query("medic123", description="WiFi password"),
     name: str = Query("", description="Pre-fill member name"),
     role: str = Query("", description="Pre-fill member role"),
 ):
     """Generate QR code for onboarding — encodes the app URL with optional name/role params."""
-    import os
-
-    frontend_port = os.environ.get("FRONTEND_PORT", "7779")
+    # Draw truth directly from the live network traffic
+    frontend_port = request.url.port or request.scope.get("server", [None, 7778])[1]
     local_ip = _get_local_ip()
     app_url = f"http://{local_ip}:{frontend_port}"
     params = []
@@ -452,6 +507,13 @@ def mesh_qr(
 @router.websocket("/ws/{client_id}")
 async def mesh_websocket(websocket: WebSocket, client_id: str):
     """Real-time mesh sync. Handles patient broadcasts, heartbeat, and failover."""
+    # Enforce capacity — reject if mesh is full (excluding reconnections)
+    active_count = len(MESH_WS)
+    if client_id not in MESH_WS and active_count >= MAX_CLIENTS:
+        await websocket.accept()
+        await websocket.close(code=1013, reason=f"Mesh full ({MAX_CLIENTS} clients)")
+        return
+
     await websocket.accept()
     now = int(_time.time())
 
@@ -602,7 +664,8 @@ async def mesh_websocket(websocket: WebSocket, client_id: str):
         pass
     finally:
         MESH_WS.pop(client_id, None)
-        disconnected_name = MESH_CLIENTS.get(client_id, {}).get("name", "")
+        disconnected_info = MESH_CLIENTS.pop(client_id, {})
+        disconnected_name = disconnected_info.get("name", "")
         if disconnected_name:
             rp = roster_path()
             if rp.exists():
@@ -616,7 +679,7 @@ async def mesh_websocket(websocket: WebSocket, client_id: str):
             {
                 "type": "client_left",
                 "client_id": client_id,
-                "clients": len([c for c in MESH_WS]),
+                "clients": len(MESH_WS),
             }
         )
 
@@ -625,12 +688,35 @@ async def mesh_websocket(websocket: WebSocket, client_id: str):
 
 
 async def stale_checker():
-    """Purge stale clients periodically."""
+    """Purge stale clients periodically.
+
+    Two-tier cleanup:
+      1. Disconnected clients (not in MESH_WS) → purge after 15s grace period
+      2. Ghost clients (in MESH_WS but no heartbeat) → close after CLIENT_TIMEOUT
+    """
     while True:
         await asyncio.sleep(15)
         now = int(_time.time())
-        stale_ids = [
-            cid for cid, c in MESH_CLIENTS.items() if now - c["last_ping"] > CLIENT_TIMEOUT and cid not in MESH_WS
+
+        # Tier 1: Remove registry entries for clients that have already disconnected
+        # (no active WebSocket) after a short grace period for reconnections.
+        disconnected = [
+            cid for cid, c in MESH_CLIENTS.items()
+            if cid not in MESH_WS and now - c["last_ping"] > 15
         ]
-        for cid in stale_ids:
+        for cid in disconnected:
             MESH_CLIENTS.pop(cid, None)
+
+        # Tier 2: Force-close WebSockets that haven't sent a heartbeat
+        stale_ws = [
+            cid for cid, c in MESH_CLIENTS.items()
+            if cid in MESH_WS and now - c["last_ping"] > CLIENT_TIMEOUT
+        ]
+        for cid in stale_ws:
+            ws = MESH_WS.pop(cid, None)
+            MESH_CLIENTS.pop(cid, None)
+            if ws:
+                try:
+                    await ws.close(code=1000, reason="Heartbeat timeout")
+                except Exception:
+                    pass

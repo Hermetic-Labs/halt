@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Packing Luka Hemostatik",
+  "category": "hemorrhage-control",
+  "skill_level": "tempur-lifesaver",
+  "time_estimate": "3-5 min",
+  "description": "Kemasan tatu non-compressible utawa junctional karo gauze hemostatic kanggo ngontrol pendarahan ing ngendi tourniquet ora bisa ditrapake.",
+  "equipment": [
+    "kasa hemostatik",
+    "sarung tangan nitrile",
+    "trauma-gunting",
+    "tekanan-bandage"
+  ],
+  "steps": [
+    "Don sarung tangan. Bukak tatu kanthi nggunakake gunting trauma.",
+    "Ngenali sumber getihen aktif ing rongga tatu.",
+    "Bukak kasa hemostatik lan lebokake kanthi kuat menyang tatu nganggo driji, nyurung langsung menyang sumber getihen.",
+    "Terusake packing nganti rongga tatu kebak.",
+    "Gunakake tekanan langsung sing kuat lan terus-terusan kanthi tumit tangan paling sethithik 3 menit.",
+    "Aja mbusak bahan pengepakan nalika ditrapake.",
+    "Pasang bandage tekanan ing tatu sing wis dibungkus.",
+    "Tandha wektu ing kertu TCCC utawa bathuk pasien (contone, 'PKD 0145')."
+  ],
+  "warnings": [
+    "Aja bungkus tatu dada sing nembus -- gunakake segel dada.",
+    "Yen ngemas tatu gulu, gunakake tekanan tanpa ngompres loro karotid bebarengan.",
+    "Kaji maneh sajrone 5 menit yen sumber arteri dicurigai."
+  ],
+  "follows": [
+    "tekanan langsung"
+  ],
+  "precedes": [
+    "tourniquet-aplikasi"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Gunakake gauze sing kurang proporsional. Gunakake tekanan sing luwih entheng kanggo nyegah kompresi thoracic ing bayi."
+    },
+    "obstetric": {
+      "note": "Ngindhari tekanan kemasan sing jero utawa agresif ing cedhak abdomen gravid. Eskalasi cepet luwih disenengi."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

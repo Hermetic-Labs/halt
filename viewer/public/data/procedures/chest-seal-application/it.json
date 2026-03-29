@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Applicazione di sigillatura occlusiva del torace",
+  "category": "respiration",
+  "skill_level": "salvagente da combattimento",
+  "time_estimate": "1-2 minuti",
+  "description": "Sigillatura di una ferita da suzione al torace (pneumotorace aperto) con una guarnizione toracica ventilata per impedire l'ingresso di aria consentendo al contempo il rilascio della pressione.",
+  "equipment": [
+    "guarnizione toracica ventilata",
+    "guanti",
+    "cesoie da trauma"
+  ],
+  "steps": [
+    "Esporre la ferita: tagliare o rimuovere gli indumenti.",
+    "Asciugare la pelle attorno alla ferita il più asciutta possibile (sangue e sudore impediscono l'adesione).",
+    "Aprire la confezione della guarnizione toracica ventilata.",
+    "Posiziona il sigillo sulla ferita, centrato sul foro. Premere con decisione, assicurandosi che tutti i bordi aderiscano.",
+    "Controllare l'orientamento della valvola: lo sfiato deve essere rivolto verso l'esterno (lontano dalla pelle) e rimanere libero.",
+    "Rivalutare i suoni del respiro. Se il deterioramento continua dopo la sigillatura, prendere in considerazione il pneumotorace iperteso: eseguire la NCD.",
+    "Se non è disponibile una guarnizione ventilata, è possibile utilizzarne una non ventilata ma DEVE essere monitorata per lo sviluppo di pneumotorace iperteso."
+  ],
+  "warnings": [
+    "Le guarnizioni non ventilate possono convertire un pneumotorace semplice in uno pneumotorace iperteso: utilizzare le guarnizioni ventilate solo sul campo.",
+    "La nastratura su tre lati (sigillatura improvvisata) non è più consigliata dal CoTCCC: utilizzare una sigillatura toracica ventilata commerciale.",
+    "Applicare sempre un sigillo alle ferite di ENTRATA e USCITA."
+  ],
+  "follows": [],
+  "precedes": [
+    "decompressione dell'ago"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

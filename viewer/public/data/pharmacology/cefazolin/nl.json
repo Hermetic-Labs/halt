@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Cefazoline",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Anef",
+    "Kefzol"
+  ],
+  "description": "Cefalosporine van de eerste generatie. Eerstelijns parenteraal antibioticum voor ernstige wondinfecties en chirurgische profylaxe. Goede gram-positieve dekking inclusief MSSA. Geef binnen 60 minuten na de chirurgische incisie ter profylaxe.",
+  "indications": [
+    "Chirurgische wondprofylaxe",
+    "Ernstige infecties van zacht weefsel",
+    "Profylaxe van open fracturen",
+    "Huid- en huidstructuurinfecties"
+  ],
+  "dose": "1-2g IV/IM q8u. Chirurgische profylaxe: 2 g IV binnen 60 minuten vóór de incisie. Herhaal 2 g als de operatie > 4 uur duurt.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Voor chirurgische profylaxe: toedienen binnen 60 minuten na incisie.",
+  "contraindications": [
+    "Bekende cefalosporine-allergie",
+    "Ernstige penicilline-allergie (5-10% kruisreactiviteit)"
+  ],
+  "warnings": [
+    "Kruisreactiviteit met penicilline-allergie: met voorzichtigheid gebruiken bij penicilline-allergische patiënten.",
+    "Pas de dosis aan bij nierinsufficiëntie."
+  ],
+  "regional_names": {
+    "generic": "cefazoline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM elke 8 uur (max. 2 g/dosis). Profylaxe: 30 mg/kg (max. 2 g) vóór incisie.",
+      "note": "Veilig en goed bestudeerd in de kindergeneeskunde."
+    },
+    "obstetric": {
+      "note": "Veilig tijdens zwangerschap en borstvoeding. Geprefereerd parenteraal antibioticum voor verloskundige procedures."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

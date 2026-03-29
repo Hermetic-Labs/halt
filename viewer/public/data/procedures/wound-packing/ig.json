@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Mkpokọta ọnya Hemostatic",
+  "category": "hemorrhage-control",
+  "skill_level": "ọgụ-ndụdu",
+  "time_estimate": "Nkeji 3-5",
+  "description": "Iji gauze hemostatic na-ebubata ọnya na-enweghị mgbako ma ọ bụ nke jikọtara ọnụ iji chịkwaa ọbara ọgbụgba ebe enweghị ike itinye nlegharị anya.",
+  "equipment": [
+    "hemostatic-gauze",
+    "nitrile-gloves",
+    "trauma-shears",
+    "nrụgide-bandeji"
+  ],
+  "steps": [
+    "Don uwe aka. Wepụ ọnya ahụ n'ụzọ zuru ezu site na iji mma trauma.",
+    "Chọpụta isi iyi ọbara ọgbụgba na-arụ ọrụ n'ime oghere ọnya ahụ.",
+    "Mepee gauze hemostatic ma jiri mkpịsị aka gị tinye ya na ọnya ahụ, na-agbanye ya ozugbo na isi iyi ọbara ọgbụgba.",
+    "Gaa n'ihu ịkwakọta ruo mgbe oghere ọnya ahụ jupụtara kpamkpam.",
+    "Jiri ikiri ụkwụ aka gị tinye nrụgide siri ike na-aga n'ihu maka opekempe nkeji 3.",
+    "Ewepụla ihe nkwakọba ihe ọ bụla ozugbo etinyere ya.",
+    "Tinye bandeeji nrụgide n'elu ọnya ahụ juru.",
+    "Kaa akara oge na kaadị TCCC ma ọ bụ ọkpọiso onye ọrịa (dịka, 'PKD 0145')."
+  ],
+  "warnings": [
+    "Ejila ọnya na-abanye n'ime obi -- jiri akara igbe mee ihe kama.",
+    "Ọ bụrụ na ị na-ebu ọnya olu, tinye nrụgide na-enweghị ịpịkọta carotid abụọ n'otu oge.",
+    "Nyochaa n'ime nkeji 5 ma ọ bụrụ na echere isi iyi akwara."
+  ],
+  "follows": [
+    "ozugbo-nrụgide"
+  ],
+  "precedes": [
+    "ngwa tourniquet"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Jiri gauze dị ntakịrị. Tinye obere nrụgide iji zere mkpakọ thoracic na ụmụ ọhụrụ."
+    },
+    "obstetric": {
+      "note": "Zenarị nrụgide mkpọkọ dị omimi ma ọ bụ ike ike n'akụkụ afọ gravid. A na-ahọrọ mmụba ngwa ngwa."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

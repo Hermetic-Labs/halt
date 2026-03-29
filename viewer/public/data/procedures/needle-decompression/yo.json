@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Isokuso Àya Abẹrẹ (NCD)",
+  "category": "respiration",
+  "skill_level": "ogun-oogun",
+  "time_estimate": "1-2 iṣẹju",
+  "description": "Iderun pajawiri ti pneumothorax ẹdọfu nipasẹ fifi abẹrẹ sinu aaye intercostal keji. Idawọle igbala-aye.",
+  "equipment": [
+    "14g-abẹrẹ-catheter-3-25in",
+    "ibọwọ",
+    "àyà-edidi-aṣayan"
+  ],
+  "steps": [
+    "Ṣe idanimọ pneumothorax ẹdọfu: awọn ohun ẹmi ti ko si ni ẹgbẹ ti o kan, iyapa tracheal (pẹ), ipọnju atẹgun, hypotension, JVD.",
+    "Fi àyà han ni ẹgbẹ ti o kan.",
+    "Wa aaye intercostal 2nd, laini midclavicular (yiyan: 4th/5th ICS, laini axillary iwaju).",
+    "Fi 14g kan, 3.25-inch abẹrẹ-catheter papẹndikula si ogiri àyà, o kan lori TOP ti iha 3rd (yago fun lapapo neurovascular).",
+    "Ilọsiwaju titi ti afẹfẹ afẹfẹ yoo fi rilara tabi ariwo ariwo.",
+    "Yọ abẹrẹ kuro ki o fi catheter silẹ ni aaye.",
+    "Gbọ fun ilọsiwaju ninu awọn ohun ẹmi ati igbiyanju atẹgun.",
+    "Ṣe aabo ibudo catheter. MAA ṢE dimole tabi bo opin ṣiṣi.",
+    "Tun ṣe ayẹwo ni gbogbo iṣẹju 5 - catheter le kink tabi didi, to nilo isunkuro tun."
+  ],
+  "warnings": [
+    "Lo abẹrẹ 3.25-inch - boṣewa 14g angiocatheter (1.5in) nigbagbogbo kuna ni awọn alaisan ologun nitori ihamọra ara ati musculature.",
+    "NCD alameji le nilo ti ko ba ni idaniloju ẹgbẹ wo ni o kan ati pe alaisan wa ni idaduro.",
+    "Maṣe gbe si ẹgbẹ kanna bi ọgbẹ àyà mimu lai kọkọ di ọgbẹ naa."
+  ],
+  "follows": [],
+  "precedes": [
+    "chest-seal-elo"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Lo abẹrẹ ti o yẹ (awọn alaisan ti o kere, 1.5-2in le to). Lo 2nd ICS MCL ona. Idanimọ aami-ilẹ jẹ iṣoro diẹ sii - lo iṣọra."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

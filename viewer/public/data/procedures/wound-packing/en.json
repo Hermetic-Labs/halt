@@ -1,0 +1,44 @@
+﻿{
+    "id":  "wound-packing",
+    "name":  "Hemostatic Wound Packing",
+    "category":  "hemorrhage-control",
+    "skill_level":  "combat-lifesaver",
+    "time_estimate":  "3-5 min",
+    "description":  "Packing of a non-compressible or junctional wound with hemostatic gauze to control hemorrhage where tourniquet cannot be applied.",
+    "equipment":  [
+                      "hemostatic-gauze",
+                      "nitrile-gloves",
+                      "trauma-shears",
+                      "pressure-bandage"
+                  ],
+    "steps":  [
+                  "Don gloves. Expose the wound fully using trauma shears.",
+                  "Identify the active bleeding source within the wound cavity.",
+                  "Open hemostatic gauze and pack it firmly into the wound with your finger, pushing it directly to the bleeding source.",
+                  "Continue packing until the wound cavity is completely filled.",
+                  "Apply firm, continuous direct pressure with the heel of your hand for a minimum of 3 minutes.",
+                  "Do NOT remove any packing material once applied.",
+                  "Apply a pressure bandage over the packed wound.",
+                  "Mark the time on the TCCC card or patient\u0027s forehead (e.g., \u0027PKD 0145\u0027)."
+              ],
+    "warnings":  [
+                     "Do NOT pack penetrating chest wounds -- use chest seal instead.",
+                     "If packing a neck wound, apply pressure without compressing both carotids simultaneously.",
+                     "Reassess within 5 minutes if arterial source suspected."
+                 ],
+    "follows":  [
+                    "direct-pressure"
+                ],
+    "precedes":  [
+                     "tourniquet-application"
+                 ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  "Use proportionally less gauze. Apply lighter pressure to avoid thoracic compression in infants."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Avoid deep or aggressive packing pressure near gravid abdomen. Rapid escalation is preferred."
+                                    }
+                  },
+    "source":  "TCCC / JTS CPG CoTCCC"
+}

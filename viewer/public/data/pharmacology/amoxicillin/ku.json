@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicillin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "Trimox"
+  ],
+  "description": "Antîbiyotîka aminopenicillin-spektruma fireh. Ji bo enfeksiyona birînê antîbiyotîka propîlaktîk a devkî. Beşek ji pakêta hebên şer a TCCC ji bo pêşîlêgirtina birînê di birînên ne giran de.",
+  "indications": [
+    "Pêşîlêgirtina enfeksiyona birînê (birînên sivik-sivik, pakêta hebên devkî)",
+    "Enfeksiyonên tevna nerm",
+    "Enfeksiyonên rêyên nefesê"
+  ],
+  "dose": "500 mg PO her 8 saetan x 7 rojan (propîlaksiya birînê). 875 mg PO her 12 demjimêr alternatîf.",
+  "route": [
+    "PO"
+  ],
+  "window": "Ji bo pêşîlêgirtina birînê di nav 3 saetan piştî birîndariyê de dest pê bikin.",
+  "contraindications": [
+    "Alerjiya penîsîlînê ya naskirî (li şûna wê doxycycline bikar bînin)",
+    "Mononukleoz (rîska raşê)"
+  ],
+  "warnings": [
+    "Ger alerjiya penîsîlînê heye: Doxycycline 100 mg PO BID biguhezînin.",
+    "Tenê riya devkî -- antîbiyotîkên IV (cefazolin/ciprofloxacin) ji bo birînên giran an heke ji devkî nayê tehemûl kirin bikar bînin."
+  ],
+  "regional_names": {
+    "generic": "amoxicillin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/roj q8h dabeşkirî (max 500 mg/doz). Referansa Broselow-bingeha giraniyê bikar bînin.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Ewle di ducaniyê de. Li ser doxycycline (ku di ducaniyê de nakok e) tê tercîh kirin."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

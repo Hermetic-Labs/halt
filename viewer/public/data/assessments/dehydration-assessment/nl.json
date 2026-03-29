@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Uitdrogingsbeoordeling",
+  "category": "circulation",
+  "description": "Veldbeoordeling voor uitdroging en ernst van hitteziekte. Urinekleur is de meest praktische veldindicator. Beoordeel de mentale toestand als een teken voor ernstige uitdroging die zich ontwikkelt tot een hitteberoerte.",
+  "instructions": "Controleer de urinekleur, huidturgor, mentale toestand en vitale functies. Donkere urine, droge slijmvliezen en tachycardie duiden op aanzienlijke uitdroging die actieve rehydratatie vereist.",
+  "categories": [
+    {
+      "color": "helder-bleek",
+      "label": "Goed gehydrateerd",
+      "description": "Lichtgeel om de urine te zuiveren. Geen tussenkomst nodig."
+    },
+    {
+      "color": "geel",
+      "label": "Milde uitdroging",
+      "description": "Donkergele urine, dorstig. Orale rehydratatie. Stimuleer 250-500 ml water per uur."
+    },
+    {
+      "color": "amberbruin",
+      "label": "Matige tot ernstige uitdroging",
+      "description": "Amberkleurige urine, verhoogde hartslag, verminderde huidturgor, droge mond. IV/IO-vloeistoffen indien oraal niet verdragen. 1-2L LR of NS."
+    },
+    {
+      "color": "rood",
+      "label": "Gevaar -- Zonnesteek/ernstig",
+      "description": "Minimale urineproductie, veranderde LOC, hete, droge huid. Medisch noodgeval - snelle koeling + IV-vloeistoffen + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Kinderen drogen sneller uit dan volwassenen. Verzonken fontanel (zuigelingen), afwezige tranen en lethargie zijn kritische signalen. Op gewicht gebaseerde IV: 20 ml/kg LR-bolus."
+    },
+    "obstetric": {
+      "note": "Zwangere vrouwen hebben een verhoogde vochtinname nodig. Uitdroging kan vroegtijdige weeën veroorzaken. Eerst agressieve orale rehydratie; IV indien oraal niet wordt verdragen."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Maganin Ringer's Magani (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "Farashin 1013621",
+  "brand_names": [
+    "Maganin Hartmann",
+    "Allurar Ringer mai lactated"
+  ],
+  "description": "Daidaitaccen ruwan isotonic crystalloid. An fi so fiye da salin na al'ada don farfadowar rauni mai girma -- ƙarin daidaiton ilimin lissafi, ƙarancin haɗarin hyperchloremic acidosis. Ya ƙunshi sodium, potassium, calcium, lactate.",
+  "indications": [
+    "Resuscitation na rauni (wanda aka fi so crystalloid a cikin girgizar jini)",
+    "Konewar farfaɗowar ruwa (Tsarin Parkland)",
+    "Hypovolemia",
+    "Kula da ruwa"
+  ],
+  "dose": "Hemorrhagic shock: Iyakance zuwa 1L max kafin canzawa zuwa samfuran jini. Maƙasudin SBP 80-90 mmHg shiga rauni, 90 mmHg TBI. Burns (Parkland): 4 mL x kg x % TBSA ya ƙone sama da awa 24 (rabi a farkon 8h).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hyperkalemia (ya ƙunshi potassium)",
+    "Rashin gazawar hanta mai tsanani (rauni na lactate metabolism - dangi)"
+  ],
+  "warnings": [
+    "Har yanzu crystalloid -- ba zai iya ɗaukar iskar oxygen ba. Samfuran jini sun fi girma ga bugun jini. LR gada ce kawai.",
+    "Kada a haxa da samfuran jini a layi ɗaya (calcium yana haifar da clotting).",
+    "KAR a wuce gona da iri wajen farfado da rauni a cikin rauni kafin sarrafa zubar jini."
+  ],
+  "regional_names": {
+    "generic": "Maganin lactated Ringer",
+    "UK": "Maganin Hartmann"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 ml/kg bolus, sake tantancewa. An fi so fiye da NS don raunin yara.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Ruwan da aka fi so a cikin naƙuda da haihuwa. Dace don farfado da zubar jinin haihuwa."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Njikwa mmerụ ahụ ọkụ",
+  "category": "environmental",
+  "skill_level": "Ihe ndabere",
+  "time_estimate": "Na-aga n'ihu ruo mgbe MEDEVAC ma ọ bụ onye ọrịa kwụsiri ike",
+  "description": "Nlekọta nke ikpo ọkụ ọkụ, ike ọgwụgwụ okpomọkụ, na ọrịa strok. Ọrịa strok bụ ihe mberede na-eyi ndụ egwu -- ngwa ngwa jụrụ oyi bụ ọgwụgwọ. Chọpụta ike ọgwụgwụ okpomọkụ (ntụgharị nkịtị) site na ọrịa strok (LOC gbanwere) ozugbo.",
+  "equipment": [
+    "Mmiri (ọnụ + jụrụ oyi)",
+    "Ngwunye ice ma ọ bụ akwa mmiri oyi",
+    "Ihe enyemaka IV (LR ma ọ bụ NS)",
+    "Fan ma ọ bụ ndò",
+    "Igwe ọkụ ọkụ rectal (nke bụ isi okpomọkụ)"
+  ],
+  "steps": [
+    "Ntụle: Onye ihe ahụ mere ọ na-eche ma gbakwasara ụkwụ ya? Akpụkpọ anụ na-ekpo ọkụ vs. akpụkpọ ọsụsọ na-ekpo ọkụ? Isi okpomọkụ ma ọ bụrụ na temometa dị.",
+    "Okpomoku Okpomoku: Akwara aru, ntughari uche. Zuo ike na ndò, mmiri mmiri nke ọnụ ya na electrolytes, ịgbatị dị nro. Ọ bụghị ihe egwu ndụ.",
+    "ỌSỤRỤ Ọkụ: Ọsụsọ dị arọ, adịghị ike, isi ọwụwa, ntụtu nkịtị ma ọ bụ nso nso nkịtị. Gaa na ndò/ebe dị jụụ. Wepụ akwa akwa. Mmiri ọnụ (ọ bụrụ na ọ maara) ma ọ bụ IV LR 1L karịa 30-60 min. Nyochaa maka ọganihu na ọrịa strok.",
+    "Okpomọkụ strok (ihe mberede): LOC gbanwere, mgbagwoju anya, ọgụ, ma ọ bụ amaghị ihe ọ bụla. Okpomọkụ isi> 40C (104F). Akpụkpọ anụ na-ekpo ọkụ (nwere ike ịdị mmiri ma ọ bụ asat). Malite: Wepụ na okpomọkụ ozugbo, wepụ uwe niile, akpụkpọ anụ na fan ike ike. Tinye mkpọ ice n'olu, axillae, na ukwu (akụkụ dị elu vaskụla). IV LR 1-2L. Chebe ụzọ ikuku ma ọ maghị. MEDEVAC ozugbo.",
+    "enyela aspirin ma ọ bụ acetaminophen maka ọrịa strok --anaghị enyere aka, nwere ike imerụ ahụ.",
+    "Nyochaa: vitals q15 min, ụzọ ikuku, ọnọdụ uche. Dekọọ ọnọdụ okpomọkụ.",
+    "Gaa n'ihu na-ajụ oyi n'oge MEDEVAC -- akwụsịla maka njem."
+  ],
+  "warnings": [
+    "Ọrịa strok bụ ihe mberede na-eyi ndụ egwu -- echela ya maka ike ọgwụgwụ okpomọkụ. Lelee ọnọdụ uche.",
+    "Ịjụ oyi bụ ọgwụgwọ doro anya. Egbula oge jụrụ oyi iji guzobe ohere IV.",
+    "Ọrịa strok na-ekpo ọkụ nwere ike ime na ndị dabara adaba - ahụike anụ ahụ anaghị echebe.",
+    "Hyponatremia (sodium dị ala) site na oke mmiri n'ụbigara ókè na mmiri nkịtị nwere ike iṅomi ọrịa strok --enye ngwọta electrolyte ọ bụghị naanị mmiri."
+  ],
+  "follows": [
+    "akpịrị ịkpọ nkụ-nlele"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Ụmụaka na-achịkwa okpomọkụ nke ọma. Ọrịa strok nwere ike ịga n'ihu ngwa ngwa. Mmiri dabere na ibu: 20 ml/kg LR IV bolus. Okpomọkụ isi site na temometa rectal nke ziri ezi."
+    },
+    "obstetric": {
+      "note": "Hyperthermia nke nne (> 39C) nwere ike ibute ntụpọ nwa ebu n'afọ (n'oge) yana nsogbu nwa ebu n'afọ (n'oge). Ime ike jụrụ oyi. Nyochaa ọnụọgụ obi nwa ebu n'afọ ma ọ bụrụ na ọ dị."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

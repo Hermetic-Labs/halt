@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Manejo de lesiones por frío",
+  "category": "environmental",
+  "skill_level": "Básico",
+  "time_estimate": "En curso",
+  "description": "Manejo de la congelación, el pie de inmersión (pie de trinchera) y la hipotermia. Las lesiones por frío se pueden prevenir: reconozca los primeros signos antes de que el daño tisular sea irreversible. Manipule el tejido congelado con extrema suavidad.",
+  "equipment": [
+    "Ropa aislante seca/saco de dormir",
+    "Agua tibia (38-42C/100-108F) para recalentar el baño",
+    "Apósitos estériles",
+    "Ibuprofeno 400 mg VO (si está disponible)",
+    "IV LR (tibio si es posible)"
+  ],
+  "steps": [
+    "HIPOTERMIA PRIMERO: Evalúe la temperatura central con un termómetro de lectura baja. Leve (32-35°C): escalofríos, confusión. Moderado (28-32°C): sin escalofríos, confusión severa. Grave (<28C): inconsciente, sin pulso detectable.",
+    "HIPOTERMIA: leve/moderada: quitarse la ropa mojada, aislarse del suelo, ambiente cálido, calentar líquidos dulces si está consciente, aplicar calor en las axilas/ingles (no directamente sobre la piel). Manéjelo con cuidado: las sacudidas pueden desencadenar VFib.",
+    "HIPOTERMIA - Severa: Manipular MUY suavemente. Compruebe el pulso 60 segundos completos antes de la RCP. Inicie RCP si no hay pulso. Líquidos intravenosos calientes si están disponibles. Prioridad MEDEVAC: \"no muerto hasta que esté cálido y muerto\".",
+    "CONGELACIÓN: Superficial (piel blanca/gris, suave por debajo) versus profunda (dura, sensación de madera, ampollas). NO frote el área. NO vuelva a calentar si existe riesgo de volver a congelarse; volver a congelar causa daños peores que retrasar el recalentamiento.",
+    "Recalentamiento por CONGELACIÓN: Sumerja en agua a 38-42 °C (no más caliente) durante 15 a 30 minutos hasta que el tejido esté suave y de color rojo/púrpura. Muy doloroso: ofrézcale analgesia (ketamina o morfina).",
+    "Después del recalentamiento: coloque una gasa esterilizada entre los dedos de las manos y los pies. NO reviente las ampollas. Proteger de la presión.",
+    "PIE DE INMERSIÓN (Pie de Trinchera): exposición prolongada a humedad/frío, piel enrojecida, luego pálida y luego ampollada. Pies secos, calentar lentamente, elevar. NO aplique calor directo.",
+    "Documente el momento de la lesión y el momento del recalentamiento."
+  ],
+  "warnings": [
+    "NO vuelva a calentar la congelación si existe alguna posibilidad de que se vuelva a congelar: recalentamiento incompleto + recongelación = pérdida catastrófica de tejido.",
+    "La hipotermia grave puede simular la muerte. Controle el pulso durante 60 segundos. \"No muerto hasta que esté cálido y muerto\".",
+    "El alcohol aumenta la pérdida de calor a pesar de la percepción de calor; no le dé alcohol.",
+    "El riesgo de VFib es alto en la hipotermia moderada a grave: minimice la manipulación y las sacudidas del paciente."
+  ],
+  "follows": [
+    "prevención de hipotermia"
+  ],
+  "precedes": [
+    "línea medevac-9"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Los niños se enfrían más rápido debido a una mayor relación entre superficie y masa. Los umbrales de hipotermia son los mismos. Los líquidos intravenosos calientes son críticos. Líquido según el peso: 20 ml/kg de LR tibio."
+    },
+    "obstetric": {
+      "note": "La hipotermia materna causa bradicardia y acidosis fetal. El recalentamiento materno agresivo es un tratamiento fetal. Monitoreo fetal si está disponible."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

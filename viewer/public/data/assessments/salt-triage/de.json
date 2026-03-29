@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "SALT-Triage (Sortieren, Bewerten, lebensrettende Interventionen, Behandlung/Transport)",
+  "category": "mass-casualty",
+  "description": "Protokoll zur Triage von Massenunfällen. Standard für Ereignisse mit mehreren Opfern im militärischen und zivilen Bereich.",
+  "instructions": "Schritt 1: Globale Sortierung (gehen, winken, still). Schritt 2: Bewerten Sie nach Priorität. Schritt 3: Führen Sie lebensrettende Maßnahmen durch (Kontrolle starker Blutungen, offene Atemwege, Nadeldekompression, Autoinjektoren). Schritt 4: Kategorie zuweisen.",
+  "categories": [
+    {
+      "color": "schwarz",
+      "label": "Werdende/verstorbene Person",
+      "description": "Angesichts der verfügbaren Ressourcen ist es unwahrscheinlich, dass er überlebt, oder sein Tod ist bestätigt"
+    },
+    {
+      "color": "rot",
+      "label": "Sofort (T1)",
+      "description": "Lebensgefährliche Verletzungen werden durch sofortiges Eingreifen überlebt"
+    },
+    {
+      "color": "gelb",
+      "label": "Verzögert (T2)",
+      "description": "Schwere, aber stabile Verletzungen, kann auf Behandlung warten"
+    },
+    {
+      "color": "grün",
+      "label": "Minimal (T3)",
+      "description": "Leichte Verletzungen – gehende Verwundete"
+    },
+    {
+      "color": "grau",
+      "label": "Erwartungsvoll",
+      "description": "Unüberlebbare Verletzung angesichts der derzeitigen Ressourcen – nur Komfortpflege"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Der JumpSTART-Triage-Algorithmus modifiziert SALT für pädiatrische Patienten. Die Schwellenwerte für die Atemfrequenz und die Bewertungsschritte sind für Kinder unter 8 Jahren unterschiedlich."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

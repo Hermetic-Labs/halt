@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "I-Ketamine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "I-Ketalar"
+  ],
+  "description": "Izinzwa ezihlukanisayo ezinikeza i-analgesia, i-sedation, ne-amnesia ngenkathi ilondoloza ingqondo yomoya kanye nokuzinza kwe-hemodynamic. I-analgesic ekhethwayo ku-TCCC -- igcina i-BP ngokungafani nama-opioid. Ibuye isetshenziselwe ukudambisa inqubo kanye ne-RSI.",
+  "indications": [
+    "Ukuphathwa kobuhlungu obumaphakathi kuya kobunzima",
+    "Ukupholisa ngokwenqubo (ukupakishwa kwamanxeba, ukunciphisa ukuphuka)",
+    "I-ejenti yokungeniswa ye-RSI",
+    "Ukulwa nezinzwa"
+  ],
+  "dose": "I-Analgesia: 0.1-0.3 mg/kg IV/IO (i-slow push) | 0.5 mg/kg IM. I-sedation yenqubo: 1-2 mg/kg IV | 4-6 mg/kg IM. Ukungeniswa kwe-RSI: 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "NGE"
+  ],
+  "window": "",
+  "contraindications": [
+    "I-schizophrenia eyaziwayo noma i-active psychosis",
+    "I-ICP ephakeme ngaphandle kokuvikelwa kwendlela yomoya (isihlobo)"
+  ],
+  "warnings": [
+    "Ukusabela okuphuthumayo (i-delirium/hallucinations) -- nciphisa nge-midazolam 1-2mg IV uma ikhona.",
+    "Yandisa uketshezi -- yilungele ukumunca.",
+    "I-Laryngospasm ayivamile kodwa kungenzeka -- gcina i-BVM itholakala."
+  ],
+  "regional_names": {
+    "generic": "i-ketamine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "I-analgesia: 0.5 mg/kg IV. I-sedation yenqubo: 1-2 mg/kg IV | 4-5 mg/kg IM.",
+      "note": "Kufundwe kahle ku-pediatrics. Kuncanyelwa izinqubo ezibuhlungu."
+    },
+    "obstetric": {
+      "note": "Iphephile ku-analgesia kamama ngemithamo ephansi. Ingabangela ukudangala kokuphefumula kwengane esanda kuzalwa ngemithamo ephezulu uma ilethwa eduze nesikhathi sokubeletha."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

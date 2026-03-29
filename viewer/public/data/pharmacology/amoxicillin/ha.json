@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicillin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "Trimox"
+  ],
+  "description": "Kwayoyin rigakafi mai fadi-bakan aminopenicillin. Kwayoyin rigakafi na baka don kamuwa da rauni. Wani ɓangare na fakitin kwaya na TCCC don rigakafin rauni a cikin raunin da ba shi da ƙarfi.",
+  "indications": [
+    "Rauni kamuwa da cuta (matsakaicin raunuka, fakitin kwaya na baka)",
+    "Cututtuka masu laushi",
+    "Cutar cututtuka na numfashi"
+  ],
+  "dose": "500 MG PO kowane sa'o'i 8 x 7 kwanaki (rauni prophylaxis). 875 MG PO kowane 12 hours madadin.",
+  "route": [
+    "PO"
+  ],
+  "window": "Fara a cikin sa'o'i 3 na rauni don rigakafin rauni.",
+  "contraindications": [
+    "Sanin rashin lafiyar penicillin (amfani da doxycycline maimakon)",
+    "Mononucleosis (hadarin kurji)"
+  ],
+  "warnings": [
+    "Idan rashin lafiyar penicillin: maye gurbin doxycycline 100mg PO BID.",
+    "Hanyar baka kawai -- yi amfani da maganin rigakafi na IV (cefazolin/ciprofloxacin) don raunuka masu tsanani ko kuma idan ba a yarda da baki ba."
+  ],
+  "regional_names": {
+    "generic": "amoxicillin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/rana raba q8h (max 500 mg/dose). Yi amfani da tunani na tushen nauyi na Broselow.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Amintacce a cikin ciki. An fi so fiye da doxycycline (wanda aka hana a ciki)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Rigakafin Ciwon Jiki (H -- MARCH)",
+  "category": "temperature-management",
+  "skill_level": "duk mai amsawa",
+  "time_estimate": "2-3 min",
+  "description": "Combat hypothermia shine babban kisa da za a iya hana shi a cikin rauni. Triad mai mutuwa: hypothermia + acidosis + coagulopathy. Hana a kowane farashi.",
+  "equipment": [
+    "zafi-nutsuwa-bargo",
+    "hypothermia - rigakafin rigakafi",
+    "dumi-iv-ruwa-idan akwai"
+  ],
+  "steps": [
+    "Cire duk rigar rigar da zaran ta dace.",
+    "Rufe majiyyaci da bargo mai nuna zafi (sarari) -- gefen mai sheki IN wajen majiyyaci.",
+    "Kunna kai da wuya (garin asarar zafi mai mahimmanci).",
+    "Cire daga ƙasa - sanya wani abu tsakanin ƙasa mai haƙuri da sanyi.",
+    "Gudanar da ruwan dumi na IV idan akwai.",
+    "Kada ka ƙyale majiyyaci ya yi rawar jiki ba tare da rufewa ba --girgiza alama ce ta faɗakarwa da wuri.",
+    "Kula da zafin jiki idan akwai ma'aunin zafi da sanyio. Kasa da 35°C (95°F) = hypothermia."
+  ],
+  "warnings": [
+    "Hypothermia yana kara tsananta coagulopathy -- marasa lafiya na zubar da jini suna yin sanyi da sauri kuma suna zubar da jini sosai.",
+    "Dole ne a fara rigakafin hypothermia a filin rauni, ba a CCP ba."
+  ],
+  "source": "TCCC / JTS CPG"
+}

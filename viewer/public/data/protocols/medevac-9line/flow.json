@@ -1,0 +1,70 @@
+﻿{
+    "id":  "medevac-9line",
+    "version":  "NATO-STANAG-3204",
+    "lines":  [
+                  {
+                      "line":  1,
+                      "field":  "Location",
+                      "format":  "Grid coordinates (8-10 digit MGRS) or known landmark",
+                      "example":  "AB 1234 5678",
+                      "notes":  "Give the pickup site, not your current position if different."
+                  },
+                  {
+                      "line":  2,
+                      "field":  "Radio Frequency / Call Sign",
+                      "format":  "Freq in MHz, then call sign of requesting unit",
+                      "example":  "46.25, ALPHA 6",
+                      "notes":  "Give primary freq first. Alternate freq if primary is compromised."
+                  },
+                  {
+                      "line":  3,
+                      "field":  "Number of Patients by Precedence",
+                      "format":  "A = Urgent (\u003c2hr), B = Urgent Surgical (\u003c2hr needs OR), C = Priority (\u003c4hr), D = Routine (\u003c24hr), E = Convenience",
+                      "example":  "2 Alpha, 1 Delta",
+                      "notes":  "Urgent = life, limb, or eyesight at risk. Be accurate -- affects resource allocation."
+                  },
+                  {
+                      "line":  4,
+                      "field":  "Special Equipment Required",
+                      "format":  "A = None, B = Hoist, C = Extraction equip, D = Ventilator",
+                      "example":  "Alpha",
+                      "notes":  "Hoist required if no suitable LZ. Ventilator if intubated."
+                  },
+                  {
+                      "line":  5,
+                      "field":  "Number of Patients by Type",
+                      "format":  "L = Litter (non-ambulatory), A = Ambulatory (walking wounded)",
+                      "example":  "2 Litter, 1 Ambulatory",
+                      "notes":  "Determines aircraft configuration and crew requirements."
+                  },
+                  {
+                      "line":  6,
+                      "field":  "Security at Pickup Site",
+                      "format":  "N = No enemy, P = Possible enemy, E = Enemy in area (armed escort needed), X = Enemy troops in area (armed escort essential)",
+                      "example":  "Papa",
+                      "notes":  "Transmitted encrypted if possible. Affects whether armed escort required."
+                  },
+                  {
+                      "line":  7,
+                      "field":  "Method of Marking Pickup Site",
+                      "format":  "A = Panels, B = Pyrotechnic signal, C = Smoke, D = None, E = Other",
+                      "example":  "Charlie -- Purple smoke",
+                      "notes":  "Do NOT transmit smoke color until after aircraft identifies color -- prevents enemy deception."
+                  },
+                  {
+                      "line":  8,
+                      "field":  "Patient Nationality and Status",
+                      "format":  "A = US military, B = US civilian, C = Non-US military, D = Non-US civilian, E = EPW (Enemy Prisoner of War)",
+                      "example":  "Alpha",
+                      "notes":  "EPW requires armed escort and affects MEDEVAC crew protocols."
+                  },
+                  {
+                      "line":  9,
+                      "field":  "NBC Contamination",
+                      "format":  "N = Nuclear, B = Biological, C = Chemical, None if clean",
+                      "example":  "None",
+                      "notes":  "If NBC: MEDEVAC crew needs appropriate PPE. Delays response -- declare only if genuine."
+                  }
+              ],
+    "memory_aid":  "My Rocks Said Follow Nine Soldiers My Nation"
+}

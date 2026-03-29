@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Pamamahala ng Pinsala sa Init",
+  "category": "environmental",
+  "skill_level": "Basic",
+  "time_estimate": "Nagpapatuloy hanggang MEDEVAC o patient stable",
+  "description": "Pamamahala ng heat cramps, heat exhaustion, at heat stroke. Ang heat stroke ay isang emergency na nagbabanta sa buhay -- mabilis na paglamig ang paggamot. Agad na makilala ang pagkaubos ng init (normal na pagbanggit) sa heat stroke (binago ang LOC).",
+  "equipment": [
+    "Tubig (oral + cooling)",
+    "Ice pack o malamig na basang tela",
+    "IV supply (LR o NS)",
+    "Fan o shade",
+    "Rectal thermometer (definitive core temp)"
+  ],
+  "steps": [
+    "ASSESS: Ang casualty ba ay alerto at nakatuon? Mainit na tuyong balat kumpara sa mainit na pawis na balat? Core temp kung available ang thermometer.",
+    "HEAT CRAMPS: Muscle spasms, normal na pag-iisip. Magpahinga sa lilim, oral rehydration na may electrolytes, banayad na pag-uunat. Hindi nagbabanta sa buhay.",
+    "PAGPAPAKA-INIT: Malakas na pagpapawis, panghihina, pagkahilo, normal o halos normal na pag-iisip. Lumipat sa lilim/malamig na lugar. Alisin ang labis na damit. Mga oral fluid (kung may malay) o IV LR 1L sa loob ng 30-60 min. Subaybayan ang pag-unlad sa heat stroke.",
+    "HEAT STROKE (emergency): Binagong LOC, pagkalito, panlaban, o kawalan ng malay. Core temp > 40C (104F). Mainit na balat (maaaring basa o tuyo). MAGSIMULA: Alisin kaagad mula sa init, tanggalin ang lahat ng damit, basang balat at pamaypay nang agresibo. Maglagay ng mga ice pack sa leeg, axillae, at singit (mataas na vascular area). IV LR 1-2L. Protektahan ang daanan ng hangin kung walang malay. MEDEVAC agad.",
+    "HUWAG magbigay ng aspirin o acetaminophen para sa heat stroke -- hindi nakakatulong, maaaring makapinsala.",
+    "Monitor: vitals q15 min, daanan ng hangin, katayuan sa pag-iisip. Trend ng temp ng dokumento.",
+    "Ipagpatuloy ang paglamig sa panahon ng MEDEVAC -- huwag huminto para sa transportasyon."
+  ],
+  "warnings": [
+    "Ang heat stroke ay isang emergency na nagbabanta sa buhay -- huwag ipagkamali na pagkapagod sa init. Suriin ang kalagayan ng kaisipan.",
+    "Ang pagpapalamig ay ang tiyak na paggamot. Huwag ipagpaliban ang paglamig upang maitaguyod ang IV access.",
+    "Maaaring mangyari ang exertional heat stroke sa mga taong fit -- hindi nagpoprotekta ang physical fitness.",
+    "Ang hyponatremia (mababang sodium) mula sa overhydration sa plain water ay maaaring gayahin ang heat stroke -- magbigay ng electrolyte solution hindi lamang ng tubig."
+  ],
+  "follows": [
+    "dehydration-assessment"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Hindi gaanong epektibo ang thermoregulate ng mga bata. Ang heat stroke ay maaaring umunlad nang mas mabilis. Weight-based fluid: 20 mL/kg LR IV bolus. Ang core temp sa pamamagitan ng rectal thermometer ay pinakatumpak."
+    },
+    "obstetric": {
+      "note": "Maternal hyperthermia (>39C) ay maaaring magdulot ng fetal neural tube defects (maaga) at fetal distress (late). Agresibong paglamig. Pagsubaybay sa rate ng puso ng pangsanggol kung magagamit."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

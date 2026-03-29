@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastat"
+  ],
+  "description": "Langwirksames Benzodiazepin. Wird zur Behandlung von Anfällen, Muskelkrämpfen und Anxiolyse eingesetzt. Rektales Gel (Diastat) ist vor Ort nützlich, wenn keine Infusion verfügbar ist. Längere Wirkungsdauer als Lorazepam.",
+  "indications": [
+    "Anfallsmanagement (rektal/iv)",
+    "Muskelkrämpfe aufgrund einer Rückenmarksverletzung oder Tetanus",
+    "Nervenkampfstoff-Gegengift-Zusatz (in CHEMPACK-Kits)",
+    "Alkoholentzug"
+  ],
+  "dose": "Anfall: 5-10 mg i.v. langsamer Druck. Wiederholen Sie alle 10–15 Minuten (maximal 30 mg). Rektal: 0,2–0,5 mg/kg. IM-Absorption unregelmäßig – IM wenn möglich vermeiden.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "Akutes Engwinkelglaukom",
+    "Schwere Lebererkrankung",
+    "Atemdepression"
+  ],
+  "warnings": [
+    "Die IM-Absorption ist unregelmäßig und schmerzhaft – bevorzugen Sie intravenös, rektal oder verwenden Sie stattdessen Midazolam IM.",
+    "Lange Sedierungsdauer (24–48 Stunden bei wiederholter Gabe).",
+    "Verluste durch Nervengifte: Diazepam ist in den CHEMPACK-Sets zur Behandlung von Anfällen aufgrund einer cholinergen Krise enthalten."
+  ],
+  "regional_names": {
+    "generic": "Diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0,1–0,3 mg/kg (maximal 10 mg). Rektal: 0,3–0,5 mg/kg. Verwenden Sie den rektalen Weg, wenn eine Infusion nicht verfügbar ist.",
+      "note": "Rektales Diastat-Gel ist besonders nützlich bei pädiatrischen Anfällen im Feldeinsatz."
+    },
+    "obstetric": {
+      "note": "Kreuzt die Plazenta. Kann bei Neugeborenen Hypotonie und Atemdepression verursachen. Nur bei mütterlichen Anfällen anwenden, die nicht auf Magnesium ansprechen."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirin (Acetylsalicylic Acidum)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Bayer Aspirin",
+    "Ecotrin"
+  ],
+  "description": "Medicamentum non steroidale anti-inflammatorium (NSAID) cum proprietatibus antiplatelis. Tractatio prima-linea pro suspecto syndrome coronaria acuta (ACS). Irreversibly inhibet platelet aggregationem -- effectus perstat in platelet resto (7-10 dies).",
+  "indications": [
+    "Suspectus acuti myocardialis infarctus (MI) -- ruminat statim",
+    "Angina instabilis / syndrome coronaria acuta",
+    "Plaga (ischemica - post hemorrhagic exclusionem)",
+    "Febris et lenis dolor moderatus (analgesic)"
+  ],
+  "dose": "ACS: 325 mg PO -- COMMANDUM (ne totum absorbeat) statim. Analgesic/antipyretica: 325-650 mg PO q4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Da quam primum — statim suspicionem rodere.",
+  "contraindications": [
+    "Active GI cruentis",
+    "Plaga haemorrhagia",
+    "Nota aspirin allergia seu NSAID hypersensitivity",
+    "Gravis immoderata haemorrhagia - aspirin gravescit fluxum"
+  ],
+  "warnings": [
+    "In aegros hemorrhagicis ne des - aspirin irreversibiliter functionem laminam carpit et sanguinem gravescit.",
+    "Noli pueris <12 annos cum morbo virali - periculum syndromi Reye.",
+    "irritatio GI -- cibum sume, si non emergit."
+  ],
+  "regional_names": {
+    "generic": "aspirin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesic/antipyretica: 10-15 mg/kg PO q4-6h (max 650 mg/dosis). NOTE: Contraindicatus in morbo virali (Reye syndrome).",
+      "note": "Utere acetaminophen (paracetamolum) pro febre in pueris cum morbo virali loco."
+    },
+    "obstetric": {
+      "note": "Vitare in graviditate praesertim tertium trimester (praematura clausura ductus arteriosi). Dose humilis (81mg) adhibetur pro praeeclampsia praeventionis sub modo ductu medicorum."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

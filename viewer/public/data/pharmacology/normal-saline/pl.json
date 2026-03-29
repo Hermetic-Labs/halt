@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Zwykła sól fizjologiczna (0,9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "Wtrysk 0,9% chlorku sodu"
+  ],
+  "description": "Izotoniczny płyn krystaloidowy. Stosowany do resuscytacji płynami dożylnymi. W przypadku wstrząsu krwotocznego stosować ostrożnie – duże objętości nasilają koagulopatię (kwasicę hiperchloremiczną, koagulopatię rozcieńczeniową). W przypadku urazów penetrujących do czasu opanowania krwotoku preferowane jest umiarkowane niedociśnienie.",
+  "indications": [
+    "Resuscytacja płynowa (ostrożnie we wstrząsie krwotocznym)",
+    "Rozcieńczalnik/płukanie leków",
+    "Hipowolemia z przyczyn innych niż krwotoczne"
+  ],
+  "dose": "Wstrząs krwotoczny: maksymalnie 1 l do czasu opanowania krwotoku (łagodzące niedociśnienie). Docelowe SBP 80-90 mmHg w urazie penetrującym, 90 mmHg w TBI. Hipowolemia niekrwotoczna: bolusy 500 ml, ponownie ocenić.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hipernatremia",
+    "Przeciążenie płynami / obrzęk płuc (względny)"
+  ],
+  "warnings": [
+    "Duże objętości powodują hiperchloremiczną kwasicę metaboliczną i koagulopatię rozcieńczeniową, co pogarsza triadę śmiertelną w przypadku urazu.",
+    "Do resuscytacji urazów o dużej objętości preferowany jest roztwór Ringera z dodatkiem mleczanu (LR).",
+    "NIE należy nadmiernie reanimować penetrującego urazu tułowia przed chirurgicznym opanowaniem krwotoku (przejściowe niedociśnienie)."
+  ],
+  "regional_names": {
+    "generic": "chlorek sodu 0,9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Bolus dożylny 20 ml/kg, ponownie ocenić. Powtórzyć maksymalnie x3 (łącznie 60 ml/kg) przed rozważeniem produktów z krwi.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Standardowa resuscytacja w krwotoku położniczym. Agresywna resuscytacja płynowa odpowiednia w przypadku krwotoku poporodowego, zanim dostępne będą produkty krwiopochodne."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

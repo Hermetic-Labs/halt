@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirin (asam asetilsalisilat)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Bayer Aspirin Kab",
+    "Ekotrin"
+  ],
+  "description": "Obat anti-inflamasi non-steroid (NSAID) kanthi sifat antiplatelet. Pengobatan lini pertama kanggo suspek sindrom koroner akut (ACS). Irreversibel nyegah agregasi platelet - efek tahan kanggo umur platelet (7-10 dina).",
+  "indications": [
+    "Suspect infark miokard akut (MI) -- ngunyah langsung",
+    "Angina ora stabil / sindrom koroner akut",
+    "Stroke (iskemik - sawise hemorrhagic ora kalebu)",
+    "Demam lan nyeri ringan-sedang (analgesik)"
+  ],
+  "dose": "ACS: 325 mg PO -- CHEW (aja ditelan wutuh) langsung. Analgesik/antipiretik: 325-650 mg PO q4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Menehi sakcepete bisa - mamah langsung ing curiga.",
+  "contraindications": [
+    "Pendarahan GI aktif",
+    "Stroke hemoragik",
+    "Dikenal alergi aspirin utawa hipersensitivitas NSAID",
+    "Pendarahan sing ora bisa dikontrol - aspirin nambah pendarahan"
+  ],
+  "warnings": [
+    "Aja menehi pasien hemorrhagic - aspirin bisa ngrusak fungsi platelet lan nambah pendarahan.",
+    "Aja menehi anak <12 taun kanthi penyakit virus - risiko sindrom Reye.",
+    "Iritasi GI - njupuk karo panganan yen ora muncul."
+  ],
+  "regional_names": {
+    "generic": "aspirin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesik/antipiretik: 10-15 mg/kg PO q4-6h (maks 650 mg/dosis). CATETAN: Contraindicated ing penyakit virus (sindrom Reye).",
+      "note": "Gunakake acetaminophen (parasetamol) kanggo mriyang ing bocah sing lara virus."
+    },
+    "obstetric": {
+      "note": "Nyegah nalika meteng utamane trimester katelu (penutupan durung wayahe duktus arteriosus). Dosis rendah (81mg) mung digunakake kanggo nyegah pre-eklampsia miturut pandhuane dokter."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

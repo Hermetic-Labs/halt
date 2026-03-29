@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "Phân loại MUỐI (Phân loại, Đánh giá, Can thiệp cứu mạng, Điều trị/Vận chuyển)",
+  "category": "mass-casualty",
+  "description": "Giao thức phân loại thương vong hàng loạt. Tiêu chuẩn cho các sự kiện có nhiều thương vong trong môi trường quân sự và dân sự.",
+  "instructions": "Bước 1: Sắp xếp toàn cục (đi, vẫy tay, đứng yên). Bước 2: Đánh giá theo thứ tự ưu tiên. Bước 3: Thực hiện các biện pháp can thiệp cứu sống (kiểm soát chảy máu nặng, mở đường thở, giải áp bằng kim, tiêm tự động). Bước 4: Chỉ định danh mục.",
+  "categories": [
+    {
+      "color": "đen",
+      "label": "Đang mong đợi/Đã chết",
+      "description": "Khó có thể sống sót với nguồn lực sẵn có hoặc đã được xác nhận đã chết"
+    },
+    {
+      "color": "đỏ",
+      "label": "Ngay lập tức (T1)",
+      "description": "Chấn thương nguy hiểm đến tính mạng, sẽ sống sót nếu được can thiệp ngay lập tức"
+    },
+    {
+      "color": "màu vàng",
+      "label": "Trì hoãn (T2)",
+      "description": "Chấn thương nặng nhưng đã ổn định, có thể chờ chăm sóc"
+    },
+    {
+      "color": "màu xanh lá cây",
+      "label": "Tối thiểu (T3)",
+      "description": "Chấn thương nhẹ -- bị thương khi đi bộ"
+    },
+    {
+      "color": "màu xám",
+      "label": "Đang mong đợi",
+      "description": "Chấn thương không thể cứu chữa với nguồn lực hiện tại -- chỉ chăm sóc thoải mái"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Thuật toán phân loại JumpStart sửa đổi SALT cho bệnh nhân nhi. Ngưỡng nhịp thở và các bước đánh giá khác nhau đối với trẻ dưới 8 tuổi."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

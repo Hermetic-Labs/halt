@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazole",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "Nitroimidazole antibioticum cum excellentibus anaerobicis et protozoalibus coverage. Essentiale ad penetrandum abdominis / alvum trauma ad ventrem florae anaerobic operiendum. Saepe usus est in compositione cum ciprofloxacin.",
+  "indications": [
+    "Abdominis penetrans / alvum trauma",
+    "Infectiones intra- abdominis",
+    "Anaerobic molles textus infectiones",
+    "C. difficile infectiones"
+  ],
+  "dose": "500 mg IV q6-8h. PO: D mg q8h (si vocalem toleravit).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Primum trimester graviditatis (relativum)",
+    "Notum metronidazole vel nitroimidazole allergy"
+  ],
+  "warnings": [
+    "Sicut reactionem disulfiram cum alcohol - non consumunt alcohol in curatione et post 48h.",
+    "Sit causa periphericis neuropathia cum diuturno usu.",
+    "Fuge in primo trimester si fieri potest."
+  ],
+  "regional_names": {
+    "generic": "metronidazole"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7.5 mg/kg IV/PO q6h (max 500 mg/dosis).",
+      "note": "Tutus in pueris. Fugiat in neonates."
+    },
+    "obstetric": {
+      "note": "Fuge in primo trimester si fieri potest. Usus secundus/tertius trimester cum medically necesse est - beneficium plerumque praeponderat periculo gravium infectiones anaerobicas."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

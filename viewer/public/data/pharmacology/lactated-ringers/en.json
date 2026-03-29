@@ -1,0 +1,46 @@
+﻿{
+    "id":  "lactated-ringers",
+    "name":  "Lactated Ringer\u0027s Solution (LR)",
+    "category":  "fluid-resuscitation",
+    "rxnorm":  "1013621",
+    "brand_names":  [
+                        "Hartmann\u0027s Solution",
+                        "Lactated Ringer\u0027s Injection"
+                    ],
+    "description":  "Balanced isotonic crystalloid fluid. Preferred over normal saline for large-volume trauma resuscitation -- more physiologically balanced, less risk of hyperchloremic acidosis. Contains sodium, potassium, calcium, lactate.",
+    "indications":  [
+                        "Trauma resuscitation (preferred crystalloid in hemorrhagic shock)",
+                        "Burns fluid resuscitation (Parkland formula)",
+                        "Hypovolemia",
+                        "Fluid maintenance"
+                    ],
+    "dose":  "Hemorrhagic shock: Limit to 1L max before transitioning to blood products. Target SBP 80-90 mmHg penetrating trauma, 90 mmHg TBI. Burns (Parkland): 4 mL x kg x %TBSA burned over 24h (half in first 8h).",
+    "route":  [
+                  "IV",
+                  "IO"
+              ],
+    "window":  "",
+    "contraindications":  [
+                              "Hyperkalemia (contains potassium)",
+                              "Severe liver failure (impaired lactate metabolism -- relative)"
+                          ],
+    "warnings":  [
+                     "Still a crystalloid -- cannot carry oxygen. Blood products are superior for hemorrhagic shock. LR is a bridge only.",
+                     "Do not mix with blood products in same line (calcium causes clotting).",
+                     "Do NOT over-resuscitate in penetrating trauma before hemorrhage control."
+                 ],
+    "regional_names":  {
+                           "generic":  "lactated Ringer\u0027s solution",
+                           "UK":  "Hartmann\u0027s solution"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "20 mL/kg bolus, reassess. Preferred over NS for pediatric trauma.",
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  "Preferred IV fluid in labor and delivery. Appropriate for obstetric hemorrhage resuscitation."
+                                    }
+                  },
+    "source":  "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

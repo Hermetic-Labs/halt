@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Ntụle akpịrị ịkpọ nkụ",
+  "category": "circulation",
+  "description": "Ntụle mpaghara maka akpịrị ịkpọ nkụ na oke ọrịa okpomọkụ. Agba mmamịrị bụ ihe ngosi ubi kachasị bara uru. Nyochaa ọnọdụ uche dị ka akara maka akpịrị ịkpọ nkụ siri ike na-aga n'ihu ruo ọrịa strok ọkụ.",
+  "instructions": "Lelee ụcha mmamịrị, turgor akpụkpọ ahụ, ọnọdụ uche, na akara dị mkpa. Mmamịrị gbara ọchịchịrị, akpụkpọ ahụ mucous kpọrọ nkụ, na tachycardia na-egosi oke akpịrị ịkpọ nkụ na-achọ rehydration n'ọrụ.",
+  "categories": [
+    {
+      "color": "doro anya-icha mmirimmiri",
+      "label": "Mmiri nke ọma",
+      "description": "Acha odo odo iji kpochapụ mmamịrị. Enweghị enyemaka achọrọ."
+    },
+    {
+      "color": "odo",
+      "label": "Mmiri mmiri dị nro",
+      "description": "Mmamịrị odo gbara ọchịchịrị, akpịrị ịkpọ nkụ. Mwepu mmiri nke ọnụ. Na-agba ume 250-500 ml mmiri kwa elekere."
+    },
+    {
+      "color": "agba aja aja",
+      "label": "Mmiri mmiri dị oke oke-oke",
+      "description": "Mmamịrị amber, HR dị elu, turgor akpụkpọ ahụ belatara, ọnụ kpọrọ nkụ. Mmiri IV/IO ma ọ bụrụ na anabataghị ọnụ. 1-2L LR ma ọ bụ NS."
+    },
+    {
+      "color": "uhie",
+      "label": "Ihe egwu -- Heat Stroke / siri ike",
+      "description": "Mwepụta mmamịrị pere mpe, LOC gbanwere, akpụkpọ kpọrọ nkụ na-ekpo ọkụ. Ihe mberede ahụike -- ngwa ngwa jụrụ oyi + mmiri IV + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Ụmụaka na-agba mmiri ngwa ngwa karịa ndị okenye. Fontanelle dara anwụ (ụmụ ọhụrụ), anya mmiri na-anọghị, na ike ọgwụgwụ bụ ihe ịrịba ama dị egwu. IV dabere na ibu: 20 ml/kg LR bolus."
+    },
+    "obstetric": {
+      "note": "Ụmụ nwanyị dị ime chọrọ ịba ụba nke mmiri. Mmiri mmiri na-ekpo ọkụ nwere ike ịkpalite nkwekọrịta tupu oge eruo. Mgbochi ọnụ ọnụ na-eme ihe ike; IV ma ọ bụrụ na anabataghị ọnụ."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

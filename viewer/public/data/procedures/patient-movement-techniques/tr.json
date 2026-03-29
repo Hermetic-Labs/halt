@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Hasta Hareket Teknikleri",
+  "category": "casualty-movement",
+  "skill_level": "Temel",
+  "time_estimate": "Mesafeye ve yönteme bağlı olarak 1-30 dk",
+  "description": "Yaralının ateş altında veya tedavi için daha güvenli bir yere taşınması. Yöntem araziye, mesafeye, kurtarıcıların sayısına ve yaralının yaralanmasına bağlıdır. Hız ve omurga önlemi taktiksel bir karardır; TCCC'de tehdit önceliklidir.",
+  "equipment": [
+    "SKED çöp (tercih edilir)",
+    "NATO çöpü / taşınabilir sedye",
+    "Doğaçlama çöp: direkler + ceketler/pançolar",
+    "Sürükleme tutamaçları (üniforma veya koşum takımı)",
+    "TACEVAC askı"
+  ],
+  "steps": [
+    "ATEŞ ALTINDA BAKIM: Silahlıysanız önce ateşe karşılık verin. Yaralıyı en hızlı sürükleme yöntemini kullanarak hareket ettirin; ölüm bölgesinde tedavi etmek için durmayın.",
+    "ACİL SÜRÜKLEME (bir kurtarıcı): Yakayı tutun/omuzlardan sürükleyin, sırtınızdan sürükleyin. Başınızı darbelerden koruyun.",
+    "İTFAİYECİ TAŞIMA (bir kurtarıcı): Yaralıyı daha uzun mesafeler için omuzlarının üzerinden kaldırın - yaralının bilinçsiz olmasını veya işbirliği yapmasını gerektirir.",
+    "İKİ KİŞİLİK TAŞIMA: kurtarıcılar kollarını yaralının sırtının ve dizlerinin altından bağlarlar. Kısa mesafeler için sürüklemeden daha hızlıdır.",
+    "DOĞAÇLAMA ÇÖP: iki direği 18 inç aralıklarla yerleştirin. Ceketleri, içinde düğmeler bulunan direklerin arasından örün. Yaralıyı yüklemeden önce test yapın.",
+    "SKED ÇÖP: ruloyu açın, yaralının altına kaydırın, sarın ve kayışlarla sabitleyin. 2-4 taşıyıcı gerektirir.",
+    "Yüklerken: 3'e kadar sayarak kaldırın, baş/vücut hizasını koruyun, mümkünse omurga hareketini en aza indirin.",
+    "Omurilik yaralanmasından şüpheleniliyorsa ve tehdit yoksa: Hareket boyunca hat içi stabilizasyonu koruyun. Kafa kontrolüne adanmış bir kişi.",
+    "Kapsama geçin, ardından ABC'yi yeniden değerlendirin."
+  ],
+  "warnings": [
+    "TCCC önceliği: yaşam > uzuv > omurga önlemi. Omurga önlemleri için ölüm bölgesinden hareketi geciktirmeyin.",
+    "İtfaiyeci taşıma şüpheli omurilik yaralanması, uyluk kemiği kırığı veya delici karın travması durumunda kontrendikedir.",
+    "Doğaçlama sedyeler: Bir yaralıya güvenmeden önce ağırlık kapasitesini test edin.",
+    "Yaralının turnike ile taşınması: Turnikenin hareket sırasında gevşemediğini kontrol edin."
+  ],
+  "precedes": [
+    "tıbbi tahliye-9 hattı"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Çocuklar daha hafiftir; tek kurtarıcı daha uzun süre taşıyabilir. Taşıma sırasında başınızı orantılı olarak daha büyük, ağırlık merkezini daha yüksek tutun."
+    },
+    "obstetric": {
+      "note": "Yüzüstü pozisyondan veya karın üzerine baskı yapmaktan kaçının. Sol kalça kaması ile yanal (sol taraf tercih edilir) veya sırtüstü taşıma."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

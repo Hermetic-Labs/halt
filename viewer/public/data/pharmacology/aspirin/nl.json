@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirine (Acetylsalicylzuur)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Bayer-aspirine",
+    "Ecotrin"
+  ],
+  "description": "Niet-steroïde anti-inflammatoir geneesmiddel (NSAID) met bloedplaatjesaggregatieremmende eigenschappen. Eerstelijnsbehandeling bij verdenking op acuut coronair syndroom (ACS). Remt op onomkeerbare wijze de aggregatie van bloedplaatjes - het effect houdt aan gedurende de levensduur van de bloedplaatjes (7-10 dagen).",
+  "indications": [
+    "Vermoedelijk acuut myocardinfarct (MI) - onmiddellijk kauwen",
+    "Instabiele angina / acuut coronair syndroom",
+    "Beroerte (ischemisch – na hemorragie uitgesloten)",
+    "Koorts en milde tot matige pijn (pijnstillend)"
+  ],
+  "dose": "ACS: 325 mg PO - KAUW (niet in zijn geheel doorslikken) onmiddellijk. Pijnstillend/antipyreticum: 325-650 mg PO q4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Geef zo ​​vroeg mogelijk – kauw onmiddellijk op verdenking.",
+  "contraindications": [
+    "Actieve gastro-intestinale bloeding",
+    "Hemorragische beroerte",
+    "Bekende aspirine-allergie of NSAID-overgevoeligheid",
+    "Ernstige ongecontroleerde bloedingen - aspirine verergert bloeding"
+  ],
+  "warnings": [
+    "NIET geven bij hemorragische patiënten - aspirine schaadt onomkeerbaar de bloedplaatjesfunctie en verergert bloedingen.",
+    "NIET geven aan kinderen < 12 jaar met een virusziekte - risico op het syndroom van Reye.",
+    "GI-irritatie - innemen met voedsel als het niet optreedt."
+  ],
+  "regional_names": {
+    "generic": "aspirine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Pijnstillend/antipyreticum: 10-15 mg/kg PO q4-6h (max. 650 mg/dosis). OPMERKING: Gecontra-indiceerd bij virale ziekten (syndroom van Reye).",
+      "note": "Gebruik in plaats daarvan paracetamol (paracetamol) voor koorts bij kinderen met een virusziekte."
+    },
+    "obstetric": {
+      "note": "Vermijd tijdens de zwangerschap, vooral in het derde trimester (voortijdige sluiting van de ductus arteriosus). Een lage dosis (81 mg) wordt alleen onder begeleiding van een arts gebruikt voor de preventie van pre-eclampsie."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

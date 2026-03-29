@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Ifibọnu Ọkọ ofurufu Nasopharyngeal (NPA)",
+  "category": "airway",
+  "skill_level": "olugbala ija ogun",
+  "time_estimate": "1 min",
+  "description": "Fi sii ọna atẹgun imu ti o ni rọ lati ṣetọju patency oju-ofurufu ni aimọkan tabi alaisan olominira.",
+  "equipment": [
+    "npa-with-ailewu-pin",
+    "lubricant"
+  ],
+  "steps": [
+    "Yan iwọn NPA ti o yẹ (diwọn lati iho imu si eti eti).",
+    "Lubricate awọn NPA lọpọlọpọ pẹlu omi-tiotuka lubricant tabi iyo.",
+    "Fi PIN aabo sii nipasẹ flange ti ko ba ti wa tẹlẹ (idinaduro ifẹnukonu).",
+    "Fi sii rọra sinu iho imu ọtun (bevel si septum), ni ilosiwaju ni afiwe si palate.",
+    "Ilọsiwaju titi ti flange yoo duro lodi si iho imu.",
+    "Tun alaisan pada (ipo imularada ti ko ba si ibakcdun ọpa-ẹhin) ki o tun ṣe ayẹwo ọna atẹgun.",
+    "Ti resistance ba pade, gbiyanju iho imu osi."
+  ],
+  "warnings": [
+    "Contraindicated ni ifura basilar timole egugun (oju raccoon, ogun ká ami, CSF rhinorrhea).",
+    "NPA jẹ adjunct ti o dara julọ ti alaisan ti o dara julọ ti ọna atẹgun -- OPA le fa eebi ni awọn alaisan olominira."
+  ],
+  "source": "TCCC / JTS CPG"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Blutstillende Wundpackung",
+  "category": "hemorrhage-control",
+  "skill_level": "Kampf-Lebensretter",
+  "time_estimate": "3-5 Minuten",
+  "description": "Füllen einer nicht komprimierbaren Wunde oder einer Verbindungswunde mit blutstillender Gaze zur Kontrolle von Blutungen, wenn kein Tourniquet angelegt werden kann.",
+  "equipment": [
+    "blutstillende Gaze",
+    "Nitril-Handschuhe",
+    "Trauma-Schere",
+    "Druckverband"
+  ],
+  "steps": [
+    "Handschuhe anziehen. Legen Sie die Wunde mit einer Traumaschere vollständig frei.",
+    "Identifizieren Sie die aktive Blutungsquelle in der Wundhöhle.",
+    "Öffnen Sie die hämostatische Gaze, drücken Sie sie mit Ihrem Finger fest in die Wunde und drücken Sie sie direkt zur Blutungsquelle.",
+    "Fahren Sie mit dem Packen fort, bis die Wundhöhle vollständig gefüllt ist.",
+    "Üben Sie mindestens 3 Minuten lang festen, kontinuierlichen direkten Druck mit dem Handballen aus.",
+    "Entfernen Sie das Verpackungsmaterial NICHT, nachdem es angebracht wurde.",
+    "Legen Sie einen Druckverband über die verstopfte Wunde an.",
+    "Markieren Sie die Uhrzeit auf der TCCC-Karte oder auf der Stirn des Patienten (z. B. „PKD 0145“)."
+  ],
+  "warnings": [
+    "Verschließen Sie KEINE durchdringenden Brustwunden, sondern verwenden Sie stattdessen eine Brustversiegelung.",
+    "Wenn Sie eine Halswunde stopfen, üben Sie Druck aus, ohne beide Halsschlagadern gleichzeitig zu komprimieren.",
+    "Bei Verdacht auf arterielle Quelle innerhalb von 5 Minuten erneut beurteilen."
+  ],
+  "follows": [
+    "Direktdruck"
+  ],
+  "precedes": [
+    "Tourniquet-Anwendung"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Verwenden Sie verhältnismäßig weniger Gaze. Üben Sie einen geringeren Druck aus, um eine Kompression des Brustkorbs bei Säuglingen zu vermeiden."
+    },
+    "obstetric": {
+      "note": "Vermeiden Sie tiefen oder aggressiven Packdruck in der Nähe des schwangeren Bauches. Eine schnelle Eskalation wird bevorzugt."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

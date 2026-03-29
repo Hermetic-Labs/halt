@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinefrin (Adrenalin)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalin"
+  ],
+  "description": "Katekolamin endogen kanthi aktivitas adrenergik alfa lan beta. Pangobatan lini pertama kanggo anafilaksis lan serangan jantung. Ing anafilaksis, paha IM luwih disenengi tinimbang IV (luwih aman, khasiat sing padha). Aja tundha kanggo akses IV ing anafilaksis.",
+  "indications": [
+    "Anafilaksis (baris pisanan)",
+    "Penangkapan jantung - VF/VT/PEA/asystole tanpa pulsa",
+    "Bronkospasme abot",
+    "Hipotensi refrakter kanggo cairan"
+  ],
+  "dose": "Anafilaksis: 0,3-0,5 mg IM (paha anterolateral) | Auto-injector 0,3 mg IM. Baleni q5-15 min PRN. Penangkapan jantung: 1 mg IV/IO q3-5 menit sajrone CPR. Bronkospasme parah: 0,3 mg IM.",
+  "route": [
+    "IM",
+    "IV",
+    "IO"
+  ],
+  "window": "Ing anafilaksis: menehi IM langsung - aja tundha kanggo akses IV.",
+  "contraindications": [
+    "Ora ana contraindications mutlak ing darurat sing ngancam nyawa"
+  ],
+  "warnings": [
+    "Epinefrin IV kanggo anafilaksis mung kudu digunakake nalika serangan jantung utawa kejut sing jero - mbebayani yen diwenehi push IV menyang pasien sing sadar.",
+    "Ekstravasasi nyebabake nekrosis jaringan - njamin patensi IV.",
+    "Nambah kabutuhan oksigen miokardium - ati-ati ing penyakit koroner sing dikenal ing njaba penahanan."
+  ],
+  "regional_names": {
+    "generic": "epinefrin",
+    "UK": "adrenalin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anafilaksis: 0,01 mg/kg IM (maks 0,5 mg). EpiPen Jr (0,15 mg) kanggo 15-30 kg. Gagal jantung: 0,01 mg/kg IV/IO q3-5 min.",
+      "note": "Gunakake dosis adhedhasar bobot. Referensi tape Broselow dianjurake."
+    },
+    "obstetric": {
+      "note": "Gunakake dosis anafilaksis standar - kaslametan ibu iku sing paling penting. Epinefrin aman nalika meteng kanggo kahanan darurat sing ngancam nyawa."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

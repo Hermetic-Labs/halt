@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "Glasgow Coma Scale (GCS)",
+  "category": "neurological",
+  "description": "Ny mari-pandrefesana neurolojika amin'ny fahatsiarovan-tena amin'ny alàlan'ny maso, am-bava ary motera. Salan'isa 3-15.",
+  "instructions": "Manome isa tsy miankina ny tsirairay amin'ireo sehatra telo. Amboary ny isa telo ho an'ny totalin'ny GCS.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Spontane"
+        },
+        {
+          "score": 3,
+          "label": "Ny feo"
+        },
+        {
+          "score": 2,
+          "label": "Manaintaina"
+        },
+        {
+          "score": 1,
+          "label": "Tsy misy"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "Mitodika"
+        },
+        {
+          "score": 4,
+          "label": "Misafotofoto"
+        },
+        {
+          "score": 3,
+          "label": "Teny tsy mety"
+        },
+        {
+          "score": 2,
+          "label": "Feo tsy takatry ny saina"
+        },
+        {
+          "score": 1,
+          "label": "Tsy misy"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "Mankato baiko"
+        },
+        {
+          "score": 5,
+          "label": "Mamaha ny fanaintainana"
+        },
+        {
+          "score": 4,
+          "label": "Miala amin'ny fanaintainana"
+        },
+        {
+          "score": 3,
+          "label": "Fihetsiketsehana tsy ara-dalàna (haingo)"
+        },
+        {
+          "score": 2,
+          "label": "Fanitarana (decerebrate)"
+        },
+        {
+          "score": 1,
+          "label": "Tsy misy"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "TBI malemy -- manara-maso akaiky"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "TBI antonony -- manomana lalan-drivotra"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "TBI mafy -- lalan-drivotra atahorana avy hatrany, intubate raha azo atao"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Mampiasà GCS Pediatric (pGCS) ho an'ny ankizy latsaky ny 2 taona. Ny naoty am-bava natao ho an'ny ankizy alohan'ny verbal."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

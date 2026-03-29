@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/icon-192.svg" />
+  <link rel="apple-touch-icon" href="/icon-192.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="description" content="Airgapped mesh triage network for offline-first medical coordination" />
+  <title>Triage</title>
+</head>
+
+<body>
+  <!-- Pre-React QR join interception: runs before any bundle or service worker -->
+  <script>
+    (function() {
+      var p = new URLSearchParams(window.location.search);
+      var n = p.get('name'), r = p.get('role');
+      if (n && r) {
+        // Stash for React to pick up (survives service worker cache)
+        sessionStorage.setItem('eve-qr-join', JSON.stringify({ name: n, role: r }));
+        // Nuke ALL cached identity immediately
+        localStorage.removeItem('eve-mesh-mode');
+        localStorage.removeItem('eve-mesh-name');
+        localStorage.removeItem('eve-mesh-role');
+        localStorage.removeItem('eve-mesh-client-id');
+        // Set new identity
+        localStorage.setItem('eve-mesh-name', n);
+        localStorage.setItem('eve-mesh-role', r);
+        localStorage.setItem('eve-mesh-mode', 'client');
+        var id = 'node-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 6);
+        localStorage.setItem('eve-mesh-client-id', id);
+        // NOTE: Do NOT clear URL params here — React needs them for tab auto-switch.
+        // React will clear them after reading.
+
+        // Force service worker to skip cache for this QR load
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(regs) {
+            regs.forEach(function(r) { r.update(); });
+          });
+        }
+      }
+    })();
+  </script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+  <script>
+    // Register Service Worker for PWA + push notifications
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').catch(function() { /* offline ok */ });
+      });
+    }
+  </script>
+</body>
+
+</html>

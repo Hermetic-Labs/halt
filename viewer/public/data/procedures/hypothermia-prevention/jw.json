@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Nyegah Hipotermia (H -- MARET)",
+  "category": "temperature-management",
+  "skill_level": "sabarang-wangsulane",
+  "time_estimate": "2-3 min",
+  "description": "Pertempuran hipotermia minangka pembunuh utama sing bisa dicegah ing trauma. Trias sing bisa nyebabake: hipotermia + acidosis + koagulopati. Nyegah ing kabeh biaya.",
+  "equipment": [
+    "kemul-mantul-panas",
+    "kit pancegahan hipotermia",
+    "panas-iv-cairan-yen-kasedhiya"
+  ],
+  "steps": [
+    "Copot kabeh sandhangan teles sanalika bisa kanthi taktik.",
+    "Tutup pasien nganggo selimut pemantul panas (spasi) - sisi mengkilat IN menyang pasien.",
+    "Bungkus sirah lan gulu (situs mundhut panas sing signifikan).",
+    "Insulate saka lemah - nyelehake soko ing antarane pasien lan permukaan lemah sing adhem.",
+    "Nyedhiyakake cairan IV sing anget yen kasedhiya.",
+    "Aja ngidini pasien menggigil tanpa tutup -- menggigil minangka tandha peringatan dini.",
+    "Ngawasi suhu yen thermometer kasedhiya. Ing ngisor 35°C (95°F) = hipotermia."
+  ],
+  "warnings": [
+    "Hipotermia nambah koagulopati - pasien getihen luwih cepet adhem lan beku kurang efektif.",
+    "Nyegah hipotermia lapangan kudu diwiwiti ing titik cedera, ora ing CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

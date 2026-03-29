@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Ativan"
+  ],
+  "description": "benzodiazepine na-eme ihe etiti. Usoro ọgwụgwọ IV/IM nke mbụ maka ọnọdụ epilepticus na nnukwu ọdịdọ. A na-ejikwa ya maka ịhịa aka n'ahụ na anxiolysis.",
+  "indications": [
+    "Ọnọdụ epilepticus (akara nke mbụ IV)",
+    "Njikwa njide dị oke njọ",
+    "Usoro ịhịa aka n'ahụ",
+    "Nchegbu siri ike ma ọ bụ mkpasu iwe"
+  ],
+  "dose": "Ihe ọdịdọ: 4 mg IV/IO jiri nwayọ mee ihe karịrị nkeji 2. Tinyegharịa 4 mg na nkeji 5-10 ma ọ bụrụ na njide na-aga n'ihu. IM: 4 mg ma ọ bụrụ na IV adịghị.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "Nnukwu glaucoma dị warara-n'akuku",
+    "Mmetụta iku ume siri ike",
+    "Propylene glycol hypersensitivity"
+  ],
+  "warnings": [
+    "Na-ebute ịda mbà n'obi iku ume -- nwere BVM na akụrụngwa ụgbọ elu dị njikere.",
+    "Ịgba ụra nwere ike ịdịru awa 6-8 -- nyochaa ụzọ ikuku.",
+    "Ihe mgbakasị ahụ nwere ike ime, ọkachasị ndị agadi na ụmụaka."
+  ],
+  "regional_names": {
+    "generic": "lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV/IM (kacha 4 mg / dose). Tinyegharịa otu ugboro na 5-10 min ma ọ bụrụ na ọ dị mkpa.",
+      "note": "A họọrọ karịa diazepam maka njikwa ọdịdọ IV na ụmụaka."
+    },
+    "obstetric": {
+      "note": "Na-agafe placenta -- ịda mbà n'obi iku ume ọhụrụ ga-ekwe omume. Jiri n'ọnọdụ nke nne mgbe uru karịrị ihe ize ndụ."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

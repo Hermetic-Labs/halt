@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Kháng sinh Fluoroquinolone có phạm vi bao phủ gram âm rộng. Được sử dụng cho các trường hợp nhiễm trùng vết thương nghiêm trọng, chấn thương bụng xuyên thấu (bảo hiểm hệ thực vật GI) và nhiễm trùng đường tiết niệu. Có sẵn PO và IV.",
+  "indications": [
+    "Chấn thương xuyên bụng (khử nhiễm GI)",
+    "Nhiễm trùng vết thương nghiêm trọng",
+    "Nhiễm trùng gram âm",
+    "Nhiễm trùng đường tiết niệu"
+  ],
+  "dose": "400 mg tiêm tĩnh mạch mỗi 8-12 giờ. PO: 500-750 mg mỗi 12h.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Đã biết dị ứng fluoroquinolone",
+    "Trẻ em và thanh thiếu niên < 18 tuổi (tương đối -- nguy cơ mắc bệnh gân)",
+    "Mang thai (người thân)"
+  ],
+  "warnings": [
+    "Nguy cơ đứt gân, đặc biệt là gân Achilles. Ngừng nếu đau gân phát triển.",
+    "Có thể kéo dài khoảng QT - thận trọng với các thuốc kéo dài QT khác.",
+    "Tránh dùng trong thai kỳ nếu có lựa chọn thay thế."
+  ],
+  "regional_names": {
+    "generic": "ciprofloxacin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV mỗi 8-12 giờ (tối đa 400 mg/liều). PO: 10-20 mg/kg mỗi 12h (tối đa 750 mg/liều).",
+      "note": "Chỉ sử dụng khi lợi ích lớn hơn nguy cơ bệnh gân. Dự trữ cho các bệnh nhiễm trùng nghiêm trọng."
+    },
+    "obstetric": {
+      "note": "Tránh dùng trong thai kỳ nếu có lựa chọn thay thế. Chỉ sử dụng cho các bệnh nhiễm trùng đe dọa tính mạng khi lợi ích lớn hơn nguy cơ."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

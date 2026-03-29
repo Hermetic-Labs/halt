@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirin (Acetylsalicylic acid)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Bayer Aspirin",
+    "Ecotrin"
+  ],
+  "description": "Magungunan anti-inflammatory marasa steroidal (NSAID) tare da abubuwan antiplatelet. Maganin layin farko don wanda ake zargi da cutar ciwon zuciya mai tsanani (ACS). Ba tare da juyowa ba yana hana haɗuwar platelet -- tasirin yana ɗaukar tsawon rayuwar platelet (kwanaki 7-10).",
+  "indications": [
+    "Wanda ake zargin myocardial infarction (MI) -- tauna nan da nan",
+    "Unstable angina / m ciwon zuciya",
+    "Shanyewar jiki (ischemic - bayan an cire zubar jini)",
+    "Zazzabi da zafi mai matsakaici-matsakaici (analgesic)"
+  ],
+  "dose": "ACS: 325 mg PO - CHEW (kada ku haɗiye gaba ɗaya) nan da nan. Analgesic/antipyretic: 325-650 mg PO q4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Ba da wuri-wuri -- tauna nan da nan akan zato.",
+  "contraindications": [
+    "GI mai aiki yana zubar jini",
+    "Hemorrhagic bugun jini",
+    "Sanin ciwon aspirin ko NSAID hypersensitivity",
+    "Zubar da jini mai tsanani wanda ba a sarrafa shi ba -- aspirin yana kara zubar da jini"
+  ],
+  "warnings": [
+    "KADA a ba da marasa lafiya masu ciwon jini - aspirin ba zai iya jurewa ba yana lalata aikin platelet kuma yana kara zubar jini.",
+    "KADA a ba wa yara <shekaru 12 masu fama da cutar hoto ko bidiyo mai zagaya yanar gizo da sauri -- haɗarin cutar Reye's syndrome.",
+    "GI hangula -- sha tare da abinci idan ba gaggawa ba."
+  ],
+  "regional_names": {
+    "generic": "aspirin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesic/antipyretic: 10-15 mg/kg PO q4-6h (max 650 mg/dose). NOTE: Contraindicated a cikin kwayar cuta cuta (Reye ciwo).",
+      "note": "Yi amfani da acetaminophen (paracetamol) don zazzaɓi a cikin yara masu ciwon ƙwayar cuta maimakon."
+    },
+    "obstetric": {
+      "note": "Guji a cikin ciki musamman na uku trimester (kullewar ductus arteriosus da wuri). Ana amfani da ƙananan kashi (81mg) don rigakafin pre-eclampsia a ƙarƙashin jagorancin likita kawai."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

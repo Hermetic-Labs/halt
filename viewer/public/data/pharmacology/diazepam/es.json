@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastato"
+  ],
+  "description": "Benzodiazepina de acción prolongada. Se utiliza para el tratamiento de convulsiones, espasmos musculares y ansiolisis. El gel rectal (Diastat) es útil en entornos de campo cuando no se dispone de vía intravenosa. Mayor duración que el lorazepam.",
+  "indications": [
+    "Manejo de las convulsiones (rectal/IV)",
+    "Espasmo muscular por lesión de la médula espinal o tétanos",
+    "Antídoto complementario para agentes nerviosos (en kits CHEMPACK)",
+    "Abstinencia de alcohol"
+  ],
+  "dose": "Convulsiones: 5-10 mg IV en dosis lenta. Repetir cada 10-15 min (máximo 30 mg). Rectal: 0,2-0,5 mg/kg. La absorción IM es errática: evítela IM si es posible.",
+  "route": [
+    "IV",
+    "OI",
+    "relaciones públicas"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaucoma agudo de ángulo estrecho",
+    "Enfermedad hepática grave",
+    "Depresión respiratoria"
+  ],
+  "warnings": [
+    "La absorción IM es errática y dolorosa; prefiera IV, rectal o use midazolam IM en su lugar.",
+    "Sedación de larga duración (24-48h para dosis repetidas).",
+    "Víctimas de agentes nerviosos: el diazepam está incluido en los kits CHEMPACK para las convulsiones por crisis colinérgicas."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0,1-0,3 mg/kg (máximo 10 mg). Rectal: 0,3-0,5 mg/kg. Utilice la vía rectal cuando no esté disponible la vía intravenosa.",
+      "note": "El gel de diastat rectal es particularmente útil para las convulsiones pediátricas en entornos de campo."
+    },
+    "obstetric": {
+      "note": "Cruza la placenta. Puede provocar hipotonía neonatal, depresión respiratoria. Úselo sólo para convulsiones maternas que no responden al magnesio."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Teknik Gerakan Pasien",
+  "category": "casualty-movement",
+  "skill_level": "Dasar",
+  "time_estimate": "1-30 menit tergantung jarak dan metode",
+  "description": "Memindahkan korban yang terbakar atau ke lokasi yang lebih aman untuk mendapatkan perawatan. Caranya tergantung pada medan, jarak, jumlah penyelamat, dan cedera yang dialami korban. Kecepatan vs. tindakan pencegahan tulang belakang adalah keputusan taktis -- di TCCC, ancaman menjadi prioritas.",
+  "equipment": [
+    "Sampah SKED (lebih disukai)",
+    "Sampah NATO / tandu portabel",
+    "Sampah yang diimprovisasi: tiang + jaket/ponco",
+    "Tarik pegangan (seragam atau tali kekang)",
+    "Selempang TACEVAC"
+  ],
+  "steps": [
+    "PERHATIAN DALAM KEBAKARAN: Balas tembakan terlebih dahulu jika bersenjata. Pindahkan korban menggunakan metode drag tercepat -- jangan berhenti untuk mengobati di zona mematikan.",
+    "HASTY DRAG (satu penyelamat): pegang kerah/pegangan tarik di bahu, tarik ke belakang. Lindungi kepala dari benturan.",
+    "FIREMAN CARRY (satu penyelamat): mengangkat korban melewati bahu untuk jarak yang lebih jauh -- mengharuskan korban dalam keadaan tidak sadarkan diri atau kooperatif.",
+    "DUA ORANG MEMBAWA: penyelamat mengaitkan lengan di bawah punggung dan lutut korban. Lebih cepat dari drag untuk jarak pendek.",
+    "SAMPAH YANG DIPERBAIKI: letakkan dua tiang dengan jarak 18 inci. Menenun jaket melalui tiang dengan kancing di dalamnya. Uji sebelum memuat korban.",
+    "SKED LITTER: buka gulungannya, geser ke bawah korban, bungkus dan kencangkan dengan tali pengikat. Membutuhkan 2-4 operator.",
+    "Saat memuat: angkat dalam 3 hitungan, pertahankan kesejajaran kepala/tubuh, minimalkan gerakan tulang belakang jika memungkinkan.",
+    "Jika dicurigai adanya cedera tulang belakang dan tidak ada ancaman: pertahankan stabilisasi inline selama melakukan gerakan. Satu orang didedikasikan untuk kontrol kepala.",
+    "Pindah ke sampul, lalu nilai kembali ABC."
+  ],
+  "warnings": [
+    "Prioritas TCCC: nyawa > anggota badan > kewaspadaan tulang belakang. Jangan menunda pergerakan dari zona mematikan untuk tindakan pencegahan tulang belakang.",
+    "Fireman carry dikontraindikasikan jika dicurigai adanya cedera tulang belakang, patah tulang paha, atau trauma tembus perut.",
+    "Sampah yang diimprovisasi: uji kapasitas beban sebelum mempercayakan korban.",
+    "Memindahkan korban dengan tourniquet: pastikan tourniquet belum kendor selama pergerakan."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Anak-anak lebih ringan -- satu penyelamat bisa membawa lebih lama. Pertahankan ukuran kepala yang lebih besar secara proporsional -- pusat gravitasi yang lebih tinggi saat membawa."
+    },
+    "obstetric": {
+      "note": "Hindari posisi tengkurap atau tekanan pada perut. Transportasi lateral (lebih disukai sisi kiri) atau terlentang dengan irisan pinggul kiri."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

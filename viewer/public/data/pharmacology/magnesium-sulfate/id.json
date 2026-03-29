@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Magnesium Sulfat (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Injeksi Magnesium Sulfat"
+  ],
+  "description": "Depresan SSP dan antikonvulsan digunakan untuk pencegahan dan pengobatan kejang eklampsia (kejang pada kehamilan akibat preeklampsia). Juga digunakan untuk asma parah dan torsades de pointes. Lini pertama untuk eklamsia dibandingkan benzodiazepin.",
+  "indications": [
+    "Eklampsia (pencegahan dan pengobatan kejang pada preeklamsia berat)",
+    "Profilaksis preeklampsia (ciri-ciri parah)",
+    "Torsades de Pointes (V-tach polimorfik dari hipomagnesemia)",
+    "Asma akut berat (tambahan)"
+  ],
+  "dose": "Dosis muatan eklampsia: 4-6g IV tekan perlahan selama 20 menit. Pemeliharaan: infus IV 1-2g/jam. Jika kejang berulang: 2-4g IV selama 5 menit. Pemuatan IM (jika tidak ada IV): 5g IM setiap bokong (total 10g) secara bersamaan.",
+  "route": [
+    "IV",
+    "aku",
+    "SAYA"
+  ],
+  "window": "Mulailah pada saat timbulnya kejang atau saat diagnosis gejala preeklamsia berat.",
+  "contraindications": [
+    "Miastenia gravis",
+    "Cacat konduksi jantung",
+    "Gagal ginjal (berakumulasi -- kurangi dosis)"
+  ],
+  "warnings": [
+    "Tanda-tanda toksisitas: hilangnya refleks patella (tanda pertama, 7-10 mEq/L), depresi pernafasan (> 10 mEq/L), henti jantung (> 15 mEq/L).",
+    "Pantau refleks patela setiap 15 menit -- hilangnya refleks = hentikan infus.",
+    "ANTIDOT untuk toksisitas: Kalsium glukonat 1g IV selama 3 menit.",
+    "Kurangi dosis pada gangguan ginjal - pantau keluaran urin."
+  ],
+  "regional_names": {
+    "generic": "magnesium sulfat"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg IV selama 10-20 menit (maks 2g). Asma berat: 25-75 mg/kg IV (maks 2g).",
+      "note": "Jarang digunakan untuk kejang pada pasien anak non-obstetrik -- eklampsia adalah indikasi utama."
+    },
+    "obstetric": {
+      "note": "Indikasi utama. Melewati plasenta -- hipermagnesemia neonatal mungkin terjadi. Dosis neonatal jika depresi pernafasan: kalsium glukonat 100 mg/kg IV. Beritahu tim NICU mengenai penggunaan magnesium pada ibu."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

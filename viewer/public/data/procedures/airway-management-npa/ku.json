@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Navbera hewaya Nazofaringeal (NPA)",
+  "category": "airway",
+  "skill_level": "combat-lifesaver",
+  "time_estimate": "1 min",
+  "description": "Di nexweşek bêhiş an nîvhişmend de têxistina rêça hewayê ya nerm a nerm ji bo domandina rêça hewayê.",
+  "equipment": [
+    "npa-with-safety-pin",
+    "rûnê"
+  ],
+  "steps": [
+    "Mezinahiya NPA-ya guncan hilbijêrin (ji pozê heya guhê guh bipîvin).",
+    "NPA-yê bi dilşewatî bi rûnê avê an salinê ku tê çareser kirin rûnê.",
+    "Pîneya ewlehiyê têxe nav flangeyê heke jixwe tune be (pêşî aspirasyonê digire).",
+    "Bi nermî têxin pozê pozê rastê (birûskê ber bi septumê ve), paralel bi paleyê re pêşve biçe.",
+    "Pêşve biçin heya ku flange li hember pozê raweste.",
+    "Nexweş ji nû ve bi cîh bikin (helwesta başbûnê heke xema piştê tune) û rêça hewayê ji nû ve binirxînin.",
+    "Ger berxwedan pêk hat, pozê çepê biceribînin."
+  ],
+  "warnings": [
+    "Di şikestina gûmana basilarê ya gumanbar de (çavên raqûnê, nîşana şer, rinorrhea CSF) berevajî ye.",
+    "NPA baştirîn pêveka destpêkê ya hewayê ya nexweşê bêhiş e - OPA dikare di nexweşên nîvhişmend de vereşînê bike."
+  ],
+  "source": "TCCC / JTS CPG"
+}

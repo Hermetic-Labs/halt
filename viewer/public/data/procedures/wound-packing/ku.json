@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Paqijkirina Birîna Hemostatîk",
+  "category": "hemorrhage-control",
+  "skill_level": "combat-lifesaver",
+  "time_estimate": "3-5 min",
+  "description": "Ji bo kontrolkirina hemorrajiyê li cihê ku torniquet nikare were sepandin, birînek neqelişîn an hevgirtî bi gaza hemostatîk ve girêdayî ye.",
+  "equipment": [
+    "hemostatic-gauze",
+    "nitrile-gloves",
+    "trawma-şears",
+    "zext-bandage"
+  ],
+  "steps": [
+    "Don gloves. Birînê bi tevayî bi keriyên trawmayê derxin holê.",
+    "Çavkaniya xwînê ya çalak di nav valahiya birînê de nas bikin.",
+    "Gaza hemostatîk vekin û bi tiliya xwe bi hişkî di nav birînê de pak bikin, rasterast bixin ber çavkaniya xwînrêjiyê.",
+    "Heya ku valahiya birînê bi tevahî tije bibe, pakkirinê bidomînin.",
+    "Zexta rasterast a hişk û domdar bi pancê destê xwe herî kêm 3 hûrdem bixin.",
+    "Carekê maddeya pakkirinê jê nekin.",
+    "Li ser birîna pêçandî bandek zextê bixin.",
+    "Wextê li ser karta TCCC an eniya nexweş nîşan bikin (mînak, 'PKD 0145')."
+  ],
+  "warnings": [
+    "Birînên sîngê yên dikevin pak nekin -- li şûna wê mora sîngê bikar bînin.",
+    "Ger birînek stûyê xwe pak bike, bêyî ku her du karotîd bi hevdemî teng bikin, zextê bikin.",
+    "Ger çavkaniya arterialê guman heye di nav 5 hûrdeman de ji nû ve binirxînin."
+  ],
+  "follows": [
+    "rasterast-pext"
+  ],
+  "precedes": [
+    "tourniquet-sepan"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Bi rêjeyek kêmtir gazê bikar bînin. Zexta siviktir bikin da ku di pitikan de ji kompresyona sîngê dûr nekevin."
+    },
+    "obstetric": {
+      "note": "Ji zexta pakkirinê ya kûr an êrîşkar li nêzî zikê gravî dûr bisekinin. Zêdebûna bilez tê tercîh kirin."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

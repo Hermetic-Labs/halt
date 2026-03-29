@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxone",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "Kloxxado"
+  ],
+  "description": "Competitive opioid receptor antagonist. Celeriter adversae tristitiae respiratoriae, sedationi, et analgesiae opioideo-inductae. Onset IV: 2 min, IM: 5 min, IN: 8-13 min. Duratio quam maxime opioida brevior -- requiri potest repetere dosing.",
+  "indications": [
+    "Opioid dose seu demissionem respiratorii",
+    "Conversio opioid sedation",
+    "Suspecta casus opioid"
+  ],
+  "dose": "0.4-2 mg IV/IO/IM/IN. Q2-3 min ut opus repetere. Max 10mg. Intranasal (IN): 2mg per nares.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN'",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Non absoluta contraindications in hesi occasum"
+  ],
+  "warnings": [
+    "Duratio actionis (30-90 min) brevior est quam opioida pleraque -- aegrotus rursus narcotizare potest. Monitor ad minimum I horae post ultimum dose.",
+    "Praecipitat recessus opioidis acuta - agitationem, tachycardia, OEDEMA pulmonalis in aegris opioideis dependens.",
+    "Analgesia convertet - a dolore acriter pugnans factus."
+  ],
+  "regional_names": {
+    "generic": "naloxone",
+    "US": "Narcan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.01 mg/kg IV/IM/IN (max 0.4 mg). Repetere q2-3 min PRN.",
+      "note": "Neonatales: 0.01 mg/kg ad conversionem opioidis materni."
+    },
+    "obstetric": {
+      "note": "Tutus in gravida. Si matri proxima partus detur, monitor neonatus ad subtrahendum."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

@@ -1,0 +1,46 @@
+﻿{
+    "id":  "morphine",
+    "name":  "Morphine Sulfate",
+    "category":  "analgesia-anesthesia",
+    "rxnorm":  "7052",
+    "brand_names":  [
+                        "MS Contin",
+                        "Morphine Sulfate Injection"
+                    ],
+    "description":  "Opioid analgesic. Provides effective pain relief but causes vasodilation and hypotension -- use with caution in hemorrhagic shock. Ketamine is preferred in combat settings. Use morphine only in hemodynamically stable patients.",
+    "indications":  [
+                        "Moderate-to-severe pain in hemodynamically stable patients",
+                        "Not first-line in TCCC -- prefer ketamine"
+                    ],
+    "dose":  "2-4 mg IV/IO q4h PRN. Titrate to effect. IM: 5-10 mg q4h PRN.",
+    "route":  [
+                  "IV",
+                  "IO",
+                  "IM",
+                  "SQ"
+              ],
+    "window":  "",
+    "contraindications":  [
+                              "Hemodynamic instability / hemorrhagic shock",
+                              "Respiratory depression",
+                              "Head injury with altered LOC (relative)"
+                          ],
+    "warnings":  [
+                     "Causes vasodilation -- can worsen hemorrhagic shock. Assess BP before and after.",
+                     "Have naloxone immediately available.",
+                     "Respiratory depression -- monitor rate."
+                 ],
+    "regional_names":  {
+                           "generic":  "morphine sulfate"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "0.05-0.1 mg/kg IV q2-4h PRN. Max single dose 2mg IV in opioid-naive child.",
+                                        "note":  "Monitor respiratory rate closely. Neonates are extremely sensitive."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Crosses placenta. Neonatal respiratory depression possible if given within 2-4 hours of delivery. Have naloxone ready for newborn."
+                                    }
+                  },
+    "source":  "JTS CPG: Acute Pain Management / PHTLS"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Tala improvisada",
+  "category": "ortho-stabilization",
+  "skill_level": "Básico",
+  "time_estimate": "5-10 minutos",
+  "description": "Imobilize as fraturas usando os materiais disponíveis para evitar mais lesões, reduzir a dor e limitar a perda de sangue no tecido circundante. Tala na posição encontrada, a menos que a circulação esteja comprometida – então endireite suavemente.",
+  "equipment": [
+    "Tala SAM (preferencial)",
+    "Revistas enroladas, paus, mastros de barraca (improvisados ​​em campo)",
+    "Gravata / bandagens triangulares",
+    "Acolchoamento (roupas, espuma)",
+    "Fita ou tiras de tecido"
+  ],
+  "steps": [
+    "Exponha e avalie a lesão – verifique a circulação, sensação, movimento (CSM) distal à fratura antes e depois.",
+    "Controle qualquer sangramento ativo antes de imobilizar.",
+    "Acolchoe generosamente as proeminências ósseas para evitar úlceras de pressão.",
+    "Selecione material de tala longo o suficiente para imobilizar a articulação acima E abaixo da fratura.",
+    "Posicione o membro em posição de conforto ou alinhamento anatômico – não force.",
+    "Aplique o acolchoamento e depois a tala. Prenda com bandagens ou tiras de tecido.",
+    "NÃO embrulhe com muita força - deixe as pontas dos dedos das mãos e dos pés expostas para monitorar o CSM.",
+    "Reavalie o CSM após a aplicação – afrouxe imediatamente se a circulação estiver prejudicada.",
+    "Eleve o membro, se possível, para reduzir o inchaço.",
+    "Documente o momento da aplicação da tala."
+  ],
+  "warnings": [
+    "Reavalie o MSC a cada 15-30 minutos – o inchaço pode fazer com que uma tala correta se transforme em um torniquete.",
+    "Fraturas expostas: cobrir primeiro a ferida com curativo estéril e depois com tala. NÃO empurre o osso de volta.",
+    "As fraturas do fêmur podem perder 1-2L de sangue para a coxa – trate agressivamente o choque.",
+    "Suspeita de fratura da coluna vertebral: NÃO improvise a tala – minimize o movimento, mantenha a estabilização em linha."
+  ],
+  "follows": [
+    "pressão direta",
+    "aplicação de torniquete"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "As placas de crescimento em crianças são mais fracas que os ligamentos – suspeita de fratura mesmo com mecanismo leve. As fraturas do toro (fivela) podem apresentar inchaço mínimo."
+    },
+    "obstetric": {
+      "note": "Aplica-se tala padrão. Evite posicionamento supino prolongado - inclinação lateral esquerda se estiver deitado."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

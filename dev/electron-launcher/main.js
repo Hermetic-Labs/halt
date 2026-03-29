@@ -21,7 +21,7 @@ const CONFIG = {
     appName: 'HALT',
     backendPort: 7778,
     frontendPort: 7777,
-    startupTimeout: 30000, // 30 seconds for backend to start
+    startupTimeout: 1800000, // 30 minutes for backend to start (accounts for 4GB model download)
     healthCheckInterval: 1000, // Check every second during startup
     isDev: !app.isPackaged
 };
@@ -68,7 +68,7 @@ function getBackendPath() {
     // Return the command to run Python with start.py
     return {
         command: pythonExe,
-        args: [startScript],
+        args: [startScript, '--prod', '--api-port', String(CONFIG.backendPort)],
         cwd: appPath,
         isExe: true
     };
@@ -275,7 +275,7 @@ function getSplashHTML() {
 </head>
 <body>
     <div class="container">
-        <div class="logo">EVE</div>
+        <div class="logo">HALT</div>
         <div class="spinner"></div>
         <div id="status">Initializing...</div>
     </div>
@@ -313,8 +313,9 @@ function createMainWindow() {
         }
     });
 
-    // Load the frontend
-    const frontendUrl = CONFIG.isDev ? FRONTEND_URL : `file://${path.join(__dirname, '..', 'frontend', 'index.html')}`;
+    // Load the frontend through the backend proxy (which serves viewer/dist)
+    // This maintains window.location.host so WebSockets can resolve the LAN/Local IP properly.
+    const frontendUrl = CONFIG.isDev ? FRONTEND_URL : BACKEND_URL;
     mainWindow.loadURL(frontendUrl);
 
     // Show when ready
@@ -354,9 +355,9 @@ function createMainWindow() {
  */
 function getAppIcon() {
     const iconPaths = [
-        path.join(__dirname, 'assets', 'Icon.ico'),
-        path.join(__dirname, 'assets', 'icon.png'),
-        path.join(__dirname, '..', 'assets', 'Icon.ico')
+        path.join(__dirname, 'assets', 'logo.png'),
+        path.join(__dirname, 'assets', 'logo.png'),
+        path.join(__dirname, '..', 'assets', 'logo.png')
     ];
 
     for (const p of iconPaths) {
@@ -371,7 +372,7 @@ function getAppIcon() {
  * Create system tray
  */
 function createTray() {
-    const iconPath = path.join(__dirname, 'assets', 'icon.png');
+    const iconPath = path.join(__dirname, 'assets', 'logo.png');
     let icon = fs.existsSync(iconPath)
         ? nativeImage.createFromPath(iconPath)
         : nativeImage.createEmpty();
@@ -460,7 +461,7 @@ async function startup() {
             'Please check that:\n' +
             '• The installation is complete\n' +
             '• No other instance is running\n' +
-            '• Port 8000 is not in use'
+            `• Port ${CONFIG.backendPort} is not in use`
         );
         app.quit();
     }

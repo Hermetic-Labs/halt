@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Xulashada 5-HT3 receptor antagonist antiemetic. Aad waxtar ugu leh lallabada iyo matagga. ODT (kiniin afka ka baxa) ayaa faa'iido u leh goobaha goobta marka IV la waayo. Waxaa ku jira qaar ka mid ah xirmooyinka kaniiniyada dagaalka.",
+  "indications": [
+    "Lalabbo iyo matag (kemotherapy, opioid-induced, post-operative, TBI-related)",
+    "Xanuunka dhaqdhaqaaqa",
+    "Lalabo ka timaada maamulka ketamiin"
+  ],
+  "dose": "4-8 mg IV/IO tartiib tartiib ah 2-5 daqiiqo. ODT: 4-8 mg ku milmay carrabka hoostiisa. IM: 4 mg.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Xasaasiyadda la og yahay ee ondansetron ama 5-HT3 kale ee ka soo horjeeda",
+    "Cudurka QT ee dheer ee lagu dhasho (qiyaas sare IV oo keliya)"
+  ],
+  "warnings": [
+    "Qiyaasta sare ee IV waxay dheerayn kartaa muddada QT -- isticmaal qiyaasta IV ee ugu waxtarka badan.",
+    "Ma beddelo maaraynta marin-haweedka bukaan-jiifka ah matag -- ka ilaali marin-haweedka marka hore."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.1-0.15 mg/kg IV (ugu badnaan 4 mg). ODT: 4mg ee carruurta> 4 sano.",
+      "note": "Si weyn loo isticmaalo oo si wanaagsan loogu dulqaadanayo caafimaadka carruurta."
+    },
+    "obstetric": {
+      "note": "Xog xadidan ee uurka U isticmaal lallabbo/ matag daran ka dib saddexda bilood ee hore marka faa'iidooyinka ay ka badan yihiin khatarta. Laguma talinayo saddexda bilood ee hore."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

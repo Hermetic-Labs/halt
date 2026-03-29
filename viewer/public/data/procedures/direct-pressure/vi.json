@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Áp lực trực tiếp để kiểm soát xuất huyết",
+  "category": "hemorrhage-control",
+  "skill_level": "bất kỳ người trả lời nào",
+  "time_estimate": "3-5 phút",
+  "description": "Kiểm soát xuất huyết hàng đầu cho các vết thương ở chi và cơ thể có thể tiếp cận được.",
+  "equipment": [
+    "găng tay",
+    "mặc quần áo chấn thương",
+    "cà vạt-băng"
+  ],
+  "steps": [
+    "Tặng găng tay nếu có.",
+    "Để lộ vết thương bằng cách cắt bỏ quần áo.",
+    "Đắp trực tiếp băng vết thương hoặc vải gấp lên vết thương.",
+    "Nhấn mạnh bằng gót bàn tay. Sử dụng trọng lượng cơ thể của bạn - không chỉ sức mạnh của cánh tay.",
+    "Giữ áp lực liên tục, không bị gián đoạn trong ít nhất 3 phút.",
+    "KHÔNG nhấc băng lên để kiểm tra - điều này sẽ làm gián đoạn quá trình hình thành cục máu đông.",
+    "Nếu máu thấm qua, hãy thêm một miếng băng khác lên trên. Đừng loại bỏ cái đầu tiên.",
+    "Cố định bằng băng ép nếu có và chuyển sang băng bó vết thương hoặc garô nếu máu tiếp tục chảy."
+  ],
+  "warnings": [
+    "Chỉ riêng áp lực trực tiếp là không đủ để điều trị chảy máu động mạch - chuyển sang khâu vết thương hoặc garô.",
+    "Các vết thương ở khớp nối (háng, nách, cổ) cần phải băng bó vết thương, không chỉ áp lực từ bên ngoài."
+  ],
+  "follows": [],
+  "precedes": [
+    "băng bó vết thương",
+    "ứng dụng dây garô"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Chỉ áp suất tỷ lệ. Tránh ép ngực ở trẻ sơ sinh."
+    },
+    "obstetric": {
+      "note": "Tránh nén mạnh lên tử cung có thai. Sử dụng băng bó bên nếu vết thương nối gần xương chậu."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.1--alpha-blue?style=flat-square" alt="Version" />
+  <img src="https://img.shields.io/badge/version-1.0.3-blue?style=flat-square" alt="Version" />
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License" />
   <img src="https://img.shields.io/badge/python-3.13-yellow?style=flat-square" alt="Python" />
   <img src="https://img.shields.io/badge/AI-100%25_Local-red?style=flat-square" alt="AI Local" />
@@ -59,6 +59,42 @@ python start.py              # Auto-downloads AI models on first run (~4 GB)
 
 ---
 
+## ✅ What It Does
+
+<details>
+<summary><strong>20 features — click to expand</strong></summary>
+
+<br/>
+
+| # | Feature | Summary |
+|---|---------|---------|
+| 1 | **Patient Intake** | Demographics, triage priority, ward/bed assignment, mass casualty mode |
+| 2 | **Patient Records** | Full detail panel — MARCH plan, meds, vitals history, attachments, notes |
+| 3 | **Patient Monitoring** | Vitals and medication event log with auto-scheduled follow-up tasks |
+| 4 | **Volunteer Task Board** | Claimable tasks with countdown timers and ownership tracking |
+| 5 | **Public Lookup QR** | Family members scan a QR code to locate patients by name — no staff needed |
+| 6 | **Inventory System** | Any location becomes a supply bin — thresholds, usage logs, alternatives |
+| 7 | **Predictive Alerts** | Auto-broadcasts supply warnings and emergencies when stock hits zero |
+| 8 | **Medical Protocols** | MARCH, GCS, hemorrhage classification, triage scoring (T1–T4) |
+| 9 | **Translation Bridge** | Real-time two-way speech translation across 42 languages — no internet |
+| 10 | **Voice Interface** | Whisper speech-to-text intake + Kokoro TTS output in patient's language |
+| 11 | **Mesh Network** | Local WiFi mesh — broadcast chat, DMs, reactions, 500-message history |
+| 12 | **Leadership Failover** | Role hierarchy with one-tap leadership takeover and full state snapshot |
+| 13 | **Shift Reports** | Cross-ward patient rollup, sorted by triage priority, multilingual export |
+| 14 | **Patient Export** | PDF and print-ready HTML medevac cards with full clinical detail |
+| 15 | **Emergency Alerts** | Category-targeted broadcasts (All Hands, Doctors, Inventory, etc.) |
+| 16 | **AI Medical Layer** | MedGemma 4B for differential diagnosis and drug interactions — fully local |
+| 17 | **Auto-Download** | 4 model packs download on first launch; resumable with SHA-256 verification |
+| 18 | **Portable Runtime** | Bundled Python, no system install — `python start.py` and go |
+| 19 | **Staff Roster** | Personnel tracking with real-time connection status via WebSocket |
+| 20 | **Ward Management** | Visual ward map, room/bed layout, drag-to-assign patients |
+
+> Full reference with API paths: [`FEATURES.md`](FEATURES.md)
+
+</details>
+
+---
+
 ## 🏗️ Architecture
 
 ```
@@ -100,6 +136,33 @@ python start.py              # Auto-downloads AI models on first run (~4 GB)
 | `runtime/` | Portable Python 3.13 — downloaded via `dev/setup.py` |
 | `dev/` | Build scripts, installers, and deployment tooling |
 | `assets/` | Logo and branding |
+
+---
+
+## 🔨 Build & Deploy
+
+The build pipeline lives in [`dev/`](dev/) — see its [README](dev/README.md) for full docs.
+
+```bash
+# ── Quick Reference (run from repo root) ──────────────────────
+
+# Dev iteration (fast portable build, no installer)
+python dev/build_and_deploy.py --platform win --dev --no-bump
+
+# Production (full NSIS installer + ZIP)
+python dev/build_and_deploy.py --platform win
+
+# Ship it (build → git tag → R2 upload → GitHub release)
+python dev/build_and_deploy.py --platform win --release
+```
+
+### Output
+
+| Artifact | Path |
+|:---------|:-----|
+| Portable app | `dev/electron-launcher/dist/win-unpacked/HALT - Medical Triage.exe` |
+| NSIS installer | `dev/electron-launcher/dist/HALT-Setup-X.X.X.exe` |
+| Distribution ZIP | `builds/HALT-vX.X.X-Windows.zip` |
 
 ---
 

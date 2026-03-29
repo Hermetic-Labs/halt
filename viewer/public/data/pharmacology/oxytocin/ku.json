@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oxytocin",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocin",
+    "Syntocinon"
+  ],
+  "description": "Hormona peptîdê ya endojen. Rêza yekem uterotonic ji bo pêşîgirtin û dermankirina hemorrajiya piştî zayînê (PPH). Sedema girêbesta uterus dike û windabûna xwînê piştî zayînê kêm dike. PIŞTÎ radestkirina placental tê dayîn.",
+  "indications": [
+    "Pêşîlêgirtina hemorrajiya piştî zayînê (rûtîn piştî zayînê)",
+    "Dermankirina hemorrajiya piştî zayînê (atoniya uterus)",
+    "Induction of kedê (tenê mîhengê kontrolkirî)"
+  ],
+  "dose": "Pêşîlêgirtina PPH: 10 yekîneyên IM yekser piştî radestkirina placental (rêya zeviyê bijartî). Dermankirina PPH: 10-40 yekîneyên di 1L IV de, di 40-80 mU/min de vedixwe. Ger IV tunebe: 10 yekîneyên IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "PIŞTÎ radestkirina plaçentoyê bidin -- dayîn berî ku placenta radest bike dikare placenta bigre.",
+  "contraindications": [
+    "Berî radestkirina placental (dikare placenta bihêle)",
+    "Tengasiya fetusê ya bi serê xwe nehatî",
+    "Hîperhesasiya naskirî"
+  ],
+  "warnings": [
+    "PIŞTÎ LI PIŞTÎ PLACENTA BIDIN - girtina placenta tevliheviyek xeternak a jiyanê ye.",
+    "Bolusa IV dikare bibe sedema hîpotansyonek giran û aritmiya dil -- her gav hêdî hêdî hûr bibe û bişewitîne.",
+    "Bandora antîdiuretîk bi cildên mezin - çavdêriya hîponatremia."
+  ],
+  "regional_names": {
+    "generic": "oksîtosîn"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A - Tenê karanîna welidandinê.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "uterotonic seretayî. Ger atoniya uterus bersiv nede, misoprostol, asîda tranexamîk (TXA), pêvekirina uterus bimanual, û MEDEVAC-a bilez binirxînin."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

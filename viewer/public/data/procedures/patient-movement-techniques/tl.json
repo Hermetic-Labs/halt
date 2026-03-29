@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Mga Teknik sa Paggalaw ng Pasyente",
+  "category": "casualty-movement",
+  "skill_level": "Basic",
+  "time_estimate": "1-30 min depende sa distansya at pamamaraan",
+  "description": "Paglipat ng isang nasawi sa ilalim ng apoy o sa isang mas ligtas na lokasyon para sa paggamot. Ang pamamaraan ay depende sa lupain, distansya, bilang ng mga rescuer, at mga pinsala ng nasawi. Ang bilis kumpara sa pag-iingat sa gulugod ay isang taktikal na desisyon -- sa TCCC, ang pagbabanta ay inuuna.",
+  "equipment": [
+    "SKED litter (ginustong)",
+    "NATO litter / portable stretcher",
+    "Mga improvised na basura: mga poste + jacket/poncho",
+    "Mga drag handle (uniform o harness)",
+    "TACEVAC lambanog"
+  ],
+  "steps": [
+    "CARE UNDER FIRE: Balikan muna ng putok kung armado. Ilipat ang nasawi gamit ang pinakamabilis na paraan ng pag-drag -- huwag huminto upang gamutin sa kill zone.",
+    "HASTY DRAG (isang rescuer): hawakan ang kwelyo/hawakan ang hawakan sa mga balikat, i-drag sa likod. Protektahan ang ulo mula sa epekto.",
+    "BAKA-BIGAY (isang tagapagligtas): buhatin ang nasawi sa ibabaw ng mga balikat para sa mas mahabang distansya -- nangangailangan ng kaswalti na walang malay o kooperatiba.",
+    "DALAWANG TAO CARRY: ang mga rescuer ay nagkakabit ng mga armas sa ilalim ng likod at tuhod ng biktima. Mas mabilis kaysa sa pag-drag para sa maikling distansya.",
+    "IMPROVISED LITTER: maglatag ng dalawang poste na 18 pulgada ang layo. Maghabi ng mga jacket sa pamamagitan ng mga poste na may mga butones sa loob. Subukan bago mag-load ng casualty.",
+    "SKED LITTER: i-unroll, i-slide sa ilalim ng casualty, balutin at i-secure gamit ang mga strap. Nangangailangan ng 2-4 carrier.",
+    "Kapag naglo-load: iangat sa bilang na 3, panatilihin ang pagkakahanay ng ulo/katawan, bawasan ang paggalaw ng gulugod kapag posible.",
+    "Kung pinaghihinalaang pinsala sa gulugod at walang banta: panatilihin ang inline stabilization sa buong paggalaw. Isang tao na nakatuon sa kontrol ng ulo.",
+    "Lumipat sa takpan, pagkatapos ay suriin muli ang ABC."
+  ],
+  "warnings": [
+    "Priyoridad ng TCCC: buhay > paa > pag-iingat sa gulugod. Huwag ipagpaliban ang paggalaw mula sa isang kill zone para sa pag-iingat sa gulugod.",
+    "Ang fireman carry ay kontraindikado sa pinaghihinalaang pinsala sa gulugod, femur fracture, o tumatagos na trauma sa tiyan.",
+    "Improvised litters: subukan ang kapasidad ng timbang bago magtiwala sa isang nasawi.",
+    "Paglipat ng kaswalti gamit ang tourniquet: tingnan na hindi lumuwag ang tourniquet habang gumagalaw."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Ang mga bata ay mas magaan -- ang one-rescuer ay nagdadala ng mas matagal. Panatilihin ang ulo na proporsyonal na mas malaki -- mas mataas na sentro ng grabidad kapag nagdadala."
+    },
+    "obstetric": {
+      "note": "Iwasan ang prone positioning o pressure sa tiyan. Lateral (left side preferred) o supine transport na may left hip wedge."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

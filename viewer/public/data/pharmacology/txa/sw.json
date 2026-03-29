@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Asidi ya Tranexamic (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Cyklokapron",
+    "Lysteda"
+  ],
+  "description": "Wakala wa antifibrinolytic ambao huzuia kuvunjika kwa vipande vya damu. Hupunguza kwa kiasi kikubwa vifo kutokana na mshtuko wa kuvuja damu inapotolewa mapema. Imependekezwa na CoTCCC kwa majeruhi wote wanaovuja damu nyingi au walio katika hatari ya kuvuja damu nyingi.",
+  "indications": [
+    "Kutokwa na damu kwa ndani kwa kiasi kikubwa au tuhuma",
+    "Mshtuko wa hemorrhagic",
+    "Hatari kubwa ya kutokwa na damu (utaratibu wa majeraha)"
+  ],
+  "dose": "1g IV/IO zaidi ya dakika 10, ikifuatiwa na 1g IV/IO zaidi ya saa 8. Ikiwa IV/IO haipatikani: 650mg PO x2 (jumla ya 1.3g) -- chaguo la TCCC PO.",
+  "route": [
+    "IV",
+    "IO",
+    "PO"
+  ],
+  "window": "LAZIMA isimamiwe ndani ya saa 3 baada ya kuumia. Zaidi ya saa 3, TXA inaweza KUONGEZA vifo -- usitoe.",
+  "contraindications": [
+    "Historia ya ugonjwa wa thromboembolic (DVT, PE, kiharusi)",
+    "Kusambazwa kwa Mgando wa Mishipa ya Mishipa (DIC)",
+    "> saa 3 baada ya kuumia"
+  ],
+  "warnings": [
+    "Wakati wa kuandikisha mara moja -- dirisha ni saa 3 kutoka wakati wa jeraha, sio wakati wa kuwasili.",
+    "Usichanganye kipimo cha IV (1g) na kipimo cha mdomo."
+  ],
+  "regional_names": {
+    "generic": "asidi ya tranexamic",
+    "US": "Cyklokapron",
+    "UK": "Cyklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg IV (kiwango cha juu 1g). Ushahidi unaojitokeza -- tumia uamuzi wa kimatibabu.",
+      "note": "Dirisha sawa la saa 3 linatumika."
+    },
+    "obstetric": {
+      "note": "Imeonyeshwa kwa kutokwa na damu baada ya kuzaa. Salama katika ujauzito. Dozi sawa ya watu wazima inatumika."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

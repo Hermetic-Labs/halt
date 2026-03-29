@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Hypothermiepreventie (H -- MAART)",
+  "category": "temperature-management",
+  "skill_level": "elke responder",
+  "time_estimate": "2-3 minuten",
+  "description": "Bestrijding van onderkoeling is een van de belangrijkste vermijdbare moordenaars bij trauma. De dodelijke triade: hypothermie + acidose + coagulopathie. Voorkomen ten koste van alles.",
+  "equipment": [
+    "warmtereflecterende deken",
+    "hypothermie-preventiekit",
+    "warme-iv-vloeistoffen-indien beschikbaar"
+  ],
+  "steps": [
+    "Verwijder alle natte kleding zo snel als tactisch haalbaar is.",
+    "Bedek de patiënt met een warmtereflecterende (ruimte)deken – de glanzende kant IN de richting van de patiënt.",
+    "Wikkel hoofd en nek in (plaats met aanzienlijk warmteverlies).",
+    "Isoleer van de grond – plaats iets tussen de patiënt en het koude grondoppervlak.",
+    "Dien warme IV-vloeistoffen toe, indien beschikbaar.",
+    "Zorg ervoor dat de patiënt niet rilt zonder dekking; rillen is een vroeg waarschuwingssignaal.",
+    "Houd de temperatuur in de gaten als er een thermometer beschikbaar is. Onder 35°C (95°F) = onderkoeling."
+  ],
+  "warnings": [
+    "Hypothermie verergert de coagulopathie; bloedende patiënten koelen sneller af en klonteren minder effectief.",
+    "Preventie van veldonderkoeling moet beginnen op het punt van het letsel, niet bij CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

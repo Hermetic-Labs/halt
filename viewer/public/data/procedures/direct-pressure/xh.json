@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Uxinzelelo oluthe ngqo lokuLawula ukopha",
+  "category": "hemorrhage-control",
+  "skill_level": "nawuphi na umphenduli",
+  "time_estimate": "3-5 imiz",
+  "description": "Uluhlu lokuqala lolawulo lokuphuma kwegazi kwindawo efikelelekayo kunye namanxeba omzimba.",
+  "equipment": [
+    "iiglavu",
+    "ukwenzakala-ukunxiba",
+    "i-cravat-bandage"
+  ],
+  "steps": [
+    "Don iiglavu ukuba zikhona.",
+    "Veza inxeba ngokusika impahla.",
+    "Gcoba isinxibo sokwenzakala okanye ilaphu elisongiweyo ngqo phezu kwenxeba.",
+    "Cinezela ngokuqinileyo ngesithende sesandla sakho. Sebenzisa ubunzima bomzimba wakho -- hayi nje amandla engalo.",
+    "Bamba uxinzelelo oluqhubekayo, olungaphazamisekiyo ubuncinane imizuzu emi-3.",
+    "Sukuphakamisa isinxibo ukuze ujonge -- oku kuphazamisa ukumila kwehlwili.",
+    "Ukuba ukopha kuyavuza, yongeza enye into yokunxiba ngaphezulu. Musa ukususa eyokuqala.",
+    "Khusela nge-bandage yoxinzelelo ukuba ikhona kwaye uhambe kwindawo yokupakisha amanxeba okanye i-tourniquet ukuba ukuphuma kwegazi kuqhubeka."
+  ],
+  "warnings": [
+    "Uxinzelelo oluthe ngqo lulodwa alwanelanga ukopha kwemithambo-- ukunyukela ekupakishweni kwenxeba okanye kwi-tourniquet.",
+    "Amanxeba adibeneyo (i-groin, i-axilla, intamo) ifuna ukupakishwa kwamanxeba, kungekhona uxinzelelo lwangaphandle lodwa."
+  ],
+  "follows": [],
+  "precedes": [
+    "ukupakisha amanxeba",
+    "tourniquet-isicelo"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Uxinzelelo olulinganayo kuphela. Kuphephe ukucinezela i-thorax kwiintsana."
+    },
+    "obstetric": {
+      "note": "Kuphephe ucinezelo olunzima phezu kwesibeleko segravid. Sebenzisa ukupakisha okusecaleni ukuba inxeba lokuhlangana kufutshane ne-pelvis."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

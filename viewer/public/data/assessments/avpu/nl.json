@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "AVPU-schaal",
+  "category": "neurological",
+  "description": "Snelle bewustzijnsbeoordeling op 4 niveaus. Sneller dan GCS voor initiële triage.",
+  "instructions": "Beoordeel het hoogste responsniveau dat de patiënt laat zien.",
+  "scoring": [
+    {
+      "code": "Een",
+      "label": "Waarschuw",
+      "description": "Patiënt is wakker, bij bewustzijn en reageert normaal"
+    },
+    {
+      "code": "V",
+      "label": "Stem",
+      "description": "Patiënt reageert alleen op verbale stimulatie"
+    },
+    {
+      "code": "P",
+      "label": "Pijn",
+      "description": "Patiënt reageert alleen op pijnlijke prikkels (sternale wrijving, druk op het nagelbed)"
+    },
+    {
+      "code": "U",
+      "label": "Reageert niet",
+      "description": "Geen reactie op enige prikkel – onmiddellijke interventie van de luchtwegen vereist"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "Een",
+      "triage": "Stabiel -- ga door met de beoordeling"
+    },
+    {
+      "code": "V",
+      "triage": "Wat betreft -- controleer de luchtwegen"
+    },
+    {
+      "code": "P",
+      "triage": "Kritiek – luchtwegen in gevaar, GCS doorgaans <= 8"
+    },
+    {
+      "code": "U",
+      "triage": "Onmiddellijk - beheer de luchtwegen nu"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

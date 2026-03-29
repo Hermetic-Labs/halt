@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Ama ama",
+    "Nayzilam"
+  ],
+  "description": "Benzodiazepine na-eme mkpụmkpụ na mmalite ngwa ngwa. Achọtara maka ịhịa aka n'ahụ, usoro ọgwụgwọ RSI, yana njikwa njide IM/IN. Ụzọ IM na intranasal na-enye uru dị ukwuu na ntọala ubi.",
+  "indications": [
+    "Usoro ịhịa aka n'ahụ",
+    "Ọgwụ tupu RSI (ya na ketamine)",
+    "Njikwa ọdịdọ (IM/IN mgbe IV adịghị)",
+    "Njikwa mkpasu iwe"
+  ],
+  "dose": "Ịkwụsị: 0.05-0.1 mg/kg IV titrated. Usoro: 1-5 mg IV ngwa ngwa push. IM: 0.2 mg/kg. N'ime: 0.2 mg / kg (karịa 10 mg). Ọnọdụ epilepticus IM: 10 mg IM (okenye).",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "N'ime"
+  ],
+  "window": "",
+  "contraindications": [
+    "Nnukwu glaucoma dị warara-n'akuku",
+    "Mmanya mmanya na-egbu egbu na mmebi obi",
+    "Amara hypersensitivity"
+  ],
+  "warnings": [
+    "ịda mbà n'obi iku ume -- nyochaa ụzọ ikuku, nwee ihe ngbanwe (flumazenil) ma ọ bụrụ na ọ dị.",
+    "Hypotension karịsịa na opioid coadministration.",
+    "Ịgba ogwu IV ngwa ngwa na-ebute apnea -- jiri nwayọọ nwayọọ na-agbanye."
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Ngwọta: 0.05-0.1 mg / kg IV. IM: 0.1-0.2 mg/kg. N'ime: 0.2-0.3 mg / kg. Njide IM: 0.2 mg/kg (kachasị 10 mg).",
+      "note": "N'ụzọ bara uru karịsịa na ụmụaka -- na-ezere ịnweta IV."
+    },
+    "obstetric": {
+      "note": "Na-agafe placenta. Ịgbatị nwa ọhụrụ enwere ike. Jiri opekempe dị irè dose; nyochaa nwa ọhụrụ ma ọ bụrụ na enyere ya nso nnyefe."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oxytocin",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocin",
+    "Syntocinoni"
+  ],
+  "description": "Homoni ya peptidi ya asili. Mstari wa kwanza wa uterotonic kwa kuzuia na matibabu ya kutokwa na damu baada ya kuzaa (PPH). Husababisha contraction ya uterasi na kupunguza upotezaji wa damu baada ya kuzaa. Imetolewa BAADA ya utoaji wa plasenta.",
+  "indications": [
+    "Kuzuia kutokwa na damu baada ya kujifungua (kawaida baada ya kujifungua)",
+    "Matibabu ya kutokwa na damu baada ya kuzaa (atony ya uterine)",
+    "Kuanzishwa kwa leba (mazingira yaliyodhibitiwa tu)"
+  ],
+  "dose": "Kinga ya PPH: vitengo 10 vya IM mara tu baada ya kuzaa kwa plasenta (njia ya shamba inayopendelewa). Matibabu ya PPH: vitengo 10-40 katika 1L IV, kusisitiza saa 40-80 mU / min. Ikiwa IV haipatikani: vitengo 10 vya IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Toa BAADA ya kuzaa kwa kondo -- kutoa kabla ya kondo kuzaa kunaweza kunasa plasenta.",
+  "contraindications": [
+    "Kabla ya kujifungua kwa plasenta (inaweza kunasa plasenta)",
+    "Usumbufu wa fetasi na kichwa hakijatolewa",
+    "Hypersensitivity inayojulikana"
+  ],
+  "warnings": [
+    "TOA BAADA YA PLACENTA KUTOLEWA -- kunasa kondo la nyuma ni tatizo linalohatarisha maisha.",
+    "IV bolus inaweza kusababisha hypotension kali na arrhythmia ya moyo -- daima punguza na kupenyeza polepole.",
+    "Athari ya antidiuretic na kiasi kikubwa - kufuatilia hyponatremia."
+  ],
+  "regional_names": {
+    "generic": "oksitosini"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A -- matumizi ya uzazi pekee.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Msingi wa uterotonic. Ikiwa atony ya uterasi haitajibu, zingatia misoprostol, tranexamic acid (TXA), compression ya uterasi miwili, na MEDEVAC ya haraka."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

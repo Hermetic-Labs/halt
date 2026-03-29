@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Dehydrationsbewertung",
+  "category": "circulation",
+  "description": "Feldbeurteilung der Schwere von Dehydration und Hitzeerkrankungen. Die Urinfarbe ist der praktischste Feldindikator. Beurteilen Sie den Geisteszustand als Indikator für eine schwere Dehydrierung, die zu einem Hitzschlag führt.",
+  "instructions": "Überprüfen Sie die Urinfarbe, den Hautturgor, den Geisteszustand und die Vitalfunktionen. Dunkler Urin, trockene Schleimhäute und Tachykardie weisen auf eine erhebliche Dehydrierung hin, die eine aktive Rehydrierung erfordert.",
+  "categories": [
+    {
+      "color": "klar-blass",
+      "label": "Gut hydriert",
+      "description": "Blassgelber bis klarer Urin. Kein Eingriff erforderlich."
+    },
+    {
+      "color": "gelb",
+      "label": "Leichte Dehydrierung",
+      "description": "Dunkelgelber Urin, durstig. Orale Rehydrierung. Fördern Sie 250–500 ml Wasser pro Stunde."
+    },
+    {
+      "color": "bernsteinbraun",
+      "label": "Mäßige bis schwere Dehydrierung",
+      "description": "Bernsteinfarbener Urin, erhöhte Herzfrequenz, verringerter Hautturgor, trockener Mund. IV/IO-Flüssigkeiten, wenn orale Verabreichung nicht vertragen wird. 1-2L LR oder NS."
+    },
+    {
+      "color": "rot",
+      "label": "Gefahr – Hitzschlag / Schwerer",
+      "description": "Minimale Urinausscheidung, veränderter LOC, heiße, trockene Haut. Medizinischer Notfall – schnelle Abkühlung + IV-Flüssigkeiten + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Kinder dehydrieren schneller als Erwachsene. Eingefallene Fontanellen (bei Säuglingen), fehlende Tränen und Lethargie sind kritische Anzeichen. Gewichtsbasierte IV: 20 ml/kg LR-Bolus."
+    },
+    "obstetric": {
+      "note": "Schwangere Frauen benötigen eine erhöhte Flüssigkeitsaufnahme. Dehydration kann vorzeitige Wehen auslösen. Zuerst aggressive orale Rehydrierung; IV, wenn orale Verabreichung nicht vertragen wird."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

@@ -1,25 +1,57 @@
-# HALT Launcher Assets
+# electron-launcher/assets/
 
-Place the following icon files in this directory:
+> Icon files for Electron packaging. **The build pipeline auto-manages this directory.**
 
-## Required Files
+## How It Works
 
-- `icon.png` - 512x512 PNG (used for Linux and as source)
-- `icon.ico` - Windows icon (16x16, 32x32, 48x48, 256x256)
-- `icon.icns` - macOS icon (16x16 to 1024x1024)
-- `tray-icon.png` - 16x16 or 22x22 PNG for system tray
+The build script (`dev/build_and_deploy.py`) automatically:
 
-## Generating Icons
+1. Copies `assets/logo.png` from the **repo root** into this directory
+2. Generates `logo.ico` (256×256 multi-size ICO) from that PNG using Pillow
 
-You can use tools like:
+**You do not need to manually place or convert icons.** The only source of truth
+is `<repo-root>/assets/logo.png`. Everything else is derived.
 
-- <https://www.iconifier.net/> - Convert PNG to ICO/ICNS
-- <https://cloudconvert.com/png-to-ico>
-- ImageMagick CLI: `convert icon.png -define icon:auto-resize=256,128,64,48,32,16 icon.ico`
+## Files (auto-generated)
 
-## Brand Colors
+| File | Format | Used By |
+|------|--------|---------|
+| `logo.png` | PNG (any size) | macOS `.dmg` icon, Electron tray, `main.js` window icon |
+| `logo.ico` | ICO (256/48/32/16) | Windows NSIS installer (`installerIcon`, `uninstallerIcon`, `win.icon`) |
 
-- Primary Green: #00FF88
-- Primary Blue: #00D4FF
-- Dark Background: #0A0A0A
-- Text: #FFFFFF
+## ⚠️ NSIS Requires `.ico`
+
+Windows NSIS installer **cannot** use `.png` for icons. If you see:
+
+```
+Error while loading icon from "logo.png": invalid icon file
+Error in macro MUI_INTERFACE on macroline 87
+```
+
+It means NSIS is being pointed at a PNG. All three NSIS icon fields in
+`package.json` must reference `.ico`:
+
+```json
+"nsis": {
+    "installerIcon": "assets/logo.ico",
+    "uninstallerIcon": "assets/logo.ico",
+    "installerHeaderIcon": "assets/logo.ico"
+}
+```
+
+The `win.icon` field must also be `.ico`:
+
+```json
+"win": {
+    "icon": "assets/logo.ico"
+}
+```
+
+macOS and Linux can use `.png` directly.
+
+## To Update the Logo
+
+1. Replace `<repo-root>/assets/logo.png` with your new logo (minimum 256×256)
+2. Delete `dev/electron-launcher/assets/logo.ico` (forces regeneration)
+3. Run the build: `python dev/build_and_deploy.py --platform win`
+4. The pipeline will auto-generate a fresh `.ico`

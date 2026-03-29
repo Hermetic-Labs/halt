@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Rêvebiriya Birîna Germê",
+  "category": "environmental",
+  "skill_level": "Bingehîn",
+  "time_estimate": "Berdewam e heya MEDEVAC an saxlemiya nexweş",
+  "description": "Rêvebiriya kezebên germê, westandina germê, û lêdana germê. Lêdana germê acîlek xeternak e - sarbûna bilez dermankirin e. Di cih de westandina germê (hişmendiya normal) ji lêdana germê (LOC-ya guhertî) veqetînin.",
+  "equipment": [
+    "Av (devkî + sarbûn)",
+    "Qeşayê yan jî cawên şil ên sar",
+    "Pêdiviyên IV (LR an NS)",
+    "Fans an siya",
+    "Termometreya rektalê (tehmeya bingehîn a diyarker)"
+  ],
+  "steps": [
+    "NAVENDA NÛÇEYAN: Birîndar hişyar e û oriented e? Çermê zuha germ beramberî çermê germik? Ger termometre hebe, germahiya bingehîn.",
+    "KÊŞÎNÊN GERMÎ: Spazma masûlkeyan, ramana normal. Di siyê de bêhnvedan, rehydration devkî bi elektrolîtan, dirêjkirina nerm. Ne xetereya jiyanê ye.",
+    "GERMATINA GERMÎ: Xwelbûna giran, qelsî, gêjbûn, ramana normal an jî nêzîkê normal. Biçin qada siya/sar. Cilên zêde jê bikin. Avêlên devkî (eger hişyar be) an IV LR 1L di nav 30-60 min de. Ji bo pêşveçûna germbûna germê çavdêr bikin.",
+    "GIRMA GERIM (Acil): LOC guherî, tevlihevî, şerkerî, an bêhişbûn. Germahiya bingehîn > 40C (104F). Çermê germ (dibe ku şil an hişk be). DESTPÊK: Tavilê ji germê derxin, hemû cil û bergên xwe, çermê şil ji xwe derxin û bi tundî bifetisînin. Pakêtên qeşayê li stû, axillae, û gewrê (herêmên damarên bilind) bixin. IV LR 1-2L. Ger bêhiş be rêyên hewayê biparêzin. MEDEVAC yekser.",
+    "Ji bo lêdana germê aspîrîn an acetaminophen nedin - ne alîkar e, dibe ku zirarê bike.",
+    "Monitor: girîng q15 min, rêça hewayê, rewşa derûnî. Meyla germahiya belgeyê.",
+    "Di dema MEDEVAC de sarbûnê bidomînin - ji bo veguhastinê nesekinin."
+  ],
+  "warnings": [
+    "Germbûna germê acîlek xeternak e - wê bi westandina germê xelet nekin. Rewşa derûnî kontrol bikin.",
+    "Sarkirin dermankirina teqez e. Ji bo sazkirina gihîştina IV sarbûnê dereng nekin.",
+    "Germbûna ceribandî dikare di mirovên fitneyê de çêbibe -- fitnessa laşî naparêze.",
+    "Hîponatremia (natriuma kêm) ji zêdehîdkirina bi ava sade dikare feleka germê bişibîne -- ne tenê avê çareseriya elektrolîtê bide."
+  ],
+  "follows": [
+    "dehydration-nirxandin"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Zarok bi awayekî kêmtir termoregulasyonê dikin. Germbûna germê dikare zûtir pêşve bibe. Avêtina li ser bingeha giraniyê: 20 mL/kg LR IV bolus. Germahiya bingehîn bi termometreya rektorê ya herî rast."
+    },
+    "obstetric": {
+      "note": "Hîpertermiya dayikê (> 39C) dikare bibe sedema kêmasiyên lûleya neuralî ya fetusê (destpêkê) û tengasiya fetusê (dereng). sarbûna êrîşkar. Ger hebe şopandina rêjeya dilê fetal."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

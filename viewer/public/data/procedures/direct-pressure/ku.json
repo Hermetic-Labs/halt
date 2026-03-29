@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Zexta Rasterast ji bo Kontrolkirina Hemorrajiyê",
+  "category": "hemorrhage-control",
+  "skill_level": "her-bersiv",
+  "time_estimate": "3-5 min",
+  "description": "Kontrolkirina hemorrajiyê ya rêza yekem ji bo birînên dest û laş ên gihîştî.",
+  "equipment": [
+    "destmal",
+    "trawma-cilê",
+    "cravat-bandage"
+  ],
+  "steps": [
+    "Ger hebin destikên xwe bikin.",
+    "Bi birrîna kincan re birînê derxin holê.",
+    "Cilên trawmayê an qumaşê pêçandî rasterast li ser birînê bixin.",
+    "Bi henûna destê xwe hişk bişkînin. Giraniya laşê xwe bikar bînin - ne tenê hêza mil.",
+    "Bi kêmanî 3 hûrdeman zexta domdar, bênavber bihêlin.",
+    "Ji bo kontrolê cil û berg hilnekin - ev yek avakirina girêk asteng dike.",
+    "Ger xwîn bi ser ket, cilekî din li ser lê zêde bike. Ya yekem jê nekin.",
+    "Ger hebe, bi bandajek zextê ve girêbidin û ger xwîn berdewam bike, biçin ser pakêta birînê an zirav."
+  ],
+  "warnings": [
+    "Tenê tansiyona rasterast ji bo xwînên arterialî ne têr e - berbi girêkdana birînê an jî tourniquet ve diçe.",
+    "Birînên pêvekirî (girik, axilla, stû) pêdivî bi pakkirina birînê heye, ne tenê zexta derve."
+  ],
+  "follows": [],
+  "precedes": [
+    "birîn-pêçandin",
+    "tourniquet-sepan"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Tenê zexta rêjeyî. Di pitikan de ji pêçandina sîngê xwe dûr bixin."
+    },
+    "obstetric": {
+      "note": "Ji zextên giran ên li ser uterusê dûr bisekinin. Ger birîna hevedudanî ya li nêzê pelvisê pakkirina alîgir bikar bînin."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

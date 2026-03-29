@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "Échelle AVPU",
+  "category": "neurological",
+  "description": "Évaluation rapide de la conscience à 4 niveaux. Plus rapide que GCS pour le tri initial.",
+  "instructions": "Évaluez le niveau de réponse le plus élevé démontré par le patient.",
+  "scoring": [
+    {
+      "code": "Un",
+      "label": "Alerte",
+      "description": "Le patient est éveillé, conscient et réagit normalement"
+    },
+    {
+      "code": "V",
+      "label": "Voix",
+      "description": "Le patient répond uniquement à la stimulation verbale"
+    },
+    {
+      "code": "P",
+      "label": "Douleur",
+      "description": "Le patient réagit uniquement aux stimuli douloureux (frottement du sternum, pression sur le lit de l'ongle)"
+    },
+    {
+      "code": "U",
+      "label": "Ne répond pas",
+      "description": "Aucune réponse à aucun stimuli - intervention immédiate des voies respiratoires requise"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "Un",
+      "triage": "Stable -- poursuivre l'évaluation"
+    },
+    {
+      "code": "V",
+      "triage": "Concernant -- surveiller les voies respiratoires"
+    },
+    {
+      "code": "P",
+      "triage": "Critique – voies respiratoires à risque, GCS généralement <= 8"
+    },
+    {
+      "code": "U",
+      "triage": "Immédiat : gérez les voies respiratoires maintenant"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Ativan"
+  ],
+  "description": "Benzodiazepine tác dụng trung gian. Điều trị IV/IM đầu tiên cho trạng thái động kinh và động kinh cấp tính. Cũng được sử dụng để gây mê và giải lo âu theo thủ tục.",
+  "indications": [
+    "Trạng thái động kinh (IV bậc 1)",
+    "Quản lý cơn động kinh cấp tính",
+    "Thủ tục gây mê",
+    "Lo lắng hoặc kích động nghiêm trọng"
+  ],
+  "dose": "Co giật: 4 mg IV/IO đẩy chậm trong 2 phút. Lặp lại 4 mg trong 5-10 phút nếu cơn động kinh tiếp tục. IM: 4 mg nếu không có IV.",
+  "route": [
+    "IV",
+    "IO",
+    "TÔI"
+  ],
+  "window": "",
+  "contraindications": [
+    "Bệnh tăng nhãn áp góc hẹp cấp tính",
+    "Suy hô hấp nặng",
+    "Quá mẫn với propylene glycol"
+  ],
+  "warnings": [
+    "Gây suy hô hấp - chuẩn bị sẵn BVM và thiết bị đường thở.",
+    "Thuốc an thần có thể kéo dài 6-8 giờ - theo dõi đường thở.",
+    "Có thể xảy ra kích động nghịch lý, đặc biệt ở người già và trẻ em."
+  ],
+  "regional_names": {
+    "generic": "lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV/IM (tối đa 4 mg/liều). Lặp lại một lần trong 5-10 phút nếu cần.",
+      "note": "Được ưu tiên hơn diazepam trong quản lý cơn động kinh qua tĩnh mạch ở trẻ em."
+    },
+    "obstetric": {
+      "note": "Đi qua nhau thai - có thể gây suy hô hấp ở trẻ sơ sinh. Sử dụng ở người mẹ bị động kinh khi lợi ích vượt trội nguy cơ."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

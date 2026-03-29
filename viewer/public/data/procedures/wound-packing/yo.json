@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Iṣakojọpọ ọgbẹ Hemostatic",
+  "category": "hemorrhage-control",
+  "skill_level": "olugbala ija",
+  "time_estimate": "3-5 iṣẹju",
+  "description": "Iṣakojọpọ ti ọgbẹ ti kii-compressible tabi junctional pẹlu gauze hemostatic lati ṣakoso ẹjẹ ẹjẹ nibiti a ko le lo irin-ajo.",
+  "equipment": [
+    "hemostatic-gauze",
+    "nitrile-ibọwọ",
+    "ibalokanje-shears",
+    "titẹ-bandeji"
+  ],
+  "steps": [
+    "Don ibọwọ. Fi egbo naa han ni kikun nipa lilo awọn irẹrun ibalokanjẹ.",
+    "Ṣe idanimọ orisun ẹjẹ ti nṣiṣe lọwọ laarin iho ọgbẹ.",
+    "Ṣii gauze hemostatic ki o fi ika rẹ ṣinṣin sinu ọgbẹ, titari taara si orisun ẹjẹ.",
+    "Tesiwaju iṣakojọpọ titi ti iho ọgbẹ yoo fi kun patapata.",
+    "Waye iduroṣinṣin, titẹ taara taara pẹlu igigirisẹ ọwọ rẹ fun o kere ju awọn iṣẹju 3.",
+    "Ma ṣe yọkuro eyikeyi ohun elo iṣakojọpọ ni kete ti a ba lo.",
+    "Fi bandage titẹ sori ọgbẹ ti o kun.",
+    "Samisi akoko lori kaadi TCCC tabi iwaju alaisan (fun apẹẹrẹ, 'PKD 0145')."
+  ],
+  "warnings": [
+    "MAA ṢE di awọn ọgbẹ àyà ti nwọle -- lo edidi àyà dipo.",
+    "Ti o ba n ṣajọpọ ọgbẹ ọrun, lo titẹ laisi titẹ awọn carotid mejeeji ni nigbakannaa.",
+    "Tun ṣe ayẹwo laarin awọn iṣẹju 5 ti orisun iṣan ba fura si."
+  ],
+  "follows": [
+    "taara-titẹ"
+  ],
+  "precedes": [
+    "tourniquet-elo"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Lo gauze ni ibamu. Waye titẹ fẹẹrẹfẹ lati yago fun funmorawon thoracic ninu awọn ọmọde."
+    },
+    "obstetric": {
+      "note": "Yago fun titẹ iṣakojọpọ jinlẹ tabi ibinu nitosi ikun gravid. Ilọsoke iyara ni o fẹ."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

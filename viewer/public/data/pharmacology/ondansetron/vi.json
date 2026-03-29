@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Thuốc đối kháng chọn lọc thụ thể 5-HT3. Hiệu quả cao đối với chứng buồn nôn và nôn. ODT (viên thuốc tan trong miệng) rất hữu ích trong cài đặt hiện trường khi không có IV. Bao gồm trong một số gói thuốc chiến đấu.",
+  "indications": [
+    "Buồn nôn và nôn (hóa trị, do opioid, sau phẫu thuật, liên quan đến TBI)",
+    "Chứng say tàu xe",
+    "Buồn nôn do dùng ketamine"
+  ],
+  "dose": "4-8 mg IV/IO đẩy chậm trong 2-5 phút. ODT: 4-8 mg hòa tan dưới lưỡi. IM: 4 mg.",
+  "route": [
+    "IV",
+    "IO",
+    "TÔI",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Quá mẫn với ondansetron hoặc các chất đối kháng 5-HT3 khác",
+    "Hội chứng QT kéo dài bẩm sinh (chỉ tiêm tĩnh mạch liều cao)"
+  ],
+  "warnings": [
+    "IV liều cao có thể kéo dài khoảng QT - sử dụng IV liều thấp nhất có hiệu quả.",
+    "Không thay thế việc quản lý đường thở ở bệnh nhân bị hôn mê do nôn mửa - trước tiên hãy bảo vệ đường thở."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,1-0,15 mg/kg IV (tối đa 4 mg). ODT: 4mg cho trẻ > 4 tuổi.",
+      "note": "Được sử dụng rộng rãi và dung nạp tốt trong nhi khoa."
+    },
+    "obstetric": {
+      "note": "Dữ liệu hạn chế trong thai kỳ. Sử dụng khi buồn nôn/nôn nặng sau ba tháng đầu khi lợi ích lớn hơn nguy cơ. Không được khuyến khích trong ba tháng đầu tiên."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

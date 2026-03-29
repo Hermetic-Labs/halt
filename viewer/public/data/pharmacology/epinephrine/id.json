@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinefrin (Adrenalin)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalin"
+  ],
+  "description": "Katekolamin endogen dengan aktivitas adrenergik alfa dan beta. Pengobatan lini pertama untuk anafilaksis dan serangan jantung. Pada anafilaksis, paha IM lebih disukai daripada IV (lebih aman, kemanjuran setara). Jangan menunda akses IV pada anafilaksis.",
+  "indications": [
+    "Anafilaksis (lini pertama)",
+    "Henti jantung -- VF/VT/PEA/asistol tanpa denyut",
+    "Bronkospasme parah",
+    "Hipotensi refrakter terhadap cairan"
+  ],
+  "dose": "Anafilaksis: 0,3-0,5 mg IM (paha anterolateral) | Injektor otomatis 0,3 mg IM. Ulangi PRN q5-15 menit. Henti jantung: 1 mg IV/IO setiap 3-5 menit selama CPR. Bronkospasme berat: 0,3 mg IM.",
+  "route": [
+    "SAYA",
+    "IV",
+    "aku"
+  ],
+  "window": "Pada anafilaksis: segera berikan IM -- jangan tunda untuk akses IV.",
+  "contraindications": [
+    "Tidak ada kontraindikasi absolut pada keadaan darurat yang mengancam jiwa"
+  ],
+  "warnings": [
+    "Epinefrin IV untuk anafilaksis hanya boleh digunakan pada serangan jantung atau syok berat -- berbahaya jika diberikan secara IV pada pasien yang sadar.",
+    "Ekstravasasi menyebabkan nekrosis jaringan - pastikan patensi IV.",
+    "Meningkatkan kebutuhan oksigen miokard - berhati-hatilah pada penyakit koroner yang diketahui di luar serangan."
+  ],
+  "regional_names": {
+    "generic": "epinefrin",
+    "UK": "adrenalin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anafilaksis: 0,01 mg/kg IM (maks 0,5 mg). EpiPen Jr (0,15 mg) untuk 15-30 kg. Henti jantung: 0,01 mg/kg IV/IO setiap 3-5 menit.",
+      "note": "Gunakan dosis berdasarkan berat badan. Referensi kaset Broselow direkomendasikan."
+    },
+    "obstetric": {
+      "note": "Gunakan dosis anafilaksis standar – kelangsungan hidup ibu adalah yang terpenting. Epinefrin aman pada kehamilan untuk keadaan darurat yang mengancam jiwa."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

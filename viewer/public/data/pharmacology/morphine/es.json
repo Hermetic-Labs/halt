@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Sulfato de morfina",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "EM Continuidad",
+    "Inyección de sulfato de morfina"
+  ],
+  "description": "Analgésico opioide. Proporciona un alivio eficaz del dolor, pero provoca vasodilatación e hipotensión; utilícese con precaución en caso de shock hemorrágico. Se prefiere la ketamina en entornos de combate. Utilice morfina sólo en pacientes hemodinámicamente estables.",
+  "indications": [
+    "Dolor moderado a intenso en pacientes hemodinámicamente estables",
+    "No es de primera línea en TCCC: prefiera la ketamina"
+  ],
+  "dose": "2-4 mg IV/IO cada 4 h PRN. Titular al efecto. IM: 5-10 mg cada 4 h PRN.",
+  "route": [
+    "IV",
+    "OI",
+    "IM",
+    "CUA"
+  ],
+  "window": "",
+  "contraindications": [
+    "Inestabilidad hemodinámica / shock hemorrágico",
+    "Depresión respiratoria",
+    "Traumatismo craneoencefálico con LOC alterado (relativo)"
+  ],
+  "warnings": [
+    "Provoca vasodilatación; puede empeorar el shock hemorrágico. Evaluar la PA antes y después.",
+    "Tenga naloxona disponible inmediatamente.",
+    "Depresión respiratoria: controle la frecuencia."
+  ],
+  "regional_names": {
+    "generic": "sulfato de morfina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV cada 2-4 h PRN. Dosis única máxima de 2 mg por vía intravenosa en niños que nunca han recibido opioides.",
+      "note": "Vigile estrechamente la frecuencia respiratoria. Los recién nacidos son extremadamente sensibles."
+    },
+    "obstetric": {
+      "note": "Cruza la placenta. Es posible la depresión respiratoria neonatal si se administra dentro de las 2 a 4 horas posteriores al parto. Tenga lista la naloxona para el recién nacido."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Magnesium Sulfate (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Manezioma Sulfate tsindrona"
+  ],
+  "description": "CNS depressant sy anticonvulsant ampiasaina amin'ny fisorohana sy ny fitsaboana ny eclampsia seizure (fampinonoana amin'ny fitondrana vohoka avy amin'ny pre-eclampsia). Ampiasaina koa amin'ny asthma mafy sy torsades de pointes. Andalana voalohany ho an'ny eclampsia noho ny benzodiazepines.",
+  "indications": [
+    "Eclampsia (fisorohana sy fitsaboana amin'ny pre-eclampsia mafy)",
+    "Pre-eclampsia prophylaxis (endriny mafy)",
+    "Torsades de Pointes (polymorphic V-tach avy amin'ny hypomagnesemia)",
+    "Asthma mahery vaika (fanampiny)"
+  ],
+  "dose": "Eclampsia mavesatra fatra: 4-6g IV tosika miadana mandritra ny 20 minitra. Fikojakojana: 1-2g/ora IV fampidirana. Raha miverimberina ny fiankinan-doha: 2-4g IV mandritra ny 5 min. IM Loading (raha tsy misy IV): 5g IM isaky ny vodiny (10g total) miaraka.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "Atombohy amin'ny fanombohan'ny seizure na amin'ny fitiliana ny soritr'aretin'ny pre-eclampsia mahery vaika.",
+  "contraindications": [
+    "Myasthenia gravis",
+    "Ny tsy fahampian'ny fifindran'ny fo",
+    "Ny tsy fahombiazan'ny voa (miangona -- ahena ny fatra)"
+  ],
+  "warnings": [
+    "Famantarana misy poizina: fahaverezan'ny reflexa patellar (famantarana voalohany, 7-10 mEq/L), fahaketrahana ara-pisefoana (> 10 mEq/L), fijanonan'ny fo (> 15 mEq/L).",
+    "Manara-maso ny reflexes patellar isaky ny 15 minitra - fahaverezan'ny reflex = atsaharo ny fampidirana.",
+    "ANTIDOTE amin'ny poizina: Calcium gluconate 1g IV mandritra ny 3 minitra.",
+    "Ahena ny fatra amin'ny fahavoazan'ny voa -- manara-maso ny fivoahan'ny urine."
+  ],
+  "regional_names": {
+    "generic": "manezioma sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades: 25-50 mg/kg IV mandritra ny 10-20 min (max 2g). Asma mafy: 25-75 mg/kg IV (2g ambony indrindra).",
+      "note": "Mahalana no ampiasaina amin'ny fisamborana amin'ny marary zaza tsy manan-janaka - ny eclampsia no famantarana voalohany."
+    },
+    "obstetric": {
+      "note": "famantarana voalohany. Miampita placenta - mety ho hypermagnesemia neonatal. Dose neonatal raha fahaketrahana ara-pisefoana: calcium gluconate 100 mg/kg IV. Ampahafantaro ny ekipan'ny NICU momba ny fampiasana magnesium amin'ny reny."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

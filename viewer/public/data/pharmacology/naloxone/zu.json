@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "I-Naloxone",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "I-Kloxxado"
+  ],
+  "description": "Umphikisi we-opioid receptor oqhudelanayo. Ihlehlisa ngokushesha ukucindezeleka kokuphefumula okubangelwa i-opioid, ukuthulisa, kanye ne-analgesia. Ukuqala IV: 2 min, IM: 5 min, IN: 8-13 min. Ubude besikhathi bufushane kunama-opioid amaningi -- ukuphinda umthamo kungadingeka.",
+  "indications": [
+    "I-Opioid overdose noma ukucindezeleka kokuphefumula",
+    "Ukuguqulwa kwe-opioid sedation",
+    "Kusolwa ukulimala kwe-opioid"
+  ],
+  "dose": "0.4-2 mg IV/IO/IM/IN. Phinda u-q2-3 min njengoba kudingeka. Ubukhulu be-10 mg. Intranasal (IN): 2mg ikhala ngalinye.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Awekho ama-contraindications aphelele ekusethweni kwe-overdose"
+  ],
+  "warnings": [
+    "Ubude besikhathi sokusebenza (30-90 min) bufushane kunama-opioid amaningi -- isiguli singaphinda siphuze i-narcotize. Gada okungenani ihora elingu-1 ngemva komthamo wokugcina.",
+    "Kwenyusa ukuhoxa okunamandla kwe-opioid -- kungabangela ukuyaluza, i-tachycardia, i-pulmonary edema ezigulini ezithembele ku-opioid.",
+    "Izohlehlisa i-analgesia -- isiguli singase silwisane nobuhlungu."
+  ],
+  "regional_names": {
+    "generic": "I-Naloxone",
+    "US": "7243"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Narcan",
+      "note": "I-Kloxxado"
+    },
+    "obstetric": {
+      "note": "Umphikisi we-opioid receptor oqhudelanayo. Ihlehlisa ngokushesha ukucindezeleka kokuphefumula okubangelwa i-opioid, ukuthulisa, kanye ne-analgesia. Ukuqala IV: 2 min, IM: 5 min, IN: 8-13 min. Ubude besikhathi bufushane kunama-opioid amaningi -- ukuphinda umthamo kungadingeka."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

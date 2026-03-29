@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Ukuphucula ukwahlulahlula",
+  "category": "ortho-stabilization",
+  "skill_level": "Isiseko",
+  "time_estimate": "5-10 imiz",
+  "description": "Immobilize iifractures usebenzisa izinto ezikhoyo zokuthintela ukulimala ngakumbi, ukunciphisa iintlungu, kunye nokunciphisa ukulahleka kwegazi kwizicubu ezijikelezileyo. I-Splint ikwindawo efunyenweyo ngaphandle kokuba ukujikeleza kuphazamisekile -- ke yolula ngobunono.",
+  "equipment": [
+    "Ukwahlula kwe-SAM (kuyakhethwa)",
+    "Iimagazini eziqengqelekayo, iintonga, iipali zeentente (intsimi ephuculweyo)",
+    "I-Cravat / amabhandeji angamanxantathu",
+    "I-padding (impahla, ugwebu)",
+    "Iteyiphu okanye imicu yelaphu"
+  ],
+  "steps": [
+    "Veza kwaye uvavanye ukwenzakala - khangela ukujikeleza, ukuva, ukunyakaza (CSM) kude ukuya kuphuka ngaphambi nangemva.",
+    "Lawula nakuphi na ukopha okusebenzayo phambi kokuqhekeka.",
+    "I-Pad bony ibalaselisa ngesisa ukukhusela izilonda zoxinzelelo.",
+    "Khetha imathiriyeli eqhiwukileyo ixesha elide ngokwaneleyo ukuba lingashukumi isidibaniselwano esingasentla NAngaphantsi kokwaphuka.",
+    "Isikhundla selungu kwindawo yokuthuthuzela okanye ulungelelwaniso lwe-anatomical-unganyanzelisi.",
+    "Faka i-padding, emva koko udibanise imathiriyeli. Khusela nge-bandages okanye imicu yelaphu.",
+    "UNGAWUQINISEKISI -- shiya iincam zeminwe/iinzwane ziveziwe ukuze ujonge i-CSM.",
+    "Phinda uvavanye i-CSM emva kokufakwa kwesicelo -- khulula ngoko nangoko ukuba ujikelezo aluphazamisi.",
+    "Phakamisa imilenze ukuba kunokwenzeka ukunciphisa ukudumba.",
+    "Ixesha loxwebhu lwesicelo esidibeneyo."
+  ],
+  "warnings": [
+    "Phinda uhlole i-CSM rhoqo ngemizuzu eyi-15 ukuya kwengama-30 -- ukudumba kunokwenza i-splint echanekileyo ibe yi-tourniquet.",
+    "Vula iifractures: vala inxeba ngesinxibo esingenazintsholongwane kuqala, emva koko uqhawuke. UNGAWUtyhala ithambo emva.",
+    "I-Femur fractures inokulahlekelwa yi-1-2L yegazi kwithanga-- phatha ngokukrakra ngenxa yokothuka.",
+    "Umrhanelwa orhanelwayo wophuka: SUKUPHUHLISA i-splint --nciphisa intshukumo, gcina uzinzo olungaphakathi."
+  ],
+  "follows": [
+    "ngqo-uxinzelelo",
+    "tourniquet-isicelo"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Iipleyiti zokukhula ebantwaneni zibuthathaka kuneligaments--umrhanelwa ukwaphuka nokuba kuncinci. I-Torus (i-buckle) i-fractures ingaba nokudumba okuncinci."
+    },
+    "obstetric": {
+      "note": "Ukwahlukaniswa okusemgangathweni kuyasebenza. Kuphephe ukuma ixesha elide entla -- ukuthambeka kwecala lasekhohlo ukuba ilele ithe tyaba."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Solutio Lactatum Ringer (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Hartmanni Solutio",
+    "Lactatum Ringer iniectio"
+  ],
+  "description": "Libratum isotonic fluido crystalloideo. Praetulerim super salinam normalem pro resuscitatione trauma magno-volumi -- physiologice plus librata, minus periculo acidosis hyperchloremicis. Natrium continet, kalium, calcium, lactatum.",
+  "indications": [
+    "Trauma resuscitatio (malle crystalloideus in inpulsa hemorrhagic)",
+    "Combustiones fluidorum resuscitationis (Parkland formulae)",
+    "Hypovolemia",
+    "Liquor sustentationem"
+  ],
+  "dose": "Hemorrhagic concussa: Limit ad 1L max ante transitioning ad sanguinem products. Scopum SBP 80-90 mmHg trauma penetrans, 90 mmHg TBI. Combusta (Parkland): 4 mL x kg x % TBSA super 24h combusta (dimidia primo 8h).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hyperkalemia (continet kalium)",
+    "Gravis defectus iecoris (metabolismi lactatis imminuta - relativa)"
+  ],
+  "warnings": [
+    "Adhuc crystalloides -- oxygenium portare non possunt. Sanguinis producta superiora sunt pro ictu haemorrhagicae. LR pons tantum.",
+    "Non in eadem linea cum sanguine products (calcium facit concretionis).",
+    "Noli nimis resuscitare in penetrando trauma ante sanguinis imperium."
+  ],
+  "regional_names": {
+    "generic": "lactatum Ringer solutionem",
+    "UK": "Hartmanni solutio"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 mL/kg bolus, candam. Maluit super NS pro trauma pediatric.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Maluit IV partus fluida et partus. Conveniens obstetricante haemorrhagia resuscitationis."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

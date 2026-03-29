@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Fampiharana tombo-kase tratra Occlusive",
+  "category": "respiration",
+  "skill_level": "combat-lifesaver",
+  "time_estimate": "1-2 min",
+  "description": "Famehezana ratra tratra mitsentsitra (open pneumothorax) miaraka amin'ny tombo-kase eo amin'ny tratra mba hisorohana ny fidiran'ny rivotra rehefa mamela ny fanerena.",
+  "equipment": [
+    "tombo-kase-tratra",
+    "fonon-tanana",
+    "trauma-shears"
+  ],
+  "steps": [
+    "Asehoy ny ratra -- tapaho na esory ny akanjo.",
+    "Fafao ny hoditra manodidina ny ratra araka izay azo atao (ra, hatsembohana misakana adhesion).",
+    "Sokafy ny fonosana misy tombo-kase tratra.",
+    "Asio tombo-kase eo amin'ny ratra, afovoany amin'ny lavaka. Tsindrio mafy mba hahazoana antoka fa miraikitra ny sisiny rehetra.",
+    "Hamarino ny fiorenan'ny valva - tsy maintsy mitodika any ivelany (lavitra ny hoditra) ny rivotra ary tsy voasakana.",
+    "Tombanana indray ny feon'ny fofonaina. Raha mitohy ny fahasimbana aorian'ny famehezana dia diniho ny fihenjanana pneumothorax -- manaova NCD.",
+    "Raha toa ka tsy misy ny tombo-kase vented, dia azo ampiasaina ny tombo-kase tsy misy vented fa TSY MAINTSY arahi-maso amin'ny fivoaran'ny pneumothorax fihenjanana."
+  ],
+  "warnings": [
+    "Ny tombo-kase tsy misy tombo-kase dia afaka manova ny pneumothorax tsotra ho pneumothorax mihenjana - mampiasa tombo-kase tsy misy afa-tsy eny an-tsaha.",
+    "Ny fametahana lafiny telo (tombo-kase namboarina) dia tsy atolotry ny CoTCCC intsony -- mampiasa tombo-kase tratra ara-barotra.",
+    "Asio tombo-kase foana ny ratra ENTRANCE sy EXIT."
+  ],
+  "follows": [],
+  "precedes": [
+    "fanjaitra-decompression"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

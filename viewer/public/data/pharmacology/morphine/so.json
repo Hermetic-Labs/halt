@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Morphine Sulfate",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Contin",
+    "Cirbadda Morphine Sulfate"
+  ],
+  "description": "xanuunka Opioid. Waxay bixisaa xanuun baabi'in waxtar leh laakiin waxay sababtaa vasodilation iyo hypotension - si taxadar leh u isticmaal shoogga dhiigbaxa. Ketamine ayaa lagu door bidaa goobaha dagaalka. Isticmaal morphine kaliya bukaanada hemodynamically deggan.",
+  "indications": [
+    "Xanuun dhexdhexaad-ilaa-daran oo ku dhaca bukaannada hemodynamically xasilloon",
+    "Ma aha safka kowaad ee TCCC -- door bida ketamine"
+  ],
+  "dose": "2-4 mg IV/IO q4h PRN. Titrate inuu dhaqan galo IM: 5-10 mg q4h PRN.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Xasilooni la'aanta Hemodynamic / shoogga dhiigbaxa",
+    "Niyad jabka Neefsashada",
+    "Dhaawac madaxa ah oo bedelay LOC (qaraabo)"
+  ],
+  "warnings": [
+    "Waxay sababtaa vasodilation -- waxay ka sii dari kartaa shoogga dhiigbaxa. Qiimee BP ka hor iyo ka dib.",
+    "Isla markiiba ha diyaarso naloxone.",
+    "Niyad jabka neefsiga -- la soco heerka."
+  ],
+  "regional_names": {
+    "generic": "morphine sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV q2-4h PRN. Qiyaasta kaliya ee ugu badan ee 2mg IV ee ilmaha-naive- opioid.",
+      "note": "Si dhow ula soco heerka neefsiga. Dhallaanka dhasha ayaa ah kuwo aad xasaasi u ah."
+    },
+    "obstetric": {
+      "note": "Ka gudubta mandheerta. Niyad-jabka neef-mareenka ee dhallaanka waa suurtagal haddii lagu siiyo 2-4 saacadood gudahood dhalmada. U diyaari naloxone ilmaha dhasha."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

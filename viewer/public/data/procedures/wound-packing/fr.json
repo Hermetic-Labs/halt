@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Emballage hémostatique des plaies",
+  "category": "hemorrhage-control",
+  "skill_level": "bouée de sauvetage",
+  "time_estimate": "3-5 minutes",
+  "description": "Garniture d'une plaie non compressible ou jonctionnelle avec une gaze hémostatique pour contrôler l'hémorragie là où le garrot ne peut pas être appliqué.",
+  "equipment": [
+    "gaze hémostatique",
+    "gants-nitrile",
+    "cisailles de traumatologie",
+    "pansement compressif"
+  ],
+  "steps": [
+    "Enfilez des gants. Exposer complètement la plaie à l’aide de cisailles de traumatologie.",
+    "Identifiez la source active de saignement dans la cavité de la plaie.",
+    "Ouvrez la gaze hémostatique et placez-la fermement dans la plaie avec votre doigt, en la poussant directement vers la source du saignement.",
+    "Continuez à emballer jusqu'à ce que la cavité de la plaie soit complètement remplie.",
+    "Appliquez une pression directe ferme et continue avec le talon de votre main pendant au moins 3 minutes.",
+    "Ne retirez AUCUN matériau d’emballage une fois appliqué.",
+    "Appliquez un bandage compressif sur la plaie emballée.",
+    "Marquez l’heure sur la carte TCCC ou sur le front du patient (par exemple, « PKD 0145 »)."
+  ],
+  "warnings": [
+    "Ne pas emballer les plaies pénétrantes à la poitrine – utiliser plutôt un joint thoracique.",
+    "Si vous pansez une plaie au cou, appliquez une pression sans comprimer les deux carotides simultanément.",
+    "Réévaluer dans les 5 minutes si une source artérielle est suspectée."
+  ],
+  "follows": [
+    "pression directe"
+  ],
+  "precedes": [
+    "application de garrot"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Utilisez proportionnellement moins de gaze. Appliquez une pression plus légère pour éviter une compression thoracique chez les nourrissons."
+    },
+    "obstetric": {
+      "note": "Évitez toute pression d’emballage profonde ou agressive près de l’abdomen gravide. Une escalade rapide est préférable."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

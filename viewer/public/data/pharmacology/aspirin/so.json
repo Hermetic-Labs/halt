@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirin (Acetylsalicylic acid)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Bayer Aspirin",
+    "Ecotrin"
+  ],
+  "description": "Daawooyinka aan steroid ahayn ee ka hortagga bararka (NSAID) oo leh astaamo antiplatelet. Daawaynta safka koowaad ee looga shakisan yahay xanuunka wadnaha ee degdega ah (ACS). Si aan ka noqosho lahayn ayaa u joojisa isu geynta platelet -- saamayntu waxay socotaa cimriga platelet (7-10 maalmood).",
+  "indications": [
+    "Wadnaha wadnaha oo ba'an oo laga shakisan yahay (MI) -- isla markiiba calalin",
+    "Angina aan degganayn / xanuunka wadnaha ee degdega ah",
+    "Stroke ( ischemic - ka dib marka dhiigbaxa laga saaro)",
+    "Qandho iyo xanuun dhexdhexaad ah (xanuunin)"
+  ],
+  "dose": "ACS: 325 mg PO -- CHEW (ha wada liqin) isla markiiba. Xanuunka xanuunka/daaweeyaha: 325-650 mg PO q4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Sii sida ugu dhaqsaha badan ee suurtogalka ah -- isla markiiba calalin tuhunka.",
+  "contraindications": [
+    "Dhiigbaxa GI ee firfircoon",
+    "Istaroogga dhiigbaxa",
+    "Xasaasiyadda asbiriin ee la yaqaan ama NSAID",
+    "Dhiigbax daran oo aan la xakameynin -- aspirin wuxuu ka sii daraa dhiigbaxa"
+  ],
+  "warnings": [
+    "Ha siin bukaannada dhiigbaxa -- aspirin waxay si aan leexleexad lahayn u dhaawacdaa shaqada platelet waxayna ka sii daraysaa dhiigbaxa.",
+    "Ha siin carruurta <12 sano jir ah oo qaba jirro fayras -- halista cudurka Reye's syndrome.",
+    "Cuncunka GI -- ku qaado cunto haddii aanay degdeg ahayn."
+  ],
+  "regional_names": {
+    "generic": "asbiriin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Xabad joojinta/daaweeyaha: 10-15 mg/kg PO q4-6h (ugu badnaan 650 mg/qiyaas). FIIRO GAAR AH: Ka-hortagga jirrooyinka fayraska (Reye syndrome).",
+      "note": "U isticmaal acetaminophen (paracetamol) qandhada carruurta qaba cudurka fayras beddelkeeda."
+    },
+    "obstetric": {
+      "note": "Iska ilaali uurka gaar ahaan saddexda bilood ee saddexaad (xiritaan degdeg ah ee ductus arteriosus). Qiyaas yar (81mg) ayaa loo isticmaalaa kahortaga kahor-eclampsia iyadoo la raacayo hagida dhakhtarka kaliya."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

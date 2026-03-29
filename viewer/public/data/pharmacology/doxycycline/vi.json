@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxycycline",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramycin",
+    "Doryx"
+  ],
+  "description": "Kháng sinh tetracycline phổ rộng. Dự phòng vết thương bằng miệng thay thế cho bệnh nhân dị ứng penicillin. Cũng có hiệu quả chống lại các sinh vật không điển hình và một số bệnh do véc tơ truyền (dự phòng sốt rét ở các vùng lưu hành).",
+  "indications": [
+    "Phòng ngừa vết thương (dị ứng penicillin)",
+    "Nhiễm trùng mô mềm",
+    "Vết thương do cắn",
+    "Dự phòng sốt rét ở vùng lưu hành"
+  ],
+  "dose": "100 mg uống mỗi 12 giờ x 7 ngày.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Bắt đầu điều trị dự phòng vết thương trong vòng 3 giờ sau khi bị thương.",
+  "contraindications": [
+    "Mang thai (làm răng bào thai bị đổi màu và ức chế sự phát triển của xương)",
+    "Trẻ em dưới 8 tuổi (lý do tương tự)",
+    "Suy gan nặng"
+  ],
+  "warnings": [
+    "CHỐNG CHỈ ĐỊNH khi mang thai - thay vào đó hãy sử dụng amoxicillin.",
+    "CHỐNG CHỈ ĐỊNH ở trẻ em dưới 8 tuổi.",
+    "Nhạy cảm với ánh sáng - khuyên bệnh nhân tránh tiếp xúc với ánh nắng mặt trời.",
+    "Không dùng chung với thực phẩm giàu canxi, thuốc kháng axit hoặc sắt - làm giảm khả năng hấp thu."
+  ],
+  "regional_names": {
+    "generic": "doxycyclin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Chống chỉ định dưới 8 tuổi. 8 tuổi trở lên: 2-4 mg/kg/ngày chia 12h (tối đa 100 mg/liều).",
+      "note": "Dùng amoxicillin cho trẻ dưới 8 tuổi."
+    },
+    "obstetric": {
+      "note": "CHỐNG CHỈ ĐỊNH khi mang thai - gây hại cho thai nhi. Thay vào đó hãy sử dụng amoxicillin."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "아목시실린",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "아목실",
+    "트라이목스"
+  ],
+  "description": "광범위한 스펙트럼의 아미노페니실린 항생제. 상처 감염에 대한 경구 예방 항생제. 심각하지 않은 부상의 상처 예방을 위한 TCCC 전투 알약 팩의 일부입니다.",
+  "indications": [
+    "상처 감염 예방(경증-중등도 상처, 경구용 알약 팩)",
+    "연조직 감염",
+    "호흡기 감염"
+  ],
+  "dose": "8시간 x 7일마다 PO 500mg(상처 예방). 12시간마다 PO 875mg 대체 가능.",
+  "route": [
+    "포"
+  ],
+  "window": "상처 예방을 위해 부상 후 3시간 이내에 시작하십시오.",
+  "contraindications": [
+    "알려진 페니실린 알레르기(대신 독시사이클린 사용)",
+    "단핵구증(발진 위험)"
+  ],
+  "warnings": [
+    "페니실린 알레르기가 있는 경우: 독시사이클린 100mg PO BID로 대체하세요.",
+    "경구 경로만 사용 - 심한 상처에는 IV 항생제(세파졸린/시프로플록사신)를 사용하거나 경구 투여가 허용되지 않는 경우."
+  ],
+  "regional_names": {
+    "generic": "아목시실린"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45mg/kg/일을 8시간 동안 분할(최대 500mg/용량). 체중 기반 Broselow 참조를 사용합니다.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "임신 중에도 안전합니다. 독시사이클린(임신 중 금기)보다 선호됩니다."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Morfin Sulfat",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Terus",
+    "Injeksi Morfin Sulfat"
+  ],
+  "description": "Analgesik opioid. Nyedhiyakake relief nyeri sing efektif nanging nyebabake vasodilasi lan hipotensi - digunakake kanthi ati-ati ing kejut hemorrhagic. Ketamine luwih disenengi ing setelan pertempuran. Gunakake morfin mung ing pasien hemodinamik sing stabil.",
+  "indications": [
+    "Nyeri moderat nganti abot ing pasien hemodinamik stabil",
+    "Ora baris pisanan ing TCCC - luwih seneng ketamine"
+  ],
+  "dose": "2-4 mg IV/IO q4j PRN. Titrate kanggo efek. IM: 5-10 mg q4h PRN.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Ketidakstabilan hemodinamik / syok hemoragik",
+    "Depresi ambegan",
+    "Cedera sirah kanthi owah-owahan LOC (relatif)"
+  ],
+  "warnings": [
+    "Nimbulaké vasodilatasi -- bisa nambah kejut hemoragik. Kaji BP sadurunge lan sawise.",
+    "Duwe naloxone langsung kasedhiya.",
+    "Depresi ambegan - monitor tingkat."
+  ],
+  "regional_names": {
+    "generic": "morfin sulfat"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV q2-4j PRN. Dosis tunggal maksimal 2mg IV ing bocah naif opioid.",
+      "note": "Monitor tingkat respirasi kanthi rapet. Neonatus banget sensitif."
+    },
+    "obstetric": {
+      "note": "Nyabrang plasenta. Depresi ambegan neonatal bisa ditindakake yen diwenehake sajrone 2-4 jam sawise pangiriman. Siapke naloxone kanggo bayi."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

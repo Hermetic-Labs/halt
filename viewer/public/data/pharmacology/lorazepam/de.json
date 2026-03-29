@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Ativan"
+  ],
+  "description": "Mittelwirksames Benzodiazepin. Erstlinien-IV/IM-Behandlung bei Status epilepticus und akuten Anfällen. Wird auch zur Kurzsedierung und Anxiolyse eingesetzt.",
+  "indications": [
+    "Status epilepticus (erste Linie IV)",
+    "Akute Anfallsbehandlung",
+    "Verfahrenssedierung",
+    "Starke Angst oder Unruhe"
+  ],
+  "dose": "Anfall: 4 mg i.v./io. langsamer Druck über 2 Min. Bei anhaltendem Anfall 4 mg alle 5–10 Minuten wiederholen. IM: 4 mg, wenn eine intravenöse Gabe nicht verfügbar ist.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "Akutes Engwinkelglaukom",
+    "Schwere Atemdepression",
+    "Überempfindlichkeit gegen Propylenglykol"
+  ],
+  "warnings": [
+    "Verursacht Atemdepression – BVM und Atemwegsausrüstung bereithalten.",
+    "Die Sedierung kann 6–8 Stunden dauern – achten Sie auf die Atemwege.",
+    "Paradoxe Unruhe möglich, insbesondere bei älteren Menschen und Kindern."
+  ],
+  "regional_names": {
+    "generic": "Lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05–0,1 mg/kg IV/IM (maximal 4 mg/Dosis). Bei Bedarf alle 5–10 Minuten einmal wiederholen.",
+      "note": "Für die intravenöse Anfallsbehandlung bei Kindern gegenüber Diazepam bevorzugt."
+    },
+    "obstetric": {
+      "note": "Plazentagängig – Atemdepression bei Neugeborenen möglich. Anwendung bei mütterlichem Status epilepticus, wenn der Nutzen das Risiko überwiegt."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

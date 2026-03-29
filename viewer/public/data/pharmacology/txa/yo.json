@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Tranexamic Acid (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Cyklokapron",
+    "Lysteda"
+  ],
+  "description": "Aṣoju Antifibrinolytic ti o ṣe idiwọ idinku ti awọn didi ẹjẹ. Ni pataki dinku iku lati mọnamọna ẹjẹ nigba fifun ni kutukutu. Ti ṣeduro nipasẹ CoTCCC fun gbogbo awọn ti o farapa pẹlu iṣọn-ẹjẹ pataki tabi ti o wa ninu ewu isun ẹjẹ pataki.",
+  "indications": [
+    "Ita pataki tabi ifura inu ẹjẹ ẹjẹ",
+    "Ibanujẹ ẹjẹ",
+    "Ewu giga ti isun ẹjẹ (ọna ẹrọ ipalara)"
+  ],
+  "dose": "1g IV/IO ju iṣẹju mẹwa 10 lọ, atẹle nipa 1g IV/IO ju wakati 8 lọ. Ti IV/IO ko ba si: 650mg PO x2 (lapapọ 1.3g) - aṣayan TCCC PO.",
+  "route": [
+    "IV",
+    "IO",
+    "PO"
+  ],
+  "window": "Gbọdọ ṣe abojuto laarin awọn wakati 3 ti ipalara. Ni ikọja awọn wakati 3, TXA le pọ si iku -- ma ṣe funni.",
+  "contraindications": [
+    "Itan-akọọlẹ ti arun thromboembolic (DVT, PE, ọpọlọ)",
+    "Iṣọkan Iṣọkan inu iṣan ti a tan kaakiri (DIC)",
+    "> Awọn wakati 3 lẹhin ipalara"
+  ],
+  "warnings": [
+    "Akoko iforukọsilẹ ti iṣakoso lẹsẹkẹsẹ - window jẹ awọn wakati 3 lati akoko ipalara, kii ṣe akoko dide.",
+    "Maṣe daamu iwọn IV (1g) pẹlu iwọn lilo ẹnu."
+  ],
+  "regional_names": {
+    "generic": "tranexamic acid",
+    "US": "Cyklokapron",
+    "UK": "Cyklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg / kg IV (max 1g). Ẹri nyoju -- lo idajọ ile-iwosan.",
+      "note": "Ferese 3-wakati kanna kan."
+    },
+    "obstetric": {
+      "note": "Itọkasi fun isun ẹjẹ lẹhin ibimọ. Ailewu ninu oyun. Iwọn iwọn lilo agbalagba kanna kan."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

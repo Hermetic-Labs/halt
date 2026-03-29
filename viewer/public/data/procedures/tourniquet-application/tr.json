@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Turnike Uygulaması (Savaş Uygulama Turnikesi -- CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "herhangi bir yanıt veren",
+  "time_estimate": "30-60 saniye",
+  "description": "Hayatı tehdit eden ekstremite kanamalarında kesin kanama kontrolü. Erken başvurun, gecikmeyin.",
+  "equipment": [
+    "kedi turnikesi",
+    "kalıcı kalem"
+  ],
+  "steps": [
+    "Yaranın proksimal (yukarı) kısmına 2-3 inç (5-7 cm) kadar turnike uygulayın; giysinin üzeri kabul edilebilir.",
+    "Kendiliğinden yapışan bandı uzvun etrafından geçirin ve sürtünme adaptörü tokasından geçirin.",
+    "Bandı sıkıca çekin ve tekrar kendi üzerine sabitleyin.",
+    "Kanama duruncaya veya distal nabız kayboluncaya kadar ırgat çubuğunu çevirin.",
+    "Irgatı ırgat klipsine kilitleyin.",
+    "Sabitlemek için ırgat kayışını ırgat çubuğunun üzerine uygulayın.",
+    "Uygulama zamanını doğrudan turnike üzerine (işaretleyici kullanın) VE TCCC kartı üzerine yazın.",
+    "Yarayı ortaya çıkarın ve yeniden değerlendirin. 5 dakika sonra tekrar değerlendirin."
+  ],
+  "warnings": [
+    "Turnikeyi sahada uyguladıktan sonra ÇIKARMAYIN; yalnızca kontrollü bir ortamda eğitimli tıbbi personel tarafından çıkartılmalıdır.",
+    "Zaman kritiktir: Turnikenin >2 saat olması uzuv kaybı riskini önemli ölçüde artırır. Zamanı hemen kaydedin.",
+    "Bir derzin üzerine uygulamayın. Uzuvda birden fazla düzeyde yara varsa, tüm yaralara proksimal olarak uygulayın.",
+    "Doğaçlama turnikeler (kemerler, halatlar) önemli ölçüde daha az etkilidir."
+  ],
+  "follows": [
+    "doğrudan basınç",
+    "yara paketleme"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Varsa dar pediatrik turnike kullanın. Standart CAT kullanılabilir ancak dikkatli bir şekilde sıkın. Uzuvlar daha küçüktür; distal nabzı dikkatlice kontrol edin."
+    },
+    "obstetric": {
+      "note": "Ekstremite yaraları için standart uygulama. Karın veya pelvise uygulamayın."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

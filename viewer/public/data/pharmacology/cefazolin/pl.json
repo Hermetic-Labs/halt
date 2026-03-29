@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Cefazolina",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Ancef",
+    "Kefzol"
+  ],
+  "description": "Cefalosporyna I generacji. Antybiotyk pozajelitowy pierwszego rzutu w leczeniu poważnych infekcji ran i profilaktyce chirurgicznej. Dobry zasięg gram-dodatni, w tym MSSA. Podawać w ciągu 60 minut od nacięcia chirurgicznego w celach profilaktycznych.",
+  "indications": [
+    "Profilaktyka ran chirurgicznych",
+    "Poważne zakażenia tkanek miękkich",
+    "Profilaktyka złamań otwartych",
+    "Zakażenia skóry i struktur skóry"
+  ],
+  "dose": "1-2 g dożylnie/im. co 8 godzin. Profilaktyka chirurgiczna: 2 g dożylnie w ciągu 60 minut przed nacięciem. Powtórz 2 g, jeśli zabieg trwa > 4 godziny.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "W profilaktyce chirurgicznej: podać w ciągu 60 minut od nacięcia.",
+  "contraindications": [
+    "Znana alergia na cefalosporyny",
+    "Ciężka alergia na penicylinę (reaktywność krzyżowa 5–10%)"
+  ],
+  "warnings": [
+    "Reakcja krzyżowa z alergią na penicylinę: stosować ostrożnie u pacjentów uczulonych na penicylinę.",
+    "Dostosuj dawkę w przypadku zaburzeń czynności nerek."
+  ],
+  "regional_names": {
+    "generic": "cefazolina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM co 8 godzin (maks. 2 g/dawkę). Profilaktyka: 30 mg/kg (maks. 2 g) przed nacięciem.",
+      "note": "Bezpieczny i dobrze przebadany w pediatrii."
+    },
+    "obstetric": {
+      "note": "Bezpieczny w czasie ciąży i laktacji. Preferowany antybiotyk pozajelitowy przy zabiegach położniczych."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

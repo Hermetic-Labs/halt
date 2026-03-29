@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Morfin Sülfat",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Devam",
+    "Morfin Sülfat Enjeksiyonu"
+  ],
+  "description": "Opioid analjezik. Ağrıyı etkili bir şekilde giderir ancak vazodilatasyona ve hipotansiyona neden olur; hemorajik şokta dikkatli kullanın. Ketamin savaş ortamlarında tercih edilir. Morfin'i yalnızca hemodinamik açıdan stabil hastalarda kullanın.",
+  "indications": [
+    "Hemodinamik olarak stabil hastalarda orta ila şiddetli ağrı",
+    "TCCC'de birinci seçenek değil -- ketamini tercih edin"
+  ],
+  "dose": "2-4 mg IV/IO 4 saatte bir PRN. Etkili olacak şekilde titre edin. IM: 5-10 mg 4 saatte bir PRN.",
+  "route": [
+    "IV",
+    "Giriş Çıkış",
+    "anlık ileti",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hemodinamik dengesizlik / hemorajik şok",
+    "Solunum depresyonu",
+    "Değişen LOC ile kafa travması (göreceli)"
+  ],
+  "warnings": [
+    "Vazodilatasyona neden olur - hemorajik şoku kötüleştirebilir. Kan basıncını öncesi ve sonrası değerlendirin.",
+    "Naloksanı hemen hazır bulundurun.",
+    "Solunum depresyonu - hızı izleyin."
+  ],
+  "regional_names": {
+    "generic": "morfin sülfat"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV 2-4 saatte bir PRN. Opioid kullanmamış çocukta maksimum tek doz 2 mg IV.",
+      "note": "Solunum hızını yakından izleyin. Yenidoğanlar son derece hassastır."
+    },
+    "obstetric": {
+      "note": "Plasentayı geçer. Doğumdan sonraki 2-4 saat içinde verilirse yenidoğanda solunum depresyonu mümkündür. Yenidoğan için nalokson hazırlayın."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

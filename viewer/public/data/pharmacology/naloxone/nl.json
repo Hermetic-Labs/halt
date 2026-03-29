@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxon",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcan",
+    "Kloxxado"
+  ],
+  "description": "Competitieve opioïdereceptorantagonist. Herstelt snel door opioïden geïnduceerde ademhalingsdepressie, sedatie en analgesie. Aanvang IV: 2 min, IM: 5 min, IN: 8-13 min. Duur korter dan bij de meeste opioïden - herhaalde dosering kan nodig zijn.",
+  "indications": [
+    "Overdosis opioïden of ademhalingsdepressie",
+    "Omkering van opioïdensedatie",
+    "Vermoedelijk slachtoffer van opioïden"
+  ],
+  "dose": "0,4-2 mg IV/IO/IM/IN. Herhaal indien nodig q2-3 min. Maximaal 10 mg. Intranasaal (IN): 2 mg per neusgat.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Geen absolute contra-indicaties bij overdosering"
+  ],
+  "warnings": [
+    "De werkingsduur (30-90 min) is korter dan bij de meeste opioïden; de patiënt kan opnieuw verdoofd worden. Controleer gedurende minimaal 1 uur na de laatste dosis.",
+    "Veroorzaakt acute opioïdontwenning - kan agitatie, tachycardie en longoedeem veroorzaken bij opioïdafhankelijke patiënten.",
+    "Zal de analgesie omkeren - de patiënt kan acuut strijdlustig worden van de pijn."
+  ],
+  "regional_names": {
+    "generic": "naloxon",
+    "US": "Narcan"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,01 mg/kg IV/IM/IN (max. 0,4 mg). Herhaal q2-3 min PRN.",
+      "note": "Neonataal: 0,01 mg/kg voor het ongedaan maken van opioïden bij de moeder."
+    },
+    "obstetric": {
+      "note": "Veilig tijdens de zwangerschap. Als de moeder vlak voor de bevalling wordt gegeven, moet de pasgeborene worden gecontroleerd op ontwenningsverschijnselen."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

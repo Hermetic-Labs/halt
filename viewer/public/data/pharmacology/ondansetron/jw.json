@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Antagonis reseptor 5-HT3 selektif antiemetik. Efektif banget kanggo mual lan muntah. ODT (tablet disintegrasi lisan) migunani ing setelan lapangan nalika IV ora kasedhiya. Kalebu ing sawetara paket pil tempur.",
+  "indications": [
+    "Mual lan muntah (kemoterapi, opioid-induced, post-operative, TBI-related)",
+    "Lelara gerak",
+    "Mual saka administrasi ketamine"
+  ],
+  "dose": "4-8 mg IV/IO push alon liwat 2-5 min. ODT: 4-8 mg larut ing ilat. IM: 4 mg.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hipersensitivitas sing dikenal kanggo ondansetron utawa antagonis 5-HT3 liyane",
+    "Sindrom QT dawa bawaan (mung dosis dhuwur IV)"
+  ],
+  "warnings": [
+    "Dosis IV dosis dhuwur bisa nambah interval QT - nggunakake dosis IV paling efektif.",
+    "Ora ngganti manajemen saluran napas ing pasien obtunded kanthi muntah - nglindhungi saluran napas dhisik."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,1-0,15 mg / kg IV (maks 4 mg). ODT: 4mg kanggo bocah-bocah> 4 taun.",
+      "note": "Digunakake kanthi wiyar lan ditrima kanthi apik ing pediatri."
+    },
+    "obstetric": {
+      "note": "Data winates nalika meteng. Gunakake kanggo mual / muntah sing abot sawise trimester pisanan nalika keuntungan luwih gedhe tinimbang risiko. Ora dianjurake ing trimester pisanan."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

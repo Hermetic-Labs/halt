@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Solución salina normal (NaCl al 0,9%)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "Inyección de cloruro de sodio al 0,9%"
+  ],
+  "description": "Líquido cristaloide isotónico. Se utiliza para la reanimación con líquidos intravenosos. En shock hemorrágico, utilícelo con precaución: grandes volúmenes empeoran la coagulopatía (acidosis hiperclorémica, coagulopatía dilucional). Se prefiere la hipotensión permisiva en traumatismos penetrantes en espera del control de la hemorragia.",
+  "indications": [
+    "Reanimación con líquidos (con precaución en shock hemorrágico)",
+    "Diluyente/lavado de medicamentos",
+    "Hipovolemia por causas no hemorrágicas"
+  ],
+  "dose": "Shock hemorrágico: Limitar a 1L máximo en espera del control de la hemorragia (hipotensión permisiva). Objetivo PAS 80-90 mmHg en traumatismo penetrante, 90 mmHg en TCE. Hipovolemia no hemorrágica: bolos de 500 mL, reevaluar.",
+  "route": [
+    "IV",
+    "OI"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hipernatremia",
+    "Sobrecarga de líquidos/edema pulmonar (relativo)"
+  ],
+  "warnings": [
+    "Grandes volúmenes causan acidosis metabólica hiperclorémica y coagulopatía por dilución, lo que empeora la tríada letal en caso de trauma.",
+    "Se prefiere el lactato de Ringer (LR) para la reanimación de traumatismos de gran volumen.",
+    "NO resucite en exceso un traumatismo penetrante del torso antes del control quirúrgico de la hemorragia (hipotensión permisiva)."
+  ],
+  "regional_names": {
+    "generic": "cloruro de sodio 0,9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Bolo IV de 20 ml/kg, reevaluar. Repita máximo x3 (60 ml/kg en total) antes de considerar productos sanguíneos.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Reanimación estándar en hemorragia obstétrica. Reanimación agresiva con líquidos apropiada para la hemorragia posparto antes de que estén disponibles los hemoderivados."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "글래스고 혼수상태 척도(GCS)",
+  "category": "neurological",
+  "description": "눈, 언어 및 운동 반응을 통한 의식의 표준화된 신경학적 점수. 점수 범위는 3~15입니다.",
+  "instructions": "세 가지 영역 각각을 독립적으로 점수를 매깁니다. 총 GCS에 대한 세 가지 점수를 모두 합산합니다.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "자발적인"
+        },
+        {
+          "score": 3,
+          "label": "음성으로"
+        },
+        {
+          "score": 2,
+          "label": "고통스러워"
+        },
+        {
+          "score": 1,
+          "label": "없음"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "지향적"
+        },
+        {
+          "score": 4,
+          "label": "혼란스러워"
+        },
+        {
+          "score": 3,
+          "label": "부적절한 단어"
+        },
+        {
+          "score": 2,
+          "label": "이해할 수 없는 소리"
+        },
+        {
+          "score": 1,
+          "label": "없음"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "명령에 복종한다"
+        },
+        {
+          "score": 5,
+          "label": "통증의 국소화"
+        },
+        {
+          "score": 4,
+          "label": "고통에서 물러나"
+        },
+        {
+          "score": 3,
+          "label": "비정상적인 굴곡(장식)"
+        },
+        {
+          "score": 2,
+          "label": "확장(심뇌제거)"
+        },
+        {
+          "score": 1,
+          "label": "없음"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "가벼운 TBI -- 면밀히 모니터링"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "중등도의 TBI -- 기도 준비"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "중증 TBI - 기도에 즉각적인 위험이 있음, 가능하면 삽관"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "2세 미만 어린이에게는 소아 GCS(pGCS)를 사용하세요. 언어 전 아동에 맞게 조정된 언어 점수."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

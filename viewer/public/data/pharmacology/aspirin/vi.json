@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirin (Axit Acetylsalicylic)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Bayer Aspirin",
+    "Ecotrin"
+  ],
+  "description": "Thuốc chống viêm không steroid (NSAID) có đặc tính kháng tiểu cầu. Điều trị đầu tiên khi nghi ngờ hội chứng mạch vành cấp tính (ACS). Ức chế kết tập tiểu cầu không hồi phục - tác dụng kéo dài suốt thời gian sống của tiểu cầu (7-10 ngày).",
+  "indications": [
+    "Nghi ngờ nhồi máu cơ tim cấp tính (MI) -- nhai ngay",
+    "Đau thắt ngực không ổn định / hội chứng mạch vành cấp tính",
+    "Đột quỵ (thiếu máu cục bộ -- sau khi loại trừ xuất huyết)",
+    "Sốt và đau nhẹ đến vừa (giảm đau)"
+  ],
+  "dose": "ACS: 325 mg PO - CHEW (không nuốt toàn bộ) ngay lập tức. Giảm đau/hạ sốt: 325-650 mg PO mỗi 4-6 giờ PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Hãy cho càng sớm càng tốt - hãy nhai ngay khi có nghi ngờ.",
+  "contraindications": [
+    "Chảy máu GI đang hoạt động",
+    "Đột quỵ xuất huyết",
+    "Đã biết dị ứng với aspirin hoặc quá mẫn với NSAID",
+    "Chảy máu nghiêm trọng không kiểm soát được -- aspirin làm xuất huyết trầm trọng hơn"
+  ],
+  "warnings": [
+    "KHÔNG dùng cho bệnh nhân xuất huyết - aspirin làm suy yếu chức năng tiểu cầu và làm chảy máu nặng hơn.",
+    "KHÔNG dùng cho trẻ < 12 tuổi mắc bệnh do virus - có nguy cơ mắc hội chứng Reye.",
+    "Kích ứng GI - dùng cùng với thức ăn nếu không cấp cứu."
+  ],
+  "regional_names": {
+    "generic": "aspirin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Giảm đau/hạ sốt: 10-15 mg/kg PO mỗi 4-6 giờ (tối đa 650 mg/liều). LƯU Ý: Chống chỉ định trong bệnh do virus (hội chứng Reye).",
+      "note": "Thay vào đó hãy sử dụng acetaminophen (paracetamol) để hạ sốt ở trẻ bị bệnh do virus."
+    },
+    "obstetric": {
+      "note": "Tránh dùng trong thời kỳ mang thai, đặc biệt là ba tháng cuối (đóng ống động mạch sớm). Liều thấp (81 mg) chỉ được sử dụng để phòng ngừa tiền sản giật theo hướng dẫn của bác sĩ."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

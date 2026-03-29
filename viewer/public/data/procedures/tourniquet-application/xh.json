@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Isicelo seTourniquet (ITourniquet yeSicelo sokuLwa -- CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "nawuphi na umphenduli",
+  "time_estimate": "30-60 umzuzwana",
+  "description": "Ulawulo oluqinisekileyo lokopha ukopha okusongela ubomi. Faka isicelo kwangethuba -- sukulibazisa.",
+  "equipment": [
+    "ikati-tourniquet",
+    "isigxina-umakishi"
+  ],
+  "steps": [
+    "Faka i-tourniquet 2-3 intshi (5-7 cm) proximal (ngaphezulu) kwenxeba -- ngaphezulu kwempahla yamkelekile.",
+    "Jikelezisa ibhendi ebambelelayo kwilungu kwaye uthulule kwibhanti yeadaptha yokukhuhlana.",
+    "Tsala ibhendi ngokuqinileyo kwaye uyikhusele kwakhona ngokwayo.",
+    "Jija intonga yomoya de kuphele ukopha okanye i-distal pulse ingabikho.",
+    "Tshixa i-windlass kwikliphu yomoya.",
+    "Faka intambo yomoya phezu kwentonga yomoya ukuze ukhuseleke.",
+    "Bhala ixesha lesicelo ngokuthe ngqo kwi-tourniquet (sebenzisa isiphawuli) KUNYE nakwikhadi le-TCCC.",
+    "Veza kwaye uphinde uvavanye inxeba. Phinda uhlole emva kwemizuzu emi-5."
+  ],
+  "warnings": [
+    "MUSA ukususa i-tourniquet xa sele ifakiwe endle -- kuphela ngabasebenzi bezonyango abaqeqeshiweyo kwindawo elawulwayo.",
+    "Ixesha libaluleke kakhulu: i-tourniquet> iiyure ze-2 zandisa kakhulu ingozi yokulahleka kwemilenze. Log ixesha ngoko nangoko.",
+    "MUSA ukufaka isicelo phezu kwendawo edibeneyo. Ukuba ilungu linamanxeba kumanqanaba amaninzi, sebenzisa i-proximal kuwo onke amanxeba.",
+    "Ii-tourniquets eziphuculweyo (iibhanti, iintambo) zingasebenzi kakhulu."
+  ],
+  "follows": [
+    "ngqo-uxinzelelo",
+    "ukupakisha amanxeba"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Sebenzisa i-tourniquet yabantwana emxinwa ukuba ikhona. I-CAT eqhelekileyo ingasetyenziswa kodwa qina ngononophelo. Amalungu mancinci -- jonga i-distal pulse ngononophelo."
+    },
+    "obstetric": {
+      "note": "Ukusetyenziswa okusemgangathweni kwamanxeba aphelile. Musa ukusebenzisa isisu okanye i-pelvis."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

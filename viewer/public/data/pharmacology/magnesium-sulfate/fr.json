@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Sulfate de magnésium (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Injection de sulfate de magnésium"
+  ],
+  "description": "Dépresseur du SNC et anticonvulsivant utilisé pour la prévention et le traitement des crises d'éclampsie (convulsions pendant la grossesse dues à la pré-éclampsie). Également utilisé pour l'asthme sévère et les torsades de pointes. Première intention pour l'éclampsie par rapport aux benzodiazépines.",
+  "indications": [
+    "Éclampsie (prévention et traitement des crises d'épilepsie dans la pré-éclampsie sévère)",
+    "Prophylaxie de la pré-éclampsie (caractéristiques sévères)",
+    "Torsades de pointes (taches V polymorphes dues à l'hypomagnésémie)",
+    "Asthme aigu sévère (complémentaire)"
+  ],
+  "dose": "Dose de charge pour l’éclampsie : 4 à 6 g IV en poussée lente sur 20 minutes. Entretien : 1 à 2 g/heure en perfusion IV. Si les crises récidivent : 2 à 4 g IV pendant 5 min. Chargement IM (si pas IV) : 5 g IM sur chaque fesse (10 g au total) simultanément.",
+  "route": [
+    "IV",
+    "OI",
+    "MI"
+  ],
+  "window": "Commencer dès le début des crises ou dès le diagnostic de caractéristiques sévères de pré-éclampsie.",
+  "contraindications": [
+    "Myasthénie grave",
+    "Défauts de conduction cardiaque",
+    "Insuffisance rénale (s'accumule -- réduire la dose)"
+  ],
+  "warnings": [
+    "Signes de toxicité : perte du réflexe rotulien (premier signe, 7-10 mEq/L), dépression respiratoire (> 10 mEq/L), arrêt cardiaque (> 15 mEq/L).",
+    "Surveiller les réflexes rotuliens toutes les 15 minutes – perte du réflexe = arrêter la perfusion.",
+    "ANTIDOTE contre la toxicité : Gluconate de calcium 1g IV pendant 3 minutes.",
+    "Réduire la dose en cas d'insuffisance rénale - surveiller le débit urinaire."
+  ],
+  "regional_names": {
+    "generic": "sulfate de magnésium"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Torsades : 25-50 mg/kg IV pendant 10-20 min (max 2g). Asthme sévère : 25-75 mg/kg IV (max 2g).",
+      "note": "Rarement utilisé pour les convulsions chez les patientes pédiatriques non obstétricales - l'éclampsie est la principale indication."
+    },
+    "obstetric": {
+      "note": "Indication primaire. Traverse le placenta -- hypermagnésémie néonatale possible. Dose néonatale si dépression respiratoire : gluconate de calcium 100 mg/kg IV. Informez l’équipe de l’USIN de l’utilisation maternelle du magnésium."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

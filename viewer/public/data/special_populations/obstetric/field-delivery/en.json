@@ -1,0 +1,35 @@
+﻿{
+    "id":  "field-delivery",
+    "name":  "Emergency Field Delivery",
+    "category":  "obstetric",
+    "skill_level":  "combat-medic",
+    "time_estimate":  "Varies -- 20+ min",
+    "description":  "Management of precipitous or unplanned delivery in austere environment.",
+    "equipment":  [
+                      "gloves",
+                      "clean-cloth-blankets",
+                      "cord-clamps-or-ties",
+                      "scissors",
+                      "bulb-syringe"
+                  ],
+    "steps":  [
+                  "Position the mother supine or semi-reclined. Left lateral tilt preferred if unconscious (prevents aortocaval compression).",
+                  "Control the delivery of the head -- support with palm. Do NOT pull.",
+                  "Once the head is delivered, check for nuchal cord (around neck). If present, slip over head. If tight, clamp and cut.",
+                  "Suction the mouth then nose with bulb syringe if available.",
+                  "Guide delivery of anterior shoulder by gentle downward traction on the head, then upward for posterior shoulder.",
+                  "Deliver the body -- note time of delivery.",
+                  "Dry and warm the infant immediately. Stimulate by rubbing the back.",
+                  "Clamp and cut the cord (wait 1-2 min if infant is stable).",
+                  "Deliver the placenta with gentle controlled traction -- do NOT force.",
+                  "Administer oxytocin (if available) to prevent postpartum hemorrhage after placenta delivery.",
+                  "Assess for postpartum hemorrhage -- fundal massage, bimanual compression if needed.",
+                  "Assess Apgar score at 1 and 5 minutes."
+              ],
+    "warnings":  [
+                     "If delivery is not imminent -- do NOT attempt. Rapid MEDEVAC is preferred.",
+                     "Shoulder dystocia: if shoulders are stuck, apply McRoberts maneuver (hyperflex hips) and suprapubic pressure.",
+                     "Postpartum hemorrhage is the leading cause of preventable maternal death -- have oxytocin ready."
+                 ],
+    "source":  "JTS Obstetric CPG / PHTLS"
+}

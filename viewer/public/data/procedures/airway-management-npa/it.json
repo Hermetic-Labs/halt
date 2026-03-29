@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Inserimento delle vie aeree nasofaringee (NPA)",
+  "category": "airway",
+  "skill_level": "salvagente da combattimento",
+  "time_estimate": "1 minuto",
+  "description": "Inserimento di un accessorio flessibile per le vie aeree nasali per mantenere la pervietà delle vie aeree in un paziente incosciente o semicosciente.",
+  "equipment": [
+    "npa-con-spilla da balia",
+    "lubrificante"
+  ],
+  "steps": [
+    "Selezionare la dimensione NPA appropriata (misurare dalla narice al lobo dell'orecchio).",
+    "Lubrificare abbondantemente l'NPA con lubrificante idrosolubile o soluzione salina.",
+    "Inserire la spilla da balia attraverso la flangia se non già presente (impedisce l'aspirazione).",
+    "Inserire delicatamente nella narice destra (smussare verso il setto), avanzando parallelamente al palato.",
+    "Avanzare finché la flangia non appoggia contro la narice.",
+    "Riposizionare il paziente (posizione di recupero se non vi sono problemi alla colonna vertebrale) e rivalutare le vie aeree.",
+    "Se si incontra resistenza, provare con la narice sinistra."
+  ],
+  "warnings": [
+    "Controindicato nella sospetta frattura della base cranica (occhi di procione, segno di Battaglia, rinorrea del liquido cerebrospinale).",
+    "L'NPA è il miglior complemento iniziale delle vie aeree del paziente incosciente: l'OPA può scatenare il vomito in pazienti semicoscienti."
+  ],
+  "source": "TCCC / JTS CPG"
+}

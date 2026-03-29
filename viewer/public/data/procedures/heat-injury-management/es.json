@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Manejo de lesiones por calor",
+  "category": "environmental",
+  "skill_level": "Básico",
+  "time_estimate": "En curso hasta MEDEVAC o paciente estable",
+  "description": "Manejo de calambres por calor, agotamiento por calor e insolación. El golpe de calor es una emergencia que pone en peligro la vida; el tratamiento es un enfriamiento rápido. Distinga inmediatamente el agotamiento por calor (mentalidad normal) del golpe de calor (LOC alterado).",
+  "equipment": [
+    "Agua (oral + refrescante)",
+    "Bolsas de hielo o paños húmedos y fríos",
+    "Suministros intravenosos (LR o NS)",
+    "Abanico o sombra",
+    "Termómetro rectal (temperatura central definitiva)"
+  ],
+  "steps": [
+    "EVALUAR: ¿Está la víctima alerta y orientada? ¿Piel caliente y seca versus piel caliente y sudorosa? Temperatura central si hay termómetro disponible.",
+    "CALAMBRES POR CALOR: Espasmos musculares, estado mental normal. Descanso a la sombra, rehidratación oral con electrolitos, estiramientos suaves. No pone en peligro la vida.",
+    "AGOTAMIENTO POR CALOR: sudoración intensa, debilidad, mareos, estado mental normal o casi normal. Muévase a un área fresca o con sombra. Retire el exceso de ropa. Líquidos orales (si está consciente) o IV LR 1 L durante 30-60 min. Monitorear la progresión hacia un golpe de calor.",
+    "GOLPE DE CALOR (emergencia): Alteración de la LOC, confusión, combatividad o inconsciencia. Temperatura central > 40 °C (104 °F). Piel caliente (puede estar mojada o seca). COMENZAR: Retirar del fuego inmediatamente, quitar toda la ropa, la piel mojada y abanicar agresivamente. Aplique compresas de hielo en el cuello, las axilas y la ingle (áreas vasculares altas). IV LR 1-2L. Proteger las vías respiratorias si está inconsciente. VACUNACIÓN MEDICA inmediatamente.",
+    "NO le dé aspirina ni acetaminofén para el golpe de calor; no ayuda, puede hacer daño.",
+    "Monitorizar: signos vitales cada 15 min, vía aérea, estado mental. Documente la tendencia temporal.",
+    "Continúe enfriando durante MEDEVAC; no se detenga para el transporte."
+  ],
+  "warnings": [
+    "El golpe de calor es una emergencia que pone en peligro la vida; no lo confunda con el agotamiento por calor. Verificar el estado mental.",
+    "El enfriamiento es el tratamiento definitivo. No demore el enfriamiento para establecer el acceso intravenoso.",
+    "El golpe de calor por esfuerzo puede ocurrir en personas en buena forma física; la aptitud física no protege.",
+    "La hiponatremia (bajo contenido de sodio) por sobrehidratación con agua corriente puede simular un golpe de calor: proporcione una solución de electrolitos, no solo agua."
+  ],
+  "follows": [
+    "evaluación-deshidratación"
+  ],
+  "precedes": [
+    "línea medevac-9"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Los niños termorregulan de manera menos eficiente. El golpe de calor puede progresar más rápido. Líquido según el peso: bolo IV de 20 ml/kg LR. La temperatura central mediante termómetro rectal es la más precisa."
+    },
+    "obstetric": {
+      "note": "La hipertermia materna (>39°C) puede causar defectos del tubo neural fetal (temprano) y sufrimiento fetal (tardío). Enfriamiento agresivo. Monitorización de la frecuencia cardíaca fetal, si está disponible."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

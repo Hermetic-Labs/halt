@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Fanerena mivantana amin'ny fanaraha-maso ny fandatsahan-drà",
+  "category": "hemorrhage-control",
+  "skill_level": "misy mamaly",
+  "time_estimate": "3-5 min",
+  "description": "Fanaraha-maso ny fandatsahan-dra amin'ny andalana voalohany ho an'ny fery sy ratra amin'ny vatana.",
+  "equipment": [
+    "fonon-tanana",
+    "trauma-dressing",
+    "cravat-bandage"
+  ],
+  "steps": [
+    "Don fonon-tanana raha misy.",
+    "Asehoy ny ratra amin'ny fanapahana akanjo.",
+    "Apetaho mivantana amin'ny fery ny fery amin'ny fery.",
+    "Tsindrio mafy amin'ny voditongotry ny tananao. Ampiasao ny lanjan'ny vatanao - fa tsy ny herin'ny sandry fotsiny.",
+    "Tazony fanerena tsy tapaka mandritra ny 3 minitra farafahakeliny.",
+    "AZA manainga ny akanjo mba hijerena - manelingelina ny fiforonan'ny clots izany.",
+    "Raha ritra ny fandehanan-dra, asio akanjo hafa amboniny. Aza esorina ny voalohany.",
+    "Arovy amin'ny fehin-kibo fanerena raha misy ary afindrao amin'ny fonosana ratra na tourniquet raha mitohy ny fandehanan-dra."
+  ],
+  "warnings": [
+    "Ny fanerena mivantana fotsiny dia tsy ampy ho an'ny rà mandriaka -- miitatra amin'ny famenoana fery na tourniquet.",
+    "Ny fery junctional (volankazo, axilla, vozony) dia mitaky famenoana ratra, fa tsy tsindry ivelany fotsiny."
+  ],
+  "follows": [],
+  "precedes": [
+    "famenoana ratra",
+    "tourniquet-application"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Fanerena mifandanja ihany. Aza manindry ny thorax amin'ny zazakely."
+    },
+    "obstetric": {
+      "note": "Fadio ny fanerena mafy amin'ny tranonjaza. Ampiasao ny fonosana lateral raha misy fery eo akaikin'ny valahany."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

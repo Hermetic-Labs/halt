@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinephrine (Adrenaline)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalin"
+  ],
+  "description": "Catecholamine endogenous nwere ọrụ alfa na beta adrenergic. Ọgwụgwọ nke mbụ maka anaphylaxis na njide obi. Na anaphylaxis, a na-ahọrọ apata ụkwụ IM karịa IV (dịkwa nchebe, ọ dị nhata). Egbula oge maka ịnweta IV na anaphylaxis.",
+  "indications": [
+    "Anaphylaxis (akara nke mbụ)",
+    "Njide obi -- VF/VT/PEA/asystole na-enweghị isi",
+    "Bronchospasm siri ike",
+    "Hypotension refractory na mmiri"
+  ],
+  "dose": "Anaphylaxis: 0.3-0.5 mg IM (apata ụkwụ anerolateral) | Injector akpaaka 0.3 mg IM. Tinyegharịa q5-15 min PRN. Njide obi: 1 mg IV / IO q3-5 min n'oge CPR. Bronchospasm siri ike: 0.3 mg IM.",
+  "route": [
+    "IM",
+    "IV",
+    "IO"
+  ],
+  "window": "Na anaphylaxis: nye IM ozugbo - egbula oge maka ohere IV.",
+  "contraindications": [
+    "Enweghị contraindications zuru oke na ihe mberede na-eyi ndụ egwu"
+  ],
+  "warnings": [
+    "Ekwesịrị iji epinephrine IV maka anaphylaxis naanị na njide obi ma ọ bụ nnukwu ujo - dị ize ndụ ma ọ bụrụ na enyere onye ọrịa maara nke ọma.",
+    "Extravasation na-akpata necrosis anụ ahụ -- hụ na patency IV.",
+    "Na-abawanye ọchịchọ oxygen myocardial -- jiri nlezianya mee ihe na ọrịa obi ama ama na mpụga njide."
+  ],
+  "regional_names": {
+    "generic": "epinephrine",
+    "UK": "adrenaline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anaphylaxis: 0.01 mg/kg IM (karịa 0.5 mg). EpiPen Jr (0.15 mg) maka 15-30 n'arọ. Njide obi: 0.01 mg/kg IV/IO q3-5 min.",
+      "note": "Jiri usoro onunu ogwu dabere na ibu. Broselow teepu ka akwadoro."
+    },
+    "obstetric": {
+      "note": "Jiri ọgwụ anaphylaxis ọkọlọtọ mee ihe -- nlanarị nke nne bụ ihe kacha mkpa. Epinephrine dị mma n'ime ime maka ihe mberede na-eyi ndụ egwu."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicillin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "Trimox"
+  ],
+  "description": "Breitbandantibiotikum Aminopenicillin. Orales prophylaktisches Antibiotikum bei Wundinfektionen. Teil der TCCC-Kampfpillenpackung zur Wundprophylaxe bei nicht schweren Verletzungen.",
+  "indications": [
+    "Wundinfektionsprophylaxe (leichte bis mittelschwere Wunden, orale Pillenpackung)",
+    "Weichteilinfektionen",
+    "Infektionen der Atemwege"
+  ],
+  "dose": "500 mg PO alle 8 Stunden x 7 Tage (Wundprophylaxe). 875 mg PO alle 12 Stunden alternativ.",
+  "route": [
+    "PO"
+  ],
+  "window": "Beginnen Sie innerhalb von 3 Stunden nach der Verletzung mit der Wundprophylaxe.",
+  "contraindications": [
+    "Bekannte Penicillinallergie (stattdessen Doxycyclin verwenden)",
+    "Mononukleose (Risiko eines Hautausschlags)"
+  ],
+  "warnings": [
+    "Bei Penicillinallergie: Ersetzen Sie Doxycyclin durch 100 mg p.o. 2-mal täglich.",
+    "Nur oraler Weg – bei schweren Wunden oder wenn eine orale Anwendung nicht vertragen wird, intravenöse Antibiotika (Cefazolin/Ciprofloxacin) verwenden."
+  ],
+  "regional_names": {
+    "generic": "Amoxicillin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25–45 mg/kg/Tag, aufgeteilt alle 8 Stunden (maximal 500 mg/Dosis). Verwenden Sie die gewichtsbasierte Broselow-Referenz.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Sicher in der Schwangerschaft. Bevorzugt gegenüber Doxycyclin (das in der Schwangerschaft kontraindiziert ist)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspiryna (kwas acetylosalicylowy)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Aspiryna Bayera",
+    "Ekotrin"
+  ],
+  "description": "Niesteroidowy lek przeciwzapalny (NLPZ) o właściwościach przeciwpłytkowych. Leczenie pierwszego rzutu w przypadku podejrzenia ostrego zespołu wieńcowego (ACS). Nieodwracalnie hamuje agregację płytek krwi – działanie utrzymuje się przez cały okres życia płytek krwi (7-10 dni).",
+  "indications": [
+    "Podejrzewa się ostry zawał mięśnia sercowego (MI) – natychmiast przeżuć",
+    "Niestabilna dławica piersiowa / ostry zespół wieńcowy",
+    "Udar (niedokrwienny – po wykluczeniu krwotocznego)",
+    "Gorączka i ból o nasileniu łagodnym do umiarkowanego (przeciwbólowy)"
+  ],
+  "dose": "ACS: 325 mg PO – ŻUĆ (nie połykać w całości) natychmiast. Przeciwbólowe/przeciwgorączkowe: 325-650 mg PO co 4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Podaj jak najwcześniej – w przypadku podejrzenia natychmiast przeżuj.",
+  "contraindications": [
+    "Aktywne krwawienie z przewodu pokarmowego",
+    "Udar krwotoczny",
+    "Znana alergia na aspirynę lub nadwrażliwość na NLPZ",
+    "Ciężkie niekontrolowane krwawienie – aspiryna pogarsza krwotok"
+  ],
+  "warnings": [
+    "NIE podawać pacjentom z krwotokami – aspiryna nieodwracalnie upośledza funkcję płytek krwi i pogarsza krwawienie.",
+    "NIE podawać dzieciom w wieku poniżej 12 lat z chorobami wirusowymi – ryzyko zespołu Reye’a.",
+    "Podrażnienie przewodu pokarmowego – przyjmować z jedzeniem, jeśli nie pojawia się."
+  ],
+  "regional_names": {
+    "generic": "aspiryna"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Przeciwbólowe/przeciwgorączkowe: 10-15 mg/kg doustnie co 4-6 godzin (maks. 650 mg/dawkę). UWAGA: Przeciwwskazane w chorobach wirusowych (zespół Reye'a).",
+      "note": "Zamiast tego użyj acetaminofenu (paracetamolu) na gorączkę u dzieci z chorobami wirusowymi."
+    },
+    "obstetric": {
+      "note": "Unikać stosowania w ciąży, szczególnie w trzecim trymestrze ciąży (przedwczesne zamknięcie przewodu tętniczego). Niską dawkę (81 mg) stosuje się w zapobieganiu stanowi przedrzucawkowemu wyłącznie pod nadzorem lekarza."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Gestão de lesões por calor",
+  "category": "environmental",
+  "skill_level": "Básico",
+  "time_estimate": "Em curso até MEDEVAC ou paciente estável",
+  "description": "Tratamento de cãibras por calor, exaustão por calor e insolação. A insolação é uma emergência com risco de vida – o resfriamento rápido é o tratamento. Distinguir exaustão por calor (mentalização normal) de insolação (LOC alterado) imediatamente.",
+  "equipment": [
+    "Água (oral + resfriamento)",
+    "Bolsas de gelo ou panos úmidos e frios",
+    "Suprimentos intravenosos (LR ou NS)",
+    "Ventilador ou sombra",
+    "Termômetro retal (temperatura central definitiva)"
+  ],
+  "steps": [
+    "AVALIAR: A vítima está alerta e orientada? Pele quente e seca vs. pele quente e suada? Temperatura central se o termômetro estiver disponível.",
+    "CÂMINAS DE CALOR: Espasmos musculares, atividade mental normal. Descanso à sombra, reidratação oral com eletrólitos, alongamentos suaves. Não é fatal.",
+    "EXAUSTÃO POR CALOR: Sudorese intensa, fraqueza, tontura, atividade mental normal ou quase normal. Vá para uma área sombreada/fresca. Remova o excesso de roupa. Fluidos orais (se consciente) ou IV LR 1L durante 30-60 min. Monitore a progressão para insolação.",
+    "CALOR (emergência): LOC alterado, confusão, combatividade ou inconsciência. Temperatura central > 40°C (104°F). Pele quente (pode estar molhada ou seca). COMEÇO: Retire do fogo imediatamente, retire todas as roupas, molhe a pele e ventile agressivamente. Aplique bolsas de gelo no pescoço, axilas e virilha (áreas vasculares altas). IV LR 1-2L. Proteja as vias aéreas se estiver inconsciente. MEDEVAC imediatamente.",
+    "NÃO dê aspirina ou paracetamol para insolação – não ajuda, pode prejudicar.",
+    "Monitorar: sinais vitais a cada 15 min, vias aéreas, estado mental. Tendência de temperatura do documento.",
+    "Continue o resfriamento durante MEDEVAC – não pare para transporte."
+  ],
+  "warnings": [
+    "A insolação é uma emergência com risco de vida – não a confunda com exaustão pelo calor. Verifique o estado mental.",
+    "O resfriamento é o tratamento definitivo. Não atrase o resfriamento para estabelecer acesso intravenoso.",
+    "A insolação por esforço pode ocorrer em indivíduos em boa forma – a aptidão física não protege.",
+    "A hiponatremia (baixo teor de sódio) causada pela hidratação excessiva com água pura pode imitar a insolação - forneça solução eletrolítica e não apenas água."
+  ],
+  "follows": [
+    "avaliação da desidratação"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "As crianças termorregulam com menos eficiência. A insolação pode progredir mais rapidamente. Fluido com base no peso: bolus LR IV de 20 mL/kg. A temperatura central via termômetro retal é mais precisa."
+    },
+    "obstetric": {
+      "note": "A hipertermia materna (>39°C) pode causar defeitos do tubo neural fetal (precoce) e sofrimento fetal (tardio). Resfriamento agressivo. Monitoramento da frequência cardíaca fetal, se disponível."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

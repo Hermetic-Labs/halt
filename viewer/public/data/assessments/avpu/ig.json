@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "Ọnụ ọgụgụ AVPU",
+  "category": "neurological",
+  "description": "Ntụle nsụhọ nke ọkwa 4 ngwa ngwa. Ọ dị ọsọ karịa GCS maka nhazi mbụ.",
+  "instructions": "Nyochaa ọkwa nzaghachi kachasị elu nke onye ọrịa gosipụtara.",
+  "scoring": [
+    {
+      "code": "A",
+      "label": "Nti mkpu",
+      "description": "Onye ọrịa na-amụ anya, mara, ma na-azakwa nke ọma"
+    },
+    {
+      "code": "V",
+      "label": "Olu",
+      "description": "Onye ọrịa na-anabata naanị mkpali ọnụ"
+    },
+    {
+      "code": "P",
+      "label": "Mgbu",
+      "description": "Onye ọrịa na-anabata naanị mkpali na-egbu mgbu (sternal rub, ntu akwa akwa)"
+    },
+    {
+      "code": "U",
+      "label": "Anaghị anabata",
+      "description": "Enweghị nzaghachi nye mkpali ọ bụla -- enyemaka ụgbọ elu ozugbo achọrọ"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "A",
+      "triage": "Stable -- gaa n'ihu ntule"
+    },
+    {
+      "code": "V",
+      "triage": "Banyere -- nyochaa ụzọ ikuku"
+    },
+    {
+      "code": "P",
+      "triage": "Dị oke egwu - ụzọ ikuku dị n'ihe egwu, GCS na-abụkarị <= 8"
+    },
+    {
+      "code": "U",
+      "triage": "Ngwa ngwa -- jikwaa ụgbọ elu ugbu a"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Dexamethasone",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Decadron",
+    "DexPak"
+  ],
+  "description": "corticosteroid synthetic maharitra ela. Ampiasaina ho an'ny edema cerebral (avo avon'ny cerebral edema -- HACE, TBI), fanehoan-kevitra mahazaka mafy, lalan-drivotra edema, ary ny krizy adrenal. Anti-inflammatoire, tsy anabolika.",
+  "indications": [
+    "Edema cerebral avo lenta (HACE)",
+    "Edema lalan-drivotra (stridor post-extubation, croup)",
+    "Edema cerebral avy amin'ny tumor na abscess",
+    "Fihetseham-po mahery vaika (fanampiny amin'ny epinephrine)",
+    "krizy adrenal",
+    "Fanampiana anti-emetika (perioperative)"
+  ],
+  "dose": "Edema cerebral/HACE: 8-10 mg IV/IM voalohany, avy eo 4 mg q6h. Edema lalan-drivotra: 10 mg IV indray mandeha. Croup: 0,6 mg/kg IM/PO (max 16mg). Krizy adrenal: 4 mg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO"
+  ],
+  "window": "HACE: Manomeza faran'izay haingana miaraka amin'ny fidinana avy hatrany.",
+  "contraindications": [
+    "Aretina holatra rafitra (tsy misy fandrakofana antifungal)",
+    "Vaksiny viriosy velona ao anatin'ny 30 andro (havana)"
+  ],
+  "warnings": [
+    "Tsy manolo ny fidinana sy oksizenina ho an'ny HACE -- ampiasaina ho fanampina ihany.",
+    "Hyperglycemia - manara-maso ny glucose amin'ny ra amin'ny diabeta.",
+    "Immunosuppression amin'ny fampiasana maharitra.",
+    "Ny fatra tokana ho an'ny vonjy taitra amin'ny ankapobeny dia tena azo antoka."
+  ],
+  "regional_names": {
+    "generic": "dexamethasone"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Croup: 0,6 mg/kg PO/IM (max 16 mg). Edema cerebral: 0,5-1 mg/kg IV (max 10 mg). Edema lalan-drivotra: 0,5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM q24h x 2 fatra ampiasaina hanafaingana ny fahamatoran'ny havokavoka foetus amin'ny fitondrana vohoka 24-34 herinandro amin'ny fiterahana mialoha ny fotoana. Miresaha amin'ny mpamatsy ambony indrindra."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

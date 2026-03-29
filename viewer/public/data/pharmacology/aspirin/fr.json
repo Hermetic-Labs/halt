@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirine (acide acétylsalicylique)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Aspirine Bayer",
+    "Écotrine"
+  ],
+  "description": "Anti-inflammatoire non stéroïdien (AINS) doté de propriétés antiplaquettaires. Traitement de première intention en cas de suspicion de syndrome coronarien aigu (SCA). Inhibe de manière irréversible l'agrégation plaquettaire - l'effet dure toute la durée de vie des plaquettes (7 à 10 jours).",
+  "indications": [
+    "Suspicion d'infarctus aigu du myocarde (IM) -- mâcher immédiatement",
+    "Angor instable / syndrome coronarien aigu",
+    "Accident vasculaire cérébral (ischémique -- après hémorragie exclu)",
+    "Fièvre et douleur légère à modérée (analgésique)"
+  ],
+  "dose": "ACS : 325 mg PO -- À MÂCHER (ne pas avaler en entier) immédiatement. Analgésique/antipyrétique : 325-650 mg PO toutes les 4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS : Donner le plus tôt possible – mâcher immédiatement en cas de suspicion.",
+  "contraindications": [
+    "Saignement gastro-intestinal actif",
+    "AVC hémorragique",
+    "Allergie connue à l'aspirine ou hypersensibilité aux AINS",
+    "Saignement sévère et incontrôlé – l'aspirine aggrave l'hémorragie"
+  ],
+  "warnings": [
+    "NE PAS administrer aux patients hémorragiques - l'aspirine altère de manière irréversible la fonction plaquettaire et aggrave les saignements.",
+    "Ne PAS donner aux enfants de < 12 ans atteints d'une maladie virale – risque de syndrome de Reye.",
+    "Irritation gastro-intestinale – à prendre avec de la nourriture si elle n'est pas urgente."
+  ],
+  "regional_names": {
+    "generic": "aspirine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgésique/antipyrétique : 10-15 mg/kg PO toutes les 4-6h (max 650 mg/dose). REMARQUE : Contre-indiqué en cas de maladie virale (syndrome de Reye).",
+      "note": "Utilisez plutôt de l'acétaminophène (paracétamol) contre la fièvre chez les enfants atteints d'une maladie virale."
+    },
+    "obstetric": {
+      "note": "À éviter pendant la grossesse, surtout au troisième trimestre (fermeture prématurée du canal artériel). Une faible dose (81 mg) est utilisée pour la prévention de la pré-éclampsie sous la direction d'un médecin uniquement."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "I-Glasgow Coma Scale (GCS)",
+  "category": "neurological",
+  "description": "Amanqaku asemgangathweni kwi-neurological of conscious ngempendulo zamehlo, zomlomo, kunye neemoto. Uluhlu lwamanqaku 3-15.",
+  "instructions": "Faka amanqaku kwindawo nganye emithathu ngokuzimeleyo. Shwankathela onke amanqaku amathathu etotali yeGCS.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Ngokuzenzekelayo"
+        },
+        {
+          "score": 3,
+          "label": "Ukuthetha ngelizwi"
+        },
+        {
+          "score": 2,
+          "label": "Kwiintlungu"
+        },
+        {
+          "score": 1,
+          "label": "Akukho nanye"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "Ukuqhelaniswa"
+        },
+        {
+          "score": 4,
+          "label": "Ndibhidekile"
+        },
+        {
+          "score": 3,
+          "label": "Amagama angafanelekanga"
+        },
+        {
+          "score": 2,
+          "label": "Izandi ezingaqondakaliyo"
+        },
+        {
+          "score": 1,
+          "label": "Akukho nanye"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "Uthobela imiyalelo"
+        },
+        {
+          "score": 5,
+          "label": "Indawo yentlungu"
+        },
+        {
+          "score": 4,
+          "label": "Urhoxa kwintlungu"
+        },
+        {
+          "score": 3,
+          "label": "Ukujika okungaqhelekanga (zihombise)"
+        },
+        {
+          "score": 2,
+          "label": "Ulwandiso (decerebrate)"
+        },
+        {
+          "score": 1,
+          "label": "Akukho nanye"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "I-TBI ethambileyo -- iliso elibukhali"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "I-TBI ephakathi -- lungisa indlela yomoya"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "I-TBI ebukhali-indlela yomoya esemngciphekweni okhawulezileyo, intubate ukuba kunokwenzeka"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Sebenzisa i-GCS yabantwana (pGCS) kubantwana abangaphantsi kweminyaka emi-2. Amanqaku omlomo alungelelaniselwe abantwana bangaphambi kwamazwi."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

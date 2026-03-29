@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "硫酸吗啡",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS 康汀",
+    "硫酸吗啡注射液"
+  ],
+  "description": "阿片类镇痛药。可有效缓解疼痛，但会导致血管舒张和低血压——失血性休克时请谨慎使用。氯胺酮在战斗环境中是首选。仅对血流动力学稳定的患者使用吗啡。",
+  "indications": [
+    "血流动力学稳定的患者出现中度至重度疼痛",
+    "不是 TCCC 的一线药物——更喜欢氯胺酮"
+  ],
+  "dose": "2-4 mg IV/IO q4h PRN。滴定至效果。 IM：每 4 小时 5-10 毫克 PRN。",
+  "route": [
+    "四",
+    "IO",
+    "即时通讯",
+    "平方"
+  ],
+  "window": "",
+  "contraindications": [
+    "血流动力学不稳定/失血性休克",
+    "呼吸抑制",
+    "LOC 改变的头部损伤（相对）"
+  ],
+  "warnings": [
+    "引起血管舒张——可能加重失血性休克。评估前后血压。",
+    "立即备有纳洛酮。",
+    "呼吸抑制——监测率。"
+  ],
+  "regional_names": {
+    "generic": "硫酸吗啡"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV q2-4h PRN。对于未使用阿片类药物的儿童，最大单剂量 2mg IV。",
+      "note": "密切监测呼吸频率。新生儿极其敏感。"
+    },
+    "obstetric": {
+      "note": "穿过胎盘。如果在分娩后 2-4 小时内给予，可能会抑制新生儿呼吸。为新生儿准备好纳洛酮。"
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

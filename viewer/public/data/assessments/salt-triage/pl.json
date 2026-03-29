@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "Segregacja SALT (sortowanie, ocena, interwencje ratujące życie, leczenie/transport)",
+  "category": "mass-casualty",
+  "description": "Protokół segregacji ofiar masowych. Standard dla zdarzeń z wieloma ofiarami w warunkach wojskowych i cywilnych.",
+  "instructions": "Krok 1: Sortowanie globalne (chodzenie, machanie, bezruch). Krok 2: Oceń w kolejności priorytetów. Krok 3: Wykonaj czynności ratujące życie (zatamuj duże krwawienie, udrożnij drogi oddechowe, dekompresję igły, automatyczne wstrzykiwacze). Krok 4: Przypisz kategorię.",
+  "categories": [
+    {
+      "color": "czarny",
+      "label": "Przyszła/nie żyje",
+      "description": "Mało prawdopodobne, aby przeżył, biorąc pod uwagę dostępne zasoby, lub potwierdzono śmierć"
+    },
+    {
+      "color": "czerwony",
+      "label": "Natychmiastowe (T1)",
+      "description": "Obrażenia zagrażające życiu przeżyją dzięki natychmiastowej interwencji"
+    },
+    {
+      "color": "żółty",
+      "label": "Opóźniony (T2)",
+      "description": "Poważne, ale stabilne obrażenia, mogą poczekać na opiekę"
+    },
+    {
+      "color": "zielony",
+      "label": "Minimalna (T3)",
+      "description": "Drobne obrażenia — ranny podczas chodzenia"
+    },
+    {
+      "color": "szary",
+      "label": "Oczekujący",
+      "description": "Uraz niemożliwy do przeżycia przy obecnych zasobach – tylko opieka komfortowa"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Algorytm selekcji JumpSTART modyfikuje SALT dla pacjentów pediatrycznych. Progi częstości oddechów i etapy oceny różnią się w przypadku dzieci poniżej 8 roku życia."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

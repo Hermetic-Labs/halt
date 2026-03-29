@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Efinifirini (Adrenaline)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalin"
+  ],
+  "description": "Endogenous catecholamine pẹlu alpha ati beta adrenergic aṣayan iṣẹ-ṣiṣe. Itọju laini akọkọ fun anafilasisi ati idaduro ọkan ọkan. Ni anafilasisi, itan IM jẹ ayanfẹ ju IV (ailewu, ṣiṣe deede). Maṣe ṣe idaduro fun iraye si IV ni anafilasisi.",
+  "indications": [
+    "Anafilasisi (ila akọkọ)",
+    "Idaduro ọkan ọkan -- pulseless VF/VT/PEA/asystole",
+    "Bronchospasm ti o lagbara",
+    "Hypotension refractory to olomi"
+  ],
+  "dose": "Anafilasisi: 0.3-0.5 iwon miligiramu IM (itatẹtẹ alakan) | Injector laifọwọyi 0.3 mg IM. Tun q5-15 min PRN. Idaduro ọkan ọkan: 1 mg IV / IO q3-5 min lakoko CPR. Bronchospasm ti o lagbara: 0.3 mg IM.",
+  "route": [
+    "IM",
+    "IV",
+    "IO"
+  ],
+  "window": "Ni anafilasisi: fun IM lẹsẹkẹsẹ -- ma ṣe idaduro fun iraye si IV.",
+  "contraindications": [
+    "Ko si awọn ilodisi pipe ni pajawiri eewu-aye"
+  ],
+  "warnings": [
+    "efinifirini IV fun anafilasisi yẹ ki o ṣee lo nikan ni idaduro ọkan tabi ipaya nla - lewu ti a ba fun ni titari IV si alaisan mimọ.",
+    "Extravasation fa negirosisi tissu - rii daju patency IV.",
+    "Ṣe alekun ibeere atẹgun myocardial -- lo iṣọra ni arun iṣọn-alọ ọkan ti a mọ ni ita imuni."
+  ],
+  "regional_names": {
+    "generic": "efinifirini",
+    "UK": "adrenaline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anafilasisi: 0.01 mg/kg IM (o pọju 0.5 mg). EpiPen Jr (0.15 mg) fun 15-30 kg. Idaduro ọkan ọkan: 0.01 mg / kg IV / IO q3-5 min.",
+      "note": "Lo iwọn lilo ti o da lori iwuwo. Broselow teepu itọkasi niyanju."
+    },
+    "obstetric": {
+      "note": "Lo iwọn lilo anafilasisi boṣewa -- iwalaaye iya jẹ pataki julọ. Efinifirini jẹ ailewu ninu oyun fun awọn pajawiri ti o lewu aye."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

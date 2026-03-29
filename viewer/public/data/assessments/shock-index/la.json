@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Offensus Index",
+  "category": "circulatory",
+  "description": "Celeri unius numeri indicator de hemodynamic stabilitatis. Ratione ut HR / SBP. Normalis 0.5-0.7.",
+  "instructions": "Cor rate per systoles divide sanguinem pressura. A ortu inpulsa index depravationem indicat.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Normal -- hemodynamically firmum"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Motus mitis - monitor closely"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Incursu moderatus - IV accessus, fluidorum"
+    },
+    {
+      "range": ">1.4",
+      "label": "Gravis concussa - immediata resuscitatio, sanguinem products"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Obstetricante Offensus Index (OSI) eadem formula utitur. SI >0.9 in aegros gravidis notabile est. Normalis HR est in graviditate altior (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

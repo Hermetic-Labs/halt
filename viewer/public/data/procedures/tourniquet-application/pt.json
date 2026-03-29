@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Aplicação de Torniquete (Torniquete de Aplicação de Combate -- CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "qualquer resposta",
+  "time_estimate": "30-60 seg",
+  "description": "Controle definitivo de hemorragia para sangramento de extremidades com risco de vida. Inscreva-se com antecedência - não demore.",
+  "equipment": [
+    "torniquete de gato",
+    "marcador permanente"
+  ],
+  "steps": [
+    "Aplique o torniquete 5-7 cm (2-3 polegadas) proximal (acima) da ferida - sobre a roupa é aceitável.",
+    "Passe a faixa autoadesiva ao redor do membro e passe-a pela fivela do adaptador de fricção.",
+    "Puxe bem a faixa e prenda-a novamente sobre si mesma.",
+    "Torça a haste do molinete até que o sangramento pare ou o pulso distal esteja ausente.",
+    "Trave o molinete no clipe do molinete.",
+    "Aplique a tira do molinete sobre a haste do molinete para prendê-la.",
+    "Escreva o horário da aplicação diretamente no torniquete (use marcador) E no cartão TCCC.",
+    "Exponha e reavalie a ferida. Reavalie após 5 minutos."
+  ],
+  "warnings": [
+    "NÃO remova o torniquete depois de aplicado em campo – somente pessoal médico treinado em um ambiente controlado.",
+    "O tempo é crítico: o torniquete >2 horas aumenta significativamente o risco de perda de membros. Registre a hora imediatamente.",
+    "NÃO aplique sobre uma junta. Se o membro apresentar feridas em vários níveis, aplique proximal a todas as feridas.",
+    "Torniquetes improvisados ​​(cintos, cordas) são significativamente menos eficazes."
+  ],
+  "follows": [
+    "pressão direta",
+    "tamponamento de feridas"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Use torniquete pediátrico estreito, se disponível. O CAT padrão pode ser usado, mas aperte com cuidado. Os membros são menores – verifique cuidadosamente o pulso distal."
+    },
+    "obstetric": {
+      "note": "Aplicação padrão para feridas em extremidades. Não aplique no abdômen ou na pélvis."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

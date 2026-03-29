@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Occlusive Chest Seal Application",
+  "category": "respiration",
+  "skill_level": "combat-lifesaver",
+  "time_estimate": "1-2 min",
+  "description": "Pagtatatak ng sugat sa dibdib ng pagsuso (open pneumothorax) na may vented chest seal upang maiwasan ang pagpasok ng hangin habang pinapayagan ang paglabas ng presyon.",
+  "equipment": [
+    "vented-chest-seal",
+    "guwantes",
+    "trauma-gunting"
+  ],
+  "steps": [
+    "Ilantad ang sugat -- putulin o tanggalin ang damit.",
+    "Punasan ang balat sa paligid ng sugat bilang tuyo hangga't maaari (dugo, pawis ay pumipigil sa pagdirikit).",
+    "Buksan ang vented chest seal package.",
+    "Ilagay ang selyo sa ibabaw ng sugat, nakasentro sa butas. Pindutin nang mahigpit, tinitiyak na ang lahat ng mga gilid ay nakadikit.",
+    "Suriin ang oryentasyon ng balbula -- ang vent ay dapat nakaharap palabas (malayo sa balat) at manatiling walang harang.",
+    "Muling suriin ang mga tunog ng hininga. Kung magpapatuloy ang pagkasira pagkatapos ng sealing, isaalang-alang ang tension pneumothorax -- magsagawa ng NCD.",
+    "Kung hindi available ang isang vented seal, maaaring gumamit ng non-vented seal ngunit DAPAT na subaybayan para sa pagbuo ng tension pneumothorax."
+  ],
+  "warnings": [
+    "Maaaring i-convert ng mga non-vented seal ang isang simpleng pneumothorax sa isang tension pneumothorax -- gumamit lamang ng mga vented seal sa field.",
+    "Ang three-sided taping (improvised seal) ay hindi na inirerekomenda ng CoTCCC -- gumamit ng commercial vented chest seal.",
+    "Palaging lagyan ng selyo ang ENTRANCE at EXIT na mga sugat."
+  ],
+  "follows": [],
+  "precedes": [
+    "karayom-decompression"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

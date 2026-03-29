@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Deksametason",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Dekadron",
+    "DexPak"
+  ],
+  "description": "Kortikosteroid sintetik jangka panjang. Digunakan untuk edema serebral (edema serebral dataran tinggi - HACE, TBI), reaksi alergi parah, edema saluran napas, dan krisis adrenal. Anti-inflamasi, bukan anabolik.",
+  "indications": [
+    "Edema serebral ketinggian tinggi (HACE)",
+    "Edema saluran napas (stridor pasca ekstubasi, croup)",
+    "Edema otak akibat tumor atau abses",
+    "Reaksi alergi yang parah (tambahan epinefrin)",
+    "Krisis adrenal",
+    "Tambahan antiemetik (perioperatif)"
+  ],
+  "dose": "Edema serebral/HACE: awal 8-10 mg IV/IM, kemudian 4 mg setiap 6 jam. Edema saluran napas: 10 mg IV sekali. Croup: 0,6 mg/kg IM/PO (maks 16mg). Krisis adrenal: 4 mg IV.",
+  "route": [
+    "IV",
+    "aku",
+    "SAYA",
+    "PO"
+  ],
+  "window": "HACE : Berikan sedini mungkin bersamaan dengan segera turunnya.",
+  "contraindications": [
+    "Infeksi jamur sistemik (tanpa cakupan antijamur)",
+    "Vaksin virus hidup dalam 30 hari (relatif)"
+  ],
+  "warnings": [
+    "Tidak menggantikan penurunan dan oksigen untuk HACE -- hanya digunakan sebagai tambahan.",
+    "Hiperglikemia - memantau glukosa darah pada penderita diabetes.",
+    "Imunosupresi dengan penggunaan jangka panjang.",
+    "Dosis tunggal untuk keadaan darurat umumnya sangat aman."
+  ],
+  "regional_names": {
+    "generic": "deksametason"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Croup: 0,6 mg/kg PO/IM (maks 16 mg). Edema serebral: 0,5-1 mg/kg IV (maks 10 mg). Edema saluran napas: 0,5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM q24h x 2 dosis digunakan untuk mempercepat maturitas paru janin pada usia kehamilan 24-34 minggu pada persalinan prematur. Diskusikan dengan penyedia tertinggi yang tersedia."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

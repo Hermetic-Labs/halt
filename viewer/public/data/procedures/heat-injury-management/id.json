@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Manajemen Cedera Panas",
+  "category": "environmental",
+  "skill_level": "Dasar",
+  "time_estimate": "Berlangsung sampai MEDEVAC atau pasien stabil",
+  "description": "Penanganan kram panas, kelelahan akibat panas, dan serangan panas. Serangan panas adalah keadaan darurat yang mengancam jiwa -- pendinginan cepat adalah pengobatannya. Segera bedakan kelelahan akibat panas (mentasi normal) dan serangan panas (LOC yang diubah).",
+  "equipment": [
+    "Air (lisan + pendingin)",
+    "Kompres es atau kain basah dingin",
+    "Persediaan IV (LR atau NS)",
+    "Kipas atau peneduh",
+    "Termometer rektal (suhu inti pasti)"
+  ],
+  "steps": [
+    "PENILAIAN: Apakah korban dalam keadaan sadar dan berorientasi? Kulit kering panas vs kulit berkeringat panas? Suhu inti jika termometer tersedia.",
+    "KRAM PANAS: Kejang otot, mental normal. Istirahat di tempat teduh, rehidrasi oral dengan elektrolit, peregangan lembut. Tidak mengancam jiwa.",
+    "KElelahan PANAS: Berkeringat banyak, lemas, pusing, mental normal atau mendekati normal. Pindah ke tempat teduh/sejuk. Lepaskan pakaian berlebih. Cairan oral (jika sadar) atau IV LR 1L selama 30-60 menit. Pantau perkembangan menjadi serangan panas.",
+    "HEAT STROKE (darurat): Perubahan LOC, kebingungan, sifat agresif, atau ketidaksadaran. Suhu inti > 40C (104F). Kulit panas (mungkin basah atau kering). MULAI: Segera angkat dari api, lepaskan semua pakaian, basahi kulit dan kipas angin secara agresif. Oleskan kompres es ke leher, aksila, dan selangkangan (area pembuluh darah tinggi). IV LR 1-2L. Lindungi jalan napas jika tidak sadarkan diri. MEDEVAC segera.",
+    "JANGAN berikan aspirin atau asetaminofen untuk serangan panas -- tidak membantu, bisa membahayakan.",
+    "Pantau: tanda vital setiap 15 menit, jalan napas, status mental. Tren suhu dokumen.",
+    "Lanjutkan pendinginan selama MEDEVAC -- jangan berhenti untuk pengangkutan."
+  ],
+  "warnings": [
+    "Serangan panas adalah keadaan darurat yang mengancam jiwa -- jangan salah mengartikannya sebagai kelelahan akibat panas. Periksa status mental.",
+    "Pendinginan adalah pengobatan definitif. Jangan tunda pendinginan untuk membangun akses IV.",
+    "Serangan panas saat aktivitas dapat terjadi pada individu yang bugar -- kebugaran fisik tidak melindungi.",
+    "Hiponatremia (natrium rendah) akibat hidrasi berlebihan dengan air biasa dapat menyerupai serangan panas -- berikan larutan elektrolit, bukan hanya air."
+  ],
+  "follows": [
+    "penilaian dehidrasi"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Anak-anak melakukan termoregulasi dengan kurang efisien. Serangan panas bisa berkembang lebih cepat. Cairan berdasarkan berat badan: 20 mL/kg LR IV bolus. Suhu inti melalui termometer rektal paling akurat."
+    },
+    "obstetric": {
+      "note": "Hipertermia ibu (>39C) dapat menyebabkan cacat tabung saraf janin (awal) dan gawat janin (akhir). Pendinginan yang agresif. Pemantauan detak jantung janin jika tersedia."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

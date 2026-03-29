@@ -1,0 +1,40 @@
+{
+  "id": "salt-triage",
+  "name": "Triase SALT (Urutake, Evaluasi, Intervensi Nylametake, Perawatan/Transportasi)",
+  "category": "mass-casualty",
+  "description": "Protokol Triase Korban Massal. Standar kanggo acara multi-korban ing setelan militer lan sipil.",
+  "instructions": "Langkah 1: Urut global (mlaku, waving, isih). Langkah 2: Evaluasi ing urutan prioritas. Langkah 3: Nindakake intervensi nylametake (kontrol pendarahan gedhe, saluran napas mbukak, dekompresi jarum, injeksi otomatis). Langkah 4: Nemtokake kategori.",
+  "categories": [
+    {
+      "color": "ireng",
+      "label": "Ngarep / Almarhum",
+      "description": "Ora mungkin urip diwenehi sumber daya sing kasedhiya, utawa dikonfirmasi almarhum"
+    },
+    {
+      "color": "abang",
+      "label": "Langsung (T1)",
+      "description": "Ciloko sing ngancam nyawa, bakal urip kanthi intervensi langsung"
+    },
+    {
+      "color": "kuning",
+      "label": "Tundha (T2)",
+      "description": "Ciloko serius nanging stabil, bisa ngenteni perawatan"
+    },
+    {
+      "color": "ijo",
+      "label": "Minimal (T3)",
+      "description": "Ciloko cilik - mlaku tatu"
+    },
+    {
+      "color": "werna abu-abu",
+      "label": "Pangarep-arep",
+      "description": "Triase SALT (Urutake, Evaluasi, Intervensi Nylametake, Perawatan/Transportasi)"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Protokol Triase Korban Massal. Standar kanggo acara multi-korban ing setelan militer lan sipil."
+    }
+  },
+  "source": "SALT Mass Casualty Triage (CDC/CHEMPACK), JTS CPG"
+}

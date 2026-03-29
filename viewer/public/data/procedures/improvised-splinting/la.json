@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Improvised Splinting",
+  "category": "ortho-stabilization",
+  "skill_level": "Basic",
+  "time_estimate": "5-10 min",
+  "description": "Fracturae immobiles utentes materiae promptae ne ulterius laedantur, dolorem minuant, et sanguinem damnum in textus circumiacentes circumcludant. Scinditur in positione inventa nisi circulatio suspectus sit, deinde leniter corrigas.",
+  "equipment": [
+    "SAM coniciendum (malle)",
+    "Involvunt horrea, bacula, vectes tentorium (agro tumultuati)",
+    "Cravat / fasciis triangularibus",
+    "Nullam (vestis, spuma)",
+    "Tape vel fasciolis fabricae"
+  ],
+  "steps": [
+    "Exponere et perpendere iniuriam -- circulationem, sensum, motum (CSM) distalit ad fracturam ante et post.",
+    "Quis ante fissile sanguinem activam moderari.",
+    "Codex osseus eminentiae generosae ne pressus ulcera.",
+    "Materia scindenda satis longa ad iuncturam supra ET infra fracturam immobilitat.",
+    "Situs membri in positione consolationis vel noctis anatomicae — non vis.",
+    "Nullam adhibe, deinde materiam coniciendi. Secure cum fasciis vel fabricae denudat.",
+    "Noli nimis arcte involvere - digitos / digitos monitori CSM patere.",
+    "Reassess CSM post applicationem - statim solve, si circulatio imminuta est.",
+    "Membrum eleva, si tumorem minuere potest.",
+    "Documenti tempore coniciendum spectat."
+  ],
+  "warnings": [
+    "Reassess CSM singulis 15-30 momentis -- tumor recte fissura facere potest tourniquet.",
+    "Fracturae aperta: vulnus operiendum cum sterili curatione primum, deinde coniciendum est. Non repellas os retro in.",
+    "Femur fracturae 1-2L sanguis in femur amittere potest - infensi pro ictu tractare.",
+    "Fractura medullae suspecta: non improvisa concisura - motus minimize, stabilizationem inline tenent."
+  ],
+  "follows": [
+    "direct-pressione",
+    "tourniquet-application"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Incrementum bracteae in pueris infirmiores sunt quam ligamenta - fractura suspecta etiam leni mechanismo. Fracturae Torus minimam tumorem habere possunt."
+    },
+    "obstetric": {
+      "note": "Latin fissile applicat. Vitare diuturna supina - sinistro laterali sem si iacentem."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

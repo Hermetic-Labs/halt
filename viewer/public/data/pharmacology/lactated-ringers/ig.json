@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Ngwọta Ringer Lactated (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Ihe ngwọta Hartmann",
+    "Ntụnye Ringer nke a kpụrụ akpụ"
+  ],
+  "description": "Mmiri mmiri isotonic crystalloid dabara adaba. Achọtara karịa saline nkịtị maka iweghachi trauma dị ukwuu -- nwere nguzozi n'ụzọ anụ ahụ, obere ihe ize ndụ nke hyperchloremic acidosis. Nwere sodium, potassium, calcium, lactate.",
+  "indications": [
+    "Mweghachi trauma (crystaloid masịrị na ujo hemorrhagic)",
+    "Ọkụ ọkụ resuscitation mmiri (usoro Parkland)",
+    "Hypovolemia",
+    "Nlekọta mmiri mmiri"
+  ],
+  "dose": "Ujo hemorrhagic: Oke na 1L max tupu ị gbanwee na ngwaahịa ọbara. Ebumnuche SBP 80-90 mmHg na-abanye n'ime trauma, 90 mmHg TBI. Ọkụ (Parkland): 4 mL x kg x %TBSA gbara ọkụ karịa 24h (ọkara na 8h mbụ).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hyperkalemia (nwere potassium)",
+    "Ọrịa imeju siri ike (metabolism lactate na-emebi emebi - ikwu)"
+  ],
+  "warnings": [
+    "Ka dị na crystalloid --enweghị ike ibu oxygen. Ngwaahịa ọbara ka mma maka ujo hemorrhagic. LR bụ naanị akwa mmiri.",
+    "Ejikọtala ngwaahịa ọbara n'otu ahịrị (calcium na-akpata clotting).",
+    "Akwụghachila oke iweghachite n'ime trauma tupu njikwa ọbara ọgbụgba."
+  ],
+  "regional_names": {
+    "generic": "Ngwọta Ringer nke lactated",
+    "UK": "Ihe ngwọta Hartmann"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 ml / kg bolus, nyochaa. Achọtara karịa NS maka trauma ụmụaka.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Mmiri IV achọrọ na ime na nnyefe. Kwesịrị ekwesị maka ịmaliteghachi ọbara ọgbụgba nwa."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

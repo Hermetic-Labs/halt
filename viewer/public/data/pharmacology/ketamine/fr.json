@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Kétamine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Cétalar"
+  ],
+  "description": "Anesthésique dissociatif procurant analgésie, sédation et amnésie tout en préservant les réflexes des voies respiratoires et la stabilité hémodynamique. Analgésique préféré dans le TCCC – maintient la tension artérielle contrairement aux opioïdes. Également utilisé pour la sédation procédurale et le RSI.",
+  "indications": [
+    "Gestion de la douleur modérée à sévère",
+    "Sédation procédurale (pansage des plaies, réduction des fractures)",
+    "Agent d'induction pour RSI",
+    "Anesthésie de combat"
+  ],
+  "dose": "Analgésie : 0,1-0,3 mg/kg IV/IO (poussée lente) | 0,5 mg/kg IM. Sédation procédurale : 1-2 mg/kg IV | 4-6 mg/kg IM. Induction RSI : 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "OI",
+    "MI",
+    "DANS"
+  ],
+  "window": "",
+  "contraindications": [
+    "Schizophrénie connue ou psychose active",
+    "PIC élevée sans protection des voies respiratoires (relative)"
+  ],
+  "warnings": [
+    "Réactions d’émergence (délire/hallucinations) – atténuer avec du midazolam 1 à 2 mg IV si disponible.",
+    "Augmente les sécrétions – préparez l’aspiration.",
+    "Laryngospasme rare mais possible – gardez BVM disponible."
+  ],
+  "regional_names": {
+    "generic": "kétamine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgésie : 0,5 mg/kg IV. Sédation procédurale : 1-2 mg/kg IV | 4-5 mg/kg IM.",
+      "note": "Bien étudié en pédiatrie. Préféré pour les procédures douloureuses."
+    },
+    "obstetric": {
+      "note": "Sans danger pour l'analgésie maternelle à faibles doses. Peut provoquer une dépression respiratoire néonatale à des doses élevées si elles sont administrées à proximité du moment de l'accouchement."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

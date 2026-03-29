@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamina",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Anestésico disociativo que proporciona analgesia, sedación y amnesia preservando los reflejos de las vías respiratorias y la estabilidad hemodinámica. Analgésico preferido en TCCC: mantiene la presión arterial a diferencia de los opioides. También se utiliza para sedación procesal y RSI.",
+  "indications": [
+    "Manejo del dolor moderado a severo",
+    "Sedación para procedimientos (vendaje de heridas, reducción de fracturas)",
+    "Agente de inducción para RSI",
+    "Anestesia de combate"
+  ],
+  "dose": "Analgesia: 0,1-0,3 mg/kg IV/IO (empuje lento) | 0,5 mg/kg IM. Sedación de procedimiento: 1-2 mg/kg IV | 4-6 mg/kg IM. Inducción RSI: 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "OI",
+    "IM",
+    "EN"
+  ],
+  "window": "",
+  "contraindications": [
+    "Esquizofrenia conocida o psicosis activa",
+    "PIC elevada sin protección de las vías respiratorias (relativa)"
+  ],
+  "warnings": [
+    "Reacciones de emergencia (delirio/alucinaciones): mitigar con midazolam 1-2 mg IV si está disponible.",
+    "Aumenta las secreciones: tenga lista la succión.",
+    "El laringoespasmo es raro pero posible: mantenga disponible la BVM."
+  ],
+  "regional_names": {
+    "generic": "ketamina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesia: 0,5 mg/kg IV. Sedación de procedimiento: 1-2 mg/kg IV | 4-5 mg/kg IM.",
+      "note": "Bien estudiado en pediatría. Preferido para procedimientos dolorosos."
+    },
+    "obstetric": {
+      "note": "Seguro para analgesia materna en dosis bajas. Puede causar depresión respiratoria neonatal en dosis altas si se administra cerca del momento del parto."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

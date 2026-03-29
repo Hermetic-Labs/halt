@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Splinting Improvised",
+  "category": "ortho-stabilization",
+  "skill_level": "Bingehîn",
+  "time_estimate": "5-10 min",
+  "description": "Bi karanîna materyalên berdest şikestinan bêbandor bikin da ku pêşî li birînên din bigirin, êşê kêm bikin, û windabûna xwînê li tevna derdorê sînordar bikin. Di pozîsyonê de şil tê dîtin heya ku gerguhêz têk neçe -- paşê bi nermî rast bikin.",
+  "equipment": [
+    "SAM splint (tercihkirin)",
+    "Kovarên gêrkirî, çîp, stûnên çadirê (zevî bi destçêkirî)",
+    "Cravat / bandên sêgoşe",
+    "Padding (cil, kef)",
+    "Kasêt an jî qalên qumaşê"
+  ],
+  "steps": [
+    "Birînê derxînin holê û binirxînin - berî û paşiya gerguhêz, hest, tevger (CSM) dûr ji şikestinê kontrol bikin.",
+    "Berî şilkirinê her xwînrijandina çalak kontrol bikin.",
+    "Ji bo pêşîlêgirtina birînên zextê bi comerdî pêlên hestî bişkînin.",
+    "Materyalên splintê bi têra xwe dirêj hilbijêrin da ku movika li jor Û li binê şikestinê bêbandor bike.",
+    "Destê xwe di pozîsyona rehetiyê an lihevhatina anatomîkî de bi cih bikin - zorê nekin.",
+    "Peldankê bicîh bikin, dûv re maddeya şil bikin. Bi bandên an çîpên qumaşê ve girêbidin.",
+    "Zêde teng nepêçin -- tiliyên tiliyan/pêyan li ber çavdêriya CSM bihêlin.",
+    "Piştî serîlêdanê CSM ji nû ve binirxînin - heke gerguhêz xera bibe tavilê sist bikin.",
+    "Heger gengaz be lingê xwe bilind bikin da ku werimandin kêm bikin.",
+    "Dema belgeya serîlêdana splintê."
+  ],
+  "warnings": [
+    "Her 15-30 hûrdeman carek CSM-ê ji nû ve binirxînin -- werimandin dikare çîlekek rast bike ku bibe tûrik.",
+    "Şikestên vekirî: Pêşî birînê bi cilê sterîl bipêçin, dûv re bişkînin. Hestî paşve nexin hundur.",
+    "Parzûnên femurê dikarin 1-2L xwînê di nav ran de winda bikin -- ji bo şokê bi tundî derman bikin.",
+    "Şikestina spinal ya gumanbar: Splintê nehêle - tevgerê kêm bike, stabîlîzasyona hundurê biparêze."
+  ],
+  "follows": [
+    "rasterast-pext",
+    "tourniquet-sepan"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Pelên mezinbûnê di zarokan de ji lîgamentan qelstir in -- bi mekanîzmaya sivik re jî gumana şikestinê heye. Dibe ku şikestinên torus (buckle) xwedan werimîna hindiktirîn be."
+    },
+    "obstetric": {
+      "note": "Spliting Standard derbas dibe. Ji pozîsyona dirêj a li ser pişta xwe dûr bixin - ger bi hêl razan be, ji tiliya milê çepê dûr bikevin."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

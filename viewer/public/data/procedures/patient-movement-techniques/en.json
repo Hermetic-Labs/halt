@@ -1,0 +1,44 @@
+﻿{
+    "id":  "patient-movement-techniques",
+    "name":  "Patient Movement Techniques",
+    "category":  "casualty-movement",
+    "skill_level":  "Basic",
+    "time_estimate":  "1-30 min depending on distance and method",
+    "description":  "Moving a casualty under fire or to a safer location for treatment. The method depends on terrain, distance, number of rescuers, and the casualty\u0027s injuries. Speed vs. spinal precaution is a tactical decision -- in TCCC, threat takes priority.",
+    "equipment":  [
+                      "SKED litter (preferred)",
+                      "NATO litter / portable stretcher",
+                      "Improvised litter: poles + jackets/ponchos",
+                      "Drag handles (uniform or harness)",
+                      "TACEVAC sling"
+                  ],
+    "steps":  [
+                  "CARE UNDER FIRE: Return fire first if armed. Move casualty using fastest drag method -- do not stop to treat in kill zone.",
+                  "HASTY DRAG (one rescuer): grab collar/drag handle at shoulders, drag on back. Protect head from impact.",
+                  "FIREMAN CARRY (one rescuer): lift casualty over shoulders for longer distances -- requires casualty to be unconscious or cooperative.",
+                  "TWO-PERSON CARRY: rescuers link arms under casualty\u0027s back and knees. Faster than drag for short distances.",
+                  "IMPROVISED LITTER: lay two poles 18 inches apart. Weave jackets through poles with buttons inside. Test before loading casualty.",
+                  "SKED LITTER: unroll, slide under casualty, wrap and secure with straps. Requires 2-4 carriers.",
+                  "When loading: lift on count of 3, maintain head/body alignment, minimize spinal movement when possible.",
+                  "If spinal injury suspected and no threat: maintain inline stabilization throughout movement. One person dedicated to head control.",
+                  "Move to cover, then reassess ABC."
+              ],
+    "warnings":  [
+                     "TCCC priority: life \u003e limb \u003e spinal precaution. Do not delay movement from a kill zone for spinal precautions.",
+                     "Fireman carry is contraindicated with suspected spinal injury, femur fracture, or penetrating abdominal trauma.",
+                     "Improvised litters: test weight capacity before trusting with a casualty.",
+                     "Moving a casualty with tourniquet: check tourniquet hasn\u0027t loosened during movement."
+                 ],
+    "precedes":  [
+                     "medevac-9line"
+                 ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  "Children are lighter -- one-rescuer carries feasible longer. Maintain head proportionally larger -- higher center of gravity when carrying."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Avoid prone positioning or pressure on abdomen. Lateral (left side preferred) or supine transport with left hip wedge."
+                                    }
+                  },
+    "source":  "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

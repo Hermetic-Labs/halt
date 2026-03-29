@@ -1,0 +1,46 @@
+﻿{
+    "id":  "cold-injury-management",
+    "name":  "Cold Injury Management",
+    "category":  "environmental",
+    "skill_level":  "Basic",
+    "time_estimate":  "Ongoing",
+    "description":  "Management of frostbite, immersion foot (trench foot), and hypothermia. Cold injuries are preventable -- recognize early signs before tissue damage is irreversible. Handle frostbitten tissue extremely gently.",
+    "equipment":  [
+                      "Dry insulating clothing/sleeping bag",
+                      "Warm water (38-42C/100-108F) for rewarming bath",
+                      "Sterile dressings",
+                      "Ibuprofen 400mg PO (if available)",
+                      "IV LR (warm if possible)"
+                  ],
+    "steps":  [
+                  "HYPOTHERMIA FIRST: Assess core temp with low-reading thermometer. Mild (32-35C): shivering, confusion. Moderate (28-32C): no shivering, severe confusion. Severe (\u003c28C): unconscious, no pulse detectable.",
+                  "HYPOTHERMIA -- Mild/Moderate: Remove wet clothing, insulate from ground, warm environment, warm sweet fluids if conscious, heat packs to axillae/groin (not directly on skin). Handle gently -- jarring can trigger VFib.",
+                  "HYPOTHERMIA -- Severe: Handle VERY gently. Check pulse 60 full seconds before CPR. Begin CPR if no pulse. Warm IV fluids if available. MEDEVAC priority -- \u0027not dead until warm and dead\u0027.",
+                  "FROSTBITE: Superficial (skin white/gray, soft underneath) vs. deep (hard, wooden feel, blistering). Do NOT rub the area. Do NOT rewarm if risk of refreezing -- refreezing causes worse damage than delayed rewarming.",
+                  "FROSTBITE rewarming: Immerse in 38-42C water (not hotter) for 15-30 min until tissue is soft and red/purple. Very painful -- offer analgesia (ketamine or morphine).",
+                  "After rewarming: pad between toes/fingers with sterile gauze. Do NOT pop blisters. Protect from pressure.",
+                  "IMMERSION FOOT (Trench Foot): prolonged wet/cold exposure, skin red then pale then blistered. Dry feet, warm slowly, elevate. Do NOT apply direct heat.",
+                  "Document time of injury and time of rewarming."
+              ],
+    "warnings":  [
+                     "Do NOT rewarm frostbite if there is any chance of refreezing -- incomplete rewarming + refreezing = catastrophic tissue loss.",
+                     "Severe hypothermia can mimic death. Check pulse for 60 seconds. \u0027Not dead until warm and dead.\u0027",
+                     "Alcohol increases heat loss despite perception of warmth -- do not give alcohol.",
+                     "VFib risk is high in moderate-severe hypothermia -- minimize manipulation and jarring of the patient."
+                 ],
+    "follows":  [
+                    "hypothermia-prevention"
+                ],
+    "precedes":  [
+                     "medevac-9line"
+                 ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  "Children cool faster due to higher surface area to mass ratio. Hypothermia thresholds same. Warm IV fluids critical. Weight-based fluid: 20 mL/kg warm LR."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Maternal hypothermia causes fetal bradycardia and acidosis. Aggressive maternal rewarming is fetal treatment. Fetal monitoring if available."
+                                    }
+                  },
+    "source":  "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

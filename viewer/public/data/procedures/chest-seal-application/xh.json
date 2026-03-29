@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Isicelo se-Occlusive Chest Seal",
+  "category": "respiration",
+  "skill_level": "ukulwa-umsindisi wobomi",
+  "time_estimate": "1-2 min",
+  "description": "Ukutywina inxeba lesifuba esanyayo (i-pneumothorax evulekileyo) kunye nesifuba esivaliweyo ukukhusela ukungena komoya ngelixa uvumela ukukhululwa koxinzelelo.",
+  "equipment": [
+    "i-vent-chest-seal",
+    "iiglavu",
+    "trauma-chears"
+  ],
+  "steps": [
+    "Veza inxeba -- usike okanye ukhuphe impahla.",
+    "Sula ulusu olujikeleze isilonda njengomileyo njengoko kunokwenzeka (igazi, ukubila kuthintela ukunamathela).",
+    "Vula iphakheji yokuvala isifuba esiphumayo.",
+    "Beka isitywina phezu kwenxeba, ugxile emngxunyeni. Cinezela ngokuqinileyo, uqinisekise ukuba yonke imiphetho iyahambelana.",
+    "Qwalasela ukuqhelaniswa nevalvu -- ivent kufuneka ijonge ngaphandle (ikude nesikhumba) kwaye ihlale ingavaleki.",
+    "Phinda uhlole izandi zomphefumlo. Ukuba ukuwohloka kuyaqhubeka emva kokutywinwa, qwalasela i-tension pneumothorax -- yenza i-NCD.",
+    "Ukuba itywina eliphumayo alifumaneki, itywina elingaphunywanga lingasetyenziswa kodwa KUFUNEKA kubekwe iliso kuphuhliso loxinzelelo lwepneumothorax."
+  ],
+  "warnings": [
+    "Amatywina angangeni ndawo anokuguqula ipneumothorax elula ibe yi-tension pneumothorax -- sebenzisa izitywina eziphumayo kuphela ebaleni.",
+    "Ukuteyipha kumacala amathathu (ukuphuculwa kwetywina) akusacetyiswa yi-CoTCCC -- sebenzisa isitywina sesifuba esingena umoya.",
+    "Hlala ufaka itywina kwi-ENTRANCE kunye ne-EXIT amanxeba."
+  ],
+  "follows": [],
+  "precedes": [
+    "inaliti-decompression"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

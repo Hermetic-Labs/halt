@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Suluhisho la Ringer Lacted (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Suluhisho la Hartmann",
+    "Sindano ya Ringer Iliyonyonyeshwa"
+  ],
+  "description": "Maji ya crystalloid ya isotonic yenye usawa. Inapendekezwa zaidi ya salini ya kawaida kwa ufufuaji wa kiwewe wa kiasi kikubwa -- iliyosawazishwa zaidi kisaikolojia, hatari ndogo ya asidi ya hyperchloremic. Ina sodiamu, potasiamu, kalsiamu, lactate.",
+  "indications": [
+    "Ufufuaji wa kiwewe (iliyopendekezwa ya fuwele katika mshtuko wa hemorrhagic)",
+    "Huchoma ufufuaji wa maji (Mchanganyiko wa Parkland)",
+    "Hypovolemia",
+    "Utunzaji wa maji"
+  ],
+  "dose": "Mshtuko wa kutokwa na damu: Kiwango cha juu cha lita 1 kabla ya kuhamia bidhaa za damu. Lenga SBP 80-90 mmHg kiwewe cha kupenya, 90 mmHg TBI. Kuungua (Parkland): 4 mL x kg x %TBSA iliungua zaidi ya 24h (nusu katika 8h ya kwanza).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hyperkalemia (ina potasiamu)",
+    "Kushindwa kwa ini kali (kuharibika kwa kimetaboliki ya lactate - jamaa)"
+  ],
+  "warnings": [
+    "Bado crystalloid -- haiwezi kubeba oksijeni. Bidhaa za damu ni bora kwa mshtuko wa hemorrhagic. LR ni daraja pekee.",
+    "Usichanganye na bidhaa za damu kwenye mstari sawa (kalsiamu husababisha kuganda).",
+    "USISAHAISHA kupita kiasi katika kiwewe cha kupenya kabla ya udhibiti wa kuvuja damu."
+  ],
+  "regional_names": {
+    "generic": "Suluhisho la Ringer lililonyonyesha",
+    "UK": "Suluhisho la Hartmann"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 ml / kg bolus, tathmini tena. Inapendekezwa zaidi ya NS kwa majeraha ya watoto.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Kioevu cha IV kinachopendekezwa katika leba na kuzaa. Inafaa kwa ufufuo wa damu ya uzazi."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

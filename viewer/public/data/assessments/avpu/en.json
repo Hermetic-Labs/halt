@@ -1,0 +1,48 @@
+﻿{
+    "id":  "avpu",
+    "name":  "AVPU Scale",
+    "category":  "neurological",
+    "description":  "Rapid 4-level consciousness assessment. Faster than GCS for initial triage.",
+    "instructions":  "Assess the highest level of response the patient demonstrates.",
+    "scoring":  [
+                    {
+                        "code":  "A",
+                        "label":  "Alert",
+                        "description":  "Patient is awake, aware, and responding normally"
+                    },
+                    {
+                        "code":  "V",
+                        "label":  "Voice",
+                        "description":  "Patient responds only to verbal stimulation"
+                    },
+                    {
+                        "code":  "P",
+                        "label":  "Pain",
+                        "description":  "Patient responds only to painful stimuli (sternal rub, nail bed pressure)"
+                    },
+                    {
+                        "code":  "U",
+                        "label":  "Unresponsive",
+                        "description":  "No response to any stimuli -- immediate airway intervention required"
+                    }
+                ],
+    "interpretation":  [
+                           {
+                               "code":  "A",
+                               "triage":  "Stable -- continue assessment"
+                           },
+                           {
+                               "code":  "V",
+                               "triage":  "Concerning -- monitor airway"
+                           },
+                           {
+                               "code":  "P",
+                               "triage":  "Critical -- airway at risk, GCS typically \u003c= 8"
+                           },
+                           {
+                               "code":  "U",
+                               "triage":  "Immediate -- manage airway now"
+                           }
+                       ],
+    "source":  "JTS CPG / PHTLS Standard"
+}

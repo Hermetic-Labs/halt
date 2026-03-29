@@ -41,6 +41,9 @@ const config: CapacitorConfig = {
         allowNavigation: [
             'localhost',
             '127.0.0.1',
+            '192.168.*.*',
+            '10.*.*.*',
+            '172.*.*.*',
             '*.hermeticlabs.com',
         ],
 

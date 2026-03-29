@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazole",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "အထူးကောင်းမွန်သော anaerobic နှင့် protozoal လွှမ်းခြုံမှုရှိသော Nitroimidazole ပဋိဇီဝဆေး။ ဝမ်းဗိုက်/အူသိမ် အူလမ်းကြောင်း ဒဏ်ရာကို ထိုးဖောက်ဝင်ရောက်ခြင်းအတွက် မရှိမဖြစ် လိုအပ်ပါသည်။ ciprofloxacin နှင့် တွဲသုံးလေ့ရှိသည်။",
+  "indications": [
+    "ဝမ်းဗိုက်ထိုးဖောက်ခြင်း/အူသိမ်အူမ ဒဏ်ရာ",
+    "ဝမ်းဗိုက်အတွင်း ပိုးဝင်ခြင်း",
+    "Anaerobic soft tissue infections",
+    "C. difficile infections"
+  ],
+  "dose": "500 mg IV q6-8h။ PO: 500 mg q8h (ပါးစပ်မှ ခံနိုင်ရည်ရှိလျှင်)။",
+  "route": [
+    "IV",
+    "စာတိုက်"
+  ],
+  "window": "",
+  "contraindications": [
+    "ကိုယ်ဝန်ပထမသုံးလပတ် (ဆွေမျိုး)",
+    "metronidazole သို့မဟုတ် nitroimidazole ဓာတ်မတည့်ခြင်း"
+  ],
+  "warnings": [
+    "လူသိများသည်။ အရက်နှင့်တူသော Disulfiram တုံ့ပြန်မှု - ကုသမှုခံယူနေစဉ်နှင့် ၄၈ နာရီကြာပြီးနောက် အရက်မသောက်ပါနှင့်။",
+    "ကြာရှည်အသုံးပြုခြင်းဖြင့် peripheral neuropathy ကိုဖြစ်စေနိုင်သည်။",
+    "ဖြစ်နိုင်ရင် ပထမသုံးလပတ်မှာ ရှောင်ပါ။"
+  ],
+  "regional_names": {
+    "generic": "metronidazole"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7.5 mg/kg IV/PO q6h (အမြင့်ဆုံး 500 mg/dose)။",
+      "note": "အသက်ကြီးသောကလေးများအတွက် အန္တရာယ်ကင်းသည်။ မွေးကင်းစကလေးများတွင် ရှောင်ကြဉ်ပါ။"
+    },
+    "obstetric": {
+      "note": "ဖြစ်နိုင်ရင် ပထမသုံးလပတ်မှာ ရှောင်ပါ။ ဆေးပညာအရ လိုအပ်သည့်အခါ ဒုတိယ/တတိယသုံးလပတ်ကို အသုံးပြုပါ - အကျိုးခံစားခွင့်သည် ပြင်းထန်သော anaerobic ပိုးဝင်ခြင်းအတွက် အန္တရာယ်အဆမတန်များပါသည်။"
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

@@ -43,7 +43,7 @@ async def lifespan(app: FastAPI):
 
 # ── App ────────────────────────────────────────────────────────────────────────
 
-app = FastAPI(title="Medic Info API", version="2.0.0", lifespan=lifespan)
+app = FastAPI(title="Medic Info API", version="1.0.3", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -103,4 +103,4 @@ if _DIST_DIR.is_dir():
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("main:app", host="0.0.0.0", port=7777, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=7778, reload=True)

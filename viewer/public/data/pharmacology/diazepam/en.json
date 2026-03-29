@@ -1,0 +1,47 @@
+﻿{
+    "id":  "diazepam",
+    "name":  "Diazepam",
+    "category":  "sedation-seizure",
+    "rxnorm":  "3322",
+    "brand_names":  [
+                        "Valium",
+                        "Diastat"
+                    ],
+    "description":  "Long-acting benzodiazepine. Used for seizure management, muscle spasm, and anxiolysis. Rectal gel (Diastat) is useful in field settings when IV unavailable. Longer duration than lorazepam.",
+    "indications":  [
+                        "Seizure management (rectal/IV)",
+                        "Muscle spasm from spinal cord injury or tetanus",
+                        "Nerve agent antidote adjunct (in CHEMPACK kits)",
+                        "Alcohol withdrawal"
+                    ],
+    "dose":  "Seizure: 5-10 mg IV slow push. Repeat q10-15 min (max 30 mg). Rectal: 0.2-0.5 mg/kg. IM absorption erratic -- avoid IM if possible.",
+    "route":  [
+                  "IV",
+                  "IO",
+                  "PR"
+              ],
+    "window":  "",
+    "contraindications":  [
+                              "Acute narrow-angle glaucoma",
+                              "Severe hepatic disease",
+                              "Respiratory depression"
+                          ],
+    "warnings":  [
+                     "IM absorption is erratic and painful -- prefer IV, rectal, or use midazolam IM instead.",
+                     "Long duration of sedation (24-48h for repeated doses).",
+                     "Nerve agent casualties: diazepam is included in CHEMPACK kits for seizure from cholinergic crisis."
+                 ],
+    "regional_names":  {
+                           "generic":  "diazepam"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "IV: 0.1-0.3 mg/kg (max 10 mg). Rectal: 0.3-0.5 mg/kg. Use rectal route when IV unavailable.",
+                                        "note":  "Rectal diastat gel is particularly useful for pediatric seizures in field settings."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Crosses placenta. Can cause neonatal hypotonia, respiratory depression. Use only for maternal seizures unresponsive to magnesium."
+                                    }
+                  },
+    "source":  "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

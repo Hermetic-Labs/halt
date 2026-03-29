@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Endeksa Şokê",
+  "category": "circulatory",
+  "description": "Nîşana yek-hejmarek bilez a aramiya hemodnamîk. Wekî HR / SBP tê hesibandin. Normal 0,5-0,7 e.",
+  "instructions": "Rêjeya dil bi tansiyona xwînê ya sîstolîk dabeş bikin. Indeksa şokê ya ku zêde dibe xirabbûnê nîşan dide.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Normal -- hemodinamîkî stabîl"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Şokek sivik -- ji nêz ve bişopîne"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Şoka nerm -- Gihîştina IV, şilî"
+    },
+    {
+      "range": ">1.4",
+      "label": "Şokeke giran -- vejîna tavilê, berhemên xwînê"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Indeksa Şokê ya Obstetric (OSI) heman formula bikar tîne. SI > 0.9 di nexweşên ducanî de girîng e. HR ya normal di ducaniyê de (80-100 bpm) bilindtir e."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

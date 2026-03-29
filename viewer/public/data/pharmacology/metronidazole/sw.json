@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazole",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "Antibiotiki ya nitroimidazole yenye chanjo bora ya anaerobic na protozoal. Muhimu kwa kupenya kiwewe cha fumbatio/utumbo ili kufunika mimea ya utumbo isiyo na hewa. Mara nyingi hutumiwa pamoja na ciprofloxacin.",
+  "indications": [
+    "Jeraha la kupenya la tumbo/utumbo",
+    "Maambukizi ya ndani ya tumbo",
+    "Maambukizi ya tishu laini za anaerobic",
+    "C. maambukizo ya difficile"
+  ],
+  "dose": "500 mg IV q6-8h. PO: 500 mg q8h (ikiwa inavumiliwa kwa mdomo).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Trimester ya kwanza ya ujauzito (jamaa)",
+    "Mzio wa metronidazole au nitroimidazole unaojulikana"
+  ],
+  "warnings": [
+    "Mwitikio kama wa disulfiram na pombe - usinywe pombe wakati wa matibabu na masaa 48 baada ya hapo.",
+    "Inaweza kusababisha ugonjwa wa neva wa pembeni kwa matumizi ya muda mrefu.",
+    "Epuka katika trimester ya kwanza ikiwa inawezekana."
+  ],
+  "regional_names": {
+    "generic": "metronidazole"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7.5 mg/kg IV/PO q6h (kiwango cha juu 500 mg/dozi).",
+      "note": "Salama kwa watoto wakubwa. Epuka katika watoto wachanga."
+    },
+    "obstetric": {
+      "note": "Epuka katika trimester ya kwanza ikiwa inawezekana. Tumia trimester ya pili/tatu inapohitajika kimatibabu -- manufaa kwa kawaida hupita hatari ya maambukizi makubwa ya anaerobic."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

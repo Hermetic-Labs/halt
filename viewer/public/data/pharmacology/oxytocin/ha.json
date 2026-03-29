@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oxytocin",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocin",
+    "Syntonon"
+  ],
+  "description": "Endogenous peptide hormone. Na farko-line uterotonic for rigakafi da kuma lura da postpartum hemorrhage (PPH). Yana haifar da kumburin mahaifa kuma yana rage zubar jini bayan haihuwa. Ana bayarwa BAYAN haihuwar mahaifa.",
+  "indications": [
+    "Rigakafin zubar jini na haihuwa (na yau da kullun bayan haihuwa)",
+    "Maganin zubar jinin bayan haihuwa (uterine atony)",
+    "Ƙaddamar da aiki (saitin sarrafawa kawai)"
+  ],
+  "dose": "Rigakafin PPH: Raka'a 10 IM nan da nan bayan isar da wuri (hanyar filin da aka fi so). PPH magani: 10-40 raka'a a cikin 1L IV, saka a 40-80 mU / min. Idan IV ba ya samuwa: raka'a 10 IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Ba da bayan haihuwa -- bayarwa kafin haihuwa na iya kama mahaifa.",
+  "contraindications": [
+    "Kafin haihuwa (na iya kama mahaifa)",
+    "Bacin rai tayi tare da bata kai",
+    "Sanannen hypersensitivity"
+  ],
+  "warnings": [
+    "BAYAN BAYAN AN KASANCE DA PLACENTA -- tarko placenta matsala ce mai barazanar rai.",
+    "IV bolus na iya haifar da hauhawar jini mai tsanani da arrhythmia na zuciya -- koyaushe yana tsomawa kuma a saka a hankali.",
+    "Tasirin antidiuretic tare da babban kundin - saka idanu don hyponatremia."
+  ],
+  "regional_names": {
+    "generic": "oxytocin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A -- amfani da haihuwa kawai.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Primary uterotonic. Idan atony na mahaifa bai amsa ba, yi la'akari da misoprostol, tranexamic acid (TXA), matsawar mahaifa bimanual, da MEDEVAC mai sauri."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Şok Endeksi",
+  "category": "circulatory",
+  "description": "Hemodinamik stabilitenin hızlı tek rakamlı göstergesi. HR / SBP olarak hesaplanır. Normali 0,5-0,7'dir.",
+  "instructions": "Kalp atış hızını sistolik kan basıncına bölün. Yükselen şok endeksi bozulmaya işaret ediyor.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Normal -- hemodinamik olarak stabil"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Hafif şok -- yakından izleyin"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Orta derecede şok -- IV erişimi, sıvılar"
+    },
+    {
+      "range": ">1.4",
+      "label": "Şiddetli şok -- acil resüsitasyon, kan ürünleri"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Obstetrik Şok İndeksi (OSI) aynı formülü kullanır. Gebe hastalarda SI > 0,9 anlamlıdır. Normal HR gebelikte daha yüksektir (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

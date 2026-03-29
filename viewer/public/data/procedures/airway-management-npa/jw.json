@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Pemasangan Nasopharyngeal Airway (NPA).",
+  "category": "airway",
+  "skill_level": "tempur-lifesaver",
+  "time_estimate": "1 min",
+  "description": "Penyisipan saluran napas hidung fleksibel kanggo njaga kepatenan saluran napas ing pasien sing ora sadar utawa setengah sadar.",
+  "equipment": [
+    "npa-karo-safety-pin",
+    "ndhuk"
+  ],
+  "steps": [
+    "Pilih ukuran NPA sing cocog (ukur saka bolongan irung nganti cuping kuping).",
+    "Lubricate NPA generously karo lubricant larut banyu utawa saline.",
+    "Lebokake pin safety liwat flange yen durung ana (nyegah aspirasi).",
+    "Lebokake alon-alon menyang bolongan irung tengen (bevel menyang septum), maju sejajar karo langit-langit.",
+    "Maju nganti flange dumunung ing bolongan irung.",
+    "Reposisi pasien (posisi pemulihan yen ora ana masalah spinal) lan evaluasi maneh saluran napas.",
+    "Yen resistensi ketemu, coba bolongan irung kiwa."
+  ],
+  "warnings": [
+    "Kontraindikasi ing curiga fraktur tengkorak basilar (mata rakun, tandha Battle, rhinorrhea CSF).",
+    "NPA minangka tambahan saluran napas awal pasien sing ora sadar -- OPA bisa nyebabake muntah ing pasien setengah sadar."
+  ],
+  "source": "TCCC / JTS CPG"
+}

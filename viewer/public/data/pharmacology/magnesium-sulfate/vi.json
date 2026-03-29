@@ -1,0 +1,47 @@
+{
+  "id": "magnesium-sulfate",
+  "name": "Magie Sunfat (MgSO4)",
+  "category": "obstetric-eclampsia",
+  "rxnorm": "6585",
+  "brand_names": [
+    "Tiêm Magiê Sulfate"
+  ],
+  "description": "Thuốc ức chế thần kinh trung ương và thuốc chống co giật được sử dụng để phòng ngừa và điều trị các cơn động kinh sản giật (co giật trong thai kỳ do tiền sản giật). Cũng được sử dụng cho bệnh hen suyễn nặng và xoắn đỉnh. Lựa chọn đầu tiên cho sản giật do dùng thuốc benzodiazepin.",
+  "indications": [
+    "Sản giật (phòng ngừa và điều trị co giật ở bệnh tiền sản giật nặng)",
+    "Dự phòng tiền sản giật (biểu hiện nặng)",
+    "Torsades de Pointes (V-tach đa hình do hạ magie máu)",
+    "Hen suyễn cấp tính nặng (phụ)"
+  ],
+  "dose": "Liều tấn công sản giật: 4-6g tiêm tĩnh mạch đẩy chậm trong 20 phút. Duy trì: truyền tĩnh mạch 1-2g/giờ. Nếu cơn động kinh tái phát: 2-4g IV trong 5 phút. Tải IM (nếu không có IV): IM 5g mỗi mông (tổng cộng 10g) đồng thời.",
+  "route": [
+    "IV",
+    "IO",
+    "TÔI"
+  ],
+  "window": "Bắt đầu khi khởi phát cơn động kinh hoặc khi chẩn đoán các đặc điểm tiền sản giật nặng.",
+  "contraindications": [
+    "Bệnh nhược cơ",
+    "Khiếm khuyết dẫn truyền tim",
+    "Suy thận (tích lũy - giảm liều)"
+  ],
+  "warnings": [
+    "Dấu hiệu nhiễm độc: mất phản xạ xương bánh chè (dấu hiệu đầu tiên, 7-10 mEq/L), suy hô hấp (> 10 mEq/L), ngừng tim (> 15 mEq/L).",
+    "Theo dõi phản xạ xương bánh chè cứ sau 15 phút - mất phản xạ = ngừng truyền.",
+    "Thuốc giải độc: Canxi gluconate 1g tiêm tĩnh mạch trong 3 phút.",
+    "Giảm liều ở người suy thận - theo dõi lượng nước tiểu."
+  ],
+  "regional_names": {
+    "generic": "magie sunfat"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Xoắn: 25-50 mg/kg IV trong 10-20 phút (tối đa 2g). Hen nặng: 25-75 mg/kg IV (tối đa 2g).",
+      "note": "Hiếm khi được sử dụng để điều trị co giật ở bệnh nhi không phải sản khoa - sản giật là chỉ định chính."
+    },
+    "obstetric": {
+      "note": "Chỉ định chính. Đi qua nhau thai - có thể tăng magie máu ở trẻ sơ sinh. Liều sơ sinh nếu suy hô hấp: canxi gluconate 100 mg/kg tiêm tĩnh mạch. Thông báo cho nhóm NICU về việc sử dụng magiê của bà mẹ."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

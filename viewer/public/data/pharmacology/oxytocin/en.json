@@ -1,0 +1,45 @@
+﻿{
+    "id":  "oxytocin",
+    "name":  "Oxytocin",
+    "category":  "obstetric",
+    "rxnorm":  "7799",
+    "brand_names":  [
+                        "Pitocin",
+                        "Syntocinon"
+                    ],
+    "description":  "Endogenous peptide hormone. First-line uterotonic for prevention and treatment of postpartum hemorrhage (PPH). Causes uterine contraction and reduces blood loss after delivery. Given AFTER placental delivery.",
+    "indications":  [
+                        "Prevention of postpartum hemorrhage (routine after delivery)",
+                        "Treatment of postpartum hemorrhage (uterine atony)",
+                        "Induction of labor (controlled setting only)"
+                    ],
+    "dose":  "PPH prevention: 10 units IM immediately after placental delivery (preferred field route). PPH treatment: 10-40 units in 1L IV, infuse at 40-80 mU/min. If IV unavailable: 10 units IM.",
+    "route":  [
+                  "IV",
+                  "IM"
+              ],
+    "window":  "Give AFTER placental delivery -- giving before placenta delivers can trap placenta.",
+    "contraindications":  [
+                              "Before placental delivery (can trap placenta)",
+                              "Fetal distress with head undelivered",
+                              "Known hypersensitivity"
+                          ],
+    "warnings":  [
+                     "GIVE AFTER PLACENTA IS DELIVERED -- trapping placenta is a life-threatening complication.",
+                     "IV bolus can cause severe hypotension and cardiac arrhythmia -- always dilute and infuse slowly.",
+                     "Antidiuretic effect with large volumes -- monitor for hyponatremia."
+                 ],
+    "regional_names":  {
+                           "generic":  "oxytocin"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "N/A -- obstetric use only.",
+                                        "note":  ""
+                                    },
+                      "obstetric":  {
+                                        "note":  "Primary uterotonic. If uterine atony does not respond, consider misoprostol, tranexamic acid (TXA), bimanual uterine compression, and rapid MEDEVAC."
+                                    }
+                  },
+    "source":  "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

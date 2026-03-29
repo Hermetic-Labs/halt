@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxycycline",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramycin",
+    "Doryx"
+  ],
+  "description": "Antibiotic ng malawak na spectrum na tetracycline. Alternatibong pag-iwas sa sugat sa bibig para sa mga pasyenteng allergy sa penicillin. Mabisa rin laban sa mga hindi tipikal na organismo at ilang mga sakit na dala ng vector (malaria prophylaxis sa mga endemic na lugar).",
+  "indications": [
+    "Prophylaxis sa sugat (penicillin allergy)",
+    "Mga impeksyon sa malambot na tisyu",
+    "Mga sugat sa kagat",
+    "Malaria prophylaxis sa mga endemic na lugar"
+  ],
+  "dose": "100 mg PO tuwing 12 oras x 7 araw.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Magsimula sa loob ng 3 oras ng pinsala para sa pag-iwas sa sugat.",
+  "contraindications": [
+    "Pagbubuntis (nagdudulot ng pagkawalan ng kulay ng ngipin ng fetus at pagpigil sa paglaki ng buto)",
+    "Mga batang wala pang 8 taong gulang (parehong dahilan)",
+    "Malubhang kapansanan sa atay"
+  ],
+  "warnings": [
+    "KONTRAINDIKASYON sa pagbubuntis -- gumamit ng amoxicillin sa halip.",
+    "KONTRAINDIKASYON sa mga batang wala pang 8 taong gulang.",
+    "Photosensitivity -- payuhan ang pasyente na iwasan ang pagkakalantad sa araw.",
+    "Huwag kumuha ng mga pagkaing mayaman sa calcium, antacid, o iron -- nakapipinsala sa pagsipsip."
+  ],
+  "regional_names": {
+    "generic": "doxycycline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Contraindicated sa ilalim ng 8 taon. Edad 8+: 2-4 mg/kg/araw na hinati q12h (max 100 mg/dosis).",
+      "note": "Gumamit ng amoxicillin para sa mga batang wala pang 8 taong gulang."
+    },
+    "obstetric": {
+      "note": "KONTRAINDIKASYON sa pagbubuntis -- nagdudulot ng pinsala sa fetus. Gumamit ng amoxicillin sa halip."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

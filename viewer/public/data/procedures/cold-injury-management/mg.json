@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Fitantanana ratra mangatsiaka",
+  "category": "environmental",
+  "skill_level": "fototra",
+  "time_estimate": "Mitohy",
+  "description": "Fitantanana ny fanala, ny tongotra asitrika (trench foot), ary ny hypothermie. Azo sorohina ny ratra sery -- fantaro ireo famantarana mialoha alohan'ny tsy hiverenan'ny fahasimban'ny sela. Tandremo moramora ny tavy misy ranomandry.",
+  "equipment": [
+    "Akanjo misoroka maina/kitapo fatoriana",
+    "Rano mafana (38-42C/100-108F) mba handroana indray",
+    "Akanjo steril",
+    "Ibuprofen 400mg PO (raha misy)",
+    "IV LR (mafana raha azo atao)"
+  ],
+  "steps": [
+    "HYPOTHERMIA VOALOHANY: Tombano ny mari-pana fototra amin'ny thermometer kely mamaky teny. Malemy (32-35C): mangovitra, misavoritaka. antonony (28-32C): tsy mangovitra, mikorontana mafy. Mafy (<28C) : tsy nahatsiaro tena, tsy hita taratra.",
+    "HYPOTHERMIA -- Malemy / antonony: Esory ny akanjo mando, atsipazo amin'ny tany, tontolo mafana, ranon-javatra mamy mafana raha mahatsiaro tena, mipetaka amin'ny axillae / groin (tsy mivantana amin'ny hoditra). Tandremo moramora -- mety hiteraka VFib ny fikorontanana.",
+    "HYPOTHERMIA -- Mafy: tantano moramora. Jereo ny pulse 60 segondra feno alohan'ny CPR. Atombohy ny CPR raha tsy misy pulse. Rano IV mafana raha misy. MEDEVAC laharam-pahamehana -- 'tsy maty raha tsy mafana sy maty'.",
+    "FROSTBITE: Ambonimbony (fotsy fotsy/volomparasy, malefaka ao ambany) vs lalina (mafy, hazo, mibontsina). AZA kosehina ny faritra. AZA manafana indray raha atahorana hivaingana -- miteraka fahasimbana ratsy kokoa noho ny fahatarana ny famafazana ny famafazana.",
+    "FROSTBITE: Atsoboka ao anaty rano 38-42C (tsy mafana kokoa) mandritra ny 15-30 min mandra-pahalemy sy mena/volomparasy. Tena maharary - manolotra analgesia (ketamine na morphine).",
+    "Aorian'ny famafazana indray: asio paty eo anelanelan'ny rantsan-tongotra/rantsan-tànana amin'ny gauze sterile. AZA mipoitra blisters. Arovy amin'ny tsindry.",
+    "FANDROSOANA (Trench Foot) : mando lava/mangatsiaka ny hoditra, mena ny hoditra avy eo mivalampatra avy eo. Ny tongotra maina, mafana miadana, atsangano. AZA asiana hafanana mivantana.",
+    "Taratasy ny fotoana naratra sy ny fotoana nafanaina indray."
+  ],
+  "warnings": [
+    "AZA afanaina indray ny fanala raha toa ka misy ny mety hisian'ny famafazana -- tsy feno + fanamainana indray = fahaverezan'ny tavy.",
+    "Mety hitovy amin'ny fahafatesana ny hypothermia mafy. Jereo ny pulse mandritra ny 60 segondra. 'Tsy maty raha tsy mafana sy maty.'",
+    "Ny toaka dia mampitombo ny fahaverezan'ny hafanana na dia eo aza ny fahatsapana ny hafanana - aza manome alikaola.",
+    "Ny risika VFib dia avo amin'ny hypothermia antonony-henjana - manamaivana ny fanodinkodinana sy ny fikorontanan'ny marary."
+  ],
+  "follows": [
+    "hypothermia-fisorohana"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Mangatsiaka haingana kokoa ny ankizy noho ny haavon'ny velaran-tany amin'ny tahan'ny faobe. Hypothermia tokonam-baravarana mitovy. Ny fluid IV mafana dia manakiana. ranon-javatra mifototra amin'ny lanja: 20 mL/kg mafana LR."
+    },
+    "obstetric": {
+      "note": "Ny hypothermie amin'ny reny dia miteraka bradycardia sy acidose foetus. Ny fitsaboana amin'ny foetus dia ny fitsaboana amin'ny reny mahery vaika. Fanaraha-maso ny foetus raha misy."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

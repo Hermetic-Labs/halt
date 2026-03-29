@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Valutazione della disidratazione",
+  "category": "circulation",
+  "description": "Valutazione sul campo per la disidratazione e la gravità della malattia da calore. Il colore delle urine è l'indicatore sul campo più pratico. Valutare lo stato mentale come indicatore di una grave disidratazione che progredisce fino al colpo di calore.",
+  "instructions": "Controllare il colore delle urine, il turgore della pelle, lo stato mentale e i segni vitali. Urine scure, mucose secche e tachicardia indicano una significativa disidratazione che richiede una reidratazione attiva.",
+  "categories": [
+    {
+      "color": "chiaro-pallido",
+      "label": "Ben idratato",
+      "description": "Urina da giallo pallido a limpida. Nessun intervento necessario."
+    },
+    {
+      "color": "giallo",
+      "label": "Lieve disidratazione",
+      "description": "Urina giallo scuro, assetata. Reidratazione orale. Incoraggiare 250-500 ml di acqua all'ora."
+    },
+    {
+      "color": "ambra-marrone",
+      "label": "Disidratazione moderata-grave",
+      "description": "Urine color ambra, frequenza cardiaca elevata, turgore cutaneo diminuito, secchezza delle fauci. Fluidi IV/IO se orali non tollerati. 1-2 L LR o NS."
+    },
+    {
+      "color": "rosso",
+      "label": "Pericolo: colpo di calore/grave",
+      "description": "Produzione di urina minima, LOC alterato, pelle calda e secca. Emergenza medica: raffreddamento rapido + fluidi IV + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "I bambini si disidratano più velocemente degli adulti. Fontanelle infossate (neonati), lacrime assenti e letargia sono segni critici. IV basata sul peso: bolo LR da 20 mL/kg."
+    },
+    "obstetric": {
+      "note": "Le donne incinte necessitano di una maggiore assunzione di liquidi. La disidratazione può innescare contrazioni premature. Prima la reidratazione orale aggressiva; IV se non tollera orale."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

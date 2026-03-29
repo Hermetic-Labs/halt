@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "Glasgow Coma Scale (GCS)",
+  "category": "neurological",
+  "description": "Nleba anya nke akwara ozi nke nsụhọ site na nzaghachi anya, okwu ọnụ na moto. Ogologo akara 3-15.",
+  "instructions": "Tinye akara nke ọ bụla n'ime ngalaba atọ ahụ n'onwe ya. Chịkọta akara atọ niile maka mkpokọta GCS.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Na mberede"
+        },
+        {
+          "score": 3,
+          "label": "Iji olu"
+        },
+        {
+          "score": 2,
+          "label": "Iji mgbu"
+        },
+        {
+          "score": 1,
+          "label": "Ọ dịghị"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "Gbakwasara"
+        },
+        {
+          "score": 4,
+          "label": "Mgbagwoju anya"
+        },
+        {
+          "score": 3,
+          "label": "Okwu na-ekwesịghị ekwesị"
+        },
+        {
+          "score": 2,
+          "label": "Ụda enweghị nghọta"
+        },
+        {
+          "score": 1,
+          "label": "Ọ dịghị"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "Na-erube isi n'iwu"
+        },
+        {
+          "score": 5,
+          "label": "Na-akpachapụta ihe mgbu"
+        },
+        {
+          "score": 4,
+          "label": "Na-ewepụ ihe mgbu"
+        },
+        {
+          "score": 3,
+          "label": "Mgbanwe na-adịghị mma (ihe ndozi)"
+        },
+        {
+          "score": 2,
+          "label": "Mgbakwunye (decerebrate)"
+        },
+        {
+          "score": 1,
+          "label": "Ọ dịghị"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "TBI dị nro -- nyochaa anya"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "TBI na-agafeghị oke -- kwadebe ụzọ ụgbọ elu"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "TBI siri ike - ụzọ ikuku dị n'ihe egwu ozugbo, tinye ya ma ọ bụrụ na ọ ga-ekwe omume"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Jiri GCS ụmụaka (pGCS) maka ụmụaka na-erubeghị afọ 2. Emeziri akara ọnụ maka ụmụaka ndị na-ebu ụzọ kwuo okwu."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

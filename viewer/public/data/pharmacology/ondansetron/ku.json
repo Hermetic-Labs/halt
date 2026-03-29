@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Antîmetîk antagonîstê receptorê 5-HT3 bijartî. Ji bo gêjbûn û vereşînê pir bi bandor e. ODT (tabletek devkî perçebûyî) di mîhengên zeviyê de bikêr e dema ku IV tune be. Di hin pakêtên hebên şer de cih digirin.",
+  "indications": [
+    "Nausea û vereşîn (kemoterapî, bi opioîd, piştî emeliyatê, girêdayî TBI)",
+    "Nexweşiya tevgerê",
+    "Nausea ji rêveberiya ketamine"
+  ],
+  "dose": "4-8 mg IV/IO hêdî hêdî di nav 2-5 hûrdeman de. ODT: 4-8 mg di bin ziman de tê helandin. IM: 4 mg.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hîperhesasiyeta naskirî ya ji ondansetron an dijberên din ên 5-HT3",
+    "Sendroma QT ya dirêj a jidayikbûnê (tenê bi dozek bilind IV)"
+  ],
+  "warnings": [
+    "Doza bilind IV dibe ku navbera QT dirêj bike - dozaja IV ya herî kêm bandor bikar bîne.",
+    "Rêvebiriya rêyên hewayê di nexweşên bi vereşîn de cîh nagire -- pêşî rêyên hewayê biparêzin."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,1-0,15 mg/kg IV (max 4 mg). ODT: 4 mg ji bo zarokên 4 salî.",
+      "note": "Di pediatrîkê de bi berfirehî tê bikar anîn û baş tê tolerans kirin."
+    },
+    "obstetric": {
+      "note": "Daneyên sînorkirî di ducaniyê de. Ji bo gêjbûn/vereşîna giran piştî sêmeha yekem dema ku feyde ji xetereyan zêdetir be bikar bînin. Di sê meha yekem de nayê pêşniyar kirin."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

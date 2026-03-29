@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "Ukuhlelwa Kokopha (Udidi I-IV)",
+  "category": "circulatory",
+  "description": "Ukuhlelwa kwe-ATLS ye-hemorrhage ngokuqikelelwa kokulahleka kwegazi kunye nokuphendula komzimba.",
+  "instructions": "Qikelela ilahleko yegazi kwaye utshatise iimpawu zomzimba eklasini. Ukungxamiseka konyango kuyanda kunye neklasi.",
+  "scoring": [
+    {
+      "class": "I",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "Okuqhelekileyo",
+      "rr": "14-20",
+      "mental_status": "Okuqhelekileyo",
+      "treatment": "Qaphela, ulwelo lwe-PO ukuba luyakwazi"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "Okuqhelekileyo",
+      "rr": "20-30",
+      "mental_status": "Ukuxhalaba",
+      "treatment": "Ukufikelela kwe-IV, isotonic crystalloid"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "Yehlisiwe",
+      "rr": "30-40",
+      "mental_status": "Ndibhidekile",
+      "treatment": "Ulwelo lwe-IV + iimveliso zegazi, ukulawula ukopha kwangoko"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": ">40%",
+      "hr": ">140",
+      "sbp": "Isezantsi kakhulu",
+      "rr": ">40",
+      "mental_status": "I-Lethargic / engekho zingqondweni",
+      "treatment": "Ukulawula ukopha ngokukhawuleza kotyando -- kubeka ubomi esichengeni"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Abantwana bahlawula ixesha elide ngaphambi kokuba bahlawule. Udidi lwe-III / IV lunokuthi lubonise nge-BP esondeleyo-eqhelekileyo kude kube nokuwa ngokukhawuleza. Thembela i-tachycardia kunye nesimo sengqondo phezu kweBP."
+    },
+    "obstetric": {
+      "note": "Izigulane ezikhulelweyo zine-40-50% yokwandisa umthamo wegazi. Inokunyamezela ilahleko enkulu ngaphambi kokubonisa iimpawu. Uxinzelelo lwe-fetal lunokwandulela iimpawu zomama."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

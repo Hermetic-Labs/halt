@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamine",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Ny fanatoranana disociative dia manome analgesia, sedation ary amnesia raha mitahiry ny reflexes amin'ny lalan-drivotra sy ny fahamarinan'ny hemodynamic. Ny analgesic tiana ao amin'ny TCCC - mitazona BP tsy toy ny opioids. Ampiasaina ihany koa ho an'ny sedation procedural sy RSI.",
+  "indications": [
+    "Fitantanana fanaintainana antonony hatramin'ny henjana",
+    "Fitsaboana ara-dalàna (famonoana ratra, fampihenana ny tapaka)",
+    "Induction agent for RSI",
+    "miady amin'ny fanatoranana"
+  ],
+  "dose": "Analgesia: 0,1-0,3 mg/kg IV/IO (tsindry miadana) | 0,5 mg/kg IM. Fitsaboana ara-pitsaboana: 1-2 mg/kg IV | 4-6 mg/kg IM. Fampidirana RSI: 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN"
+  ],
+  "window": "",
+  "contraindications": [
+    "Schizophrenia fantatra na psychosis mavitrika",
+    "ICP ambony tsy misy fiarovana ny lalan-drivotra (havana)"
+  ],
+  "warnings": [
+    "Fihetseham-po mipoitra (delirium / hallucinations) - manalefaka amin'ny midazolam 1-2mg IV raha misy.",
+    "Mampitombo ny sekretera -- efa vonona ny hisento.",
+    "Laryngospasm tsy fahita firy fa azo atao - mitazona ny BVM."
+  ],
+  "regional_names": {
+    "generic": "ketamine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesia: 0,5 mg/kg IV. Fitsaboana ara-pitsaboana: 1-2 mg/kg IV | 4-5 mg/kg IM.",
+      "note": "Nianatra tsara momba ny pediatrics. Aleo ho an'ny dingana maharary."
+    },
+    "obstetric": {
+      "note": "Azo antoka ho an'ny analgesia reny amin'ny fatra kely. Mety hiteraka fahaketrahana amin'ny taovam-pisefoana zaza vao teraka amin'ny fatra ambony raha atolotra akaiky ny fotoana fiterahana."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

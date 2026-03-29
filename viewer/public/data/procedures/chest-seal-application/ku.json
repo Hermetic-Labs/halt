@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Serlêdana Mohra Sîngê Occlusive",
+  "category": "respiration",
+  "skill_level": "combat-lifesaver",
+  "time_estimate": "1-2 min",
+  "description": "Girtina birîna sîngê mêjker (pneumotoraksa vekirî) bi mora sîngê vekêşandî da ku pêşî li ketina hewayê bigire dema ku rê bide berdana zextê.",
+  "equipment": [
+    "vented-chest-seal",
+    "destmal",
+    "trawma-şears"
+  ],
+  "steps": [
+    "Birînê derxînin -- cilê jê bikin an jê bikin.",
+    "Çermê li dora birînê bi qasî ku dibe zuwa paqij bike (xwîn, xwel rê li ber adhesionê digire).",
+    "Pakêta mora sîngê vekêşandî vekin.",
+    "Moh li ser birînê, li ser qulikê bişînin. Bi tundî biperçiqînin, pê ewle bibin ku hemî kevî bi hev ve girêdayî ne.",
+    "Arasteya valvê kontrol bikin - pêdivî ye ku hêlîn ber bi der ve be (ji çerm dûr) û bê asteng bimîne.",
+    "Dengên nefesê ji nû ve binirxînin. Ger xirabûn piştî morkirinê berdewam bike, pneumothorax tansiyonê bifikirin - NCD bikin.",
+    "Ger morek vekêşkirî tune be, morek ne-vekêşî dikare were bikar anîn lê DIVÊ ji bo pêşkeftina pneumotoraksa tansiyonê were şopandin."
+  ],
+  "warnings": [
+    "Molên ne-veguhestî dikarin pneumothoraxek hêsan veguherînin pneumothoraxek tansiyonê - tenê di zeviyê de morên vekêşkirî bikar bînin.",
+    "Tîpkirina sê alî (mohra bidestçêkirî) êdî ji hêla CoTCCC ve nayê pêşniyar kirin - mora sîngê vekêşana bazirganî bikar bînin.",
+    "Her tim mohr li birînên ENTRANCE û DERKETINÊ bixin."
+  ],
+  "follows": [],
+  "precedes": [
+    "derzî-decompression"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

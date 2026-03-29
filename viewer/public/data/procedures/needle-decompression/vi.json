@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Giải Nén Ngực Bằng Kim (NCD)",
+  "category": "respiration",
+  "skill_level": "y tế chiến đấu",
+  "time_estimate": "1-2 phút",
+  "description": "Giảm khẩn cấp tràn khí màng phổi căng thẳng bằng cách đâm kim vào khoang liên sườn thứ hai. Can thiệp cứu sống.",
+  "equipment": [
+    "14g-kim-catheter-3-25in",
+    "găng tay",
+    "rương-dấu-tùy chọn"
+  ],
+  "steps": [
+    "Xác định tràn khí màng phổi căng thẳng: mất tiếng thở bên bên tổn thương, lệch khí quản (muộn), suy hô hấp, hạ huyết áp, JVD.",
+    "Để lộ ngực ở bên bị ảnh hưởng.",
+    "Xác định vị trí khoang liên sườn 2, đường giữa đòn (thay thế: ICS thứ 4/5, đường nách trước).",
+    "Chèn một ống thông kim 14g, 3,25 inch vuông góc với thành ngực, ngay trên TOP của xương sườn thứ 3 (tránh bó mạch thần kinh).",
+    "Tiến lên cho đến khi cảm nhận được luồng không khí hoặc tiếng rít.",
+    "Rút kim ra và để ống thông tại chỗ.",
+    "Lắng nghe sự cải thiện trong âm thanh hơi thở và nỗ lực hô hấp.",
+    "Cố định trung tâm ống thông. KHÔNG kẹp hoặc che đầu mở.",
+    "Đánh giá lại sau mỗi 5 phút - ống thông có thể bị xoắn hoặc đông lại, cần phải giải nén lặp lại."
+  ],
+  "warnings": [
+    "Sử dụng kim 3,25 inch - ống thông mạch 14g tiêu chuẩn (1,5 inch) thường xuyên bị hỏng ở bệnh nhân quân đội do áo giáp và cơ bắp.",
+    "NCD song phương có thể được yêu cầu nếu không chắc chắn bên nào bị ảnh hưởng và bệnh nhân sắp bị bắt giữ.",
+    "Không đặt cùng phía với vết thương ở ngực mà không bịt kín vết thương trước."
+  ],
+  "follows": [],
+  "precedes": [
+    "ứng dụng niêm phong ngực"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Sử dụng kim có kích thước phù hợp (bệnh nhân nhỏ hơn, 1,5-2 inch có thể là đủ). Sử dụng phương pháp tiếp cận ICS MCL thứ 2. Nhận dạng cột mốc khó khăn hơn - hãy thận trọng."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

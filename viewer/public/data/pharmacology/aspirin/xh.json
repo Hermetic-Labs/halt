@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "I-Aspirin (i-Acetylsalicylic Acid)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "I-Aspirin ye-Bayer",
+    "Ecotrin"
+  ],
+  "description": "I-non-steroidal anti-inflammatory drug (NSAID) eneempawu ze-antiplatelet. Unyango lodidi lokuqala lwe-syndrome ekrokrelekayo ye-coronary syndrome (ACS). Ngokungaguqulekiyo inqanda ukudityaniswa kweplatelet -- isiphumo sihlala kubomi beplatelet (iintsuku ezisi-7-10).",
+  "indications": [
+    "Ukrokrela ukuba yi-acute myocardial infarction (MI) -- hlafuna ngoko nangoko",
+    "I-angina engazinzanga / i-acute coronary syndrome",
+    "I-Stroke (ischemic -- emva kokungabandakanywa ukopha)",
+    "Umkhuhlane kunye nentlungu ephakathi (i-analgesic)"
+  ],
+  "dose": "I-ACS: 325 mg PO -- HLAFUNA (ungaginyi ngokupheleleyo) ngoko nangoko. I-Analgesic / antipyretic: 325-650 mg PO q4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Nika kwangethuba -- hlafuna ngoko nangoko xa urhanela.",
+  "contraindications": [
+    "I-GI esebenzayo yokopha",
+    "Istroke esophayo",
+    "I-aspirin eyaziwayo okanye i-NSAID hypersensitivity",
+    "Ukopha kakhulu okungalawulekiyo -- i-aspirin yenza ukopha kube mandundu"
+  ],
+  "warnings": [
+    "MUSA ukunika izigulana ezophayo -- iaspirin iyonakalisa ngokungenakulungiseka ukusebenza kweplatelet kwaye yenza ukopha kube mandundu.",
+    "UNGAniki abantwana abangaphantsi kweminyaka eyi-12 abanesifo sentsholongwane -- ingozi yeReye's syndrome.",
+    "Ukucaphuka kwe-GI -- thatha kunye nokutya ukuba akuphumi."
+  ],
+  "regional_names": {
+    "generic": "i-aspirin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "I-Analgesic / antipyretic: 10-15 mg / kg PO q4-6h (ubuninzi be-650 mg / idosi). QAPHELA: I-Contraindicated kwisifo sentsholongwane (i-Reye syndrome).",
+      "note": "Sebenzisa i-acetaminophen (paracetamol) kwifiva kubantwana abanesifo sentsholongwane endaweni yoko."
+    },
+    "obstetric": {
+      "note": "Kuphephe ukukhulelwa ingakumbi kwi-trimester yesithathu (ukuvalwa kwangaphambili kwe-ductus arteriosus). I-dose ephantsi (81mg) isetyenziselwa ukukhusela i-pre-eclampsia phantsi kolawulo lukagqirha kuphela."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "I-Epinephrine (Adrenaline)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalin"
+  ],
+  "description": "I-catecholamine engapheliyo kunye nomsebenzi we-alpha kunye ne-beta adrenergic. Unyango lokuqala lwe-anaphylaxis kunye nokubanjwa kwentliziyo. Kwi-anaphylaxis, ithanga le-IM likhethwa ngaphezu kwe-IV (ikhuselekile, i-equivancy efficacy). Musa ukulibazisa ukufikelela kwe-IV kwi-anaphylaxis.",
+  "indications": [
+    "I-Anaphylaxis (umgca wokuqala)",
+    "Ukubanjwa kwentliziyo -- pulseless VF/VT/PEA/asystole",
+    "I-bronchospasm enzima",
+    "Hypotension refractory kulwelo"
+  ],
+  "dose": "I-Anaphylaxis: 0.3-0.5 mg IM (ithanga le-anterolateral) | Auto-injector 0.3 mg IM. Phinda u-q5-15 min PRN. Ukubanjwa kwenhliziyo: 1 mg IV / IO q3-5 min ngexesha leCPR. I-bronchospasm enzima: 0.3 mg IM.",
+  "route": [
+    "I-IM",
+    "IV",
+    "IO"
+  ],
+  "window": "Kwi-anaphylaxis: nika i-IM ngokukhawuleza -- ungalibazisi ukufikelela kwi-IV.",
+  "contraindications": [
+    "Akukho contraindications ngokupheleleyo kwimeko kaxakeka ubomi esichengeni"
+  ],
+  "warnings": [
+    "I-epinephrine ye-IV ye-anaphylaxis kufuneka isetyenziswe kuphela ekubanjweni kwentliziyo okanye umothuko omkhulu-iyingozi ukuba inikwe i-IV push kwisigulane esiyaziyo.",
+    "Ukugqithisa kubangela i-tissue necrosis -- qinisekisa i-IV patency.",
+    "Yandisa imfuno yeoksijini ye-myocardial --sebenzisa isilumkiso kwisifo se-coronary eyaziwayo ngaphandle kokubanjwa."
+  ],
+  "regional_names": {
+    "generic": "epinephrine",
+    "UK": "iadrenaline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "I-Anaphylaxis: 0.01 mg / kg IM (ubuninzi be-0.5 mg). I-EpiPen Jr (0.15 mg) ye-15-30 kg. Ukubanjwa kwentliziyo: 0.01 mg / kg IV / IO q3-5 min.",
+      "note": "Sebenzisa idosi esekelwe kubunzima. Broselow tape reference iyacetyiswa."
+    },
+    "obstetric": {
+      "note": "Sebenzisa idosi eqhelekileyo ye-anaphylaxis -- ukusinda komama kubaluleke kakhulu. I-Epinephrine ikhuselekile ekukhulelweni kwiimeko ezisongela ubomi."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

@@ -15,7 +15,7 @@ Thank you for your interest in contributing to HALT. This project exists to save
 | Directory | What's There |
 |---|---|
 | `api/` | FastAPI backend (Python) |
-| `viewer/` | Pre-built React frontend |
+| `viewer/` | React PWA — source in `src/`, built output in `dist/` |
 | `triage/` | Medical protocols, conditions, pharmacology (JSON) |
 | `models/` | AI models — downloaded via `dev/setup.py` from R2 |
 | `runtime/` | Portable Python 3.13 — downloaded via `dev/setup.py` |
@@ -35,6 +35,20 @@ Thank you for your interest in contributing to HALT. This project exists to save
 2. Make your changes
 3. Test locally with the dev launcher
 4. Submit a Pull Request with a clear description
+
+### Frontend (viewer/)
+
+The full React source lives in `viewer/src/`. To work on it:
+
+```bash
+cd viewer
+npm install          # install deps (Node 18+ required)
+npm run dev          # dev server on :5173 — hot reload against backend on :7778
+npm run build        # rebuild dist/ — commit the output alongside your source changes
+npm run lint         # ESLint check
+```
+
+See [`viewer/README.md`](viewer/README.md) for full frontend development instructions. When submitting a frontend PR, include the rebuilt `viewer/dist/` so the backend can serve it immediately.
 
 ### Medical Data Contributions
 If you're a medical professional and want to improve triage protocols, conditions, or pharmacology data:

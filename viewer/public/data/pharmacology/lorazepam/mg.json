@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Ativan"
+  ],
+  "description": "benzodiazepine intermediate. Fitsaboana IV / IM amin'ny laharana voalohany amin'ny epileptika sy ny fikorontanan'ny acute. Ampiasaina ihany koa ho an'ny sedation procedural sy anxiolysis.",
+  "indications": [
+    "Status epilepticus (andalana voalohany IV)",
+    "Fitantanana ny fanafihana mahery vaika",
+    "Fitsaboana ara-dalàna",
+    "Fanahiana na tebiteby mafy"
+  ],
+  "dose": "Fanafihana: 4 mg IV/IO tosika miadana mandritra ny 2 min. Avereno 4 mg ao anatin'ny 5-10 minitra raha mitohy ny fikorontanana. IM: 4 mg raha tsy misy IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "glaucome tery zoro tery",
+    "Fahaketrahana ara-pisefoana mafy",
+    "Hypersensitivity propylène glycol"
+  ],
+  "warnings": [
+    "Miteraka fahaketrahana amin'ny taovam-pisefoana -- vonona ny fitaovana BVM sy lalan-drivotra.",
+    "Mety haharitra 6-8 ora ny fampitoniana -- manara-maso ny lalan-drivotra.",
+    "Fihetseham-po paradoxical azo atao, indrindra amin'ny zokiolona sy ny ankizy."
+  ],
+  "regional_names": {
+    "generic": "lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV/IM (max 4 mg/dose). Avereno indray mandeha ao anatin'ny 5-10 min raha ilaina.",
+      "note": "Aleo kokoa noho ny diazepam ho an'ny fitantanana IV amin'ny ankizy."
+    },
+    "obstetric": {
+      "note": "Miampita placenta - mety ho fahaketrahana respiratoire ny zaza vao teraka. Ampiasaina amin'ny epilepticus amin'ny reny rehefa misy tombony mihoatra ny risika."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

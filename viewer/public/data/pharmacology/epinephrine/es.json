@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinefrina (adrenalina)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "Epipen",
+    "Adrenalina"
+  ],
+  "description": "Catecolamina endógena con actividad alfa y beta adrenérgica. Tratamiento de primera línea para anafilaxia y paro cardíaco. En la anafilaxia, se prefiere la administración IM del muslo a la IV (más segura y con eficacia equivalente). No posponga el acceso intravenoso en caso de anafilaxia.",
+  "indications": [
+    "Anafilaxia (primera línea)",
+    "Paro cardíaco: FV/TV/PEA/asistole sin pulso",
+    "Broncoespasmo severo",
+    "Hipotensión refractaria a los líquidos"
+  ],
+  "dose": "Anafilaxia: 0,3-0,5 mg IM (muslo anterolateral) | Autoinyector 0,3 mg IM. Repetir cada 5-15 min PRN. Paro cardíaco: 1 mg IV/IO cada 3-5 min durante la RCP. Broncoespasmo severo: 0,3 mg IM.",
+  "route": [
+    "IM",
+    "IV",
+    "OI"
+  ],
+  "window": "En caso de anafilaxia: administre IM inmediatamente; no demore el acceso IV.",
+  "contraindications": [
+    "No hay contraindicaciones absolutas en emergencias potencialmente mortales"
+  ],
+  "warnings": [
+    "La epinefrina intravenosa para la anafilaxia sólo debe usarse en caso de paro cardíaco o shock profundo, lo que es peligroso si se administra por vía intravenosa a un paciente consciente.",
+    "La extravasación causa necrosis tisular: garantiza la permeabilidad de la vía intravenosa.",
+    "Aumenta la demanda de oxígeno del miocardio; tenga precaución en caso de enfermedad coronaria conocida fuera del paro."
+  ],
+  "regional_names": {
+    "generic": "epinefrina",
+    "UK": "adrenalina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anafilaxia: 0,01 mg/kg IM (máx. 0,5 mg). EpiPen Jr (0,15 mg) por 15-30 kg. Paro cardíaco: 0,01 mg/kg IV/IO cada 3-5 min.",
+      "note": "Utilice una dosificación basada en el peso. Se recomienda la referencia de la cinta Broselow."
+    },
+    "obstetric": {
+      "note": "Utilice la dosis estándar de anafilaxia: la supervivencia materna es primordial. La epinefrina es segura durante el embarazo para emergencias potencialmente mortales."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

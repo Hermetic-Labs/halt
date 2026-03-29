@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Versed",
+    "Nayzilam"
+  ],
+  "description": "Benzodiazepine-çalakiya kurt bi destpêka zû. Ji bo aramkirina prosedurê, pêş-dermanê RSI, û rêveberiya girtina IM/IN tê tercîh kirin. Rêyên IM û intranasal di mîhengên zeviyê de feydeyek girîng peyda dikin.",
+  "indications": [
+    "Sedation prosedural",
+    "Pêş-dermanê RSI (bi ketamine)",
+    "Birêvebirina desteserkirinê (IM/IN dema ku IV tune be)",
+    "Rêvebiriya ajîtasyonê"
+  ],
+  "dose": "Sedation: 0,05-0,1 mg/kg IV tîtra. Pêvajo: 1-5 mg IV hêdî hêdî. IM: 0.2 mg/kg. IN: 0.2 mg/kg (herî zêde 10 mg). Status epilepticus IM: 10 mg IM (mezin).",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaukoma akût-goşeya teng",
+    "Serxweşiya akût a alkolê bi tevliheviya dil",
+    "Hîperhesasiya naskirî"
+  ],
+  "warnings": [
+    "Depresyona nefesê -- çavdêriya rêça hewayê bike, ger hebe alavan vegerê (flumazenil) hebe.",
+    "Hîpotansiyon bi taybetî bi hevdervekirina opioîdê.",
+    "Derzîlêdana IV-ya bilez dibe sedema apnea - hêdî hêdî bikişîne."
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Sedation: 0,05-0,1 mg/kg IV. IM: 0,1-0,2 mg/kg. IN: 0,2-0,3 mg/kg. Girtina IM: 0.2 mg/kg (herî zêde 10 mg).",
+      "note": "Riya IN bi taybetî di zarokan de bikêrhatî ye - ji gihîştina IV-ê dûr dikeve."
+    },
+    "obstetric": {
+      "note": "Placentayê derbas dike. Sedasyona neonatal gengaz e. Doza herî kêm bandor bikar bînin; çavdêrîkirina neonîkî heke nêzîkê radestkirinê were dayîn."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Isicelo se-Occlusive Chest Seal",
+  "category": "respiration",
+  "skill_level": "ukulwa-ukusindisa impilo",
+  "time_estimate": "1-2 amaminithi",
+  "description": "Ukuvala inxeba lesifuba elimunyayo (i-pneumothorax evulekile) ngesivalo sesifuba esivulekile ukuvimbela ukungena komoya ngenkathi kuvumela ukuphuma kwengcindezi.",
+  "equipment": [
+    "i-vent-chest-seal",
+    "amagilavu",
+    "ama-trauma-shears"
+  ],
+  "steps": [
+    "Veza isilonda -- sika noma susa izingubo.",
+    "Sula isikhumba esizungeze isilonda njengokoma ngangokunokwenzeka (igazi, umjuluko uvimbela ukunamathela).",
+    "Vula iphakheji ye-chest seal evulekile.",
+    "Beka uphawu phezu kwesilonda, ugxile emgodini. Cindezela ngokuqinile, uqinisekise ukuthi yonke imiphetho iyanamathela.",
+    "Hlola ukuma kwevalvu -- imbobo kufanele ibheke ngaphandle (ikude nesikhumba) futhi ihlale ingavimbekile.",
+    "Phinda uhlole imisindo yokuphefumula. Uma ukonakala kuqhubeka ngemva kokuvalwa, cabanga nge-tension pneumothorax -- yenza i-NCD.",
+    "Uma isivalo esikhipha umoya singatholakali, isigxivizo esingangenisi singasetshenziswa kodwa KUMELE kuqashelwe ukuthuthukiswa kwe-tension pneumothorax."
+  ],
+  "warnings": [
+    "Ama-non-vented seals angaguqula i-pneumothorax elula ibe i-tension pneumothorax -- sebenzisa ama-vent seal kuphela ensimini.",
+    "Ukuthepha ezinhlangothini ezintathu (uphawu oluthuthukisiwe) akusanconyiwe yi-CoTCCC -- sebenzisa uphawu lwesifuba olungena ngaphandle kwezentengiso.",
+    "Njalo faka isivalo ku-ENTRANCE kanye namanxeba OPHUMA."
+  ],
+  "follows": [],
+  "precedes": [
+    "inaliti-decompression"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Naaldborstdecompressie (NCD)",
+  "category": "respiration",
+  "skill_level": "gevechtsmedicijn",
+  "time_estimate": "1-2 minuten",
+  "description": "Noodverlichting van spanningspneumothorax door naaldinbrenging in de tweede intercostale ruimte. Levensreddende interventie.",
+  "equipment": [
+    "14g-naaldkatheter-3-25in",
+    "handschoenen",
+    "borst-seal-optioneel"
+  ],
+  "steps": [
+    "Identificeer spanningspneumothorax: afwezige ademgeluiden aan de aangedane zijde, tracheale afwijking (laat), ademnood, hypotensie, JVD.",
+    "Leg de borstkas aan de aangedane zijde bloot.",
+    "Zoek de 2e intercostale ruimte, midclaviculaire lijn (alternatief: 4e/5e ICS, anterieure axillaire lijn).",
+    "Breng een naaldkatheter van 14 g, 3,25 inch loodrecht op de borstwand in, net boven de BOVENKANT van de derde rib (vermijdt neurovasculaire bundel).",
+    "Ga vooruit totdat u een luchtstroom voelt of een hoorbaar gesis hoort.",
+    "Verwijder de naald en laat de katheter op zijn plaats.",
+    "Luister naar verbetering van de ademgeluiden en de ademhalingsinspanning.",
+    "Zet de katheterhub vast. Klem of bedek het open uiteinde NIET.",
+    "Voer elke 5 minuten een nieuwe beoordeling uit; de katheter kan knikken of klonteren, waardoor herhaalde decompressie nodig is."
+  ],
+  "warnings": [
+    "Gebruik een naald van 3,25 inch - standaard angiokatheter van 14 g (1,5 inch) faalt vaak bij militaire patiënten vanwege kogelvrije vesten en spieren.",
+    "Bilaterale NCD kan nodig zijn als niet zeker is welke kant is aangedaan en de patiënt een peri-arrestatie heeft.",
+    "Plaats het niet aan dezelfde kant als de zuigende borstwond zonder eerst de wond af te dichten."
+  ],
+  "follows": [],
+  "precedes": [
+    "borstseal-applicatie"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Gebruik een naald van het juiste formaat (kleinere patiënten, 1,5-2 inch kan voldoende zijn). Gebruik de tweede ICS MCL-benadering. Herkenning van oriëntatiepunten is moeilijker - wees voorzichtig."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

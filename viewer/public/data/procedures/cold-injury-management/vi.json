@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Quản lý chấn thương lạnh",
+  "category": "environmental",
+  "skill_level": "Cơ bản",
+  "time_estimate": "Đang diễn ra",
+  "description": "Điều trị tê cóng, ngâm chân (chân rãnh) và hạ thân nhiệt. Chấn thương do cảm lạnh có thể phòng ngừa được - nhận biết các dấu hiệu sớm trước khi tổn thương mô không thể phục hồi được. Xử lý mô bị tê cóng cực kỳ nhẹ nhàng.",
+  "equipment": [
+    "Quần áo/túi ngủ cách nhiệt khô",
+    "Nước ấm (38-42C/100-108F) để làm ấm bồn tắm",
+    "Băng vô trùng",
+    "Ibuprofen 400mg PO (nếu có)",
+    "IV LR (ấm nếu có thể)"
+  ],
+  "steps": [
+    "HẠ NHIỆT ĐỘ ĐẦU TIÊN: Đánh giá nhiệt độ cơ thể bằng nhiệt kế có chỉ số đọc thấp. Nhẹ (32-35C): run rẩy, lú lẫn. Trung bình (28-32C): không run, lú lẫn nặng. Nặng (<28C): bất tỉnh, không bắt được mạch.",
+    "Hạ thân nhiệt -- Nhẹ/trung bình: Cởi bỏ quần áo ướt, cách nhiệt với mặt đất, môi trường ấm áp, chất lỏng ngọt ấm nếu còn tỉnh, chườm nóng đến nách/háng (không bôi trực tiếp lên da). Xử lý nhẹ nhàng -- tiếng chói tai có thể kích hoạt VFib.",
+    "HẠ THƠM -- Nặng: Xử lý RẤT nhẹ nhàng. Kiểm tra mạch 60 giây đầy đủ trước khi CPR. Bắt đầu CPR nếu không có mạch. Truyền dịch IV ấm nếu có. Ưu tiên của MEDEVAC -- 'không chết cho đến khi ấm và chết'.",
+    "FROSTBITE: Bề ngoài (da trắng/xám, bên dưới mềm) so với sâu (cứng, có cảm giác như gỗ, phồng rộp). KHÔNG chà xát khu vực này. KHÔNG làm ấm lại nếu có nguy cơ đóng băng lại -- việc làm lại gây ra thiệt hại nặng nề hơn việc làm ấm lại chậm trễ.",
+    "Làm ấm lại FROSTBITE: Ngâm trong nước 38-42C (không nóng hơn) trong 15-30 phút cho đến khi mô mềm và có màu đỏ/tím. Rất đau - cho dùng thuốc giảm đau (ketamine hoặc morphine).",
+    "Sau khi làm ấm lại: đệm giữa các ngón chân/ngón tay bằng gạc vô trùng. KHÔNG làm vỡ vết phồng rộp. Bảo vệ khỏi áp lực.",
+    "CHÂN NGÂM (Bàn chân rãnh): tiếp xúc với ướt/lạnh kéo dài, da đỏ rồi nhợt nhạt rồi phồng rộp. Lau khô chân, làm ấm từ từ, nâng cao. KHÔNG áp dụng nhiệt trực tiếp.",
+    "Ghi lại thời gian chấn thương và thời gian làm ấm lại."
+  ],
+  "warnings": [
+    "KHÔNG làm ấm lại người bị tê cóng nếu có bất kỳ nguy cơ đông lạnh nào -- làm ấm lại không đầy đủ + làm lạnh lại = mất mô nghiêm trọng.",
+    "Hạ thân nhiệt nghiêm trọng có thể giống cái chết. Kiểm tra mạch trong 60 giây. 'Không chết cho đến khi ấm áp và chết.'",
+    "Rượu làm tăng sự mất nhiệt mặc dù cảm nhận được độ ấm - không cho uống rượu.",
+    "Nguy cơ VFib cao ở tình trạng hạ thân nhiệt ở mức độ trung bình đến nặng - giảm thiểu thao tác và gây khó chịu cho bệnh nhân."
+  ],
+  "follows": [
+    "phòng chống hạ thân nhiệt"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Trẻ em nguội nhanh hơn do tỷ lệ diện tích bề mặt trên khối lượng cao hơn. Ngưỡng hạ thân nhiệt giống nhau. Chất lỏng IV ấm rất quan trọng. Dịch truyền theo cân nặng: 20 mL/kg LR ấm."
+    },
+    "obstetric": {
+      "note": "Hạ thân nhiệt của mẹ gây ra nhịp tim chậm và nhiễm toan ở thai nhi. Tích cực làm ấm người mẹ là cách điều trị cho thai nhi. Theo dõi thai nhi nếu có."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "hemorrhage-class",
+  "name": "የደም መፍሰስ ምደባ (ክፍል I-IV)",
+  "category": "circulatory",
+  "description": "በግምታዊ የደም መፍሰስ እና የፊዚዮሎጂ ምላሽ የ ATLS የደም መፍሰስ ምደባ።",
+  "instructions": "የደም መፍሰስን ይገምቱ እና የፊዚዮሎጂ ምልክቶችን ከክፍል ጋር ያዛምዱ። የሕክምናው አጣዳፊነት ከክፍል ጋር ይጨምራል.",
+  "scoring": [
+    {
+      "class": "እኔ",
+      "blood_loss_ml": "<750",
+      "blood_loss_pct": "<15%",
+      "hr": "<100",
+      "sbp": "መደበኛ",
+      "rr": "14-20",
+      "mental_status": "መደበኛ",
+      "treatment": "ከተቻለ የፖ.ኦ.ኦ ፈሳሾችን ይከታተሉ"
+    },
+    {
+      "class": "II",
+      "blood_loss_ml": "750-1500",
+      "blood_loss_pct": "15-30%",
+      "hr": "100-120",
+      "sbp": "መደበኛ",
+      "rr": "20-30",
+      "mental_status": "ጭንቀት",
+      "treatment": "IV መዳረሻ, isotonic crystalloid"
+    },
+    {
+      "class": "III",
+      "blood_loss_ml": "1500-2000",
+      "blood_loss_pct": "30-40%",
+      "hr": "120-140",
+      "sbp": "ቀንሷል",
+      "rr": "30-40",
+      "mental_status": "ግራ ገባ",
+      "treatment": "IV ፈሳሾች + የደም ምርቶች, ወዲያውኑ የደም መፍሰስን መቆጣጠር"
+    },
+    {
+      "class": "IV",
+      "blood_loss_ml": ">2000",
+      "blood_loss_pct": "> 40%",
+      "hr": ">140",
+      "sbp": "በጣም ዝቅተኛ",
+      "rr": ">40",
+      "mental_status": "ድብርት/የማይታወቅ",
+      "treatment": "አስቸኳይ የቀዶ ጥገና የደም መፍሰስን መቆጣጠር -- ለሕይወት አስጊ ነው"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "ልጆች ማካካሻ ከመደረጉ በፊት ረዘም ላለ ጊዜ ይከፍላሉ. ክፍል III/IV ድንገተኛ ውድቀት እስኪደርስ ድረስ ከመደበኛው ቢፒ ጋር ሊመጣ ይችላል። በ BP ላይ tachycardia እና የአእምሮ ሁኔታን ይመኑ."
+    },
+    "obstetric": {
+      "note": "ነፍሰ ጡር ታካሚዎች ከ40-50% የደም መጠን ይጨምራሉ. ምልክቶችን ከማሳየቱ በፊት ከፍተኛ ኪሳራን ይታገሣል። የፅንስ ጭንቀት ከእናቶች ምልክቶች በፊት ሊሆን ይችላል."
+    }
+  },
+  "source": "ATLS / JTS CPG / PHTLS"
+}

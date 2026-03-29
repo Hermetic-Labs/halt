@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Soluzione di Ringer lattato (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Soluzione di Hartmann",
+    "Iniezione di Ringer lattato"
+  ],
+  "description": "Fluido cristalloide isotonico bilanciato. Da preferire alla soluzione salina normale per la rianimazione di traumi di grandi volumi: più equilibrata dal punto di vista fisiologico, con minor rischio di acidosi ipercloremica. Contiene sodio, potassio, calcio, lattato.",
+  "indications": [
+    "Rianimazione da trauma (cristalloidi preferiti nello shock emorragico)",
+    "Rianimazione con liquidi per ustioni (formula Parkland)",
+    "Ipovolemia",
+    "Manutenzione dei fluidi"
+  ],
+  "dose": "Shock emorragico: limitare a 1 litro massimo prima di passare agli emoderivati. Obiettivo SBP 80-90 mmHg trauma penetrante, 90 mmHg TBI. Ustioni (parco): 4 ml x kg x% TBSA bruciati nell'arco di 24 ore (metà nelle prime 8 ore).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Iperkaliemia (contiene potassio)",
+    "Grave insufficienza epatica (compromissione del metabolismo del lattato - relativo)"
+  ],
+  "warnings": [
+    "E' ancora un cristalloide: non può trasportare ossigeno. I prodotti sanguigni sono superiori per lo shock emorragico. LR è solo un ponte.",
+    "Non mescolare con i prodotti sanguigni della stessa linea (il calcio provoca la coagulazione).",
+    "NON eseguire una rianimazione eccessiva in caso di trauma penetrante prima del controllo dell'emorragia."
+  ],
+  "regional_names": {
+    "generic": "Soluzione di Ringer lattato",
+    "UK": "Soluzione di Hartmann"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Bolo da 20 ml/kg, rivalutare. Preferito rispetto a NS per traumi pediatrici.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Fluido IV preferito durante il travaglio e il parto. Appropriato per la rianimazione emorragica ostetrica."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

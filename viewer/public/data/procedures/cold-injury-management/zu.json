@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Ukuphathwa Kokulimala Okubandayo",
+  "category": "environmental",
+  "skill_level": "Okuyisisekelo",
+  "time_estimate": "Iyaqhubeka",
+  "description": "Ukulawulwa kwe-frostbite, unyawo lokucwiliswa (unyawo lomsele), kanye ne-hypothermia. Ukulimala okubandayo kuyagwemeka -- qaphela izimpawu zakuqala ngaphambi kokuba umonakalo wezicubu ungalungiseki. Bamba izicubu ze-frostbitten ngobumnene kakhulu.",
+  "equipment": [
+    "Izingubo zokuvikela ezomile/isikhwama sokulala",
+    "Amanzi afudumele (38-42C/100-108F) okugeza okufudumalayo",
+    "Izingubo eziyinyumba",
+    "Ibuprofen 400mg PO (uma ikhona)",
+    "IV LR (ifudumele uma kungenzeka)"
+  ],
+  "steps": [
+    "I-HYPOTHERMIA OKOKUQALA: Hlola izinga lokushisa eliyisisekelo nge-thermometer yokufunda okuphansi. Imnene (32-35C): ukuqhaqhazela, ukudideka. Okumaphakathi (28-32C): akukho ukuthuthumela, ukudideka okukhulu. Kakhulu (<28C): uqulekile, akukho ukushaya kwenhliziyo okutholakalayo.",
+    "I-HYPOTHERMIA -- Imaphakathi/Emaphakathi: Susa izingubo ezimanzi, faka i-insulate emhlabathini, indawo efudumele, uketshezi olumnandi olufudumele uma ukwazi, amaphakethe okushisa aye ku-axillae/groin (hhayi ngqo esikhumbeni). Bamba ngobumnene -- i-jaring ingaqalisa i-VFib.",
+    "I-HYPOTHERMIA -- Inzima: Bamba ngobumnene KAKHULU. Hlola ukushaya kwenhliziyo ngamasekhondi angu-60 agcwele ngaphambi kwe-CPR. Qala i-CPR uma kungekho ukushaya kwenhliziyo. Uketshezi olufudumele lwe-IV uma lukhona. Okubalulekile kwe-MEDEVAC -- 'akufanga kuze kufudumele futhi kufe'.",
+    "I-FROSTBITE: Ikha phezulu (isikhumba esimhlophe/mpunga, esithambile ngaphansi) vs. Ukujula (okuqinile, ukuzwa kokhuni, amabhamuza). UNGAYIhlikihli indawo. UNGAFUTHI ufudumale uma ingozi yokuqandisa kabusha -- ukubanda kabusha kudala umonakalo omubi kunokulibaziseka ukufudumeza kabusha.",
+    "Ukufudumala kabusha i-FROSTBITE: Gxila emanzini angu-38-42C (angashisi kakhulu) imizuzu engu-15-30 kuze kube yilapho izicubu sezithambile futhi zibomvu/bunsomi. Kubuhlungu kakhulu -- nikeza i-analgesia (i-ketamine noma i-morphine).",
+    "Ngemva kokufudumala: iphedi phakathi kwezinzwane/iminwe ene-gauze oyinyumba. UNGAVUMI amabhamuza. Vikela ekucindezelweni.",
+    "IMMERSION FOOT (Unyawo Lomsele): ukuba manzi isikhathi eside/okubandayo, isikhumba sibomvu bese siphaphatheka bese sibe namabhamuza. Izinyawo ezomile, zifudumale kancane, ziphakamise. UNGAKUBEKI ukushisa okuqondile.",
+    "Isikhathi sedokhumenti sokulimala nesikhathi sokufudumala."
+  ],
+  "warnings": [
+    "UNGAFUTHI ufudumale isithwathwa uma kukhona ithuba lokuqandisa kabusha -- ukufudumeza okungaphelele + ukuqandisa kabusha = ukulahleka kwezicubu okuyinhlekelele.",
+    "I-hypothermia enzima ingalingisa ukufa. Hlola ukushaya kwenhliziyo imizuzwana engama-60. 'Ayifanga kuze kufudumale futhi kufe.'",
+    "Utshwala bukhulisa ukulahlekelwa ukushisa naphezu kokubona imfudumalo -- ungaphuzi utshwala.",
+    "Ingozi ye-VFib iphezulu ku-hypothermia emaphakathi -- yehlisa ukukhohlisa kanye ne-jarring yesiguli."
+  ],
+  "follows": [
+    "ukuvimbela i-hypothermia"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Izingane ziphola ngokushesha ngenxa yesilinganiso esiphezulu sendawo nesisindo. Izimpawu ze-Hypothermia ziyafana. Uketshezi olufudumele lwe-IV lubalulekile. Uketshezi olusekelwe isisindo: 20 mL/kg efudumele LR."
+    },
+    "obstetric": {
+      "note": "I-hypothermia kamama ibangela i-fetus bradycardia kanye ne-acidosis. Ukufudumeza komama okunamandla ukwelashwa kwe-fetus. Ukuqapha kwengane uma kukhona."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

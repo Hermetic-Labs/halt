@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "I-Needle Chest Decompression (NCD)",
+  "category": "respiration",
+  "skill_level": "ukulwa-udokotela",
+  "time_estimate": "1-2 amaminithi",
+  "description": "Ukukhululwa okuphuthumayo kwe-tension pneumothorax ngokufaka inaliti endaweni yesibili ye-intercostal. Ukungenelela okusindisa ukuphila.",
+  "equipment": [
+    "14g-inaliti-catheter-3-25in",
+    "amagilavu",
+    "isifuba-seal-ongakukhetha"
+  ],
+  "steps": [
+    "Khomba i-tension pneumothorax: imisindo yokuphefumula engekho ohlangothini oluthintekile, ukuchezuka koqhoqhoqho (sekwephuzile), ukucindezeleka kokuphefumula, i-hypotension, i-JVD.",
+    "Veza isifuba ohlangothini oluthintekile.",
+    "Thola indawo yesi-2 ye-intercostal, umugqa we-midclavicular (okunye: 4th/5th ICS, umugqa we-axillary wangaphambili).",
+    "Faka i-14g, 3.25-inch inaliti-catheter perpendicular odongeni lwesifuba, ngenhla nje OKUPHEZULU kombambo wesi-3 (ugwema inqwaba ye-neurovascular).",
+    "Dlulela kuze kube yilapho kuzwakala umsindo noma umsindo ozwakalayo.",
+    "Susa inaliti bese ushiya i-catheter endaweni.",
+    "Lalela ukuthuthukisa imisindo yokuphefumula nomzamo wokuphefumula.",
+    "Vikela ihabhu le-catheter. UNGAQINISI noma umboze indawo evulekile.",
+    "Phinda uhlole njalo emizuzwini emi-5 -- i-catheter ingagiqa noma ihlule, idinge ukucindezelwa okuphindaphindiwe."
+  ],
+  "warnings": [
+    "Sebenzisa inaliti engu-3.25-intshi -- i-angiocatheter ejwayelekile engu-14g (1.5in) ivamise ukwehluleka ezigulini zempi ngenxa yezivikelo zomzimba kanye nemisipha.",
+    "I-NCD yamazwe amabili ingase idingeke uma kungaqinisekiswa ukuthi yiluphi uhlangothi oluthintekile futhi isiguli siboshwe ngasikhathi sinye.",
+    "Ungabeki ohlangothini olulodwa nokumunca inxeba esifubeni ngaphandle kokuvala isilonda kuqala."
+  ],
+  "follows": [],
+  "precedes": [
+    "isifuba-seal-application"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Sebenzisa inaliti yobukhulu obufanele (iziguli ezincane, i-1.5-2in ingase yanele). Sebenzisa indlela yesi-2 ye-ICS MCL. Ukuqashelwa kophawu lomhlaba kunzima kakhulu -- sebenzisa ukuqaphela."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

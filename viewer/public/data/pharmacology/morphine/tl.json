@@ -1,0 +1,46 @@
+{
+  "id": "morphine",
+  "name": "Morphine Sulfate",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "7052",
+  "brand_names": [
+    "MS Contin",
+    "Morphine Sulfate Injection"
+  ],
+  "description": "Opioid analgesic. Nagbibigay ng epektibong lunas sa pananakit ngunit nagiging sanhi ng vasodilation at hypotension -- gamitin nang may pag-iingat sa hemorrhagic shock. Mas gusto ang Ketamine sa mga setting ng labanan. Gumamit lamang ng morphine sa mga pasyenteng hemodynamically stable.",
+  "indications": [
+    "Katamtaman hanggang sa matinding pananakit sa mga pasyenteng hemodynamically stable",
+    "Hindi first-line sa TCCC -- mas gusto ang ketamine"
+  ],
+  "dose": "2-4 mg IV/IO q4h PRN. Titrate para magkaroon ng epekto. IM: 5-10 mg q4h PRN.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "SQ"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hemodynamic instability / hemorrhagic shock",
+    "Depresyon sa paghinga",
+    "Pinsala sa ulo na may binagong LOC (kamag-anak)"
+  ],
+  "warnings": [
+    "Nagdudulot ng vasodilation -- maaaring lumala ang hemorrhagic shock. Suriin ang BP bago at pagkatapos.",
+    "Magkaroon kaagad ng naloxone.",
+    "Respiratory depression -- subaybayan ang rate."
+  ],
+  "regional_names": {
+    "generic": "morphine sulfate"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV q2-4h PRN. Max solong dosis 2mg IV sa opioid-naive na bata.",
+      "note": "Maingat na subaybayan ang rate ng paghinga. Ang mga bagong panganak ay lubhang sensitibo."
+    },
+    "obstetric": {
+      "note": "Tumawid sa inunan. Posible ang neonatal respiratory depression kung ibinigay sa loob ng 2-4 na oras pagkatapos ng paghahatid. Ihanda ang naloxone para sa bagong panganak."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / PHTLS"
+}

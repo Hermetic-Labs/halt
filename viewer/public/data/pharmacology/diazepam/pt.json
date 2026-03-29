@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastat"
+  ],
+  "description": "Benzodiazepínico de ação prolongada. Usado para controle de convulsões, espasmos musculares e ansiólise. O gel retal (Diastat) é útil em condições de campo quando a administração intravenosa não está disponível. Duração mais longa que o lorazepam.",
+  "indications": [
+    "Gestão das crises (retal/IV)",
+    "Espasmo muscular devido a lesão medular ou tétano",
+    "Adjunto antídoto agente nervoso (em kits CHEMPACK)",
+    "Abstinência de álcool"
+  ],
+  "dose": "Convulsão: 5-10 mg IV em dose lenta. Repita a cada 10-15 min (máx. 30 mg). Retal: 0,2-0,5 mg/kg. Absorção IM errática – evite IM se possível.",
+  "route": [
+    "IV",
+    "OI",
+    "RP"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaucoma agudo de ângulo estreito",
+    "Doença hepática grave",
+    "Depressão respiratória"
+  ],
+  "warnings": [
+    "A absorção IM é errática e dolorosa – prefira IV, retal ou use midazolam IM.",
+    "Sedação de longa duração (24-48h para doses repetidas).",
+    "Vítimas de agentes nervosos: o diazepam está incluído nos kits CHEMPACK para convulsões por crise colinérgica."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0,1-0,3 mg/kg (máx. 10 mg). Retal: 0,3-0,5 mg/kg. Use via retal quando IV não estiver disponível.",
+      "note": "O gel diastato retal é particularmente útil para convulsões pediátricas em ambientes de campo."
+    },
+    "obstetric": {
+      "note": "Atravessa a placenta. Pode causar hipotonia neonatal, depressão respiratória. Use apenas para convulsões maternas que não respondem ao magnésio."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

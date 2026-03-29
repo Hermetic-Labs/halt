@@ -1,0 +1,26 @@
+﻿{
+    "id":  "airway-management-npa",
+    "name":  "Nasopharyngeal Airway (NPA) Insertion",
+    "category":  "airway",
+    "skill_level":  "combat-lifesaver",
+    "time_estimate":  "1 min",
+    "description":  "Insertion of a flexible nasal airway adjunct to maintain airway patency in an unconscious or semiconscious patient.",
+    "equipment":  [
+                      "npa-with-safety-pin",
+                      "lubricant"
+                  ],
+    "steps":  [
+                  "Select appropriate NPA size (measure from nostril to earlobe).",
+                  "Lubricate the NPA generously with water-soluble lubricant or saline.",
+                  "Insert the safety pin through the flange if not already present (prevents aspiration).",
+                  "Insert gently into the right nostril (bevel toward septum), advancing parallel to the palate.",
+                  "Advance until the flange rests against the nostril.",
+                  "Reposition the patient (recovery position if no spinal concern) and reassess airway.",
+                  "If resistance is met, try the left nostril."
+              ],
+    "warnings":  [
+                     "Contraindicated in suspected basilar skull fracture (raccoon eyes, Battle\u0027s sign, CSF rhinorrhea).",
+                     "NPA is unconscious patient\u0027s best initial airway adjunct -- OPA can trigger vomiting in semiconscious patients."
+                 ],
+    "source":  "TCCC / JTS CPG"
+}

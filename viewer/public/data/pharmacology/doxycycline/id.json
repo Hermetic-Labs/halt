@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doksisiklin",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramisin",
+    "Doryx"
+  ],
+  "description": "Antibiotik tetrasiklin spektrum luas. Alternatif profilaksis luka mulut untuk pasien alergi penisilin. Juga efektif melawan organisme atipikal dan beberapa penyakit yang ditularkan melalui vektor (profilaksis malaria di daerah endemik).",
+  "indications": [
+    "Profilaksis luka (alergi penisilin) ​​",
+    "Infeksi jaringan lunak",
+    "Luka gigitan",
+    "Profilaksis malaria di daerah endemis"
+  ],
+  "dose": "100 mg PO setiap 12 jam x 7 hari.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Mulailah dalam waktu 3 jam setelah cedera untuk profilaksis luka.",
+  "contraindications": [
+    "Kehamilan (menyebabkan perubahan warna gigi janin dan terhambatnya pertumbuhan tulang)",
+    "Anak di bawah 8 tahun (alasan yang sama)",
+    "Gangguan hati berat"
+  ],
+  "warnings": [
+    "KONTRAINDIKASI pada kehamilan - gunakan amoksisilin sebagai gantinya.",
+    "KONTRAINDIKASI pada anak di bawah 8 tahun.",
+    "Fotosensitifitas - anjurkan pasien untuk menghindari paparan sinar matahari.",
+    "Jangan mengonsumsi makanan kaya kalsium, antasida, atau zat besi -- mengganggu penyerapan."
+  ],
+  "regional_names": {
+    "generic": "doksisiklin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Kontraindikasi di bawah 8 tahun. Usia 8+: 2-4 mg/kg/hari dibagi setiap 12 jam (maks 100 mg/dosis).",
+      "note": "Gunakan amoksisilin untuk anak dibawah 8 tahun."
+    },
+    "obstetric": {
+      "note": "KONTRAINDIKASI pada kehamilan - menyebabkan kerusakan pada janin. Gunakan amoksisilin sebagai gantinya."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

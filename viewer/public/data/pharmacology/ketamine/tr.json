@@ -1,0 +1,46 @@
+{
+  "id": "ketamine",
+  "name": "Ketamin",
+  "category": "analgesia-anesthesia",
+  "rxnorm": "3893",
+  "brand_names": [
+    "Ketalar"
+  ],
+  "description": "Hava yolu reflekslerini ve hemodinamik stabiliteyi korurken analjezi, sedasyon ve amnezi sağlayan disosiyatif anestezik. TCCC'de tercih edilen analjezik - opioidlerin aksine kan basıncını korur. Ayrıca prosedürel sedasyon ve RSI için de kullanılır.",
+  "indications": [
+    "Orta-şiddetli ağrı yönetimi",
+    "Prosedürel sedasyon (yara tamponu, kırık redüksiyonu)",
+    "RSI için indüksiyon ajanı",
+    "Anesteziyle mücadele"
+  ],
+  "dose": "Analjezi: 0,1-0,3 mg/kg IV/IO (yavaş itme) | 0,5 mg/kg IM. Prosedürel sedasyon: 1-2 mg/kg IV | 4-6 mg/kg IM. RSI indüksiyonu: 1-2 mg/kg IV.",
+  "route": [
+    "IV",
+    "Giriş Çıkış",
+    "anlık ileti",
+    "İÇİNDE"
+  ],
+  "window": "",
+  "contraindications": [
+    "Bilinen şizofreni veya aktif psikoz",
+    "Hava yolu koruması olmadan yüksek ICP (göreceli)"
+  ],
+  "warnings": [
+    "Ortaya çıkan reaksiyonlar (deliryum/halüsinasyonlar) – varsa midazolam 1-2 mg IV ile hafifletin.",
+    "Salgıları artırır; aspirasyonu hazırlayın.",
+    "Laringospazm nadir fakat mümkündür; BVM'yi hazır bulundurun."
+  ],
+  "regional_names": {
+    "generic": "ketamin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analjezi: 0,5 mg/kg IV. Prosedürel sedasyon: 1-2 mg/kg IV | 4-5 mg/kg IM.",
+      "note": "Pediatri alanında iyi eğitim almış. Ağrılı işlemlerde tercih edilir."
+    },
+    "obstetric": {
+      "note": "Düşük dozlarda anne analjezisi için güvenlidir. Yüksek dozlarda doğuma yakın bir zamanda verilmesi halinde neonatal solunum depresyonuna neden olabilir."
+    }
+  },
+  "source": "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

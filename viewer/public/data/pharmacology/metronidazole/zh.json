@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "甲硝唑",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "灭滴灵"
+  ],
+  "description": "硝基咪唑抗生素具有出色的厌氧菌和原虫覆盖能力。对于穿透性腹部/肠道创伤覆盖厌氧肠道菌群至关重要。常与环丙沙星联合使用。",
+  "indications": [
+    "腹部/肠道穿透伤",
+    "腹腔内感染",
+    "厌氧软组织感染",
+    "艰难梭菌感染"
+  ],
+  "dose": "500 mg IV 每 6-8 小时一次。 PO：500 mg q8h（如果口服耐受）。",
+  "route": [
+    "四",
+    "采购订单"
+  ],
+  "window": "",
+  "contraindications": [
+    "怀孕的前三个月（相对）",
+    "已知甲硝唑或硝基咪唑过敏"
+  ],
+  "warnings": [
+    "与酒精发生双硫仑样反应——治疗期间及治疗后 48 小时内不要饮酒。",
+    "长期使用可能会导致周围神经病变。",
+    "如果可能的话，避免在妊娠早期。"
+  ],
+  "regional_names": {
+    "generic": "甲硝唑"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7.5 mg/kg IV/PO q6h（最大 500 mg/剂量）。",
+      "note": "对于年龄较大的儿童来说是安全的。避免新生儿。"
+    },
+    "obstetric": {
+      "note": "如果可能的话，避免在妊娠早期。当医学上有必要时使用妊娠中期/晚期——益处通常大于严重厌氧菌感染的风险。"
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

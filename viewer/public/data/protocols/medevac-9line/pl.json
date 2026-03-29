@@ -1,0 +1,6 @@
+{
+  "id": "medevac-9line",
+  "name": "9-liniowe żądanie MEDEVAC",
+  "description": "Ustandaryzowany format NATO dotyczący wnioskowania o ewakuację medyczną. Nadawane w kolejności, linie 1-9. Linie 1-5 transmitowane są natychmiast (dozwolone są nieszyfrowane). Następują linie 6-9. Prawidłowa 9-linia unosi ptaka w powietrze. Niekompletny opóźnia to.",
+  "source": "FM 3-04.301 / ATP 4-02.2 / NATO STANAG 3204"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Hemostatic Wound Packing",
+  "category": "hemorrhage-control",
+  "skill_level": "combat-lifesaver",
+  "time_estimate": "3-5 min",
+  "description": "Pag-iimpake ng di-compressible o junctional na sugat na may hemostatic gauze upang makontrol ang pagdurugo kung saan hindi maaaring ilapat ang tourniquet.",
+  "equipment": [
+    "hemostatic-gauze",
+    "nitrile-gloves",
+    "trauma-gunting",
+    "pressure-bandage"
+  ],
+  "steps": [
+    "Mga guwantes ni Don. Ilantad nang lubusan ang sugat gamit ang trauma shears.",
+    "Kilalanin ang aktibong pinagmumulan ng pagdurugo sa loob ng lukab ng sugat.",
+    "Buksan ang hemostatic gauze at ilagay ito nang mahigpit sa sugat gamit ang iyong daliri, itulak ito nang direkta sa pinagmumulan ng pagdurugo.",
+    "Ipagpatuloy ang pag-iimpake hanggang sa ganap na mapuno ang lukab ng sugat.",
+    "Ilapat ang matatag, tuluy-tuloy na direktang presyon sa takong ng iyong kamay nang hindi bababa sa 3 minuto.",
+    "HUWAG mag-alis ng anumang materyal sa pagpapakete kapag inilapat.",
+    "Lagyan ng pressure bandage ang naka-pack na sugat.",
+    "Markahan ang oras sa TCCC card o sa noo ng pasyente (hal., 'PKD 0145')."
+  ],
+  "warnings": [
+    "HUWAG mag-empake ng mga tumatagos na sugat sa dibdib -- gumamit na lang ng chest seal.",
+    "Kung nag-iimpake ng sugat sa leeg, i-pressure nang hindi pinipiga ang parehong carotid nang sabay-sabay.",
+    "Muling suriin sa loob ng 5 minuto kung pinaghihinalaan ang arterial source."
+  ],
+  "follows": [
+    "direktang presyon"
+  ],
+  "precedes": [
+    "tourniquet-application"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Gumamit ng mas kaunting gasa. Mag-apply ng mas magaan na presyon upang maiwasan ang thoracic compression sa mga sanggol."
+    },
+    "obstetric": {
+      "note": "Iwasan ang malalim o agresibong packing pressure malapit sa gravid abdomen. Mas gusto ang mabilis na pagdami."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

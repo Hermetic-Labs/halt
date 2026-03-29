@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Solução de Ringer com Lactato (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Solução de Hartmann",
+    "Injeção de Ringer com Lactato"
+  ],
+  "description": "Fluido cristalóide isotônico balanceado. Preferido em relação à solução salina normal para reanimação de grandes volumes de traumas – mais equilibrado fisiologicamente, menor risco de acidose hiperclorêmica. Contém sódio, potássio, cálcio, lactato.",
+  "indications": [
+    "Reanimação do trauma (cristalóide preferencial no choque hemorrágico)",
+    "Reanimação com fluidos para queimaduras (fórmula de Parkland)",
+    "Hipovolemia",
+    "Manutenção de fluidos"
+  ],
+  "dose": "Choque hemorrágico: Limite a 1L no máximo antes da transição para hemoderivados. PAS alvo 80-90 mmHg trauma penetrante, 90 mmHg TBI. Queimaduras (Parkland): 4 mL x kg x %TBSA queimado em 24h (metade nas primeiras 8h).",
+  "route": [
+    "IV",
+    "OI"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hipercalemia (contém potássio)",
+    "Insuficiência hepática grave (comprometimento do metabolismo do lactato – relativo)"
+  ],
+  "warnings": [
+    "Ainda é um cristalóide – não pode transportar oxigênio. Os hemoderivados são superiores no choque hemorrágico. LR é apenas uma ponte.",
+    "Não misture com hemoderivados da mesma linha (o cálcio causa coagulação).",
+    "NÃO reanimar excessivamente em trauma penetrante antes do controle da hemorragia."
+  ],
+  "regional_names": {
+    "generic": "solução de Ringer com lactato",
+    "UK": "A solução de Hartmann"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Bolus de 20 mL/kg, reavaliar. Preferido ao NS para trauma pediátrico.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Fluido IV preferido no trabalho de parto e parto. Apropriado para reanimação de hemorragia obstétrica."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

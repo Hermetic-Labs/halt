@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Uvavanyo lokuphelelwa ngamanzi emzimbeni",
+  "category": "circulation",
+  "description": "Uvavanyo lommandla wokuphelelwa ngamanzi emzimbeni kunye nobunzima bokugula kobushushu. Umbala womchamo ngowona mqondiso wentsimi osebenzayo. Vavanya ubume bengqondo njengesiphawuli sokuphelelwa ngamanzi emzimbeni okumandundu okuqhubela phambili kwistrowuku sobushushu.",
+  "instructions": "Jonga umbala womchamo, i-skin turgor, isimo sengqondo kunye neempawu ezibalulekileyo. Umchamo omnyama, i-mucous membranes eyomileyo, kunye ne-tachycardia ibonisa ukungabikho kwamanzi okudinga ukubuyisela okusebenzayo.",
+  "categories": [
+    {
+      "color": "icace-ibala",
+      "label": "Ifakwe kakuhle ngamanzi",
+      "description": "Umthubi ophaphileyo ukuya kumchamo ocacileyo. Akukho ngenelelo lufunekayo."
+    },
+    {
+      "color": "lubhelu",
+      "label": "Ukuphelelwa ngamanzi emzimbeni okungephi",
+      "description": "Umchamo omnyama omthubi, unxaniwe. Ukubuyisela amanzi emlonyeni. Khuthaza i-250-500 ml yamanzi ngeyure."
+    },
+    {
+      "color": "i-amber-brown",
+      "label": "Ukuphelelwa ngamanzi emzimbeni okuphakathi",
+      "description": "Umchamo we-amber, i-HR iphakanyisiwe, i-skin turgor iyancipha, umlomo owomileyo. Ulwelo lwe-IV/IO ukuba umlomo awunyamezeli. I-1-2L LR okanye i-NS."
+    },
+    {
+      "color": "bomvu",
+      "label": "Ingozi -- Ubushushu beStrowuku / Simandundu",
+      "description": "Ukukhutshwa komchamo omncinci, i-LOC etshintshileyo, isikhumba esomileyo esishushu. Ungxamiseko lwezonyango -- ukupholisa ngokukhawuleza + ulwelo lwe-IV + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Abantwana bakhupha amanzi ngokukhawuleza kunabantu abadala. I-Sunken fontanelle (iintsana), iinyembezi ezingekhoyo, kunye nokutyhafa ziimpawu ezibalulekileyo. Ubunzima obusekelwe kwi-IV: 20 mL / kg LR bolus."
+    },
+    "obstetric": {
+      "note": "Abasetyhini abakhulelweyo badinga ulwelo olwandisiweyo. Ukuphelelwa ngamanzi emzimbeni kunokubangela ukushwabana kwangaphambi kwexesha. Ukubuyisela amanzi emzimbeni ngokuqatha kuqala; IV ukuba awunyamezeli ngomlomo."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazole",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "Antibiotika Nitroimidazole miaraka amin'ny fandrakofana anaerobic sy protozoal tena tsara. Tena ilaina amin'ny fidiran'ny trauma amin'ny kibo/tsinay mba handrakofana ny zavamaniry anaerobic tsinay. Matetika ampiasaina miaraka amin'ny ciprofloxacin.",
+  "indications": [
+    "Tratran'ny kibo / tsinay",
+    "Aretina anaty kibo",
+    "Otrikaretina sela malefaka anaerobic",
+    "C. difficile infections"
+  ],
+  "dose": "500 mg IV q6-8h. PO: 500 mg q8h (raha leferina am-bava).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Telo volana voalohany amin'ny fitondrana vohoka (havana)",
+    "Allergy metronidazole na nitroimidazole fantatra"
+  ],
+  "warnings": [
+    "Fihetseham-po toy ny disulfiram miaraka amin'ny alikaola -- aza misotro toaka mandritra ny fitsaboana ary 48h aorian'izay.",
+    "Mety hiteraka neuropathie periferika amin'ny fampiasana maharitra.",
+    "Fadio amin'ny trimester voalohany raha azo atao."
+  ],
+  "regional_names": {
+    "generic": "metronidazole"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7,5 mg/kg IV/PO q6h (max 500 mg/dose).",
+      "note": "Safe amin'ny ankizy efa lehibe. Aleo amin'ny neonates."
+    },
+    "obstetric": {
+      "note": "Fadio amin'ny trimester voalohany raha azo atao. Mampiasà trimester faharoa/fahatelo rehefa ilaina ara-pitsaboana -- ny soa mazàna dia mihoatra noho ny loza ateraky ny otrikaretina anaerobic."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

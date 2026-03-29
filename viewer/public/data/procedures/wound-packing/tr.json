@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Hemostatik Yara Paketleme",
+  "category": "hemorrhage-control",
+  "skill_level": "savaş cankurtaran",
+  "time_estimate": "3-5 dakika",
+  "description": "Turnike uygulanamayan durumlarda kanamayı kontrol etmek için sıkıştırılamayan veya birleşim yerindeki yaranın hemostatik gazlı bezle paketlenmesi.",
+  "equipment": [
+    "hemostatik gazlı bez",
+    "nitril eldiven",
+    "travma makası",
+    "basınçlı bandaj"
+  ],
+  "steps": [
+    "Don eldivenleri. Travma makası kullanarak yarayı tamamen ortaya çıkarın.",
+    "Yara boşluğu içindeki aktif kanama kaynağını belirleyin.",
+    "Hemostatik gazlı bezi açın ve parmağınızla yaranın içine sıkıca bastırarak doğrudan kanama kaynağına doğru itin.",
+    "Yara boşluğu tamamen dolana kadar paketlemeye devam edin.",
+    "En az 3 dakika boyunca elinizin tabanıyla sıkı ve sürekli doğrudan baskı uygulayın.",
+    "Uygulandıktan sonra herhangi bir ambalaj malzemesini ÇIKARMAYIN.",
+    "Paketlenmiş yaranın üzerine basınçlı bir bandaj uygulayın.",
+    "Saati TCCC kartına veya hastanın alnına işaretleyin (örn. 'PKD 0145')."
+  ],
+  "warnings": [
+    "Delici göğüs yaralarına SARMAYIN; bunun yerine göğüs contasını kullanın.",
+    "Boyun yarasını kapatıyorsanız, her iki şah damarını aynı anda sıkıştırmadan baskı uygulayın.",
+    "Arteriyel kaynaktan şüpheleniliyorsa 5 dakika içinde yeniden değerlendirin."
+  ],
+  "follows": [
+    "doğrudan basınç"
+  ],
+  "precedes": [
+    "turnike uygulaması"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Orantılı olarak daha az gazlı bez kullanın. Bebeklerde torasik basıyı önlemek için daha hafif basınç uygulayın."
+    },
+    "obstetric": {
+      "note": "Gebe karın yakınında derin veya agresif tampon baskısından kaçının. Hızlı yükseltme tercih edilir."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

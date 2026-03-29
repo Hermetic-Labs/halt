@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Presión directa para el control de hemorragias",
+  "category": "hemorrhage-control",
+  "skill_level": "cualquier respondedor",
+  "time_estimate": "3-5 minutos",
+  "description": "Control de hemorragias de primera línea para heridas accesibles en extremidades y cuerpo.",
+  "equipment": [
+    "guantes",
+    "vendaje para traumatismos",
+    "vendaje-corbata"
+  ],
+  "steps": [
+    "Póngase guantes si están disponibles.",
+    "Exponga la herida cortando la ropa.",
+    "Aplique un apósito traumatológico o un paño doblado directamente sobre la herida.",
+    "Presione firmemente con la palma de la mano. Utilice el peso de su cuerpo, no sólo la fuerza de sus brazos.",
+    "Mantenga una presión continua e ininterrumpida durante al menos 3 minutos.",
+    "NO levante el vendaje para comprobarlo, ya que esto altera la formación de coágulos.",
+    "Si el sangrado lo empapa, agregue otro aderezo encima. No retires el primero.",
+    "Asegúrelo con un vendaje compresivo si está disponible y pase a un vendaje o torniquete para la herida si el sangrado continúa."
+  ],
+  "warnings": [
+    "La presión directa por sí sola es inadecuada para las hemorragias arteriales; se intensifica hasta llegar a taponamiento o torniquete.",
+    "Las heridas de unión (ingle, axila, cuello) requieren taponamiento, no solo presión externa."
+  ],
+  "follows": [],
+  "precedes": [
+    "vendaje de heridas",
+    "aplicación-de-torniquete"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Sólo presión proporcional. Evite comprimir el tórax en los bebés."
+    },
+    "obstetric": {
+      "note": "Evite una compresión fuerte sobre el útero grávido. Utilice taponamiento lateral si la herida de unión está cerca de la pelvis."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

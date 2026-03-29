@@ -1,0 +1,41 @@
+﻿{
+    "id":  "needle-decompression",
+    "name":  "Needle Chest Decompression (NCD)",
+    "category":  "respiration",
+    "skill_level":  "combat-medic",
+    "time_estimate":  "1-2 min",
+    "description":  "Emergency relief of tension pneumothorax by needle insertion into the second intercostal space. Life-saving intervention.",
+    "equipment":  [
+                      "14g-needle-catheter-3-25in",
+                      "gloves",
+                      "chest-seal-optional"
+                  ],
+    "steps":  [
+                  "Identify tension pneumothorax: absent breath sounds on affected side, tracheal deviation (late), respiratory distress, hypotension, JVD.",
+                  "Expose the chest on the affected side.",
+                  "Locate the 2nd intercostal space, midclavicular line (alternative: 4th/5th ICS, anterior axillary line).",
+                  "Insert a 14g, 3.25-inch needle-catheter perpendicular to the chest wall, just over the TOP of the 3rd rib (avoids neurovascular bundle).",
+                  "Advance until a rush of air is felt or audible hiss.",
+                  "Remove the needle and leave the catheter in place.",
+                  "Listen for improvement in breath sounds and respiratory effort.",
+                  "Secure the catheter hub. Do NOT clamp or cover the open end.",
+                  "Reassess every 5 minutes -- catheter can kink or clot, requiring repeat decompression."
+              ],
+    "warnings":  [
+                     "Use a 3.25-inch needle -- standard 14g angiocatheter (1.5in) frequently fails in military patients due to body armor and musculature.",
+                     "Bilateral NCD may be required if uncertain which side is affected and patient is peri-arrest.",
+                     "Do not place on same side as sucking chest wound without first sealing the wound."
+                 ],
+    "follows":  [
+
+                ],
+    "precedes":  [
+                     "chest-seal-application"
+                 ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  "Use an appropriately sized needle (smaller patients, 1.5-2in may be sufficient). Use 2nd ICS MCL approach. Landmark recognition is more difficult -- use caution."
+                                    }
+                  },
+    "source":  "TCCC / JTS CPG"
+}

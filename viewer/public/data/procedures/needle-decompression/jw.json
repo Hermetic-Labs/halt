@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Needle Chest Decompression (NCD)",
+  "category": "respiration",
+  "skill_level": "tempur-medic",
+  "time_estimate": "1-2 min",
+  "description": "Relief darurat saka tension pneumothorax kanthi nyisipake jarum menyang ruang intercostal kapindho. intervensi nylametake nyawa.",
+  "equipment": [
+    "14g-jarum-kateter-3-25in",
+    "sarung tangan",
+    "dada-segel-opsional"
+  ],
+  "steps": [
+    "Ngenali tension pneumothorax: ora ana swara ambegan ing sisih sing kena pengaruh, deviasi trakea (telat), gangguan pernapasan, hipotensi, JVD.",
+    "Mbukak dada ing sisih sing kena pengaruh.",
+    "Goleki spasi intercostal 2, garis midclavicular (alternatif: 4th/5th ICS, garis aksila anterior).",
+    "Lebokake kateter jarum 14g, 3,25-inci jejeg tembok dada, ing ndhuwur TOP iga 3 (nyingkiri bundel neurovaskular).",
+    "Maju nganti rush saka udhara krasa utawa krungu hiss.",
+    "Copot jarum lan ninggalake kateter ing panggonan.",
+    "Rungokake kanggo nambah swara ambegan lan gaweyan ambegan.",
+    "Ngamanake hub kateter. Aja clamp utawa nutupi mburi mbukak.",
+    "Kaji maneh saben 5 menit - kateter bisa kusut utawa beku, mbutuhake dekompresi ulang."
+  ],
+  "warnings": [
+    "Gunakake jarum 3.25-inch - angiocatheter 14g standar (1.5in) asring gagal ing pasien militer amarga waja awak lan otot.",
+    "NCD bilateral bisa uga dibutuhake yen ora yakin sisih endi sing kena pengaruh lan pasien ditangkep.",
+    "Aja nyelehake ing sisih sing padha karo ngisep tatu dada tanpa nutup tatu kasebut."
+  ],
+  "follows": [],
+  "precedes": [
+    "dada-segel-aplikasi"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Gunakake jarum ukuran sing cocog (pasien cilik, 1.5-2in bisa uga cukup). Gunakake pendekatan 2nd ICS MCL. Pangenalan landmark luwih angel -- ati-ati."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Ohun elo Igbẹhin Apoti Occusive",
+  "category": "respiration",
+  "skill_level": "olugbala ija",
+  "time_estimate": "1-2 iṣẹju",
+  "description": "Lidi ọgbẹ igbaya ti o mu (pneumothorax ti o ṣii) pẹlu edidi àyà ti a ti jade lati ṣe idiwọ titẹsi afẹfẹ lakoko gbigba itusilẹ titẹ.",
+  "equipment": [
+    "vented-àyà-seal",
+    "ibọwọ",
+    "ibalokanje-shears"
+  ],
+  "steps": [
+    "Fi egbo naa han -- ge kuro tabi yọ aṣọ kuro.",
+    "Pa awọ ara kuro ni ayika ọgbẹ bi o ti gbẹ bi o ti ṣee (ẹjẹ, lagun dena ifaramọ).",
+    "Ṣii package idalẹnu vented àyà.",
+    "Gbe awọn asiwaju lori egbo, dojukọ lori iho. Tẹ ṣinṣin, aridaju pe gbogbo awọn egbegbe duro.",
+    "Ṣayẹwo iṣalaye falifu --tẹle naa gbọdọ dojukọ si ita (lọ kuro ni awọ ara) ki o wa lainidi.",
+    "Tun ṣe ayẹwo awọn ohun ẹmi. Ti ibajẹ ba tẹsiwaju lẹhin edidi, ronu pneumothorax ẹdọfu - ṣe NCD.",
+    "Ti o ba jẹ pe edidi ti a tu silẹ ko si, edidi ti ko ni idasilẹ le ṣee lo ṣugbọn GBỌDỌ ni abojuto fun idagbasoke pneumothorax ẹdọfu."
+  ],
+  "warnings": [
+    "Awọn edidi ti ko ni idasilẹ le ṣe iyipada pneumothorax ti o rọrun si pneumothorax ẹdọfu - lo awọn edidi ti a ti sọ ni aaye nikan.",
+    "Taping apa mẹta (Idi imudara) ko ṣe iṣeduro nipasẹ CoTCCC mọ -- lo edidi àyà vented ti iṣowo.",
+    "Nigbagbogbo lo edidi kan si awọn ọgbẹ iwọle ati JADE."
+  ],
+  "follows": [],
+  "precedes": [
+    "abẹrẹ-decompression"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

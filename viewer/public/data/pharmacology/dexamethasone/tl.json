@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Dexamethasone",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Dekadron",
+    "DexPak"
+  ],
+  "description": "Long-acting synthetic corticosteroid. Ginagamit para sa cerebral edema (high altitude cerebral edema -- HACE, TBI), matinding allergic reactions, airway edema, at adrenal crisis. Anti-inflammatory, hindi anabolic.",
+  "indications": [
+    "High altitude cerebral edema (HACE)",
+    "Airway edema (post-extubation stridor, croup)",
+    "Cerebral edema mula sa tumor o abscess",
+    "Matinding reaksiyong alerhiya (pandagdag sa epinephrine)",
+    "Krisis sa adrenal",
+    "Anti-emetic adjunct (perioperative)"
+  ],
+  "dose": "Cerebral edema/HACE: 8-10 mg IV/IM inisyal, pagkatapos ay 4 mg q6h. Edema sa daanan ng hangin: 10 mg IV isang beses. Croup: 0.6 mg/kg IM/PO (max 16mg). Krisis sa adrenal: 4 mg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO"
+  ],
+  "window": "HACE: Magbigay nang maaga hangga't maaari kasama ng agarang pagbaba.",
+  "contraindications": [
+    "Mga systemic fungal infection (walang antifungal coverage)",
+    "Mga live na bakuna sa virus sa loob ng 30 araw (kamag-anak)"
+  ],
+  "warnings": [
+    "Hindi pinapalitan ang pagbaba at oxygen para sa HACE -- gamitin bilang pandagdag lamang.",
+    "Hyperglycemia -- subaybayan ang glucose ng dugo sa mga diabetic.",
+    "Immunosuppression na may matagal na paggamit.",
+    "Ang mga solong dosis para sa mga emerhensiya sa pangkalahatan ay napakaligtas."
+  ],
+  "regional_names": {
+    "generic": "dexamethasone"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Croup: 0.6 mg/kg PO/IM (max 16 mg). Cerebral edema: 0.5-1 mg/kg IV (max 10 mg). Edema sa daanan ng hangin: 0.5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM q24h x 2 dosis na ginagamit upang mapabilis ang pagkahinog ng baga ng pangsanggol sa 24-34 na linggong pagbubuntis sa preterm labor. Makipag-usap sa pinakamataas na available na provider."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

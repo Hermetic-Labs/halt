@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Chumvi ya Kawaida (0.9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "0.9% Sindano ya Kloridi ya Sodiamu"
+  ],
+  "description": "Maji ya fuwele ya isotonic. Inatumika kwa ufufuo wa maji ya IV. Katika mshtuko wa damu, tumia kwa uangalifu -- kiasi kikubwa huzidisha kuganda kwa damu (hyperchloremic acidosis, dilutional coagulopathy). Hypotension inayokubalika inayopendelewa katika kiwewe cha kupenya ikisubiri udhibiti wa kuvuja damu.",
+  "indications": [
+    "Ufufuaji wa maji (kwa tahadhari katika mshtuko wa hemorrhagic)",
+    "Dawa diluent / flush",
+    "Hypovolemia kutoka kwa sababu zisizo za hemorrhagic"
+  ],
+  "dose": "Mshtuko wa kutokwa na damu: Kiwango cha juu cha 1L kinasubiri udhibiti wa kuvuja damu (hypotension inayoruhusu). Lenga SBP 80-90 mmHg katika kiwewe cha kupenya, 90 mmHg katika TBI. Hypovolemia isiyo ya hemorrhagic: boluses 500 ml, tathmini tena.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hypernatremia",
+    "Kuongezeka kwa maji / uvimbe wa mapafu (jamaa)"
+  ],
+  "warnings": [
+    "Kiasi kikubwa husababisha asidi ya kimetaboliki ya hyperchloremic na coagulopathy ya dilutional -- huzidisha utatu mbaya katika kiwewe.",
+    "Lactated Ringer's (LR) inapendekezwa kwa ufufuaji wa kiwewe wa kiasi kikubwa.",
+    "USIWEZE kuhuisha zaidi kiwewe cha kiwiliwili kinachopenya kabla ya kidhibiti cha uvujaji wa damu kwa upasuaji (hypotension inayoruhusu)."
+  ],
+  "regional_names": {
+    "generic": "kloridi ya sodiamu 0.9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 mL/kg IV bolus, tathmini upya. Rudia max x3 (jumla ya mililita 60/kg) kabla ya kuzingatia bidhaa za damu.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Ufufuo wa kawaida katika kutokwa na damu ya uzazi. Ufufuaji wa kiowevu kikali unaofaa kwa kuvuja damu baada ya kuzaa kabla ya bidhaa za damu kupatikana."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

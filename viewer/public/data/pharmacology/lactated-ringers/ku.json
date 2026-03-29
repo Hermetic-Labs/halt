@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Çareseriya Ringerê Lactated (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Çareseriya Hartmann",
+    "Lactated Ringer's Injection"
+  ],
+  "description": "Avêla krîstalloîdî ya îzotonîk a hevseng. Ji bo vejîna trawmaya bi cildê mezin li ser xwêya normal tê tercîh kirin -- ji hêla fîzyolojîkî ve hevsengtir, xetera kêmbûna acidoza hîperkloremîk. Sodyum, potasyum, kalsiyûm, laktat tê de hene.",
+  "indications": [
+    "Vejandina trawmayê (di şokê hemorrajîk de kristalloîd bijarte)",
+    "Vejîna şilavê dişewitîne (formula Parkland)",
+    "Hîpovolemia",
+    "Lênêrîna şilê"
+  ],
+  "dose": "Şoka hemorrajîk: Berî ku derbasî hilberên xwînê bibin, herî zêde 1 lître sînor bikin. Target SBP 80-90 mmHg travmaya penêr, 90 mmHg TBI. Şewitandin (Parkland): 4 mL x kg x %TBSA di 24 saetan de şewitî (nîv di 8 saetên pêşîn de).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hyperkalemia (potasyum tê de ye)",
+    "Kêmasiya giran a kezebê (xerabbûna metabolîzma laktatê -- têkildar)"
+  ],
+  "warnings": [
+    "Dîsa jî krîstaloid - nikare oksîjenê hilgire. Berhemên xwînê ji bo şoka hemorrajîk çêtir in. LR tenê pirek e.",
+    "Di heman rêzê de bi hilberên xwînê re tevlihev nekin (kalsiyûm dibe sedema kelijandinê).",
+    "Berî kontrolkirina hemorrajiyê di trawmaya penetrî de zêde vejîn nekin."
+  ],
+  "regional_names": {
+    "generic": "Çareseriya Ringer ya laktated",
+    "UK": "Çareseriya Hartmann"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 ml/kg bolus, ji nû ve binirxînin. Ji bo travmaya zarokan li ser NS bijare.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Di ked û zayînê de şika IV bijarte. Minasib ji bo vejandina hemorrajiya zayinê ye."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

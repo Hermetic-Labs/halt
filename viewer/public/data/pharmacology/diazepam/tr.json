@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastat"
+  ],
+  "description": "Uzun etkili benzodiazepin. Nöbet yönetimi, kas spazmı ve anksiyoliz için kullanılır. Rektal jel (Diastat), IV kullanılamadığında saha ayarlarında faydalıdır. Lorazepam'dan daha uzun süre.",
+  "indications": [
+    "Nöbet yönetimi (rektal/IV)",
+    "Omurilik yaralanması veya tetanozdan kaynaklanan kas spazmı",
+    "Sinir gazı panzehiri ilavesi (CHEMPACK kitlerinde)",
+    "Alkol yoksunluğu"
+  ],
+  "dose": "Nöbet: 5-10 mg IV yavaş itme. 10-15 dakikada bir tekrarlayın (maks. 30 mg). Rektal: 0,2-0,5 mg/kg. IM emilimi düzensiz; mümkünse IM'den kaçının.",
+  "route": [
+    "IV",
+    "Giriş Çıkış",
+    "halkla ilişkiler"
+  ],
+  "window": "",
+  "contraindications": [
+    "Akut dar açılı glokom",
+    "Şiddetli karaciğer hastalığı",
+    "Solunum depresyonu"
+  ],
+  "warnings": [
+    "IM emilimi düzensiz ve ağrılıdır; IV, rektal tercih edin veya bunun yerine midazolam IM kullanın.",
+    "Uzun süreli sedasyon (tekrarlanan dozlar için 24-48 saat).",
+    "Sinir ajanı kayıpları: Diazepam, kolinerjik krizden kaynaklanan nöbetler için CHEMPACK kitlerine dahil edilmiştir."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0,1-0,3 mg/kg (en fazla 10 mg). Rektal: 0,3-0,5 mg/kg. IV mevcut olmadığında rektal yolu kullanın.",
+      "note": "Rektal diastat jeli özellikle saha ortamlarındaki pediatrik nöbetler için faydalıdır."
+    },
+    "obstetric": {
+      "note": "Plasentayı geçer. Yenidoğan hipotonisine ve solunum depresyonuna neden olabilir. Yalnızca magnezyuma yanıt vermeyen anne nöbetleri için kullanın."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

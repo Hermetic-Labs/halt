@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Management von Hitzeverletzungen",
+  "category": "environmental",
+  "skill_level": "Grundlegend",
+  "time_estimate": "Wird fortgesetzt, bis MEDEVAC oder der Patient stabil ist",
+  "description": "Behandlung von Hitzekrämpfen, Hitzeerschöpfung und Hitzschlag. Ein Hitzschlag ist ein lebensbedrohlicher Notfall – schnelle Abkühlung ist die Behandlung. Unterscheiden Sie sofort zwischen Hitzeerschöpfung (normale Mentalität) und Hitzschlag (veränderter LOC).",
+  "equipment": [
+    "Wasser (oral + Kühlung)",
+    "Eisbeutel oder kalte, feuchte Tücher",
+    "IV-Versorgungen (LR oder NS)",
+    "Ventilator oder Schatten",
+    "Rektalthermometer (definitive Kerntemperatur)"
+  ],
+  "steps": [
+    "BEWERTUNG: Ist der Verletzte wachsam und orientiert? Heiße, trockene Haut vs. heiße, verschwitzte Haut? Kerntemperatur, falls Thermometer verfügbar.",
+    "Hitzekrämpfe: Muskelkrämpfe, normale Denkweise. Ruhe im Schatten, orale Rehydrierung mit Elektrolyten, sanftes Dehnen. Nicht lebensbedrohlich.",
+    "Hitzeerschöpfung: Starkes Schwitzen, Schwäche, Schwindel, normale oder nahezu normale Geisteshaltung. Gehen Sie in einen schattigen/kühlen Bereich. Überschüssige Kleidung entfernen. Orale Flüssigkeiten (sofern bei Bewusstsein) oder intravenös LR 1L über 30–60 Minuten. Überwachen Sie das Fortschreiten eines Hitzschlags.",
+    "Hitzschlag (Notfall): Veränderter LOC, Verwirrung, Kampfbereitschaft oder Bewusstlosigkeit. Kerntemperatur > 40 °C (104 °F). Heiße Haut (kann nass oder trocken sein). ANFANG: Sofort vom Herd nehmen, sämtliche Kleidungsstücke entfernen, die Haut befeuchten und kräftig ausblasen. Legen Sie Eisbeutel auf Hals, Achselhöhlen und Leistengegend (Bereiche mit hohen Blutgefäßen). IV LR 1-2L. Bei Bewusstlosigkeit Atemwege schützen. MEDEVAC sofort.",
+    "Geben Sie bei Hitzschlag KEIN Aspirin oder Paracetamol – das hilft nicht, kann aber schaden.",
+    "Überwachen Sie: Vitalwerte alle 15 Minuten, Atemwege, Geisteszustand. Trend zur Dokumenttemperatur.",
+    "Kühlen Sie während MEDEVAC weiter ab – halten Sie nicht für den Transport an."
+  ],
+  "warnings": [
+    "Ein Hitzschlag ist ein lebensbedrohlicher Notfall – verwechseln Sie ihn nicht mit Hitzeerschöpfung. Überprüfen Sie den mentalen Zustand.",
+    "Kühlung ist die endgültige Behandlung. Verzögern Sie nicht die Abkühlung, um einen intravenösen Zugang herzustellen.",
+    "Bei gesunden Personen kann es zu einem Hitzschlag kommen – körperliche Fitness schützt nicht.",
+    "Hyponatriämie (niedriger Natriumgehalt) durch Überhydrierung mit klarem Wasser kann einen Hitzschlag vortäuschen – geben Sie Elektrolytlösung, nicht nur Wasser."
+  ],
+  "follows": [
+    "Dehydrationsbeurteilung"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Kinder wärmeregulieren weniger effizient. Ein Hitzschlag kann schneller fortschreiten. Gewichtsabhängige Flüssigkeit: 20 ml/kg LR IV-Bolus. Kerntemperatur über Rektalthermometer am genauesten."
+    },
+    "obstetric": {
+      "note": "Mütterliche Hyperthermie (>39 °C) kann fetale Neuralrohrdefekte (früh) und fetale Beschwerden (spät) verursachen. Aggressive Kühlung. Überwachung der fetalen Herzfrequenz, falls verfügbar."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

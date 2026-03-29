@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Pamamahala ng Malamig na Pinsala",
+  "category": "environmental",
+  "skill_level": "Basic",
+  "time_estimate": "Patuloy na",
+  "description": "Pamamahala ng frostbite, immersion foot (trench foot), at hypothermia. Ang mga pinsala sa malamig ay maiiwasan -- kilalanin ang mga maagang palatandaan bago ang pinsala sa tissue ay hindi na maibabalik. Dahan-dahang hawakan ang frostbitten tissue.",
+  "equipment": [
+    "Dry insulating na damit/sleeping bag",
+    "Mainit na tubig (38-42C/100-108F) para sa rewarming bath",
+    "Mga sterile na dressing",
+    "Ibuprofen 400mg PO (kung magagamit)",
+    "IV LR (mainit kung maaari)"
+  ],
+  "steps": [
+    "HYPOTHERMIA MUNA: Suriin ang core temp gamit ang low-reading thermometer. Banayad (32-35C): nanginginig, pagkalito. Katamtaman (28-32C): walang nanginginig, matinding pagkalito. Malubha (<28C): walang malay, walang pulso na nakikita.",
+    "HYPOTHERMIA -- Banayad/Katamtaman: Alisin ang basang damit, i-insulate mula sa lupa, mainit na kapaligiran, maiinit na matamis na likido kung may malay, heat pack sa axillae/singit (hindi direkta sa balat). Dahan-dahang hawakan -- maaaring mag-trigger ang jarring ng VFib.",
+    "HYPOTHERMIA -- Malubha: Hawakan nang napakarahan. Suriin ang pulso 60 buong segundo bago ang CPR. Simulan ang CPR kung walang pulso. Mga maiinit na IV fluid kung magagamit. MEDEVAC priority -- 'not dead until warm and dead'.",
+    "FROSTBITE: Mababaw (puti/kulay abo ang balat, malambot sa ilalim) kumpara sa malalim (matigas, kahoy na pakiramdam, paltos). HUWAG kuskusin ang lugar. HUWAG magpainit muli kung ang panganib ng muling pagyeyelo -- ang muling pagyeyelo ay nagdudulot ng mas masahol na pinsala kaysa sa naantala na muling pag-init.",
+    "FROSTBITE rewarming: Ilubog sa 38-42C na tubig (hindi mas mainit) sa loob ng 15-30 min hanggang ang tissue ay malambot at pula/purple. Napakasakit -- nag-aalok ng analgesia (ketamine o morphine).",
+    "Pagkatapos mag-rewarming: pad sa pagitan ng mga daliri ng paa/daliri gamit ang sterile gauze. HUWAG magpa-pop blisters. Protektahan mula sa presyon.",
+    "IMMERSION FOOT (Trench Foot): matagal na pagkakalantad sa basa/lamig, pula ang balat pagkatapos ay maputla pagkatapos ay paltos. Tuyong paa, dahan-dahang magpainit, itaas. HUWAG lagyan ng direktang init.",
+    "Idokumento ang oras ng pinsala at oras ng rewarming."
+  ],
+  "warnings": [
+    "HUWAG magpainit muli ng frostbite kung mayroong anumang pagkakataong mag-refreeze -- hindi kumpletong rewarming + muling pagyeyelo = sakuna pagkawala ng tissue.",
+    "Maaaring gayahin ng matinding hypothermia ang kamatayan. Suriin ang pulso sa loob ng 60 segundo. 'Hindi patay hanggang mainit at patay.'",
+    "Ang alkohol ay nagpapataas ng pagkawala ng init sa kabila ng pagdama ng init -- huwag magbigay ng alak.",
+    "Ang panganib ng VFib ay mataas sa moderate-severe hypothermia -- bawasan ang pagmamanipula at pag-urong ng pasyente."
+  ],
+  "follows": [
+    "hypothermia-prevention"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Mas mabilis lumamig ang mga bata dahil sa mas mataas na ratio ng surface sa mass. Pareho ang mga threshold ng hypothermia. Kritikal ang mainit na IV fluid. Weight-based fluid: 20 mL/kg warm LR."
+    },
+    "obstetric": {
+      "note": "Ang maternal hypothermia ay nagdudulot ng fetal bradycardia at acidosis. Ang agresibong maternal rewarming ay pangsanggol na paggamot. Pagsubaybay sa pangsanggol kung magagamit."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

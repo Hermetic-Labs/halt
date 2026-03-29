@@ -1,0 +1,45 @@
+﻿{
+    "id":  "ciprofloxacin",
+    "name":  "Ciprofloxacin",
+    "category":  "antibiotic",
+    "rxnorm":  "2551",
+    "brand_names":  [
+                        "Cipro"
+                    ],
+    "description":  "Fluoroquinolone antibiotic with broad gram-negative coverage. Used for serious wound infections, penetrating abdominal trauma (GI flora coverage), and urinary tract infections. Available PO and IV.",
+    "indications":  [
+                        "Penetrating abdominal trauma (GI decontamination)",
+                        "Serious wound infections",
+                        "Gram-negative infections",
+                        "Urinary tract infections"
+                    ],
+    "dose":  "400 mg IV q8-12h. PO: 500-750 mg q12h.",
+    "route":  [
+                  "IV",
+                  "PO"
+              ],
+    "window":  "",
+    "contraindications":  [
+                              "Known fluoroquinolone allergy",
+                              "Children and adolescents \u003c 18 years (relative -- risk of tendinopathy)",
+                              "Pregnancy (relative)"
+                          ],
+    "warnings":  [
+                     "Tendon rupture risk, especially Achilles tendon. Discontinue if tendon pain develops.",
+                     "May prolong QT interval -- caution with other QT-prolonging drugs.",
+                     "Avoid in pregnancy if alternatives available."
+                 ],
+    "regional_names":  {
+                           "generic":  "ciprofloxacin"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "10-20 mg/kg IV q8-12h (max 400 mg/dose). PO: 10-20 mg/kg q12h (max 750 mg/dose).",
+                                        "note":  "Use only when benefits outweigh tendinopathy risk. Reserve for serious infections."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Avoid in pregnancy if alternatives available. Use only for life-threatening infections where benefit outweighs risk."
+                                    }
+                  },
+    "source":  "JTS CPG: Wound Care / Infectious Disease"
+}

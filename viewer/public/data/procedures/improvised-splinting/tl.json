@@ -1,0 +1,49 @@
+{
+  "id": "improvised-splinting",
+  "name": "Improvised Splinting",
+  "category": "ortho-stabilization",
+  "skill_level": "Basic",
+  "time_estimate": "5-10 min",
+  "description": "I-immobilize ang mga bali gamit ang mga magagamit na materyales upang maiwasan ang karagdagang pinsala, mabawasan ang sakit, at limitahan ang pagkawala ng dugo sa nakapaligid na tissue. Natagpuan ang splint sa posisyon maliban kung nakompromiso ang sirkulasyon -- pagkatapos ay ituwid nang marahan.",
+  "equipment": [
+    "SAM splint (ginustong)",
+    "Mga ginulong magazine, stick, poste ng tent (field improvised)",
+    "Cravat / triangular bandage",
+    "Padding (damit, foam)",
+    "Tape o mga piraso ng tela"
+  ],
+  "steps": [
+    "Ilantad at suriin ang pinsala -- suriin ang sirkulasyon, sensasyon, paggalaw (CSM) malayo sa bali bago at pagkatapos.",
+    "Kontrolin ang anumang aktibong pagdurugo bago mag-splint.",
+    "Pad bony prominences generously upang maiwasan ang pressure sores.",
+    "Pumili ng splint na materyal na sapat ang haba upang i-immobilize ang joint sa itaas AT sa ibaba ng bali.",
+    "Ilagay ang paa sa posisyon ng komportable o anatomical alignment -- huwag pilitin.",
+    "Ilapat ang padding, pagkatapos ay splint material. I-secure gamit ang mga bendahe o mga piraso ng tela.",
+    "HUWAG balutin ng masyadong mahigpit -- iwanang nakahantad ang mga daliri/daliri sa monitor ng CSM.",
+    "Muling suriin ang CSM pagkatapos ng aplikasyon -- lumuwag kaagad kung may kapansanan sa sirkulasyon.",
+    "Itaas ang paa kung maaari upang mabawasan ang pamamaga.",
+    "Idokumento ang oras ng paglalagay ng splint."
+  ],
+  "warnings": [
+    "Muling suriin ang CSM tuwing 15-30 minuto -- ang pamamaga ay maaaring gawing tourniquet ang tamang splint.",
+    "Bukas na bali: takpan muna ang sugat ng sterile dressing, pagkatapos ay i-splint. HUWAG itulak pabalik ang buto.",
+    "Maaaring mawalan ng 1-2L na dugo ang femur fracture sa hita -- agresibong gamutin para sa pagkabigla.",
+    "Pinaghihinalaang spinal fracture: HUWAG mag-improvise ng splint -- bawasan ang paggalaw, panatilihin ang inline stabilization."
+  ],
+  "follows": [
+    "direktang presyon",
+    "tourniquet-application"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Ang mga plate ng paglaki sa mga bata ay mas mahina kaysa sa ligaments -- pinaghihinalaan ang bali kahit na may banayad na mekanismo. Ang mga bali ng Torus (buckle) ay maaaring may kaunting pamamaga."
+    },
+    "obstetric": {
+      "note": "Nalalapat ang karaniwang splinting. Iwasan ang matagal na pagpoposisyon ng supine -- kaliwa lateral tilt kung nakahiga ng patag."
+    }
+  },
+  "source": "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

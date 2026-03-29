@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "Skala Koma Glasgow (GCS)",
+  "category": "neurological",
+  "description": "Skor kesadaran neurologis standar liwat respon mripat, verbal, lan motor. Rentang skor 3-15.",
+  "instructions": "Skor saben telung domain kanthi mandiri. Jumlah kabeh telung skor kanggo GCS total.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Spontan"
+        },
+        {
+          "score": 3,
+          "label": "Kanggo swara"
+        },
+        {
+          "score": 2,
+          "label": "Kanggo lara"
+        },
+        {
+          "score": 1,
+          "label": "ora ana"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "berorientasi"
+        },
+        {
+          "score": 4,
+          "label": "Bingung"
+        },
+        {
+          "score": 3,
+          "label": "Tembung sing ora trep"
+        },
+        {
+          "score": 2,
+          "label": "Swara sing ora bisa dingerteni"
+        },
+        {
+          "score": 1,
+          "label": "ora ana"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "Nuruti dhawuh"
+        },
+        {
+          "score": 5,
+          "label": "Lokalisasi nyeri"
+        },
+        {
+          "score": 4,
+          "label": "Mundur saka lara"
+        },
+        {
+          "score": 3,
+          "label": "Fleksi abnormal (dekortikasi)"
+        },
+        {
+          "score": 2,
+          "label": "Ekstensi (decerebrate)"
+        },
+        {
+          "score": 1,
+          "label": "ora ana"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "TBI entheng - ngawasi kanthi rapet"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "TBI moderat - nyiapake saluran napas"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "TBI parah - saluran napas kanthi resiko langsung, intubasi yen bisa"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Gunakake GCS Pediatrik (pGCS) kanggo bocah-bocah ing umur 2 taun. Skor verbal diatur kanggo bocah-bocah pra-verbal."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Maareynta Dhaawaca Kulaylka",
+  "category": "environmental",
+  "skill_level": "Aasaaska",
+  "time_estimate": "Soconaya ilaa MEDEVAC ama bukaanku ka xasilayo",
+  "description": "Maareynta xanuunka kulaylka, daalka kulaylka, iyo istaroogga kulaylka. Istaroogga kulaylku waa xaalad degdeg ah oo nafta halis gelisa -- qaboojin degdeg ah ayaa ah daawaynta. Kala saar daalka kulaylka (xusuusinta caadiga ah) iyo istaroogga kulaylka (la beddelay LOC) isla markaaba.",
+  "equipment": [
+    "Biyaha (afka + qaboojinta)",
+    "Xirmooyinka barafka ama maro qoyan oo qabow",
+    "Qalabka IV (LR ama NS)",
+    "Fan ama hadh",
+    "Heerkulbeegga malawadka (heerkulka xudunta u ah ee qeexan)"
+  ],
+  "steps": [
+    "QIIMEYN: Dhaawacu ma ka feejigan yahay oo ma ku jihaysan yahay? Maqaar kulul oo qalalan vs. maqaarka kulul oo dhididsan? Heerkulka ugu muhiimsan haddii heerkulbeeggu la heli karo.",
+    "KULULKA: murqaha murqaha, ka hadal caadi ah. Ku naso hadh, fuuq-celinta afka oo leh elektrolyt-yada, kala-bax tartiib ah. Ma aha mid nafta halis gelinaysa.",
+    "KULULKA: dhidid badan, daciifnimo, dawakhaad, wax u sheeg caadi ah ama u dhow. U dhaqaaq meel hadh/meel qabow. Ka saar dharka xad-dhaafka ah. Dheecaannada afka (haddii uu miyir qabo) ama IV LR 1L ka badan 30-60 daqiiqo. La soco horumarka ilaa istaroogga kulaylka.",
+    "KULULKA KUULKA (xaalad degdeg ah): Beddelay LOC, jahawareer, dagaal, ama miyir la'aan. Heerkulka ugu sarreeya> 40C (104F). Maqaarka kulul (waxaa laga yaabaa inuu qoyan yahay ama engegan yahay). BILAAB: Isla markiiba ka saar kulaylka, ka saar dhammaan dharka, maqaarka qoyan iyo marawaxad si daran. Marso xidhmooyinka barafka qoorta, axillae, iyo gumaarka (meelaha xididdada dhiigga ee sarreeya). IV LR 1-2L. Ka ilaali marin-haweedka haddii aanad miyir qabin. MEDEVAC isla markiiba.",
+    "Ha siin aspirin ama acetaminophen ee istaroogga kulaylka -- waxba ma tarto, wax yeeli karta.",
+    "Kormeer: ​​muhimada q15 min, marin hawo, xaalad maskaxeed. Diiwaangeli isbeddellada heerkulka",
+    "Sii wad qaboojinta inta lagu jiro MEDEVAC -- ha u istaagin gaadiidka."
+  ],
+  "warnings": [
+    "Istaroogga kulaylku waa xaalad degdeg ah oo nafta halis gelisa -- ha ku khaldin kulayl daal. Hubi heerka maskaxeed.",
+    "Qaboojintu waa daawaynta saxda ah. Ha daahin qaboojinta si aad u dhisto gelitaan IV.",
+    "Istaroogga kulaylka xoogga leh wuxuu ku dhici karaa shakhsiyaadka taam ah - jirdhiska jirku ma difaaco.",
+    "Hyponatremia (soodhiyam hoose) oo ka yimaada fuuq-baxa biyaha caadiga ah waxay la jaanqaadi kartaa istaroogga kulaylka -- sii xalka korantada biyo kaliya ma aha."
+  ],
+  "follows": [
+    "fuuqbax-qiimaynta"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Carruurtu waxay u maamulaan heerkul yar si aan waxtar lahayn. Istaroogga kulaylku si dhakhso leh ayuu u horumari karaa. Dheecaan miisaanka ku salaysan: 20 ml/kg LR IV bolus. Heerkulka xudunta ah ee loo maro heerkulbeegga malawadka ayaa ugu saxsan."
+    },
+    "obstetric": {
+      "note": "Hyperthermia hooyada (> 39C) waxay keeni kartaa cilladaha tuubada neerfaha ee uurjiifka (horraantii) iyo xanuunka uurjiifka (daahida). Qaboojin gardarro leh. La socodka garaaca wadnaha ee uurjiifka haddii la heli karo."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

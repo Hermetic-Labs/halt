@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Dehidrasyon Değerlendirmesi",
+  "category": "circulation",
+  "description": "Dehidrasyon ve ısı hastalığının şiddeti için saha değerlendirmesi. İdrar rengi en pratik saha göstergesidir. Sıcak çarpmasına ilerleyen ciddi dehidrasyonun bir göstergesi olarak zihinsel durumu değerlendirin.",
+  "instructions": "İdrar rengini, cilt turgorunu, zihinsel durumu ve yaşamsal belirtileri kontrol edin. Koyu renkli idrar, kuru müköz membranlar ve taşikardi, aktif rehidrasyon gerektiren ciddi dehidrasyonu gösterir.",
+  "categories": [
+    {
+      "color": "açık-soluk",
+      "label": "İyi Nemlendirilmiş",
+      "description": "İdrarı temizlemek için soluk sarı. Hiçbir müdahaleye gerek yok."
+    },
+    {
+      "color": "sarı",
+      "label": "Hafif Dehidrasyon",
+      "description": "Koyu sarı idrar, susuzluk. Oral rehidrasyon. Saatte 250-500 mL suyu teşvik edin."
+    },
+    {
+      "color": "kehribar-kahverengi",
+      "label": "Orta-Şiddetli Dehidrasyon",
+      "description": "Kehribar rengi idrar, kalp atış hızı yükseldi, cilt turgoru azaldı, ağız kuruluğu. Oral tolere edilmiyorsa IV/IO sıvıları. 1-2L LR veya NS."
+    },
+    {
+      "color": "kırmızı",
+      "label": "Tehlike -- Güneş Çarpması / Şiddetli",
+      "description": "Minimal idrar çıkışı, değişen LOC, sıcak ve kuru cilt. Tıbbi acil durum -- hızlı soğutma + IV sıvıları + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Çocuklar yetişkinlere göre daha hızlı susuz kalırlar. Batık bıngıldak (bebekler), gözyaşlarının olmaması ve uyuşukluk kritik belirtilerdir. Ağırlığa dayalı IV: 20 mL/kg LR bolus."
+    },
+    "obstetric": {
+      "note": "Hamile kadınların daha fazla sıvı alımına ihtiyacı vardır. Dehidrasyon erken kasılmaları tetikleyebilir. Önce agresif oral rehidrasyon; Oral tedaviye tolerans gösterilmiyorsa IV."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

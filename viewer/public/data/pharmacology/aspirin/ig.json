@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirin (Acetylsalicylic acid)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Bayer Aspirin",
+    "Ecotrin"
+  ],
+  "description": "Ọgwụ mgbochi mkpali na-abụghị steroidal (NSAID) nwere ihe antiplatelet. Ọgwụgwọ ahịrị nke mbụ maka ọrịa a na-enyo enyo na ọ na-enyo enyo nnukwu akwara obi (ACS). Na-agbanwe agbanwe na-egbochi nchịkọta platelet - mmetụta na-adịru ogologo ndụ platelet (ụbọchị 7-10).",
+  "indications": [
+    "A na-enyo enyo na nnukwu myocardial infarction (MI) --ta ozugbo",
+    "Angina na-adịghị akwụsi ike / nnukwu ọrịa obi",
+    "Ọrịa strok (ischemic - mgbe ewepụrụ ọbara ọgbụgba)",
+    "Ahụ ọkụ na obere mgbu (analgesic)"
+  ],
+  "dose": "ACS: 325 mg PO - CHEW (ewedala ya dum) ozugbo. Analgesic/antipyretic: 325-650 mg PO q4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Nye ozugbo enwere ike --ata ozugbo na nrutuaka.",
+  "contraindications": [
+    "Ọbara GI na-arụ ọrụ",
+    "Hemorrhagic ọrịa strok",
+    "Amara aspirin nfụkasị ma ọ bụ NSAID hypersensitivity",
+    "Ọbara ọgbụgba siri ike a na-achịkwaghị achịkwa -- aspirin na-akawanye ọbara ọgbụgba"
+  ],
+  "warnings": [
+    "Enyela ndị na-arịa ọbara ọgbụgba -- aspirin na-emebi ọrụ platelet na-eme ka ọbara ọgbụgba dịkwuo njọ.",
+    "Enyela ụmụaka <afọ 12 nwere ọrịa nje --ihe ize ndụ nke ọrịa Reye's syndrome.",
+    "Iwe iwe GI - were nri ma ọ bụrụ na ọ dịghị mkpa."
+  ],
+  "regional_names": {
+    "generic": "aspirin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesic / antipyretic: 10-15 mg / kg PO q4-6h (max 650 mg / dose). IHE: Contraindicated na viral ọrịa (Reye syndrome).",
+      "note": "Jiri acetaminophen (paracetamol) maka ahụ ọkụ na ụmụaka nwere ọrịa nje kama."
+    },
+    "obstetric": {
+      "note": "Zere ime ime karịsịa n'ime ọnwa atọ nke atọ (mmechi ductus arteriosus na-akaghị aka). A na-eji obere dose (81mg) mee ihe maka mgbochi pre-eclampsia n'okpuru nduzi dọkịta naanị."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

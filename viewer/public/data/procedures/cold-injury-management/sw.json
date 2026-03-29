@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Usimamizi wa Jeraha la Baridi",
+  "category": "environmental",
+  "skill_level": "Msingi",
+  "time_estimate": "Inaendelea",
+  "description": "Udhibiti wa baridi, mguu wa kuzamishwa (mguu wa mfereji), na hypothermia. Majeraha ya baridi yanaweza kuzuilika -- tambua dalili za mapema kabla uharibifu wa tishu haujaweza kutenduliwa. Shughulikia tishu zilizo na barafu kwa upole sana.",
+  "equipment": [
+    "Nguo kavu za kuhami joto / mfuko wa kulala",
+    "Maji ya uvuguvugu (38-42C/100-108F) kwa kuoga tena kwa joto",
+    "Mavazi ya kuzaa",
+    "Ibuprofen 400mg PO (ikiwa inapatikana)",
+    "IV LR (joto ikiwezekana)"
+  ],
+  "steps": [
+    "HYPOTHERMIA KWANZA: Tathmini halijoto ya msingi kwa kipimajoto kisicho na usomaji wa chini. Upole (32-35C): kutetemeka, kuchanganyikiwa. Wastani (28-32C): hakuna kutetemeka, kuchanganyikiwa kali. Kali (<28C): amepoteza fahamu, hakuna mapigo ya moyo yanayoweza kugunduliwa.",
+    "HYPOTHERMIA -- Kiasi/Wastani: Ondoa nguo zenye unyevunyevu, weka insulate kutoka ardhini, mazingira yenye joto, vimiminika vitamu vuguvugu ukifahamu, pakiti za joto hadi kwapa/kiuno (sio moja kwa moja kwenye ngozi). Shikilia kwa upole -- mshtuko unaweza kusababisha VFib.",
+    "HYPOTHERMIA -- kali: Shikilia kwa upole SANA. Angalia mapigo ya moyo sekunde 60 kamili kabla ya CPR. Anza CPR ikiwa hakuna mpigo. Maji ya joto ya IV ikiwa yanapatikana. Kipaumbele cha MEDEVAC -- 'haijafa hadi joto na kufa'.",
+    "JAMIDI: Ya juu juu (ngozi nyeupe/kijivu, laini chini) dhidi ya kina (ngumu, hisia ya mbao, malengelenge). USISIGUE eneo hilo. USIJALISHE tena ikiwa kuna hatari ya kugandisha tena -- kugandisha kunasababisha uharibifu mbaya zaidi kuliko kucheleweshwa kwa kuongeza joto tena.",
+    "Kupasha joto upya kwa JAMIDI: Ingiza kwenye maji 38-42C (sio moto zaidi) kwa dakika 15-30 hadi tishu ziwe laini na nyekundu/zambarau. Inauma sana -- toa analgesia (ketamine au morphine).",
+    "Baada ya kupasha joto tena: pedi kati ya vidole vya miguu/vidole na chachi isiyoweza kuzaa. USITOKEZE malengelenge. Kinga kutokana na shinikizo.",
+    "IMMERSION FOOT (Trench Foot): Mfiduo wa mvua/baridi kwa muda mrefu, ngozi nyekundu kisha kupauka kisha ina malengelenge. Kavu miguu, joto polepole, kuinua. USItumie joto la moja kwa moja.",
+    "Nyaraka wakati wa kuumia na wakati wa kuwasha upya."
+  ],
+  "warnings": [
+    "USIWASHE tena baridi kali ikiwa kuna nafasi ya kuganda tena -- upashaji joto usiokamilika + kuganda tena = upotezaji mkubwa wa tishu.",
+    "Hypothermia kali inaweza kuiga kifo. Angalia mapigo kwa sekunde 60. 'Si wafu mpaka joto na kufa.'",
+    "Pombe huongeza upotezaji wa joto licha ya mtazamo wa joto - usipe pombe.",
+    "Hatari ya VFib iko juu katika hypothermia kali ya wastani -- kupunguza uchezaji na mshtuko wa mgonjwa."
+  ],
+  "follows": [
+    "hypothermia-kuzuia"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Watoto hupoa haraka kwa sababu ya uwiano wa juu wa uso na wingi. Vizingiti vya hypothermia sawa. Maji ya joto ya IV muhimu. Kioevu chenye uzito: 20 mL/kg LR ya joto."
+    },
+    "obstetric": {
+      "note": "Hypothermia ya mama husababisha bradycardia ya fetasi na acidosis. Kupandisha joto tena kwa kina mama ni matibabu ya fetasi. Ufuatiliaji wa fetasi ikiwa inapatikana."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

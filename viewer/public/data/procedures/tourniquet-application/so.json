@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Codsiga Dalxiiska ( Dalxiiska Dalxiiska Dagaalka -- CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "qof kasta oo u jawaaba",
+  "time_estimate": "30-60 sec",
+  "description": "Xakameyn qeexan oo dhiigbax ah oo loogu talagalay dhiigbaxa darafyada nafta halis gelinaya. Horey u codso -- dib ha u dhigin.",
+  "equipment": [
+    "bisad-tourniquet",
+    "calaamad joogto ah"
+  ],
+  "steps": [
+    "Codso tourniquet 2-3 inji (5-7 cm) meel u dhow (korka) nabarka -- dharka waa la aqbali karaa.",
+    "Jid xariiqda is-ku dheggan ee ku wareegsan addimada oo dun dhex mari xajinta adabtarada.",
+    "Si adag u soo jiid xadhig oo dib isugu celi.",
+    "Marooji usha dabaysha ilaa uu dhiiggu joogsado ama garaaca wadnaha fogaanayo uu maqan yahay.",
+    "Ku xidh muraayadda muraayadda muraayadda muraayadda.",
+    "Ku dheji suunka muraayadda usha muraayadda si aad u ilaaliso.",
+    "Ku qor wakhtiga codsiga si toos ah dalxiiska (isticmaal calaamadeeyaha) IYO kaarka TCCC.",
+    "Soo bandhig oo dib u qiimee dhaawaca. Dib u qiimee 5 daqiiqo ka dib."
+  ],
+  "warnings": [
+    "Ha ka saarin dalxiiska mar lagu codsado goobta -- kaliya shaqaale caafimaad oo tababaran oo ku sugan goob la xakameeyey.",
+    "Waqtigu waa muhiim: dalxiiska>2 saacadood ayaa si weyn u kordhiya halista luminta lugaha. Wakhtiga gal isla markiiba.",
+    "Ha ku dul marsan wadajir. Haddii addinku leeyahay nabarro heerar badan leh, mari meel u dhow dhammaan nabarrada.",
+    "Dalxiiska oo la hagaajiyay (suunka, xadhkaha) aad bay waxtarkoodu u yar yahay."
+  ],
+  "follows": [
+    "cadaadis toos ah",
+    "nabar xidhid"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Isticmaal dalxiiska carruurta ee cidhiidhi ah haddii la heli karo. CAT caadiga ah waa la isticmaali karaa laakiin si taxadar leh u adkee. Lugaha ayaa ka yar-- si taxadar leh u eeg garaaca wadnaha fog."
+    },
+    "obstetric": {
+      "note": "Codsiga caadiga ah ee nabarrada xag-jirnimada. Ha marin caloosha iyo miskaha."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

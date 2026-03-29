@@ -1,0 +1,46 @@
+﻿{
+    "id":  "lorazepam",
+    "name":  "Lorazepam",
+    "category":  "sedation-seizure",
+    "rxnorm":  "6470",
+    "brand_names":  [
+                        "Ativan"
+                    ],
+    "description":  "Intermediate-acting benzodiazepine. First-line IV/IM treatment for status epilepticus and acute seizures. Also used for procedural sedation and anxiolysis.",
+    "indications":  [
+                        "Status epilepticus (first-line IV)",
+                        "Acute seizure management",
+                        "Procedural sedation",
+                        "Severe anxiety or agitation"
+                    ],
+    "dose":  "Seizure: 4 mg IV/IO slow push over 2 min. Repeat 4 mg in 5-10 min if seizure continues. IM: 4 mg if IV unavailable.",
+    "route":  [
+                  "IV",
+                  "IO",
+                  "IM"
+              ],
+    "window":  "",
+    "contraindications":  [
+                              "Acute narrow-angle glaucoma",
+                              "Severe respiratory depression",
+                              "Propylene glycol hypersensitivity"
+                          ],
+    "warnings":  [
+                     "Causes respiratory depression -- have BVM and airway equipment ready.",
+                     "Sedation may last 6-8 hours -- monitor airway.",
+                     "Paradoxical agitation possible, especially in elderly and children."
+                 ],
+    "regional_names":  {
+                           "generic":  "lorazepam"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "0.05-0.1 mg/kg IV/IM (max 4 mg/dose). Repeat once in 5-10 min if needed.",
+                                        "note":  "Preferred over diazepam for IV seizure management in children."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Crosses placenta -- neonatal respiratory depression possible. Use in maternal status epilepticus when benefit outweighs risk."
+                                    }
+                  },
+    "source":  "JTS CPG / Standard Seizure Management Guidelines"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "hypothermia-prevention",
+  "name": "Pag-iwas sa Hypothermia (H -- MARCH)",
+  "category": "temperature-management",
+  "skill_level": "sinumang tumugon",
+  "time_estimate": "2-3 min",
+  "description": "Ang Combat hypothermia ay isang nangungunang maiiwasang mamamatay sa trauma. Ang nakamamatay na triad: hypothermia + acidosis + coagulopathy. Pigilan sa lahat ng paraan.",
+  "equipment": [
+    "heat-reflective-blanket",
+    "hypothermia-prevention-kit",
+    "warm-iv-fluids-if-available"
+  ],
+  "steps": [
+    "Alisin ang lahat ng basang damit sa lalong madaling panahon sa taktikang magagawa.",
+    "Takpan ang pasyente ng heat-reflective (space) blanket -- makintab na bahagi IN patungo sa pasyente.",
+    "Balutin ang ulo at leeg (makabuluhang lugar ng pagkawala ng init).",
+    "Mag-insulate mula sa lupa -- maglagay ng isang bagay sa pagitan ng pasyente at malamig na ibabaw ng lupa.",
+    "Magbigay ng mainit na IV fluid kung magagamit.",
+    "Huwag hayaan ang pasyente na manginig nang walang takip -- ang panginginig ay isang maagang babala.",
+    "Subaybayan ang temperatura kung magagamit ang thermometer. Mas mababa sa 35°C (95°F) = hypothermia."
+  ],
+  "warnings": [
+    "Ang hypothermia ay nagpapalala ng coagulopathy -- ang mga pasyenteng dumudugo ay lumalamig nang mas mabilis at hindi gaanong mabisa.",
+    "Dapat magsimula ang pag-iwas sa field hypothermia sa punto ng pinsala, hindi sa CCP."
+  ],
+  "source": "TCCC / JTS CPG"
+}

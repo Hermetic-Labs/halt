@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Ogbon",
+    "Nayzilam"
+  ],
+  "description": "Benzodiazepine ti n ṣiṣẹ kukuru pẹlu ibẹrẹ iyara. Ayanfẹ fun sedation ti ilana, RSI ṣaaju oogun, ati iṣakoso ijagba IM/IN. IM ati awọn ipa ọna intranasal pese anfani pataki ni awọn eto aaye.",
+  "indications": [
+    "sedation ti ilana",
+    "Oogun iṣaaju RSI (pẹlu ketamine)",
+    "Isakoso ijagba (IM/IN nigbati IV ko si)",
+    "Agitation isakoso"
+  ],
+  "dose": "Sesedation: 0.05-0.1 mg / kg IV titrated. Ilana: 1-5 mg IV titari lọra. IM: 0.2 mg / kg. NI: 0.2 mg / kg (max 10 mg). Ipo warapa IM: 10 mg IM (agbalagba).",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaucoma igun-igun ti o tobi",
+    "Amutimu ọti-lile nla pẹlu adehun ẹjẹ inu ọkan",
+    "hypersensitivity ti a mọ"
+  ],
+  "warnings": [
+    "Ibanujẹ atẹgun -- ṣe atẹle ọna atẹgun, ni oluranlowo iyipada (flumazenil) ti o ba wa.",
+    "Hypotension paapaa pẹlu iṣakoso opioid.",
+    "Iyara IV abẹrẹ fa apnea - Titari laiyara."
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Sesedation: 0.05-0.1 mg / kg IV. IM: 0.1-0.2 mg / kg. NI: 0.2-0.3 mg / kg. Imudani IM: 0.2 mg/kg (o pọju 10 mg).",
+      "note": "NI ipa ọna paapaa wulo ninu awọn ọmọde - yago fun iwọle IV."
+    },
+    "obstetric": {
+      "note": "Rekọja placenta. Neonatal sedation ṣee ṣe. Lo iwọn lilo to munadoko ti o kere ju; bojuto neonate ti o ba ti wa nitosi ifijiṣẹ."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

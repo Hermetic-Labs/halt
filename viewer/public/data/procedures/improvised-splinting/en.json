@@ -1,0 +1,49 @@
+﻿{
+    "id":  "improvised-splinting",
+    "name":  "Improvised Splinting",
+    "category":  "ortho-stabilization",
+    "skill_level":  "Basic",
+    "time_estimate":  "5-10 min",
+    "description":  "Immobilize fractures using available materials to prevent further injury, reduce pain, and limit blood loss into surrounding tissue. Splint in position found unless circulation is compromised -- then straighten gently.",
+    "equipment":  [
+                      "SAM splint (preferred)",
+                      "Rolled magazines, sticks, tent poles (field improvised)",
+                      "Cravat / triangular bandages",
+                      "Padding (clothing, foam)",
+                      "Tape or strips of fabric"
+                  ],
+    "steps":  [
+                  "Expose and assess the injury -- check circulation, sensation, movement (CSM) distal to fracture before and after.",
+                  "Control any active bleeding before splinting.",
+                  "Pad bony prominences generously to prevent pressure sores.",
+                  "Select splint material long enough to immobilize the joint above AND below the fracture.",
+                  "Position limb in position of comfort or anatomical alignment -- do not force.",
+                  "Apply padding, then splint material. Secure with bandages or fabric strips.",
+                  "Do NOT wrap too tightly -- leave fingertips/toes exposed to monitor CSM.",
+                  "Reassess CSM after application -- loosen immediately if circulation impaired.",
+                  "Elevate limb if possible to reduce swelling.",
+                  "Document time of splint application."
+              ],
+    "warnings":  [
+                     "Reassess CSM every 15-30 minutes -- swelling can make a correct splint become a tourniquet.",
+                     "Open fractures: cover wound with sterile dressing first, then splint. Do NOT push bone back in.",
+                     "Femur fractures can lose 1-2L blood into thigh -- treat aggressively for shock.",
+                     "Suspected spinal fracture: do NOT improvise splint -- minimize movement, maintain inline stabilization."
+                 ],
+    "follows":  [
+                    "direct-pressure",
+                    "tourniquet-application"
+                ],
+    "precedes":  [
+                     "medevac-9line"
+                 ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  "Growth plates in children are weaker than ligaments -- suspect fracture even with mild mechanism. Torus (buckle) fractures may have minimal swelling."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Standard splinting applies. Avoid prolonged supine positioning -- left lateral tilt if lying flat."
+                                    }
+                  },
+    "source":  "JTS CPG: Orthopaedic Trauma / PHTLS / TCCC"
+}

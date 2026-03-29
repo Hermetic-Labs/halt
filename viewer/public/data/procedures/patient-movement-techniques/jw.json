@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Teknik Gerakan Pasien",
+  "category": "casualty-movement",
+  "skill_level": "dhasar",
+  "time_estimate": "1-30 min gumantung jarak lan cara",
+  "description": "Pindhah korban ing geni utawa menyang lokasi sing luwih aman kanggo perawatan. Cara kasebut gumantung saka terrain, jarak, jumlah penyelamat, lan ciloko korban. Kacepetan vs. pancegahan balung mburi iku kaputusan taktik - ing TCCC, ancaman njupuk prioritas.",
+  "equipment": [
+    "SKED sampah (luwih disenengi)",
+    "NATO sampah / tandu portabel",
+    "Sampah improvisasi: cagak + jaket/ponco",
+    "Gagang seret (seragam utawa sabuk)",
+    "TACEVAC sling"
+  ],
+  "steps": [
+    "CARE UNDER FIRE: Mbaleni geni dhisik yen bersenjata. Pindhah korban kanthi cara seret paling cepet - aja mandheg kanggo nambani ing zona mateni.",
+    "HASTY DRAG (siji penyelamat): nyekel kerah / gagang seret ing pundhak, seret ing mburi. Nglindhungi sirah saka impact.",
+    "FIREMAN CARRY (siji penyelamat): angkat korban liwat pundhak kanggo jarak sing luwih dawa - mbutuhake korban ora sadar utawa kooperatif.",
+    "KANGGO DULUR: para penyelamat ngubungake lengen ing punggung lan dhengkul korban. Luwih cepet tinimbang seret kanggo jarak sing cendhak.",
+    "LITTER IMPROVISED: lay loro cagak 18 inci loro. Tenun jaket liwat kutub kanthi tombol ing njero. Tes sadurunge ngemot korban.",
+    "SKED LITTER: bukak gulungan, geser ing korban, bungkus lan aman nganggo tali. Mbutuhake 2-4 operator.",
+    "Nalika loading: angkat ing count 3, njaga alignment sirah / awak, minimalake gerakan balung mburi yen bisa.",
+    "Yen ciloko balung mburi dicurigai lan ora ana ancaman: njaga stabilisasi inline sajrone gerakan. Siji wong darmabakti kanggo kontrol sirah.",
+    "Pindhah menyang tutup, banjur evaluasi maneh ABC."
+  ],
+  "warnings": [
+    "Prioritas TCCC: urip> anggota awak> pencegahan spinal. Aja tundha gerakan saka zona mateni kanggo pancegahan balung mburi.",
+    "Fireman carry wis contraindicated karo curiga ciloko balung mburi, femur fraktur, utawa penetrating trauma weteng.",
+    "Sampah improvisasi: uji kapasitas bobot sadurunge dipercaya karo korban.",
+    "Ngobahake korban kanthi tourniquet: priksa tourniquet durung ngeculake sajrone gerakan."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Anak luwih entheng - siji-rescuer nggawa luwih dawa. Njaga sirah kanthi proporsional luwih gedhe - pusat gravitasi sing luwih dhuwur nalika nggawa."
+    },
+    "obstetric": {
+      "note": "Ngindhari posisi rawan utawa tekanan ing weteng. Lateral (sisih kiwa disenengi) utawa transportasi supine kanthi irisan pinggul kiwa."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

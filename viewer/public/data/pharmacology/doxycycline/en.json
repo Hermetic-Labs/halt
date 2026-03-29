@@ -1,0 +1,47 @@
+﻿{
+    "id":  "doxycycline",
+    "name":  "Doxycycline",
+    "category":  "antibiotic",
+    "rxnorm":  "3640",
+    "brand_names":  [
+                        "Vibramycin",
+                        "Doryx"
+                    ],
+    "description":  "Broad-spectrum tetracycline antibiotic. Oral wound prophylaxis alternative for penicillin-allergic patients. Also effective against atypical organisms and some vector-borne diseases (malaria prophylaxis in endemic areas).",
+    "indications":  [
+                        "Wound prophylaxis (penicillin allergy)",
+                        "Soft tissue infections",
+                        "Bite wounds",
+                        "Malaria prophylaxis in endemic areas"
+                    ],
+    "dose":  "100 mg PO every 12 hours x 7 days.",
+    "route":  [
+                  "PO",
+                  "IV"
+              ],
+    "window":  "Begin within 3 hours of injury for wound prophylaxis.",
+    "contraindications":  [
+                              "Pregnancy (causes fetal tooth discoloration and bone growth inhibition)",
+                              "Children under 8 years (same reason)",
+                              "Severe hepatic impairment"
+                          ],
+    "warnings":  [
+                     "CONTRAINDICATED in pregnancy -- use amoxicillin instead.",
+                     "CONTRAINDICATED in children under 8 years.",
+                     "Photosensitivity -- advise patient to avoid sun exposure.",
+                     "Do not take with calcium-rich foods, antacids, or iron -- impairs absorption."
+                 ],
+    "regional_names":  {
+                           "generic":  "doxycycline"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "Contraindicated under 8 years. Age 8+: 2-4 mg/kg/day divided q12h (max 100 mg/dose).",
+                                        "note":  "Use amoxicillin for children under 8."
+                                    },
+                      "obstetric":  {
+                                        "note":  "CONTRAINDICATED in pregnancy -- causes fetal harm. Use amoxicillin instead."
+                                    }
+                  },
+    "source":  "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

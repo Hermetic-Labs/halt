@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazol",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "Nitroimidazol-Antibiotikum mit ausgezeichneter anaerober und protozoaler Abdeckung. Unverzichtbar bei penetrierenden Bauch-/Darmtraumata zur Abdeckung der anaeroben Darmflora. Wird oft in Kombination mit Ciprofloxacin verwendet.",
+  "indications": [
+    "Penetrierendes Bauch-/Darmtrauma",
+    "Intraabdominelle Infektionen",
+    "Anaerobe Weichteilinfektionen",
+    "C. difficile-Infektionen"
+  ],
+  "dose": "500 mg i.v. alle 6–8 Stunden. PO: 500 mg alle 8 Stunden (bei oraler Verträglichkeit).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Erstes Schwangerschaftstrimester (relativ)",
+    "Bekannte Metronidazol- oder Nitroimidazol-Allergie"
+  ],
+  "warnings": [
+    "Disulfiram-ähnliche Reaktion mit Alkohol – konsumieren Sie während der Behandlung und 48 Stunden danach keinen Alkohol.",
+    "Kann bei längerer Anwendung eine periphere Neuropathie verursachen.",
+    "Wenn möglich, im ersten Trimester vermeiden."
+  ],
+  "regional_names": {
+    "generic": "Metronidazol"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7,5 mg/kg i.v./p.o. alle 6 Stunden (max. 500 mg/Dosis).",
+      "note": "Sicher bei älteren Kindern. Bei Neugeborenen vermeiden."
+    },
+    "obstetric": {
+      "note": "Wenn möglich, im ersten Trimester vermeiden. Bei medizinischer Notwendigkeit das zweite/dritte Trimester anwenden – der Nutzen überwiegt in der Regel das Risiko schwerer anaerober Infektionen."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

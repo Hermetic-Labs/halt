@@ -1,0 +1,48 @@
+{
+  "id": "avpu",
+  "name": "Pîvana AVPU",
+  "category": "neurological",
+  "description": "Nirxandina hişmendiya 4-asta bilez. Ji bo sêwirana destpêkê ji GCS zûtir.",
+  "instructions": "Asta herî bilind a bersiva ku nexweş nîşan dide binirxînin.",
+  "scoring": [
+    {
+      "code": "A",
+      "label": "Hişyar",
+      "description": "Nexweş hişyar e, haydar e, û bi gelemperî bersiv dide"
+    },
+    {
+      "code": "V",
+      "label": "Deng",
+      "description": "Nexweş tenê bersivê dide stimulasyona devkî"
+    },
+    {
+      "code": "P",
+      "label": "Êş",
+      "description": "Nexweş tenê bersivê dide teşwîqên bi jan (rûbûna stûn, zexta nivîna neynûkê)"
+    },
+    {
+      "code": "U",
+      "label": "Bêbersiv",
+      "description": "Tu bersivek ji ti stimulan re tune - destwerdana bilez a hewayê hewce ye"
+    }
+  ],
+  "interpretation": [
+    {
+      "code": "A",
+      "triage": "Stable -- nirxandina berdewam bike"
+    },
+    {
+      "code": "V",
+      "triage": "Têkilî - çavdêriya riya hewayê"
+    },
+    {
+      "code": "P",
+      "triage": "Krîtîk - Riya hewayê di xetereyê de ye, GCS bi gelemperî <= 8"
+    },
+    {
+      "code": "U",
+      "triage": "Tavilê - aniha rêça hewayê birêve bibin"
+    }
+  ],
+  "source": "JTS CPG / PHTLS Standard"
+}

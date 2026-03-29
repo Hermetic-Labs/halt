@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "디아제팜",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "발륨",
+    "디아스타트"
+  ],
+  "description": "지속성 벤조디아제핀. 발작 관리, 근육 경련 및 불안 완화에 사용됩니다. 직장 젤(Diastat)은 IV를 사용할 수 없는 현장 설정에 유용합니다. lorazepam보다 지속시간이 더 깁니다.",
+  "indications": [
+    "발작 관리(직장/IV)",
+    "척수 손상이나 파상풍으로 인한 근육 경련",
+    "신경작용제 해독제 보조제(CHEMPACK 키트 내)",
+    "알코올 금단"
+  ],
+  "dose": "발작: 5-10mg을 IV로 천천히 밀어냅니다. q10~15분(최대 30mg)을 반복합니다. 직장: 0.2-0.5 mg/kg. IM 흡수가 불규칙합니다. 가능하면 IM을 피하세요.",
+  "route": [
+    "IV",
+    "IO",
+    "홍보"
+  ],
+  "window": "",
+  "contraindications": [
+    "급성협우각녹내장",
+    "심각한 간 질환",
+    "호흡억제"
+  ],
+  "warnings": [
+    "IM 흡수는 불규칙하고 고통스럽습니다. IV, 직장을 선호하거나 대신 midazolam IM을 사용하십시오.",
+    "진정 지속 시간이 길다(반복 투여 시 24~48시간).",
+    "신경 작용제 사상자: 디아제팜은 콜린성 위기로 인한 발작을 위한 CHEMPACK 키트에 포함되어 있습니다."
+  ],
+  "regional_names": {
+    "generic": "디아제팜"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0.1-0.3mg/kg(최대 10mg). 직장: 0.3-0.5 mg/kg. IV를 사용할 수 없는 경우 직장 경로를 사용하십시오.",
+      "note": "직장 이완 젤은 현장 환경에서 소아 발작에 특히 유용합니다."
+    },
+    "obstetric": {
+      "note": "태반을 통과합니다. 신생아 저긴장증, 호흡억제를 일으킬 수 있음. 마그네슘에 반응하지 않는 산모의 발작에만 사용하십시오."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

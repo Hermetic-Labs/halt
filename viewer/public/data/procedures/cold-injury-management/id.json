@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Manajemen Cedera Dingin",
+  "category": "environmental",
+  "skill_level": "Dasar",
+  "time_estimate": "Sedang berlangsung",
+  "description": "Penatalaksanaan radang dingin, kaki perendaman (trench foot), dan hipotermia. Cedera dingin dapat dicegah -- kenali tanda-tanda awal sebelum kerusakan jaringan menjadi permanen. Tangani jaringan yang terkena radang dingin dengan sangat hati-hati.",
+  "equipment": [
+    "Pakaian isolasi kering/kantong tidur",
+    "Air hangat (38-42C/100-108F) untuk mandi hangat",
+    "Dressing steril",
+    "Ibuprofen 400mg PO (jika tersedia)",
+    "IV LR (hangat jika memungkinkan)"
+  ],
+  "steps": [
+    "HIPOTERMIA PERTAMA: Kaji suhu inti dengan termometer pembacaan rendah. Ringan (32-35C): menggigil, kebingungan. Sedang (28-32C): tidak menggigil, kebingungan berat. Parah (<28C): tidak sadarkan diri, denyut nadi tidak terdeteksi.",
+    "HIPOTERMIA -- Ringan/Sedang: Lepaskan pakaian basah, isolasi dari tanah, lingkungan hangat, cairan manis hangat jika sadar, kompres panas ke aksila/selangkangan (tidak langsung pada kulit). Tangani dengan lembut -- guncangan dapat memicu VFib.",
+    "HIPOTERMIA - Parah: Tangani dengan SANGAT lembut. Periksa denyut nadi 60 detik penuh sebelum CPR. Mulailah CPR jika tidak ada denyut nadi. Cairan IV hangat jika tersedia. Prioritas MEDEVAC -- 'tidak mati sampai hangat dan mati'.",
+    "FROSTBITE: Superfisial (kulit putih/abu-abu, lembut di bagian bawah) vs. dalam (keras, terasa seperti kayu, melepuh). JANGAN menggosok area tersebut. JANGAN menghangatkan kembali jika berisiko membekukan kembali -- membekukan kembali menyebabkan kerusakan yang lebih buruk daripada menunda penghangatan kembali.",
+    "Penghangatan kembali FROSTBITE: Rendam dalam air bersuhu 38-42C (jangan lebih panas) selama 15-30 menit hingga tisu lunak dan berwarna merah/ungu. Sangat menyakitkan -- berikan analgesia (ketamin atau morfin).",
+    "Setelah dihangatkan kembali: balut sela-sela jari kaki/jari dengan kain kasa steril. JANGAN meletuskan lepuh. Lindungi dari tekanan.",
+    "IMMERSION FOOT (Trench Foot): terkena air/dingin dalam waktu lama, kulit merah kemudian pucat lalu melepuh. Keringkan kaki, hangatkan perlahan, angkat. JANGAN gunakan panas langsung.",
+    "Dokumentasikan waktu cedera dan waktu penghangatan kembali."
+  ],
+  "warnings": [
+    "JANGAN menghangatkan kembali radang dingin jika ada kemungkinan untuk membekukannya kembali -- pemanasan ulang yang tidak lengkap + pembekuan ulang = kehilangan jaringan yang sangat parah.",
+    "Hipotermia parah bisa menyerupai kematian. Periksa denyut nadi selama 60 detik. 'Tidak mati sampai hangat dan mati.'",
+    "Alkohol meningkatkan kehilangan panas meskipun ada persepsi hangat -- jangan berikan alkohol.",
+    "Risiko VFib tinggi pada hipotermia sedang-berat -- minimalkan manipulasi dan guncangan pada pasien."
+  ],
+  "follows": [
+    "pencegahan hipotermia"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Anak-anak mendingin lebih cepat karena rasio luas permukaan dan massa lebih tinggi. Ambang batas hipotermia sama. Cairan IV hangat sangat penting. Cairan berdasarkan berat: 20 mL/kg LR hangat."
+    },
+    "obstetric": {
+      "note": "Hipotermia ibu menyebabkan bradikardia janin dan asidosis. Penghangatan kembali ibu secara agresif adalah pengobatan janin. Pemantauan janin jika tersedia."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

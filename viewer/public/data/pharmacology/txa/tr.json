@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Traneksamik Asit (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Siklokapron",
+    "Lysteda"
+  ],
+  "description": "Kan pıhtılarının parçalanmasını engelleyen antifibrinolitik ajan. Erken verildiğinde hemorajik şoktan ölüm oranını önemli ölçüde azaltır. Önemli kanaması olan veya ciddi kanama riski bulunan tüm yaralılar için CoTCCC tarafından önerilir.",
+  "indications": [
+    "Önemli dış veya şüpheli iç kanama",
+    "Hemorajik şok",
+    "Yüksek kanama riski (yaralanma mekanizması)"
+  ],
+  "dose": "10 dakikada 1g IV/IO, ardından 8 saatte 1g IV/IO. IV/IO mevcut değilse: 650 mg PO x2 (toplam 1,3 g) -- TCCC PO seçeneği.",
+  "route": [
+    "IV",
+    "Giriş Çıkış",
+    "PO"
+  ],
+  "window": "Yaralanmadan sonraki 3 saat içinde uygulanmalıdır. 3 saatin ötesinde TXA mortaliteyi ARTIRABİLİR - vermeyin.",
+  "contraindications": [
+    "Tromboembolik hastalık öyküsü (DVT, PE, felç)",
+    "Yaygın İntravasküler Pıhtılaşma (DIC)",
+    "> Yaralanmadan 3 saat sonra"
+  ],
+  "warnings": [
+    "Uygulama zamanını derhal kaydedin - pencere, yaralanma anından itibaren 3 saattir, varış saatinden değil.",
+    "IV dozunu (1g) oral dozla karıştırmayın."
+  ],
+  "regional_names": {
+    "generic": "traneksamik asit",
+    "US": "Siklokapron",
+    "UK": "Siklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg IV (en fazla 1g). Kanıt ortaya çıkıyor – klinik yargıyı kullanın.",
+      "note": "Aynı 3 saatlik pencere geçerlidir."
+    },
+    "obstetric": {
+      "note": "Doğum sonu kanama için endikedir. Hamilelikte güvenli. Aynı yetişkin dozu geçerlidir."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

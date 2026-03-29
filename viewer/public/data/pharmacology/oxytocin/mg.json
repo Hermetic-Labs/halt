@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oxytocine",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitocin",
+    "Syntocinon"
+  ],
+  "description": "Endogenous peptide hormonina. Uterotonika laharana voalohany amin'ny fisorohana sy fitsaboana ny fifindran'ny rà mandriaka (PPH). Mampihena ny rà mandriaka aorian'ny fiterahana. Omena TAORIAN'NY fiterahana placental.",
+  "indications": [
+    "Fisorohana ny fandatsahan-drà postpartum (fomba fanao aorian'ny fiterahana)",
+    "Fitsaboana ny fandatsahan-drà postpartum (atony uterine)",
+    "Fampidirana asa (fametrahana voafehy ihany)"
+  ],
+  "dose": "Fisorohana ny PPH: 10 unit IM avy hatrany aorian'ny fiterahana ny placental (lalana an-tsaha tiana). Fitsaboana PPH: 10-40 unit amin'ny 1L IV, ampidirina amin'ny 40-80 mU / min. Raha tsy misy IV: 10 units IM.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Omeo AORIAN'NY fampiterahana ny placenta -- ny fanomezana alohan'ny hiterahan'ny placenta dia afaka mamandrika ny placenta.",
+  "contraindications": [
+    "Alohan'ny fiterahana (afaka mamandrika ny placenta)",
+    "Fahorian'ny foetus miaraka amin'ny loha tsy voavonjy",
+    "Fantatra fa hypersensitivity"
+  ],
+  "warnings": [
+    "OMEO AORIAN'NY FANATERANA NY PLACENTA -- fahasarotana mahafaty ny fandrika ny placenta.",
+    "Ny IV bolus dia mety miteraka hypotension mahery vaika sy arrhythmia cardiac -- manalefaka sy manindrona tsikelikely.",
+    "Fiantraikany antidiuretic amin'ny boky be dia be - manara-maso ny hyponatremia."
+  ],
+  "regional_names": {
+    "generic": "oxytocine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "N/A -- fampiasana obstetric fotsiny.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Ny uterotonika voalohany. Raha tsy mamaly ny atony tranon-jaza, dia diniho ny misoprostol, asidra tranexamic (TXA), fanerena ny tranon-jaza bimanual, ary MEDEVAC haingana."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

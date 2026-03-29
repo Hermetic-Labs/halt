@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "I-Aspirin (i-Acetylsalicylic Acid)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "I-Aspirin ye-Bayer",
+    "I-Ecotrin"
+  ],
+  "description": "Isidakamizwa esingeyona i-steroidal anti-inflammatory (NSAID) esinezici ze-antiplatelet. Ukwelashwa komugqa wokuqala we- suspected acute coronary syndrome (ACS). Ivimbela ngokungenakulungiseka ukuhlangana kweplatelet -- umphumela uhlala isikhathi eside seplatelet (izinsuku eziyi-7-10).",
+  "indications": [
+    "Okusolwa ukuthi i-acute myocardial infarction (MI) -- hlafuna ngokushesha",
+    "I-angina engazinzile / i-acute coronary syndrome",
+    "I-Stroke (ischemic -- ngemva kokukhishwa kwe-hemorrhagic)",
+    "Umkhuhlane kanye nobuhlungu obuphakathi nendawo (i-analgesic)"
+  ],
+  "dose": "I-ACS: 325 mg PO -- Hlafuna (ungagwinyi uphelele) ngokushesha. I-analgesic/antipyretic: 325-650 mg PO q4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "I-ACS: Nikeza ngokushesha ngangokunokwenzeka -- hlafuna ngokushesha lapho usola.",
+  "contraindications": [
+    "I-GI esebenzayo yokopha",
+    "I-Hemorrhagic stroke",
+    "I-aspirin eyaziwa ngokuthi i-allergies noma i-NSAID hypersensitivity",
+    "Ukopha kakhulu okungalawuleki -- i-aspirin yenza ukopha kube kubi kakhulu"
+  ],
+  "warnings": [
+    "UNGANIKEZI ezigulini ezinokopha -- i-aspirin iphazamisa ngendlela engenakulungiseka ukusebenza kweplatelet futhi yenza ukopha kube kubi kakhulu.",
+    "UNGAZIniki izingane ezingaphansi kweminyaka engu-12 ezinesifo esibangelwa amagciwane -- ingozi ye-Reye's syndrome.",
+    "Ukucasuka kwe-GI -- thatha nokudla uma kungaphumi."
+  ],
+  "regional_names": {
+    "generic": "i-aspirin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "I-analgesic/antipyretic: 10-15 mg/kg PO q4-6h (ubukhulu obungu-650 mg/umthamo). QAPHELA: Contraindicated in viral disease (Reye syndrome).",
+      "note": "Sebenzisa i-acetaminophen (paracetamol) yemfiva ezinganeni ezinesifo esibangelwa amagciwane esikhundleni salokho."
+    },
+    "obstetric": {
+      "note": "Gwema ekukhulelweni ikakhulukazi ku-trimester yesithathu (ukuvalwa ngaphambi kwesikhathi kwe-ductus arteriosus). Umthamo ophansi (81mg) usetshenziselwa ukuvimbela i-pre-eclampsia ngaphansi kokuqondisa kukadokotela kuphela."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

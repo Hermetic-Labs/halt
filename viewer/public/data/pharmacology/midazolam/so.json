@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Aqriso",
+    "Nayzilam"
+  ],
+  "description": "Benzodiazepine oo shaqaynaysa oo gaaban oo si degdeg ah u bilawday. Loo door bidayo suuxinta nidaamka, daawaynta hore ee RSI, iyo maaraynta suuxdinta IM/IN IM iyo dariiqyada sanka gudahiisa ayaa faa'iido weyn ka bixiya goobaha goobta.",
+  "indications": [
+    "Suuxinta habraaca",
+    "Daawooyinka hore ee RSI (oo leh ketamine)",
+    "Maareynta qalalka (IM/IN marka IV la waayo)",
+    "Maamulka kicinta"
+  ],
+  "dose": "Suuxinta: 0.05-0.1 mg/kg IV titrated. Habka: 1-5 mg IV riixid tartiib ah. IM: 0.2 mg/kg. IN: 0.2 mg/kg (ugu badnaan 10 mg). Xaaladda suuxdinta IM: 10 mg IM (qof weyn).",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "IN"
+  ],
+  "window": "",
+  "contraindications": [
+    "glaucoma ba'an oo xagal cidhiidhi ah",
+    "Khamri ba'an oo ku sakhraansan oo leh is-afgaranwaa wadnaha iyo xididdada dhiigga",
+    "Dareen-xumo la yaqaan"
+  ],
+  "warnings": [
+    "Niyad-jabka Neefsashada -- la soco marin-haweedka, hay wakiilka beddelka ah (flumazenil) haddii la heli karo.",
+    "Hypotension gaar ahaan isku-xidhka opioid.",
+    "Cirridka IV-ga ee degdega ah wuxuu keenaa apnea -- si tartiib ah u riix."
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Suuxinta: 0.05-0.1 mg/kg IV. IM: 0.1-0.2 mg/kg. Gudaha: 0.2-0.3 mg/kg. Suuxdin IM: 0.2 mg/kg (ugu badnaan 10 mg).",
+      "note": "Jidka dhexdiisa gaar ahaan waxtar u leh carruurta -- waxay ka fogaataa gelitaanka IV-ga."
+    },
+    "obstetric": {
+      "note": "Ka gudubta mandheerta. Suuxinta dhallaanka waa suurtagal. Isticmaal qiyaasta ugu yar ee waxtarka leh; la soco ilmaha dhasha haddii la siiyo meel u dhow dhalmada."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

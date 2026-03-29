@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Hemostatic Vulnus Pack",
+  "category": "hemorrhage-control",
+  "skill_level": "combat-lifesaver",
+  "time_estimate": "3-5 min",
+  "description": "Sarcina vulneris non-compressibilis vel junctionis cum hemostatico TELA ad haemorrhagia moderandum ubi tourniqueta applicari non potest.",
+  "equipment": [
+    "hemostatic-cocia",
+    "nitrile-glostus",
+    "trauma-forfice",
+    "pressus-band"
+  ],
+  "steps": [
+    "Don caestus. Vulnus exponere plene forfice utens trauma.",
+    "Ignis principium activum sanguinem in cavo vulneris.",
+    "Aperi TELA hemostatic et firmiter in vulnus digito fac, eum protinus ad fontem sanguinis impellens.",
+    "Perge sarcina donec vulnus cavum totaliter impleatur.",
+    "Firmam et continuam pressionem directam adhibe cum planta manus tuae pro minimum 3 minutarum.",
+    "Ne materiam sarcinam semel applicatam tollas.",
+    "Pressura fascia super vulnus refertum appone.",
+    "Nota tempus in charta TCCC vel fronte patientis (exampla, 'PKD 0145')."
+  ],
+  "warnings": [
+    "Vulnera pectoris penetrans non stipant - signaculum pro pectore utere.",
+    "Si colli vulnus inponito, pressura adhibenda est, ut simul utrumque carotides non comprimant.",
+    "Intra 5 minutas candem si fons arteriarum suspectus est."
+  ],
+  "follows": [
+    "direct-pressione"
+  ],
+  "precedes": [
+    "tourniquet-application"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Tanto minus utere specula. Leviorem pressionem applicare ad compressionem thoracicam infantium vitandam."
+    },
+    "obstetric": {
+      "note": "Vitare alta vel infestantibus pressionem sarcina prope abdomine gravido. Celeri prolatio praeponitur."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
-    EVE OS iOS Companion - Info.plist additions
+    HALT iOS Companion - Info.plist additions
     Merge these into ios/App/App/Info.plist after running `npx cap add ios`
 -->
 <plist version="1.0">
 <dict>
     <!-- App Identity -->
     <key>CFBundleDisplayName</key>
-    <string>EVE OS</string>
+    <string>HALT Triage</string>
     
     <key>CFBundleIdentifier</key>
-    <string>com.hermeticlabs.eveos.companion</string>
+    <string>com.hermeticlabs.halt.companion</string>
     
     <!-- HealthKit Usage Descriptions -->
     <key>NSHealthShareUsageDescription</key>
-    <string>EVE OS reads your health data including blood pressure, heart rate, and oxygen saturation to monitor your vitals and provide health insights. This data is processed locally and synced securely to your EVE OS dashboard.</string>
+    <string>HALT reads your health data including blood pressure, heart rate, and oxygen saturation to monitor patient vitals and provide clinical insights.</string>
     
     <key>NSHealthUpdateUsageDescription</key>
-    <string>EVE OS may save health-related information to Apple Health for your records and to enable trend analysis.</string>
+    <string>HALT may save health-related triage information to Apple Health for field records.</string>
     
     <!-- Required HealthKit Capability -->
     <key>UIRequiredDeviceCapabilities</key>
@@ -43,26 +43,28 @@
     
     <!-- Camera (optional - for future telemedicine) -->
     <key>NSCameraUsageDescription</key>
-    <string>EVE OS uses the camera for optional telemedicine and document scanning features.</string>
+    <string>HALT uses the camera for optional telemedicine, mesh configuration, and document scanning features.</string>
     
     <!-- Microphone (optional - for voice commands) -->
     <key>NSMicrophoneUsageDescription</key>
-    <string>EVE OS uses the microphone for voice commands and dictation.</string>
+    <string>HALT uses the microphone for triage voice commands and STT dictation.</string>
     
     <!-- Local Network -->
     <key>NSLocalNetworkUsageDescription</key>
-    <string>EVE OS connects to your local EVE backend server for data synchronization.</string>
+    <string>HALT connects to your local field node for mesh synchronization.</string>
     
     <key>NSBonjourServices</key>
     <array>
         <string>_http._tcp</string>
         <string>_https._tcp</string>
-        <string>_eveos._tcp</string>
+        <string>_halt._tcp</string>
     </array>
     
     <!-- App Transport Security -->
     <key>NSAppTransportSecurity</key>
     <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
         <key>NSAllowsLocalNetworking</key>
         <true/>
         <key>NSExceptionDomains</key>
@@ -86,11 +88,11 @@
     <array>
         <dict>
             <key>CFBundleURLName</key>
-            <string>com.hermeticlabs.eveos.companion</string>
+            <string>com.hermeticlabs.halt.companion</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>eveos</string>
-                <string>eve-companion</string>
+                <string>halt</string>
+                <string>halt-companion</string>
             </array>
         </dict>
     </array>

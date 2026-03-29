@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Deksametazon",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Dekadron",
+    "DexPak"
+  ],
+  "description": "Uzun etkili sentetik kortikosteroid. Beyin ödemi (yüksek irtifa beyin ödemi - HACE, TBI), şiddetli alerjik reaksiyonlar, hava yolu ödemi ve adrenal kriz için kullanılır. Anti-inflamatuar, anabolik değil.",
+  "indications": [
+    "Yüksek irtifa beyin ödemi (HACE)",
+    "Hava yolu ödemi (ekstübasyon sonrası stridor, krup)",
+    "Tümör veya apseden kaynaklanan beyin ödemi",
+    "Şiddetli alerjik reaksiyonlar (epinefrine ek olarak)",
+    "Adrenal kriz",
+    "Anti-emetik yardımcı (perioperatif)"
+  ],
+  "dose": "Beyin ödemi/HACE: Başlangıçta 8-10 mg IV/IM, ardından 6 saatte bir 4 mg. Hava yolu ödemi: Bir kez 10 mg IV. Krup: 0,6 mg/kg IM/PO (maks. 16 mg). Adrenal kriz: 4 mg IV.",
+  "route": [
+    "IV",
+    "Giriş Çıkış",
+    "anlık ileti",
+    "PO"
+  ],
+  "window": "HACE: Hemen inişle birlikte mümkün olduğu kadar erken verin.",
+  "contraindications": [
+    "Sistemik mantar enfeksiyonları (mantar önleyici kapsam olmadan)",
+    "30 gün içinde canlı virüs aşıları (göreceli)"
+  ],
+  "warnings": [
+    "HACE için iniş ve oksijenin yerini almaz; yalnızca yardımcı olarak kullanın.",
+    "Hiperglisemi - şeker hastalarında kan şekerini izleyin.",
+    "Uzun süreli kullanımda immünsüpresyon.",
+    "Acil durumlar için tek dozlar genellikle çok güvenlidir."
+  ],
+  "regional_names": {
+    "generic": "deksametazon"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Krup: 0,6 mg/kg PO/IM (maks. 16 mg). Beyin ödemi: 0,5-1 mg/kg IV (en fazla 10 mg). Hava yolu ödemi: 0,5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Erken doğumda 24-34. gebelik haftalarında fetal akciğer olgunluğunu hızlandırmak için 12 mg IM 24 saatte bir x 2 doz kullanılır. Mevcut en yüksek sağlayıcıyla görüşün."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Fihirisar Shock",
+  "category": "circulatory",
+  "description": "Mai nuna lamba mai sauri na kwanciyar hankali na hemodynamic. An ƙididdige shi azaman HR / SBP. Na al'ada shine 0.5-0.7.",
+  "instructions": "Raba bugun zuciya ta hanyar hawan jini na systolic. Fihirisar girgiza mai tashi yana nuna tabarbarewa.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Na al'ada - hemodynamically barga"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Maɗaukakiyar girgiza -- saka idanu sosai"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Matsakaicin girgiza -- isa ga IV, ruwaye"
+    },
+    {
+      "range": ">1.4",
+      "label": "Matsanancin girgiza -- farfaɗo da sauri, samfuran jini"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Indexididdigar Shock Obstetric (OSI) tana amfani da dabara iri ɗaya. SI> 0.9 a cikin marasa lafiya masu ciki yana da mahimmanci. HR na al'ada ya fi girma a cikin ciki (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Cyprofloksacyna",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Antybiotyk fluorochinolonowy o szerokim zasięgu działania na bakterie Gram-ujemne. Stosowany w przypadku poważnych infekcji ran, penetrujących urazów brzucha (pokrycie flory przewodu pokarmowego) i infekcji dróg moczowych. Dostępne PO i IV.",
+  "indications": [
+    "Penetrujący uraz brzucha (odkażanie przewodu pokarmowego)",
+    "Poważne zakażenia ran",
+    "Zakażenia Gram-ujemne",
+    "Infekcje dróg moczowych"
+  ],
+  "dose": "400 mg dożylnie co 8-12 godzin. PO: 500-750 mg co 12 godzin.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Znana alergia na fluorochinolony",
+    "Dzieci i młodzież < 18 lat (względne – ryzyko tendinopatii)",
+    "Ciąża (krewna)"
+  ],
+  "warnings": [
+    "Ryzyko zerwania ścięgna, zwłaszcza ścięgna Achillesa. Przerwać, jeśli pojawi się ból ścięgien.",
+    "Może wydłużać odstęp QT – należy zachować ostrożność w przypadku innych leków wydłużających odstęp QT.",
+    "Unikaj w czasie ciąży, jeśli dostępne są alternatywy."
+  ],
+  "regional_names": {
+    "generic": "cyprofloksacyna"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV co 8-12 godzin (maks. 400 mg/dawkę). PO: 10-20 mg/kg co 12 godzin (maks. 750 mg/dawkę).",
+      "note": "Stosować tylko wtedy, gdy korzyści przewyższają ryzyko tendinopatii. Rezerwa na poważne infekcje."
+    },
+    "obstetric": {
+      "note": "Unikaj w czasie ciąży, jeśli dostępne są alternatywy. Stosować wyłącznie w przypadku zakażeń zagrażających życiu, gdy korzyści przewyższają ryzyko."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

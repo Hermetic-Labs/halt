@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Indice de choc",
+  "category": "circulatory",
+  "description": "Indicateur rapide à chiffre unique de la stabilité hémodynamique. Calculé en HR / SBP. La normale est de 0,5 à 0,7.",
+  "instructions": "Divisez la fréquence cardiaque par la pression artérielle systolique. Un indice de choc en hausse indique une détérioration.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Normal – hémodynamiquement stable"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Choc léger – surveillez de près"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Choc modéré -- Accès IV, liquides"
+    },
+    {
+      "range": ">1.4",
+      "label": "Choc grave -- réanimation immédiate, produits sanguins"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "L'indice de choc obstétrical (OSI) utilise la même formule. Un SI > 0,9 chez les patientes enceintes est significatif. La FC normale est plus élevée pendant la grossesse (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

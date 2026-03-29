@@ -1,0 +1,47 @@
+﻿{
+    "id":  "magnesium-sulfate",
+    "name":  "Magnesium Sulfate (MgSO4)",
+    "category":  "obstetric-eclampsia",
+    "rxnorm":  "6585",
+    "brand_names":  [
+                        "Magnesium Sulfate Injection"
+                    ],
+    "description":  "CNS depressant and anticonvulsant used for prevention and treatment of eclamptic seizures (seizures in pregnancy from pre-eclampsia). Also used for severe asthma and torsades de pointes. First-line for eclampsia over benzodiazepines.",
+    "indications":  [
+                        "Eclampsia (seizure prevention and treatment in severe pre-eclampsia)",
+                        "Pre-eclampsia prophylaxis (severe features)",
+                        "Torsades de Pointes (polymorphic V-tach from hypomagnesemia)",
+                        "Severe acute asthma (adjunct)"
+                    ],
+    "dose":  "Eclampsia loading dose: 4-6g IV slow push over 20 minutes. Maintenance: 1-2g/hour IV infusion. If seizure recurs: 2-4g IV over 5 min. IM loading (if no IV): 5g IM each buttock (10g total) simultaneously.",
+    "route":  [
+                  "IV",
+                  "IO",
+                  "IM"
+              ],
+    "window":  "Begin at seizure onset or on diagnosis of severe pre-eclampsia features.",
+    "contraindications":  [
+                              "Myasthenia gravis",
+                              "Cardiac conduction defects",
+                              "Renal failure (accumulates -- reduce dose)"
+                          ],
+    "warnings":  [
+                     "Toxicity signs: loss of patellar reflex (first sign, 7-10 mEq/L), respiratory depression (\u003e 10 mEq/L), cardiac arrest (\u003e 15 mEq/L).",
+                     "Monitor patellar reflexes every 15 minutes -- loss of reflex = stop infusion.",
+                     "ANTIDOTE for toxicity: Calcium gluconate 1g IV over 3 minutes.",
+                     "Reduce dose in renal impairment -- monitor urine output."
+                 ],
+    "regional_names":  {
+                           "generic":  "magnesium sulfate"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "Torsades: 25-50 mg/kg IV over 10-20 min (max 2g). Severe asthma: 25-75 mg/kg IV (max 2g).",
+                                        "note":  "Rarely used for seizures in non-obstetric pediatric patients -- eclampsia is the primary indication."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Primary indication. Crosses placenta -- neonatal hypermagnesemia possible. Neonatal dose if respiratory depression: calcium gluconate 100 mg/kg IV. Inform NICU team of maternal magnesium use."
+                                    }
+                  },
+    "source":  "JTS CPG: Obstetric Emergencies / Eclampsia Management Guidelines / ACOG"
+}

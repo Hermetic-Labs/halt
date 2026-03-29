@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "덱사메타손",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "데카드론",
+    "덱스팩"
+  ],
+  "description": "지속성 합성 코르티코스테로이드. 뇌부종(고도 뇌부종 - HACE, TBI), 심한 알레르기 반응, 기도 부종 및 부신 위기에 사용됩니다. 동화 작용이 아닌 항염증제.",
+  "indications": [
+    "고산뇌부종(HACE)",
+    "기도 부종(발관 후 천명음, 크룹)",
+    "종양이나 농양으로 인한 뇌부종",
+    "심각한 알레르기 반응(에피네프린과 함께)",
+    "부신 위기",
+    "항구토제 보조제(수술 전후)"
+  ],
+  "dose": "뇌부종/HACE: 초기에 8-10 mg IV/IM, 이후 4 mg q6h. 기도 부종: 1회 10mg IV. 크룹: 0.6mg/kg IM/PO(최대 16mg). 부신 위기: 4mg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "메신저",
+    "포"
+  ],
+  "window": "HACE: 즉각적인 하강과 함께 가능한 한 빨리 제공하십시오.",
+  "contraindications": [
+    "전신성 진균 감염(항진균제 적용 범위 없음)",
+    "30일 이내 생바이러스 백신(상대)"
+  ],
+  "warnings": [
+    "HACE의 하강 및 산소를 대체하지 않으며 보조 수단으로만 사용하십시오.",
+    "고혈당증 - 당뇨병 환자의 혈당을 모니터링합니다.",
+    "장기간 사용시 면역억제.",
+    "응급 상황에 대한 단일 용량은 일반적으로 매우 안전합니다."
+  ],
+  "regional_names": {
+    "generic": "덱사메타손"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "크룹: 0.6mg/kg PO/IM(최대 16mg). 뇌부종: 0.5-1mg/kg IV(최대 10mg). 기도 부종: 0.5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM q24h x 2 용량은 조기 진통 시 임신 24~34주에 태아 폐 성숙을 가속화하는 데 사용됩니다. 가장 높은 수준의 제공업체와 논의하세요."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

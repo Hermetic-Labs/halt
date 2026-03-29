@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Ulawulo Lokulimala Kobushushu",
+  "category": "environmental",
+  "skill_level": "Isiseko",
+  "time_estimate": "Iyaqhubeka de i-MEDEVAC okanye isigulane sizinzile",
+  "description": "Ukulawulwa kweentlungu zokushisa, ukuphelelwa ubushushu, kunye nokubetha ubushushu. Ubushushu bubushushu bungxamisekileyo obubeka ubomi esichengeni -- ukupholisa ngokukhawuleza lunyango. Ukwahlula ukuphelelwa kobushushu (ukukhankanywa ngokuqhelekileyo) kwi-heat stroke (i-LOC etshintshiweyo) ngokukhawuleza.",
+  "equipment": [
+    "Amanzi (ngomlomo + ukupholisa)",
+    "Ulawulo Lokulimala Kobushushu",
+    "Isiseko",
+    "Iyaqhubeka de i-MEDEVAC okanye isigulane sizinzile",
+    "Ukulawulwa kweentlungu zokushisa, ukuphelelwa ubushushu, kunye nokubetha ubushushu. Ubushushu bubushushu bungxamisekileyo obubeka ubomi esichengeni -- ukupholisa ngokukhawuleza lunyango. Ukwahlula ukuphelelwa kobushushu (ukukhankanywa ngokuqhelekileyo) kwi-heat stroke (i-LOC etshintshiweyo) ngokukhawuleza."
+  ],
+  "steps": [
+    "Amanzi (ngomlomo + ukupholisa)",
+    "Iipakethe zomkhenkce okanye amalaphu abandayo amanzi",
+    "Izibonelelo ze-IV (LR okanye NS)",
+    "Ifeni okanye umthunzi",
+    "Ithemometha yeRectal (iqondo lobushushu elichanekileyo)",
+    "UVAVANYO: Ngaba umntu owenzakeleyo uphaphile kwaye uzimisele? Ulusu olushushu olomileyo vs. ulusu olushushu olubilayo? Iqondo lokushisa eliphambili ukuba ithemometha ikhona.",
+    "IINGQIPHU ZOKUSHISA: Ukuqhawuka kwemisipha, ukucinga okuqhelekileyo. Ukuphumla emthunzini, i-rehydration yomlomo kunye ne-electrolytes, ukuzolula ngobumnene. Ayinabungozi."
+  ],
+  "warnings": [
+    "UKUQHUBEKA OKUSHISAYO: Ukubila kakhulu, ubuthathaka, isiyezi, ingqondo eqhelekileyo okanye ekufutshane neqhelekileyo. Yiya kwindawo enomthunzi/epholileyo. Susa impahla engaphezulu. Ulwelo lomlomo (ukuba uyazi) okanye IV LR 1L phezu kwe-30-60 min. Jonga ukuqhubela phambili ukuya kwistrowuku sobushushu.",
+    "I-HEAT STROKE (ixesha likaxakeka): I-LOC etshintshileyo, ukubhideka, ukulwa, okanye ukungabi nazingqondweni. Ubushushu obungundoqo > 40C (104F). Ulusu olushushu (lunokuba lumanzi okanye lome). QALA: Susa ebushushwini ngoko nangoko, susa zonke iimpahla, ulusu olumanzi kunye nefeni ngokurhabaxa. Faka iipakethi ze-ice entanyeni, i-axillae, kunye ne-groin (iindawo eziphezulu ze-vascular). IV LR 1-2L. Khusela indlela yomoya ukuba akukho zingqondweni. MEDEVAC ngoko nangoko.",
+    "UNGAMniki i-aspirin okanye i-acetaminophen ngenxa yobushushu bestrowuku-- ayincedi, inokwenzakalisa.",
+    "Ukubeka iliso: okubalulekileyo q15 min, indlela yomoya, isimo sengqondo. Uxwebhu lwexesha lexesha."
+  ],
+  "follows": [
+    "Qhubeka nokupholisa ngexesha le-MEDEVAC -- ungayeki ukuthutha."
+  ],
+  "precedes": [
+    "Ubushushu bungumngcipheko obeka ubomi obungxamisekileyo -- ungaphosisi xa udinwa bubushushu. Jonga imeko yengqondo."
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Ukupholisa lolona nyango luchanekileyo. Musa ukulibazisa ukupholisa ukuseka ufikelelo lwe-IV."
+    },
+    "obstetric": {
+      "note": "Ubushushu obunamandla bungenzeka kubantu abasempilweni -- ukomelela komzimba akukhuseli."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

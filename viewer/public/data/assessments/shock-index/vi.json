@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Chỉ Số Sốc",
+  "category": "circulatory",
+  "description": "Chỉ số đơn nhanh chóng về độ ổn định huyết động. Tính theo HR/SBP. Bình thường là 0,5-0,7.",
+  "instructions": "Chia nhịp tim cho huyết áp tâm thu. Chỉ số sốc tăng cho thấy sự suy thoái.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Bình thường -- huyết động ổn định"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Sốc nhẹ -- theo dõi chặt chẽ"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Sốc vừa phải -- Truyền IV, truyền dịch"
+    },
+    {
+      "range": ">1.4",
+      "label": "Sốc nặng -- hồi sức ngay lập tức, chế phẩm máu"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Chỉ số sốc sản khoa (OSI) sử dụng công thức tương tự. SI > 0,9 ở bệnh nhân mang thai là có ý nghĩa. Nhịp tim bình thường cao hơn trong thai kỳ (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

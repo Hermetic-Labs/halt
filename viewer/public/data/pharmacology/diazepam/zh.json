@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "地西泮",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "安定",
+    "迪亚斯塔特"
+  ],
+  "description": "长效苯二氮卓类药物。用于癫痫治疗、肌肉痉挛和抗焦虑。当静脉注射不可用时，直肠凝胶（Diastat）在现场设置中非常有用。持续时间比劳拉西泮更长。",
+  "indications": [
+    "癫痫发作管理（直肠/静脉注射）",
+    "脊髓损伤或破伤风引起的肌肉痉挛",
+    "神经毒剂解毒剂辅助剂（CHEMPACK 试剂盒中）",
+    "酒精戒断"
+  ],
+  "dose": "癫痫发作：5-10 mg IV 缓慢推注。重复每 10-15 分钟一次（最多 30 毫克）。直肠：0.2-0.5 mg/kg。 IM 吸收不稳定——如果可能，避免 IM。",
+  "route": [
+    "四号",
+    "IO",
+    "公关"
+  ],
+  "window": "",
+  "contraindications": [
+    "急性窄角型青光眼",
+    "严重肝脏疾病",
+    "呼吸抑制"
+  ],
+  "warnings": [
+    "肌肉注射吸收不稳定且疼痛——更喜欢静脉注射、直肠注射，或使用咪达唑仑肌肉注射。",
+    "镇静持续时间长（重复剂量为 24-48 小时）。",
+    "神经毒剂伤亡：CHEMPACK 套件中包含地西泮，用于治疗胆碱能危象癫痫发作。"
+  ],
+  "regional_names": {
+    "generic": "地西泮"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV：0.1-0.3 mg/kg（最大 10 mg）。直肠：0.3-0.5 mg/kg。当静脉注射不可用时，使用直肠途径。",
+      "note": "直肠diastat凝胶对于现场环境中的小儿癫痫发作特别有用。"
+    },
+    "obstetric": {
+      "note": "穿过胎盘。可引起新生儿肌张力低下、呼吸抑制。仅用于对镁无反应的产妇癫痫发作。"
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

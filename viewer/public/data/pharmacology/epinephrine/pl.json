@@ -1,0 +1,46 @@
+{
+  "id": "epinephrine",
+  "name": "Epinefryna (adrenalina)",
+  "category": "cardiac-emergency",
+  "rxnorm": "3992",
+  "brand_names": [
+    "EpiPen",
+    "Adrenalina"
+  ],
+  "description": "Endogenna katecholamina o działaniu alfa i beta adrenergicznym. Leczenie pierwszego rzutu w przypadku anafilaksji i zatrzymania krążenia. W przypadku anafilaksji preferowane jest podanie domięśniowe uda zamiast dożylnego (bezpieczniejsza, równoważna skuteczność). Nie zwlekaj z dostępem dożylnym w przypadku anafilaksji.",
+  "indications": [
+    "Anafilaksja (pierwsza linia)",
+    "Zatrzymanie krążenia – bez tętna VF/VT/PEA/asystolia",
+    "Ciężki skurcz oskrzeli",
+    "Niedociśnienie oporne na płyny"
+  ],
+  "dose": "Anafilaksja: 0,3-0,5 mg IM (przednio-boczny udo) | Wstrzykiwacz automatyczny 0,3 mg i.m. Powtórz co 5-15 min PRN. Zatrzymanie krążenia: 1 mg IV/IO co 3–5 min podczas RKO. Ciężki skurcz oskrzeli: 0,3 mg i.m.",
+  "route": [
+    "IM",
+    "IV",
+    "IO"
+  ],
+  "window": "W przypadku anafilaksji: natychmiast podać IM – nie zwlekać z podaniem dożylnym.",
+  "contraindications": [
+    "Brak bezwzględnych przeciwwskazań w stanach zagrożenia życia"
+  ],
+  "warnings": [
+    "Adrenalinę dożylną w leczeniu anafilaksji należy podawać wyłącznie w przypadku zatrzymania akcji serca lub głębokiego wstrząsu – jest to niebezpieczne, jeśli zostanie podane dożylnie przytomnemu pacjentowi.",
+    "Wynaczynienie powoduje martwicę tkanek – należy zapewnić drożność dożylną.",
+    "Zwiększa zapotrzebowanie mięśnia sercowego na tlen – należy zachować ostrożność w przypadku rozpoznanej choroby wieńcowej poza aresztem."
+  ],
+  "regional_names": {
+    "generic": "epinefryna",
+    "UK": "adrenalina"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Anafilaksja: 0,01 mg/kg domięśniowo (maks. 0,5 mg). EpiPen Jr (0,15 mg) na 15-30 kg. Zatrzymanie krążenia: 0,01 mg/kg IV/IO co 3-5 min.",
+      "note": "Stosuj dawkowanie zależne od masy ciała. Zalecane odniesienie do taśmy Broselow."
+    },
+    "obstetric": {
+      "note": "Należy stosować standardowe dawkowanie w przypadku reakcji anafilaktycznej – najważniejsze jest przeżycie matki. Epinefryna jest bezpieczna w czasie ciąży w sytuacjach zagrażających życiu."
+    }
+  },
+  "source": "JTS CPG / ACLS / TCCC Guidelines"
+}

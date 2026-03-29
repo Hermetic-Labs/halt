@@ -1,0 +1,47 @@
+﻿{
+    "id":  "naloxone",
+    "name":  "Naloxone",
+    "category":  "reversal-agent",
+    "rxnorm":  "7243",
+    "brand_names":  [
+                        "Narcan",
+                        "Kloxxado"
+                    ],
+    "description":  "Competitive opioid receptor antagonist. Rapidly reverses opioid-induced respiratory depression, sedation, and analgesia. Onset IV: 2 min, IM: 5 min, IN: 8-13 min. Duration shorter than most opioids -- repeat dosing may be required.",
+    "indications":  [
+                        "Opioid overdose or respiratory depression",
+                        "Reversal of opioid sedation",
+                        "Suspected opioid casualty"
+                    ],
+    "dose":  "0.4-2 mg IV/IO/IM/IN. Repeat q2-3 min as needed. Max 10mg. Intranasal (IN): 2mg per nostril.",
+    "route":  [
+                  "IV",
+                  "IO",
+                  "IM",
+                  "IN",
+                  "SQ"
+              ],
+    "window":  "",
+    "contraindications":  [
+                              "No absolute contraindications in overdose setting"
+                          ],
+    "warnings":  [
+                     "Duration of action (30-90 min) is shorter than most opioids -- patient may re-narcotize. Monitor for at least 1 hour after last dose.",
+                     "Precipitates acute opioid withdrawal -- can cause agitation, tachycardia, pulmonary edema in opioid-dependent patients.",
+                     "Will reverse analgesia -- patient may become acutely combative from pain."
+                 ],
+    "regional_names":  {
+                           "generic":  "naloxone",
+                           "US":  "Narcan"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "0.01 mg/kg IV/IM/IN (max 0.4 mg). Repeat q2-3 min PRN.",
+                                        "note":  "Neonatal: 0.01 mg/kg for reversal of maternal opioid."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Safe in pregnancy. If given to mother near delivery, monitor neonate for withdrawal."
+                                    }
+                  },
+    "source":  "JTS CPG / Standard Emergency Pharmacology"
+}

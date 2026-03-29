@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Cefazolin",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Ancef",
+    "Kefzol"
+  ],
+  "description": "cephalosporine taranaka voalohany. Antibiotique parenteral andalana voalohany ho an'ny otrikaretina ratra lehibe sy ny prophylaxis fandidiana. Fandrakofana gram-positive tsara ao anatin'izany ny MSSA. Omeo ao anatin'ny 60 minitra aorian'ny fandidiana fandidiana ho fisorohana.",
+  "indications": [
+    "Fitsaboana ratra amin'ny fandidiana",
+    "Otrikaretina sela malefaka mafy",
+    "fisorohana fracture misokatra",
+    "Otrikaretina hoditra sy firafitry ny hoditra"
+  ],
+  "dose": "1-2g IV/IM q8h. Fandidiana prophylaxis: 2g IV ao anatin'ny 60 minitra alohan'ny fitsirihana. Avereno 2g raha fandidiana> 4 ora.",
+  "route": [
+    "IV",
+    "IM"
+  ],
+  "window": "Ho an'ny fisorohana fandidiana: omeo ao anatin'ny 60 minitra aorian'ny fitsirihana.",
+  "contraindications": [
+    "Allergy cephalosporine fantatra",
+    "Allergie na tsy fahazakana penisilinina mafy (5-10% cross-reactivity)"
+  ],
+  "warnings": [
+    "Cross-reactivity amin'ny penicillin allergy: mampiasa amim-pitandremana amin'ny penicillin-allergy marary.",
+    "Ahitsio ny fatra amin'ny fahavoazan'ny voa."
+  ],
+  "regional_names": {
+    "generic": "cefazolin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM q8h (max 2g/dose). Prophylaxis: 30 mg/kg (max 2g) alohan'ny hiterahana.",
+      "note": "Azo antoka sy tsara fianarana amin'ny pediatrics."
+    },
+    "obstetric": {
+      "note": "Azo antoka amin'ny fitondrana vohoka sy ny fampinonoana. Antibiôtika parenteral tiana ho an'ny fandidiana fandidiana."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

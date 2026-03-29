@@ -1,0 +1,47 @@
+{
+  "id": "doxycycline",
+  "name": "Doxycycline",
+  "category": "antibiotic",
+  "rxnorm": "3640",
+  "brand_names": [
+    "Vibramycin",
+    "Doryx"
+  ],
+  "description": "Ọgwụ nje tetracycline sara mbara. Oral ọnya prophylaxis ọzọ maka penicillin-ihe nfụkasị ahụ. Ọ dịkwa irè megide ihe ndị na-adịghị ahụkebe na ụfọdụ ọrịa na-ebute site na vector (ọrịa ịba na mpaghara endemic).",
+  "indications": [
+    "Prophylaxis ọnya (allergy penicillin)",
+    "Ọrịa anụ ahụ dị nro",
+    "Ata ọnya",
+    "Prophylaxis nke ịba na mpaghara ebe a na-efe efe"
+  ],
+  "dose": "100 mg PO kwa awa 12 x 7 ụbọchị.",
+  "route": [
+    "PO",
+    "IV"
+  ],
+  "window": "Malite n'ime awa 3 nke mmerụ ahụ maka prophylaxis ọnya.",
+  "contraindications": [
+    "Ime ime (na-ebute mwepu nha nha nwa ebu n'afọ na igbochi uto ọkpụkpụ)",
+    "Ụmụaka na-erubeghị afọ 8 (otu ihe kpatara ya)",
+    "Ọrịa ịba ọcha n'anya"
+  ],
+  "warnings": [
+    "AKWỤKWỌ n'ime ime -- jiri amoxicillin kama.",
+    "CONTRAINDICATED na ụmụaka n'okpuru afọ 8.",
+    "Mmetụta foto -- dụrụ onye ọrịa ọdụ ka ọ zere ikpughe anyanwụ.",
+    "Ejila nri ndị nwere calcium, antacids, ma ọ bụ ígwè - na-emebi mmịnye."
+  ],
+  "regional_names": {
+    "generic": "Doxycycline"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Contraindicated n'okpuru afọ 8. Afọ 8+: 2-4 mg / kg / ụbọchị kewara q12h (karịa 100 mg / dose).",
+      "note": "Jiri amoxicillin maka ụmụaka na-erubeghị afọ 8."
+    },
+    "obstetric": {
+      "note": "AKWỤKWỌ n'ime ime -- na-ebute mmerụ ahụ nwa ebu n'afọ. Jiri amoxicillin kama."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

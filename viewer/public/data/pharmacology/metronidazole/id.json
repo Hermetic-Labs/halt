@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazol",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagil"
+  ],
+  "description": "Antibiotik nitroimidazol dengan cakupan anaerobik dan protozoa yang sangat baik. Penting untuk trauma tembus perut/usus untuk menutupi flora usus anaerobik. Sering digunakan dalam kombinasi dengan ciprofloxacin.",
+  "indications": [
+    "Trauma tembus perut/usus",
+    "Infeksi intra-abdomen",
+    "Infeksi jaringan lunak anaerobik",
+    "C. infeksi yang sulit"
+  ],
+  "dose": "500 mg IV setiap 6-8 jam. PO: 500 mg setiap 8 jam (jika dapat ditoleransi secara oral).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Trimester pertama kehamilan (relatif)",
+    "Diketahui alergi metronidazol atau nitroimidazol"
+  ],
+  "warnings": [
+    "Reaksi seperti disulfiram dengan alkohol -- jangan mengonsumsi alkohol selama pengobatan dan 48 jam setelahnya.",
+    "Dapat menyebabkan neuropati perifer dengan penggunaan jangka panjang.",
+    "Hindari pada trimester pertama jika memungkinkan."
+  ],
+  "regional_names": {
+    "generic": "metronidazol"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7,5 mg/kg IV/PO setiap 6 jam (maks 500 mg/dosis).",
+      "note": "Aman pada anak yang lebih besar. Hindari pada neonatus."
+    },
+    "obstetric": {
+      "note": "Hindari pada trimester pertama jika memungkinkan. Gunakan pada trimester kedua/ketiga bila diperlukan secara medis -- manfaatnya biasanya lebih besar daripada risiko infeksi anaerobik yang serius."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

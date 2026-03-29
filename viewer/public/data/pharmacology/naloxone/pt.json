@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxona",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcã",
+    "Cloxxado"
+  ],
+  "description": "Antagonista competitivo do receptor opioide. Reverte rapidamente a depressão respiratória, sedação e analgesia induzidas por opioides. Início IV: 2 min, IM: 5 min, IN: 8-13 min. Duração mais curta do que a maioria dos opioides – pode ser necessária repetição da dosagem.",
+  "indications": [
+    "Overdose de opiáceos ou depressão respiratória",
+    "Reversão da sedação com opioides",
+    "Suspeita de vítima de opioides"
+  ],
+  "dose": "0,4-2 mg IV/IO/IM/IN. Repita a cada 2-3 minutos conforme necessário. Máximo de 10mg. Intranasal (IN): 2mg por narina.",
+  "route": [
+    "IV",
+    "OI",
+    "Eu estou",
+    "DENTRO",
+    "QUAD"
+  ],
+  "window": "",
+  "contraindications": [
+    "Não há contra-indicações absolutas em caso de sobredosagem"
+  ],
+  "warnings": [
+    "A duração da ação (30-90 min) é mais curta que a da maioria dos opioides – o paciente pode voltar a narcotizar. Monitore por pelo menos 1 hora após a última dose.",
+    "Precipita a abstinência aguda de opioides – pode causar agitação, taquicardia e edema pulmonar em pacientes dependentes de opioides.",
+    "Reverterá a analgesia – o paciente pode tornar-se intensamente combativo devido à dor."
+  ],
+  "regional_names": {
+    "generic": "naloxona",
+    "US": "Narcã"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,01 mg/kg IV/IM/IN (máx. 0,4 mg). Repita q2-3 min PRN.",
+      "note": "Neonatal: 0,01 mg/kg para reversão do opioide materno."
+    },
+    "obstetric": {
+      "note": "Seguro na gravidez. Se administrado à mãe perto do parto, monitore o recém-nascido quanto à abstinência."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

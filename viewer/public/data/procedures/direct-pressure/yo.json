@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Titẹ taara fun Iṣakoso ẹjẹ",
+  "category": "hemorrhage-control",
+  "skill_level": "eyikeyi-oludahun",
+  "time_estimate": "3-5 iṣẹju",
+  "description": "Išakoso iṣọn-ẹjẹ akọkọ-akọkọ fun opin wiwọle ati awọn ọgbẹ ara.",
+  "equipment": [
+    "ibọwọ",
+    "ibalokanje-Wíwọ",
+    "cravat-bandeji"
+  ],
+  "steps": [
+    "Don ibọwọ ti o ba wa.",
+    "Fi ọgbẹ naa han nipa gige aṣọ kuro.",
+    "Wọ aṣọ ọgbẹ tabi asọ ti a ṣe pọ taara lori ọgbẹ naa.",
+    "Tẹ ṣinṣin pẹlu igigirisẹ ọwọ rẹ. Lo iwuwo ara rẹ - kii ṣe agbara apa nikan.",
+    "Mu titẹ titẹsiwaju, titẹ ailopin fun o kere ju awọn iṣẹju 3.",
+    "MAA ṢE gbe imura lati ṣayẹwo - eyi nfa idamu dida didi.",
+    "Ti ẹjẹ ba wọ, fi aṣọ miiran kun si oke. Maṣe yọ akọkọ kuro.",
+    "Ṣe aabo pẹlu bandage titẹ ti o ba wa ati gbe lọ si iṣakojọpọ ọgbẹ tabi irin-ajo ti ẹjẹ ba tẹsiwaju."
+  ],
+  "warnings": [
+    "Titẹ taara nikan ko pe fun awọn ẹjẹ iṣọn-ẹjẹ -- ga soke si iṣakojọpọ ọgbẹ tabi irin-ajo.",
+    "Awọn ọgbẹ ipade (ọgbẹ, axilla, ọrun) nilo iṣakojọpọ ọgbẹ, kii ṣe titẹ ita nikan."
+  ],
+  "follows": [],
+  "precedes": [
+    "iṣakojọpọ ọgbẹ",
+    "tourniquet-elo"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Iwọn iwọn titẹ nikan. Yago fun funmorawon thorax ninu awọn ọmọ ikoko."
+    },
+    "obstetric": {
+      "note": "Yago fun funmorawon lori gravid ile-. Lo iṣakojọpọ ita ti ọgbẹ isunmọ sunmọ ibadi."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

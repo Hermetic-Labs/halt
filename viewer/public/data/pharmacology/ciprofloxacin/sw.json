@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacin",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Antibiotiki ya fluoroquinolone yenye chanjo pana ya gram-negative. Inatumika kwa maambukizo makubwa ya jeraha, kiwewe cha kupenya cha tumbo (ufunikaji wa mimea ya GI), na maambukizo ya njia ya mkojo. Inapatikana PO na IV.",
+  "indications": [
+    "Jeraha la kupenya la tumbo (kuondoa uchafuzi wa GI)",
+    "Maambukizi makubwa ya jeraha",
+    "Maambukizi ya gramu-hasi",
+    "Maambukizi ya njia ya mkojo"
+  ],
+  "dose": "400 mg IV q8-12h. PO: 500-750 mg q12h.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Allergy inayojulikana ya fluoroquinolone",
+    "Watoto na vijana chini ya umri wa miaka 18 (jamaa -- hatari ya tendinopathy)",
+    "Ujauzito (jamaa)"
+  ],
+  "warnings": [
+    "Hatari ya kupasuka kwa tendon, hasa tendon Achilles. Acha ikiwa maumivu ya tendon yanakua.",
+    "Inaweza kuongeza muda wa QT -- tahadhari na dawa zingine za kuongeza muda wa QT.",
+    "Epuka wakati wa ujauzito ikiwa njia mbadala zinapatikana."
+  ],
+  "regional_names": {
+    "generic": "ciprofloxacin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV q8-12h (kiwango cha juu 400 mg/dozi). PO: 10-20 mg/kg q12h (kiwango cha juu cha 750 mg/dozi).",
+      "note": "Tumia tu wakati manufaa yanazidi hatari ya tendinopathy. Hifadhi kwa maambukizi makubwa."
+    },
+    "obstetric": {
+      "note": "Epuka wakati wa ujauzito ikiwa njia mbadala zinapatikana. Tumia kwa maambukizo yanayotishia maisha pekee ambapo manufaa yanazidi hatari."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

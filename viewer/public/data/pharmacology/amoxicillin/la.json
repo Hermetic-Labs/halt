@@ -1,0 +1,42 @@
+{
+  "id": "amoxicillin",
+  "name": "Amoxicillin",
+  "category": "antibiotic",
+  "rxnorm": "723",
+  "brand_names": [
+    "Amoxil",
+    "Trimox"
+  ],
+  "description": "Spectrum latum aminopenicillinum antibioticum. Oralis prophylactica antibiotica pro vulnere infectionis. Pars TCCC pilularum certaminis pro vulnere prophylaxis in iniuriis non gravibus.",
+  "indications": [
+    "Infectio vulneris prophylaxis (vulnera leni-modica, pilula oris fasciculata)",
+    "Mollis textus contagio",
+    "Tractus respiratorii infectiones"
+  ],
+  "dose": "D mg PO singulis horis 8 x diebus 7 (vulnus prophylaxis). 875 mg PO per 12 horas alternat.",
+  "route": [
+    "PO"
+  ],
+  "window": "Incipe intra 3 horas laesae vulneris prophylaxis.",
+  "contraindications": [
+    "Nota penicillin allergia (pro usu doxycycline)",
+    "Mononucleosis (periculum temeritatis)"
+  ],
+  "warnings": [
+    "Si penicillinum allergicum: substitutum doxycyclinum 100mg PO IUBET.",
+    "Iter orale solum -- uteris IV antibioticis (cefazolin/ciprofloxacin) ad vulnera gravia vel si oris non toleratur."
+  ],
+  "regional_names": {
+    "generic": "amoxicillin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-45 mg/kg/ dies dividitur q8h (max 500 mg/dosis). Utere pondere substructio Broselow referat.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Tutus in gravida. Praefertur doxycyclino (quae in graviditate contraponitur)."
+    }
+  },
+  "source": "JTS CPG: Wound Care / TCCC Combat Pill Pack"
+}

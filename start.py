@@ -5,7 +5,7 @@ Orchestrates:
   1. Model auto-download  — First-run downloads ~4 GB of AI models from
                             public Cloudflare R2 (zero credentials) with
                             progress bar. One-time operation.
-  2. Backend API server    — FastAPI via uvicorn on port 7777.
+  2. Backend API server    — FastAPI via uvicorn on port 7778.
   3. Frontend dev server   — Vite on port 5173 (dev mode), or serves the
                             pre-built dist/ via Python http.server (prod).
   4. Browser auto-open     — 2-second delayed launch after dev server ready.
@@ -17,7 +17,7 @@ detects the bundled Python in runtime/python/bin/python3 and re-execs to
 ensure pre-installed dependencies are available.
 
 Usage:
-    python start.py [--no-browser] [--prod] [--port PORT] [--api-port PORT]
+    python start.py [--no-browser] [--prod] [--api-port PORT]
 """
 
 import argparse
@@ -216,6 +216,11 @@ def ensure_models(root_dir):
                 sys.stdout.write(f"\r  [GET]     {pct:.0f}% ({mb:.0f} / {total_mb:.0f} MB)")
                 sys.stdout.flush()
 
+        # Add explicit User-Agent to bypass Cloudflare R2's 403 Forbidden block
+        opener = urllib.request.build_opener()
+        opener.addheaders = [('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) HALT/1.0.3')]
+        urllib.request.install_opener(opener)
+
         urllib.request.urlretrieve(MODELS_URL, zip_path, reporthook=report)
         print()  # newline after progress
         log("OK", "Download complete", Colors.GREEN)
@@ -249,8 +254,12 @@ def ensure_models(root_dir):
 # ── Backend Server ───────────────────────────────────────────────────────────
 
 
-def start_backend(root_dir, port=7777, manager=None):
-    """Start the FastAPI backend server."""
+def start_backend(root_dir, port=7778, manager=None, use_reload=False):
+    """Start the FastAPI backend server.
+
+    Production mode (default): no --reload, matches Electron packaging.
+    Dev mode (use_reload=True): enables hot-reload for backend development.
+    """
     backend_dir = os.path.join(root_dir, "api")
 
     # Check if backend exists
@@ -264,26 +273,25 @@ def start_backend(root_dir, port=7777, manager=None):
     env = os.environ.copy()
     env["PORT"] = str(port)
 
+    # Set HALT env vars if not already set (matches Electron's startBackend)
+    if "HALT_MODELS_DIR" not in env:
+        env["HALT_MODELS_DIR"] = os.path.join(root_dir, "models")
+    if "HALT_DATA_DIR" not in env:
+        env["HALT_DATA_DIR"] = os.path.join(root_dir, "patients")
+
+    cmd = [sys.executable, "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", str(port)]
+    if use_reload:
+        cmd.append("--reload")
+
     try:
+        kwargs = dict(
+            cwd=backend_dir,
+            env=env,
+        )
         if IS_WINDOWS:
-            proc = subprocess.Popen(
-                [sys.executable, "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", str(port), "--reload"],
-                cwd=backend_dir,
-                env=env,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                text=True,
-                creationflags=subprocess.CREATE_NEW_PROCESS_GROUP if IS_WINDOWS else 0,
-            )
-        else:
-            proc = subprocess.Popen(
-                [sys.executable, "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", str(port), "--reload"],
-                cwd=backend_dir,
-                env=env,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                text=True,
-            )
+            kwargs["creationflags"] = subprocess.CREATE_NEW_PROCESS_GROUP
+
+        proc = subprocess.Popen(cmd, **kwargs)
 
         if manager:
             manager.add("API Server", proc)
@@ -324,115 +332,66 @@ def is_port_open(host, port):
 # ── Frontend Server ───────────────────────────────────────────────────────────
 
 
-def start_frontend(root_dir, port=5173, manager=None, open_browser=True):
-    """Start the Vite dev server or serve production build."""
+def start_frontend(root_dir, api_port=7778, open_browser=True):
+    """Handle frontend: in production, the API serves the PWA directly.
+
+    Production (viewer/dist/ exists): Just open browser to the API port.
+    Dev (HALT_DEV=1): Start Vite dev server on port 5173.
+    """
     viewer_dir = os.path.join(root_dir, "viewer")
-
     dist_dir = os.path.join(viewer_dir, "dist")
-    use_prod = os.path.isdir(dist_dir) and not os.environ.get("EVE_DEV", "")
+    use_dev = os.environ.get("HALT_DEV", "")
 
-    if use_prod:
-        return start_frontend_prod(viewer_dir, port, manager)
-    else:
-        return start_frontend_dev(viewer_dir, port, manager, open_browser)
+    if os.path.isdir(dist_dir) and not use_dev:
+        # Production mode — API server handles everything on one port
+        log("INFO", f"Frontend served by API on port {api_port} (production mode)")
+        if open_browser:
+            def delayed_open():
+                time.sleep(2)
+                webbrowser.open(f"http://localhost:{api_port}")
+            threading.Thread(target=delayed_open, daemon=True).start()
+        return True
 
-
-def start_frontend_dev(viewer_dir, port, manager=None, open_browser=True):
-    """Start Vite development server."""
-    log("INFO", f"Starting Vite dev server on port {port}...")
-
-    env = os.environ.copy()
-    env["VITE_PORT"] = str(port)
-
-    try:
-        # Find npm/node
+    elif use_dev:
+        # Dev mode — Vite dev server for frontend hot-reload
+        log("INFO", "Starting Vite dev server (HALT_DEV=1)...")
         npm_cmd = "npm.cmd" if IS_WINDOWS else "npm"
-
-        proc = subprocess.Popen(
-            [npm_cmd, "run", "dev", "--", "--host", "0.0.0.0", "--port", str(port)],
-            cwd=viewer_dir,
-            env=env,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            text=True,
-        )
-
-        if manager:
-            manager.add("Vite Dev", proc)
-
-        # Wait for server to be ready
-        for i in range(60):  # 60 second timeout
-            time.sleep(1)
-            if proc.poll() is not None:
-                log("ERROR", "Vite dev server exited prematurely", Colors.RED)
-                return None
-            if is_port_open("127.0.0.1", port):
-                url = f"http://localhost:{port}"
-                log("OK", f"Dev server ready at {url}", Colors.GREEN)
-                if open_browser:
-
-                    def delayed_open():
-                        time.sleep(2)
-                        webbrowser.open(url)
-
-                    threading.Thread(target=delayed_open, daemon=True).start()
-                return proc
-        else:
+        port = 5173
+        env = os.environ.copy()
+        try:
+            proc = subprocess.Popen(
+                [npm_cmd, "run", "dev", "--", "--host", "0.0.0.0", "--port", str(port)],
+                cwd=viewer_dir,
+                env=env,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+            )
+            for i in range(60):
+                time.sleep(1)
+                if proc.poll() is not None:
+                    log("ERROR", "Vite dev server exited prematurely", Colors.RED)
+                    return None
+                if is_port_open("127.0.0.1", port):
+                    url = f"http://localhost:{port}"
+                    log("OK", f"Dev server ready at {url}", Colors.GREEN)
+                    if open_browser:
+                        def delayed_open():
+                            time.sleep(2)
+                            webbrowser.open(url)
+                        threading.Thread(target=delayed_open, daemon=True).start()
+                    return proc
             log("WARN", "Vite dev server taking long to start...", Colors.YELLOW)
             return proc
+        except FileNotFoundError:
+            log("ERROR", "npm not found. Is Node.js installed?", Colors.RED)
+            return None
+    else:
+        log("WARN", "No viewer/dist/ found and HALT_DEV not set. Frontend unavailable.", Colors.YELLOW)
+        log("INFO", "Run 'cd viewer && npm run build' to build the frontend, or set HALT_DEV=1 for dev mode.", Colors.BLUE)
+        return True
 
-    except FileNotFoundError:
-        log("ERROR", "npm not found. Is Node.js installed?", Colors.RED)
-        return None
-    except Exception as e:
-        log("ERROR", f"Failed to start Vite dev server: {e}", Colors.RED)
-        return None
 
-
-def start_frontend_prod(viewer_dir, port, manager=None):
-    """Serve production build using Python http.server."""
-    import http.server
-    import socketserver
-
-    log("INFO", f"Serving production build on port {port}...")
-
-    dist_dir = os.path.join(viewer_dir, "dist")
-
-    class SPAHandler(http.server.SimpleHTTPRequestHandler):
-        def do_GET(self):
-            # Serve index.html for SPA routes
-            index_path = os.path.join(dist_dir, "index.html")
-            if os.path.exists(index_path):
-                self.path = "/index.html"
-            super().do_GET()
-
-        def log_message(self, format, *args):
-            pass  # Suppress logging
-
-    Handler = lambda: SPAHandler
-    Handler.directory = dist_dir
-
-    try:
-        with socketserver.TCPServer(("0.0.0.0", port), Handler) as httpd:
-            url = f"http://localhost:{port}"
-            log("OK", f"Production server ready at {url}", Colors.GREEN)
-
-            # Run in a thread
-            def serve():
-                httpd.serve_forever()
-
-            thread = threading.Thread(target=serve, daemon=True)
-            thread.start()
-
-            if manager:
-                # For production, we can't easily terminate the thread, so we just flag it
-                manager.add("Static Server", type("DummyProc", (), {"poll": lambda: None})())
-
-            return httpd
-
-    except Exception as e:
-        log("ERROR", f"Failed to start production server: {e}", Colors.RED)
-        return None
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
@@ -441,25 +400,23 @@ def start_frontend_prod(viewer_dir, port, manager=None):
 def main():
     parser = argparse.ArgumentParser(description="HALT Launcher")
     parser.add_argument("--no-browser", action="store_true", help="Don't open browser automatically")
-    parser.add_argument("--prod", action="store_true", help="Use production build")
-    parser.add_argument("--port", type=int, default=7777, help="Frontend port (default: 7777)")
+    parser.add_argument("--prod", action="store_true", help="Use production build (no --reload)")
     parser.add_argument("--api-port", type=int, default=7778, help="API port (default: 7778)")
     args = parser.parse_args()
 
     # Set environment
-    if args.prod:
-        os.environ["EVE_DEV"] = ""
+    os.environ["PORT"] = str(args.api_port)
+
+    # Determine if we should use hot-reload (dev mode)
+    use_reload = not args.prod and os.environ.get("HALT_DEV", "") == "1"
 
     root = find_project_root()
     log("INFO", f"Project root: {root}")
     log("INFO", f"Platform: {PLATFORM}")
+    log("INFO", f"Mode: {'development (--reload)' if use_reload else 'production'}")
 
     if not os.path.exists(os.path.join(root, "api", "main.py")):
         log("ERROR", "api/main.py not found. Are you in the right directory?", Colors.RED)
-        sys.exit(1)
-
-    if not os.path.exists(os.path.join(root, "viewer", "package.json")):
-        log("ERROR", "viewer/package.json not found. Are you in the right directory?", Colors.RED)
         sys.exit(1)
 
     # Verify core file integrity (non-blocking — warns but never prevents startup)
@@ -481,27 +438,22 @@ def main():
     if not IS_WINDOWS:
         signal.signal(signal.SIGTERM, signal_handler)
 
-    # Start backend
-    api_proc = start_backend(root, args.api_port, manager)
+    # Start backend (single process — serves API + static PWA)
+    api_proc = start_backend(root, args.api_port, manager, use_reload=use_reload)
     if not api_proc:
         log("ERROR", "Failed to start API server", Colors.RED)
         sys.exit(1)
 
-    # Start frontend
-    frontend_proc = start_frontend(root, args.port, manager, open_browser=not args.no_browser)
-    if not frontend_proc:
-        log("ERROR", "Failed to start frontend", Colors.RED)
-        manager.terminate_all()
-        sys.exit(1)
+    # Handle frontend (open browser or start Vite dev server)
+    start_frontend(root, api_port=args.api_port, open_browser=not args.no_browser)
 
-    # Wait for shutdown
+    # Running
     print()
     log("START", "HALT is running!", Colors.GREEN + Colors.BOLD)
     print(
         f"""
-  API Server:  http://localhost:{args.api_port}
-  Web UI:      http://localhost:{args.port}
-  Lookup:      http://localhost:{args.port}/lookup
+  App & API:   http://localhost:{args.api_port}
+  Lookup:      http://localhost:{args.api_port}/lookup
 
   Press Ctrl+C to stop.
 """

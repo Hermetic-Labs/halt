@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirin (Acetylsalicylic Acid)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Bayer Aspirin",
+    "Ecotrin"
+  ],
+  "description": "Oogun egboogi-iredodo ti kii-sitẹriọdu (NSAID) pẹlu awọn ohun-ini antiplatelet. Itọju laini akọkọ fun a fura si iṣọn-ẹjẹ iṣọn-alọ ọkan nla (ACS). Ni aibikita ṣe idilọwọ iṣakojọpọ platelet - ipa yoo duro fun igbesi aye platelet (ọjọ 7-10).",
+  "indications": [
+    "Ti a fura si infarction myocardial nla (MI) - jẹun lẹsẹkẹsẹ",
+    "Angina aiduroṣinṣin / iṣọn-ẹjẹ iṣọn-alọ ọkan nla",
+    "Ọgbẹ (ischemic - lẹhin ti a yọ ẹjẹ kuro)",
+    "Iba ati irora ìwọnba (analgesic)"
+  ],
+  "dose": "ACS: 325 mg PO - CHEW (maṣe gbe odidi mì) lẹsẹkẹsẹ. Analgesic / antipyretic: 325-650 mg PO q4-6h PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Fun ni kutukutu bi o ti ṣee - jẹun lẹsẹkẹsẹ lori ifura.",
+  "contraindications": [
+    "Ẹjẹ GI ti nṣiṣe lọwọ",
+    "Ẹjẹ ikọlu",
+    "Aleji aspirin ti a mọ tabi aibalẹ NSAID",
+    "Ẹjẹ ti ko ni idari ti o lagbara - aspirin nmu ẹjẹ ẹjẹ buru si"
+  ],
+  "warnings": [
+    "Ma ṣe fun ni awọn alaisan ti o ni ẹjẹ -- aspirin ni aibikita ṣe aibikita iṣẹ platelet ati ki o buru si ẹjẹ.",
+    "MAA ṢE fun awọn ọmọde ọdun 12 pẹlu aisan ọlọjẹ - ewu ti iṣọn-ẹjẹ Reye.",
+    "Irritation GI - mu pẹlu ounjẹ ti kii ṣe pajawiri."
+  ],
+  "regional_names": {
+    "generic": "aspirin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesic / antipyretic: 10-15 mg/kg PO q4-6h (max 650 mg / dose). AKIYESI: Contraindicated ni gbogun ti aisan (Reye dídùn).",
+      "note": "Lo acetaminophen (paracetamol) fun iba ni awọn ọmọde ti o ni arun ọlọjẹ dipo."
+    },
+    "obstetric": {
+      "note": "Yẹra fun oyun paapaa ni oṣu mẹta mẹta (titiipa ti ductus arteriosus ti tọjọ). Iwọn kekere (81mg) ni a lo fun idena iṣaaju-eclampsia labẹ itọnisọna dokita nikan."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

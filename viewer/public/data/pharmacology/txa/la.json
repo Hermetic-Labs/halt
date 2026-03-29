@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Tranexamic Acid (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Cyklokapron",
+    "Lysteda"
+  ],
+  "description": "Agens antifibrinolyticum vetat naufragii sanguinis clots. Mortalitatem significanter minuit ab incursu hemorrhagicus cum primo datus est. Commendatur a CoTCCC omnes casus cum haemorrhagia significant vel in periculo sanguinis significantis.",
+  "indications": [
+    "Insignes externae vel suspectae internae fluxus",
+    "Hemorrhagic offensus",
+    "Summus periculum sanguinis (mechanismus iniuriae)"
+  ],
+  "dose": "1g IV/IO supra 10 minuta, sequitur 1g IV/IO super 8 horas. Si IV/IO unavailable: 650mg PO x2 (1.3g total) -- TCCC PO optio.",
+  "route": [
+    "IV",
+    "IO",
+    "PO"
+  ],
+  "window": "In III horis iniuriae administranda est. Ultra 3 horas TXA mortalitatem augere potest - non des.",
+  "contraindications": [
+    "Historia morbi thromboembolici (DVT, PE, plaga)",
+    "Coagulation intravascularis disseminatae (DIC)",
+    "> 3 horis post-injuria"
+  ],
+  "warnings": [
+    "Log tempus administrationis statim -- fenestra est 3 horae ex tempore iniuriae, non tempus adventus.",
+    "Noli confundere IV dosi (1g) cum dosi orali."
+  ],
+  "regional_names": {
+    "generic": "tranexamic acid",
+    "US": "Cyklokapron",
+    "UK": "Cyklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg IV (max 1g). Testimonium emergens -- Utere iudicio clinico.",
+      "note": "Eadem 3-hora fenestra applicatur."
+    },
+    "obstetric": {
+      "note": "Indicatur propter sanguinis postpartum. Tutus in gravida. Idem qni dosing applicat."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

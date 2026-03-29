@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastat"
+  ],
+  "description": "Diu benzodiazepine agens. Usus ad administrationem captionis, spasmus musculi, et anxiolysis. Recta gel (Diastat) utilis est in occasus campi cum IV unavailable. Diuturnior quam lorazepam.",
+  "indications": [
+    "Captio procuratio (rect/IV)",
+    "Laesio spinalis vel tetanus musculi distentio a",
+    "Nervus agens antidotum adjunctum (in chempack kit)",
+    "Vocatus recessus"
+  ],
+  "dose": "Captio: 5-10 mg IV tardus dis. Repetere q10-15 min (max 30 mg). Recto: 0.2-0.5 mg/kg. IM effusio erratica -- vitare IM si fieri potest.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "Acutus angulus angustus glaucoma",
+    "Gravis hepatis morbus",
+    "Depressione respiratorii"
+  ],
+  "warnings": [
+    "IM effusio erratica et dolorosa est.",
+    "Diuturnitas sedationis (24-48h pro dosibus repetitis).",
+    "Nervus casus agens: diazepam inclusa in CHEMPACK kite captionis ab discrimine cholinergico."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0.1-0.3 mg/kg (max 10 mg). Recto: 0.3-0.5 mg/kg. Recto itinere cum IV perpendat.",
+      "note": "Rectum diastat gel praecipue utile est ad captiones pediatricas in campi occasus."
+    },
+    "obstetric": {
+      "note": "Cruces placentae. Potest causare hypotoniam neonatalem, depressionem respiratorii. Maternis tantum captionibus magnesio male gratus utere."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

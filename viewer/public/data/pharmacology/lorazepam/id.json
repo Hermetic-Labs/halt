@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Ativan"
+  ],
+  "description": "Benzodiazepin kerja menengah. Pengobatan IV/IM lini pertama untuk status epileptikus dan kejang akut. Juga digunakan untuk sedasi prosedural dan anxiolysis.",
+  "indications": [
+    "Status epileptikus (lini pertama IV)",
+    "Penatalaksanaan kejang akut",
+    "Sedasi prosedural",
+    "Kecemasan atau kegelisahan yang parah"
+  ],
+  "dose": "Kejang: 4 mg IV/IO, tekan perlahan selama 2 menit. Ulangi 4 mg dalam 5-10 menit jika kejang berlanjut. IM: 4 mg jika IV tidak tersedia.",
+  "route": [
+    "IV",
+    "aku",
+    "SAYA"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaukoma sudut sempit akut",
+    "Depresi pernafasan yang parah",
+    "Hipersensitivitas propilen glikol"
+  ],
+  "warnings": [
+    "Menyebabkan depresi pernapasan - siapkan BVM dan peralatan saluran napas.",
+    "Sedasi dapat berlangsung 6-8 jam - pantau jalan napas.",
+    "Agitasi paradoks mungkin terjadi, terutama pada orang lanjut usia dan anak-anak."
+  ],
+  "regional_names": {
+    "generic": "lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,05-0,1 mg/kg IV/IM (maks 4 mg/dosis). Ulangi sekali dalam 5-10 menit jika diperlukan.",
+      "note": "Lebih disukai daripada diazepam untuk manajemen kejang IV pada anak-anak."
+    },
+    "obstetric": {
+      "note": "Melintasi plasenta -- mungkin terjadi depresi pernafasan pada neonatus. Digunakan pada status epileptikus ibu ketika manfaatnya lebih besar daripada risikonya."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

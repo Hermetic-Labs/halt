@@ -163,12 +163,12 @@ async function startBackend() {
 
     const envVars = {
         ...process.env,
-        EVE_MODELS_DIR: modelsDir,
-        EVE_DATA_DIR: patientsDir,
+        HALT_MODELS_DIR: modelsDir,
+        HALT_DATA_DIR: patientsDir,
         PYTHONPATH: apiDir
     };
-    log(`ENV EVE_MODELS_DIR: ${envVars.EVE_MODELS_DIR}`);
-    log(`ENV EVE_DATA_DIR: ${envVars.EVE_DATA_DIR}`);
+    log(`ENV HALT_MODELS_DIR: ${envVars.HALT_MODELS_DIR}`);
+    log(`ENV HALT_DATA_DIR: ${envVars.HALT_DATA_DIR}`);
     log(`ENV PYTHONPATH: ${envVars.PYTHONPATH}`);
 
     return new Promise((resolve, reject) => {
@@ -232,7 +232,9 @@ function waitForBackend() {
 
         const check = () => {
             attempts++;
-            updateSplashStatus(`Connecting to backend (attempt ${attempts})...`);
+            if (attempts === 1) updateSplashStatus('Connecting...');
+            else if (attempts === 5) updateSplashStatus('Loading AI models...');
+            else if (attempts === 15) updateSplashStatus('Almost ready...');
 
             const req = http.get(`${BACKEND_URL}/health`, (res) => {
                 if (res.statusCode === 200) {
@@ -327,36 +329,48 @@ function getSplashHTML() {
 
     return `<!DOCTYPE html>
 <html><head><style>
+    * { box-sizing: border-box; }
     body {
         margin: 0; padding: 0;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        background: linear-gradient(135deg, #0f172a 0%, #1a2332 50%, #0f2027 100%);
+        background: #0f172a;
         color: white;
         display: flex; align-items: center; justify-content: center;
         height: 100vh;
         border-radius: 12px;
+        overflow: hidden;
         -webkit-app-region: drag;
     }
-    .container { text-align: center; }
+    .container { text-align: center; padding: 32px; }
     .logo-img {
-        width: 180px; height: auto;
-        margin-bottom: 16px;
-        filter: brightness(1.2);
+        width: 160px; height: auto;
+        margin-bottom: 28px;
     }
-    .spinner {
-        width: 32px; height: 32px;
-        border: 3px solid rgba(255,255,255,0.1);
-        border-top-color: #ef4444;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin: 0 auto 16px;
+    .bar-track {
+        width: 220px;
+        height: 4px;
+        background: rgba(255,255,255,0.08);
+        border-radius: 2px;
+        margin: 0 auto 14px;
+        overflow: hidden;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    #status { color: #94a3b8; font-size: 13px; }
+    .bar-fill {
+        height: 100%;
+        width: 40%;
+        background: #ef4444;
+        border-radius: 2px;
+        animation: slide 1.4s ease-in-out infinite;
+    }
+    @keyframes slide {
+        0%   { transform: translateX(-100%); width: 40%; }
+        50%  { width: 60%; }
+        100% { transform: translateX(650%); width: 40%; }
+    }
+    #status { color: #64748b; font-size: 12px; letter-spacing: 0.5px; }
 </style></head><body>
     <div class="container">
-        ${logoDataUrl ? `<img class="logo-img" src="${logoDataUrl}" alt="HALT" />` : '<div style="font-size:52px;font-weight:800;letter-spacing:8px;">HALT</div>'}
-        <div class="spinner"></div>
+        ${logoDataUrl ? `<img class="logo-img" src="${logoDataUrl}" alt="HALT" />` : '<div style="font-size:48px;font-weight:800;letter-spacing:8px;margin-bottom:28px;">HALT</div>'}
+        <div class="bar-track"><div class="bar-fill"></div></div>
         <div id="status">Initializing...</div>
     </div>
 </body></html>`;

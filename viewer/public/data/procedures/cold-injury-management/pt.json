@@ -1,0 +1,46 @@
+{
+  "id": "cold-injury-management",
+  "name": "Gestão de lesões causadas pelo frio",
+  "category": "environmental",
+  "skill_level": "Básico",
+  "time_estimate": "Em andamento",
+  "description": "Tratamento de congelamento, pé de imersão (pé de trincheira) e hipotermia. Lesões causadas pelo frio são evitáveis ​​– reconheça os primeiros sinais antes que o dano tecidual seja irreversível. Manuseie o tecido congelado com extrema delicadeza.",
+  "equipment": [
+    "Vestuário/saco de dormir isolante e seco",
+    "Água morna (38-42C/100-108F) para reaquecimento do banho",
+    "Curativos estéreis",
+    "Ibuprofeno 400 mg VO (se disponível)",
+    "IV LR (quente, se possível)"
+  ],
+  "steps": [
+    "HIPOTERMIA PRIMEIRO: Avalie a temperatura central com termômetro de leitura baixa. Leve (32-35°C): tremores, confusão. Moderado (28-32C): sem tremores, confusão grave. Grave (<28C): inconsciente, sem pulso detectável.",
+    "HIPOTERMIA - Leve/Moderada: Remover roupas molhadas, isolar do chão, ambiente quente, aquecer líquidos doces se estiver consciente, compressas térmicas nas axilas/virilhas (não diretamente na pele). Manuseie com cuidado - o choque pode desencadear VFib.",
+    "HIPOTERMIA - Grave: Manuseie com MUITO cuidado. Verifique o pulso 60 segundos completos antes da RCP. Inicie a RCP se não houver pulso. Fluidos intravenosos quentes, se disponíveis. Prioridade MEDEVAC – 'não morto até estar quente e morto'.",
+    "FROSTBITE: Superficial (pele branca/cinza, macia por baixo) vs. profunda (dura, sensação de madeira, bolhas). NÃO esfregue a área. NÃO reaqueça se houver risco de recongelamento - o recongelamento causa danos piores do que o reaquecimento retardado.",
+    "Reaquecimento FROSTBITE: Mergulhe em água 38-42C (não mais quente) por 15-30 min até que o tecido fique macio e vermelho/roxo. Muito doloroso – ofereça analgesia (cetamina ou morfina).",
+    "Após reaquecimento: almofada entre os dedos das mãos/pés com gaze estéril. NÃO estoure bolhas. Proteja da pressão.",
+    "PÉ DE IMERSÃO (Pé de Trincheira): exposição prolongada à umidade/frio, pele vermelha, depois pálida e depois com bolhas. Pés secos, aqueça lentamente, eleve. NÃO aplique calor direto.",
+    "Documente o tempo da lesão e o tempo de reaquecimento."
+  ],
+  "warnings": [
+    "NÃO reaqueça o congelamento se houver alguma chance de recongelamento – reaquecimento incompleto + recongelamento = perda catastrófica de tecido.",
+    "A hipotermia grave pode simular a morte. Verifique o pulso por 60 segundos. 'Não estou morto até estar quente e morto.'",
+    "O álcool aumenta a perda de calor apesar da percepção de calor – não dê álcool.",
+    "O risco de VFib é alto na hipotermia moderada a grave – minimize a manipulação e o choque do paciente."
+  ],
+  "follows": [
+    "prevenção da hipotermia"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "As crianças esfriam mais rápido devido à maior proporção entre área de superfície e massa. Limiares de hipotermia iguais. Fluidos intravenosos quentes são críticos. Fluido com base no peso: 20 mL/kg quente LR."
+    },
+    "obstetric": {
+      "note": "A hipotermia materna causa bradicardia fetal e acidose. O reaquecimento materno agressivo é um tratamento fetal. Monitoramento fetal, se disponível."
+    }
+  },
+  "source": "JTS CPG: Cold Weather Injuries / PHTLS / Wilderness Medicine"
+}

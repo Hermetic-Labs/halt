@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetron",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Zaɓaɓɓen 5-HT3 antagonist antiemetic. Mai tasiri sosai ga tashin zuciya da amai. ODT (kwal ɗin da ke watsewa baki) yana da amfani a saitunan filin lokacin da babu IV. Haɗe cikin wasu fakitin kwayayen yaƙi.",
+  "indications": [
+    "Nausea da amai (chemotherapy, opioid-induced, post-operative, TBI mai alaƙa)",
+    "Ciwon motsi",
+    "Nausea daga sarrafa ketamine"
+  ],
+  "dose": "4-8 mg IV/IO jinkirin turawa akan 2-5 min. ODT: 4-8 MG narkar da harshe. IM: 4 mg.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Sanannen hypersensitivity ga ondansetron ko wasu antagonists 5-HT3",
+    "Ciwon QT mai tsayi na haihuwa (babban kashi IV kawai)"
+  ],
+  "warnings": [
+    "Babban adadin IV na iya tsawaita tazarar QT -- yi amfani da mafi ƙarancin tasiri na IV.",
+    "Baya maye gurbin sarrafa hanyar iska a cikin majiyyata da aka rufe da amai -- kare hanyar iska da farko."
+  ],
+  "regional_names": {
+    "generic": "ondansetron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.1-0.15 mg/kg IV (max 4 MG). ODT: 4mg ga yara> 4 shekaru.",
+      "note": "An yi amfani da shi sosai kuma an jure shi sosai a cikin ilimin yara."
+    },
+    "obstetric": {
+      "note": "Bayanai masu iyaka a cikin ciki. Yi amfani da tashin zuciya mai tsanani / amai bayan farkon trimester lokacin da amfanin ya fi haɗari. Ba a ba da shawarar a farkon farkon watanni uku ba."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

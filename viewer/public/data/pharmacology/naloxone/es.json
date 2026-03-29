@@ -1,0 +1,47 @@
+{
+  "id": "naloxone",
+  "name": "Naloxona",
+  "category": "reversal-agent",
+  "rxnorm": "7243",
+  "brand_names": [
+    "Narcán",
+    "Kloxxado"
+  ],
+  "description": "Antagonista competitivo de los receptores opioides. Revierte rápidamente la depresión respiratoria, la sedación y la analgesia inducidas por opioides. Inicio IV: 2 min, IM: 5 min, IN: 8-13 min. Duración más corta que la mayoría de los opioides; es posible que sea necesario repetir la dosis.",
+  "indications": [
+    "Sobredosis de opioides o depresión respiratoria",
+    "Reversión de la sedación con opioides",
+    "Presunta víctima de opioides"
+  ],
+  "dose": "0,4-2 mg IV/IO/IM/IN. Repita cada 2-3 minutos según sea necesario. Máximo 10 mg. Intranasal (IN): 2 mg por fosa nasal.",
+  "route": [
+    "IV",
+    "OI",
+    "IM",
+    "EN",
+    "CUA"
+  ],
+  "window": "",
+  "contraindications": [
+    "No hay contraindicaciones absolutas en caso de sobredosis"
+  ],
+  "warnings": [
+    "La duración de la acción (30-90 min) es más corta que la de la mayoría de los opioides; el paciente puede volver a narcotizar. Monitoree durante al menos 1 hora después de la última dosis.",
+    "Precipita la abstinencia aguda de opioides; puede causar agitación, taquicardia y edema pulmonar en pacientes dependientes de opioides.",
+    "Revertirá la analgesia: el paciente puede volverse muy combativo debido al dolor."
+  ],
+  "regional_names": {
+    "generic": "naloxona",
+    "US": "Narcán"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,01 mg/kg IV/IM/IN (máx. 0,4 mg). Repetir cada 2-3 min PRN.",
+      "note": "Neonatal: 0,01 mg/kg para revertir el opioide materno."
+    },
+    "obstetric": {
+      "note": "Seguro durante el embarazo. Si se administra a la madre cerca del parto, controle al recién nacido para detectar abstinencia."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

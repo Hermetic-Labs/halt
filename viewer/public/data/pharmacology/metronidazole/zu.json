@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "I-Metronidazole",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "I-Nitroimidazole antibiotic ene-anaerobic enhle kakhulu kanye ne-protozoal coverage. Ibalulekile ekungeneni kokulimala kwesisu/amathumbu ukumboza amathumbu e-anaerobic. Ngokuvamile isetshenziswa ngokuhlanganiswa ne-ciprofloxacin.",
+  "indications": [
+    "Ukuhlukumezeka okungena esiswini/amathumbu",
+    "Ukutheleleka kwangaphakathi kwesisu",
+    "Ukutheleleka kwezicubu ezithambile ze-Anaerobic",
+    "C. difficile izifo"
+  ],
+  "dose": "500 mg IV q6-8h. I-PO: 500 mg q8h (uma ibekezelelwa ngomlomo).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "I-trimester yokuqala yokukhulelwa (isihlobo)",
+    "I-metronidazole eyaziwayo noma i-nitroimidazole yokungezwani komzimba"
+  ],
+  "warnings": [
+    "Ukusabela okufana ne-Disulfiram ngotshwala -- ungadli utshwala ngesikhathi sokwelashwa nangemva kwamahora angama-48.",
+    "Ingase ibangele i-peripheral neuropathy ngokusetshenziswa isikhathi eside.",
+    "Gwema ku-trimester yokuqala uma kungenzeka."
+  ],
+  "regional_names": {
+    "generic": "i-metronidazole"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7.5 mg/kg IV/PO q6h (ubukhulu obungu-500 mg/umthamo).",
+      "note": "Iphephile ezinganeni ezindala. Gwema ezinganeni ezisanda kuzalwa."
+    },
+    "obstetric": {
+      "note": "Gwema ku-trimester yokuqala uma kungenzeka. Sebenzisa i-trimester yesibili/yesithathu lapho kudingeka ngokokwelashwa -- inzuzo ngokuvamile idlula ingozi yezifo ezinzima ze-anaerobic."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

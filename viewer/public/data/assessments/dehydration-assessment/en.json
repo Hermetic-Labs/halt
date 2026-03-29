@@ -1,0 +1,38 @@
+﻿{
+    "id":  "dehydration-assessment",
+    "name":  "Dehydration Assessment",
+    "category":  "circulation",
+    "description":  "Field assessment for dehydration and heat illness severity. Urine color is the most practical field indicator. Assess mental status as a marker for severe dehydration progressing to heat stroke.",
+    "instructions":  "Check urine color, skin turgor, mental status, and vital signs. Dark urine, dry mucous membranes, and tachycardia indicate significant dehydration requiring active rehydration.",
+    "categories":  [
+                       {
+                           "color":  "clear-pale",
+                           "label":  "Well Hydrated",
+                           "description":  "Pale yellow to clear urine. No intervention needed."
+                       },
+                       {
+                           "color":  "yellow",
+                           "label":  "Mild Dehydration",
+                           "description":  "Dark yellow urine, thirsty. Oral rehydration. Encourage 250-500 mL water per hour."
+                       },
+                       {
+                           "color":  "amber-brown",
+                           "label":  "Moderate-Severe Dehydration",
+                           "description":  "Amber urine, HR elevated, skin turgor decreased, dry mouth. IV/IO fluids if oral not tolerated. 1-2L LR or NS."
+                       },
+                       {
+                           "color":  "red",
+                           "label":  "Danger -- Heat Stroke / Severe",
+                           "description":  "Minimal urine output, altered LOC, hot dry skin. Medical emergency -- rapid cooling + IV fluids + MEDEVAC."
+                       }
+                   ],
+    "modifiers":  {
+                      "pediatric":  {
+                                        "note":  "Children dehydrate faster than adults. Sunken fontanelle (infants), absent tears, and lethargy are critical signs. Weight-based IV: 20 mL/kg LR bolus."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Pregnant women need increased fluid intake. Dehydration can trigger preterm contractions. Aggressive oral rehydration first; IV if not tolerating oral."
+                                    }
+                  },
+    "source":  "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

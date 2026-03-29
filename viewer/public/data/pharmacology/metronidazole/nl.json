@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazol",
+  "category": "antibiotic",
+  "rxnorm": "6922",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "Nitroimidazol-antibioticum met uitstekende anaerobe en protozoaire dekking. Essentieel voor penetrerend buik-/darmtrauma om de anaerobe darmflora te bedekken. Vaak gebruikt in combinatie met ciprofloxacine.",
+  "indications": [
+    "Penetrerend buik-/darmtrauma",
+    "Intra-abdominale infecties",
+    "Anaerobe infecties van zacht weefsel",
+    "C. difficile-infecties"
+  ],
+  "dose": "500 mg IV elke 6-8 uur. PO: 500 mg elke 8 uur (indien oraal verdragen).",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Eerste trimester van de zwangerschap (relatief)",
+    "Bekende allergie voor metronidazol of nitroimidazol"
+  ],
+  "warnings": [
+    "Disulfiram-achtige reactie met alcohol - drink geen alcohol tijdens de behandeling en 48 uur daarna.",
+    "Kan bij langdurig gebruik perifere neuropathie veroorzaken.",
+    "Vermijd indien mogelijk in het eerste trimester."
+  ],
+  "regional_names": {
+    "generic": "metronidazol"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7,5 mg/kg IV/PO q6u (max. 500 mg/dosis).",
+      "note": "Veilig bij oudere kinderen. Vermijd bij pasgeborenen."
+    },
+    "obstetric": {
+      "note": "Vermijd indien mogelijk in het eerste trimester. Gebruik het tweede/derde trimester wanneer dit medisch noodzakelijk is; het voordeel is doorgaans groter dan het risico op ernstige anaerobe infecties."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

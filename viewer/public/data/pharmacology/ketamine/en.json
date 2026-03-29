@@ -1,0 +1,46 @@
+﻿{
+    "id":  "ketamine",
+    "name":  "Ketamine",
+    "category":  "analgesia-anesthesia",
+    "rxnorm":  "3893",
+    "brand_names":  [
+                        "Ketalar"
+                    ],
+    "description":  "Dissociative anesthetic providing analgesia, sedation, and amnesia while preserving airway reflexes and hemodynamic stability. Preferred analgesic in TCCC -- maintains BP unlike opioids. Also used for procedural sedation and RSI.",
+    "indications":  [
+                        "Moderate-to-severe pain management",
+                        "Procedural sedation (wound packing, fracture reduction)",
+                        "Induction agent for RSI",
+                        "Combat anesthesia"
+                    ],
+    "dose":  "Analgesia: 0.1-0.3 mg/kg IV/IO (slow push) | 0.5 mg/kg IM. Procedural sedation: 1-2 mg/kg IV | 4-6 mg/kg IM. RSI induction: 1-2 mg/kg IV.",
+    "route":  [
+                  "IV",
+                  "IO",
+                  "IM",
+                  "IN"
+              ],
+    "window":  "",
+    "contraindications":  [
+                              "Known schizophrenia or active psychosis",
+                              "Elevated ICP without airway protection (relative)"
+                          ],
+    "warnings":  [
+                     "Emergence reactions (delirium/hallucinations) -- mitigate with midazolam 1-2mg IV if available.",
+                     "Increases secretions -- have suction ready.",
+                     "Laryngospasm rare but possible -- keep BVM available."
+                 ],
+    "regional_names":  {
+                           "generic":  "ketamine"
+                       },
+    "modifiers":  {
+                      "pediatric":  {
+                                        "dose":  "Analgesia: 0.5 mg/kg IV. Procedural sedation: 1-2 mg/kg IV | 4-5 mg/kg IM.",
+                                        "note":  "Well-studied in pediatrics. Preferred for painful procedures."
+                                    },
+                      "obstetric":  {
+                                        "note":  "Safe for maternal analgesia at low doses. May cause neonatal respiratory depression at high doses if delivered near time of delivery."
+                                    }
+                  },
+    "source":  "JTS CPG: Acute Pain Management / TCCC Guidelines"
+}

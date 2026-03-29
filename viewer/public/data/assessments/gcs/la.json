@@ -1,0 +1,113 @@
+{
+  "id": "gcs",
+  "name": "Glasguensis Coma Scale (GCS)",
+  "category": "neurological",
+  "description": "Neurologicae remissior conscientiae per oculum, responsalem verbalem et motoriam normae factae. Score range 3-15.",
+  "instructions": "Octoginta trium ditionum singulas independentes. Perorare omnes tres ustulo pro summa GCS.",
+  "scoring": [
+    {
+      "domain": "Eye",
+      "options": [
+        {
+          "score": 4,
+          "label": "Spontaneus"
+        },
+        {
+          "score": 3,
+          "label": "Ad vocem"
+        },
+        {
+          "score": 2,
+          "label": "Ad dolorem"
+        },
+        {
+          "score": 1,
+          "label": "ad Nonam"
+        }
+      ]
+    },
+    {
+      "domain": "Verbal",
+      "options": [
+        {
+          "score": 5,
+          "label": "orientatur"
+        },
+        {
+          "score": 4,
+          "label": "Confusus"
+        },
+        {
+          "score": 3,
+          "label": "Inconueniens verba"
+        },
+        {
+          "score": 2,
+          "label": "Incomprehensibilis soni"
+        },
+        {
+          "score": 1,
+          "label": "ad Nonam"
+        }
+      ]
+    },
+    {
+      "domain": "Motor",
+      "options": [
+        {
+          "score": 6,
+          "label": "obediens imperat"
+        },
+        {
+          "score": 5,
+          "label": "Dolor Localizes"
+        },
+        {
+          "score": 4,
+          "label": "Recedit a dolore"
+        },
+        {
+          "score": 3,
+          "label": "Abnormes flexura (decorticata)"
+        },
+        {
+          "score": 2,
+          "label": "Extensio (decerebrate)"
+        },
+        {
+          "score": 1,
+          "label": "ad Nonam"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "range": [
+        13,
+        15
+      ],
+      "label": "mild TBI -- monitor closely"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "label": "TBI moderatus - para airway"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "label": "Gravi TBI -- airway at immediate periculum, intubate si fieri potest"
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Utere Pediatric GCS (pGCS) liberis sub annis II. Verborum scoring accommodetur pro pre-verborum filiis."
+    }
+  },
+  "source": "JTS CPG / Standard Neurological Assessment"
+}

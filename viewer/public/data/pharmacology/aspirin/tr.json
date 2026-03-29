@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirin (Asetilsalisilik Asit)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Bayer Aspirin",
+    "Ekotrin"
+  ],
+  "description": "Antiplatelet özelliklere sahip steroidal olmayan antiinflamatuar ilaç (NSAID). Şüpheli akut koroner sendrom (AKS) için birinci basamak tedavi. Trombosit agregasyonunu geri dönülemez şekilde engeller; etkisi trombosit ömrü boyunca (7-10 gün) sürer.",
+  "indications": [
+    "Akut miyokard enfarktüsü (MI) şüphesi -- hemen çiğneyin",
+    "Kararsız anjina / akut koroner sendrom",
+    "İnme (iskemik - hemorajik hariç tutulduktan sonra)",
+    "Ateş ve hafif-orta şiddette ağrı (analjezik)"
+  ],
+  "dose": "ACS: 325 mg PO - ÇİĞNEYİN (bütün olarak yutmayın). Analjezik/antipiretik: 325-650 mg PO 4-6 saatte bir PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Mümkün olduğu kadar erken verin; şüpheyi anında çiğneyin.",
+  "contraindications": [
+    "Aktif GI kanaması",
+    "Hemorajik felç",
+    "Bilinen aspirin alerjisi veya NSAID aşırı duyarlılığı",
+    "Şiddetli kontrolsüz kanama -- aspirin kanamayı kötüleştirir"
+  ],
+  "warnings": [
+    "Kanamalı hastalara VERMEYİN; aspirin trombosit fonksiyonunu geri dönülemez şekilde bozar ve kanamayı kötüleştirir.",
+    "Viral hastalığı olan 12 yaşından küçük çocuklara VERMEYİN - Reye sendromu riski.",
+    "GI tahrişi - acil değilse yiyecekle birlikte alın."
+  ],
+  "regional_names": {
+    "generic": "aspirin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analjezik/antipiretik: 10-15 mg/kg PO 4-6 saatte bir (maks. 650 mg/doz). NOT: Viral hastalıklarda (Reye sendromu) kontrendikedir.",
+      "note": "Viral hastalığı olan çocuklarda ateş için bunun yerine asetaminofen (parasetamol) kullanın."
+    },
+    "obstetric": {
+      "note": "Hamilelikte özellikle üçüncü trimesterde (duktus arteriyozusun erken kapanması) kaçının. Düşük doz (81 mg) preeklampsiyi önlemek için yalnızca doktor rehberliğinde kullanılır."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

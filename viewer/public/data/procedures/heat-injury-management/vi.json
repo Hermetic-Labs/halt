@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Quản lý chấn thương do nhiệt",
+  "category": "environmental",
+  "skill_level": "Cơ bản",
+  "time_estimate": "Tiếp tục cho đến khi MEDEVAC hoặc bệnh nhân ổn định",
+  "description": "Điều trị chuột rút do nhiệt, kiệt sức do nhiệt và đột quỵ do nhiệt. Đột quỵ do nhiệt là một trường hợp khẩn cấp đe dọa tính mạng - phương pháp điều trị là làm mát nhanh chóng. Phân biệt ngay tình trạng kiệt sức do nhiệt (tâm lý bình thường) với say nắng (LOC bị thay đổi).",
+  "equipment": [
+    "Nước (uống + làm mát)",
+    "Túi chườm đá hoặc khăn ướt lạnh",
+    "Nguồn cung cấp IV (LR hoặc NS)",
+    "Quạt hoặc bóng râm",
+    "Nhiệt kế trực tràng (nhiệt độ lõi xác định)"
+  ],
+  "steps": [
+    "ĐÁNH GIÁ: Nạn nhân có tỉnh táo và định hướng được không? Da khô nóng và da đổ mồ hôi nóng? Nhiệt độ lõi nếu có sẵn nhiệt kế.",
+    "CHUỘT NHIỆT: Co thắt cơ, tinh thần bình thường. Nghỉ ngơi trong bóng râm, bù nước bằng đường uống bằng điện giải, giãn cơ nhẹ nhàng. Không nguy hiểm đến tính mạng.",
+    "Kiệt sức do nhiệt: Đổ mồ hôi nhiều, suy nhược, chóng mặt, tinh thần bình thường hoặc gần như bình thường. Di chuyển đến nơi có bóng râm/mát mẻ. Cởi bỏ quần áo thừa. Dịch uống (nếu còn tỉnh) hoặc IV LR 1L trong 30-60 phút. Theo dõi tiến triển của đột quỵ do nhiệt.",
+    "ĐỘT QUỴ NHIỆT ĐỘ (khẩn cấp): LOC bị thay đổi, lú lẫn, hung hãn hoặc bất tỉnh. Nhiệt độ lõi > 40C (104F). Da nóng (có thể ướt hoặc khô). BẮT ĐẦU: Tắt bếp ngay lập tức, cởi bỏ toàn bộ quần áo, làm ướt da và quạt mạnh. Chườm túi nước đá lên cổ, nách và háng (những vùng có nhiều mạch máu). IVLR 1-2L. Bảo vệ đường hô hấp nếu bất tỉnh. MEDEVAC ngay lập tức.",
+    "KHÔNG dùng aspirin hoặc acetaminophen khi bị say nắng - không giúp ích gì, có thể gây hại.",
+    "Theo dõi: sinh tồn mỗi 15 phút, đường thở, trạng thái tâm thần. Xu hướng tạm thời tài liệu.",
+    "Tiếp tục làm mát trong thời gian MEDEVAC -- không dừng lại để vận chuyển."
+  ],
+  "warnings": [
+    "Đột quỵ do nhiệt là một trường hợp khẩn cấp đe dọa tính mạng - đừng nhầm nó với kiệt sức vì nóng. Kiểm tra trạng thái tinh thần.",
+    "Làm mát là phương pháp điều trị dứt điểm. Không trì hoãn việc làm mát để thiết lập đường truyền IV.",
+    "Sốc nhiệt do gắng sức có thể xảy ra ở những người khỏe mạnh - thể lực không bảo vệ được.",
+    "Hạ natri máu (natri thấp) do uống quá nhiều nước bằng nước thường có thể giống như say nắng - cho dung dịch điện giải chứ không chỉ nước."
+  ],
+  "follows": [
+    "đánh giá tình trạng mất nước"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Trẻ em điều chỉnh nhiệt độ kém hiệu quả hơn. Đột quỵ do nhiệt có thể tiến triển nhanh hơn. Dịch truyền theo cân nặng: 20 mL/kg bolus LR IV. Đo nhiệt độ lõi qua nhiệt kế trực tràng chính xác nhất."
+    },
+    "obstetric": {
+      "note": "Tình trạng tăng thân nhiệt của bà mẹ (>39C) có thể gây dị tật ống thần kinh của thai nhi (sớm) và suy thai (muộn). Làm mát tích cực. Theo dõi nhịp tim thai nhi nếu có."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}

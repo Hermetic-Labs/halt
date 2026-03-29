@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Dexamethasone",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Decadron",
+    "DexPak"
+  ],
+  "description": "Kortikosteroid synthetic oo muddo dheer shaqaynaysa. Loo isticmaalo bararka maskaxda (bararka maskaxda sare -- HACE, TBI), dareen-celinta xasaasiyadda daran, bararka marin-haweedka, iyo dhibaatada adrenal. Anti-bararka, ma aha anabolic.",
+  "indications": [
+    "bararka maskaxda sare ee sare (HACE)",
+    "bararka marin hawomareen (ka dib extubation stridor, croup)",
+    "Bararka maskaxda oo ka yimaada buro ama nabar",
+    "Dareen-celin xasaasiyadeed oo daran (oo ku xiran epinephrine)",
+    "Dhibaatada Adrenal",
+    "Kahortagga cudurka-mareenka (perioperative)"
+  ],
+  "dose": "Bararka maskaxda/HACE: 8-10 mg IV/IM bilawga, ka dibna 4 mg q6h. Bararka marin-haweedka: 10 mg IV hal mar. Croup: 0.6 mg/kg IM/PO (ugu badnaan 16mg). Dhibaatada Adrenal: 4 mg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO"
+  ],
+  "window": "HACE: Sii sida ugu dhaqsaha badan ee suurtogalka ah oo ay la socoto soo degid degdeg ah.",
+  "contraindications": [
+    "Caabuqyada fangas habaysan (iyada oo aan la daboolin antifungal)",
+    "Tallaalka fayraska nool 30 maalmood gudahood (qaraabo)"
+  ],
+  "warnings": [
+    "Uma beddelo soo degista iyo ogsijiinta ee HACE -- u isticmaal isku-xidhka kaliya.",
+    "Hyperglycemia -- la soco gulukoosta dhiigga ee dadka macaanka qaba.",
+    "Immunosuppression iyadoo la isticmaalayo waqti dheer.",
+    "Qaadashada kelida ah ee xaaladaha degdegga ah guud ahaan aad bay u ammaan badan yihiin."
+  ],
+  "regional_names": {
+    "generic": "Dexamethasone"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Croup: 0.6 mg/kg PO/IM (ugu badnaan 16 mg). Bararka maskaxda: 0.5-1 mg/kg IV (ugu badnaan 10 mg). Bararka marin-haweedka: 0.5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM q24h x 2 qiyaasood oo loo isticmaalo in lagu dardar galiyo qaangaadhka sambabada uurjiifka ee 24-34 toddobaad uurka ee foosha kahor. Kala hadal bixiyeha ugu sarreeya ee la heli karo."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

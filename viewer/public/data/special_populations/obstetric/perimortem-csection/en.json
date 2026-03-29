@@ -1,0 +1,32 @@
+﻿{
+    "id":  "perimortem-csection",
+    "name":  "Perimortem Cesarean Section (PMCS)",
+    "category":  "obstetric",
+    "skill_level":  "physician-surgeon",
+    "time_estimate":  "3-5 min",
+    "description":  "Emergency cesarean delivery within 4 minutes of maternal cardiac arrest to allow effective CPR and potential neonatal survival. The uterus compresses the aorta and IVC -- delivery is also resuscitative for the mother.",
+    "equipment":  [
+                      "scalpel",
+                      "gloves",
+                      "retractors",
+                      "cord-clamps",
+                      "neonatal-resuscitation-equipment"
+                  ],
+    "steps":  [
+                  "Continue CPR without interruption.",
+                  "Make a vertical midline incision from umbilicus to pubis through skin and fascia.",
+                  "Incise the lower uterine segment horizontally.",
+                  "Deliver the infant -- note time.",
+                  "Clamp and cut the cord.",
+                  "Hand infant to second provider for neonatal resuscitation.",
+                  "Remove the placenta.",
+                  "Pack the uterus and abdomen if definitive closure is not immediately possible.",
+                  "Continue maternal resuscitation -- ROSC is more likely after uterine decompression."
+              ],
+    "warnings":  [
+                     "Decision-to-delivery time must be under 5 minutes for best maternal and fetal outcomes.",
+                     "This procedure is a last resort -- only if mother is in cardiac arrest and delivery is imminent (\u003e20 weeks gestation).",
+                     "Requires physician-level training. Combat medics should prepare the field and support, not perform independently."
+                 ],
+    "source":  "JTS Obstetric CPG / ACOG Emergency Guidelines"
+}

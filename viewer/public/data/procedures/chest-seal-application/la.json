@@ -1,0 +1,32 @@
+{
+  "id": "chest-seal-application",
+  "name": "Occlusive Arcam Sigillum Application",
+  "category": "respiration",
+  "skill_level": "combat-lifesaver",
+  "time_estimate": "1-2 min",
+  "description": "Vulnus pectoris sugens signans (pneumothorax apertum) cum sigillo pectoris saevitum ne ingressu aeris emissio pressurae permittens.",
+  "equipment": [
+    "flam-pecte-sig",
+    "caestus",
+    "trauma-forfice"
+  ],
+  "steps": [
+    "Vulnus exponere - abscidere vel removere indumentum.",
+    "Cutem circa vulnus quam siccum quam maxime extergito (sanguis, sudor adhaesio praeveniet).",
+    "Aperi inclusum pectoris involucrum sigillum.",
+    "Pone sigillum super vulnus, sitas in fovea. Preme firme, cavens, oras omnes inhaerere.",
+    "Reprehendo valvae intentionem - spiraculum exteriorem faciem (ab cute) et eae manere debet.",
+    "Candam spiritus sonat. Si depravatio pergit post obsignationem, vide tensionem pneumothoracem — faciendam NCD.",
+    "Si sigillum increpuit pervulgatum est, sigillum non-conflatum adhiberi potest, sed ad tensionem pneumothorax evolutionis viverra debet."
+  ],
+  "warnings": [
+    "Sigilla non diripita simplicem pneumothoracem ad tensionem pneumothoracem converti possunt - signata tantum in campo usus.",
+    "Trilineum tapingum (sigillum auctum) non amplius commendatur a CoTCCC - sigillum pectoris usui commercialis confictum.",
+    "Semper sigillum ad introitum et exitum vulnerum appone."
+  ],
+  "follows": [],
+  "precedes": [
+    "acus-decompression"
+  ],
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

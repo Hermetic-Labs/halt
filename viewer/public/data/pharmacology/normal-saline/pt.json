@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Solução salina normal (0,9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "Injeção de cloreto de sódio a 0,9%"
+  ],
+  "description": "Fluido cristalóide isotônico. Usado para ressuscitação com fluidos intravenosos. No choque hemorrágico, use com cautela – grandes volumes pioram a coagulopatia (acidose hiperclorêmica, coagulopatia dilucional). Hipotensão permissiva preferida em trauma penetrante enquanto se aguarda controle da hemorragia.",
+  "indications": [
+    "Reanimação volêmica (com cautela no choque hemorrágico)",
+    "Diluente/lavagem de medicamentos",
+    "Hipovolemia de causas não hemorrágicas"
+  ],
+  "dose": "Choque hemorrágico: Limite a 1L no máximo enquanto se aguarda o controle da hemorragia (hipotensão permissiva). PAS alvo 80-90 mmHg em trauma penetrante, 90 mmHg em TCE. Hipovolemia não hemorrágica: bolus de 500 mL, reavaliar.",
+  "route": [
+    "IV",
+    "OI"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hipernatremia",
+    "Sobrecarga hídrica/edema pulmonar (relativo)"
+  ],
+  "warnings": [
+    "Grandes volumes causam acidose metabólica hiperclorêmica e coagulopatia dilucional – piora a tríade letal no trauma.",
+    "Ringer com lactato (LR) é preferido para reanimação de traumas de grande volume.",
+    "NÃO ressuscite excessivamente o trauma penetrante no tronco antes do controle cirúrgico da hemorragia (hipotensão permissiva)."
+  ],
+  "regional_names": {
+    "generic": "cloreto de sódio 0,9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Bolus IV de 20 mL/kg, reavaliar. Repita no máximo 3x (60 mL/kg no total) antes de considerar hemoderivados.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Reanimação padrão em hemorragia obstétrica. Reanimação volêmica agressiva apropriada para hemorragia pós-parto antes da disponibilidade de hemoderivados."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

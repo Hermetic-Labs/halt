@@ -1,0 +1,63 @@
+﻿{
+    "id":  "broselow-tape",
+    "name":  "Broselow Pediatric Emergency Tape Reference",
+    "description":  "Color-coded weight-to-dose reference for pediatric drug administration when a scale is unavailable. Measure child from top of head to heel and match to color band.",
+    "note":  "This reference is for ESTIMATION only. Use actual weight when available.",
+    "bands":  [
+                  {
+                      "color":  "grey",
+                      "weight_kg":  "3-5",
+                      "length_cm":  "46-57",
+                      "est_age":  "Newborn"
+                  },
+                  {
+                      "color":  "pink",
+                      "weight_kg":  "6-7",
+                      "length_cm":  "57-67",
+                      "est_age":  "3-6 months"
+                  },
+                  {
+                      "color":  "red",
+                      "weight_kg":  "8-9",
+                      "length_cm":  "67-74",
+                      "est_age":  "6-12 months"
+                  },
+                  {
+                      "color":  "purple",
+                      "weight_kg":  "10-11",
+                      "length_cm":  "74-83",
+                      "est_age":  "12-18 months"
+                  },
+                  {
+                      "color":  "yellow",
+                      "weight_kg":  "12-14",
+                      "length_cm":  "83-95",
+                      "est_age":  "18 months-3 years"
+                  },
+                  {
+                      "color":  "white",
+                      "weight_kg":  "15-18",
+                      "length_cm":  "95-107",
+                      "est_age":  "3-5 years"
+                  },
+                  {
+                      "color":  "blue",
+                      "weight_kg":  "19-22",
+                      "length_cm":  "107-122",
+                      "est_age":  "5-7 years"
+                  },
+                  {
+                      "color":  "orange",
+                      "weight_kg":  "24-28",
+                      "length_cm":  "122-137",
+                      "est_age":  "7-9 years"
+                  },
+                  {
+                      "color":  "green",
+                      "weight_kg":  "30-36",
+                      "length_cm":  "137-152",
+                      "est_age":  "9-12 years"
+                  }
+              ],
+    "source":  "Broselow Pediatric Emergency Reference / PALS"
+}

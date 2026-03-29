@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Embalagem hemostática para feridas",
+  "category": "hemorrhage-control",
+  "skill_level": "salva-vidas de combate",
+  "time_estimate": "3-5 minutos",
+  "description": "Tampe uma ferida incompressível ou juncional com gaze hemostática para controlar a hemorragia onde o torniquete não pode ser aplicado.",
+  "equipment": [
+    "gaze hemostática",
+    "luvas nitrílicas",
+    "tesouras para traumas",
+    "bandagem de pressão"
+  ],
+  "steps": [
+    "Vista luvas. Exponha a ferida totalmente usando uma tesoura para traumas.",
+    "Identifique a fonte ativa de sangramento dentro da cavidade da ferida.",
+    "Abra a gaze hemostática e coloque-a firmemente na ferida com o dedo, empurrando-a diretamente para a fonte do sangramento.",
+    "Continue a embalar até que a cavidade da ferida esteja completamente preenchida.",
+    "Aplique pressão direta firme e contínua com a palma da mão por no mínimo 3 minutos.",
+    "NÃO remova nenhum material de embalagem depois de aplicado.",
+    "Aplique uma bandagem de pressão sobre a ferida compactada.",
+    "Marque a hora no cartão TCCC ou na testa do paciente (por exemplo, 'PKD 0145')."
+  ],
+  "warnings": [
+    "NÃO cubra feridas penetrantes no peito - em vez disso, use selo no peito.",
+    "Se estiver fechando um ferimento no pescoço, aplique pressão sem comprimir ambas as carótidas simultaneamente.",
+    "Reavaliar dentro de 5 minutos se houver suspeita de fonte arterial."
+  ],
+  "follows": [
+    "pressão direta"
+  ],
+  "precedes": [
+    "aplicação de torniquete"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Use proporcionalmente menos gaze. Aplique pressão mais leve para evitar compressão torácica em bebês."
+    },
+    "obstetric": {
+      "note": "Evite pressão profunda ou agressiva perto do abdômen da gestante. É preferível uma escalada rápida."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

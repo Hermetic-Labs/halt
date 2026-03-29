@@ -1,0 +1,44 @@
+{
+  "id": "cefazolin",
+  "name": "Sefazolin",
+  "category": "antibiotic",
+  "rxnorm": "2180",
+  "brand_names": [
+    "Ancef",
+    "Kefzol"
+  ],
+  "description": "Birinci kuşak sefalosporin. Ciddi yara enfeksiyonları ve cerrahi profilaksi için birinci basamak parenteral antibiyotik. MSSA dahil iyi gram-pozitif kapsama alanı. Profilaksi için cerrahi insizyondan sonraki 60 dakika içinde verin.",
+  "indications": [
+    "Cerrahi yara profilaksisi",
+    "Ciddi yumuşak doku enfeksiyonları",
+    "Açık kırık profilaksisi",
+    "Deri ve deri yapısı enfeksiyonları"
+  ],
+  "dose": "1-2g IV/IM her 8 saatte bir. Cerrahi profilaksi: İnsizyondan önceki 60 dakika içinde 2g IV. Ameliyat > 4 saat sürerse 2g'yi tekrarlayın.",
+  "route": [
+    "IV",
+    "anlık ileti"
+  ],
+  "window": "Cerrahi profilaksi için: Kesiden sonraki 60 dakika içinde verin.",
+  "contraindications": [
+    "Bilinen sefalosporin alerjisi",
+    "Şiddetli penisilin alerjisi (%5-10 çapraz reaktivite)"
+  ],
+  "warnings": [
+    "Penisilin alerjisi ile çapraz reaksiyon: Penisiline alerjisi olan hastalarda dikkatli kullanın.",
+    "Böbrek yetmezliğinde dozu ayarlayın."
+  ],
+  "regional_names": {
+    "generic": "sefazolin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "25-50 mg/kg IV/IM 8 saatte bir (maks. 2g/doz). Profilaksi: İnsizyondan önce 30 mg/kg (max 2g).",
+      "note": "Pediatride güvenli ve iyi çalışılmış."
+    },
+    "obstetric": {
+      "note": "Hamilelik ve emzirme döneminde güvenlidir. Obstetrik prosedürler için tercih edilen parenteral antibiyotik."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Surgical Prophylaxis"
+}

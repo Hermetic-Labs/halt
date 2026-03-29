@@ -1,0 +1,46 @@
+{
+  "id": "lactated-ringers",
+  "name": "Xalka Ringer's Lactated (LR)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "1013621",
+  "brand_names": [
+    "Xalka Hartmann",
+    "Irbada Ringer ee nuujisay"
+  ],
+  "description": "Dheecaan isotonic crystalloid oo dheellitiran. Laga door biday cusbada caadiga ah ee dib u soo noolaynta dhaawacyada mug weyn -- jidh ahaan dheeli tiran, khatarta yar ee hyperchloremic acidosis. Waxa ku jira sodium, potassium, calcium, lactate.",
+  "indications": [
+    "Soo kicinta dhaawaca (loo door biday crystalloid ee shoogga dhiigbaxa)",
+    "Guba dib u soo kicinta dareeraha ( formula Parkland)",
+    "Hypovolemia",
+    "Dayactirka dareeraha"
+  ],
+  "dose": "Hemorrhagic shock: Ku xaddid 1L max ka hor inta aan loo gudbin wax soo saarka dhiigga. Bartilmaameedka SBP 80-90 mmHg gasha dhaawacyada, 90 mmHg TBI. Burns (Parkland): 4 mL x kg x %TBSA ayaa gubtay in ka badan 24 saac (kala badh 8dii saac ee hore).",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hyperkalemia (waxaa ku jira potassium)",
+    "Beerka oo aad u xumaaday ( dheef-shiid kiimikaad lactate oo daciifa - qaraabo)"
+  ],
+  "warnings": [
+    "Wali crystalloid -- ma qaadi karo ogsijiin. Badeecooyinka dhiigu waxay aad uga sarreeyaan shoogga dhiigbaxa. LR waa buundo kaliya.",
+    "Ha ku darin wax soo saarka dhiigga isla xariiqii (kalsiyumku wuxuu keenaa xinjirowga).",
+    "Ha ku degdegin dib-u-soo-nooleynta gudaha dhaawaca ka hor inta aan la xakameynin dhiigbaxa."
+  ],
+  "regional_names": {
+    "generic": "xalinta Ringer ee nuujisay",
+    "UK": "Xaalka Hartmann"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 ml/kg bolus, dib u qiimee. Loo door biday NS ee dhaawacyada carruurta.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Dareeraha faleebbaha ee la door bidayo ee foosha iyo dhalmada. Ku haboon dib u soo kicinta dhiigbaxa umusha."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS / ABA Burn Guidelines"
+}

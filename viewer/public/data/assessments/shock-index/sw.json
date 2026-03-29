@@ -1,0 +1,31 @@
+{
+  "id": "shock-index",
+  "name": "Kielezo cha Mshtuko",
+  "category": "circulatory",
+  "description": "Kiashiria cha haraka cha nambari moja ya utulivu wa hemodynamic. Imehesabiwa kama HR / SBP. Kawaida ni 0.5-0.7.",
+  "instructions": "Gawanya kiwango cha moyo na shinikizo la damu la systolic. Nambari ya mshtuko inayoongezeka inaonyesha kuzorota.",
+  "scoring": [
+    {
+      "range": "<0.6",
+      "label": "Kawaida -- thabiti ya damu"
+    },
+    {
+      "range": "0.6-1.0",
+      "label": "Mshtuko mdogo -- fuatilia kwa karibu"
+    },
+    {
+      "range": "1.0-1.4",
+      "label": "Mshtuko wa wastani -- ufikiaji wa IV, maji"
+    },
+    {
+      "range": ">1.4",
+      "label": "Mshtuko mkali - ufufuo wa mara moja, bidhaa za damu"
+    }
+  ],
+  "modifiers": {
+    "obstetric": {
+      "note": "Obstetric Shock Index (OSI) hutumia fomula sawa. SI> 0.9 kwa wagonjwa wajawazito ni muhimu. Kawaida HR ni ya juu katika ujauzito (80-100 bpm)."
+    }
+  },
+  "source": "JTS CPG / PHTLS"
+}

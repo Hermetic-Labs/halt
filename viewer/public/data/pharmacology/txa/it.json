@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Acido Tranexamico (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Ciclokapron",
+    "Lysteda"
+  ],
+  "description": "Agente antifibrinolitico che inibisce la rottura dei coaguli di sangue. Riduce significativamente la mortalità per shock emorragico se somministrato precocemente. Raccomandato dal CoTCCC per tutte le vittime con emorragia significativa o a rischio di emorragia significativa.",
+  "indications": [
+    "Emorragia esterna significativa o sospetta interna",
+    "Shock emorragico",
+    "Alto rischio di emorragia (meccanismo di lesione)"
+  ],
+  "dose": "1 g EV/IO in 10 minuti, seguito da 1 g EV/IO in 8 ore. Se IV/IO non disponibile: 650 mg PO x2 (1,3 g totali) -- opzione TCCC PO.",
+  "route": [
+    "IV",
+    "IO",
+    "PO"
+  ],
+  "window": "DEVE essere somministrato entro 3 ore dall'infortunio. Oltre le 3 ore, il TXA può AUMENTARE la mortalità: non somministrare.",
+  "contraindications": [
+    "Anamnesi di malattia tromboembolica (TVP, EP, ictus)",
+    "Coagulazione intravascolare disseminata (DIC)",
+    "> 3 ore dopo l'infortunio"
+  ],
+  "warnings": [
+    "Registra immediatamente il tempo di somministrazione: la finestra temporale è di 3 ore dal momento dell'infortunio, non dal momento dell'arrivo.",
+    "Non confondere la dose IV (1 g) con la dose orale."
+  ],
+  "regional_names": {
+    "generic": "acido tranexamico",
+    "US": "Ciclokapron",
+    "UK": "Ciclokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg/kg e.v. (massimo 1 g). Evidenze emergenti: utilizzare il giudizio clinico.",
+      "note": "Si applica la stessa finestra di 3 ore."
+    },
+    "obstetric": {
+      "note": "Indicato per l'emorragia postpartum. Sicuro in gravidanza. Si applica lo stesso dosaggio degli adulti."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

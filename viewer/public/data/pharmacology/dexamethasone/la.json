@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Dexamethasone",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Decadron",
+    "DexPak"
+  ],
+  "description": "Long-agens synthetica corticosteroidea. Usus est pro OEDEMA cerebri (altitude altitudinis cerebri OEDEMA - HACE, TBI), graves motus allergici, OEDEMA airway, et discrimen adrenal. Inflammatio anti-, non anabolica.",
+  "indications": [
+    "Altitudo cerebri OEDEMA (HACE)",
+    "Airway hydropicus (post-extubation stridor, croup)",
+    "Oedema cerebri de tumore vel apostemate",
+    "Gravis allergic profectae (adjuncta epinephrine)",
+    "Discrimen adrenal",
+    "Anti-emetic Adjunct (perioperative)"
+  ],
+  "dose": "Oedema cerebri / HACE: 8-10 mg initialis IV/IM, dein 4 mg q6h. Airway OEDEMA: semel X mg IV. Croup: 0.6 mg/kg IM/PO (max 16mg). Discrimen adrenal: 4 mg IV.",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "PO"
+  ],
+  "window": "HACE: Da quam primum cum proximo descensu.",
+  "contraindications": [
+    "Systemica infectiones fungalales (sine coverage antifungal)",
+    "Virus vaccina vive intra XXX dies (relativum)"
+  ],
+  "warnings": [
+    "Descensum et oxygenium pro HACE non substituit - usus tantum adiuncti.",
+    "Hyperglycemia -- Monitor glucosus sanguinis in diabeticis.",
+    "Immunosuppressiones cum diuturno usu.",
+    "Singula doses pro subitis plerumque tutissima sunt."
+  ],
+  "regional_names": {
+    "generic": "dexamethasone"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Croup: 0.6 mg/kg PO/IM (max 16 mg). Oedema cerebri: 0.5-1 mg/kg IV (max 10 mg). Airway hydropicus: 0.5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM q24h x 2 doses ad maturationem foetus pulmonis ad 24-34 hebdomades partus in labore preterito accelerant. De summa provisor praesto est."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

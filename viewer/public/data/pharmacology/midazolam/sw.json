@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Mstari",
+    "Nayzilam"
+  ],
+  "description": "Benzodiazepine ya muda mfupi na kuanza kwa haraka. Inapendekezwa kwa kutuliza kitaratibu, dawa ya awali ya RSI, na udhibiti wa kifafa wa IM/IN. Njia za IM na ndani ya pua hutoa faida kubwa katika mipangilio ya uwanja.",
+  "indications": [
+    "Sedation ya utaratibu",
+    "Dawa ya awali ya RSI (pamoja na ketamine)",
+    "Udhibiti wa mshtuko (IM/IN wakati IV haipatikani)",
+    "Usimamizi wa fadhaa"
+  ],
+  "dose": "Utulizaji: 0.05-0.1 mg/kg IV yenye titrated. Kiutaratibu: 1-5 mg IV kusukuma polepole. IM: 0.2 mg/kg. KATIKA: 0.2 mg/kg (max 10 mg). Hali ya kifafa IM: 10 mg IM (mtu mzima).",
+  "route": [
+    "IV",
+    "IO",
+    "IM",
+    "KATIKA"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaucoma ya papo hapo yenye pembe nyembamba",
+    "Ulevi mkali wa pombe na maelewano ya moyo na mishipa",
+    "Hypersensitivity inayojulikana"
+  ],
+  "warnings": [
+    "Unyogovu wa kupumua -- fuatilia njia ya hewa, uwe na kidhibiti cha kurudi nyuma (flumazenil) ikiwa inapatikana.",
+    "Hypotension hasa kwa usimamizi wa opioid.",
+    "Sindano ya haraka ya IV husababisha apnea -- sukuma polepole."
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Sedation: 0.05-0.1 mg/kg IV. IM: 0.1-0.2 mg/kg. KATIKA: 0.2-0.3 mg/kg. Mshtuko wa IM: 0.2 mg/kg (kiwango cha juu cha 10 mg).",
+      "note": "KATIKA njia muhimu sana kwa watoto -- huepuka ufikiaji wa IV."
+    },
+    "obstetric": {
+      "note": "Inavuka placenta. Sedation ya watoto wachanga inawezekana. Tumia kipimo cha chini cha ufanisi; kufuatilia mtoto mchanga ikiwa atapewa karibu na kujifungua."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

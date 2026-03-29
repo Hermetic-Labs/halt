@@ -22,7 +22,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Optional
 
-from fastapi import APIRouter, HTTPException, UploadFile, File
+from fastapi import APIRouter, HTTPException, UploadFile, File, Request
 from fastapi.responses import FileResponse, HTMLResponse
 from pydantic import BaseModel, Field
 from starlette.responses import Response
@@ -117,6 +117,34 @@ class PatientSummary(BaseModel):
 
 
 # ── Public Lookup (family-facing) ──────────────────────────────────────────────
+
+
+@router.get("/api/public/qr")
+def public_lookup_qr(request: Request):
+    """Generate a QR code linking directly to the family-facing patient lookup page (/lookup).
+    Intended for printing and displaying at reception so families can self-serve."""
+    import io, base64
+    from routes.mesh import _get_local_ip
+
+    port = request.url.port or request.scope.get("server", [None, 7778])[1]
+    local_ip = _get_local_ip()
+    lookup_url = f"http://{local_ip}:{port}/lookup"
+
+    try:
+        import qrcode as qr_lib
+        qr = qr_lib.QRCode(version=1, box_size=10, border=4)
+        qr.add_data(lookup_url)
+        qr.make(fit=True)
+        img = qr.make_image(fill_color="black", back_color="white")
+        buf = io.BytesIO()
+        img.save(buf, format="PNG")
+        buf.seek(0)
+        b64 = base64.b64encode(buf.getvalue()).decode()
+        qr_image = f"data:image/png;base64,{b64}"
+    except ImportError:
+        qr_image = None
+
+    return {"url": lookup_url, "qr_image": qr_image}
 
 
 @router.get("/api/public/patients")

@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Pagsusuri sa Dehydration",
+  "category": "circulation",
+  "description": "Field assessment para sa dehydration at kalubhaan ng sakit sa init. Ang kulay ng ihi ay ang pinaka-praktikal na tagapagpahiwatig ng field. Suriin ang katayuan sa pag-iisip bilang isang marker para sa matinding dehydration na umuusad sa heat stroke.",
+  "instructions": "Suriin ang kulay ng ihi, turgor ng balat, katayuan sa pag-iisip, at mga vital sign. Ang maitim na ihi, tuyong mucous membrane, at tachycardia ay nagpapahiwatig ng malaking dehydration na nangangailangan ng aktibong rehydration.",
+  "categories": [
+    {
+      "color": "maaliwalas-maputla",
+      "label": "Well Hydrated",
+      "description": "Maputlang dilaw para malinis ang ihi. Walang kinakailangang interbensyon."
+    },
+    {
+      "color": "dilaw",
+      "label": "Banayad na Dehydration",
+      "description": "Maitim na dilaw na ihi, nauuhaw. Rehydration sa bibig. Hikayatin ang 250-500 ML ng tubig kada oras."
+    },
+    {
+      "color": "amber-brown",
+      "label": "Moderate-Severe Dehydration",
+      "description": "Amber na ihi, pagtaas ng HR, pagbaba ng turgor ng balat, tuyong bibig. IV/IO fluids kung hindi pinahihintulutan ang bibig. 1-2L LR o NS."
+    },
+    {
+      "color": "pula",
+      "label": "Panganib -- Heat Stroke / Grabe",
+      "description": "Minimal na output ng ihi, binagong LOC, mainit na tuyong balat. Medikal na emergency -- mabilis na paglamig + IV fluids + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Mas mabilis ma-dehydrate ang mga bata kaysa sa mga matatanda. Ang sunken fontanelle (sanggol), kawalan ng luha, at pagkahilo ay mga kritikal na senyales. Batay sa timbang IV: 20 mL/kg LR bolus."
+    },
+    "obstetric": {
+      "note": "Ang mga buntis na kababaihan ay nangangailangan ng mas mataas na paggamit ng likido. Ang dehydration ay maaaring mag-trigger ng mga preterm contraction. Agresibong oral rehydration muna; IV kung hindi nagpaparaya sa bibig."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

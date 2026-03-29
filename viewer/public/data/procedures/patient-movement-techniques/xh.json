@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "IiNdlela zokuHambisa isigulana",
+  "category": "casualty-movement",
+  "skill_level": "Esisiseko",
+  "time_estimate": "1-30 min ngokuxhomekeke kumgama kunye nendlela",
+  "description": "Ukuhambisa ixhoba phantsi komlilo okanye kwindawo ekhuselekileyo yonyango. Indlela ixhomekeke kumhlaba, umgama, inani labahlanguli, kunye nokwenzakala kwengxwelerha. Isantya vs. ukunyanzelwa komqolo sisigqibo esinobuchule -- kwi-TCCC, isoyikiso sibaluleke kakhulu.",
+  "equipment": [
+    "SKED inkunkuma (ekhethwayo)",
+    "Inkunkuma ye-NATO / i-stretcher ephathwayo",
+    "Inkunkuma ephuculweyo: iipali + iibhatyi/iiponcho",
+    "Tsala iziphatho (iyunifomu okanye izibophelelo)",
+    "TACEVAC isilingi"
+  ],
+  "steps": [
+    "UKUKHATHALELA PHANTSI KOMLILO: Buyisela umlilo kuqala ukuba uxhobile. Hambisa umntu owenzakeleyo usebenzisa eyona ndlela yokutsala ngokukhawuleza--ungayeki ukunyanga kwindawo yokubulala.",
+    "I-HASTY RAKA (umhlanguli omnye): bamba ikhola/umqheba wokutsala emagxeni, tsala ngasemva. Khusela intloko kwimpembelelo.",
+    "I-FIREMAN CARRY (umhlanguli omnye): phakamisa ixhoba phezu kwamagxa imigama emide -- kufuna ukuba umntu oshonile angabikho zingqondweni okanye asebenzisane.",
+    "UKUTHWALA KWABANTU ABABINI: abahlanguli badibanisa iingalo phantsi komqolo nasemadolweni exhoba. Ikhawuleza kunotsalo kumgama omfutshane.",
+    "ILITALA ONGAPHUCULIWEYO: beka iipali ezimbini ozii-intshi ezili-18 ukuqelelana. Uluke iibhatyi ngeepali ezinamaqhosha ngaphakathi. Vavanya phambi kokulayisha ingozi.",
+    "I-SKED LITTER: vula, tyibilika phantsi kokwenzakala, usonge kwaye ukhuseleke ngeentambo. Ifuna abathwali be-2-4.",
+    "Xa ulayisha: phakamisa ukubala kwe-3, gcina ukulungelelaniswa kwentloko / umzimba, ukunciphisa ukunyakaza komgogodla xa kunokwenzeka.",
+    "Ukuba umonzakalo womgogodla uyakrokrelwa kwaye akukho sisongelo: gcina uzinzo kwi-inline kuyo yonke intshukumo. Umntu omnye ozinikele kulawulo lwentloko.",
+    "Hambisa kwikhava, emva koko uphinde uvavanye i-ABC."
+  ],
+  "warnings": [
+    "I-TCCC ephambili: ubomi> imilenze> ukunyameka komgogodla. Musa ukulibazisa intshukumo ukusuka kwindawo yokubulala ngenxa yokhuseleko lomqolo.",
+    "Ukuthwala koMlilo akuchanekanga xa kurhaneleka ukwenzakala komnqonqo, ukophuka kwe-femur, okanye umonzakalo ogqobhozayo wesisu.",
+    "Iilitha eziphuculweyo: vavanya ubunzima phambi kokuba uthembe umntu owenzakeleyo.",
+    "Ukuhambisa umntu owenzakeleyo nge-tourniquet: khangela i-tourniquet ayikhululekanga ngexesha lokunyakaza."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Abantwana bakhaphukhaphu -- umhlanguli omnye unokuthwala ixesha elide. Gcina intloko ngokulinganayo inkulu -- iziko eliphezulu lomxhuzulane xa uthwele."
+    },
+    "obstetric": {
+      "note": "Kuphephe ukuma okuxhaphakileyo okanye uxinzelelo kwisisu. I-Lateral (icala lasekhohlo likhethwayo) okanye ukuthuthwa kwe-supine nge-left hip wedge."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

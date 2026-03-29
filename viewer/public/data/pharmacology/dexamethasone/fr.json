@@ -1,0 +1,50 @@
+{
+  "id": "dexamethasone",
+  "name": "Dexaméthasone",
+  "category": "corticosteroid",
+  "rxnorm": "3264",
+  "brand_names": [
+    "Décadron",
+    "DexPak"
+  ],
+  "description": "Corticostéroïde synthétique à action prolongée. Utilisé pour l'œdème cérébral (œdème cérébral de haute altitude - HACE, TBI), les réactions allergiques graves, l'œdème des voies respiratoires et la crise surrénalienne. Anti-inflammatoire, pas anabolisant.",
+  "indications": [
+    "Œdème cérébral de haute altitude (HACE)",
+    "Œdème des voies respiratoires (stridor post-extubation, croup)",
+    "Œdème cérébral dû à une tumeur ou à un abcès",
+    "Réactions allergiques sévères (en complément de l'épinéphrine)",
+    "Crise surrénalienne",
+    "Adjuvant antiémétique (périopératoire)"
+  ],
+  "dose": "Œdème cérébral/HACE : 8-10 mg IV/IM initial, puis 4 mg q6h. Œdème des voies respiratoires : 10 mg IV une fois. Croup : 0,6 mg/kg IM/PO (max 16 mg). Crise surrénalienne : 4 mg IV.",
+  "route": [
+    "IV",
+    "OI",
+    "MI",
+    "PO"
+  ],
+  "window": "HACE : Donnez le plus tôt possible avec descente immédiate.",
+  "contraindications": [
+    "Infections fongiques systémiques (sans couverture antifongique)",
+    "Vaccins à virus vivants dans les 30 jours (relatif)"
+  ],
+  "warnings": [
+    "Ne remplace pas la descente et l'oxygène pour le HACE – à utiliser uniquement en complément.",
+    "Hyperglycémie – surveillez la glycémie chez les diabétiques.",
+    "Immunosuppression en cas d'utilisation prolongée.",
+    "Doses uniques pour les urgences généralement très sûres."
+  ],
+  "regional_names": {
+    "generic": "dexaméthasone"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Croup : 0,6 mg/kg PO/IM (max 16 mg). Œdème cérébral : 0,5-1 mg/kg IV (max 10 mg). Œdème des voies respiratoires : 0,5 mg/kg IV.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "12 mg IM toutes les 24 heures x 2 doses utilisées pour accélérer la maturité pulmonaire fœtale à 24-34 semaines de gestation en cas de travail prématuré. Discutez avec le fournisseur le plus élevé disponible."
+    }
+  },
+  "source": "JTS CPG / Wilderness Medicine / Standard Emergency Pharmacology"
+}

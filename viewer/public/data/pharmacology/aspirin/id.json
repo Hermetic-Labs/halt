@@ -1,0 +1,46 @@
+{
+  "id": "aspirin",
+  "name": "Aspirin (Asam Asetilsalisilat)",
+  "category": "antiplatelet",
+  "rxnorm": "1191",
+  "brand_names": [
+    "Bayer Aspirin",
+    "Ekotrin"
+  ],
+  "description": "Obat antiinflamasi nonsteroid (NSAID) dengan sifat antiplatelet. Pengobatan lini pertama untuk dugaan sindrom koroner akut (ACS). Menghambat agregasi trombosit secara permanen -- efeknya bertahan selama umur trombosit (7-10 hari).",
+  "indications": [
+    "Diduga infark miokard akut (MI) -- segera kunyah",
+    "Angina tidak stabil / sindrom koroner akut",
+    "Stroke (iskemik -- setelah hemoragik dikecualikan)",
+    "Demam dan nyeri ringan-sedang (analgesik)"
+  ],
+  "dose": "ACS: 325 mg PO - segera kunyah (jangan ditelan utuh). Analgesik/antipiretik: 325-650 mg PO setiap 4-6 jam PRN.",
+  "route": [
+    "PO"
+  ],
+  "window": "ACS: Berikan sedini mungkin - segera kunyah jika dicurigai.",
+  "contraindications": [
+    "Pendarahan GI aktif",
+    "Stroke hemoragik",
+    "Diketahui alergi aspirin atau hipersensitivitas NSAID",
+    "Pendarahan parah yang tidak terkontrol -- aspirin memperburuk pendarahan"
+  ],
+  "warnings": [
+    "JANGAN diberikan pada pasien hemoragik - aspirin merusak fungsi trombosit dan memperburuk perdarahan.",
+    "JANGAN berikan kepada anak <12 tahun dengan penyakit virus -- risiko sindrom Reye.",
+    "Iritasi GI -- konsumsi bersama makanan jika tidak muncul."
+  ],
+  "regional_names": {
+    "generic": "aspirin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Analgesik/antipiretik: 10-15 mg/kg PO setiap 4-6 jam (maks 650 mg/dosis). CATATAN: Kontraindikasi pada penyakit virus (sindrom Reye).",
+      "note": "Gunakan asetaminofen (parasetamol) untuk demam pada anak-anak yang menderita penyakit virus."
+    },
+    "obstetric": {
+      "note": "Hindari pada kehamilan terutama trimester ketiga (penutupan dini duktus arteriosus). Dosis rendah (81mg) digunakan untuk pencegahan preeklamsia hanya di bawah bimbingan dokter."
+    }
+  },
+  "source": "Standard Emergency Pharmacology / ACS Guidelines"
+}

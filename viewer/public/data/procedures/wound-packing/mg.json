@@ -1,0 +1,44 @@
+{
+  "id": "wound-packing",
+  "name": "Fonosana ratra hemostatika",
+  "category": "hemorrhage-control",
+  "skill_level": "combat-lifesaver",
+  "time_estimate": "3-5 min",
+  "description": "Famonosana ratra tsy azo fehezina na mifamatotra miaraka amin'ny gauze hemostatic mba hifehezana ny fandehanan-dra izay tsy azo ampiharina ny tourniquet.",
+  "equipment": [
+    "hemostatic-gauze",
+    "fonon-tanana nitrile",
+    "trauma-shears",
+    "fanerena-bande"
+  ],
+  "steps": [
+    "Don fonon-tanana. Asehoy amin'ny fomba feno ny ratra amin'ny alalan'ny mpanety trauma.",
+    "Fantaro ny loharanon'ny fandatsahan-drà mavitrika ao anatin'ny lavaka ratra.",
+    "Sokafy ny gauze hemostatic ary apetaho mafy amin'ny ratra amin'ny rantsan-tànanao izany, manosika azy mivantana mankany amin'ny loharanon-drà.",
+    "Tohizo ny famonosana mandra-pahafeno tanteraka ny lavaky ny fery.",
+    "Asio fanerena mivantana mafy sy mitohy amin'ny voditongotry ny tananao mandritra ny 3 minitra farafahakeliny.",
+    "TSY esorina ny fitaovana famonosana rehefa ampiharina.",
+    "Asio bandy fanerena eo ambonin’ilay fery feno hipoka.",
+    "Mariho ny fotoana eo amin'ny karatra TCCC na ny handrin'ny marary (oh : 'PKD 0145')."
+  ],
+  "warnings": [
+    "AZA mametaka ratra lalina amin'ny tratra -- asio tombo-kase tratra.",
+    "Raha mametaka fery amin'ny tendany ianao, dia asio tsindrin-tsakafo tsy misy fanerena miaraka amin'ny karotid roa.",
+    "Avereno averina ao anatin'ny 5 minitra raha toa ka ahiahiana ny fisian'ny arterial."
+  ],
+  "follows": [
+    "fanerena mivantana"
+  ],
+  "precedes": [
+    "tourniquet-application"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Mampiasà gauze kely kokoa. Asio fanerena maivana kokoa mba hisorohana ny fanerena ny thoracic amin'ny zazakely."
+    },
+    "obstetric": {
+      "note": "Halaviro ny fanerena lalina na mahery vaika eo akaikin'ny kibo gravid. Aleo ny fisondrotana haingana."
+    }
+  },
+  "source": "TCCC / JTS CPG CoTCCC"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "oxytocin",
+  "name": "Oksitosin",
+  "category": "obstetric",
+  "rxnorm": "7799",
+  "brand_names": [
+    "Pitosin",
+    "Sintosinon"
+  ],
+  "description": "Hormon peptida endogen. Uterotonika lini pertama untuk pencegahan dan pengobatan perdarahan postpartum (PPH). Menyebabkan kontraksi rahim dan mengurangi kehilangan darah setelah melahirkan. Diberikan SETELAH persalinan plasenta.",
+  "indications": [
+    "Pencegahan perdarahan postpartum (rutin setelah melahirkan)",
+    "Pengobatan perdarahan postpartum (atonia uteri)",
+    "Induksi persalinan (hanya pengaturan terkontrol)"
+  ],
+  "dose": "Pencegahan PPH: 10 unit IM segera setelah lahirnya plasenta (rute lapangan lebih disukai). Pengobatan PPH: 10-40 unit dalam 1L IV, infus pada 40-80 mU/menit. Jika IV tidak tersedia: 10 unit IM.",
+  "route": [
+    "IV",
+    "SAYA"
+  ],
+  "window": "Berikan SETELAH persalinan plasenta -- memberi sebelum plasenta lahir dapat menjebak plasenta.",
+  "contraindications": [
+    "Sebelum lahirnya plasenta (dapat menjebak plasenta)",
+    "Gawat janin dengan kepala tidak lahir",
+    "Diketahui hipersensitivitas"
+  ],
+  "warnings": [
+    "MEMBERI SETELAH PLASENTA DILAHIRKAN -- plasenta yang terjebak adalah komplikasi yang mengancam jiwa.",
+    "Bolus IV dapat menyebabkan hipotensi berat dan aritmia jantung - selalu encerkan dan infus perlahan.",
+    "Efek antidiuretik dengan volume besar -- pantau adanya hiponatremia."
+  ],
+  "regional_names": {
+    "generic": "oksitosin"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "T/A -- hanya untuk keperluan obstetrik.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Uterotonika primer. Jika atonia uteri tidak memberikan respons, pertimbangkan misoprostol, asam traneksamat (TXA), kompresi uterus bimanual, dan MEDEVAC cepat."
+    }
+  },
+  "source": "JTS CPG: Obstetric Emergencies / WHO PPH Guidelines"
+}

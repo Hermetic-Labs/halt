@@ -1,0 +1,44 @@
+{
+  "id": "patient-movement-techniques",
+  "name": "Dabarun Motsi na haƙuri",
+  "category": "casualty-movement",
+  "skill_level": "Na asali",
+  "time_estimate": "Minti 1-30 ya danganta da nisa da hanya",
+  "description": "Matsar da wanda ya mutu a ƙarƙashin wuta ko zuwa wuri mafi aminci don magani. Hanyar ta dogara da ƙasa, nisa, adadin masu ceto, da raunin da aka yi wa rauni. Tsayar da hanzari da kashin baya shine yanke shawara na dabara -- a cikin TCCC, barazana tana ɗaukar fifiko.",
+  "equipment": [
+    "Litter SKED (wanda aka fi so)",
+    "NATO zuriyar dabbobi / shimfiɗar shimfiɗa",
+    "Ingantattun zuriyar dabbobi: sanduna + jaket / ponchos",
+    "Jawo hannaye (uniform ko kayan doki)",
+    "Farashin TACEVAC"
+  ],
+  "steps": [
+    "KULA DA WUTA: Da farko mayar da wuta idan da makamai. Matsar da abin da ya faru ta amfani da hanyar ja da sauri -- kar a tsaya a yi magani a yankin kisa.",
+    "HASTY JA (mai ceto ɗaya): Ɗauki abin wuya/jawo hannu a kafadu, ja baya. Kare kai daga tasiri.",
+    "DAUKAR WUTA (mai ceto ɗaya): ɗaga waɗanda suka yi rauni a kafadu don dogon nisa -- yana buƙatar waɗanda suka mutu su kasance cikin sume ko haɗin gwiwa.",
+    "DAUKAR MUTUM BIYU: Masu ceto suna danganta makamai ƙarƙashin baya da gwiwoyi. Ya fi saurin ja don gajeriyar tazara.",
+    "KYAUTA LITTAFI: Sanya sanduna biyu tsakanin inci 18. Saƙa jaket ta hanyar sanduna tare da maɓalli a ciki. Gwaji kafin loda wanda ya yi rauni.",
+    "SKED LITTER: cirewa, zamewa ƙarƙashin waɗanda aka kashe, kunsa kuma amintacce tare da madauri. Yana buƙatar masu ɗaukar kaya 2-4.",
+    "Lokacin lodawa: ɗaga akan ƙidaya 3, kula da daidaita kai/jiki, rage motsin kashin baya idan zai yiwu.",
+    "Idan ana zargin raunin kashin baya kuma babu barazana: kula da kwanciyar hankali a cikin layi a duk lokacin motsi. Mutum ɗaya da aka sadaukar don sarrafa kai.",
+    "Matsar zuwa rufe, sannan sake tantance ABC."
+  ],
+  "warnings": [
+    "fifiko na TCCC: rayuwa> hannu> kariya ta kashin baya. Kada a jinkirta motsi daga yankin kisa don kiyaye kashin baya.",
+    "An haramta ɗaukar mai kashe gobara tare da raunin da ake zargin rauni na kashin baya, karyewar femur, ko raunin ciki.",
+    "Ingantattun litters: gwada ƙarfin nauyi kafin amincewa da wanda ya yi rauni.",
+    "Matsar da abin da ya faru tare da yawon shakatawa: duba yawon shakatawa bai sassauta ba yayin motsi."
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Yara sun fi sauƙi -- mai ceto ɗaya yana ɗaukar tsawon lokaci. Ci gaba da girman kai daidai gwargwado -- mafi girman tsakiyar nauyi lokacin ɗauka."
+    },
+    "obstetric": {
+      "note": "Ka guje wa matsayi mai sauƙi ko matsa lamba akan ciki. Na gefe (wanda aka fi so a gefen hagu) ko jigilar kaya tare da wedge na hagu."
+    }
+  },
+  "source": "FM 4-25.11 (First Aid) / TCCC / PHTLS"
+}

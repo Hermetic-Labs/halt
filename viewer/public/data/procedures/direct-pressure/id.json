@@ -1,0 +1,41 @@
+{
+  "id": "direct-pressure",
+  "name": "Tekanan Langsung untuk Pengendalian Perdarahan",
+  "category": "hemorrhage-control",
+  "skill_level": "setiap responden",
+  "time_estimate": "3-5 menit",
+  "description": "Kontrol perdarahan lini pertama untuk luka ekstremitas dan tubuh yang dapat diakses.",
+  "equipment": [
+    "sarung tangan",
+    "pembalut trauma",
+    "perban dasi"
+  ],
+  "steps": [
+    "Kenakan sarung tangan jika tersedia.",
+    "Buka lukanya dengan memotong pakaian.",
+    "Oleskan balutan trauma atau kain terlipat langsung pada luka.",
+    "Tekan dengan kuat menggunakan tumit tangan Anda. Gunakan berat badan Anda -- bukan hanya kekuatan lengan.",
+    "Tahan tekanan terus menerus dan tidak terputus selama minimal 3 menit.",
+    "JANGAN angkat balutan untuk memeriksanya - ini akan mengganggu pembentukan gumpalan.",
+    "Jika darah merembes, tambahkan balutan lain di atasnya. Jangan hapus yang pertama.",
+    "Amankan dengan perban bertekanan jika tersedia dan pindahkan ke pembalut luka atau tourniquet jika pendarahan berlanjut."
+  ],
+  "warnings": [
+    "Tekanan langsung saja tidak cukup untuk perdarahan arteri -- dapat meningkat menjadi pembalutan luka atau tourniquet.",
+    "Luka di daerah persimpangan (selangkangan, aksila, leher) memerlukan pembalutan luka, bukan tekanan eksternal saja."
+  ],
+  "follows": [],
+  "precedes": [
+    "pengepakan luka",
+    "aplikasi tourniquet"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Tekanan proporsional saja. Hindari mengompres bagian dada pada bayi."
+    },
+    "obstetric": {
+      "note": "Hindari kompresi berat pada rahim yang hamil. Gunakan packing lateral jika terdapat luka sambungan di dekat panggul."
+    }
+  },
+  "source": "JTS CPG / TCCC / PHTLS"
+}

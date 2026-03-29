@@ -1,0 +1,46 @@
+{
+  "id": "lorazepam",
+  "name": "Lorazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "6470",
+  "brand_names": [
+    "Ativan"
+  ],
+  "description": "Benzodiazepine oo dhexdhexaad ah. Daawaynta safka koowaad ee IV/IM ee xaalada suuxdinta iyo suuxdinta degdega ah. Waxa kale oo loo isticmaalaa suuxinta nidaamka iyo walaaca.",
+  "indications": [
+    "Xaaladda suuxdinta (line-ka koowaad IV)",
+    "Maareynta qalalka degdega ah",
+    "Habka suuxinta",
+    "Walaac daran ama kacsi"
+  ],
+  "dose": "Suuxdin: 4 mg IV/IO tartiib tartiib ah 2 daqiiqo. Ku celi 4 mg 5-10 daqiiqo gudahood haddii suuxdintu sii socoto. IM: 4 mg haddii IV la waayo.",
+  "route": [
+    "IV",
+    "IO",
+    "IM"
+  ],
+  "window": "",
+  "contraindications": [
+    "glaucoma ba'an ee xagal cidhiidhi ah",
+    "Neefsashada oo aad u daran",
+    "Xasaasiyadda Propylene glycol"
+  ],
+  "warnings": [
+    "Waxay keentaa niyad-jabka neef-mareenka -- ha diyaariyaan qalabka BVM iyo marin-haweedka.",
+    "Suuxdintu waxay socon kartaa 6-8 saacadood -- la soco marin-haweedka.",
+    "Kacsi aan caadi ahayn ayaa suurtagal ah, gaar ahaan waayeelka iyo carruurta."
+  ],
+  "regional_names": {
+    "generic": "lorazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0.05-0.1 mg/kg IV/IM (ugu badnaan 4 mg/qiyaas). Ku celi hal mar 5-10 daqiiqo haddii loo baahdo.",
+      "note": "Laga door biday diazepam ee maaraynta suuxdinta IV ee carruurta."
+    },
+    "obstetric": {
+      "note": "Ka gudubta mandheerta -- diiqada neefsashada ee dhallaanka oo suurtagal ah. Isticmaal suuxdinta xaaladda hooyada marka faa'iido ka badan tahay khatarta."
+    }
+  },
+  "source": "JTS CPG / Standard Seizure Management Guidelines"
+}

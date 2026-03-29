@@ -1,0 +1,45 @@
+{
+  "id": "ondansetron",
+  "name": "Ondansetrón",
+  "category": "antiemetic",
+  "rxnorm": "26225",
+  "brand_names": [
+    "Zofran"
+  ],
+  "description": "Antiemético antagonista selectivo del receptor 5-HT3. Altamente eficaz para náuseas y vómitos. La ODT (tableta de desintegración oral) es útil en entornos de campo cuando la vía intravenosa no está disponible. Incluido en algunos paquetes de pastillas de combate.",
+  "indications": [
+    "Náuseas y vómitos (quimioterapia, inducidos por opioides, postoperatorios, relacionados con TCE)",
+    "Mareo por movimiento",
+    "Náuseas por la administración de ketamina"
+  ],
+  "dose": "4-8 mg IV/IO en dosis lenta durante 2-5 min. ODT: 4-8 mg disueltos debajo de la lengua. IM: 4 mg.",
+  "route": [
+    "IV",
+    "OI",
+    "IM",
+    "orden de compra",
+    "ODT"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hipersensibilidad conocida al ondansetrón u otros antagonistas 5-HT3",
+    "Síndrome congénito de QT largo (solo dosis altas IV)"
+  ],
+  "warnings": [
+    "Las dosis altas IV pueden prolongar el intervalo QT; utilice la dosis IV efectiva más baja.",
+    "No reemplaza el manejo de las vías respiratorias en pacientes obnubilados con vómitos; primero proteja las vías respiratorias."
+  ],
+  "regional_names": {
+    "generic": "ondansetrón"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "0,1-0,15 mg/kg IV (máximo 4 mg). ODT: 4 mg para niños > 4 años.",
+      "note": "Ampliamente utilizado y bien tolerado en pediatría."
+    },
+    "obstetric": {
+      "note": "Datos limitados en el embarazo. Úselo para náuseas/vómitos intensos después del primer trimestre cuando los beneficios superan los riesgos. No recomendado en el primer trimestre."
+    }
+  },
+  "source": "JTS CPG / Standard Emergency Pharmacology"
+}

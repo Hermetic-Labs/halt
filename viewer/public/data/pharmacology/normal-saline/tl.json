@@ -1,0 +1,43 @@
+{
+  "id": "normal-saline",
+  "name": "Normal Saline (0.9% NaCl)",
+  "category": "fluid-resuscitation",
+  "rxnorm": "9863",
+  "brand_names": [
+    "0.9% Sodium Chloride Injection"
+  ],
+  "description": "Isotonic crystalloid fluid. Ginagamit para sa IV fluid resuscitation. Sa hemorrhagic shock, gamitin nang maingat -- ang malalaking volume ay nagpapalala ng coagulopathy (hyperchloremic acidosis, dilutional coagulopathy). Ang pinahihintulutang hypotension ay ginustong sa matalim na trauma habang nakabinbing kontrol sa pagdurugo.",
+  "indications": [
+    "Fluid resuscitation (nang may pag-iingat sa hemorrhagic shock)",
+    "Diluent/flush ng gamot",
+    "Hypovolemia mula sa mga di-hemorrhagic na sanhi"
+  ],
+  "dose": "Hemorrhagic shock: Limitahan sa 1L max na nakabinbing kontrol sa pagdurugo (permissive hypotension). Target ang SBP na 80-90 mmHg sa penetrating trauma, 90 mmHg sa TBI. Non-hemorrhagic hypovolemia: 500 mL bolus, muling suriin.",
+  "route": [
+    "IV",
+    "IO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Hypernatremia",
+    "Sobrang karga ng likido / pulmonary edema (kamag-anak)"
+  ],
+  "warnings": [
+    "Ang malalaking volume ay nagdudulot ng hyperchloremic metabolic acidosis at dilutional coagulopathy -- nagpapalala sa nakamamatay na triad sa trauma.",
+    "Ang lactated Ringer's (LR) ay mas gusto para sa malaking volume na trauma resuscitation.",
+    "HUWAG mag-over-resuscitate ng penetrating torso trauma bago ang surgical hemorrhage control (permissive hypotension)."
+  ],
+  "regional_names": {
+    "generic": "sodium chloride 0.9%"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "20 mL/kg IV bolus, suriin muli. Ulitin ang max x3 (60 mL/kg kabuuan) bago isaalang-alang ang mga produkto ng dugo.",
+      "note": ""
+    },
+    "obstetric": {
+      "note": "Karaniwang resuscitation sa obstetric hemorrhage. Ang agresibong fluid resuscitation na angkop para sa postpartum hemorrhage bago magkaroon ng mga produkto ng dugo."
+    }
+  },
+  "source": "JTS CPG: Damage Control Resuscitation / PHTLS"
+}

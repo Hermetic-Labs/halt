@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valium",
+    "Diastat"
+  ],
+  "description": "benzodiazepine oo shaqaynaysa muddo dheer. Loo isticmaalo maaraynta qalalka, murqaha murqaha, iyo walaaca. Gel malawadka (Diastat) ayaa faa'iido u leh goobaha goobta marka IV la waayo. Muddo ka dheer lorazepam.",
+  "indications": [
+    "Maareynta qalalka (malawadka/IV)",
+    "Murqaha oo ka yimaada dhaawac laf dhabarta ama teetanada",
+    "Daawada lidka-dote-ka ee wakiilka neerfaha (oo ku jira xirmooyinka CHEMPACK)",
+    "Khamriga oo laga baxo"
+  ],
+  "dose": "Suuxdin: 5-10 mg IV riixid tartiib ah. Ku celi q10-15 daqiiqo (ugu badnaan 30 mg). Malawadka: 0.2-0.5 mg/kg. nuugista IM waa khalad -- iska ilaali IM haddii ay suurtagal tahay.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "glaucoma ba'an oo xagal cidhiidhi ah",
+    "Cudur beereedka daran",
+    "Niyad jabka neefsiga"
+  ],
+  "warnings": [
+    "Nuugista IM waa qallafsan tahay oo xanuun badan -- doorbid IV, malawadka, ama isticmaal midazolam IM beddelkeeda.",
+    "Muddo dheer oo suuxdin ah (24-48h ee qiyaasaha soo noqnoqda).",
+    "Dhaawacyada wakiilka neerfaha: diazepam ayaa lagu daray xirmooyinka CHEMPACK ee suuxdinta ka timid xiisadda cholinergic."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0.1-0.3 mg/kg (ugu badnaan 10 mg). Malawadka: 0.3-0.5 mg/kg. Isticmaal dariiqa malawadka marka IV la waayo.",
+      "note": "Jeelka malawadka ee loo yaqaan 'diastat gel' ayaa si gaar ah faa'iido u leh suuxdinta carruurta ee goobaha goobta."
+    },
+    "obstetric": {
+      "note": "Ka gudubta mandheerta. Waxay keeni kartaa hypotonia dhallaanka, niyad-jabka neefsashada. U isticmaal kaliya qallalka hooyada ee aan ka jawaabin magnesium."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

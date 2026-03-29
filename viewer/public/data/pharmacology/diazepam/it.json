@@ -1,0 +1,47 @@
+{
+  "id": "diazepam",
+  "name": "Diazepam",
+  "category": "sedation-seizure",
+  "rxnorm": "3322",
+  "brand_names": [
+    "Valio",
+    "Diastato"
+  ],
+  "description": "Benzodiazepine ad azione prolungata. Utilizzato per la gestione delle convulsioni, degli spasmi muscolari e dell'ansiolisi. Il gel rettale (Diastat) è utile nelle impostazioni sul campo quando la IV non è disponibile. Durata maggiore rispetto al lorazepam.",
+  "indications": [
+    "Gestione delle crisi (rettale/IV)",
+    "Spasmo muscolare dovuto a lesione del midollo spinale o tetano",
+    "Aggiunto antidoto per agenti nervini (nei kit CHEMPACK)",
+    "Astinenza da alcol"
+  ],
+  "dose": "Convulsioni: 5-10 mg IV a spinta lenta. Ripetere ogni 10-15 minuti (max 30 mg). Rettale: 0,2-0,5 mg/kg. Assorbimento IM irregolare – evitare IM se possibile.",
+  "route": [
+    "IV",
+    "IO",
+    "PR"
+  ],
+  "window": "",
+  "contraindications": [
+    "Glaucoma acuto ad angolo chiuso",
+    "Grave malattia epatica",
+    "Depressione respiratoria"
+  ],
+  "warnings": [
+    "L'assorbimento IM è irregolare e doloroso: preferire la somministrazione endovenosa, rettale o utilizzare midazolam IM.",
+    "Lunga durata della sedazione (24-48 ore per dosi ripetute).",
+    "Vittime da agenti nervosi: il diazepam è incluso nei kit CHEMPACK per le crisi convulsive da crisi colinergica."
+  ],
+  "regional_names": {
+    "generic": "diazepam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "IV: 0,1-0,3 mg/kg (massimo 10 mg). Rettale: 0,3-0,5 mg/kg. Utilizzare la via rettale quando la IV non è disponibile.",
+      "note": "Il gel diastat rettale è particolarmente utile per le convulsioni pediatriche in contesti di campo."
+    },
+    "obstetric": {
+      "note": "Attraversa la placenta. Può causare ipotonia neonatale e depressione respiratoria. Utilizzare solo per le crisi materne che non rispondono al magnesio."
+    }
+  },
+  "source": "JTS CPG / CHEMPACK Program / Standard Seizure Management"
+}

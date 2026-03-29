@@ -1,0 +1,48 @@
+{
+  "id": "midazolam",
+  "name": "Midazolam",
+  "category": "sedation-seizure",
+  "rxnorm": "41493",
+  "brand_names": [
+    "Bilgili",
+    "Nezilam"
+  ],
+  "description": "Hızlı başlangıçlı, kısa etkili benzodiazepin. Prosedürel sedasyon, RSI ön tedavisi ve IM/IN nöbet yönetimi için tercih edilir. IM ve intranazal yollar saha ortamlarında önemli avantaj sağlar.",
+  "indications": [
+    "Prosedürel sedasyon",
+    "RSI ön ilacı (ketamin ile)",
+    "Nöbet yönetimi (IV kullanılamadığında IM/IN)",
+    "Ajitasyon yönetimi"
+  ],
+  "dose": "Sedasyon: 0,05-0,1 mg/kg IV titre edildi. Prosedür: 1-5 mg IV yavaş itme. IM: 0,2 mg/kg. IN: 0,2 mg/kg (maks. 10 mg). Status epileptikus IM: 10 mg IM (yetişkin).",
+  "route": [
+    "IV",
+    "Giriş Çıkış",
+    "anlık ileti",
+    "İÇİNDE"
+  ],
+  "window": "",
+  "contraindications": [
+    "Akut dar açılı glokom",
+    "Kardiyovasküler bozulmayla birlikte akut alkol intoksikasyonu",
+    "Bilinen aşırı duyarlılık"
+  ],
+  "warnings": [
+    "Solunum depresyonu - hava yolunu izleyin, varsa tersine çeviren ajan (flumazenil) kullanın.",
+    "Özellikle opioidlerin birlikte uygulanmasıyla hipotansiyon.",
+    "Hızlı IV enjeksiyonu apneye neden olur; yavaşça itin."
+  ],
+  "regional_names": {
+    "generic": "midazolam"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "Sedasyon: 0,05-0,1 mg/kg IV. IM: 0,1-0,2 mg/kg. IN: 0,2-0,3 mg/kg. Nöbet IM: 0,2 mg/kg (maks. 10 mg).",
+      "note": "IN rotası çocuklarda özellikle faydalıdır; IV erişimini önler."
+    },
+    "obstetric": {
+      "note": "Plasentayı geçer. Yenidoğan sedasyonu mümkündür. Minimum etkili dozu kullanın; Doğuma yakın verilirse yenidoğanı izleyin."
+    }
+  },
+  "source": "JTS CPG / Standard Procedural Sedation Guidelines"
+}

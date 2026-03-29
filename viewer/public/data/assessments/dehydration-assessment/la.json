@@ -1,0 +1,38 @@
+{
+  "id": "dehydration-assessment",
+  "name": "Siccitatibus conveniunt aestimatione",
+  "category": "circulation",
+  "description": "Agrum taxatio propter siccitatibus et caloribus morbum severitatis. Color urinae est utilissimus agri index. Status mentis perpende tamquam titulum gravi siccitatibus progredientibus ad ictum caloris.",
+  "instructions": "Siste color urinae, cutis turgor, status mentis, et signa vitalia. Urina obscura, membranae mucosae aridae, et tachycardia significant siccitatem significantem requirunt rehydration activam.",
+  "categories": [
+    {
+      "color": "patet-pallida",
+      "label": "Bene Hydrated",
+      "description": "Urina pallida ad purgandum. Nihil intervenientibus opus est."
+    },
+    {
+      "color": "flavum",
+      "label": "Dehydration mitis",
+      "description": "Urina flavescens, sitiens. Rehydration oral. Robora 250-500 mL aqua per horam."
+    },
+    {
+      "color": "electri",
+      "label": "Moderatus severus siccitatibus",
+      "description": "Urina electri, HR elevata, cutis turgor minuitur, os siccum. IV/IO humores si oris non tolerantur. 1-2L LR vel NS."
+    },
+    {
+      "color": "red",
+      "label": "Danger -- Heat Stroke / Severe",
+      "description": "Urina minima output, mutatur LOC, cutis arida calida. Subitis medicinalis - refrigeratio celeri + IV fluidorum + MEDEVAC."
+    }
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Pueri citius quam adulti dehydrant. Absentes sunt lacrimae, et torpor signa critica sunt. Pondus substructio IV: 20 mL/kg LR bolus."
+    },
+    "obstetric": {
+      "note": "Mulieres gravidae indigent attractio fluidi auctae. Siccitatibus potest trigger contractiones irritas. Rehydration primum irascibilis oralis; IV si non sustinens oralem."
+    }
+  },
+  "source": "PHTLS / Wilderness Medicine / US Army Hot Weather Ops"
+}

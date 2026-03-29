@@ -1,0 +1,44 @@
+{
+  "id": "metronidazole",
+  "name": "Metronidazole",
+  "category": "antibiotic",
+  "rxnorm": "៦៩២២",
+  "brand_names": [
+    "Flagyl"
+  ],
+  "description": "ថ្នាំអង់ទីប៊ីយោទិច Nitroimidazole ជាមួយនឹងការគ្របដណ្តប់ anaerobic និង protozoal ដ៏ល្អឥតខ្ចោះ។ Essential for penetrating abdominal/bowel trauma to cover anaerobic gut flora. ជាញឹកញាប់ត្រូវបានគេប្រើរួមគ្នាជាមួយ ciprofloxacin ។",
+  "indications": [
+    "របួសពោះ/ពោះវៀន",
+    "ឆ្លងមេរោគក្នុងពោះ",
+    "ការឆ្លងមេរោគជាលិកាទន់ Anaerobic",
+    "គ. ការឆ្លងមេរោគពិបាក"
+  ],
+  "dose": "500 មីលីក្រាម IV q6-8 ម៉ោង។ PO: 500 mg q8h (បើមាត់អត់ឱន)។",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "ត្រីមាសទី 1 នៃការមានផ្ទៃពោះ (សាច់ញាតិ)",
+    "ស្គាល់ថ្នាំ metronidazole ឬ nitroimidazole allergy"
+  ],
+  "warnings": [
+    "ប្រតិកម្មដូច Disulfiram ជាមួយនឹងជាតិអាល់កុល - កុំពិសារគ្រឿងស្រវឹងអំឡុងពេលព្យាបាល និង 48 ម៉ោងក្រោយ។",
+    "អាចបណ្តាលឱ្យមានជំងឺសរសៃប្រសាទគ្រឿងកុំព្យូទ័រជាមួយនឹងការប្រើប្រាស់យូរ។",
+    "ជៀសវាងក្នុងត្រីមាសទី 1 ប្រសិនបើអាចធ្វើទៅបាន។"
+  ],
+  "regional_names": {
+    "generic": "ថ្នាំ metronidazole"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "7.5 mg/kg IV/PO q6h (អតិបរមា 500 mg/dose)។",
+      "note": "មានសុវត្ថិភាពចំពោះកុមារធំ។ ជៀសវាងក្នុងទារកទើបនឹងកើត។"
+    },
+    "obstetric": {
+      "note": "ជៀសវាងក្នុងត្រីមាសទី 1 ប្រសិនបើអាចធ្វើទៅបាន។ ប្រើត្រីមាសទី 2/3 នៅពេលដែលចាំបាច់ផ្នែកវេជ្ជសាស្រ្ត អត្ថប្រយោជន៍ជាធម្មតាមានលើសពីហានិភ័យនៃការឆ្លងមេរោគធ្ងន់ធ្ងរ។"
+    }
+  },
+  "source": "JTS CPG: Wound Care / Abdominal Trauma"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "ciprofloxacin",
+  "name": "Ciprofloxacine",
+  "category": "antibiotic",
+  "rxnorm": "2551",
+  "brand_names": [
+    "Cipro"
+  ],
+  "description": "Antibiotique fluoroquinolone avec une large couverture Gram-négative. Utilisé pour les infections graves des plaies, les traumatismes abdominaux pénétrants (couverture de la flore gastro-intestinale) et les infections des voies urinaires. Disponible PO et IV.",
+  "indications": [
+    "Traumatisme abdominal pénétrant (décontamination gastro-intestinale)",
+    "Infections graves des plaies",
+    "Infections à Gram négatif",
+    "Infections des voies urinaires"
+  ],
+  "dose": "400 mg IV toutes les 8-12h. PO : 500-750 mg toutes les 12h.",
+  "route": [
+    "IV",
+    "PO"
+  ],
+  "window": "",
+  "contraindications": [
+    "Allergie connue aux fluoroquinolones",
+    "Enfants et adolescents < 18 ans (relatif -- risque de tendinopathie)",
+    "Grossesse (parentée)"
+  ],
+  "warnings": [
+    "Risque de rupture des tendons, notamment du tendon d'Achille. Arrêtez si des douleurs tendineuses se développent.",
+    "Peut prolonger l'intervalle QT - prudence avec d'autres médicaments allongeant l'intervalle QT.",
+    "À éviter pendant la grossesse si des alternatives sont disponibles."
+  ],
+  "regional_names": {
+    "generic": "ciprofloxacine"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "10-20 mg/kg IV toutes les 8-12h (max 400 mg/dose). PO : 10-20 mg/kg toutes les 12 heures (max 750 mg/dose).",
+      "note": "À utiliser uniquement lorsque les avantages l'emportent sur le risque de tendinopathie. A réserver pour les infections graves."
+    },
+    "obstetric": {
+      "note": "À éviter pendant la grossesse si des alternatives sont disponibles. Utiliser uniquement pour les infections potentiellement mortelles où les avantages l'emportent sur les risques."
+    }
+  },
+  "source": "JTS CPG: Wound Care / Infectious Disease"
+}

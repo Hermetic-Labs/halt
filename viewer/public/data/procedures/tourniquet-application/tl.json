@@ -1,0 +1,42 @@
+{
+  "id": "tourniquet-application",
+  "name": "Tourniquet Application (Combat Application Tourniquet -- CAT)",
+  "category": "hemorrhage-control",
+  "skill_level": "sinumang tumugon",
+  "time_estimate": "30-60 seg",
+  "description": "Ang tiyak na kontrol sa pagdurugo para sa pagdurugo sa dulong bahagi na nagbabanta sa buhay. Mag-apply nang maaga -- huwag mag-antala.",
+  "equipment": [
+    "pusa-tourniquet",
+    "permanenteng-marker"
+  ],
+  "steps": [
+    "Lagyan ng tourniquet ang 2-3 pulgada (5-7 cm) proximal (sa itaas) ng sugat -- sa ibabaw ng damit ay katanggap-tanggap.",
+    "Iruta ang self-adhering band sa palibot ng paa at sinulid sa friction adapter buckle.",
+    "Hilahin ang banda nang mahigpit at i-secure ito pabalik sa sarili nito.",
+    "I-twist ang windlass rod hanggang sa tumigil ang pagdurugo o distal pulse ay wala.",
+    "I-lock ang windlass sa windlass clip.",
+    "Ilapat ang windlass strap sa ibabaw ng windlass rod upang ma-secure.",
+    "Isulat ang oras ng aplikasyon nang direkta sa tourniquet (gamitin ang marker) AT sa TCCC card.",
+    "Ilantad at suriin muli ang sugat. Suriin muli pagkatapos ng 5 minuto."
+  ],
+  "warnings": [
+    "HUWAG mag-alis ng tourniquet sa sandaling inilapat sa field -- tanging sinanay na mga medikal na tauhan sa isang kontroladong setting.",
+    "Ang oras ay kritikal: ang tourniquet>2 oras ay makabuluhang nagpapataas ng panganib sa pagkawala ng paa. Log time agad.",
+    "HUWAG mag-apply sa ibabaw ng joint. Kung ang paa ay may mga sugat sa maraming antas, ilapat ang proximal sa lahat ng mga sugat.",
+    "Ang mga improvised na tourniquet (mga sinturon, mga lubid) ay hindi gaanong epektibo."
+  ],
+  "follows": [
+    "direktang presyon",
+    "sugat-packing"
+  ],
+  "precedes": [],
+  "modifiers": {
+    "pediatric": {
+      "note": "Gumamit ng makitid na pediatric tourniquet kung magagamit. Maaaring gamitin ang karaniwang CAT ngunit higpitan nang may pag-iingat. Ang mga paa ay mas maliit -- suriing mabuti ang distal pulse."
+    },
+    "obstetric": {
+      "note": "Karaniwang aplikasyon para sa mga sugat sa dulo. Huwag ilapat sa tiyan o pelvis."
+    }
+  },
+  "source": "TCCC / JTS CPG / CoTCCC"
+}

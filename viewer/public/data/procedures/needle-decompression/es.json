@@ -1,0 +1,39 @@
+{
+  "id": "needle-decompression",
+  "name": "Descompresión torácica con aguja (NCD)",
+  "category": "respiration",
+  "skill_level": "médico de combate",
+  "time_estimate": "1-2 minutos",
+  "description": "Alivio de emergencia del neumotórax a tensión mediante la inserción de una aguja en el segundo espacio intercostal. Intervención para salvar vidas.",
+  "equipment": [
+    "Catéter-aguja-14g-3-25pulg",
+    "guantes",
+    "sello-tórax-opcional"
+  ],
+  "steps": [
+    "Identificar neumotórax a tensión: ausencia de ruidos respiratorios en el lado afectado, desviación traqueal (tardía), dificultad respiratoria, hipotensión, JVD.",
+    "Exponga el tórax del lado afectado.",
+    "Localice el segundo espacio intercostal, línea medioclavicular (alternativa: 4.º/5.º ICS, línea axilar anterior).",
+    "Inserte una aguja-catéter de 14 g y 3,25 pulgadas perpendicular a la pared torácica, justo por encima de la PARTE SUPERIOR de la tercera costilla (evita el paquete neurovascular).",
+    "Avance hasta sentir una ráfaga de aire o un silbido audible.",
+    "Retire la aguja y deje el catéter en su lugar.",
+    "Escuche si hay mejoras en los ruidos respiratorios y el esfuerzo respiratorio.",
+    "Asegure el conector del catéter. NO sujete ni cubra el extremo abierto.",
+    "Vuelva a evaluar cada 5 minutos: el catéter puede doblarse o coagularse, lo que requerirá una nueva descompresión."
+  ],
+  "warnings": [
+    "Utilice una aguja de 3,25 pulgadas; el angiocatéter estándar de 14 g (1,5 pulgadas) falla con frecuencia en pacientes militares debido a la armadura corporal y la musculatura.",
+    "Puede ser necesaria una NCD bilateral si no se sabe qué lado está afectado y el paciente está periparo.",
+    "No lo coloque del mismo lado que la herida succionadora del pecho sin sellar primero la herida."
+  ],
+  "follows": [],
+  "precedes": [
+    "aplicación-de-sello-tórax"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Utilice una aguja del tamaño adecuado (en pacientes más pequeños, 1,5 a 2 pulgadas pueden ser suficientes). Utilice el segundo método ICS MCL. El reconocimiento de puntos de referencia es más difícil; tenga cuidado."
+    }
+  },
+  "source": "TCCC / JTS CPG"
+}

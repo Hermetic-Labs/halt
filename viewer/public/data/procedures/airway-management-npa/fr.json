@@ -1,0 +1,26 @@
+{
+  "id": "airway-management-npa",
+  "name": "Insertion des voies respiratoires nasopharyngées (NPA)",
+  "category": "airway",
+  "skill_level": "bouée de sauvetage",
+  "time_estimate": "1 minute",
+  "description": "Insertion d'un complément flexible des voies respiratoires nasales pour maintenir la perméabilité des voies respiratoires chez un patient inconscient ou semi-conscient.",
+  "equipment": [
+    "npa-avec-goupille de sécurité",
+    "lubrifiant"
+  ],
+  "steps": [
+    "Sélectionnez la taille NPA appropriée (mesurez de la narine au lobe de l’oreille).",
+    "Lubrifiez généreusement le NPA avec un lubrifiant soluble dans l’eau ou une solution saline.",
+    "Insérez la goupille de sécurité à travers la bride si elle n'est pas déjà présente (empêche l'aspiration).",
+    "Insérez doucement dans la narine droite (biseau vers le septum), en avançant parallèlement au palais.",
+    "Avancez jusqu’à ce que la collerette repose contre la narine.",
+    "Repositionnez le patient (position de récupération si aucun problème de colonne vertébrale) et réévaluez les voies respiratoires.",
+    "Si vous rencontrez une résistance, essayez la narine gauche."
+  ],
+  "warnings": [
+    "Contre-indiqué en cas de suspicion de fracture basilaire du crâne (yeux de raton laveur, signe de Battle, rhinorrhée du LCR).",
+    "Le NPA est le meilleur complément initial des voies respiratoires pour les patients inconscients. L'OPA peut déclencher des vomissements chez les patients semi-conscients."
+  ],
+  "source": "TCCC / JTS CPG"
+}

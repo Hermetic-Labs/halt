@@ -1,0 +1,6 @@
+{
+  "id": "medevac-9line",
+  "name": "9 Hatlı MEDEVAC Talebi",
+  "description": "Tıbbi tahliye talebi için standartlaştırılmış NATO formatı. Sırayla iletildi, satır 1-9. 1'den 5'e kadar olan satırlar hemen iletilir (şifrelenmemiş izin verilir). 6-9. satırlar takip ediyor. Doğru bir 9 hat kuşu havaya kaldırır. Eksik olanı geciktirir.",
+  "source": "FM 3-04.301 / ATP 4-02.2 / NATO STANAG 3204"
+}

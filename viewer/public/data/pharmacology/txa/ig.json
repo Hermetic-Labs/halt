@@ -1,0 +1,47 @@
+{
+  "id": "txa",
+  "name": "Tranexamic acid (TXA)",
+  "category": "hemostatic",
+  "rxnorm": "40769",
+  "brand_names": [
+    "Cyklokapron",
+    "Listeda"
+  ],
+  "description": "Ihe antifibrinolytic nke na-egbochi mkpụkọ ọbara. Na-ebelata oke onwu site na ujo hemorrhagic mgbe enyere ya n'oge. CoTCCC kwadoro maka ndị niile merụrụ ahụ nwere nnukwu ọbara ọgbụgba ma ọ bụ nọ n'ihe ize ndụ nke nnukwu ọbara ọgbụgba.",
+  "indications": [
+    "Ọbara ọbara dị n'ime ma ọ bụ nke a na-enyo enyo",
+    "Hemorrhagic ujo",
+    "Nnukwu ihe ize ndụ nke ọbara ọgbụgba (usoro mmerụ ahụ)"
+  ],
+  "dose": "1g IV/IO karịrị nkeji iri, sochiri 1g IV/IO karịa awa asatọ. Ọ bụrụ na IV/IO adịghị: 650mg PO x2 (1.3g mkpokọta) -- TCCC PO nhọrọ.",
+  "route": [
+    "IV",
+    "IO",
+    "PO"
+  ],
+  "window": "A ghaghị inye ya n'ime awa 3 nke mmerụ ahụ gasịrị. Agafe awa 3, TXA nwere ike ịbawanye ọnwụ -- enyela.",
+  "contraindications": [
+    "Akụkọ banyere ọrịa thromboembolic (DVT, PE, ọrịa strok)",
+    "Mgbakọ intravaskụla ekesara (DIC)",
+    "> 3 awa mgbe mmerụ ahụ gasịrị"
+  ],
+  "warnings": [
+    "Oge ndekọ nke nchịkwa ozugbo - windo bụ awa 3 site na oge mmerụ ahụ, ọ bụghị oge mbata.",
+    "Ejikọtala dose IV (1g) na ọnụọgụ ọnụ."
+  ],
+  "regional_names": {
+    "generic": "tranexamic acid",
+    "US": "Cyklokapron",
+    "UK": "Cyklokapron"
+  },
+  "modifiers": {
+    "pediatric": {
+      "dose": "15 mg / kg IV (max 1g). Ihe akaebe na-apụta -- jiri mkpebi ụlọ ọgwụ mee ihe.",
+      "note": "Otu windo nke awa 3 na-emetụta."
+    },
+    "obstetric": {
+      "note": "E gosipụtara maka ọbara ọgbụgba mgbe ọmụmụ nwa. Nchekwa na ime ime. Otu ọgwụ ndị okenye na-emetụta."
+    }
+  },
+  "source": "JTS CPG: Hemorrhage Control / CoTCCC TCCC Guidelines"
+}

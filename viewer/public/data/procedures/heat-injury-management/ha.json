@@ -1,0 +1,45 @@
+{
+  "id": "heat-injury-management",
+  "name": "Gudanar da Raunin zafi",
+  "category": "environmental",
+  "skill_level": "Na asali",
+  "time_estimate": "Ci gaba har zuwa MEDEVAC ko kwanciyar hankali na haƙuri",
+  "description": "Gudanar da zafin zafi, gajiyar zafi, da bugun jini. Bugawar zafi lamari ne na gaggawa mai barazanar rai -- saurin sanyaya shine magani. Bambance gajiyawar zafi (magana ta al'ada) daga bugun zafi (canza LOC) nan da nan.",
+  "equipment": [
+    "Ruwa (baki + sanyaya)",
+    "Fakitin kankara ko rigar rigar sanyi",
+    "Kayayyakin IV (LR ko NS)",
+    "Fan ko inuwa",
+    "Matsakaicin ma'aunin zafi da sanyio (madaidaicin yanayin zafi)"
+  ],
+  "steps": [
+    "TAMBAYA: Shin wanda aka kashe yana faɗakarwa kuma yana kan gaba? Busasshiyar fata mai zafi vs. zafi mai zafi fata? Yanayin zafin jiki idan akwai ma'aunin zafi da sanyio.",
+    "CIWON ZAFI: tsokanar tsoka, ambaton al'ada. Huta a cikin inuwa, rehydration na baki tare da electrolytes, m mikewa. Ba mai barazana ga rayuwa ba.",
+    "GUDUWAR ZAFI: Yawan zufa, rauni, juwa, magana ta al'ada ko kusa da al'ada. Matsar zuwa wurin inuwa/sanyi. Cire tufafin da suka wuce gona da iri. Ruwan baka (idan an sani) ko IV LR 1L akan 30-60 min. Saka idanu don ci gaba zuwa bugun jini.",
+    "MAGANIN ZAFIN (gaggawa): Canja wurin LOC, rudani, fama, ko rashin sani. Matsakaicin zafin jiki> 40C (104F). Fata mai zafi (zai iya zama jika ko bushe). FARA: Cire daga zafi nan da nan, cire duk tufafi, rigar fata da fanka da ƙarfi. Aiwatar da fakitin kankara zuwa wuyansa, axillae, da makwancin gwaiwa (yankunan jijiyoyin bugun jini). IV LR 1-2L. Kare hanyar iska idan ba a sani ba. MEDEVAC nan take.",
+    "KADA a ba da aspirin ko acetaminophen don bugun jini -- baya taimakawa, yana iya cutarwa.",
+    "Saka idanu: vitals q15 min, hanyar iska, halin tunani. Daftarin yanayin yanayin yanayi.",
+    "Ci gaba da sanyaya yayin MEDEVAC -- kar a tsaya don sufuri."
+  ],
+  "warnings": [
+    "Bugawar zafi lamari ne na gaggawa mai barazanar rai -- kar a yi kuskure da gajiyawar zafi. Duba halin tunani.",
+    "Sanyi shine tabbataccen magani. Kada a jinkirta sanyaya don kafa damar IV.",
+    "Ƙunƙarar zafi mai zafi na iya faruwa a cikin mutane masu dacewa - lafiyar jiki ba ya karewa.",
+    "Hyponatremia (ƙananan sodium) daga yawan ruwa tare da ruwa mara kyau na iya kwatanta bugun jini - ba da maganin electrolyte ba kawai ruwa ba."
+  ],
+  "follows": [
+    "rashin ruwa-kimanin"
+  ],
+  "precedes": [
+    "medevac-9line"
+  ],
+  "modifiers": {
+    "pediatric": {
+      "note": "Yara ba su da ƙarfi sosai. Zafin zafi na iya ci gaba da sauri. Ruwa na tushen nauyi: 20 ml/kg LR IV bolus. Matsakaicin zafin jiki ta hanyar ma'aunin zafi da sanyio mafi daidai."
+    },
+    "obstetric": {
+      "note": "Hyperthermia na uwa (> 39C) na iya haifar da lahani na jijiyar tayi (da wuri) da damuwa tayi (marigayi). M sanyaya. Duban bugun zuciya tayi idan akwai."
+    }
+  },
+  "source": "JTS CPG: Heat Stroke / PHTLS / US Army Hot Weather Training"
+}
