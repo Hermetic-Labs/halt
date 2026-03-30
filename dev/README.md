@@ -26,7 +26,7 @@ python dev/build_and_deploy.py --zip-only --no-bump --deploy # Zip existing buil
 
 ### Build output locations
 
-```
+```text
 repo-root/
 ├── dev/electron-launcher/dist/
 │   ├── win-unpacked/                    ← Portable app (test by running the .exe inside)
@@ -64,27 +64,32 @@ repo-root/
 
 | Directory | Purpose |
 |-----------|---------|
-| `electron-launcher/` | Electron main process, preload scripts, package.json build config — [see its README](electron-launcher/README.md) |
+| `electron-launcher/` | Electron main process, preload scripts, package.json build config |
 | `ios-companion/` | Capacitor iOS companion app configuration |
-| `macos/` | macOS-specific build scripts and `.command` launcher |
+| `macos/` | macOS-specific build scripts and launcher |
 | `pi5-kiosk-forge/` | Raspberry Pi 5 kiosk mode setup scripts |
 | `windows/` | Windows installer resources |
 
-## Environment Variables (for R2 deployment)
+## Environment Variables
 
 | Variable | Required For | Purpose |
 |----------|-------------|---------|
 | `R2_ACCOUNT_ID` | `--deploy`, `--release`, `setup.py` | Cloudflare account ID |
 | `R2_ACCESS_KEY` | `--deploy`, `--release`, `setup.py` | R2 API access key |
 | `R2_SECRET_KEY` | `--deploy`, `--release`, `setup.py` | R2 API secret key |
-| `AZURE_TENANT_ID` | signing | Azure AD tenant (`bb1b06c5-…`) |
-| `AZURE_CLIENT_ID` | signing | `halt-signing-pipeline` app ID (`385db38c-…`) |
-| `AZURE_CLIENT_SECRET` | signing | App registration client secret |
-| `AZURE_ENDPOINT` | signing | `https://eus.codesigning.azure.net` |
-| `AZURE_CERT_PROFILE` | signing | Certificate profile name (e.g. `HALT`) |
+| `AZURE_TENANT_ID` | signing (win) | Azure AD tenant (`bb1b06c5-…`) |
+| `AZURE_CLIENT_ID` | signing (win) | `halt-signing-pipeline` app ID (`385db38c-…`) |
+| `AZURE_CLIENT_SECRET` | signing (win) | App registration client secret |
+| `AZURE_ENDPOINT` | signing (win) | `https://eus.codesigning.azure.net` |
+| `AZURE_CERT_PROFILE` | signing (win) | Certificate profile name (e.g. `HALT`) |
+| `CSC_LINK` | signing (mac) | Base64-encoded Developer ID `.p12` |
+| `CSC_KEY_PASSWORD` | signing (mac) | Password for the `.p12` (`HermeticLabs2031`) |
+| `APPLE_TEAM_ID` | signing (mac) | `Q88YSQLQ8S` |
+| `APPLE_ID` | notarize (mac) | `mrdwaynetillman@gmail.com` |
+| `APPLE_ID_PASSWORD` | notarize (mac) | App-specific password (appleid.apple.com) |
 
 > Without R2 vars, local builds work fine. Only R2 upload/download requires them.
-> Without AZURE vars, builds are unsigned (SmartScreen will warn). Set all five to enable signing.
+> Without signing vars, builds are unsigned. Windows shows SmartScreen; macOS shows Gatekeeper warning.
 
 ## Common Gotchas
 
@@ -98,9 +103,31 @@ repo-root/
 
 ---
 
-## Pending
+## Signing Status
 
-### 🔲 Authenticode Code Signing — awaiting Microsoft identity validation
+### ✅ macOS — Developer ID Application (Complete)
+
+**Cert:** Hermetic Labs LLC (`Q88YSQLQ8S`) — expires 2031/03/31
+**File:** `dev/macos/developerID_application.p12` (gitignored)
+
+Set these env vars on your Mac before running `--platform mac`:
+
+```bash
+export CSC_LINK=$(base64 -i dev/macos/developerID_application.p12)
+export CSC_KEY_PASSWORD="HermeticLabs2031"
+export APPLE_TEAM_ID="Q88YSQLQ8S"
+export APPLE_ID="mrdwaynetillman@gmail.com"
+export APPLE_ID_PASSWORD="<app-specific password — appleid.apple.com>"
+
+python dev/build_and_deploy.py --platform mac --deploy
+```
+
+Pipeline logs `[SIGN] macOS Developer ID signing credentials detected` then
+`[NOTARIZE] Submitting to Apple notary service...` — Gatekeeper warning gone.
+
+---
+
+### 🔲 Windows — Authenticode (awaiting Microsoft identity validation)
 
 **Submitted:** March 30, 2026
 **Check back:** April 3, 2026 (3 business days — expected validation window)
