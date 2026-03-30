@@ -1,44 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Security: Content Security Policy - restrict to self only (Electron context) -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: file:; connect-src 'self';">
-    <!-- Security: Prevent clickjacking -->
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <!-- Security: Prevent MIME sniffing -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <title>HALT - Starting</title>
+    <title>HALT — Starting</title>
     <style>
-        * {
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700&display=swap');
+
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #050a0f;
             color: #ffffff;
-            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             -webkit-app-region: drag;
             -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
             user-select: none;
+            animation: body-in 0.6s ease both;
         }
 
-        .logo-container {
+        @keyframes body-in {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        /* ── Background texture ─────────────────────────────── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 0%,  rgba(0, 255, 136, 0.06) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0, 120, 255, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* ── Scan-line overlay ──────────────────────────────── */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.09) 0px,
+                rgba(0, 0, 0, 0.09) 1px,
+                transparent 1px,
+                transparent 3px
+            );
+            pointer-events: none;
+        }
+
+        /* ── Logo ───────────────────────────────────────────── */
+        .logo-wrap {
             position: relative;
-            width: 120px;
-            height: 120px;
-            margin-bottom: 24px;
+            width: 96px;
+            height: 96px;
+            margin-bottom: 28px;
+            animation: logo-drop 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+        }
+
+        @keyframes logo-drop {
+            from { opacity: 0; transform: translateY(-18px) scale(0.85); }
+            to   { opacity: 1; transform: translateY(0)     scale(1);    }
         }
 
         .logo-img {
@@ -46,112 +86,152 @@
             height: 100%;
             object-fit: contain;
             position: relative;
-            z-index: 1;
+            z-index: 2;
+            filter: drop-shadow(0 0 18px rgba(0, 255, 136, 0.35));
         }
 
-        .pulse-ring {
+        /* Three concentric pulse rings */
+        .ring {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: 100px;
-            border: 2px solid #00ff88;
+            inset: -4px;
             border-radius: 50%;
-            animation: pulse 2s ease-out infinite;
+            border: 1.5px solid rgba(0, 255, 136, 0.5);
+            animation: ring-out 2.4s ease-out infinite;
+        }
+        .ring:nth-child(2) { inset: -4px; animation-delay: 0.8s; }
+        .ring:nth-child(3) { inset: -4px; animation-delay: 1.6s; }
+
+        @keyframes ring-out {
+            0%   { transform: scale(1);    opacity: 0.6; }
+            100% { transform: scale(1.9);  opacity: 0;   }
         }
 
-        .pulse-ring:nth-child(2) {
-            animation-delay: 0.5s;
-        }
-
-        .pulse-ring:nth-child(3) {
-            animation-delay: 1s;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: translate(-50%, -50%) scale(0.8);
-                opacity: 1;
-            }
-
-            100% {
-                transform: translate(-50%, -50%) scale(1.5);
-                opacity: 0;
-            }
-        }
-
-        .title {
-            font-size: 32px;
-            font-weight: 300;
-            letter-spacing: 8px;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+        /* ── Wordmark ───────────────────────────────────────── */
+        .wordmark {
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ffffff 20%, #aaffcc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 4px;
+            animation: text-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
         }
 
-        .subtitle {
-            font-size: 12px;
-            letter-spacing: 4px;
-            color: #888;
+        .sub {
+            font-size: 9px;
+            font-weight: 300;
+            letter-spacing: 5px;
+            color: rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
             margin-bottom: 40px;
+            animation: text-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
         }
 
-        .status-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        @keyframes text-in {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0);   }
         }
 
-        .spinner {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #333;
-            border-top-color: #00ff88;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        /* ── Progress bar ───────────────────────────────────── */
+        .bar-track {
+            width: 160px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            animation: text-in 0.5s ease 0.5s both;
         }
 
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
+        .bar-fill {
+            height: 100%;
+            width: 30%;
+            background: linear-gradient(90deg, #00ff88, #00c4ff);
+            border-radius: 2px;
+            animation: bar-slide 2s ease-in-out infinite alternate;
+            box-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
         }
 
+        @keyframes bar-slide {
+            from { transform: translateX(-60%); }
+            to   { transform: translateX(320%); }
+        }
+
+        /* ── Status text ────────────────────────────────────── */
         #status {
-            font-size: 13px;
-            color: #00ff88;
-            letter-spacing: 1px;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            color: rgba(0, 255, 136, 0.65);
+            text-transform: uppercase;
+            min-height: 18px;
+            transition: opacity 0.25s ease;
+            animation: text-in 0.5s ease 0.55s both;
         }
 
-        .version {
-            position: absolute;
-            bottom: 16px;
-            font-size: 11px;
-            color: #444;
+        #status.fade {
+            opacity: 0;
+        }
+
+        /* ── Version ────────────────────────────────────────── */
+        .ver {
+            position: fixed;
+            bottom: 14px;
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.12);
+            text-transform: uppercase;
         }
     </style>
 </head>
-
 <body>
-    <div class="logo-container">
-        <div class="pulse-ring"></div>
-        <div class="pulse-ring"></div>
-        <div class="pulse-ring"></div>
-        <img src="../assets/Hermetic Labs Logo 500x500.png" alt="HALT" class="logo-img">
+
+    <div class="logo-wrap">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <img
+            src="../assets/Hermetic Labs Logo 500x500.png"
+            alt="HALT"
+            class="logo-img"
+            onerror="this.style.display='none'"
+        >
     </div>
 
-    <div class="title">HALT</div>
-    <div class="subtitle">HERMETIC LABS</div>
+    <div class="wordmark">HALT</div>
+    <div class="sub">Hermetic Labs</div>
 
-    <div class="status-container">
-        <div class="spinner"></div>
-        <div id="status">Initializing...</div>
+    <div class="bar-track">
+        <div class="bar-fill"></div>
     </div>
 
-    <div class="version">v1.0.0</div>
+    <div id="status">Initializing…</div>
+
+    <div class="ver">v<span id="ver-num">—</span></div>
+
+    <script>
+        // Smooth status updates — fade out → change → fade in
+        const statusEl = document.getElementById('status');
+        let _pending = null;
+
+        window._setStatus = function(text) {
+            if (statusEl.textContent === text) return;
+            if (_pending) clearTimeout(_pending);
+            statusEl.classList.add('fade');
+            _pending = setTimeout(() => {
+                statusEl.textContent = text;
+                statusEl.classList.remove('fade');
+            }, 200);
+        };
+
+        // Version from package.json if accessible
+        try {
+            const v = document.querySelector('meta[name="app-version"]');
+            if (v) document.getElementById('ver-num').textContent = v.content;
+        } catch {}
+    </script>
 </body>
-
 </html>

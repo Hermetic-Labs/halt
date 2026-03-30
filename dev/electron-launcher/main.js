@@ -218,70 +218,11 @@ function createSplashWindow() {
         }
     });
 
-    // Load inline splash HTML
-    splashWindow.loadURL(`data:text/html;charset=utf-8,${encodeURIComponent(getSplashHTML())}`);
+    // Load the designed splash screen
+    splashWindow.loadFile(path.join(__dirname, 'renderer', 'splash.html'));
 }
 
-/**
- * Get splash screen HTML
- */
-function getSplashHTML() {
-    return `
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #312e81 100%);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            border-radius: 12px;
-            -webkit-app-region: drag;
-        }
-        .container {
-            text-align: center;
-        }
-        .logo {
-            font-size: 48px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-        }
-        .spinner {
-            width: 32px;
-            height: 32px;
-            border: 3px solid rgba(255,255,255,0.2);
-            border-top-color: #60a5fa;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 16px;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        #status {
-            color: #94a3b8;
-            font-size: 14px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="logo">HALT</div>
-        <div class="spinner"></div>
-        <div id="status">Initializing...</div>
-    </div>
-</body>
-</html>`;
-}
+
 
 /**
  * Update splash screen status
@@ -289,7 +230,7 @@ function getSplashHTML() {
 function updateSplashStatus(status) {
     if (splashWindow && !splashWindow.isDestroyed()) {
         splashWindow.webContents.executeJavaScript(
-            `document.getElementById('status').textContent = '${status}';`
+            `if (window._setStatus) window._setStatus(${JSON.stringify(status)}); else document.getElementById('status').textContent = ${JSON.stringify(status)};`
         ).catch(() => { });
     }
 }
