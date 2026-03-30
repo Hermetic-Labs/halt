@@ -37,6 +37,7 @@ CHECKS = [
     ("Python runtime", "python.exe"),
     ("viewer index",   "index.html"),
     ("MANIFEST",       "MANIFEST.sha256"),
+    ("Splash logo",    "halt transparent.png"),   # missing = splash shows plain text fallback
 ]
 
 
@@ -84,7 +85,11 @@ def _sha256(path: Path) -> str:
 
 def _get_remote_size(url: str) -> int:
     """Return Content-Length from a HEAD request, or 0 if unavailable."""
-    req = urllib.request.Request(url, method="HEAD")
+    req = urllib.request.Request(
+        url,
+        method="HEAD",
+        headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"},
+    )
     try:
         with urllib.request.urlopen(req) as resp:
             return int(resp.headers.get("Content-Length", 0))
@@ -152,10 +157,19 @@ def main() -> None:
 
     if not zip_path.exists():
         t0 = time.time()
+        opener = urllib.request.build_opener()
+        opener.addheaders = [
+            ("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
+        ]
+        urllib.request.install_opener(opener)
         try:
             urllib.request.urlretrieve(url, str(zip_path), _make_hook(total_size))
         except Exception as exc:
             print(f"\n  [ERROR]   Download failed: {exc}")
+            if "403" in str(exc):
+                print("            Cloudflare returned 403. Check:")
+                print("            1. R2 bucket Public Access is Enabled (Cloudflare dashboard)")
+                print(f"            2. Object exists: {url.split('/')[-1]}")
             sys.exit(1)
         dl_time = time.time() - t0
         dl_mb = zip_path.stat().st_size / (1024 ** 2)
@@ -206,6 +220,44 @@ def main() -> None:
         print(f"            ✓  {'Models':<18} {len(model_files)} files  ({model_mb:.0f} MB)")
     else:
         print(f"            ⚠  {'Models':<18} none bundled (will auto-download on first launch)")
+
+    # ── Authenticode / SmartScreen check ──────────────────────────────────────
+    print()
+    print("  [SIGN]    Checking Authenticode signature (SmartScreen gate)...")
+    exe_files = list(root.rglob("HALT - Medical Triage.exe"))
+    if exe_files and sys.platform == "win32":
+        import subprocess
+        ps_cmd = (
+            f"$s = Get-AuthenticodeSignature '{exe_files[0]}';"
+            "$s.Status.ToString() + '|' + $s.SignerCertificate.Subject"
+        )
+        result = subprocess.run(
+            ["powershell", "-NoProfile", "-Command", ps_cmd],
+            capture_output=True, text=True
+        )
+        parts = result.stdout.strip().split("|", 1)
+        sig_status = parts[0].strip()
+        sig_subject = parts[1].strip() if len(parts) > 1 else ""
+
+        if sig_status == "Valid":
+            print(f"            ✓  Signed           {sig_subject}")
+            print("               SmartScreen: no warning on fresh install")
+        elif sig_status == "NotSigned":
+            print("            ✗  NOT SIGNED")
+            print("               SmartScreen: 'Windows protected your PC' on every install")
+            print("               Fix: Sign with Azure Trusted Signing (~$9.99/mo)")
+            print("               electron-builder CSC_LINK / @electron/windows-sign")
+            all_ok = False
+        else:
+            print(f"            ⚠  Status: {sig_status}")
+            if sig_subject:
+                print(f"               Subject: {sig_subject}")
+    elif exe_files:
+        print("            ⚠  Skipped (not running on Windows — use signtool on target OS)")
+    else:
+        print("            ✗  Exe not found — cannot check signature")
+        all_ok = False
+
 
     # ── MANIFEST integrity check ───────────────────────────────────────────────
     if not args.no_verify:

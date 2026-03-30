@@ -192,11 +192,34 @@ def build_electron(version, dev_mode=False):
     else:
         build_cmd = ["npm", "run", "build:win"]
 
+    # ── Azure Trusted Signing (Authenticode — removes SmartScreen warning) ────
+    # Set these env vars to enable signing. All five must be present.
+    # Identity validation + Certificate Profile must be complete in Azure first.
+    _signing_vars = [
+        "AZURE_TENANT_ID",
+        "AZURE_CLIENT_ID",
+        "AZURE_CLIENT_SECRET",
+        "AZURE_ENDPOINT",          # https://eus.codesigning.azure.net
+        "AZURE_CERT_PROFILE",      # name of the Certificate Profile in Azure
+    ]
+    _signing_env = {k: os.environ[k] for k in _signing_vars if k in os.environ}
+
+    build_env = os.environ.copy()
+    if len(_signing_env) == len(_signing_vars):
+        build_env.update(_signing_env)
+        print("  [SIGN]    Azure Trusted Signing credentials detected — build will be signed")
+    else:
+        _missing = [k for k in _signing_vars if k not in os.environ]
+        print(f"  [SIGN]    Skipping — missing env vars: {', '.join(_missing)}")
+        print("            Set all five AZURE_* vars to enable Authenticode signing")
+
     result = subprocess.run(
         build_cmd,
         cwd=str(ELECTRON_DIR),
         shell=True,
+        env=build_env,
     )
+
 
     if result.returncode != 0:
         print(f"  [ERROR]   electron-builder failed (exit {result.returncode})")
