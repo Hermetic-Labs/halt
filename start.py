@@ -175,7 +175,7 @@ def verify_integrity(root_dir):
         log("OK", f"All {checked} core files verified ✓", Colors.GREEN)
     else:
         log("WARN", "Some core files failed integrity check — system may be unstable", Colors.RED)
-        log("WARN", "Re-download from https://hermeticlabs.app if possible", Colors.RED)
+        log("WARN", "Re-download from https://github.com/Hermetic-Labs/halt/releases", Colors.RED)
 
     return all_ok
 
@@ -201,8 +201,8 @@ def ensure_models(root_dir):
     try:
         # Get file size
         req = urllib.request.Request(MODELS_URL, method="HEAD")
-        with urllib.request.urlopen(req) as resp:
-            total_size = int(resp.headers.get("Content-Length", 0))
+        with urllib.request.urlopen(req):
+            pass  # HEAD request confirms URL is reachable
 
         # Download with progress
         downloaded = [0]

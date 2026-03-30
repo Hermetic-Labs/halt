@@ -95,16 +95,6 @@ export function useChat({ userName, userRole, lang, isLeader, callActive }: UseC
         prevMsgCountRef.current = messages.length;
     }, [messages]);
 
-    // Patch messages when background translations arrive via WebSocket
-    useEffect(() => {
-        const handler = (e: Event) => {
-            const { id, translations } = (e as CustomEvent).detail as { id: string; translations: Record<string, string> };
-            setMessages(prev => prev.map(m => m.id === id ? { ...m, translations } : m));
-        };
-        window.addEventListener('eve-chat-translated', handler);
-        return () => window.removeEventListener('eve-chat-translated', handler);
-    }, []);
-
     // ── Send ─────────────────────────────────────────────────────────────────
 
     const sendMessage = useCallback(async (replyTo?: string) => {

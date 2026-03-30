@@ -160,14 +160,15 @@ def build_electron(version, dev_mode=False):
     mode_label = "portable (--dev)" if dev_mode else "installer"
     print(f"  [BUILD]   Running electron-builder (Windows, {mode_label})...")
 
-    # Sync logo from repo assets into electron-builder's assets dir
+    # Sync icon from repo assets into electron-builder's assets dir.
+    # package.json (win + nsis sections) references "assets/Icon.ico" — write
+    # directly to that name so there is exactly one source of truth.
     repo_logo = REPO_ROOT / "assets" / "logo.png"
     builder_assets = ELECTRON_DIR / "assets"
     builder_assets.mkdir(exist_ok=True)
     if repo_logo.exists():
-        shutil.copy2(repo_logo, builder_assets / "logo.png")
         # NSIS requires .ico — auto-convert if Pillow is available
-        ico_path = builder_assets / "logo.ico"
+        ico_path = builder_assets / "Icon.ico"
         if not ico_path.exists():
             try:
                 from PIL import Image
@@ -175,7 +176,7 @@ def build_electron(version, dev_mode=False):
                 img = img.resize((256, 256), Image.LANCZOS)
                 img.save(str(ico_path), format="ICO",
                          sizes=[(256, 256), (48, 48), (32, 32), (16, 16)])
-                print("            [OK] Generated logo.ico from logo.png")
+                print("            [OK] Generated Icon.ico from logo.png")
             except Exception as e:
                 print(f"            [WARN] Could not generate .ico: {e}")
 
@@ -429,7 +430,6 @@ def zip_distribution(source_dir, version, platform_name="Windows"):
     # Paths match the Electron build layout (resources/app/...) and also
     # the standalone macOS layout (direct root).
     CORE_FILENAMES = {"start.py", "main.py", "config.py", "storage.py", "bridge.py"}
-    CORE_SUBDIRS = {"api", os.path.join("api", "routes")}
 
     # Collect all files (skip __pycache__ — Python regenerates .pyc on first import)
     all_files = []
@@ -884,7 +884,7 @@ def main():
                 existing_zip = BUILDS_DIR / f"HALT-v{version}-{platform_name}.zip"
                 if existing_zip.exists() and args.deploy:
                     print(f"  [SKIP]    ZIP already exists: {existing_zip}")
-                    print(f"            Re-uploading with fresh headers...")
+                    print("            Re-uploading with fresh headers...")
                     zip_path = existing_zip
                     # Jump directly to deploy
                     success = upload_to_r2(zip_path, version, platform_name)
@@ -899,7 +899,7 @@ def main():
                 sys.exit(1)
             print(f"  [SKIP]    Using existing build: {source_dir}")
         else:
-            stage_dir = stage_app(version)
+            stage_app(version)
             source_dir = build_electron(version, dev_mode=args.dev)
             if source_dir is None:
                 print("\n  Build failed. Use --zip-only to package existing build.")

@@ -170,7 +170,6 @@ async function startBackend() {
     log(`ENV HALT_MODELS_DIR: ${envVars.HALT_MODELS_DIR}`);
     log(`ENV HALT_DATA_DIR: ${envVars.HALT_DATA_DIR}`);
     log(`ENV PYTHONPATH: ${envVars.PYTHONPATH}`);
-
     return new Promise((resolve, reject) => {
         try {
             backendProcess = spawn(python, [

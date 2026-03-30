@@ -12,7 +12,6 @@ export interface ChatMsg {
     timestamp: string;
     reply_to?: string;
     reactions?: Record<string, string[]>;
-    translations?: Record<string, string>;
 }
 
 export interface RosterMember {

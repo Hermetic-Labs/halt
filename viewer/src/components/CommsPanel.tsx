@@ -464,7 +464,6 @@ export default function CommsPanel() {
                                     if (member && !callActive) startCall(member, 'video');
                                 }}
                                 userName={userName}
-                                lang={lang}
                             />
                         ))}
                         <div ref={messagesEndRef} />

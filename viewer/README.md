@@ -1,48 +1,73 @@
-# HALT — Viewer (Frontend)
+# React + TypeScript + Vite
 
-This directory contains the pre-built React PWA served by the FastAPI backend.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## For end users and backend contributors
+Currently, two official plugins are available:
 
-You do not need to touch this directory. The backend at `api/` serves `viewer/dist/` automatically on `http://localhost:7778`. Just run:
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-```bash
-python start.py
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-## For frontend contributors
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-The viewer is a React 19 + TypeScript + Vite PWA. To modify it:
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-**Prerequisites:** Node.js 18+
-
-```bash
-cd viewer
-npm install
-npm run dev       # Dev server on :5173 (hot reload, talks to backend on :7778)
-npm run build     # Rebuild dist/ (commit the output)
-npm run lint      # ESLint check
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-
-> After building, commit the updated `viewer/dist/` so the backend can serve the new version.
-
-## Stack
-
-| Layer | Tool |
-|-------|------|
-| Framework | React 19 |
-| Language | TypeScript 5 |
-| Build | Vite 7 |
-| PWA | vite-plugin-pwa (Workbox) |
-| Charts | Recharts |
-| Fonts | Inter, JetBrains Mono |
-
-## Architecture
-
-The frontend is a single-page app with client-side routing. All state is local to the session — no Redux, no global store. The backend is the source of truth; the frontend polls or subscribes via WebSocket.
-
-Key entry points:
-- `src/App.tsx` — tab layout, routing, settings panel
-- `src/hooks/` — API calls, WebSocket subscriptions, AI inference
-- `src/components/` — feature panels (patients, comms, ward, inventory, etc.)
-- `src/i18n/` — translation system (34 languages, fully offline)

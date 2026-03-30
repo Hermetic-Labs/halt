@@ -399,10 +399,6 @@ function AppInner(p: any) {
   // ── Notification badges (unread messages & tasks) ──
   const [unreadMsgs, setUnreadMsgs] = useState(0);
   const [unreadTasks, setUnreadTasks] = useState(0);
-
-  // ── Public Lookup QR (Settings) ──
-  const [lookupQR, setLookupQR] = useState<{ url: string; qr_image: string | null } | null>(null);
-  const [lookupQRLoading, setLookupQRLoading] = useState(false);
   const lastSeenMsgs = useRef(0);
   const lastSeenTasks = useRef(0);
 
@@ -679,61 +675,6 @@ function AppInner(p: any) {
                   </summary>
                   <div style={{ borderTop: '1px solid var(--border)' }}>
                     <NetworkTab />
-                  </div>
-                </details>
-
-                {/* ── Patient Lookup QR ────────────────────────────── */}
-                <details style={{ background: 'var(--surface)', borderRadius: 10, border: '1px solid var(--border)', overflow: 'hidden' }}
-                  onToggle={async (e) => {
-                    if (!(e.currentTarget as HTMLDetailsElement).open || lookupQR || lookupQRLoading) return;
-                    setLookupQRLoading(true);
-                    try {
-                      const r = await fetch('/api/public/qr');
-                      if (r.ok) setLookupQR(await r.json());
-                    } catch { /* offline */ } finally {
-                      setLookupQRLoading(false);
-                    }
-                  }}
-                >
-                  <summary style={{ padding: '14px 20px', cursor: 'pointer', fontSize: 14, fontWeight: 700, color: 'var(--text)', listStyle: 'none', display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <span>📋</span> {t('settings.lookup_qr', 'Patient Lookup QR')}
-                  </summary>
-                  <div style={{ borderTop: '1px solid var(--border)', padding: '20px 24px' }}>
-                    <p style={{ margin: '0 0 16px', fontSize: 12, color: 'var(--text-muted)', lineHeight: 1.5 }}>
-                      {t('settings.lookup_qr_desc', 'Print this QR code and place it at reception. Families scan it to search for patients on the local network — no staff needed.')}
-                    </p>
-                    {lookupQRLoading && (
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'var(--text-muted)', fontSize: 13 }}>
-                        <div style={{ width: 16, height: 16, border: '2px solid #3fb95044', borderTop: '2px solid #3fb950', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
-                        Generating...
-                      </div>
-                    )}
-                    {lookupQR && (
-                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 14 }}>
-                        {lookupQR.qr_image ? (
-                          <img
-                            src={lookupQR.qr_image}
-                            alt="Patient Lookup QR"
-                            style={{ width: 200, height: 200, borderRadius: 8, border: '3px solid var(--border)', background: '#fff', imageRendering: 'pixelated' }}
-                          />
-                        ) : (
-                          <div style={{ fontSize: 12, color: '#e74c3c' }}>QR generation unavailable — qrcode package not installed.</div>
-                        )}
-                        <div style={{ fontSize: 11, color: 'var(--text-muted)', fontFamily: 'monospace', wordBreak: 'break-all' }}>{lookupQR.url}</div>
-                        <button
-                          onClick={() => {
-                            if (!lookupQR.qr_image) return;
-                            const w = window.open('', '_blank');
-                            if (!w) return;
-                            w.document.write(`<!DOCTYPE html><html><head><title>Patient Lookup QR</title><style>body{margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;font-family:sans-serif;background:#fff}img{width:280px;height:280px;image-rendering:pixelated}p{margin:12px 0 4px;font-size:13px;color:#555;text-align:center}code{font-size:11px;color:#888}</style></head><body><p>Patient Lookup</p><img src="${lookupQR.qr_image}" alt="QR"/><p><code>${lookupQR.url}</code></p><script>window.print();window.close();</` + `script></body></html>`);
-                            w.document.close();
-                          }}
-                          style={{ padding: '8px 18px', background: '#3fb950', border: 'none', borderRadius: 8, color: '#000', fontWeight: 700, fontSize: 13, cursor: 'pointer' }}
-                        >
-                          🖨 Print QR
-                        </button>
-                      </div>
-                    )}
                   </div>
                 </details>
 

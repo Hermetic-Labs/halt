@@ -685,9 +685,6 @@ export default function NetworkTab() {
                             audio.play().catch(() => { });
                         } catch { /* no audio */ }
                     }
-                } else if (msg.type === 'chat_translated') {
-                    // Background translations arrived — patch message in CommsPanel
-                    window.dispatchEvent(new CustomEvent('eve-chat-translated', { detail: msg }));
                 } else if (['call_request', 'call_accept', 'call_reject', 'call_end',
                             'webrtc_offer', 'webrtc_answer', 'webrtc_ice'].includes(msg.type)) {
                     // Dispatch to CommsPanel for state management

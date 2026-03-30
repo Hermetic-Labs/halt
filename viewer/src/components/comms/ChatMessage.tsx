@@ -17,12 +17,11 @@ interface Props {
     onCall?: (senderName: string) => void;
     onVideoCall?: (senderName: string) => void;
     userName?: string;
-    lang?: string;
 }
 
 const QUICK_EMOJIS = ['👍', '❤️', '😂', '👀', '🩹', '🚨'];
 
-export default function ChatMessage({ msg, isMe, roster, formatTime, allMessages, onReply, onReact, onCall, onVideoCall, userName, lang }: Props) {
+export default function ChatMessage({ msg, isMe, roster, formatTime, allMessages, onReply, onReact, onCall, onVideoCall, userName }: Props) {
     const senderRoster = roster.find(r => r.name.toLowerCase() === msg.sender_name.toLowerCase());
     const avatarUrl = senderRoster?.avatar_url;
     const initial = msg.sender_name.charAt(0).toUpperCase();
@@ -99,7 +98,7 @@ export default function ChatMessage({ msg, isMe, roster, formatTime, allMessages
                     border: `1px solid ${isMe ? '#3fb95033' : 'var(--border)'}`,
                     color: 'var(--text)', wordBreak: 'break-word',
                 }}>
-                    {(lang && lang !== 'en' && msg.translations?.[lang]) || msg.message}
+                    {msg.message}
                 </div>
 
                 {/* Reactions */}

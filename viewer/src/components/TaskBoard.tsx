@@ -305,21 +305,15 @@ export default function TaskBoard() {
                 signal: ac.signal
             });
             if (!ttsRes.ok) throw new Error('TTS failed');
-            const wavBlob = await ttsRes.blob();
-            const audio_b64 = await new Promise<string>((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onload = () => resolve((reader.result as string).split(',')[1]);
-                reader.onerror = () => reject(new Error('Audio encode failed'));
-                reader.readAsDataURL(wavBlob);
-            });
+            const audioData = await ttsRes.json();
 
-            // 2. Broadcast text + pre-loaded audio together
+            // 2. Broadcast text + audio together
             await fetch(`${API_BASE}/api/mesh/announcement`, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     message: announcementMsg.trim(),
                     sender_name: userName,
-                    audio_b64,
+                    audio_b64: audioData.audio_base64
                 }),
             });
             setShowAnnouncement(false);

@@ -58,21 +58,19 @@ def add_roster_member(member: RosterMember):
     """Add or update a roster member (upsert by name).
 
     If a member with the same name already exists, update their role/skills/status
-    instead of creating a duplicate. Preserves existing id and joined_at so avatars
-    and history aren't lost.
+    instead of creating a duplicate. Preserves the original id and joined_at so
+    avatars and history aren't lost on reconnect.
     """
     p = roster_path()
     roster = json.loads(p.read_text(encoding="utf-8")) if p.exists() else []
 
     # Check for existing member by name (case-insensitive)
-    existing_idx = None
-    for i, m in enumerate(roster):
-        if m.get("name", "").strip().lower() == member.name.strip().lower():
-            existing_idx = i
-            break
+    existing_idx = next(
+        (i for i, m in enumerate(roster) if m.get("name", "").strip().lower() == member.name.strip().lower()),
+        None,
+    )
 
     if existing_idx is not None:
-        # Upsert — update existing entry, keep their original id + join time
         existing = roster[existing_idx]
         existing["role"] = member.role
         existing["skills"] = member.skills if member.skills else existing.get("skills", [])
@@ -85,17 +83,17 @@ def add_roster_member(member: RosterMember):
         write_json(p, roster)
         log_activity(member.name, "reconnected to roster", member.role)
         return _enrich_with_avatar(existing)
-    else:
-        # New member
-        if not member.id:
-            member.id = f"R-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
-        if not member.joined_at:
-            member.joined_at = datetime.now().isoformat()
-        member.status = "pending"
-        roster.append(member.model_dump())
-        write_json(p, roster)
-        log_activity(member.name, "joined roster", member.role)
-        return _enrich_with_avatar(member.model_dump())
+
+    # New member
+    if not member.id:
+        member.id = f"R-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+    if not member.joined_at:
+        member.joined_at = datetime.now().isoformat()
+    member.status = "pending"
+    roster.append(member.model_dump())
+    write_json(p, roster)
+    log_activity(member.name, "joined roster", member.role)
+    return _enrich_with_avatar(member.model_dump())
 
 
 @router.put("/api/roster/{member_id}")

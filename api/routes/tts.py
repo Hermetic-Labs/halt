@@ -97,7 +97,11 @@ DEFAULT_VOICE = "af_heart"
 
 
 def _pick_voice(voice: str, lang: str) -> str:
-    """Auto-select voice: if user picked an English voice but lang isn't English, swap."""
+    """Auto-select voice: if user picked an English voice but lang isn't English, swap.
+
+    Kokoro English voices start with 'a' (American) or 'b' (British).
+    Both should trigger the language-aware swap.
+    """
     is_english_voice = voice.startswith("a") or voice.startswith("b")
     if is_english_voice and lang != "en" and lang in KOKORO_VOICE_MAP:
         return KOKORO_VOICE_MAP[lang]
