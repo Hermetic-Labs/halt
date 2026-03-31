@@ -34,6 +34,11 @@ VOICES_PATH = MODELS_DIR / "voices-v1.0.bin"
 _kokoro = None
 _voices: list = []
 
+# ── Global TTS queue — serializes Kokoro access across all callers ──────────
+_tts_lock = asyncio.Lock()
+_tts_queue_waiting = 0
+_tts_active_user = ""
+
 # Map UI lang codes → espeak-ng codes for Kokoro phonemization
 # All codes verified against espeak-ng backend
 ESPEAK_LANG_MAP = {
@@ -96,13 +101,13 @@ DEFAULT_VOICE = "af_heart"
 
 
 def _pick_voice(voice: str, lang: str) -> str:
-    """Auto-select voice: if user picked an English voice but lang isn't English, swap.
+    """Always select the native Kokoro voice for supported languages.
 
-    Kokoro English voices start with 'a' (American) or 'b' (British).
-    Both should trigger the language-aware swap.
+    Overrides whatever the client has set — the voice MUST match the language
+    for proper phonemization.  Unsupported languages fall back to the
+    caller's choice (typically an English voice).
     """
-    is_english_voice = voice.startswith("a") or voice.startswith("b")
-    if is_english_voice and lang != "en" and lang in KOKORO_VOICE_MAP:
+    if lang in KOKORO_VOICE_MAP:
         return KOKORO_VOICE_MAP[lang]
     return voice
 
@@ -375,25 +380,52 @@ def tts_voices():
 
 @router.post("/synthesize")
 async def synthesize(req: TTSRequest):
+    global _tts_queue_waiting, _tts_active_user
     k = await _wait_kokoro(30)
     if not k:
         raise HTTPException(503, "TTS not ready — Kokoro still loading")
-    loop = asyncio.get_event_loop()
+    _tts_queue_waiting += 1
     try:
-        wav = await loop.run_in_executor(None, _synth, req.text, req.voice, req.rate, req.lang)
-        return Response(
-            content=wav, media_type="audio/wav", headers={"Content-Disposition": "inline; filename=speech.wav"}
-        )
-    except Exception as e:
-        raise HTTPException(503, str(e))
+        async with _tts_lock:
+            _tts_queue_waiting = max(0, _tts_queue_waiting - 1)
+            _tts_active_user = "synthesize"
+            loop = asyncio.get_event_loop()
+            try:
+                wav = await loop.run_in_executor(None, _synth, req.text, req.voice, req.rate, req.lang)
+                return Response(
+                    content=wav, media_type="audio/wav", headers={"Content-Disposition": "inline; filename=speech.wav"}
+                )
+            except Exception as e:
+                raise HTTPException(503, str(e))
+            finally:
+                _tts_active_user = ""
+    except HTTPException:
+        raise
+    except Exception:
+        _tts_queue_waiting = max(0, _tts_queue_waiting - 1)
+        raise HTTPException(503, "TTS queue error")
 
 
 # ── WebSocket streaming TTS ────────────────────────────────────────────────────
+@router.get("/queue")
+def tts_queue_status():
+    """Current TTS queue state — used for speaker badge UI."""
+    return {
+        "active": _tts_lock.locked(),
+        "active_user": _tts_active_user,
+        "waiting": _tts_queue_waiting,
+    }
+
+
 @router.websocket("/ws")
 async def tts_ws(websocket: WebSocket):
     """
     Send JSON: {"text": "...", "voice": "af_heart", "speed": 1.0}
     Receive:   binary WAV chunks (one per sentence) then {"type": "done"}
+             or {"type": "queued", "position": N} while waiting for lock.
+
+    All TTS generation is serialized through a global lock so that camp-wide
+    clients share the single Kokoro ONNX model without thrashing.
     """
     await websocket.accept()
     k = await _wait_kokoro(60)
@@ -404,6 +436,7 @@ async def tts_ws(websocket: WebSocket):
     queue = asyncio.Queue()
 
     async def _generator():
+        global _tts_queue_waiting, _tts_active_user
         try:
             while True:
                 req = await queue.get()
@@ -411,13 +444,40 @@ async def tts_ws(websocket: WebSocket):
                     break
                 text, voice, speed, lang = req
                 text = _preprocess_text(text, lang)
-                try:
-                    espeak = _espeak_code(lang)
-                    async for samples, phonemes in k.create_stream(text, voice=voice, speed=speed, lang=espeak):
-                        wav = _to_wav(samples)
-                        await websocket.send_bytes(wav)
-                except Exception as e:
-                    logger.error(f"WS TTS stream error: {e}")
+
+                # Wait for global lock — send queue position while waiting
+                if _tts_lock.locked():
+                    _tts_queue_waiting += 1
+                    position = _tts_queue_waiting
+                    try:
+                        await websocket.send_json({"type": "queued", "position": position})
+                    except Exception:
+                        pass
+
+                    async with _tts_lock:
+                        _tts_queue_waiting = max(0, _tts_queue_waiting - 1)
+                        _tts_active_user = f"ws-{lang}"
+                        try:
+                            espeak = _espeak_code(lang)
+                            async for samples, _phonemes in k.create_stream(text, voice=voice, speed=speed, lang=espeak):
+                                wav = _to_wav(samples)
+                                await websocket.send_bytes(wav)
+                        except Exception as e:
+                            logger.error(f"WS TTS stream error: {e}")
+                        finally:
+                            _tts_active_user = ""
+                else:
+                    async with _tts_lock:
+                        _tts_active_user = f"ws-{lang}"
+                        try:
+                            espeak = _espeak_code(lang)
+                            async for samples, _phonemes in k.create_stream(text, voice=voice, speed=speed, lang=espeak):
+                                wav = _to_wav(samples)
+                                await websocket.send_bytes(wav)
+                        except Exception as e:
+                            logger.error(f"WS TTS stream error: {e}")
+                        finally:
+                            _tts_active_user = ""
 
                 await websocket.send_json({"type": "done"})
         except Exception as e:

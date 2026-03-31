@@ -6,6 +6,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 import { useT } from '../services/i18n';
+import { normalizeToEnglish } from '../services/i18nDynamic';
 
 // Module-level ringtone reference for incoming call signaling
 let _eveRingtone: HTMLAudioElement | null = null;
@@ -77,119 +78,132 @@ async function fetchTTSAudio(text: string, lang = 'en'): Promise<HTMLAudioElemen
 }
 
 /**
- * translateText — Translate text using the offline NLLB endpoint.
- * Returns the original text on failure.
+ * Decode a base64 WAV string into an Audio element for playback.
  */
-async function translateText(text: string, target: string): Promise<string> {
-    if (target === 'en') return text;
+function audioFromB64(b64: string): HTMLAudioElement | null {
+    if (!b64) return null;
     try {
-        const res = await fetch('/api/translate', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ text, source: 'en', target }),
-        });
-        if (res.ok) {
-            const data = await res.json();
-            return data.translated || text;
-        }
-    } catch { /* offline — fallback to English */ }
-    return text;
+        const binary = atob(b64);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+        const blob = new Blob([bytes], { type: 'audio/wav' });
+        const url = URL.createObjectURL(blob);
+        const audio = new Audio(url);
+        audio.volume = 0.9;
+        audio.addEventListener('ended', () => URL.revokeObjectURL(url));
+        return audio;
+    } catch {
+        return null;
+    }
+}
+/**
+ * Global cadence abort controller — a new broadcast cancels any in-progress cadence.
+ * This prevents overlapping playback and lets emergencies interrupt announcements.
+ */
+let _cadenceAbort: AbortController | null = null;
+const _activeAudio: Set<HTMLAudioElement> = new Set();
+
+function abortCadence() {
+    _cadenceAbort?.abort();
+    // Immediately stop all playing audio
+    for (const a of _activeAudio) { try { a.pause(); a.currentTime = 0; } catch { /* ok */ } }
+    _activeAudio.clear();
+}
+
+/** Play an audio element, tracking it for interruption. Rejects on abort. */
+function playTracked(audio: HTMLAudioElement, signal: AbortSignal): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+        if (signal.aborted) { reject(new DOMException('Aborted', 'AbortError')); return; }
+        _activeAudio.add(audio);
+        const cleanup = () => { _activeAudio.delete(audio); };
+        audio.addEventListener('ended', () => { cleanup(); resolve(); }, { once: true });
+        signal.addEventListener('abort', () => { audio.pause(); audio.currentTime = 0; cleanup(); reject(new DOMException('Aborted', 'AbortError')); }, { once: true });
+        audio.play().catch(() => { cleanup(); resolve(); });
+    });
+}
+
+/** Abortable wait */
+function waitAbortable(ms: number, signal: AbortSignal): Promise<void> {
+    return new Promise((resolve, reject) => {
+        if (signal.aborted) { reject(new DOMException('Aborted', 'AbortError')); return; }
+        const t = setTimeout(resolve, ms);
+        signal.addEventListener('abort', () => { clearTimeout(t); reject(new DOMException('Aborted', 'AbortError')); }, { once: true });
+    });
 }
 
 /**
  * playEmergencySequence — Cadence: 🔊🔊 TTS 🔊🔊 TTS 🔊
- * 2 tones → read message → 2 tones → read message → 1 closing tone
- * Translates the message to the user's set language before speaking.
+ * Uses pregenerated audio_b64 from broadcast — no Kokoro call.
+ * Aborts any in-progress cadence before starting.
  */
-async function playEmergencySequence(msg: Record<string, unknown>) {
-    const englishText = composeEmergencyText(msg);
-    const userLang = localStorage.getItem('eve-lang') || 'en';
-    const spokenText = await translateText(englishText, userLang);
-    const toneSrc = '/data/sounds/triage announcement.wav';
-    
-    let ttsAudio: HTMLAudioElement | null = null;
-    if (msg.audio_b64) {
-        ttsAudio = new Audio(`data:audio/wav;base64,${msg.audio_b64}`);
-    } else {
-        ttsAudio = await fetchTTSAudio(spokenText, userLang) || null;
-    }
+async function playEmergencySequence(text: string, lang: string, audio_b64?: string) {
+    abortCadence();
+    const ac = new AbortController();
+    _cadenceAbort = ac;
+    const signal = ac.signal;
 
-    const playTone = () => new Promise<void>(resolve => {
-        const a = new Audio(toneSrc);
-        a.volume = 0.8;
-        a.addEventListener('ended', () => resolve(), { once: true });
-        a.play().catch(() => resolve());
-    });
+    const ttsAudio = audio_b64 ? audioFromB64(audio_b64) : await fetchTTSAudio(text, lang);
+    const toneSrc = '/data/sounds/triage announcement.wav';
+
+    const playTone = () => {
+        const a = new Audio(toneSrc); a.volume = 0.8;
+        return playTracked(a, signal);
+    };
 
     const playTTS = async () => {
         if (!ttsAudio) return;
         ttsAudio.currentTime = 0;
-        return new Promise<void>(resolve => {
-            ttsAudio.addEventListener('ended', () => resolve(), { once: true });
-            ttsAudio.play().catch(() => resolve());
-        });
+        return playTracked(ttsAudio, signal);
     };
 
-    const wait = (ms: number) => new Promise<void>(r => setTimeout(r, ms));
-
     try {
-        await playTone();           // tone 1
-        await playTone();           // tone 2
-        await playTTS();            // TTS read
-        await wait(1000);           // pause
-        await playTone();           // tone 3
-        await playTone();           // tone 4
-        await playTTS();            // TTS repeat
-        await wait(1000);           // pause
-        await playTone();           // closing tone
-    } catch { /* degrade silently */ }
+        await playTone();
+        await playTone();
+        await playTTS();
+        await waitAbortable(1000, signal);
+        await playTone();
+        await playTone();
+        await playTTS();
+        await waitAbortable(1000, signal);
+        await playTone();
+    } catch (e) { if (e instanceof DOMException && e.name === 'AbortError') return; /* interrupted — graceful */ }
 }
 
 /**
- * playAnnouncementSequence — Cadence: General_start 🔊 → TTS → General_end 🔊
- * Translates the announcement to the user's set language before speaking.
+ * playAnnouncementSequence — Cadence: General_start 🔊 → TTS → pause → repeat → General_end 🔊
+ * Uses pregenerated audio_b64 from broadcast — no Kokoro call.
+ * Aborts any in-progress cadence before starting.
  */
-async function playAnnouncementSequence(msg: Record<string, unknown>) {
-    const message = String(msg.message || '');
-    const userLang = localStorage.getItem('eve-lang') || 'en';
-    const spokenText = await translateText(message, userLang);
+async function playAnnouncementSequence(text: string, lang: string, audio_b64?: string) {
+    abortCadence();
+    const ac = new AbortController();
+    _cadenceAbort = ac;
+    const signal = ac.signal;
+
     const startSrc = '/data/sounds/General_start.wav';
     const endSrc = '/data/sounds/General_end.wav';
-    
-    let ttsAudio: HTMLAudioElement | null = null;
-    if (msg.audio_b64) {
-        ttsAudio = new Audio(`data:audio/wav;base64,${msg.audio_b64}`);
-    } else {
-        ttsAudio = await fetchTTSAudio(spokenText, userLang) || null;
-    }
+    const ttsAudio = audio_b64 ? audioFromB64(audio_b64) : await fetchTTSAudio(text, lang);
 
-    const playSound = (src: string) => new Promise<void>(resolve => {
-        const a = new Audio(src);
-        a.volume = 0.8;
-        a.addEventListener('ended', () => resolve(), { once: true });
-        a.play().catch(() => resolve());
-    });
+    const playSound = (src: string) => {
+        const a = new Audio(src); a.volume = 0.8;
+        return playTracked(a, signal);
+    };
 
     const playTTS = async () => {
         if (!ttsAudio) return;
         ttsAudio.currentTime = 0;
-        return new Promise<void>(resolve => {
-            ttsAudio.addEventListener('ended', () => resolve(), { once: true });
-            ttsAudio.play().catch(() => resolve());
-        });
+        return playTracked(ttsAudio, signal);
     };
 
-    const wait = (ms: number) => new Promise<void>(r => setTimeout(r, ms));
-
     try {
-        await playSound(startSrc);  // opening chime
-        await playTTS();            // TTS read
-        await wait(1000);           // pause
-        await playSound(startSrc);  // repeat chime
-        await playTTS();            // TTS repeat
-        await wait(1000);           // pause
-        await playSound(endSrc);    // closing chime
-    } catch { /* degrade silently */ }
+        await playSound(startSrc);
+        await playTTS();
+        await waitAbortable(1000, signal);
+        await playSound(startSrc);
+        await playTTS();
+        await waitAbortable(1000, signal);
+        await playSound(endSrc);
+    } catch (e) { if (e instanceof DOMException && e.name === 'AbortError') return; /* interrupted — graceful */ }
 }
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -247,7 +261,7 @@ let _reconnectAttempts = 0;
 // ── Component ────────────────────────────────────────────────────────────────
 
 export default function NetworkTab() {
-    const { t } = useT();
+    const { t, lang } = useT();
     // ── QR join detection (runs BEFORE any state init) ────────────────────────
     // Check both current URL and a flag we set pre-React (see index.html inline script)
     const urlParams = new URLSearchParams(window.location.search);
@@ -445,10 +459,15 @@ export default function NetworkTab() {
 
     const addMember = async () => {
         if (!newMember.name.trim()) return;
+        // Normalize name to English if user is in another language
+        let memberName = newMember.name.trim();
+        if (lang !== 'en') {
+            try { const { english } = await normalizeToEnglish(memberName, lang); memberName = english; } catch { /* fallback */ }
+        }
         try {
             const r = await fetch(`${API_BASE}/api/roster`, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name: newMember.name, role: newMember.role, skills: selectedSkills }),
+                body: JSON.stringify({ name: memberName, role: newMember.role, skills: selectedSkills }),
             });
             if (r.ok) {
                 const addedName = newMember.name;
@@ -511,7 +530,11 @@ export default function NetworkTab() {
                         'eve-emergency',
                         true,
                     );
-                    // Full-screen emergency banner (stays until audio sequence finishes)
+                    // Instant translation lookup from precomputed map
+                    const userLang = localStorage.getItem('eve-lang') || 'en';
+                    const translations = msg.translations as Record<string, string> | undefined;
+
+                    // Full-screen emergency banner
                     const overlay = document.createElement('div');
                     overlay.style.cssText = 'position:fixed;inset:0;z-index:10001;background:rgba(231,76,60,0.15);display:flex;align-items:center;justify-content:center;';
                     const banner = document.createElement('div');
@@ -521,8 +544,13 @@ export default function NetworkTab() {
                     const catText = msg.categories_text || 'General Emergency';
                     const notesText = msg.notes ? `<br/>${msg.notes}` : '';
                     const senderText = msg.sender_name ? `<br/>— ${msg.sender_name}` : '';
-                    const bodyHTML = `<span style="font-size:13px;font-weight:400;opacity:0.9">${catText}${notesText}${senderText}</span>`;
+
+                    // Use precomputed translation if available, else fall back to English
+                    const translatedMessage = (userLang !== 'en' && translations?.[userLang]) || '';
+                    const displayText = translatedMessage || `${catText}${notesText}`;
+                    const bodyHTML = `<span style="font-size:13px;font-weight:400;opacity:0.9">${displayText}${senderText}</span>`;
                     banner.innerHTML = `🚨 EMERGENCY${ward}${bed}<br/>${bodyHTML}`;
+
                     // Close button
                     const closeBtn = document.createElement('button');
                     closeBtn.textContent = '×';
@@ -533,59 +561,55 @@ export default function NetworkTab() {
                     closeBtn.onclick = (e) => { e.stopPropagation(); dismissOverlay(); };
                     banner.appendChild(closeBtn);
 
-                    // Translate loader bar (same pattern as CommsPanel/TriagePanel)
-                    const userLang = localStorage.getItem('eve-lang') || 'en';
-                    const translateBar = document.createElement('div');
+                    // 🔊 Speaker button for non-English on-demand TTS
                     if (userLang !== 'en') {
-                        translateBar.style.cssText = 'display:flex;align-items:center;justify-content:center;gap:8px;padding:8px 16px;margin-top:12px;border-radius:8px;background:rgba(80,200,120,0.15);';
-                        translateBar.innerHTML = '<div style="width:14px;height:14px;border:2px solid #50C87844;border-top:2px solid #50C878;border-radius:50%;animation:spin 0.8s linear infinite"></div><span style="font-size:11px;color:#50C878;font-weight:500;letter-spacing:0.04em">Translating...</span>';
-                        banner.appendChild(translateBar);
+                        const speakerBtn = document.createElement('button');
+                        speakerBtn.innerHTML = '🔊';
+                        speakerBtn.title = 'Listen in your language';
+                        speakerBtn.style.cssText = 'position:relative;margin-top:12px;padding:8px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.15);color:#fff;font-size:16px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;';
+                        // Queue position badge
+                        const badge = document.createElement('span');
+                        badge.style.cssText = 'display:none;position:absolute;top:-6px;right:-6px;background:#f0a500;color:#000;font-size:10px;font-weight:700;padding:2px 6px;border-radius:10px;min-width:16px;text-align:center;';
+                        speakerBtn.appendChild(badge);
+
+                        speakerBtn.onclick = async () => {
+                            speakerBtn.disabled = true;
+                            speakerBtn.innerHTML = '⏳';
+                            speakerBtn.appendChild(badge);
+                            // Poll queue position
+                            const pollId = setInterval(async () => {
+                                try {
+                                    const qs = await fetch('/tts/queue').then(r => r.json());
+                                    if (qs.waiting > 0) { badge.style.display = 'block'; badge.textContent = String(qs.waiting); }
+                                    else { badge.style.display = 'none'; }
+                                } catch { /* ignore */ }
+                            }, 1000);
+                            const spokenText = translatedMessage || composeEmergencyText(msg);
+                            await playEmergencySequence(spokenText, userLang);
+                            clearInterval(pollId);
+                            badge.style.display = 'none';
+                            speakerBtn.disabled = false;
+                            speakerBtn.innerHTML = '🔊';
+                            speakerBtn.appendChild(badge);
+                        };
+                        banner.appendChild(document.createElement('br'));
+                        banner.appendChild(speakerBtn);
                     }
 
                     overlay.appendChild(banner);
                     document.body.appendChild(overlay);
 
-                    // Translate the card text if non-English
-                    if (userLang !== 'en') {
-                        const textsToTranslate = [
-                            'EMERGENCY',
-                            ward ? `Ward: ${msg.ward}` : '',
-                            bed ? `Bed: ${msg.bed}` : '',
-                            String(catText),
-                            msg.notes ? String(msg.notes) : '',
-                        ].filter(Boolean);
+                    // Immediate emergency tone — frictionless initial alert (safety first)
+                    try { const t = new Audio('/data/sounds/triage announcement.wav'); t.volume = 0.8; t.play().catch(() => {}); } catch { /* no audio */ }
 
-                        fetch('/api/translate/batch', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ texts: textsToTranslate, source: 'en', target: userLang }),
-                        }).then(r => r.ok ? r.json() : null).then(data => {
-                            if (!data || !overlay.parentNode) return;
-                            const tr = data.translations as string[];
-                            // Map translated texts back (same order as textsToTranslate, which was filtered)
-                            let idx = 0;
-                            const tEmergency = tr[idx++] || 'EMERGENCY';
-                            const tWard = ward ? ` — ${tr[idx++]}` : '';
-                            const tBed = bed ? ` ${tr[idx++]}` : '';
-                            const tCat = tr[idx++] || String(catText);
-                            const tNotes = msg.notes ? `<br/>${tr[idx++]}` : '';
-                            const tBody = `<span style="font-size:13px;font-weight:400;opacity:0.9">${tCat}${tNotes}${senderText}</span>`;
-                            // Swap in translated text (keep close button)
-                            banner.innerHTML = `🚨 ${tEmergency}${tWard}${tBed}<br/>${tBody}`;
-                            banner.appendChild(closeBtn); // re-append close button
-                            // Remove translate bar
-                            if (translateBar.parentNode) translateBar.remove();
-                        }).catch(() => {
-                            // Translation failed — just remove the loader, keep English
-                            if (translateBar.parentNode) translateBar.remove();
+                    // English: auto-play full cadence with pregenerated audio
+                    if (userLang === 'en') {
+                        const spokenText = composeEmergencyText(msg);
+                        const eAudio = msg.audio_b64 ? String(msg.audio_b64) : undefined;
+                        playEmergencySequence(spokenText, 'en', eAudio).then(() => {
+                            if (overlay.parentNode) dismissOverlay();
                         });
                     }
-
-                    // Cadence: 🔊🔊 TTS 🔊🔊 TTS 🔊 — auto-dismiss when done
-                    playEmergencySequence(msg).then(() => {
-                        // Only dismiss if overlay is still in the DOM (user didn't close it)
-                        if (overlay.parentNode) dismissOverlay();
-                    });
                 } else if (msg.type === 'announcement') {
                     // General Announcement — yellow overlay on ALL devices
                     fireSystemNotification(
@@ -593,12 +617,19 @@ export default function NetworkTab() {
                         String(msg.message || ''),
                         'eve-announcement',
                     );
+                    const aUserLang = localStorage.getItem('eve-lang') || 'en';
+                    const aTranslations = msg.translations as Record<string, string> | undefined;
+
                     const aOverlay = document.createElement('div');
                     aOverlay.style.cssText = 'position:fixed;inset:0;z-index:10001;background:rgba(240,165,0,0.1);display:flex;align-items:center;justify-content:center;';
                     const aBanner = document.createElement('div');
                     aBanner.style.cssText = 'background:#f0a500;color:#000;padding:24px 40px;border-radius:16px;font-size:16px;font-weight:700;text-align:center;box-shadow:0 0 80px rgba(240,165,0,0.5);max-width:90%;position:relative;min-width:320px;';
                     const senderLine = msg.sender_name ? `<br/><span style="font-size:11px;font-weight:400;opacity:0.7">— ${msg.sender_name}</span>` : '';
-                    aBanner.innerHTML = `📢 ANNOUNCEMENT<br/><span style="font-size:14px;font-weight:500">${msg.message || ''}</span>${senderLine}`;
+
+                    // Instant translated text from precomputed map
+                    const translatedAnn = (aUserLang !== 'en' && aTranslations?.[aUserLang]) || String(msg.message || '');
+                    aBanner.innerHTML = `📢 ANNOUNCEMENT<br/><span style="font-size:14px;font-weight:500">${translatedAnn}</span>${senderLine}`;
+
                     // Close button
                     const aCloseBtn = document.createElement('button');
                     aCloseBtn.textContent = '×';
@@ -609,39 +640,48 @@ export default function NetworkTab() {
                     aCloseBtn.onclick = (ev) => { ev.stopPropagation(); dismissAOverlay(); };
                     aBanner.appendChild(aCloseBtn);
 
-                    // Translate loader + translation
-                    const aUserLang = localStorage.getItem('eve-lang') || 'en';
-                    const aTranslateBar = document.createElement('div');
+                    // 🔊 Speaker button for non-English on-demand TTS
                     if (aUserLang !== 'en') {
-                        aTranslateBar.style.cssText = 'display:flex;align-items:center;justify-content:center;gap:8px;padding:8px 16px;margin-top:12px;border-radius:8px;background:rgba(80,200,120,0.15);';
-                        aTranslateBar.innerHTML = '<div style="width:14px;height:14px;border:2px solid #50C87844;border-top:2px solid #50C878;border-radius:50%;animation:spin 0.8s linear infinite"></div><span style="font-size:11px;color:#50C878;font-weight:500;letter-spacing:0.04em">Translating...</span>';
-                        aBanner.appendChild(aTranslateBar);
+                        const aSpeakerBtn = document.createElement('button');
+                        aSpeakerBtn.innerHTML = '🔊';
+                        aSpeakerBtn.title = 'Listen in your language';
+                        aSpeakerBtn.style.cssText = 'position:relative;margin-top:12px;padding:8px 16px;border-radius:8px;border:1px solid rgba(0,0,0,0.2);background:rgba(0,0,0,0.1);color:#000;font-size:16px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;';
+                        const aBadge = document.createElement('span');
+                        aBadge.style.cssText = 'display:none;position:absolute;top:-6px;right:-6px;background:#e74c3c;color:#fff;font-size:10px;font-weight:700;padding:2px 6px;border-radius:10px;min-width:16px;text-align:center;';
+                        aSpeakerBtn.appendChild(aBadge);
+
+                        aSpeakerBtn.onclick = async () => {
+                            aSpeakerBtn.disabled = true;
+                            aSpeakerBtn.innerHTML = '⏳';
+                            aSpeakerBtn.appendChild(aBadge);
+                            const pollId = setInterval(async () => {
+                                try {
+                                    const qs = await fetch('/tts/queue').then(r => r.json());
+                                    if (qs.waiting > 0) { aBadge.style.display = 'block'; aBadge.textContent = String(qs.waiting); }
+                                    else { aBadge.style.display = 'none'; }
+                                } catch { /* ignore */ }
+                            }, 1000);
+                            await playAnnouncementSequence(`Attention. ${translatedAnn}`, aUserLang);
+                            clearInterval(pollId);
+                            aBadge.style.display = 'none';
+                            aSpeakerBtn.disabled = false;
+                            aSpeakerBtn.innerHTML = '🔊';
+                            aSpeakerBtn.appendChild(aBadge);
+                        };
+                        aBanner.appendChild(document.createElement('br'));
+                        aBanner.appendChild(aSpeakerBtn);
                     }
 
                     aOverlay.appendChild(aBanner);
                     document.body.appendChild(aOverlay);
 
-                    // Translate card text
-                    if (aUserLang !== 'en' && msg.message) {
-                        fetch('/api/translate/batch', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ texts: ['ANNOUNCEMENT', String(msg.message)], source: 'en', target: aUserLang }),
-                        }).then(r => r.ok ? r.json() : null).then(data => {
-                            if (!data || !aOverlay.parentNode) return;
-                            const tr = data.translations as string[];
-                            aBanner.innerHTML = `📢 ${tr[0] || 'ANNOUNCEMENT'}<br/><span style="font-size:14px;font-weight:500">${tr[1] || msg.message}</span>${senderLine}`;
-                            aBanner.appendChild(aCloseBtn);
-                            if (aTranslateBar.parentNode) aTranslateBar.remove();
-                        }).catch(() => {
-                            if (aTranslateBar.parentNode) aTranslateBar.remove();
+                    // English: auto-play cadence with pregenerated audio
+                    if (aUserLang === 'en') {
+                        const aAudio = msg.audio_b64 ? String(msg.audio_b64) : undefined;
+                        playAnnouncementSequence(String(msg.message || ''), 'en', aAudio).then(() => {
+                            if (aOverlay.parentNode) dismissAOverlay();
                         });
                     }
-
-                    // Cadence: General_start → TTS → General_end — auto-dismiss when done
-                    playAnnouncementSequence(msg).then(() => {
-                        if (aOverlay.parentNode) dismissAOverlay();
-                    });
                 } else if (msg.type === 'broadcast_audio') {
                     // Server-synthesized TTS audio — play immediately on all devices
                     try {
@@ -1055,7 +1095,7 @@ export default function NetworkTab() {
                 {/* ── TEAM ROSTER — Single source of truth ──────────────────── */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span style={{ fontSize: 12, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: 1 }}>
-                        Team Roster ({enrichedRoster.filter(m => m.status === 'connected').length} online / {enrichedRoster.length} total)
+                        Team Roster ({enrichedRoster.filter(m => m.status === 'connected').length} {t('comms.online')} / {enrichedRoster.length} {t('comms.total')})
                     </span>
                     <button className="if-toggle" onClick={() => setShowAddMember(!showAddMember)} style={{ background: '#0d1f0d', color: '#3fb950', border: '1px solid #3fb95055', fontSize: 11, padding: '4px 12px' }}>
                         {showAddMember ? t('inv.cancel') : t('network.add_member')}

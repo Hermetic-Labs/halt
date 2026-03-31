@@ -447,6 +447,31 @@ def main():
     # Handle frontend (open browser or start Vite dev server)
     start_frontend(root, api_port=args.api_port, open_browser=not args.no_browser)
 
+    # ── Kokoro TTS warmup (load ONNX model before first real request) ──────
+    def _warmup_tts():
+        """Send a tiny TTS request so Kokoro loads the model into memory."""
+        import json as _json
+        for _ in range(30):  # Retry up to 30s until server is ready
+            time.sleep(1)
+            try:
+                req = urllib.request.Request(
+                    f"http://localhost:{args.api_port}/tts/synthesize",
+                    data=_json.dumps({"text": "ready", "voice": "af_heart", "rate": 1.0, "lang": "en"}).encode(),
+                    headers={"Content-Type": "application/json"},
+                    method="POST",
+                )
+                resp = urllib.request.urlopen(req, timeout=60)
+                resp.read()
+                resp.close()
+                log("TTS", "Kokoro warmup complete — model loaded", Colors.GREEN)
+                return
+            except Exception:
+                continue
+        log("TTS", "Kokoro warmup timed out (will load on first request)", Colors.YELLOW)
+
+    warmup_thread = threading.Thread(target=_warmup_tts, daemon=True)
+    warmup_thread.start()
+
     # Running
     print()
     log("START", "HALT is running!", Colors.GREEN + Colors.BOLD)

@@ -2,10 +2,11 @@
  * CommsPanel — Communications hub for Eve OS: Triage
  * Teams-style layout: thread sidebar + chat pane + inline call controls.
  */
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useT } from '../services/i18n';
 import { useChat } from '../hooks/useChat';
 import { useWebRTC } from '../hooks/useWebRTC';
+import { useTTS } from '../hooks/useTTS';
 import { ROLE_COLORS } from '../types/comms';
 import ChatMessage from './comms/ChatMessage';
 import ThreadList from './comms/ThreadList';
@@ -26,8 +27,7 @@ export default function CommsPanel() {
     const [trFrom, setTrFrom] = useState('en');
     const [trTo, setTrTo] = useState('es');
     const [trBusy, setTrBusy] = useState(false);
-    const [trSpeaking, setTrSpeaking] = useState(false);
-    const trAudioRef = useRef<HTMLAudioElement | null>(null);
+    const { speak: ttsSpeak, stopSpeak: stopTrSpeak, isSpeaking: trSpeaking } = useTTS();
 
     const TRANSLATE_LANGS: [string, string][] = [
         ['en', 'English'], ['es', 'Español'], ['fr', 'Français'], ['de', 'Deutsch'],
@@ -51,32 +51,13 @@ export default function CommsPanel() {
                 const d = await r.json();
                 const translated = d.translated || text;
                 setTrOutput(translated);
-                // Auto-speak the translation
-                try {
-                    const ttsR = await fetch('/tts/synthesize', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ text: translated, voice: 'af_heart', rate: 1.0, lang: trTo }),
-                    });
-                    if (ttsR.ok) {
-                        const blob = await ttsR.blob();
-                        const url = URL.createObjectURL(blob);
-                        const audio = new Audio(url);
-                        trAudioRef.current = audio;
-                        setTrSpeaking(true);
-                        audio.onended = () => { setTrSpeaking(false); URL.revokeObjectURL(url); };
-                        audio.play().catch(() => setTrSpeaking(false));
-                    }
-                } catch { /* TTS unavailable */ }
+                // Auto-speak via WebSocket streaming TTS
+                ttsSpeak(translated, trTo);
             }
         } catch { /* offline */ }
         setTrBusy(false);
-    }, [trInput, trBusy, trFrom, trTo]);
+    }, [trInput, trBusy, trFrom, trTo, ttsSpeak]);
 
-    const stopTrSpeak = useCallback(() => {
-        if (trAudioRef.current) { trAudioRef.current.pause(); trAudioRef.current = null; }
-        setTrSpeaking(false);
-    }, []);
 
     const {
         callActive, callTarget, callType, callMuted, callDuration,
@@ -204,13 +185,25 @@ export default function CommsPanel() {
                             </div>
                         </div>
                     ) : (
-                        <div style={{ flex: 1, minWidth: 0 }}>
-                            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text)' }}>
-                                📋 {t('comms.message_board', 'Message Board')}
+                        <div style={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', gap: 8 }}>
+                            <div style={{ flex: 1 }}>
+                                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text)' }}>
+                                    📋 {t('comms.message_board', 'Message Board')}
+                                </div>
+                                <div style={{ fontSize: 10, color: 'var(--text-faint)' }}>
+                                    {connectedMembers.length} {t('comms.online', 'online')}
+                                </div>
                             </div>
-                            <div style={{ fontSize: 10, color: 'var(--text-faint)' }}>
-                                {connectedMembers.length} {t('comms.online', 'online')}
-                            </div>
+                            {isLeader && (
+                                <button
+                                    onClick={async () => {
+                                        if (!confirm(t('comms.clear_confirm', 'Clear all messages from the board?'))) return;
+                                        try { await fetch('/api/mesh/chat', { method: 'DELETE' }); } catch { /* offline */ }
+                                    }}
+                                    style={{ padding: '4px 10px', fontSize: 11, background: 'transparent', border: '1px solid #e74c3c33', borderRadius: 4, color: '#e74c3c', cursor: 'pointer', flexShrink: 0 }}
+                                    title={t('comms.clear_board', 'Clear Board')}
+                                >🗑 {t('comms.clear_board', 'Clear Board')}</button>
+                            )}
                         </div>
                     )}
 

@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useT } from '../services/i18n';
+import { useTTS } from '../hooks/useTTS';
 import './TriagePanel.css'; // We'll put the Triage scoped CSS here
 
 interface Message {
@@ -47,8 +48,6 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
     const { t, lang } = useT();
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState('');
-    const [voices, setVoices] = useState<{ id: string, name: string, language: string[], gender: string[] }[]>([]);
-    const [selectedVoice, setSelectedVoice] = useState('af_heart');
 
     // Panel tab + thread state
     const [panelTab, setPanelTab] = useState<PanelTab>('chat');
@@ -134,14 +133,6 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
     const mediaRecRef = useRef<MediaRecorder | null>(null);
     const audioChunksRef = useRef<Blob[]>([]);
 
-    // TTS State
-    const wsSpeakRef = useRef<WebSocket | null>(null);
-    const audioCtxRef = useRef<AudioContext | null>(null);
-    const nextTimeRef = useRef<number>(0);
-    const ttsQueueRef = useRef<{text: string, lang: string}[]>([]);
-    const [playingMsgIndex, setPlayingMsgIndex] = useState<number | null>(null);
-    const speakingMsgRef = useRef<number | null>(null);
-
     // Auto-scroll
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -151,14 +142,12 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
     const prevTriageLangRef = useRef(lang);
 
     useEffect(() => {
-        // Detect language change — clear cache and reset.
         if (prevTriageLangRef.current !== lang) {
             prevTriageLangRef.current = lang;
             triageTranslatingRef.current = false;
             Object.keys(triageTranslationCache).forEach(k => delete triageTranslationCache[k]);
             setTriageTranslations({});
             setIsTriageTranslating(false);
-            // Fall through — don't return, translate immediately below
         }
 
         if (lang === 'en' || messages.length === 0) return;
@@ -177,7 +166,6 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
             return;
         }
 
-        // Skip if already translating this exact batch
         if (triageTranslatingRef.current) return;
 
         const targetLang = lang;
@@ -209,192 +197,32 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
         })();
     }, [messages, lang]);
 
-    // Init Health and Models
-    const fetchHealth = useCallback(async () => {
-        try {
-            await fetch('/tts/health').catch(() => null);
-        } catch (e) { console.error('Triage health check error', e); }
-    }, []);
 
-    const fetchVoices = useCallback(async () => {
-        try {
-            const vr = await fetch('/tts/voices');
-            if (vr.ok) {
-                const vd = await vr.json();
-                setVoices(vd.voices || []);
-            }
-        } catch { /* optional feature */ }
-    }, []);
+    // ── TTS Logic (via shared hook) ───────────────────────────────────────────
 
+    const { speak: ttsSpeak, stopSpeak: ttsStop, isSpeaking: ttsActive } = useTTS();
+    const [playingMsgIndex, setPlayingMsgIndex] = useState<number | null>(null);
+    const speakingMsgRef = useRef<number | null>(null);
+
+    // Sync hook's isSpeaking → playingMsgIndex (when hook finishes, clear the index)
     useEffect(() => {
-        fetchHealth();
-        fetchVoices();
-        const inv = setInterval(fetchHealth, 20000);
-        return () => clearInterval(inv);
-    }, [fetchHealth, fetchVoices]);
-
-
-    // ── TTS Logic ─────────────────────────────────────────────────────────────
-
-    const lastSourceRef = useRef<AudioBufferSourceNode | null>(null);
-    const pendingChunksRef = useRef<number>(0);
-
-    const playChunk = async (buf: ArrayBuffer) => {
-        if (!audioCtxRef.current) return;
-        if (audioCtxRef.current.state === 'suspended') {
-            await audioCtxRef.current.resume().catch(() => { });
+        if (!ttsActive && playingMsgIndex !== null) {
+            setPlayingMsgIndex(null);
+            speakingMsgRef.current = null;
         }
-        try {
-            const dec = await audioCtxRef.current.decodeAudioData(buf);
-            const src = audioCtxRef.current.createBufferSource();
-            src.buffer = dec;
-            src.connect(audioCtxRef.current.destination);
-
-            const now = audioCtxRef.current.currentTime;
-            if (nextTimeRef.current < now) {
-                nextTimeRef.current = now + 0.15;
-            }
-
-            src.start(nextTimeRef.current);
-            nextTimeRef.current += dec.duration;
-            lastSourceRef.current = src;
-        } catch { /* invalid chunk */ }
-    };
-
-    const ensureTtsWs = useCallback(() => {
-        if (!audioCtxRef.current) {
-            audioCtxRef.current = new window.AudioContext();
-            nextTimeRef.current = audioCtxRef.current.currentTime + 0.1;
-        }
-
-        if (wsSpeakRef.current && wsSpeakRef.current.readyState === WebSocket.OPEN) return wsSpeakRef.current;
-        if (wsSpeakRef.current && wsSpeakRef.current.readyState === WebSocket.CONNECTING) return wsSpeakRef.current;
-
-        const wsUrl = `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}/tts/ws`;
-        const ws = new WebSocket(wsUrl);
-        ws.binaryType = 'arraybuffer';
-        wsSpeakRef.current = ws;
-
-        ws.onopen = () => {
-            ttsQueueRef.current.forEach(q => ws.send(JSON.stringify({ text: q.text, voice: selectedVoice, speed: 1.0, lang: q.lang })));
-            ttsQueueRef.current = [];
-        };
-        ws.onmessage = async (e) => {
-            if (e.data instanceof ArrayBuffer) {
-                playChunk(e.data);
-            } else {
-                try {
-                    const msg = JSON.parse(e.data);
-                    if (msg.type === 'done') {
-                        // Decrement pending counter — only finalize on the LAST chunk
-                        pendingChunksRef.current = Math.max(0, pendingChunksRef.current - 1);
-                        if (pendingChunksRef.current === 0) {
-                            // All chunks generated — attach onended to last audio source
-                            if (lastSourceRef.current) {
-                                lastSourceRef.current.onended = () => {
-                                    setPlayingMsgIndex(null);
-                                    lastSourceRef.current = null;
-                                };
-                            } else {
-                                setPlayingMsgIndex(null);
-                            }
-                        }
-                    }
-                } catch {
-                    // Ignore non-JSON signals 
-                }
-            }
-        };
-        ws.onerror = () => { setPlayingMsgIndex(null); };
-        ws.onclose = () => { wsSpeakRef.current = null; setPlayingMsgIndex(null); };
-        return ws;
-    }, [selectedVoice]);
-
-    useEffect(() => {
-        // Pre-warm socket on mount
-        ensureTtsWs();
-        return () => {
-            if (wsSpeakRef.current) { wsSpeakRef.current.close(); }
-            if (audioCtxRef.current) { audioCtxRef.current.close().catch(() => { /* ignore */ }); }
-        };
-    }, [ensureTtsWs]);
-
-    const stripMd = (text: string) => {
-        return text
-            .replace(/\*\*(.+?)\*\*/g, '$1')
-            .replace(/\*(.+?)\*/g, '$1')
-            .replace(/#{1,6}\s+/g, '')
-            .replace(/`(.+?)`/g, '$1')
-            .replace(/[*_#`]/g, '')
-            .replace(/^\d+\.\s+/gm, '')           // numbered list prefixes
-            .replace(/^[-•]\s+/gm, '')            // bullet markers
-            .replace(/\n{2,}/g, '\n')              // collapse multi-newlines
-            .replace(/[ \t]{2,}/g, ' ')             // collapse multi-spaces
-            .trim();
-    };
+    }, [ttsActive, playingMsgIndex]);
 
     const stopSpeak = () => {
-        if (audioCtxRef.current) {
-            try { audioCtxRef.current.close(); } catch { /* ignore audio error */ }
-            audioCtxRef.current = null;
-        }
-        if (wsSpeakRef.current) {
-            try { wsSpeakRef.current.close(); } catch { /* ignore */ }
-            wsSpeakRef.current = null;
-        }
-        ttsQueueRef.current = [];
-        lastSourceRef.current = null;
-        pendingChunksRef.current = 0;
+        ttsStop();
         setPlayingMsgIndex(null);
+        speakingMsgRef.current = null;
     };
 
     const speak = (text: string, msgIndex: number, overrideLang?: string) => {
-        // Clean up previous audio — detach handlers first to prevent onclose from resetting state
-        if (wsSpeakRef.current) {
-            wsSpeakRef.current.onclose = null;
-            wsSpeakRef.current.onerror = null;
-            wsSpeakRef.current.onmessage = null;
-            try { wsSpeakRef.current.close(); } catch { /* ignore */ }
-            wsSpeakRef.current = null;
-        }
-        if (audioCtxRef.current) {
-            try { audioCtxRef.current.close(); } catch { /* ignore */ }
-            audioCtxRef.current = null;
-        }
-        ttsQueueRef.current = [];
-
-        // Show Stop immediately
         setPlayingMsgIndex(msgIndex);
         speakingMsgRef.current = msgIndex;
-
-        // Create fresh audio context
-        audioCtxRef.current = new window.AudioContext();
-        nextTimeRef.current = audioCtxRef.current.currentTime + 0.1;
-        if (audioCtxRef.current.state === 'suspended') {
-            audioCtxRef.current.resume().catch(() => { });
-        }
-
-        const cleanText = stripMd(text);
-        if (!cleanText) { setPlayingMsgIndex(null); return; }
-
-
-        // Filter whitespace-only chunks and split text into clean sentences
-        const chunks = cleanText.match(/[^.!?\n]+[.!?\n]+/g) || [cleanText];
-        const validChunks = chunks.map(c => c.trim()).filter(c => c.length > 0);
-
-        // Ensure WS is alive
-        const ws = ensureTtsWs();
-
-        // Track how many chunks are pending so we know when the last 'done' arrives
-        pendingChunksRef.current = validChunks.length;
-
         const speechLang = overrideLang || lang;
-
-        if (ws.readyState === WebSocket.OPEN) {
-            validChunks.forEach(c => ws.send(JSON.stringify({ text: c, voice: selectedVoice, speed: 1.0, lang: speechLang })));
-        } else {
-            validChunks.forEach(c => ttsQueueRef.current.push({ text: c, lang: speechLang }));
-        }
+        ttsSpeak(text, speechLang);
     };
 
     // ── Rendering Helpers ──────────────────────────────────────────────────────
@@ -625,13 +453,7 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
 
                 <div style={{ flex: 1 }} />
 
-                {panelTab === 'chat' && (
-                        <select className="triage-select triage-voice-select" value={selectedVoice} onChange={e => setSelectedVoice(e.target.value)}>
-                            {voices.length > 0 ? voices.map(v => (
-                                <option key={v.id} value={v.id}>{v.name} ({v.language[0]}{v.gender[0]})</option>
-                            )) : <option value="af_heart">Heart (US-F)</option>}
-                        </select>
-                )}
+
 
                 <button className="triage-close-btn" onClick={onClose}>×</button>
             </header>

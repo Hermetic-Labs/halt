@@ -1041,6 +1041,39 @@ export default function WardMap() {
                     </div>
                     <div className="ward-controls">
                         <span className="if-hint">{active.length} {active.length !== 1 ? t('ward.active_patients') : t('ward.active_patient')}</span>
+                        <button className="if-toggle" onClick={() => {
+                            if (!config) return;
+                            const w = window.open('', '_blank');
+                            if (!w) return;
+                            const wardName = pt(config.id, lang, config.name) || config.name;
+                            const roomsLabel = t('ward.rooms_count', 'rooms');
+                            const printLabel = t('ward.print_all_labels', 'Print All Labels');
+                            const roomLabels = config.rooms.map(r =>
+                                `<div style="page-break-after:always;display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center">
+                                    <div>
+                                        <div style="font-size:14px;color:#888;margin-bottom:8px;letter-spacing:2px">${wardName}</div>
+                                        <div style="font-size:120px;font-weight:900;letter-spacing:4px">${r}</div>
+                                    </div>
+                                </div>`
+                            ).join('');
+                            w.document.write(`<html><head><title>${wardName} — Labels</title>
+                                <style>
+                                    * { margin:0; padding:0; box-sizing:border-box; }
+                                    body { font-family: system-ui, -apple-system, sans-serif; color: #111; }
+                                    @media print { .no-print { display:none; } }
+                                </style></head><body>
+                                <div style="page-break-after:always;display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center">
+                                    <div>
+                                        <div style="font-size:160px;font-weight:900;letter-spacing:6px">${wardName}</div>
+                                        <div style="font-size:20px;color:#888;margin-top:16px">${config.rooms.length} ${roomsLabel}</div>
+                                    </div>
+                                </div>
+                                ${roomLabels}
+                                <div class="no-print" style="position:fixed;bottom:20px;right:20px;display:flex;gap:8px">
+                                    <button onclick="window.print()" style="padding:12px 28px;font-size:16px;cursor:pointer;border:1px solid #ccc;border-radius:8px;background:#f8f8f8">🖨 ${printLabel}</button>
+                                </div>
+                            </body></html>`);
+                        }}>🏷️ {t('ward.print_labels', 'Print Labels')}</button>
                         <button className="if-toggle" onClick={async () => {
                             try {
                                 const res = await fetch(`/api/reports/shift?lang=${lang}`);

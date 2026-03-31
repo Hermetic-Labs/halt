@@ -394,6 +394,7 @@ function AppInner(p: any) {
   const { lowPower, batteryLevel, toggleLowPower } = usePower();
   const { lang, t } = useT();
   const [showTriage, setShowTriage] = useState(false);
+  const [lookupQR, setLookupQR] = useState<{ url: string; qr_image: string | null } | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // ── Notification badges (unread messages & tasks) ──
@@ -489,6 +490,18 @@ function AppInner(p: any) {
                 marginLeft: 4, flexShrink: 0, transition: 'all 0.15s',
               }}
             >⚙</button>
+            <button
+              onClick={() => setShowTriage(!showTriage)}
+              title="Chat / Triage Assistant"
+              style={{
+                background: showTriage ? 'var(--surface3)' : 'transparent',
+                border: showTriage ? '1px solid var(--border)' : '1px solid transparent',
+                borderRadius: 6, padding: '4px 8px', cursor: 'pointer',
+                color: showTriage ? 'var(--text)' : 'var(--text-dim)',
+                fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                marginLeft: 4, flexShrink: 0, transition: 'all 0.15s',
+              }}
+            >💬</button>
             <span className="topbar-sep" />
             <span className="topbar-sep" />
 
@@ -744,15 +757,15 @@ function AppInner(p: any) {
                 {/* ── Device Permissions ────────────────────────────── */}
                 <details style={{ background: 'var(--surface)', borderRadius: 10, border: '1px solid var(--border)', overflow: 'hidden' }}>
                   <summary style={{ padding: '14px 20px', cursor: 'pointer', fontSize: 14, fontWeight: 700, color: 'var(--text)', listStyle: 'none', display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <span>🔐</span> Device Permissions
+                    <span>🔐</span> {t('settings.device_permissions')}
                   </summary>
                   <div style={{ borderTop: '1px solid var(--border)', padding: 20 }}>
-                    <div style={{ fontSize: 12, color: 'var(--text-faint)', marginBottom: 16 }}>Manage audio, microphone, and camera access for this device</div>
+                    <div style={{ fontSize: 12, color: 'var(--text-faint)', marginBottom: 16 }}>{t('settings.device_permissions_desc')}</div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                       {[
-                        { key: 'audio', label: '🔊 Audio Playback', desc: 'Alert sounds and notifications' },
-                        { key: 'mic', label: '🎤 Microphone', desc: 'Voice communication' },
-                        { key: 'camera', label: '📷 Camera', desc: 'Video feeds' },
+                        { key: 'audio', label: '🔊 ' + t('settings.audio_playback'), desc: t('settings.audio_desc') },
+                        { key: 'mic', label: '🎤 ' + t('settings.microphone'), desc: t('settings.mic_desc') },
+                        { key: 'camera', label: '📷 ' + t('settings.camera'), desc: t('settings.camera_desc') },
                       ].map(p => (
                         <div key={p.key} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 14px', background: 'var(--bg)', borderRadius: 8, border: '1px solid var(--border)' }}>
                           <div style={{ flex: 1 }}>
@@ -766,7 +779,7 @@ function AppInner(p: any) {
                       <button
                         onClick={() => localStorage.removeItem('eve-permissions-granted')}
                         style={{ padding: '6px 14px', background: 'transparent', border: '1px solid #e74c3c55', borderRadius: 6, color: '#e74c3c', fontSize: 12, cursor: 'pointer' }}
-                      >Reset Permission Gate</button>
+                      >{t('settings.reset_perm_gate')}</button>
                     </div>
                   </div>
                 </details>
@@ -774,7 +787,7 @@ function AppInner(p: any) {
                 {/* ── Model Packs ──────────────────────────────────── */}
                 <details style={{ background: 'var(--surface)', borderRadius: 10, border: '1px solid var(--border)', overflow: 'hidden' }}>
                   <summary style={{ padding: '14px 20px', cursor: 'pointer', fontSize: 14, fontWeight: 700, color: 'var(--text)', listStyle: 'none', display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <span>📦</span> Model Packs
+                    <span>📦</span> {t('settings.model_packs')}
                   </summary>
                   <div style={{ borderTop: '1px solid var(--border)', padding: 20 }}>
                     <DistributionTab />
@@ -783,7 +796,7 @@ function AppInner(p: any) {
 
                 {/* ── Language ──────────────────────────────────────── */}
                 <div style={{ background: 'var(--surface)', borderRadius: 10, border: '1px solid var(--border)', padding: '14px 20px' }}>
-                  <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 600, marginBottom: 8 }}>Language</div>
+                  <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 600, marginBottom: 8 }}>{t('settings.language')}</div>
                   <select
                     value={lang}
                     onChange={e => changeLang(e.target.value)}
@@ -796,6 +809,53 @@ function AppInner(p: any) {
                       <option key={l.code} value={l.code}>{l.name}</option>
                     ))}
                   </select>
+                </div>
+
+                {/* ── Family Lookup QR ─────────────────────────────── */}
+                <div style={{ background: 'var(--surface)', borderRadius: 10, border: '1px solid var(--border)', padding: '14px 20px' }}>
+                  <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 600, marginBottom: 8 }}>{t('settings.family_lookup', 'Family Lookup')}</div>
+                  <div style={{ fontSize: 11, color: 'var(--text-faint)', marginBottom: 12 }}>{t('settings.family_lookup_desc', 'Generate a QR code for families to look up patients on their own device')}</div>
+
+                  {/* QR Display Area */}
+                  {lookupQR ? (
+                    <div style={{ textAlign: 'center', padding: 16, background: 'var(--bg)', borderRadius: 8, border: '1px solid var(--border)' }}>
+                      {lookupQR.qr_image && <img src={lookupQR.qr_image} alt="Family Lookup QR" style={{ width: 200, height: 200, borderRadius: 8, margin: '0 auto 12px', display: 'block' }} />}
+                      <div style={{ fontSize: 11, color: 'var(--text-muted)', marginBottom: 8 }}>{t('lookup.subtitle', 'Scan to search for patients')}</div>
+                      <code style={{ fontSize: 11, color: '#58a6ff', background: '#161b22', padding: '4px 10px', borderRadius: 4 }}>{lookupQR.url}</code>
+                      <div style={{ display: 'flex', gap: 8, justifyContent: 'center', marginTop: 14 }}>
+                        <button
+                          onClick={() => {
+                            const w = window.open('', '_blank');
+                            if (!w) return;
+                            w.document.write(`<html><head><title>Family Lookup QR</title><style>@media print { body { margin: 0; } .no-print { display: none; } }</style></head>
+                              <body style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;font-family:system-ui;text-align:center">
+                                <h1 style="font-size:24px;margin:0 0 8px">📱 Patient Family Lookup</h1>
+                                <p style="margin:0 0 20px;color:#555;font-size:14px">Scan to search for your family member</p>
+                                ${lookupQR.qr_image ? `<img src="${lookupQR.qr_image}" style="width:280px;height:280px" />` : ''}
+                                <p style="margin:16px 0 4px;font-size:13px;color:#888">${lookupQR.url}</p>
+                                <button class="no-print" onclick="window.print()" style="margin-top:20px;padding:10px 32px;font-size:14px;cursor:pointer;border:1px solid #ccc;border-radius:6px;background:#f8f8f8">🖨 Print</button>
+                              </body></html>`);
+                          }}
+                          style={{ padding: '6px 14px', fontSize: 11, background: 'transparent', border: '1px solid var(--border)', borderRadius: 4, color: 'var(--text-muted)', cursor: 'pointer' }}
+                        >🖨 {t('settings.print_qr', 'Print')}</button>
+                        <button
+                          onClick={() => setLookupQR(null)}
+                          style={{ padding: '6px 14px', fontSize: 11, background: 'transparent', border: '1px solid var(--border)', borderRadius: 4, color: 'var(--text-faint)', cursor: 'pointer' }}
+                        >✕</button>
+                      </div>
+                    </div>
+                  ) : (
+                    <button
+                      onClick={async () => {
+                        try {
+                          const r = await fetch('/api/public/qr');
+                          if (!r.ok) throw new Error('QR gen failed');
+                          setLookupQR(await r.json());
+                        } catch { window.open('/lookup', '_blank'); }
+                      }}
+                      style={{ padding: '8px 16px', background: '#1a3a1a', color: '#3fb950', border: '1px solid #3fb95055', borderRadius: 6, cursor: 'pointer', fontSize: 12, fontWeight: 600, width: '100%' }}
+                    >📱 {t('settings.generate_lookup_qr', 'Generate Lookup QR')}</button>
+                  )}
                 </div>
 
                 {/* ── Legal & Licensing (Footer) ────────────────────── */}
@@ -816,36 +876,6 @@ function AppInner(p: any) {
           </footer>
         </div>
 
-        {/* Triage Assistant Floating Toggle */}
-        {!showTriage && (
-          <button
-            onClick={() => setShowTriage(true)}
-            style={{
-              position: 'absolute',
-              bottom: '20px',
-              right: '20px',
-              zIndex: 1000,
-              background: 'var(--surface3)',
-              color: 'var(--text)',
-              border: '1px solid var(--border)',
-              borderRadius: '50%',
-              width: '48px',
-              height: '48px',
-              fontSize: '20px',
-              cursor: 'pointer',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
-            }}
-            title="Open Triage Assistant"
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
-          </button>
-        )}
 
         {/* Triage Side Panel — always rendered to preserve chat history */}
         <div className="triage-container" style={showTriage ? undefined : { width: 0, overflow: 'hidden', borderLeft: 'none' }}>

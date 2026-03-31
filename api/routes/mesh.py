@@ -33,9 +33,6 @@ from storage import DATA_DIR, read_json, write_json, roster_path, tasks_path, ch
 logger = logging.getLogger("triage.mesh")
 router = APIRouter(tags=["mesh"])
 
-# ── Global TTS lock — serializes Kokoro access across all callers ──────────────
-_tts_lock = asyncio.Lock()
-
 # In-memory mesh state (no DB dependency — survives nothing, by design)
 MESH_CLIENTS: dict[str, dict] = {}  # client_id -> {role, name, connected_at, last_ping, ip}
 MESH_WS: dict[str, WebSocket] = {}  # client_id -> active WebSocket
@@ -74,13 +71,15 @@ class EmergencyRequest(BaseModel):
     categories: list[str]
     sender_name: str
     notes: Optional[str] = None
-    audio_b64: Optional[str] = None
+    audio_b64: str = ""  # pregenerated WAV audio (base64) from sender
+    translations: dict[str, str] = {}  # lang_code → translated text (precomputed by sender)
 
 
 class AnnouncementRequest(BaseModel):
     message: str = ""
     sender_name: str = "System"
-    audio_b64: Optional[str] = None
+    audio_b64: str = ""  # pregenerated WAV audio (base64) from sender
+    translations: dict[str, str] = {}  # lang_code → translated text (precomputed by sender)
 
 
 class ChatMessage(BaseModel):
@@ -315,6 +314,7 @@ async def mesh_emergency(req: EmergencyRequest):
         "sender_name": req.sender_name,
         "sound": "announcement",
         "audio_b64": req.audio_b64,
+        "translations": req.translations,
         "timestamp": int(_time.time()),
     }
     await broadcast_mesh(emergency_msg)
@@ -346,6 +346,7 @@ async def mesh_announcement(req: AnnouncementRequest):
         "sender_name": req.sender_name,
         "sound": "general",
         "audio_b64": req.audio_b64,
+        "translations": req.translations,
         "timestamp": int(_time.time()),
     }
     await broadcast_mesh(announcement_msg)
@@ -366,6 +367,9 @@ async def mesh_announcement(req: AnnouncementRequest):
         messages = messages[-500:]
     write_json(cp, messages)
     asyncio.create_task(_translate_and_broadcast(chat_entry))
+    # If sender already precomputed translations, patch the entry directly
+    if req.translations:
+        chat_entry["translations"] = req.translations
     return {"status": "broadcast", "recipients": len(MESH_WS)}
 
 
@@ -378,6 +382,14 @@ def get_chat(limit: int = 100):
     messages = json.loads(cp.read_text(encoding="utf-8"))
     return messages[-limit:]
 
+
+@router.delete("/api/mesh/chat")
+def clear_chat():
+    """Clear all chat messages. Leader-only (enforced client-side)."""
+    cp = chat_path()
+    if cp.exists():
+        cp.write_text("[]", encoding="utf-8")
+    return {"status": "cleared"}
 
 @router.post("/api/mesh/chat", status_code=201)
 async def send_chat(msg: ChatMessage):
@@ -400,7 +412,7 @@ async def send_chat(msg: ChatMessage):
         messages = messages[-500:]
     write_json(cp, messages)
 
-    # Fan-out translations to all 34 languages in the background
+    # Fan-out translations to all 41 NLLB languages in the background
     asyncio.create_task(_translate_and_broadcast(entry))
 
     # DM thread storage — write targeted messages to per-pair file

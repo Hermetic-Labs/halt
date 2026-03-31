@@ -5,6 +5,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useT } from '../services/i18n';
+import { normalizeToEnglish, precomputeAllLocales, pt, flushPatientTranslations } from '../services/i18nDynamic';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -36,28 +37,20 @@ interface RosterMember {
 
 const API_BASE = '';
 const POLL_INTERVAL = 3000;
-const PRIORITY_COLOR: Record<string, string> = { critical: '#e74c3c', urgent: '#f0a500', normal: '#3498db', low: '#666' };
-const STATUS_LABEL: Record<string, string> = { open: 'OPEN', assigned: 'ASSIGNED', in_progress: 'IN PROGRESS', done: 'DONE' };
+const PRIORITY_COLOR: Record<string, string> = { critical: '#e74c3c', urgent: '#f0a500', normal: '#3498db', low: '#888' };
+const STATUS_KEY: Record<string, string> = { open: 'tasks.status_open', assigned: 'tasks.status_assigned', in_progress: 'tasks.status_in_progress', done: 'tasks.status_done' };
 const ESCALATION_OPTIONS = [
-    { label: 'No escalation', value: '' },
-    { label: '5 minutes', value: '5' },
-    { label: '15 minutes', value: '15' },
-    { label: '30 minutes', value: '30' },
-    { label: '1 hour', value: '60' },
-    { label: '2 hours', value: '120' },
+    { label: 'tasks.no_escalation', value: '' },
+    { label: 'tasks.escalation_5m', value: '5' },
+    { label: 'tasks.escalation_15m', value: '15' },
+    { label: 'tasks.escalation_30m', value: '30' },
+    { label: 'tasks.escalation_1h', value: '60' },
+    { label: 'tasks.escalation_2h', value: '120' },
 ];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-function timeAgo(iso: string): string {
-    const diff = Date.now() - new Date(iso).getTime();
-    const mins = Math.floor(diff / 60000);
-    if (mins < 1) return 'just now';
-    if (mins < 60) return `${mins}m ago`;
-    const hrs = Math.floor(mins / 60);
-    if (hrs < 24) return `${hrs}h ${mins % 60}m ago`;
-    return `${Math.floor(hrs / 24)}d ago`;
-}
+// timeAgo is kept English-safe — translated at call site
 
 function escalationRemaining(escalateAt?: string): { text: string; critical: boolean } | null {
     if (!escalateAt) return null;
@@ -83,7 +76,7 @@ function playSound(sound: 'alert' | 'announcement') {
 // ── Component ────────────────────────────────────────────────────────────────
 
 export default function TaskBoard() {
-    const { t: tr } = useT();
+    const { t: tr, lang: userLang } = useT();
     const userName = localStorage.getItem('eve-mesh-name') || 'Unknown';
 
     const [tasks, setTasks] = useState<MeshTask[]>([]);
@@ -227,39 +220,60 @@ export default function TaskBoard() {
         const ac = new AbortController();
         abortCtlRef.current = ac;
         try {
-            // Compose text for TTS
+            // Compose canonical English text
             const catText = emergencyForm.categories.map(c => c.replace('_', ' ').toUpperCase()).join(', ');
             let wardBed = emergencyForm.ward ? ` — Ward: ${emergencyForm.ward}` : '';
             if (emergencyForm.bed) wardBed += ` Bed: ${emergencyForm.bed}`;
-            const ttsText = emergencyForm.notes ? `Emergency. ${catText}${wardBed}. ${emergencyForm.notes}` : `Emergency. ${catText}${wardBed}`;
-            
-            const userLang = localStorage.getItem('eve-lang') || 'en';
-            
-            let finalTtsText = ttsText;
-            if (userLang !== 'en') {
-                try {
-                    const tr = await fetch('/api/translate', {
-                        method: 'POST', headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ text: ttsText, source: 'en', target: userLang }),
-                        signal: ac.signal
-                    });
-                    if (tr.ok) {
-                        const td = await tr.json();
-                        if (td.translated) finalTtsText = td.translated;
-                    }
-                } catch { /* fallback to English string */ }
+            const rawText = emergencyForm.notes
+                ? `Emergency. ${catText}${wardBed}. ${emergencyForm.notes}`
+                : `Emergency. ${catText}${wardBed}`;
+
+            // Normalize to English if sender is non-English
+            const { english: englishText } = userLang !== 'en'
+                ? await normalizeToEnglish(rawText, userLang)
+                : { english: rawText };
+
+            if (ac.signal.aborted) return;
+
+            // Cancel window: generate TTS audio + translate all 41 languages in parallel
+            const tempId = `emg-${Date.now()}`;
+
+            // Generate English TTS via REST (one-shot WAV) + precompute translations
+            const [ttsBlob] = await Promise.all([
+                fetch('/tts/synthesize', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: englishText, voice: 'af_heart', rate: 1.0, lang: 'en' }),
+                }).then(r => r.ok ? r.blob() : null).catch(() => null),
+                precomputeAllLocales([englishText], tempId),
+            ]);
+
+            if (ac.signal.aborted) return;
+
+            // Convert WAV to base64 for broadcast
+            let audio_b64 = '';
+            if (ttsBlob) {
+                const buf = await ttsBlob.arrayBuffer();
+                const bytes = new Uint8Array(buf);
+                let binary = '';
+                for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+                audio_b64 = btoa(binary);
             }
 
-            // 1. Generate audio locally with option to abort
-            const ttsRes = await fetch('/tts/synthesize', {
-                method: 'POST', headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ text: finalTtsText, voice: 'af_heart', rate: 1.0, lang: userLang }),
-                signal: ac.signal
-            });
-            if (!ttsRes.ok) throw new Error('TTS failed');
-            const audioData = await ttsRes.json();
-            
-            // 2. Broadcast text + audio together
+            // Build translations map from precomputed cache
+            const NLLB_LOCALES = [
+                'am','ar','bn','de','es','fa','fr','ha','he','hi',
+                'id','ig','it','ja','jw','km','ko','ku','la','mg',
+                'mr','my','nl','pl','ps','pt','ru','so','sw','ta',
+                'te','th','tl','tr','uk','ur','vi','xh','yo','zh','zu',
+            ];
+            const translations: Record<string, string> = {};
+            for (const lang of NLLB_LOCALES) {
+                const translated = pt(tempId, lang, englishText);
+                if (translated !== englishText) translations[lang] = translated;
+            }
+
+            // Broadcast text + audio + translations
             await fetch(`${API_BASE}/api/mesh/emergency`, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -268,9 +282,12 @@ export default function TaskBoard() {
                     categories: emergencyForm.categories,
                     sender_name: userName,
                     notes: emergencyForm.notes,
-                    audio_b64: audioData.audio_base64
+                    audio_b64,
+                    translations,
                 }),
             });
+
+            flushPatientTranslations(tempId);
             setShowEmergency(false);
             setEmergencyForm({ ward: '', bed: '', categories: [], notes: '' });
         } catch {
@@ -296,26 +313,64 @@ export default function TaskBoard() {
         const ac = new AbortController();
         abortCtlRef.current = ac;
         try {
-            const userLang = localStorage.getItem('eve-lang') || 'en';
-            
-            // 1. Generate audio locally with option to abort
-            const ttsRes = await fetch('/tts/synthesize', {
-                method: 'POST', headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ text: announcementMsg.trim(), voice: 'af_heart', rate: 1.0, lang: userLang }),
-                signal: ac.signal
-            });
-            if (!ttsRes.ok) throw new Error('TTS failed');
-            const audioData = await ttsRes.json();
+            const rawText = announcementMsg.trim();
 
-            // 2. Broadcast text + audio together
+            // Normalize to English if sender is non-English
+            const { english: englishText } = userLang !== 'en'
+                ? await normalizeToEnglish(rawText, userLang)
+                : { english: rawText };
+
+            if (ac.signal.aborted) return;
+
+            // Cancel window: generate TTS audio + translate all 41 languages in parallel
+            const tempId = `ann-${Date.now()}`;
+
+            const [ttsBlob] = await Promise.all([
+                fetch('/tts/synthesize', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: `Attention. ${englishText}`, voice: 'af_heart', rate: 1.0, lang: 'en' }),
+                }).then(r => r.ok ? r.blob() : null).catch(() => null),
+                precomputeAllLocales([englishText], tempId),
+            ]);
+
+            if (ac.signal.aborted) return;
+
+            // Convert WAV to base64 for broadcast
+            let audio_b64 = '';
+            if (ttsBlob) {
+                const buf = await ttsBlob.arrayBuffer();
+                const bytes = new Uint8Array(buf);
+                let binary = '';
+                for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+                audio_b64 = btoa(binary);
+            }
+
+            // Build translations map
+            const NLLB_LOCALES = [
+                'am','ar','bn','de','es','fa','fr','ha','he','hi',
+                'id','ig','it','ja','jw','km','ko','ku','la','mg',
+                'mr','my','nl','pl','ps','pt','ru','so','sw','ta',
+                'te','th','tl','tr','uk','ur','vi','xh','yo','zh','zu',
+            ];
+            const translations: Record<string, string> = {};
+            for (const lang of NLLB_LOCALES) {
+                const translated = pt(tempId, lang, englishText);
+                if (translated !== englishText) translations[lang] = translated;
+            }
+
+            // Broadcast text + audio + translations
             await fetch(`${API_BASE}/api/mesh/announcement`, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    message: announcementMsg.trim(),
+                    message: englishText,
                     sender_name: userName,
-                    audio_b64: audioData.audio_base64
+                    audio_b64,
+                    translations,
                 }),
             });
+
+            flushPatientTranslations(tempId);
             setShowAnnouncement(false);
             setAnnouncementMsg('');
         } catch {
@@ -357,8 +412,8 @@ export default function TaskBoard() {
                     <div style={{ flex: 1 }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4, flexWrap: 'wrap' }}>
                             <span style={{ fontWeight: 600, color: 'var(--text)', fontSize: 14, textDecoration: isDone ? 'line-through' : 'none' }}>{t.title}</span>
-                            <span style={{ fontSize: 10, padding: '2px 6px', borderRadius: 3, fontWeight: 700, textTransform: 'uppercase', background: `${PRIORITY_COLOR[t.priority]}22`, color: PRIORITY_COLOR[t.priority] }}>{t.priority}</span>
-                            <span style={{ fontSize: 10, padding: '2px 6px', borderRadius: 3, fontWeight: 600, textTransform: 'uppercase', background: t.status === 'open' ? '#3fb95022' : t.status === 'in_progress' ? '#3498db22' : 'var(--surface2)', color: t.status === 'open' ? '#3fb950' : t.status === 'in_progress' ? '#3498db' : 'var(--text-muted)' }}>{STATUS_LABEL[t.status] || t.status}</span>
+                            <span style={{ fontSize: 10, padding: '2px 6px', borderRadius: 3, fontWeight: 700, textTransform: 'uppercase', background: `${PRIORITY_COLOR[t.priority]}22`, color: PRIORITY_COLOR[t.priority] }}>{tr(`tasks.${t.priority}`) || t.priority}</span>
+                            <span style={{ fontSize: 10, padding: '2px 6px', borderRadius: 3, fontWeight: 600, textTransform: 'uppercase', background: t.status === 'open' ? '#3fb95022' : t.status === 'in_progress' ? '#3498db22' : 'var(--surface2)', color: t.status === 'open' ? '#3fb950' : t.status === 'in_progress' ? '#3498db' : 'var(--text-muted)' }}>{tr(STATUS_KEY[t.status] || '') || t.status}</span>
                             {t.category && <span style={{ fontSize: 10, padding: '2px 6px', borderRadius: 3, background: 'var(--bg)', color: 'var(--text-muted)', border: '1px solid var(--border)' }}>{t.category}</span>}
                         </div>
                         {t.description && <div style={{ fontSize: 12, color: 'var(--text-muted)', marginBottom: 6 }}>{t.description}</div>}
@@ -366,15 +421,15 @@ export default function TaskBoard() {
                         {/* Escalation timer */}
                         {esc && !isDone && (
                             <div style={{ fontSize: 11, fontWeight: 700, color: esc.critical ? '#e74c3c' : '#f0a500', marginBottom: 4, animation: esc.critical ? 'pulse 1s ease-in-out infinite' : undefined }}>
-                                ESCALATION: {esc.text}
+                                {tr('tasks.escalation')} {esc.text}
                             </div>
                         )}
 
                         <div style={{ fontSize: 11, color: 'var(--text-faint)', display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                            {t.assignee_name && <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>Assigned: {(() => { const rm = roster.find(r => r.name.toLowerCase() === t.assignee_name.toLowerCase()); return rm?.avatar_url ? <img src={rm.avatar_url} alt="" style={{ width: 16, height: 16, borderRadius: '50%', objectFit: 'cover', verticalAlign: 'middle' }} /> : null; })()}<strong style={{ color: 'var(--text-muted)' }}>{t.assignee_name}</strong></span>}
-                            {t.due_hint && <span>Due: {t.due_hint}</span>}
-                            {t.created_by && <span>By: {t.created_by}</span>}
-                            {t.created_at && <span>{timeAgo(t.created_at)}</span>}
+                            {t.assignee_name && <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>{tr('tasks.assigned_label')} {(() => { const rm = roster.find(r => r.name.toLowerCase() === t.assignee_name.toLowerCase()); return rm?.avatar_url ? <img src={rm.avatar_url} alt="" style={{ width: 16, height: 16, borderRadius: '50%', objectFit: 'cover', verticalAlign: 'middle' }} /> : null; })()}<strong style={{ color: 'var(--text-muted)' }}>{t.assignee_name}</strong></span>}
+                            {t.due_hint && <span>{tr('tasks.due_label')} {t.due_hint}</span>}
+                            {t.created_by && <span>{tr('tasks.by')} {t.created_by}</span>}
+                            {t.created_at && <span>{(() => { const diff = Date.now() - new Date(t.created_at).getTime(); const mins = Math.floor(diff / 60000); if (mins < 1) return tr('tasks.time_just_now'); if (mins < 60) return tr('tasks.time_m_ago').replace('{n}', String(mins)); const hrs = Math.floor(mins / 60); if (hrs < 24) return tr('tasks.time_hm_ago').replace('{h}', String(hrs)).replace('{m}', String(mins % 60)); return tr('tasks.time_d_ago').replace('{d}', String(Math.floor(hrs / 24))); })()}</span>}
                         </div>
                     </div>
 
@@ -406,7 +461,7 @@ export default function TaskBoard() {
                                 value=""
                                 onChange={e => { if (e.target.value) reassignTask(t, e.target.value); }}
                             >
-                                <option value="">Assign to...</option>
+                                <option value="">{tr('tasks.assign_to', 'Assign to...')}</option>
                                 {availableMembers.map(m => (
                                     <option key={m.id} value={m.name}>{m.name} ({m.role})</option>
                                 ))}
@@ -437,11 +492,11 @@ export default function TaskBoard() {
                 <div>
                     <h2 style={{ margin: 0, fontSize: 18, fontWeight: 700, color: 'var(--text)' }}>{tr('tasks.title')}</h2>
                     <div style={{ fontSize: 11, color: 'var(--text-faint)', marginTop: 2 }}>
-                        {criticalCount > 0 && <span style={{ color: '#e74c3c', fontWeight: 600 }}>{criticalCount} CRITICAL</span>}
+                        {criticalCount > 0 && <span style={{ color: '#e74c3c', fontWeight: 600 }}>{criticalCount} {tr('tasks.critical').toUpperCase()}</span>}
                     </div>
                 </div>
                 <div style={{ display: 'flex', gap: 8 }}>
-                    <button onClick={() => setShowAnnouncement(true)} style={{ padding: '8px 14px', background: '#f0a50022', border: '1px solid #f0a500', borderRadius: 8, color: '#f0a500', fontWeight: 700, fontSize: 12, cursor: 'pointer' }}>📢 Announce</button>
+                    <button onClick={() => setShowAnnouncement(true)} style={{ padding: '8px 14px', background: '#f0a50022', border: '1px solid #f0a500', borderRadius: 8, color: '#f0a500', fontWeight: 700, fontSize: 12, cursor: 'pointer' }}>📢 {tr('tasks.announce')}</button>
                     <button onClick={() => setShowEmergency(true)} style={{ padding: '8px 14px', background: '#e74c3c22', border: '1px solid #e74c3c', borderRadius: 8, color: '#e74c3c', fontWeight: 700, fontSize: 12, cursor: 'pointer' }}>🚨 {tr('tasks.emergency')}</button>
                     <button onClick={() => setShowAddTask(!showAddTask)} style={{ padding: '8px 16px', background: showAddTask ? '#333' : '#0d1f0d', border: `1px solid ${showAddTask ? '#555' : '#3fb950'}`, borderRadius: 8, color: showAddTask ? '#888' : '#3fb950', fontWeight: 600, fontSize: 12, cursor: 'pointer' }}>
                         {showAddTask ? tr('tasks.cancel') : '+ ' + tr('tasks.add')}
@@ -452,28 +507,28 @@ export default function TaskBoard() {
             {/* Add Task Form */}
             {showAddTask && (
                 <div style={{ padding: '16px 24px', borderBottom: '1px solid var(--border)', background: 'var(--surface)', display: 'flex', flexDirection: 'column', gap: 10 }}>
-                    <input className="if-input" value={newTask.title} onChange={e => setNewTask(p => ({ ...p, title: e.target.value }))} placeholder="Task title..." style={{ fontSize: 14 }} />
-                    <input className="if-input" value={newTask.description} onChange={e => setNewTask(p => ({ ...p, description: e.target.value }))} placeholder="Description (optional)..." />
+                    <input className="if-input" value={newTask.title} onChange={e => setNewTask(p => ({ ...p, title: e.target.value }))} placeholder={tr('tasks.title_placeholder')} style={{ fontSize: 14 }} />
+                    <input className="if-input" value={newTask.description} onChange={e => setNewTask(p => ({ ...p, description: e.target.value }))} placeholder={tr('tasks.desc_placeholder')} />
                     <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                         <select className="if-input" value={newTask.priority} onChange={e => setNewTask(p => ({ ...p, priority: e.target.value }))} style={{ flex: 1 }}>
                             <option value="low">{tr('tasks.low')}</option>
                             <option value="normal">{tr('tasks.normal')}</option>
                             <option value="urgent">{tr('tasks.urgent')}</option>
-                            <option value="critical">Critical</option>
+                            <option value="critical">{tr('tasks.critical')}</option>
                         </select>
                         <select className="if-input" value={newTask.category} onChange={e => setNewTask(p => ({ ...p, category: e.target.value }))} style={{ flex: 1 }}>
-                            <option value="">Category...</option>
-                            <option value="medical">Medical</option>
-                            <option value="logistics">Logistics</option>
-                            <option value="security">Security</option>
-                            <option value="comms">Communications</option>
-                            <option value="supply">Supply</option>
-                            <option value="medication">Medication</option>
+                            <option value="">{tr('tasks.category_placeholder')}</option>
+                            <option value="medical">{tr('tasks.cat_medical')}</option>
+                            <option value="logistics">{tr('tasks.cat_logistics')}</option>
+                            <option value="security">{tr('tasks.cat_security')}</option>
+                            <option value="comms">{tr('tasks.cat_comms')}</option>
+                            <option value="supply">{tr('tasks.cat_supply')}</option>
+                            <option value="medication">{tr('tasks.cat_medication')}</option>
                         </select>
                         <select className="if-input" value={newTask.escalate_minutes} onChange={e => setNewTask(p => ({ ...p, escalate_minutes: e.target.value }))} style={{ flex: 1 }}>
-                            {ESCALATION_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+                            {ESCALATION_OPTIONS.map(o => <option key={o.value} value={o.value}>{tr(o.label)}</option>)}
                         </select>
-                        <input className="if-input" value={newTask.due_hint} onChange={e => setNewTask(p => ({ ...p, due_hint: e.target.value }))} placeholder="Due: ASAP, 1hr..." style={{ flex: 1 }} />
+                        <input className="if-input" value={newTask.due_hint} onChange={e => setNewTask(p => ({ ...p, due_hint: e.target.value }))} placeholder={tr('tasks.due_placeholder')} style={{ flex: 1 }} />
                     </div>
                     <button onClick={addTask} disabled={!newTask.title.trim()} style={{ padding: '10px 20px', background: '#3fb950', border: 'none', borderRadius: 6, color: '#000', fontWeight: 700, fontSize: 13, cursor: 'pointer', opacity: newTask.title.trim() ? 1 : 0.4, alignSelf: 'flex-start' }}>{tr('tasks.create')}</button>
                 </div>
@@ -499,7 +554,7 @@ export default function TaskBoard() {
                         {/* Completed tasks at bottom */}
                         {doneTasks.length > 0 && (
                             <div>
-                                <div style={{ fontSize: 11, color: 'var(--text-faint)', textTransform: 'uppercase', letterSpacing: 1, marginTop: 16, paddingBottom: 6, borderBottom: '1px solid var(--border)' }}>Completed ({doneTasks.length})</div>
+                                <div style={{ fontSize: 11, color: 'var(--text-faint)', textTransform: 'uppercase', letterSpacing: 1, marginTop: 16, paddingBottom: 6, borderBottom: '1px solid var(--border)' }}>{tr('tasks.completed', 'Completed')} ({doneTasks.length})</div>
                                 {doneTasks.slice(0, 5).map(renderTaskCard)}
                                 {doneTasks.length > 5 && (
                                     <div style={{ fontSize: 11, color: 'var(--text-faint)', textAlign: 'center', padding: 8 }}>
@@ -521,22 +576,22 @@ export default function TaskBoard() {
 
                         <div style={{ display: 'flex', gap: 10, marginBottom: 12 }}>
                             <select className="if-input" value={emergencyForm.ward} onChange={e => setEmergencyForm(f => ({ ...f, ward: e.target.value }))} style={{ flex: 1 }}>
-                                <option value="">Select Ward...</option>
+                                <option value="">{tr('tasks.select_ward')}</option>
                                 {wards.map(w => <option key={w.id} value={w.name}>{w.name}</option>)}
                             </select>
-                            <input className="if-input" placeholder="Bed #" value={emergencyForm.bed} onChange={e => setEmergencyForm(f => ({ ...f, bed: e.target.value }))} style={{ width: 80 }} />
+                            <input className="if-input" placeholder={tr('tasks.bed_placeholder')} value={emergencyForm.bed} onChange={e => setEmergencyForm(f => ({ ...f, bed: e.target.value }))} style={{ width: 80 }} />
                         </div>
 
-                        <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 600, marginBottom: 8 }}>Response Required:</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 600, marginBottom: 8 }}>{tr('tasks.response_required')}</div>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 14 }}>
                             {[
-                                { id: 'all_hands', label: 'ALL HANDS ON DECK' },
-                                { id: 'expediters', label: 'Expediters' },
-                                { id: 'inventory', label: 'Inventory & Supply' },
-                                { id: 'bed_assist', label: 'Bed Assistance' },
-                                { id: 'doctors', label: 'All Doctors' },
-                                { id: 'intake', label: 'Intake & Processing' },
-                                { id: 'volunteers', label: 'Volunteers' },
+                                { id: 'all_hands', label: tr('tasks.all_hands') },
+                                { id: 'expediters', label: tr('tasks.expediters') },
+                                { id: 'inventory', label: tr('tasks.inventory_supply') },
+                                { id: 'bed_assist', label: tr('tasks.bed_assist') },
+                                { id: 'doctors', label: tr('tasks.all_doctors') },
+                                { id: 'intake', label: tr('tasks.intake_processing') },
+                                { id: 'volunteers', label: tr('tasks.volunteers') },
                             ].map(c => (
                                 <label key={c.id} style={{
                                     display: 'flex', alignItems: 'center', gap: 6, padding: '6px 12px',
@@ -552,15 +607,11 @@ export default function TaskBoard() {
                             ))}
                         </div>
 
-                        <input className="if-input" placeholder="Additional notes (optional)" value={emergencyForm.notes} onChange={e => setEmergencyForm(f => ({ ...f, notes: e.target.value }))} style={{ marginBottom: 16 }} />
+                        <input className="if-input" placeholder={tr('tasks.notes_placeholder')} value={emergencyForm.notes} onChange={e => setEmergencyForm(f => ({ ...f, notes: e.target.value }))} style={{ marginBottom: 16 }} />
 
                         <div style={{ display: 'flex', gap: 10 }}>
                             <button onClick={() => { abortCtlRef.current?.abort(); setShowEmergency(false); }} style={{ flex: 1, padding: '10px', background: 'transparent', border: '1px solid #444', borderRadius: 8, color: '#888', fontSize: 13, cursor: 'pointer' }}>{tr('tasks.cancel')}</button>
-                            {isGenerating ? (
-                                <button onClick={() => abortCtlRef.current?.abort()} style={{ flex: 2, padding: '10px', background: '#333', border: '1px solid #e74c3c', borderRadius: 8, color: '#e74c3c', fontWeight: 700, fontSize: 13, cursor: 'pointer' }}>Generating Audio... [CANCEL]</button>
-                            ) : (
-                                <button onClick={sendEmergency} disabled={emergencyForm.categories.length === 0} style={{ flex: 2, padding: '10px', background: '#e74c3c', border: 'none', borderRadius: 8, color: '#fff', fontWeight: 700, fontSize: 13, cursor: 'pointer', opacity: emergencyForm.categories.length > 0 ? 1 : 0.4 }}>{tr('tasks.broadcast_emergency')}</button>
-                            )}
+                            <button onClick={sendEmergency} disabled={emergencyForm.categories.length === 0 || isGenerating} style={{ flex: 2, padding: '10px', background: isGenerating ? '#333' : '#e74c3c', border: 'none', borderRadius: 8, color: isGenerating ? '#e74c3c' : '#fff', fontWeight: 700, fontSize: 13, cursor: 'pointer', opacity: emergencyForm.categories.length > 0 ? 1 : 0.4 }}>{isGenerating ? tr('tasks.generating') : tr('tasks.broadcast_emergency')}</button>
                         </div>
                     </div>
                 </div>
@@ -570,12 +621,12 @@ export default function TaskBoard() {
             {showAnnouncement && (
                 <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 9999 }}>
                     <div style={{ background: '#1a1a0a', borderRadius: 16, padding: '28px 32px', maxWidth: 480, width: '92%', border: '2px solid #f0a500', boxShadow: '0 0 60px rgba(240,165,0,0.3)' }}>
-                        <h3 style={{ margin: '0 0 4px', fontSize: 18, color: '#f0a500', fontWeight: 700 }}>📢 General Announcement</h3>
-                        <p style={{ color: '#888', fontSize: 12, marginBottom: 20 }}>This will be read aloud on ALL connected devices.</p>
+                        <h3 style={{ margin: '0 0 4px', fontSize: 18, color: '#f0a500', fontWeight: 700 }}>📢 {tr('tasks.announce_title')}</h3>
+                        <p style={{ color: '#888', fontSize: 12, marginBottom: 20 }}>{tr('tasks.announce_desc')}</p>
 
                         <textarea
                             className="if-input"
-                            placeholder="Type your announcement..."
+                            placeholder={tr('tasks.announce_placeholder')}
                             value={announcementMsg}
                             onChange={e => setAnnouncementMsg(e.target.value)}
                             rows={3}
@@ -584,11 +635,7 @@ export default function TaskBoard() {
 
                         <div style={{ display: 'flex', gap: 10 }}>
                             <button onClick={() => { abortCtlRef.current?.abort(); setShowAnnouncement(false); setAnnouncementMsg(''); }} style={{ flex: 1, padding: '10px', background: 'transparent', border: '1px solid #444', borderRadius: 8, color: '#888', fontSize: 13, cursor: 'pointer' }}>{tr('tasks.cancel')}</button>
-                            {isGenerating ? (
-                                <button onClick={() => abortCtlRef.current?.abort()} style={{ flex: 2, padding: '10px', background: '#333', border: '1px solid #f0a500', borderRadius: 8, color: '#f0a500', fontWeight: 700, fontSize: 13, cursor: 'pointer' }}>Generating Audio... [CANCEL]</button>
-                            ) : (
-                                <button onClick={sendAnnouncement} disabled={!announcementMsg.trim()} style={{ flex: 2, padding: '10px', background: '#f0a500', border: 'none', borderRadius: 8, color: '#000', fontWeight: 700, fontSize: 13, cursor: 'pointer', opacity: announcementMsg.trim() ? 1 : 0.4 }}>BROADCAST ANNOUNCEMENT</button>
-                            )}
+                            <button onClick={sendAnnouncement} disabled={!announcementMsg.trim() || isGenerating} style={{ flex: 2, padding: '10px', background: isGenerating ? '#333' : '#f0a500', border: 'none', borderRadius: 8, color: isGenerating ? '#f0a500' : '#000', fontWeight: 700, fontSize: 13, cursor: 'pointer', opacity: announcementMsg.trim() ? 1 : 0.4 }}>{isGenerating ? tr('tasks.generating') : tr('tasks.broadcast_announcement')}</button>
                         </div>
                     </div>
                 </div>

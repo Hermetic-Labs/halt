@@ -99,7 +99,7 @@ class PatientRecord(BaseModel):
     attachmentNames: list[str] = []
     nextOfKin: str = ""
     spokenLanguage: str = "English"
-    public_opt_in: bool = False
+    publicOptIn: bool = False
 
 
 class PatientSummary(BaseModel):

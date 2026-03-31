@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import * as patientStore from '../services/PatientStore';
 import { useT } from '../services/i18n';
+import { normalizeToEnglish } from '../services/i18nDynamic';
 import type { WardConfig } from '../types';
 
 // ── Mass Casualty Rapid Intake ──────────────────────────────────────
@@ -14,7 +15,7 @@ const PRIORITIES = [
 ] as const;
 
 export default function MassCasIntake({ onExit }: { onExit: () => void }) {
-    const { t } = useT();
+    const { t, lang } = useT();
     const [wards, setWards] = useState<WardConfig[]>([]);
     const [wardId, setWardId] = useState('ward-1');
     const [priority, setPriority] = useState<'T1' | 'T2' | 'T3' | 'T4'>('T1');
@@ -40,8 +41,21 @@ export default function MassCasIntake({ onExit }: { onExit: () => void }) {
         setSaving(true);
         try {
             const patientId = patientStore.generatePatientId();
-            const displayName = name.trim() || `MASS-${pad(counter)}`;
+            let displayName = name.trim() || `MASS-${pad(counter)}`;
+            let noteText = note.trim();
             const now = new Date().toISOString();
+
+            // Normalize to English if user is in another language
+            if (lang !== 'en') {
+                if (name.trim()) {
+                    const { english } = await normalizeToEnglish(displayName, lang);
+                    displayName = english;
+                }
+                if (noteText) {
+                    const { english } = await normalizeToEnglish(noteText, lang);
+                    noteText = english;
+                }
+            }
 
             const record = {
                 id: patientId,
@@ -62,13 +76,13 @@ export default function MassCasIntake({ onExit }: { onExit: () => void }) {
                 triage: { priority, priorityLabel: t(PRIORITIES.find(p => p.key === priority)?.labelKey || ''), hemoClass: '--', gcsCat: '--' },
                 initialVitals: { hr: 0, sbp: 0, rr: 0, spo2: 0, gcs: 0, temp: 0, pain: 0 },
                 plan: { march: [], drugs: [], rx: [], recovery: [], escalate: [] },
-                events: note.trim() ? [{
+                events: noteText ? [{
                     id: `EVT-${Date.now()}`,
                     timestamp: now,
                     type: 'note' as const,
-                    summary: note.trim(),
+                    summary: noteText,
                 }] : [],
-                notes: note.trim(),
+                notes: noteText,
                 attachmentNames: [] as string[],
                 nextOfKin: '',
                 spokenLanguage: 'Unknown',
@@ -85,7 +99,7 @@ export default function MassCasIntake({ onExit }: { onExit: () => void }) {
         } finally {
             setSaving(false);
         }
-    }, [saving, name, counter, wardId, priority, note, t]);
+    }, [saving, name, counter, wardId, priority, note, t, lang]);
 
     // Enter to save
     const handleKey = useCallback((e: React.KeyboardEvent) => {

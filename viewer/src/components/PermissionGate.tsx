@@ -67,8 +67,6 @@ export default function PermissionGate({ children }: { children: React.ReactNode
             newStatus.camera = 'denied';
         }
 
-        setStatus(newStatus);
-
         // 4. Notifications — skip on iOS Safari (not supported; use native Capacitor push instead)
         if (!IS_IOS) {
             try {
@@ -84,6 +82,9 @@ export default function PermissionGate({ children }: { children: React.ReactNode
         } else {
             newStatus.notifications = 'granted'; // Native push handles this on iOS
         }
+
+        // Update UI with all results at once
+        setStatus(newStatus);
 
         // 5. Wake Lock — keep screen/connection alive during triage
         try {
