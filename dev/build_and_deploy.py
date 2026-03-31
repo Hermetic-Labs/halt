@@ -390,13 +390,13 @@ def stage_macos(version):
             print(f"            [WARN] {src.name}/ not found, skipping")
 
     # Copy top-level files
-    for f in ["start.py", "requirements.txt", "README.md", "LICENSE", "Start HALT.command"]:
+    for f in ["start.py", "requirements.txt", "README.md", "LICENSE", "HALT.command"]:
         src = REPO_ROOT / f
         if src.exists():
             shutil.copy2(src, stage_dir / f)
 
     # Make launcher executable
-    launcher = stage_dir / "Start HALT.command"
+    launcher = stage_dir / "HALT.command"
     if launcher.exists():
         os.chmod(str(launcher), 0o755)
 
