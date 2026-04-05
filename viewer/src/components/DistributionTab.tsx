@@ -49,7 +49,7 @@ const PACK_META: Record<string, { label: string; icon: string; desc: string }> =
   ai: {
     label: 'AI Assistant',
     icon: '🧠',
-    desc: 'MedGemma medical reasoning',
+    desc: 'MedGemma 1.5 medical reasoning',
   },
 };
 

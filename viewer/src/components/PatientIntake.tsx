@@ -691,13 +691,8 @@ export default function PatientIntake() {
             // Rebuild plan in English for storage (canonical language)
             const enPlan = buildPlan(data, tEn);
 
-            // Normalize patient name to English if non-English
-            let finalName = data.name || 'Unknown';
-            if (lang !== 'en' && data.name.trim()) {
-                const { english } = await normalizeToEnglish(data.name, lang);
-                finalName = english;
-                textsToPrecompute.push(english);
-            }
+            // Names are proper nouns — never translate them
+            const finalName = data.name.trim() || 'Unknown';
 
             const record = {
                 id,

@@ -4,6 +4,45 @@ All notable changes to HALT will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.6] — 2026-04-05
+
+### Added
+
+- **Integrated Translator Panel** — turn-based field translator embedded in triage panel (replaces full-screen overlay)
+  - Dual-mode input: **Stream** (mic → Whisper → NLLB → Kokoro full pipeline) and **Text** (text box + manual submit)
+  - Toggle pills in header: `Stream` (blue) and `Auto Play` (green), both default ON
+  - **Tap-to-talk mic** — single tap to start recording, single tap to stop (no hold-to-speak — works with bloody gloves)
+  - Mic disabled during TTS playback to prevent feedback loop (shows speaker icon)
+  - Text mode: auto-growing textarea with word wrap, mic acts as dictation tool filling the text box
+  - Turn-based speaker switching with pulsing direction arrow and active speaker indicator
+  - Auto-play TTS on translation completion (gated by toggle)
+  - Live transcription bubble (dashed border) while Whisper processes, hides cleanly when chat card commits (no flicker)
+  - Chat history with replay button per message
+- **Translate Stream WebSocket** — `api/routes/translate_stream.py` full-duplex pipeline: audio → STT → NLLB → TTS → WAV playback
+- **useTranslateStream hook** — React hook managing WebSocket lifecycle, recording, and state machine
+- **MedGemma 1.5 Vision** — multimodal wound/injury image analysis via camera or file upload
+  - Supports X-ray, CT scan, wound photography, and general medical imaging
+  - SigLIP vision projector (mmproj-f16) for image encoding
+  - Browser-side resize to 1536px max before base64 encoding
+  - Graceful text-only fallback when mmproj file is absent
+
+### Changed
+
+- Toolbar: removed duplicate translate button, replaced chat icon with muted blue SVG outline
+- Translator: removed redundant `◀ English │ Español ▶` header labels (replaced with toggle pills)
+- Version bumped to 1.0.6 across all manifests
+
+### Fixed
+
+- **Translator flicker** — live transcription bubble no longer briefly coexists with committed chat card (render-frame race condition)
+
+### Documented
+
+- Translation bridge known limitations: Amharic, Hausa, Kurdish not natively supported by Faster Whisper (auto-detect fallback)
+- VAD architecture: `vad_filter=True` operates post-hoc only; no real-time VAD-based chunking
+
+## [Unreleased]
+
 ## [1.0.5] — 2026-04-01
 
 ### Added
@@ -83,7 +122,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 - Pre-built React frontend (viewer) served by the backend
 - Electron desktop shell for Windows
 - 4 bundled AI models:
-  - MedGemma 4B — medical inference and triage assistance
+  - MedGemma 1.5 4B — medical inference and triage assistance
   - Kokoro v1.0 — multilingual text-to-speech
   - Faster Whisper Base — speech-to-text
   - NLLB 200 600M — real-time translation (200 languages)

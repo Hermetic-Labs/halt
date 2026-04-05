@@ -20,33 +20,51 @@ router = APIRouter(tags=["inference"])
 # ── LLM singleton ──────────────────────────────────────────────────────────────
 _llm = None
 _llm_name = None
+_has_vision = False  # True when mmproj is loaded
 
 
 def _get_llm():
-    global _llm, _llm_name
+    global _llm, _llm_name, _has_vision
     if _llm:
         return _llm
     try:
         from llama_cpp import Llama
 
         gguf_files = sorted(MODELS_DIR.glob("*.gguf"))
+        # Exclude mmproj files from the main model list
+        gguf_files = [f for f in gguf_files if "mmproj" not in f.name.lower()]
         if not gguf_files:
             raise FileNotFoundError(f"No GGUF models in {MODELS_DIR}")
         prefer = [f for f in gguf_files if "medgemma" in f.name.lower()]
         model_path = prefer[0] if prefer else gguf_files[0]
+
+        # Detect vision projector (mmproj) for multimodal support
+        mmproj_files = sorted(MODELS_DIR.glob("*.mmproj*.gguf"))
+        chat_handler = None
+        if mmproj_files:
+            try:
+                from llama_cpp.llama_chat_format import Llava15ChatHandler
+                mmproj_path = mmproj_files[0]
+                chat_handler = Llava15ChatHandler(clip_model_path=str(mmproj_path))
+                logger.info(f"Vision projector loaded: {mmproj_path.name}")
+                _has_vision = True
+            except Exception as ve:
+                logger.warning(f"Vision projector failed to load: {ve} — running text-only")
+
         logger.info(f"Loading {model_path.name} …")
         _llm = Llama(
             model_path=str(model_path),
-            n_ctx=4096,
+            n_ctx=8192,  # Larger context for multimodal image embeddings
             n_threads=max(1, (os.cpu_count() or 4) - 2),  # Leave cores for Kokoro TTS Pipeline
             n_batch=512,  # prompt-eval batch size
             n_gpu_layers=0,
             use_mmap=True,  # memory-map model file (faster cold start)
             use_mlock=False,
             verbose=False,
+            chat_handler=chat_handler,
         )
         _llm_name = model_path.name
-        logger.info(f"LLM ready: {_llm_name}")
+        logger.info(f"LLM ready: {_llm_name} (vision={'yes' if _has_vision else 'no'})")
         return _llm
     except Exception as e:
         logger.error(f"LLM load failed: {e}")
@@ -74,7 +92,8 @@ class Message(BaseModel):
 
 class ChatRequest(BaseModel):
     messages: list[Message]
-    max_tokens: Optional[int] = 512
+    image: Optional[str] = None  # base64 data URI (e.g. "data:image/jpeg;base64,...")
+    max_tokens: Optional[int] = 2048
     temperature: Optional[float] = 0.7
     user_name: Optional[str] = ""  # for queue position feedback
 
@@ -144,6 +163,43 @@ async def _do_generate(req: ChatRequest):
 
     messages = [{"role": m.role, "content": m.content} for m in req.messages]
 
+    # ── Inject system persona ──────────────────────────────────────────────
+    # Override the default chat template's generic prompt with our field medic persona.
+    SYSTEM_PERSONA = (
+        "You are a combat field medic AI embedded in a portable survival kit. "
+        "You are the last line of medical support in austere, resource-limited environments. "
+        "Give direct, actionable clinical assessments in plain text. Use structured formatting: "
+        "headers, bullet points, and numbered steps. "
+        "NEVER add disclaimers, NEVER suggest 'consult a doctor', NEVER hedge. "
+        "The user's life may depend on the clarity and speed of your answer. "
+        "When analyzing medical images, describe your findings in natural language prose with "
+        "anatomical precision. Identify abnormalities, their clinical significance, and "
+        "recommended field interventions. "
+        "CRITICAL: Always respond in natural language text. NEVER output JSON, bounding boxes, "
+        "coordinates, or detection data. You are a clinical advisor, not a detection system."
+    )
+    # Prepend system message (or replace if one already exists)
+    if messages and messages[0]["role"] == "system":
+        messages[0]["content"] = SYSTEM_PERSONA
+    else:
+        messages.insert(0, {"role": "system", "content": SYSTEM_PERSONA})
+
+    # ── Multimodal: inject image into the last user message ────────────────
+    if req.image and _has_vision:
+        logger.info(f"Multimodal request: image size={len(req.image)} chars")
+        # Find last user message and convert to multimodal content array
+        for i in range(len(messages) - 1, -1, -1):
+            if messages[i]["role"] == "user":
+                text_content = messages[i]["content"]
+                messages[i]["content"] = [
+                    {"type": "image_url", "image_url": {"url": req.image}},
+                    {"type": "text", "text": text_content},
+                ]
+                logger.info(f"Injected image into message {i}: text='{text_content[:60]}...'")
+                break
+    elif req.image and not _has_vision:
+        logger.warning("Image received but vision projector not loaded — ignoring image")
+
     def _sync_stream():
         start = time.time()
         count = 0
@@ -152,6 +208,7 @@ async def _do_generate(req: ChatRequest):
                 messages=messages,
                 max_tokens=req.max_tokens,
                 temperature=req.temperature,
+                stop=["USER:", "\nUSER:", "ASSISTANT:", "\nASSISTANT:", "<context>"],
                 stream=True,
             ):
                 token = chunk["choices"][0]["delta"].get("content", "")
@@ -196,6 +253,7 @@ def inference_queue_status():
         "active_user": _active_user,
         "waiting": _queue_waiting,
         "model": _llm_name,
+        "vision": _has_vision,
     }
 
 

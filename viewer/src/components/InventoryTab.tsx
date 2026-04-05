@@ -7,15 +7,15 @@ import { useT } from '../services/i18n';
 import { normalizeToEnglish } from '../services/i18nDynamic';
 
 
-function formatTimeAgo(iso: string): string {
+function formatTimeAgo(iso: string, t: (key: string, params?: string | Record<string, string>) => string): string {
     const diff = Date.now() - new Date(iso).getTime();
     const mins = Math.floor(diff / 60000);
-    if (mins < 1) return 'just now';
-    if (mins < 60) return `${mins}m ago`;
+    if (mins < 1) return t('inv.time_just_now');
+    if (mins < 60) return t('inv.time_minutes_ago', { n: String(mins) });
     const hrs = Math.floor(mins / 60);
-    if (hrs < 24) return `${hrs}h ago`;
+    if (hrs < 24) return t('inv.time_hours_ago', { n: String(hrs) });
     const days = Math.floor(hrs / 24);
-    return `${days}d ago`;
+    return t('inv.time_days_ago', { n: String(days) });
 }
 
 // ─── Add Item Modal ──────────────────────────────────────────────────────────
@@ -32,7 +32,7 @@ const DEFAULT_TEMPLATES_DATA: Record<string, { minThreshold: number }> = {
 };
 
 function AddItemModal({ locationId, onClose, onAdd }: { locationId: string; onClose: () => void; onAdd: (item: InventoryItem) => void }) {
-    const { t, lang } = useT();
+    const { t, tEn, lang } = useT();
     const [templateId, setTemplateId] = useState('custom');
     const [name, setName] = useState('');
     const [category, setCategory] = useState('');
@@ -63,10 +63,17 @@ function AddItemModal({ locationId, onClose, onAdd }: { locationId: string; onCl
         let finalName = name.trim();
         let finalCategory = category.trim();
         const alts = alternativesStr.split(',').map(s => s.trim()).filter(Boolean);
-        if (alts.length === 0) alts.push('Improvised Alternative');
+        if (alts.length === 0) alts.push(tEn('inv.improvised_alt'));
 
-        // Normalize all text to English if non-English
-        if (lang !== 'en') {
+        if (templateId !== 'custom') {
+            // Template items: use canonical English directly — no NLLB round-trip
+            finalName = tEn(`inv.tpl_${templateId}_name`);
+            finalCategory = tEn(`inv.tpl_${templateId}_cat`);
+            const enAlts = tEn(`inv.tpl_${templateId}_alts`).split(',').map(s => s.trim()).filter(Boolean);
+            alts.length = 0;
+            alts.push(...enAlts);
+        } else if (lang !== 'en') {
+            // Custom items: normalize user input to English
             const { english: eName } = await normalizeToEnglish(finalName, lang);
             finalName = eName;
             const { english: eCat } = await normalizeToEnglish(finalCategory, lang);
@@ -284,10 +291,18 @@ export default function InventoryTab() {
 
     // ── Template-aware display helpers ──
     // Items stored in English — map known template IDs to t() keys for display
+    const TPL_ID_MAP: Record<string, string> = useMemo(() => ({
+        'txa': 'txa',
+        'gauze': 'gauze',
+        'tourniquet': 'tourniquet',
+        'iv-fluid': 'fluids',
+        'ketamine': 'ketamine',
+        'chest-seal': 'seal',
+    }), []);
     const tplKey = useCallback((item: InventoryItem) => {
         const k = item.id.replace('inv-', '');
-        return (['txa', 'gauze', 'tourniquet', 'fluids', 'ketamine', 'seal'] as string[]).includes(k) ? k : null;
-    }, []);
+        return TPL_ID_MAP[k] ?? null;
+    }, [TPL_ID_MAP]);
     const tName = useCallback((item: InventoryItem) => { const k = tplKey(item); return k ? t(`inv.tpl_${k}_name`) : item.name; }, [t, tplKey]);
     const tCat = useCallback((item: InventoryItem) => { const k = tplKey(item); return k ? t(`inv.tpl_${k}_cat`) : item.category; }, [t, tplKey]);
     const tAlts = useCallback((item: InventoryItem) => {
@@ -295,6 +310,25 @@ export default function InventoryTab() {
         if (k) return t(`inv.tpl_${k}_alts`).split(',').map(s => s.trim());
         return item.alternatives;
     }, [t, tplKey]);
+
+    // Reverse-map English template names for activity log translation
+    const TEMPLATE_ENGLISH_NAMES: Record<string, string> = useMemo(() => ({
+        'TXA (Tranexamic Acid)': 'txa',
+        'Combat Gauze': 'gauze',
+        'CAT Tourniquet': 'tourniquet',
+        'IV Fluids (Lactated Ringers 1L)': 'fluids',
+        'Ketamine (500mg vial)': 'ketamine',
+        'Vented Chest Seal': 'seal',
+    }), []);
+    const tTarget = useCallback((raw: string): string => {
+        // Format: "ItemName [LocationName]"  →  translate item, keep location
+        const bracketIdx = raw.lastIndexOf(' [');
+        const itemName = bracketIdx > 0 ? raw.slice(0, bracketIdx) : raw;
+        const locationPart = bracketIdx > 0 ? raw.slice(bracketIdx) : '';
+        const tplId = TEMPLATE_ENGLISH_NAMES[itemName];
+        const translatedName = tplId ? t(`inv.tpl_${tplId}_name`) : itemName;
+        return translatedName + locationPart;
+    }, [t, TEMPLATE_ENGLISH_NAMES]);
 
     const [items, setItems] = useState<InventoryItem[]>([]);
     const [locations, setLocations] = useState<InventoryLocation[]>([]);
@@ -529,13 +563,13 @@ export default function InventoryTab() {
                                 <div style={{ height: '100%', width: `${ratio * 100}%`, background: barColor, transition: 'width 0.3s ease, background 0.3s ease' }} />
                             </div>
 
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
-                                <div>
+                            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, marginBottom: 16 }}>
+                                <div style={{ fontSize: 28, fontWeight: 700, color: barColor, lineHeight: 1, minWidth: 36 }}>
+                                    {item.quantity}
+                                </div>
+                                <div style={{ flex: 1, minWidth: 0 }}>
                                     <div style={{ fontWeight: 600, fontSize: 16 }}>{tName(item)}</div>
                                     <div style={{ fontSize: 12, color: 'var(--text-muted)' }}>{tCat(item)}</div>
-                                </div>
-                                <div style={{ fontSize: 24, fontWeight: 700, color: barColor }}>
-                                    {item.quantity}
                                 </div>
                             </div>
 
@@ -634,7 +668,7 @@ export default function InventoryTab() {
                         </div>
                     ) : (
                         filtered.map((entry, i) => {
-                            const ago = formatTimeAgo(entry.timestamp);
+                            const ago = formatTimeAgo(entry.timestamp, t);
                             const isConsume = entry.action_type === 'consumed' || entry.action.includes('consumed');
                             // Build i18n-safe action string
                             const actionLabel = entry.action_type
@@ -653,7 +687,7 @@ export default function InventoryTab() {
                                     <div style={{ flex: 1, minWidth: 0 }}>
                                         <span style={{ fontWeight: 600, color: 'var(--text)' }}>{entry.who}</span>
                                         <span style={{ color: isConsume ? '#e74c3c' : '#3fb950', margin: '0 6px' }}>{actionLabel}</span>
-                                        <span style={{ color: 'var(--text)' }}>{entry.target}</span>
+                                        <span style={{ color: 'var(--text)' }}>{tTarget(entry.target)}</span>
                                     </div>
                                     <span style={{ fontSize: 11, color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>{ago}</span>
                                 </div>

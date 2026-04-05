@@ -1,11 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
 import { useT } from '../services/i18n';
 import { useTTS } from '../hooks/useTTS';
-import './TriagePanel.css'; // We'll put the Triage scoped CSS here
+import TranslatorPanel from './TranslatorPanel';
+import './TriagePanel.css';
 
 interface Message {
     role: 'user' | 'assistant';
     content: string;
+    image?: string;
 }
 
 interface SavedThread {
@@ -14,8 +16,6 @@ interface SavedThread {
     messages: Message[];
     timestamp: number;
 }
-
-type PanelTab = 'chat' | 'translate';
 
 // Thread localStorage helpers
 const THREADS_KEY = 'eve-triage-threads';
@@ -29,39 +29,22 @@ const saveThreads = (threads: SavedThread[]) => {
 // Translation cache for triage panel (keyed by content hash)
 const triageTranslationCache: Record<string, string> = {};
 
-// All supported languages — matches /public/locales/*.json
-const TRANSLATE_LANGS: [string, string][] = [
-    ['en','English'],['am','Amharic'],['ar','Arabic'],['bn','Bengali'],['de','German'],
-    ['es','Spanish'],['fa','Persian'],['fr','French'],['ha','Hausa'],['he','Hebrew'],
-    ['hi','Hindi'],['id','Indonesian'],['ig','Igbo'],['it','Italian'],['ja','Japanese'],
-    ['jw','Javanese'],['km','Khmer'],['ko','Korean'],['ku','Kurdish'],['la','Latin'],
-    ['mg','Malagasy'],['mr','Marathi'],['my','Burmese'],['nl','Dutch'],['pl','Polish'],
-    ['ps','Pashto'],['pt','Portuguese'],['ru','Russian'],['so','Somali'],['sw','Swahili'],
-    ['ta','Tamil'],['te','Telugu'],['th','Thai'],['tl','Filipino'],['tr','Turkish'],
-    ['uk','Ukrainian'],['ur','Urdu'],['vi','Vietnamese'],['xh','Xhosa'],['yo','Yoruba'],
-    ['zh','Chinese'],['zu','Zulu'],
-];
-
-
 
 export default function TriagePanel({ onClose }: { onClose: () => void }) {
     const { t, lang } = useT();
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState('');
+    const [pendingImage, setPendingImage] = useState<string | null>(null);
+    const [deepAnalysis, setDeepAnalysis] = useState(false);
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
-    // Panel tab + thread state
-    const [panelTab, setPanelTab] = useState<PanelTab>('chat');
+    // Thread state
     const [showThreadList, setShowThreadList] = useState(false);
     const [activeThreadId, setActiveThreadId] = useState<string | null>(null);
     const [threads, setThreads] = useState<SavedThread[]>(loadThreads);
 
-
-    // Translate tab state
-    const [translateInput, setTranslateInput] = useState('');
-    const [translateOutput, setTranslateOutput] = useState('');
-    const [translateFrom, setTranslateFrom] = useState('en');
-    const [translateTo, setTranslateTo] = useState('es');
-    const [translating, setTranslating] = useState(false);
+    // Translator overlay
+    const [showTranslator, setShowTranslator] = useState(false);
 
     // Auto-save thread when messages change
     useEffect(() => {
@@ -96,33 +79,8 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
         setShowThreadList(false);
     };
 
-    const handleTranslate = async () => {
-        if (!translateInput.trim()) return;
-        setTranslating(true);
-        setTranslateOutput('');
-        const textToTranslate = translateInput.trim();
-        setTranslateInput('');
-        try {
-            const r = await fetch('/api/translate', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ text: textToTranslate, source: translateFrom, target: translateTo }),
-            });
-            if (r.ok) {
-                const d = await r.json();
-                const translated = d.translated || textToTranslate;
-                setTranslateOutput(translated);
-                // Auto-play through Kokoro TTS — wrapped in try/catch to prevent white-screen on TTS failure
-                try { queueMicrotask(() => speak(translated, -1, translateTo)); } catch { /* TTS unavailable */ }
-            } else {
-                setTranslateOutput(t('triage.translate_failed', 'Translation service unavailable'));
-            }
-        } catch { setTranslateOutput(t('triage.translate_offline', 'Translation unavailable offline')); }
-        setTranslating(false);
-    };
-
     const [isRecording, setIsRecording] = useState(false);
-    const [, setSttStatus] = useState('● ready');
+    const [, setSttStatus] = useState('\u25cf ready');
     const [isSending, setIsSending] = useState(false);
     const [streamingText, setStreamingText] = useState('');
 
@@ -206,7 +164,7 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
     const [playingMsgIndex, setPlayingMsgIndex] = useState<number | null>(null);
     const speakingMsgRef = useRef<number | null>(null);
 
-    // Sync hook's isSpeaking → playingMsgIndex (when hook finishes, clear the index)
+    // Sync hook's isSpeaking -> playingMsgIndex
     useEffect(() => {
         if (!ttsActive && playingMsgIndex !== null) {
             setPlayingMsgIndex(null);
@@ -230,38 +188,174 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
     // ── Rendering Helpers ──────────────────────────────────────────────────────
 
     const renderMd = (text: string) => {
-        // Reformat numbered steps that run together on one line (common after translation)
-        // Insert newline before "2. ", "3. ", etc. (but not "1." since it's the start)
-        const formatted = text.replace(/(?<!\n)\s+(\d+)\.\s/g, '\n$1. ');
+        const elements: React.ReactNode[] = [];
 
-        const parts = formatted.split(/(\*\*[^*]+\*\*)/g);
-        return parts.map((part, i) => {
-            if (part.startsWith('**') && part.endsWith('**')) {
-                const label = part.slice(2, -2);
-                return <strong key={i}>{label}</strong>;
-            }
-
-            let htmlStr = part.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-            htmlStr = htmlStr.replace(/\*(?!\*)(.+?)(?<!\*)\*/g, '<em>$1</em>');
-            htmlStr = htmlStr.replace(/^[*\-•] +(.+)$/gm, '<li>$1</li>');
-            // Format numbered lists as list items
-            htmlStr = htmlStr.replace(/^(\d+)\.\s+(.+)$/gm, '<li><strong>$1.</strong> $2</li>');
-            htmlStr = htmlStr.replace(/\n/g, '<br/>');
-
-            return <span key={i} dangerouslySetInnerHTML={{ __html: htmlStr }} />;
+        // Extract <context> -> collapsible system card
+        const contextBlocks: string[] = [];
+        let working = text.replace(/<context>([\s\S]*?)<\/context>/gi, (_, content) => {
+            contextBlocks.push(content.trim());
+            return '';
         });
+
+        // Reformat leaked special tokens as turn separators
+        working = working
+            .replace(/<start_of_turn>\s*user\s*\n?/gi, '\n---\n**YOU:**\n')
+            .replace(/<start_of_turn>\s*model\s*\n?/gi, '\n---\n**TRIAGE AI:**\n')
+            .replace(/<end_of_turn>/gi, '')
+            .replace(/<\/?bos>/gi, '')
+            .replace(/<\/?eos>/gi, '')
+            .trim();
+
+        if (contextBlocks.length > 0) {
+            elements.push(
+                <details key="ctx-0" className="triage-context-card">
+                    <summary>System Directive</summary>
+                    <div className="triage-context-content">{contextBlocks.join('\n')}</div>
+                </details>
+            );
+        }
+
+        // Split on "Response:" -- before is reasoning
+        const respIdx = working.search(/\bResponse:\s*/i);
+        let reasoning = '';
+        let mainContent = working;
+        if (respIdx >= 0) {
+            reasoning = working.slice(0, respIdx).trim();
+            mainContent = working.slice(respIdx).replace(/^Response:\s*/i, '').trim();
+        }
+
+        // Handle <think>/<thought> tags
+        mainContent = mainContent.replace(/<(?:think|thought)>([\s\S]*?)<\/(?:think|thought)>/gi, (_, content) => {
+            reasoning = (reasoning + '\n' + content).trim();
+            return '';
+        }).trim();
+
+        if (reasoning) {
+            reasoning = reasoning.replace(/^Query:\s*.*$/gm, '').trim();
+        }
+        if (reasoning) {
+            elements.push(
+                <details key="think-0" className="triage-thought-bubble">
+                    <summary>{'\ud83e\udde0'} Reasoning</summary>
+                    <div className="triage-thought-content">{reasoning}</div>
+                </details>
+            );
+        }
+
+        // Full markdown rendering
+        if (mainContent) {
+            let md = mainContent.replace(/(?<!\n)\s+(\d+)\.\s/g, '\n$1. ');
+            md = md.replace(/```(\w*)\n([\s\S]*?)```/g, (_m, _lang, code) =>
+                `<pre class="triage-code"><code>${code.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</code></pre>`
+            );
+            md = md.replace(/((?:^\|.+\|$\n?)+)/gm, (tableBlock) => {
+                const rows = tableBlock.trim().split('\n').filter(r => r.trim());
+                if (rows.length < 2) return tableBlock;
+                const dataRows = rows.filter(r => !/^\|[\s\-:|]+\|$/.test(r));
+                const headerCells = dataRows[0]?.split('|').filter(c => c.trim()) || [];
+                const bodyRows = dataRows.slice(1);
+                let html = '<table class="triage-table"><thead><tr>';
+                headerCells.forEach(c => { html += `<th>${c.trim()}</th>`; });
+                html += '</tr></thead><tbody>';
+                bodyRows.forEach(row => {
+                    const cells = row.split('|').filter(c => c.trim());
+                    html += '<tr>';
+                    cells.forEach(c => { html += `<td>${c.trim()}</td>`; });
+                    html += '</tr>';
+                });
+                html += '</tbody></table>';
+                return html;
+            });
+            md = md.replace(/^#### +(.+)$/gm, '<h4 class="triage-h4">$1</h4>');
+            md = md.replace(/^### +(.+)$/gm, '<h3 class="triage-h3">$1</h3>');
+            md = md.replace(/^## +(.+)$/gm, '<h2 class="triage-h2">$1</h2>');
+            md = md.replace(/^# +(.+)$/gm, '<h1 class="triage-h1">$1</h1>');
+            md = md.replace(/^---+$/gm, '<hr class="triage-hr"/>');
+            md = md.replace(/^> +(.+)$/gm, '<blockquote class="triage-bq">$1</blockquote>');
+            md = md.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
+            md = md.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+            md = md.replace(/\*(?!\*)(.+?)(?<!\*)\*/g, '<em>$1</em>');
+            md = md.replace(/`([^`]+)`/g, '<code class="triage-inline-code">$1</code>');
+            // Bullet items: * or - or bullet char -> styled list item with green arrow
+            md = md.replace(/^[*\-\u2022] +\*\*(.+?)\*\*:\s*(.+)$/gm, '<div class="triage-label-card"><span class="triage-label-tag">$1</span><span class="triage-label-body">$2</span></div>');
+            md = md.replace(/^[*\-\u2022] +(.+)$/gm, '<div class="triage-bullet">$1</div>');
+            md = md.replace(/^(\d+)\.\s+(.+)$/gm, '<div class="triage-step"><span class="triage-step-num">$1</span><span class="triage-step-body">$2</span></div>');
+            // Label lines ending with colon (e.g. "Clinical Significance:") -> break after
+            md = md.replace(/^(\*\*[^*]+\*\*):\s*/gm, '<br/><strong class="triage-section-label">$1</strong>:<br/>');
+            md = md.replace(/\n(?!<)/g, '<br/>');
+            elements.push(
+                <div key="md-main" className="triage-md-content" dangerouslySetInnerHTML={{ __html: md }} />
+            );
+        }
+        return elements;
+    };
+
+    // ── Image handling ────────────────────────────────────────────────────────
+
+    const processImageFile = (file: File) => {
+        const img = new Image();
+        const reader = new FileReader();
+        reader.onload = () => {
+            img.onload = () => {
+                const MAX = 512;
+                let w = img.width, h = img.height;
+                if (w > MAX || h > MAX) {
+                    const scale = MAX / Math.max(w, h);
+                    w = Math.round(w * scale);
+                    h = Math.round(h * scale);
+                }
+                const canvas = document.createElement('canvas');
+                canvas.width = w;
+                canvas.height = h;
+                const ctx = canvas.getContext('2d')!;
+                ctx.drawImage(img, 0, 0, w, h);
+                setPendingImage(canvas.toDataURL('image/jpeg', 0.8));
+            };
+            img.src = reader.result as string;
+        };
+        reader.readAsDataURL(file);
+    };
+
+    const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (file && file.type.startsWith('image/')) processImageFile(file);
+        e.target.value = '';
+    };
+
+    const handlePaste = (e: React.ClipboardEvent) => {
+        const items = Array.from(e.clipboardData.items);
+        for (const item of items) {
+            if (item.type.startsWith('image/')) {
+                e.preventDefault();
+                const file = item.getAsFile();
+                if (file) processImageFile(file);
+                return;
+            }
+        }
+    };
+
+    const handleDrop = (e: React.DragEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const file = e.dataTransfer?.files?.[0];
+        if (file && file.type.startsWith('image/')) processImageFile(file);
+    };
+
+    const handleDragOver = (e: React.DragEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
     };
 
     // ── Actions ───────────────────────────────────────────────────────────────
 
-
     const handleSend = async () => {
         const txt = input.trim();
-        if (!txt) return;
+        if (!txt && !pendingImage) return;
 
+        const imageToSend = pendingImage;
         setInput('');
+        setPendingImage(null);
         setIsSending(true);
-
 
         // If user is non-English, translate input to English for the LLM
         let englishTxt = txt;
@@ -279,16 +373,19 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
             } catch { /* fallback to original */ }
         }
 
-        const newHist = [...messages, { role: 'user', content: txt } as Message];
+        const newHist = [...messages, { role: 'user', content: txt || t('triage.image_sent', 'Analyze this image'), image: imageToSend || undefined } as Message];
         setMessages(newHist);
 
-        // Inject persona — use English translation for LLM
+        // Inject persona
         const payloadHist = [...newHist];
         const lastIdx = payloadHist.length - 1;
         if (lastIdx >= 0) {
+            const persona = deepAnalysis
+                ? `<context>\nYou are a field medic AI in a survival kit. Think step-by-step. Provide detailed clinical reasoning, differential diagnosis, relevant anatomy, and supporting evidence. Structure your response with headers and bullet points. NO disclaimers, NO suggestions to see a doctor, NO hedging. After your analysis, give a clear final assessment.\n</context>`
+                : `<context>\nYou are a field medic AI in a survival kit. Give direct, actionable clinical information only. NO disclaimers, NO suggestions to see a doctor, NO hedging.\n</context>`;
             payloadHist[lastIdx] = {
                 role: 'user',
-                content: `<context>\nYou are a field medic AI in a survival kit. Give direct, actionable clinical information only. NO disclaimers, NO suggestions to see a doctor, NO hedging.\n</context>\n\nQuery: ${englishTxt}`
+                content: `${persona}\n\nQuery: ${englishTxt}`
             };
         }
 
@@ -298,8 +395,9 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     messages: payloadHist,
-                    max_tokens: 512,
-                    temperature: 0.7,
+                    image: imageToSend || undefined,
+                    max_tokens: deepAnalysis ? 4096 : 2048,
+                    temperature: deepAnalysis ? 0.4 : 0.7,
                     user_name: localStorage.getItem('eve-mesh-name') || '',
                 }),
             });
@@ -318,7 +416,7 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                     try {
                         const d = JSON.parse(line.slice(6));
                         if (d.type === 'queued') {
-                            setStreamingText(`⏳ In queue (position ${d.position})${d.active_user ? ` — ${d.active_user} is generating…` : '…'}`);
+                            setStreamingText(`\u23f3 In queue (position ${d.position})${d.active_user ? ` -- ${d.active_user} is generating...` : '...'}`);
                         } else if (d.type === 'token') {
                             full += d.token;
                             setStreamingText(full);
@@ -327,7 +425,6 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                 }
             }
 
-            // Empty response guard — show error card if AI returned nothing
             if (!full.trim()) {
                 setMessages(prev => [...prev, { role: 'assistant', content: t('triage.empty_response', 'The AI model did not return a response. This can happen when the model is still loading or the request was too complex. Please try again.') }]);
             } else {
@@ -337,7 +434,7 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
 
         } catch (e) {
             const errMsg = (e as Error).message || 'Unknown error';
-            setMessages(prev => [...prev, { role: 'assistant', content: `⚠️ ${t('triage.error_prefix', 'Error')}: ${errMsg}` }]);
+            setMessages(prev => [...prev, { role: 'assistant', content: `\u26a0\ufe0f ${t('triage.error_prefix', 'Error')}: ${errMsg}` }]);
             setStreamingText('');
         } finally {
             setIsSending(false);
@@ -347,18 +444,17 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
     const handleMic = async () => {
         if (isRecording) {
             if (mediaRecRef.current) {
-                mediaRecRef.current.requestData();   // flush any buffered data
+                mediaRecRef.current.requestData();
                 mediaRecRef.current.stop();
             }
             setIsRecording(false);
-            setSttStatus('● transcribing…');
+            setSttStatus('\u25cf transcribing...');
             return;
         }
 
         try {
             const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
 
-            // Pick best supported MIME — Safari needs mp4/aac, Chrome/Firefox use webm
             let mimeType = '';
             for (const mime of ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4', 'audio/ogg;codecs=opus', 'audio/aac']) {
                 if (MediaRecorder.isTypeSupported(mime)) { mimeType = mime; break; }
@@ -375,18 +471,16 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
             mr.onstop = async () => {
                 stream.getTracks().forEach(t => t.stop());
 
-                // Build blob from collected chunks
                 const actualMime = mr.mimeType || mimeType || 'audio/webm';
                 const blob = new Blob(audioChunksRef.current, { type: actualMime });
 
                 if (blob.size === 0) {
-                    console.warn('[STT] Empty recording blob — no audio captured');
-                    setSttStatus('● no audio captured');
-                    setTimeout(() => setSttStatus('● ready'), 3000);
+                    console.warn('[STT] Empty recording blob');
+                    setSttStatus('\u25cf no audio captured');
+                    setTimeout(() => setSttStatus('\u25cf ready'), 3000);
                     return;
                 }
 
-                // Match filename extension to actual MIME
                 const ext = actualMime.includes('mp4') ? '.mp4'
                           : actualMime.includes('ogg') ? '.ogg'
                           : actualMime.includes('aac') ? '.aac'
@@ -400,63 +494,60 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                     const d = await r.json();
                     const txt = (d.text || '').trim();
                     if (txt) {
-                        // Route to whichever input is active
-                        if (panelTab === 'translate') {
-                            setTranslateInput(prev => prev ? prev + ' ' + txt : txt);
-                        } else {
-                            setInput(prev => prev ? prev + ' ' + txt : txt);
-                        }
+                        setInput(prev => prev ? prev + ' ' + txt : txt);
                     } else {
                         console.warn('[STT] Server returned empty text', d);
-                        setSttStatus('● no speech detected');
-                        setTimeout(() => setSttStatus('● ready'), 3000);
+                        setSttStatus('\u25cf no speech detected');
+                        setTimeout(() => setSttStatus('\u25cf ready'), 3000);
                         return;
                     }
-                    setSttStatus(`● transcribed (${d.language || 'auto'})`);
-                    setTimeout(() => setSttStatus('● ready'), 3000);
+                    setSttStatus(`\u25cf transcribed (${d.language || 'auto'})`);
+                    setTimeout(() => setSttStatus('\u25cf ready'), 3000);
                 } catch (e) {
                     console.error('[STT] Fetch failed:', e);
                     setSttStatus(`STT failed: ${(e as Error).message}`);
-                    setTimeout(() => setSttStatus('● ready'), 4000);
+                    setTimeout(() => setSttStatus('\u25cf ready'), 4000);
                 }
             };
 
-            // Start with timeslice to get periodic chunks (more reliable on mobile)
             mr.start(250);
             setIsRecording(true);
-            setSttStatus('● recording…');
+            setSttStatus('\u25cf recording...');
         } catch (e) {
             console.error('[STT] Mic error:', e);
             setSttStatus(`Mic error: ${(e as Error).message}`);
-            setTimeout(() => setSttStatus('● ready'), 3000);
+            setTimeout(() => setSttStatus('\u25cf ready'), 3000);
         }
     };
 
 
     return (
-        <div className="triage-panel">
+        <div className="triage-panel" onDrop={handleDrop} onDragOver={handleDragOver}>
             <header className="triage-header">
                 {/* Thread list toggle */}
                 <button
                     className="triage-close-btn"
                     onClick={() => setShowThreadList(s => !s)}
-                    title="Chat history"
+                    title={t('triage.chat_history', 'Chat history')}
                     style={{ fontSize: 14 }}
-                >☰</button>
+                >{'\u2630'}</button>
 
-                {/* Tab bar */}
-                <div style={{ display: 'flex', gap: 2, background: 'var(--bg)', borderRadius: 6, padding: 2 }}>
-                    {(['chat', 'translate'] as PanelTab[]).map(tab => (
-                        <button
-                            key={tab}
-                            onClick={() => setPanelTab(tab)}
-                            style={{
-                                padding: '4px 12px', fontSize: 11, fontWeight: 600, borderRadius: 4, border: 'none', cursor: 'pointer',
-                                background: panelTab === tab ? '#3fb95022' : 'transparent',
-                                color: panelTab === tab ? '#3fb950' : 'var(--text-faint)',
-                            }}
-                        >{tab === 'chat' ? '💬 Chat' : '🌐 Translate'}</button>
-                    ))}
+                {/* Translator launch button */}
+                <button
+                    className="triage-close-btn"
+                    onClick={() => setShowTranslator(true)}
+                    title={t('triage.translator', 'Translator')}
+                    style={{ fontSize: 14 }}
+                >{'\ud83c\udf10'}</button>
+
+                {/* Deep Analysis toggle */}
+                <div
+                    className="triage-toggle-wrap"
+                    title="Deep Analysis: extended reasoning with differential diagnosis"
+                    onClick={() => setDeepAnalysis(prev => !prev)}
+                >
+                    <span className={`triage-pill ${deepAnalysis ? 'on' : ''}`} />
+                    <span>{deepAnalysis ? '\ud83d\udd2c Deep' : '\u26a1 Quick'}</span>
                 </div>
 
                 <div style={{ flex: 1 }} />
@@ -465,20 +556,25 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                     <button
                         className="triage-close-btn"
                         onClick={() => {
-                            if (!window.confirm('Clear this conversation?')) return;
+                            if (!window.confirm(t('triage.clear_confirm', 'Clear this conversation?'))) return;
                             setMessages([]);
                             setActiveThreadId(null);
                             setStreamingText('');
                             setTriageTranslations({});
                             Object.keys(triageTranslationCache).forEach(k => delete triageTranslationCache[k]);
                         }}
-                        title="Clear chat"
+                        title={t('triage.clear_chat', 'Clear chat')}
                         style={{ fontSize: 14 }}
-                    >🗑</button>
+                    >{'\ud83d\uddd1'}</button>
                 )}
 
-                <button className="triage-close-btn" onClick={onClose}>×</button>
+                <button className="triage-close-btn" onClick={onClose}>{'\u00d7'}</button>
             </header>
+
+            {/* Translator overlay */}
+            {showTranslator && (
+                <TranslatorPanel onClose={() => setShowTranslator(false)} />
+            )}
 
             {/* Thread History Sidebar */}
             {showThreadList && (
@@ -491,15 +587,15 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                         overflow: 'hidden',
                     }}>
                         <div style={{ padding: '12px 14px', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--text)' }}>📚 Chat History</span>
+                            <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--text)' }}>{'\ud83d\udcda'} {t('triage.chat_history', 'Chat History')}</span>
                             <button
                                 onClick={newThread}
                                 style={{ padding: '4px 10px', fontSize: 11, background: '#3fb95022', border: '1px solid #3fb95044', borderRadius: 4, color: '#3fb950', cursor: 'pointer', fontWeight: 600 }}
-                            >+ New</button>
+                            >+ {t('triage.new_btn', 'New')}</button>
                         </div>
                         <div style={{ flex: 1, overflowY: 'auto' }}>
                             {threads.length === 0 ? (
-                                <div style={{ padding: 24, textAlign: 'center', color: 'var(--text-faint)', fontSize: 12 }}>No saved chats yet</div>
+                                <div style={{ padding: 24, textAlign: 'center', color: 'var(--text-faint)', fontSize: 12 }}>{t('triage.no_saved', 'No saved chats yet')}</div>
                             ) : [...threads].reverse().map(th => (
                                 <div
                                     key={th.id}
@@ -516,12 +612,12 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                                     </div>
                                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 4 }}>
                                         <span style={{ fontSize: 10, color: 'var(--text-faint)' }}>
-                                            {th.messages.length} msgs · {new Date(th.timestamp).toLocaleDateString()}
+                                            {th.messages.length} msgs {'\u00b7'} {new Date(th.timestamp).toLocaleDateString()}
                                         </span>
                                         <button
                                             onClick={e => { e.stopPropagation(); deleteThread(th.id); }}
                                             style={{ background: 'none', border: 'none', color: 'var(--text-faint)', cursor: 'pointer', fontSize: 12, opacity: 0.5, padding: '0 4px' }}
-                                        >×</button>
+                                        >{'\u00d7'}</button>
                                     </div>
                                 </div>
                             ))}
@@ -531,77 +627,7 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                 </div>
             )}
 
-            {/* ── Translate Tab ─────────────────────────────────────────── */}
-            {panelTab === 'translate' && (
-                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: 16, gap: 12, overflowY: 'auto' }}>
-                    <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-                        <select
-                            className="triage-select"
-                            value={translateFrom}
-                            onChange={e => setTranslateFrom(e.target.value)}
-                            style={{ flex: 1 }}
-                        >
-                            {TRANSLATE_LANGS.map(([c,n]) => (
-                                <option key={c} value={c}>{n}</option>
-                            ))}
-                        </select>
-                        <button
-                            onClick={() => { setTranslateFrom(translateTo); setTranslateTo(translateFrom); setTranslateOutput(''); }}
-                            style={{ background: 'none', border: '1px solid var(--border)', borderRadius: 4, padding: '4px 8px', cursor: 'pointer', color: 'var(--text-muted)', fontSize: 14 }}
-                        >⇄</button>
-                        <select
-                            className="triage-select"
-                            value={translateTo}
-                            onChange={e => setTranslateTo(e.target.value)}
-                            style={{ flex: 1 }}
-                        >
-                            {TRANSLATE_LANGS.map(([c,n]) => (
-                                <option key={c} value={c}>{n}</option>
-                            ))}
-                        </select>
-                    </div>
-                    <textarea
-                        className="triage-textarea"
-                        rows={4}
-                        placeholder="Enter text to translate..."
-                        value={translateInput}
-                        onChange={e => setTranslateInput(e.target.value)}
-                        style={{ resize: 'vertical' }}
-                    />
-                    <button
-                        onClick={handleTranslate}
-                        disabled={!translateInput.trim() || translating}
-                        className="triage-send-btn"
-                        style={{ alignSelf: 'flex-end' }}
-                    >{translating ? 'Translating...' : '🌐 Translate'}</button>
-                    {translateOutput && (
-                        <div>
-                            <div style={{
-                                padding: 14, background: 'var(--surface)', borderRadius: 8,
-                                border: '1px solid var(--border)', fontSize: 14, lineHeight: 1.5,
-                                color: 'var(--text)', whiteSpace: 'pre-wrap',
-                            }}>{translateOutput}</div>
-                            <button
-                                onClick={() => {
-                                    if (playingMsgIndex === -1) { stopSpeak(); }
-                                    else { speak(translateOutput, -1, translateTo); }
-                                }}
-                                className={`triage-play-btn ${playingMsgIndex === -1 ? 'playing' : ''}`}
-                                style={{ marginTop: 8 }}
-                            >{playingMsgIndex === -1 ? '◼ Stop' : '▶ Speak again'}</button>
-                            <button
-                                onClick={() => { stopSpeak(); setTranslateOutput(''); }}
-                                className="triage-play-btn"
-                                style={{ marginTop: 8, marginLeft: 8 }}
-                            >✕ Clear</button>
-                        </div>
-                    )}
-                </div>
-            )}
-
-            {/* ── Chat Tab ──────────────────────────────────────────────── */}
-            {panelTab === 'chat' && (
-
+            {/* ── Chat ──────────────────────────────────────────────── */}
             <div className="triage-messages">
                 {isTriageTranslating && (
                     <div style={{
@@ -623,6 +649,9 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                 <div key={i} className={`triage-row ${m.role}`}>
                     <div className="triage-lbl">{m.role === 'user' ? 'YOU' : 'TRIAGE AI'}</div>
                     <div className={`triage-bubble ${m.role}`}>
+                        {m.image && (
+                            <img src={m.image} alt="Attached" style={{ maxWidth: '100%', maxHeight: 200, borderRadius: 6, marginBottom: 8, display: 'block', border: '1px solid var(--border)' }} />
+                        )}
                         {lang !== 'en' && m.role === 'assistant' && triageTranslations[m.content] ? (
                             <>
                                 {renderMd(triageTranslations[m.content])}
@@ -647,14 +676,14 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                                 style={{ marginTop: 8 }}
                                 disabled={playingMsgIndex !== null && playingMsgIndex !== i}
                             >
-                                {playingMsgIndex === i ? '◼ Stop' : '▶ Speak'}
+                                {playingMsgIndex === i ? '\u25fc Stop' : '\u25b6 Speak'}
                             </button>
                         )}
                     </div>
                 </div>
             ))}
 
-                {/* Processing indicator — visible while waiting for response */}
+                {/* Processing indicator */}
                 {isSending && !streamingText && (
                     <div className="triage-row assistant">
                         <div className="triage-lbl">TRIAGE AI</div>
@@ -680,43 +709,46 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                 )}
                 <div ref={messagesEndRef} />
             </div>
-            )}
 
             <footer className="triage-footer">
+                {pendingImage && (
+                    <div className="triage-image-preview">
+                        <img src={pendingImage} alt="Preview" />
+                        <button className="triage-image-remove" onClick={() => setPendingImage(null)} title="Remove image">{'\u00d7'}</button>
+                    </div>
+                )}
                 <div className="triage-input-row">
                     <button
                         className={`triage-mic-btn ${isRecording ? 'rec' : ''} triage-mic-desktop-only`}
                         onClick={handleMic}
-                        title="Voice input"
+                        title={t('triage.voice_input', 'Voice input')}
                     >
-                        {isRecording ? '⏹' : '🎙'}
+                        {isRecording ? '\u23f9' : '\ud83c\udf99'}
                     </button>
-                    {panelTab === 'chat' && (
-                        <>
-                            <textarea
-                                className="triage-textarea"
-                                rows={2}
-                                placeholder="Ask anything clinical…"
-                                value={input}
-                                onChange={e => setInput(e.target.value)}
-                                onKeyDown={e => {
-                                    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); }
-                                }}
-                            />
-                            <button
-                                className="triage-send-btn"
-                                onClick={handleSend}
-                                disabled={!input.trim() || isSending}
-                            >
-                                Send
-                            </button>
-                        </>
-                    )}
-                    {panelTab === 'translate' && (
-                        <span style={{ fontSize: 11, color: 'var(--text-faint)', flex: 1 }}>
-                            {isRecording ? '● Recording…' : 'Tap mic to dictate into translate box'}
-                        </span>
-                    )}
+                    <button
+                        className={`triage-attach-btn ${pendingImage ? 'active' : ''}`}
+                        onClick={() => fileInputRef.current?.click()}
+                        title={t('triage.attach_image', 'Attach photo')}
+                    >+</button>
+                    <input ref={fileInputRef} type="file" accept="image/*" capture="environment" style={{ display: 'none' }} onChange={handleImageSelect} />
+                    <textarea
+                        className="triage-textarea"
+                        rows={2}
+                        placeholder={t('triage.chat_placeholder', 'Ask anything clinical...')}
+                        value={input}
+                        onChange={e => setInput(e.target.value)}
+                        onPaste={handlePaste}
+                        onKeyDown={e => {
+                            if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); }
+                        }}
+                    />
+                    <button
+                        className="triage-send-btn"
+                        onClick={handleSend}
+                        disabled={(!input.trim() && !pendingImage) || isSending}
+                    >
+                        Send
+                    </button>
                 </div>
             </footer>
         </div>

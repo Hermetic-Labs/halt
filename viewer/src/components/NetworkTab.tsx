@@ -919,7 +919,7 @@ export default function NetworkTab() {
                 <div style={{ width: '100%', maxWidth: 480 }}>
                     <div style={{ textAlign: 'center', marginBottom: 40 }}>
                         <div style={{ margin: '0 auto 16px', textAlign: 'center' }}><img src="/logos/halt.png" alt="HALT" style={{ width: 240, height: 240, objectFit: 'contain' }} /></div>
-                        <h2 style={{ fontSize: 22, fontWeight: 700, margin: 0, color: 'var(--text)' }}>Created by Hermetic Labs LLC</h2>
+                        <h2 style={{ fontSize: 22, fontWeight: 700, margin: 0, color: 'var(--text)' }}>{t('network.created_by', 'Created by Hermetic Labs LLC')}</h2>
                         <p style={{ fontSize: 12, color: 'var(--text-faint)', marginTop: 8 }}>{t('network.airgapped')}</p>
                     </div>
 
@@ -952,8 +952,8 @@ export default function NetworkTab() {
                             }}
                         >
                             <span style={{ fontSize: 24 }}>📡</span>
-                            <span style={{ fontSize: 14, fontWeight: 700 }}>Start Network</span>
-                            <span style={{ fontSize: 10, color: 'var(--text-faint)', textAlign: 'center' }}>Create a new mesh as the leader</span>
+                            <span style={{ fontSize: 14, fontWeight: 700 }}>{t('network.create_mesh', 'Create Mesh')}</span>
+                            <span style={{ fontSize: 10, color: 'var(--text-faint)', textAlign: 'center' }}>{t('network.create_mesh_desc', 'Create a new mesh as the leader')}</span>
                         </button>
 
                         {/* Join Nearby (Client) */}
@@ -970,8 +970,8 @@ export default function NetworkTab() {
                             }}
                         >
                             <span style={{ fontSize: 24 }}>🔄</span>
-                            <span style={{ fontSize: 14, fontWeight: 700 }}>Reconnect</span>
-                            <span style={{ fontSize: 10, color: 'var(--text-faint)', textAlign: 'center' }}>Rejoin an existing mesh</span>
+                            <span style={{ fontSize: 14, fontWeight: 700 }}>{t('network.join_mesh', 'Join Mesh')}</span>
+                            <span style={{ fontSize: 10, color: 'var(--text-faint)', textAlign: 'center' }}>{t('network.rejoin_mesh_desc', 'Rejoin an existing mesh')}</span>
                         </button>
                     </div>
                     <div style={{ textAlign: 'center', marginTop: 24, fontSize: 11, color: 'var(--text-faint)' }}>{t('network.footer')}</div>

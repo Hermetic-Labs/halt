@@ -33,7 +33,7 @@ import urllib.request
 
 # ── Public R2 URLs (zero credentials needed) ─────────────────────────────────
 MODELS_URL = "https://pub-b841d8ac01084f8f822078f923a49a87.r2.dev/halt-dev-assets/models.zip"
-MODELS_CHECK_FILE = "medgemma-4b-it-q4_K_M.gguf"
+MODELS_CHECK_FILE = "medgemma-1.5-4b-it.Q4_K_M.gguf"
 
 # ── Platform Detection ────────────────────────────────────────────────────────
 

@@ -5,6 +5,10 @@
 import { useState, useRef, useEffect } from 'react';
 import type { ChatMsg, RosterMember } from '../../types/comms';
 import { ROLE_COLORS } from '../../types/comms';
+import { useT } from '../../services/i18n';
+
+// Module-level cache so translations persist across re-renders
+const _translationCache = new Map<string, string>();
 
 interface Props {
     msg: ChatMsg;
@@ -22,15 +26,45 @@ interface Props {
 const QUICK_EMOJIS = ['👍', '❤️', '😂', '👀', '🩹', '🚨'];
 
 export default function ChatMessage({ msg, isMe, roster, formatTime, allMessages, onReply, onReact, onCall, onVideoCall, userName }: Props) {
+    const { t, lang: userLang } = useT();
     const senderRoster = roster.find(r => r.name.toLowerCase() === msg.sender_name.toLowerCase());
     const avatarUrl = senderRoster?.avatar_url;
     const initial = msg.sender_name.charAt(0).toUpperCase();
     const roleColor = ROLE_COLORS[msg.sender_role] || '#888';
     const [showEmojis, setShowEmojis] = useState(false);
     const emojiRef = useRef<HTMLDivElement>(null);
+    const [translatedText, setTranslatedText] = useState<string | null>(() => {
+        if (userLang === 'en' || isMe) return null;
+        return _translationCache.get(`${msg.id}:${userLang}`) || null;
+    });
 
     // Whether we should show call/video actions (only for messages from others, not system)
     const showCallActions = !isMe && msg.sender_role !== 'system';
+
+    // Client-side translation: translate incoming messages when user's lang ≠ 'en'
+    const shouldTranslate = userLang !== 'en' && !isMe;
+    useEffect(() => {
+        if (!shouldTranslate) return;
+        const cacheKey = `${msg.id}:${userLang}`;
+        if (_translationCache.has(cacheKey)) return; // already initialised from cache
+        let cancelled = false;
+        fetch('/api/translate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text: msg.message, from_lang: 'en', to_lang: userLang }),
+        })
+            .then(r => r.ok ? r.json() : null)
+            .then(d => {
+                if (cancelled || !d) return;
+                const t = d.translated || d.text || '';
+                if (t && t !== msg.message) {
+                    _translationCache.set(cacheKey, t);
+                    setTranslatedText(t);
+                }
+            })
+            .catch(() => {});
+        return () => { cancelled = true; };
+    }, [msg.id, msg.message, userLang, shouldTranslate]);
 
     // Close emoji picker on outside click
     useEffect(() => {
@@ -98,7 +132,12 @@ export default function ChatMessage({ msg, isMe, roster, formatTime, allMessages
                     border: `1px solid ${isMe ? '#3fb95033' : 'var(--border)'}`,
                     color: 'var(--text)', wordBreak: 'break-word',
                 }}>
-                    {msg.message}
+                    {translatedText ? (
+                        <>
+                            <div>{translatedText}</div>
+                            <div style={{ fontSize: 11, color: 'var(--text-faint)', marginTop: 4, fontStyle: 'italic', opacity: 0.6 }}>{msg.message}</div>
+                        </>
+                    ) : msg.message}
                 </div>
 
                 {/* Reactions */}
@@ -132,7 +171,7 @@ export default function ChatMessage({ msg, isMe, roster, formatTime, allMessages
                     {onReply && (
                         <button
                             onClick={() => onReply(msg.id)}
-                            title="Reply"
+                            title={t('comms.reply', 'Reply')}
                             style={{
                                 background: 'none', border: 'none', cursor: 'pointer',
                                 padding: '3px 6px', fontSize: 13, borderRadius: 4,
@@ -149,7 +188,7 @@ export default function ChatMessage({ msg, isMe, roster, formatTime, allMessages
                         <div ref={emojiRef} style={{ position: 'relative' }}>
                             <button
                                 onClick={() => setShowEmojis(!showEmojis)}
-                                title="React"
+                                title={t('comms.react', 'React')}
                                 style={{
                                     background: showEmojis ? 'var(--surface)' : 'none',
                                     border: showEmojis ? '1px solid var(--border)' : 'none',

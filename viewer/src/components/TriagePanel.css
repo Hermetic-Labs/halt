@@ -1,51 +1,59 @@
 .triage-panel {
-    background: #080c10;
+    background: #060a0f;
     color: #c9d1d9;
     height: 100%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border-left: 1px solid var(--border);
-    font-family: 'Segoe UI', system-ui, sans-serif;
+    border-left: 1px solid rgba(255,255,255,.06);
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
 }
+
+/* ── Header ──────────────────────────────────────────── */
 
 .triage-header {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 10px 18px;
-    border-bottom: 1px solid var(--border);
-    background: #0d1117;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    background: linear-gradient(180deg, rgba(16,24,32,.95) 0%, rgba(6,10,15,.98) 100%);
     flex-shrink: 0;
+    backdrop-filter: blur(12px);
 }
 
 .triage-logo {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 4px;
-    color: #39d353;
+    letter-spacing: 5px;
+    background: linear-gradient(135deg, #39d353, #2ea043);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .triage-sep {
     width: 1px;
-    height: 24px;
-    background: var(--border);
+    height: 22px;
+    background: rgba(255,255,255,.08);
 }
 
 .triage-select {
-    background: #111823;
-    color: #c9d1d9;
-    border: 1px solid var(--border);
-    padding: 4px 8px;
+    background: rgba(255,255,255,.04);
+    color: #8b92a0;
+    border: 1px solid rgba(255,255,255,.08);
+    padding: 5px 10px;
     font-size: 11px;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-family: inherit;
     max-width: 180px;
+    transition: border-color .2s, color .2s;
 }
 
 .triage-select:focus {
-    border-color: #39d353;
+    border-color: rgba(57,211,83,.4);
+    color: #c9d1d9;
     outline: none;
 }
 
@@ -62,98 +70,125 @@
 }
 
 .triage-dot {
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    background: #4d6077;
+    background: #2d3748;
     flex-shrink: 0;
+    transition: all .3s;
 }
 
 .triage-dot.on {
     background: #39d353;
-    box-shadow: 0 0 6px #39d353;
+    box-shadow: 0 0 8px rgba(57,211,83,.5);
 }
 
 .triage-dot.err {
     background: #f85149;
+    box-shadow: 0 0 8px rgba(248,81,73,.4);
 }
 
 .triage-badge {
     display: flex;
     align-items: center;
     gap: 5px;
-    color: #4d6077;
-    border: 1px solid var(--border);
+    color: #3d4654;
+    border: 1px solid rgba(255,255,255,.06);
     border-radius: 20px;
-    padding: 2px 8px;
+    padding: 3px 10px;
+    font-size: 10px;
+    font-weight: 500;
+    transition: all .2s;
 }
 
 .triage-badge.ok {
     color: #39d353;
-    border-color: #1a3a1a;
+    border-color: rgba(57,211,83,.2);
+    background: rgba(57,211,83,.05);
 }
 
 .triage-badge.err {
     color: #f85149;
-    border-color: #3a1010;
+    border-color: rgba(248,81,73,.2);
+    background: rgba(248,81,73,.05);
 }
 
 .triage-close-btn {
     background: none;
     border: none;
-    color: #888;
-    font-size: 20px;
+    color: #3d4654;
+    font-size: 18px;
     cursor: pointer;
-    padding: 0 4px;
+    padding: 4px 6px;
     margin-left: 4px;
+    border-radius: 6px;
+    transition: all .15s;
 }
 
 .triage-close-btn:hover {
-    color: #fff;
+    color: #c9d1d9;
+    background: rgba(255,255,255,.06);
 }
+
+/* ── Messages ────────────────────────────────────────── */
 
 .triage-messages {
     flex: 1;
     overflow-y: auto;
-    padding: 18px 20px;
+    padding: 20px 22px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
     scroll-behavior: smooth;
 }
 
 .triage-messages::-webkit-scrollbar {
-    width: 4px;
+    width: 3px;
 }
 
 .triage-messages::-webkit-scrollbar-thumb {
-    background: var(--border);
-    border-radius: 2px;
+    background: rgba(255,255,255,.08);
+    border-radius: 3px;
+}
+
+.triage-messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,.15);
 }
 
 .triage-welcome {
     margin: auto;
     text-align: center;
-    color: #4d6077;
+    color: #2d3748;
 }
 
 .triage-welcome .triage-big {
-    font-size: 32px;
-    letter-spacing: 8px;
-    color: #39d353;
-    opacity: .25;
-    margin-bottom: 8px;
+    font-size: 28px;
+    letter-spacing: 10px;
+    background: linear-gradient(135deg, rgba(57,211,83,.3), rgba(57,211,83,.1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
 }
 
 .triage-welcome p {
     font-size: 12px;
-    line-height: 1.9;
+    line-height: 2;
+    color: #3d4654;
 }
+
+/* ── Chat Rows & Bubbles ─────────────────────────────── */
 
 .triage-row {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
+    animation: fadeSlideIn .3s ease-out;
+}
+
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .triage-row.user {
@@ -166,66 +201,104 @@
 
 .triage-lbl {
     font-size: 9px;
-    letter-spacing: 2px;
-    color: #4d6077;
-    padding: 0 4px;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+    padding: 0 6px;
 }
 
 .triage-row.user .triage-lbl {
-    color: #39d353;
+    color: rgba(57,211,83,.6);
+}
+
+.triage-row.assistant .triage-lbl {
+    color: #3d4654;
 }
 
 .triage-bubble {
-    max-width: 85%;
-    padding: 10px 14px;
-    border-radius: 8px;
+    max-width: 88%;
+    padding: 12px 16px;
+    border-radius: 12px;
     font-size: 13px;
-    line-height: 1.65;
+    line-height: 1.7;
     word-break: break-word;
+    position: relative;
 }
 
 .triage-bubble.user {
-    background: #111823;
-    border: 1px solid var(--border);
+    background: linear-gradient(135deg, rgba(57,211,83,.12) 0%, rgba(57,211,83,.06) 100%);
+    border: 1px solid rgba(57,211,83,.15);
     color: #cdd6f4;
+    border-radius: 12px 12px 4px 12px;
 }
 
 .triage-bubble.assistant {
-    background: #0d1117;
-    border: 1px solid var(--border);
+    background: linear-gradient(135deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.02) 100%);
+    border: 1px solid rgba(255,255,255,.06);
+    color: #b8c0cc;
+    border-radius: 12px 12px 12px 4px;
 }
+
+.triage-bubble.assistant strong {
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+.triage-bubble.assistant em {
+    color: #a78bfa;
+    font-style: italic;
+}
+
+.triage-bubble.assistant li {
+    margin-left: 8px;
+    padding: 2px 0;
+    list-style: none;
+}
+
+.triage-bubble.assistant li::before {
+    content: '\2022';
+    color: rgba(57,211,83,.5);
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* ── Speak Button ────────────────────────────────────── */
 
 .triage-play-btn {
     font-size: 10px;
-    padding: 2px 10px;
+    padding: 4px 12px;
     border-radius: 20px;
-    border: 1px solid var(--border);
-    background: none;
-    color: #4d6077;
+    border: 1px solid rgba(255,255,255,.08);
+    background: rgba(255,255,255,.03);
+    color: #3d4654;
     cursor: pointer;
     font-family: inherit;
-    transition: color .15s, border-color .15s;
+    transition: all .2s;
     align-self: flex-start;
     display: block;
+    margin-top: 4px;
 }
 
 .triage-play-btn:hover {
     color: #39d353;
-    border-color: #39d353;
+    border-color: rgba(57,211,83,.3);
+    background: rgba(57,211,83,.06);
 }
 
 .triage-play-btn.playing {
     color: #e3b341;
-    border-color: #e3b341;
+    border-color: rgba(227,179,65,.3);
+    background: rgba(227,179,65,.06);
 }
 
+/* ── Footer / Input ──────────────────────────────────── */
+
 .triage-footer {
-    padding: 12px 18px;
-    border-top: 1px solid var(--border);
-    background: #0d1117;
+    padding: 14px 20px;
+    border-top: 1px solid rgba(255,255,255,.06);
+    background: linear-gradient(0deg, rgba(6,10,15,.98) 0%, rgba(10,16,22,.95) 100%);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     flex-shrink: 0;
 }
 
@@ -240,85 +313,84 @@
     height: 38px;
     border-radius: 50%;
     flex-shrink: 0;
-    border: 1px solid var(--border);
-    background: #111823;
-    color: #4d6077;
+    border: 1px solid rgba(255,255,255,.08);
+    background: rgba(255,255,255,.03);
+    color: #3d4654;
     font-size: 16px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all .15s;
+    transition: all .2s;
 }
 
 .triage-mic-btn:hover {
-    border-color: #39d353;
+    border-color: rgba(57,211,83,.3);
     color: #39d353;
+    background: rgba(57,211,83,.06);
 }
 
 .triage-mic-btn.rec {
-    background: rgba(248, 81, 73, .12);
-    border-color: #f85149;
+    background: rgba(248, 81, 73, .1);
+    border-color: rgba(248,81,73,.4);
     color: #f85149;
-    animation: pulse-ring 1.2s ease infinite;
+    animation: pulse-ring 1.4s ease infinite;
 }
 
 @keyframes pulse-ring {
-
-    0%,
-    100% {
-        box-shadow: 0 0 0 0 rgba(248, 81, 73, .4);
-    }
-
-    50% {
-        box-shadow: 0 0 0 8px rgba(248, 81, 73, 0);
-    }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(248, 81, 73, .3); }
+    50% { box-shadow: 0 0 0 8px rgba(248, 81, 73, 0); }
 }
 
 .triage-textarea {
     flex: 1;
-    background: #111823;
-    border: 1px solid var(--border);
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.08);
     color: #c9d1d9;
-    padding: 9px 13px;
-    border-radius: 7px;
+    padding: 10px 14px;
+    border-radius: 10px;
     font-size: 13px;
     font-family: inherit;
     resize: none;
     outline: none;
     line-height: 1.5;
+    transition: border-color .2s;
 }
 
 .triage-textarea:focus {
-    border-color: #39d353;
+    border-color: rgba(57,211,83,.35);
 }
 
 .triage-textarea::placeholder {
-    color: #4d6077;
+    color: #2d3748;
 }
 
 .triage-send-btn {
-    background: #39d353;
+    background: linear-gradient(135deg, #39d353, #2ea043);
     color: #040f04;
     border: none;
-    padding: 9px 20px;
-    border-radius: 7px;
+    padding: 10px 22px;
+    border-radius: 10px;
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
     font-family: inherit;
-    transition: opacity .15s;
+    transition: all .2s;
     align-self: flex-end;
     white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(57,211,83,.2);
 }
 
 .triage-send-btn:hover {
-    opacity: .85;
+    box-shadow: 0 4px 16px rgba(57,211,83,.3);
+    transform: translateY(-1px);
 }
 
 .triage-send-btn:disabled {
-    opacity: .35;
+    opacity: .3;
     cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
 .triage-foot-bar {
@@ -326,7 +398,7 @@
     align-items: center;
     gap: 14px;
     font-size: 10px;
-    color: #4d6077;
+    color: #2d3748;
 }
 
 .triage-stt-bar {
@@ -342,17 +414,17 @@
 }
 
 .triage-pill {
-    width: 30px;
-    height: 16px;
-    border-radius: 8px;
-    background: var(--border);
+    width: 28px;
+    height: 14px;
+    border-radius: 7px;
+    background: rgba(255,255,255,.08);
     position: relative;
-    transition: background .2s;
+    transition: background .25s;
     flex-shrink: 0;
 }
 
 .triage-pill.on {
-    background: #39d353;
+    background: linear-gradient(135deg, #39d353, #2ea043);
 }
 
 .triage-pill::after {
@@ -360,18 +432,20 @@
     position: absolute;
     width: 10px;
     height: 10px;
-    background: #fff;
+    background: #e2e8f0;
     border-radius: 50%;
-    top: 3px;
-    left: 3px;
-    transition: transform .2s;
+    top: 2px;
+    left: 2px;
+    transition: transform .25s cubic-bezier(.4,.0,.2,1);
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
 }
 
 .triage-pill.on::after {
     transform: translateX(14px);
 }
 
-/* ── Mobile: hide mic button (use native keyboard voice input instead) ── */
+/* ── Mobile ──────────────────────────────────────────── */
+
 @media (max-width: 768px) {
     .triage-mic-desktop-only {
         display: none !important;
@@ -387,7 +461,7 @@
 
     .triage-header {
         gap: 6px;
-        padding: 8px 12px;
+        padding: 10px 14px;
     }
 
     .triage-send-btn {
@@ -396,4 +470,447 @@
     }
 }
 
-
+/* ── Image Attachment ──────────────────────────────── */
+
+.triage-attach-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,.08);
+    background: rgba(255,255,255,.03);
+    color: #3d4654;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s;
+    line-height: 1;
+}
+
+.triage-attach-btn:hover {
+    border-color: rgba(88,166,255,.3);
+    color: #58a6ff;
+    background: rgba(88,166,255,.06);
+}
+
+.triage-attach-btn.active {
+    border-color: rgba(88,166,255,.4);
+    color: #58a6ff;
+    background: rgba(88, 166, 255, .08);
+}
+
+.triage-image-preview {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 10px;
+    position: relative;
+}
+
+.triage-image-preview img {
+    max-height: 64px;
+    max-width: 120px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.triage-image-remove {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(248, 81, 73, .7);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: all .15s;
+    backdrop-filter: blur(4px);
+}
+
+.triage-image-remove:hover {
+    background: #f85149;
+    transform: scale(1.1);
+}
+
+/* Thumbnail in chat bubbles */
+.triage-bubble img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: block;
+    border: 1px solid rgba(255,255,255,.06);
+}
+
+/* ── Thought Bubbles (chain-of-thought reasoning) ── */
+
+.triage-thought-bubble {
+    background: rgba(139, 92, 246, .06);
+    border: 1px solid rgba(139, 92, 246, .12);
+    border-radius: 10px;
+    padding: 0;
+    margin-bottom: 10px;
+    font-size: 11px;
+    color: #8b8fa3;
+    overflow: hidden;
+    transition: all .25s;
+}
+
+.triage-thought-bubble[open] {
+    border-color: rgba(139, 92, 246, .25);
+    background: rgba(139, 92, 246, .08);
+}
+
+.triage-thought-bubble summary {
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 10px;
+    color: rgba(167, 139, 250, .7);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    user-select: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color .2s;
+}
+
+.triage-thought-bubble summary:hover {
+    color: #a78bfa;
+}
+
+.triage-thought-bubble summary::before {
+    content: '\25B8';
+    font-size: 9px;
+    transition: transform .25s cubic-bezier(.4,.0,.2,1);
+    color: inherit;
+}
+
+.triage-thought-bubble[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.triage-thought-bubble summary::-webkit-details-marker {
+    display: none;
+}
+
+.triage-thought-content {
+    padding: 0 14px 12px;
+    font-style: italic;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    color: rgba(124, 127, 147, .8);
+    border-top: 1px solid rgba(139, 92, 246, .08);
+    font-size: 11px;
+}
+
+/* ── Streaming indicator ─────────────────────────────── */
+
+.triage-bubble.assistant .streaming-cursor::after {
+    content: '\2588';
+    animation: blink 1s step-end infinite;
+    color: #39d353;
+    margin-left: 1px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ── Markdown Content Styles ─────────────────────────── */
+
+.triage-md-content {
+    line-height: 1.7;
+}
+
+.triage-md-content li {
+    list-style: none;
+    margin-left: 4px;
+    padding: 2px 0;
+}
+
+.triage-md-content li::before {
+    content: '\2022';
+    color: rgba(57,211,83,.5);
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* Headers */
+.triage-h1, .triage-h2, .triage-h3, .triage-h4 {
+    margin: 12px 0 6px;
+    font-weight: 700;
+    color: #e2e8f0;
+    border-left: 3px solid;
+    padding-left: 10px;
+}
+
+.triage-h1 {
+    font-size: 16px;
+    border-color: #39d353;
+    letter-spacing: 0.02em;
+}
+
+.triage-h2 {
+    font-size: 14px;
+    border-color: rgba(57,211,83,.7);
+}
+
+.triage-h3 {
+    font-size: 13px;
+    border-color: rgba(57,211,83,.4);
+    color: #c9d1d9;
+}
+
+.triage-h4 {
+    font-size: 12px;
+    border-color: rgba(57,211,83,.25);
+    color: #a0aec0;
+    font-weight: 600;
+}
+
+/* Tables */
+.triage-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.triage-table th {
+    background: rgba(57,211,83,.08);
+    color: #39d353;
+    text-align: left;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid rgba(57,211,83,.15);
+}
+
+.triage-table td {
+    padding: 7px 12px;
+    border-bottom: 1px solid rgba(255,255,255,.04);
+    color: #b8c0cc;
+}
+
+.triage-table tbody tr:nth-child(even) {
+    background: rgba(255,255,255,.02);
+}
+
+.triage-table tbody tr:hover {
+    background: rgba(57,211,83,.04);
+}
+
+/* Code blocks */
+.triage-code {
+    background: rgba(0,0,0,.4);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin: 8px 0;
+    overflow-x: auto;
+    font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #a0aec0;
+}
+
+.triage-code code {
+    background: none;
+    padding: 0;
+    border: none;
+    font-size: inherit;
+    color: inherit;
+}
+
+/* Inline code */
+.triage-inline-code {
+    background: rgba(57,211,83,.08);
+    border: 1px solid rgba(57,211,83,.15);
+    color: #39d353;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: 'Cascadia Code', 'Fira Code', monospace;
+    font-size: 0.9em;
+}
+
+/* Blockquotes */
+.triage-bq {
+    border-left: 3px solid rgba(88,166,255,.4);
+    background: rgba(88,166,255,.04);
+    margin: 8px 0;
+    padding: 8px 14px;
+    color: #8b92a0;
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+}
+
+/* Horizontal rule */
+.triage-hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.1), transparent);
+    margin: 14px 0;
+}
+
+/* ── Context System Card ─────────────────────────────── */
+
+.triage-context-card {
+    background: rgba(88,166,255,.04);
+    border: 1px solid rgba(88,166,255,.1);
+    border-radius: 8px;
+    padding: 0;
+    margin-bottom: 10px;
+    font-size: 10px;
+    overflow: hidden;
+    transition: all .25s;
+}
+
+.triage-context-card[open] {
+    border-color: rgba(88,166,255,.2);
+}
+
+.triage-context-card summary {
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 9px;
+    color: rgba(88,166,255,.5);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    user-select: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.triage-context-card summary::before {
+    content: '\25B8';
+    font-size: 8px;
+    transition: transform .25s cubic-bezier(.4,.0,.2,1);
+}
+
+.triage-context-card[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.triage-context-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.triage-context-content {
+    padding: 0 12px 8px;
+    white-space: pre-wrap;
+    color: rgba(88,166,255,.35);
+    font-size: 10px;
+    line-height: 1.6;
+    border-top: 1px solid rgba(88,166,255,.06);
+    font-family: 'Cascadia Code', 'Fira Code', monospace;
+}
+
+/* ── Styled Bullets ─────────────────────────────────── */
+
+.triage-bullet {
+    position: relative;
+    padding-left: 18px;
+    margin: 4px 0;
+    line-height: 1.55;
+}
+
+.triage-bullet::before {
+    content: '\25B8';
+    position: absolute;
+    left: 2px;
+    color: #39d353;
+    font-size: 10px;
+    top: 1px;
+}
+
+/* ── Numbered Steps ─────────────────────────────────── */
+
+.triage-step {
+    display: flex;
+    gap: 10px;
+    margin: 6px 0;
+    line-height: 1.55;
+}
+
+.triage-step-num {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(57,211,83,.12);
+    color: #39d353;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 1px;
+}
+
+.triage-step-body {
+    flex: 1;
+}
+
+/* ── Label Cards (e.g. * **Benign**: content) ────────── */
+
+.triage-label-card {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    margin: 5px 0;
+    padding: 6px 10px;
+    background: rgba(255,255,255,.025);
+    border-radius: 6px;
+    border-left: 2px solid rgba(57,211,83,.35);
+}
+
+.triage-label-tag {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 700;
+    color: #58a6ff;
+    white-space: nowrap;
+}
+
+.triage-label-body {
+    flex: 1;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #c9d1d9;
+}
+
+/* ── Section Labels (e.g. **Clinical Significance:**) ── */
+
+.triage-section-label {
+    display: inline-block;
+    margin-top: 8px;
+    color: #58a6ff;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+}

@@ -36,7 +36,7 @@ ASSETS = {
         "r2_key": "halt-dev-assets/models.zip",
         "dest": MODELS_DIR,
         "size_hint": "~2.8 GB",
-        "check_file": "medgemma-4b-it-q4_K_M.gguf",
+        "check_file": "medgemma-1.5-4b-it.Q4_K_M.gguf",
     },
     "runtime": {
         "r2_key": "halt-dev-assets/runtime-windows.zip",

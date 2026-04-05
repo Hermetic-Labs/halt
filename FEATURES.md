@@ -1,4 +1,4 @@
-# HALT — Complete Feature Reference (v1.0.5)
+# HALT — Complete Feature Reference (v1.0.6)
 
 > **A portable AI-assisted emergency hospital operating system designed for chaotic or low-infrastructure environments.**
 >
@@ -340,10 +340,20 @@ A dynamic emergency notification system.
 
 | Model | Role | Runtime |
 |---|---|---|
-| MedGemma 4B | Medical reasoning, differential diagnosis, drug interactions | llama.cpp (GGUF) |
+| MedGemma 1.5 4B | Medical reasoning, differential diagnosis, drug interactions | llama.cpp (GGUF) |
+| MedGemma 1.5 mmproj | Multimodal vision — X-ray, CT scan, wound photography | llava (SigLIP) |
 | NLLB-200 600M | Neural machine translation (42 languages) | CTranslate2 |
 | Faster Whisper | Speech-to-text (multilingual) | CTranslate2 |
 | Kokoro | Text-to-speech (multilingual via phoneme bridge) | ONNX Runtime |
+
+### Medical Imaging (MedGemma Vision)
+
+- Attach wound photos, X-rays, CT scans, or general medical images via `+` button
+- AI provides visual triage: wound classification, fracture identification, foreign body detection
+- SigLIP vision projector encodes images into MedGemma's context
+- Browser-side resize to 1536px max before base64 encoding
+- Camera capture on mobile (`capture="environment"`)
+- Graceful text-only fallback when mmproj file is absent
 
 All models run locally. No data leaves the machine.
 
@@ -412,3 +422,45 @@ Organize the physical layout of the field hospital.
 - Visual ward map with patient placement
 
 > 📂 `api/routes/wards.py`
+
+---
+
+## 21. Integrated Translator Panel
+
+A turn-based field translation system embedded directly in the triage workspace.
+
+### Dual-Mode Input
+
+| Mode | Behavior |
+|---|---|
+| **Stream** (default) | Mic → Whisper STT → NLLB translate → Kokoro TTS → auto-play |
+| **Text** | Manual text entry or mic-to-text dictation → NLLB translate → optional TTS |
+
+### Field-Hardened Controls
+
+- **Tap-to-talk mic** — single tap to start, single tap to stop (no hold-to-speak — works with bloody gloves)
+- Mic automatically disabled during TTS playback (prevents feedback loop)
+- Toggle pills: `Stream` (blue) and `Auto Play` (green) in header
+- Auto-growing textarea with word wrap in text mode
+
+### Translation Pipeline
+
+- Full-duplex WebSocket: audio chunks → server accumulates → Whisper STT → NLLB translate → Kokoro TTS → WAV stream back
+- Text mode: REST `POST /api/translate` for typed/dictated input
+- Turn-based speaker switching with pulsing direction arrow
+- Chat history with per-message replay
+
+### Known Limitations
+
+| Language | Whisper Support |
+|---|---|
+| Amharic (am) | ❌ Auto-detect fallback |
+| Hausa (ha) | ❌ Auto-detect fallback |
+| Kurdish (ku) | ❌ Auto-detect fallback |
+
+NLLB translation and Kokoro TTS still function for these — only STT is affected.
+
+> 📂 `viewer/src/components/TranslatorPanel.tsx` → UI component
+> 📂 `viewer/src/hooks/useTranslateStream.ts` → WebSocket hook
+> 📂 `api/routes/translate_stream.py` → Backend WebSocket pipeline
+> 📂 `api/routes/translate.py` → REST text translation

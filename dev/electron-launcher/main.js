@@ -10,7 +10,7 @@
  * - Graceful shutdown
  */
 
-const { app, BrowserWindow, Tray, Menu, dialog, shell, nativeImage } = require('electron');
+const { app, BrowserWindow, Tray, Menu, dialog, shell, nativeImage, session } = require('electron');
 const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
@@ -172,15 +172,26 @@ function waitForBackend() {
 
         const check = () => {
             attempts++;
-            updateSplashStatus(`Connecting to backend (attempt ${attempts})...`);
+            updateSplashStatus(`Warming up AI models (attempt ${attempts})...`);
 
             const req = http.get(`${BACKEND_URL}/api/health`, (res) => {
-                if (res.statusCode === 200) {
-                    console.log('[HALT] Backend is ready');
-                    resolve();
-                } else {
-                    retry();
-                }
+                let body = '';
+                res.on('data', chunk => { body += chunk; });
+                res.on('end', () => {
+                    try {
+                        const data = JSON.parse(body);
+                        if (data.models_ready === true) {
+                            console.log('[HALT] Backend and models are ready');
+                            resolve();
+                        } else {
+                            updateSplashStatus(`Models warming up (${data.status || 'loading'})...`);
+                            retry();
+                        }
+                    } catch {
+                        // Server is up but response isn't JSON yet — keep trying
+                        retry();
+                    }
+                });
             });
 
             req.on('error', retry);
@@ -276,6 +287,7 @@ function updateSplashStatus(status) {
  * Create main application window
  */
 function createMainWindow() {
+    return new Promise(async (resolve) => {
     mainWindow = new BrowserWindow({
         width: 1400,
         height: 900,
@@ -290,6 +302,13 @@ function createMainWindow() {
             preload: path.join(__dirname, 'preload.js')
         }
     });
+
+    // Clear all caches to ensure fresh frontend assets on every launch
+    // This prevents the PWA service worker from serving stale builds
+    const ses = mainWindow.webContents.session;
+    await ses.clearCache();
+    await ses.clearStorageData({ storages: ['serviceworkers'] });
+    console.log('[HALT] Cleared browser cache and service workers');
 
     // Load the frontend through the backend proxy (which serves viewer/dist)
     // This maintains window.location.host so WebSockets can resolve the LAN/Local IP properly.
@@ -325,6 +344,9 @@ function createMainWindow() {
 
     mainWindow.on('closed', () => {
         mainWindow = null;
+    });
+
+    resolve();
     });
 }
 
@@ -422,7 +444,7 @@ async function startup() {
 
         // Step 2: Create main window
         updateSplashStatus('Launching HALT...');
-        createMainWindow();
+        await createMainWindow();
         createTray();
 
     } catch (error) {

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-sync_locales.py — Sync all locale files against en.json master.
+sync_locales.py -- Sync all locale files against en.json master.
 
 For each locale file in viewer/public/locales/:
   1. Finds keys present in en.json but missing from the locale
@@ -56,7 +56,7 @@ def translate_batch(texts: list[str], target: str, port: int) -> list[str] | Non
             result = json.loads(resp.read().decode("utf-8"))
             return result.get("translations", None)
     except urllib.error.URLError as e:
-        print(f"    ⚠ API error: {e}")
+        print(f"    [!] API error: {e}")
         return None
 
 
@@ -64,7 +64,7 @@ def sync_locale(lang: str, master: dict, port: int, dry_run: bool = False) -> in
     """Sync a single locale file. Returns count of keys added/updated."""
     locale_path = LOCALES_DIR / f"{lang}.json"
     if not locale_path.exists():
-        print(f"  ⚠ {lang}.json not found, skipping")
+        print(f"  [!] {lang}.json not found, skipping")
         return 0
 
     locale = load_json(locale_path)
@@ -84,7 +84,7 @@ def sync_locale(lang: str, master: dict, port: int, dry_run: bool = False) -> in
     all_keys = missing_keys + untranslated_keys
 
     if not all_keys:
-        print(f"  ✓ {lang}.json — fully synced ({len(locale)} keys)")
+        print(f"  [OK] {lang}.json -- fully synced ({len(locale)} keys)")
         return 0
 
     label_parts = []
@@ -92,7 +92,7 @@ def sync_locale(lang: str, master: dict, port: int, dry_run: bool = False) -> in
         label_parts.append(f"{len(missing_keys)} missing")
     if untranslated_keys:
         label_parts.append(f"{len(untranslated_keys)} untranslated")
-    print(f"  → {lang}.json — {' + '.join(label_parts)}")
+    print(f"  -> {lang}.json -- {' + '.join(label_parts)}")
 
     if dry_run:
         for k in all_keys[:10]:
@@ -115,13 +115,13 @@ def sync_locale(lang: str, master: dict, port: int, dry_run: bool = False) -> in
         print(f"    translating batch {batch_num}/{total_batches} ({len(batch)} strings)...")
         result = translate_batch(batch, lang, port)
         if result is None:
-            print(f"    ✗ API failed for {lang}.json — skipping remaining batches")
+            print(f"    [FAIL] API failed for {lang}.json -- skipping remaining batches")
             api_ok = False
             break
         translated.extend(result)
 
     if not api_ok:
-        return 0  # Don't write English fallbacks — skip this locale entirely
+        return 0  # Don't write English fallbacks -- skip this locale entirely
 
     # Merge
     updated = 0
@@ -130,7 +130,7 @@ def sync_locale(lang: str, master: dict, port: int, dry_run: bool = False) -> in
         updated += 1
 
     save_json(locale_path, locale)
-    print(f"    ✓ {'added' if missing_keys else 'updated'} {updated} keys in {lang}.json (total: {len(locale)})")
+    print(f"    [OK] {'added' if missing_keys else 'updated'} {updated} keys in {lang}.json (total: {len(locale)})")
     return updated
 
 
@@ -157,7 +157,7 @@ def main():
             with urllib.request.urlopen(url, timeout=5) as resp:
                 status = json.loads(resp.read().decode("utf-8"))
                 if not status.get("model_downloaded"):
-                    print("⚠ NLLB model not downloaded. Run scripts/download_nllb.py first.")
+                    print("[!] NLLB model not downloaded. Run scripts/download_nllb.py first.")
                     sys.exit(1)
                 print(f"NLLB: {'ready' if status.get('available') else 'loading...'} ({status.get('languages', 0)} languages)")
         except urllib.error.URLError:

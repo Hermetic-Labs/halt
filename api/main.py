@@ -11,6 +11,8 @@ index.html. In dev mode Vite runs separately on port 5173.
 """
 import asyncio
 import logging
+import time as _time
+import sys as _sys
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -18,8 +20,9 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from starlette.middleware.base import BaseHTTPMiddleware
 
-from routes import health, inference, tts, stt
+from routes import health, inference, tts, stt, translate_stream
 from routes import patients, wards, inventory, roster, tasks, mesh, translate, distribution
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
@@ -38,12 +41,26 @@ async def lifespan(app: FastAPI):
     # Start mesh stale-client checker
     asyncio.create_task(mesh.stale_checker())
 
+    # Background warmup — loads TTS model then signals readiness to health endpoint
+    import threading
+    def _warmup():
+        from routes.tts import _get_kokoro
+        from routes.health import set_models_ready
+        try:
+            _get_kokoro()  # Loads ONNX model + warmup step
+            logger.info("Model warmup complete — marking system ready.")
+        except Exception as e:
+            logger.warning(f"TTS warmup failed: {e} — marking ready anyway.")
+        set_models_ready()
+
+    threading.Thread(target=_warmup, daemon=True, name="model-warmup").start()
+
     yield  # App is running
 
 
 # ── App ────────────────────────────────────────────────────────────────────────
 
-app = FastAPI(title="Medic Info API", version="1.0.5", lifespan=lifespan)
+app = FastAPI(title="Medic Info API", version="1.0.6", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -52,11 +69,68 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# ── Colored Access Logging ─────────────────────────────────────────────────────
+# Replaces uvicorn's default access log with color-coded, friendlier output.
+
+_IS_TTY = _sys.stdout.isatty()
+_G = "\033[92m" if _IS_TTY else ""   # green
+_B = "\033[94m" if _IS_TTY else ""   # blue
+_Y = "\033[93m" if _IS_TTY else ""   # amber
+_R = "\033[91m" if _IS_TTY else ""   # red
+_D = "\033[90m" if _IS_TTY else ""   # dim
+_E = "\033[0m"  if _IS_TTY else ""   # reset
+
+_STATUS_TEXT = {
+    200: f"{_G}200 OK{_E}",
+    304: f"{_B}304 unchanged{_E}",
+    404: f"{_Y}404 not found{_E}",
+    422: f"{_Y}422 invalid{_E}",
+    500: f"{_R}500 error{_E}",
+}
+
+# Paths to suppress from access log (noisy, uninteresting)
+_QUIET_PATHS = {"/health", "/tts/voices", "/image/health"}
+
+
+class AccessLogMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        t0 = _time.perf_counter()
+        response = await call_next(request)
+        ms = (_time.perf_counter() - t0) * 1000
+
+        path = request.url.path
+        # Skip noisy health-check spam
+        if path in _QUIET_PATHS:
+            return response
+
+        code = response.status_code
+        status = _STATUS_TEXT.get(code)
+        if not status:
+            if code < 300:
+                status = f"{_G}{code}{_E}"
+            elif code < 400:
+                status = f"{_B}{code}{_E}"
+            elif code < 500:
+                status = f"{_Y}{code}{_E}"
+            else:
+                status = f"{_R}{code}{_E}"
+
+        method = request.method
+        print(f"  {_D}{method:4s}{_E} {path} {_D}->{_E} {status} {_D}{ms:.0f}ms{_E}")
+        return response
+
+
+app.add_middleware(AccessLogMiddleware)
+
+# Suppress uvicorn's default access log (we handle it above)
+logging.getLogger("uvicorn.access").setLevel(logging.WARNING)
+
 # AI / model routes
 app.include_router(health.router)
 app.include_router(inference.router)
 app.include_router(tts.router, prefix="/tts")
 app.include_router(stt.router, prefix="/stt")
+app.include_router(translate_stream.router, prefix="/translate-stream")
 
 
 # Domain routes

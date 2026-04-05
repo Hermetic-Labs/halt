@@ -85,7 +85,7 @@ python start.py              # Auto-downloads AI models on first run (~4 GB)
 | 15 | **Translation Bridge** | Real-time two-way speech translation across 42 languages — fully offline |
 | 16 | **Voice Interface** | Whisper speech-to-text + Kokoro TTS in the patient's language — speak and listen |
 | 17 | **42-Language UI** | Every label, button, and status in the interface translates to the selected language |
-| 18 | **AI Triage Assistant** | MedGemma 4B for differential diagnosis, drug interactions, and clinical Q&A — fully local |
+| 18 | **AI Triage Assistant** | MedGemma 1.5 4B for differential diagnosis, drug interactions, wound image analysis, and clinical Q&A — fully local |
 | 19 | **Mesh Network** | Local WiFi mesh — broadcast chat, DMs, reactions, multilingual fan-out, 500-message history |
 | 20 | **Emergency Broadcasts** | Category-targeted alerts (All Hands, Doctors, Inventory) with TTS announcement |
 | 21 | **Leadership Failover** | Role hierarchy with one-tap leadership takeover and full state snapshot |
@@ -109,7 +109,7 @@ python start.py              # Auto-downloads AI models on first run (~4 GB)
 │  FastAPI (:7778) ─── serves ──→ React PWA (viewer/)     │
 │      │                                                  │
 │      ├── /patients    Patient intake + records (JSON)   │
-│      ├── /inference   MedGemma 4B medical AI            │
+│      ├── /inference   MedGemma 1.5 4B medical AI          │
 │      ├── /tts         Kokoro multilingual speech        │
 │      ├── /stt         Whisper transcription             │
 │      ├── /translate   NLLB 200-language translation     │
@@ -175,12 +175,27 @@ python dev/build_and_deploy.py --platform win --release
 
 | Model | Purpose | Size |
 |:------|:--------|-----:|
-| MedGemma 4B | Medical inference & triage assistance | 2.5 GB |
+| MedGemma 1.5 4B | Medical inference, triage assistance & wound image analysis | 2.5 GB |
+| MedGemma 1.5 mmproj | Vision projector for multimodal image input (SigLIP) | 851 MB |
 | Kokoro v1.0 | Text-to-speech (multilingual phoneme synthesis) | 325 MB |
 | Faster Whisper Base | Speech-to-text transcription | ~150 MB |
 | NLLB 200 600M | Real-time translation (200 languages) | ~1.2 GB |
 
 > 🔒 All models run locally. **No data ever leaves the device.**
+
+### Translation Bridge — Known Limitations
+
+**Unsupported STT languages:** The translator UI exposes 3 languages that fall outside Faster Whisper's supported language set. STT for these languages will fall back to Whisper's auto-detection, which may produce degraded or incorrect transcriptions:
+
+| Code | Language | Whisper Support | Workaround |
+|:-----|:---------|:----------------|:-----------|
+| `am` | Amharic (አማርኛ) | ❌ Not supported | Auto-detect fallback — may misidentify as a related language |
+| `ha` | Hausa | ❌ Not supported | Auto-detect fallback |
+| `ku` | Kurdish (Kurdî) | ❌ Not supported | Auto-detect fallback |
+
+NLLB translation and Kokoro TTS still function for these languages — only the speech-to-text input is affected.
+
+**VAD (Voice Activity Detection):** Whisper's Silero VAD filter is enabled (`vad_filter=True`) for silence removal during transcription, but it operates **post-hoc** — the full audio recording is collected first, then processed as a batch. Real-time VAD-based chunking (streaming partial transcriptions while the user speaks) is not currently implemented. The user signals speech completion by tapping the mic button.
 
 ---
 

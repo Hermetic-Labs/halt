@@ -327,7 +327,7 @@ export default function CommsPanel() {
                                 {/* End Call */}
                                 <button
                                     onClick={endCall}
-                                    title="End Call"
+                                    title={t('comms.end_call', 'End Call')}
                                     style={{
                                         width: 52, height: 52, borderRadius: '50%',
                                         background: '#e74c3c', border: '2px solid #e74c3c',
@@ -340,7 +340,7 @@ export default function CommsPanel() {
                                 {/* Translate Toggle */}
                                 <button
                                     onClick={() => setShowTranslateRoom(s => !s)}
-                                    title="Translation Room"
+                                    title={t('comms.translate_room', 'Translation Room')}
                                     style={{
                                         width: 52, height: 52, borderRadius: '50%',
                                         background: showTranslateRoom ? '#50C87822' : '#ffffff15',
@@ -380,7 +380,7 @@ export default function CommsPanel() {
                                     <div style={{ display: 'flex', gap: 6, marginBottom: 8 }}>
                                         <input
                                             style={{ flex: 1, fontSize: 12, padding: '8px 10px', borderRadius: 6, border: '1px solid #444', background: '#222', color: '#ddd' }}
-                                            placeholder="Type to translate..."
+                                            placeholder={t('comms.type_to_translate', 'Type to translate...')}
                                             value={trInput}
                                             onChange={e => setTrInput(e.target.value)}
                                             onKeyDown={e => { if (e.key === 'Enter') handleTranslateRoom(); }}
@@ -412,7 +412,7 @@ export default function CommsPanel() {
                                                         border: `1px solid ${trSpeaking ? '#f0a500' : '#3fb950'}44`,
                                                         color: trSpeaking ? '#f0a500' : '#3fb950',
                                                     }}
-                                                >{trSpeaking ? '◼ Stop' : '▶ Speak'}</button>
+                                                >{trSpeaking ? `◼ ${t('comms.stop', 'Stop')}` : `▶ ${t('comms.speak', 'Speak')}`}</button>
                                                 <button
                                                     onClick={() => { stopTrSpeak(); setTrOutput(''); }}
                                                     style={{

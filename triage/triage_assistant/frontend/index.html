@@ -353,6 +353,122 @@
             background: rgba(88, 166, 255, .1);
         }
 
+        /* Attach photo button */
+        #attach-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--dim);
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .15s;
+            line-height: 1;
+        }
+
+        #attach-btn:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        #attach-btn.active {
+            border-color: var(--blue);
+            color: var(--blue);
+            background: rgba(88, 166, 255, .1);
+        }
+
+        /* Image preview strip */
+        .img-preview {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .img-preview.show { display: flex; }
+
+        .img-preview img {
+            max-height: 64px;
+            max-width: 120px;
+            border-radius: 4px;
+            object-fit: cover;
+            border: 1px solid var(--border);
+        }
+
+        .img-preview .remove-btn {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(248, 81, 73, .8);
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .img-preview .remove-btn:hover { background: var(--red); }
+
+        /* Thought Bubbles (chain-of-thought reasoning) */
+        .thought-bubble {
+            background: rgba(139, 92, 246, .08);
+            border: 1px solid rgba(139, 92, 246, .2);
+            border-radius: 8px;
+            padding: 0;
+            margin-bottom: 10px;
+            font-size: 11px;
+            color: #8b8fa3;
+            overflow: hidden;
+            transition: border-color .2s;
+        }
+        .thought-bubble[open] { border-color: rgba(139, 92, 246, .35); }
+        .thought-bubble summary {
+            padding: 8px 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 11px;
+            color: #a78bfa;
+            letter-spacing: 0.03em;
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .thought-bubble summary::before {
+            content: '▸';
+            font-size: 10px;
+            transition: transform .2s;
+            color: #a78bfa;
+        }
+        .thought-bubble[open] summary::before { transform: rotate(90deg); }
+        .thought-bubble summary::-webkit-details-marker { display: none; }
+        .thought-content {
+            padding: 0 12px 10px;
+            font-style: italic;
+            line-height: 1.7;
+            white-space: pre-wrap;
+            color: #7c7f93;
+            border-top: 1px solid rgba(139, 92, 246, .12);
+        }
+
         @keyframes pulse-ring {
 
             0%,
@@ -520,9 +636,15 @@
     </div>
 
     <footer>
+        <div class="img-preview" id="img-preview">
+            <img id="preview-img" />
+            <button class="remove-btn" onclick="clearPendingImage()" title="Remove">×</button>
+        </div>
         <div class="input-row">
             <button type="button" id="mic-btn" onclick="toggleMic()" title="Voice input">🎙</button>
             <button type="button" id="img-btn" onclick="activateDiagram()" title="Generate instructional diagram">🖼</button>
+            <button type="button" id="attach-btn" onclick="document.getElementById('photo-input').click()" title="Attach photo">+</button>
+            <input type="file" id="photo-input" accept="image/*" capture="environment" style="display:none" onchange="handlePhotoSelect(this)" />
             <textarea id="input" rows="2" placeholder="Ask anything clinical…"></textarea>
             <button type="button" id="send-btn" onclick="send()">Send</button>
         </div>
@@ -546,6 +668,87 @@
         let _audioCtx = null;
         let _nextTime = 0;
         let _ttsQueue = [];
+        let pendingImageDataUri = null;  // base64 data URI of attached photo
+
+        // ── Image Attachment ──────────────────────────────────────────────────
+        function handlePhotoSelect(input) {
+            const file = input.files?.[0];
+            if (!file) return;
+            const img = new Image();
+            img.onload = () => {
+                const MAX = 1536;
+                let w = img.width, h = img.height;
+                if (w > MAX || h > MAX) {
+                    const ratio = Math.min(MAX / w, MAX / h);
+                    w = Math.round(w * ratio);
+                    h = Math.round(h * ratio);
+                }
+                const canvas = document.createElement('canvas');
+                canvas.width = w;
+                canvas.height = h;
+                canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+                pendingImageDataUri = canvas.toDataURL('image/jpeg', 0.85);
+                document.getElementById('preview-img').src = pendingImageDataUri;
+                document.getElementById('img-preview').classList.add('show');
+                document.getElementById('attach-btn').classList.add('active');
+            };
+            img.src = URL.createObjectURL(file);
+            input.value = '';
+        }
+
+        function clearPendingImage() {
+            pendingImageDataUri = null;
+            document.getElementById('img-preview').classList.remove('show');
+            document.getElementById('attach-btn').classList.remove('active');
+        }
+
+        // Paste image from clipboard
+        document.getElementById('input').addEventListener('paste', function(e) {
+            const items = e.clipboardData?.items;
+            if (!items) return;
+            for (const item of items) {
+                if (item.type.startsWith('image/')) {
+                    e.preventDefault();
+                    const file = item.getAsFile();
+                    if (file) processImageFromFile(file);
+                    return;
+                }
+            }
+        });
+
+        // Drag and drop image onto footer
+        document.querySelector('footer').addEventListener('dragover', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        });
+        document.querySelector('footer').addEventListener('drop', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const file = e.dataTransfer?.files?.[0];
+            if (file && file.type.startsWith('image/')) processImageFromFile(file);
+        });
+
+        function processImageFromFile(file) {
+            const img = new Image();
+            img.onload = () => {
+                const MAX = 1536;
+                let w = img.width, h = img.height;
+                if (w > MAX || h > MAX) {
+                    const ratio = Math.min(MAX / w, MAX / h);
+                    w = Math.round(w * ratio);
+                    h = Math.round(h * ratio);
+                }
+                const canvas = document.createElement('canvas');
+                canvas.width = w;
+                canvas.height = h;
+                canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+                pendingImageDataUri = canvas.toDataURL('image/jpeg', 0.85);
+                document.getElementById('preview-img').src = pendingImageDataUri;
+                document.getElementById('img-preview').classList.add('show');
+                document.getElementById('attach-btn').classList.add('active');
+            };
+            img.src = URL.createObjectURL(file);
+        }
 
         // ── Init ──────────────────────────────────────────────────────────────
         async function init() {
@@ -604,22 +807,120 @@
         }
         // ── Markdown renderer ─────────────────────────────────────────────────
         function renderMd(text) {
-            let h = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-            h = h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-            h = h.replace(/\*(?!\*)(.+?)(?<!\*)\*/g, '<em>$1</em>');
-            h = h.replace(/^[\*\-•] +(.+)$/gm, '<li>$1</li>');
-            h = h.replace(/\n/g, '<br>');
-            return h;
+            // Step 1: Extract structural cues and reformat
+            let contextHtml = '';
+            let working = text.replace(/<context>([\s\S]*?)<\/context>/gi, (_, content) => {
+                const escaped = content.trim().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+                contextHtml = `<details class="context-card"><summary>System Directive</summary><div class="context-content">${escaped}</div></details>`;
+                return '';
+            });
+
+            // Reformat leaked special tokens as turn separators
+            working = working
+                .replace(/<start_of_turn>\s*user\s*\n?/gi, '\n---\n**YOU:**\n')
+                .replace(/<start_of_turn>\s*model\s*\n?/gi, '\n---\n**TRIAGE AI:**\n')
+                .replace(/<end_of_turn>/gi, '')
+                .replace(/<\/?bos>/gi, '')
+                .replace(/<\/?eos>/gi, '')
+                .trim();
+
+            // Step 2: Split on "Response:" — everything before is reasoning
+            let thoughtHtml = '';
+            let mainText = working;
+            const respIdx = working.search(/\bResponse:\s*/i);
+
+            if (respIdx >= 0) {
+                let reasoning = working.slice(0, respIdx).trim();
+                mainText = working.slice(respIdx).replace(/^Response:\s*/i, '').trim();
+                reasoning = reasoning.replace(/^Query:\s*.*$/gm, '').trim();
+                if (reasoning) {
+                    const escaped = reasoning.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+                    thoughtHtml = `<details class="thought-bubble"><summary>🧠 Reasoning</summary><div class="thought-content">${escaped}</div></details>`;
+                }
+            }
+
+            // Handle <think>/<thought> tags
+            mainText = mainText.replace(/<(?:think|thought)>([\s\S]*?)<\/(?:think|thought)>/gi, (_, content) => {
+                const escaped = content.trim().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+                thoughtHtml += `<details class="thought-bubble"><summary>🧠 Reasoning</summary><div class="thought-content">${escaped}</div></details>`;
+                return '';
+            }).trim();
+            // Step 3: Full markdown rendering
+            let md = mainText;
+
+            // Code blocks
+            md = md.replace(/```(\w*)\n([\s\S]*?)```/g, (_m, _lang, code) =>
+                `<pre class="code-block"><code>${code.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</code></pre>`
+            );
+
+            // Tables
+            md = md.replace(/((?:^\|.+\|$\n?)+)/gm, (tableBlock) => {
+                const rows = tableBlock.trim().split('\n').filter(r => r.trim());
+                if (rows.length < 2) return tableBlock;
+                const dataRows = rows.filter(r => !/^\|[\s\-:|]+\|$/.test(r));
+                const hCells = dataRows[0]?.split('|').filter(c => c.trim()) || [];
+                const bRows = dataRows.slice(1);
+                let html = '<table class="md-table"><thead><tr>';
+                hCells.forEach(c => { html += `<th>${c.trim()}</th>`; });
+                html += '</tr></thead><tbody>';
+                bRows.forEach(row => {
+                    const cells = row.split('|').filter(c => c.trim());
+                    html += '<tr>';
+                    cells.forEach(c => { html += `<td>${c.trim()}</td>`; });
+                    html += '</tr>';
+                });
+                html += '</tbody></table>';
+                return html;
+            });
+
+            // Headers
+            md = md.replace(/^#### +(.+)$/gm, '<h4 class="md-h4">$1</h4>');
+            md = md.replace(/^### +(.+)$/gm, '<h3 class="md-h3">$1</h3>');
+            md = md.replace(/^## +(.+)$/gm, '<h2 class="md-h2">$1</h2>');
+            md = md.replace(/^# +(.+)$/gm, '<h1 class="md-h1">$1</h1>');
+
+            // Horizontal rule
+            md = md.replace(/^---+$/gm, '<hr class="md-hr"/>');
+
+            // Blockquotes
+            md = md.replace(/^> +(.+)$/gm, '<blockquote class="md-bq">$1</blockquote>');
+
+            // Bold + italic combo
+            md = md.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
+            md = md.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+            md = md.replace(/\*(?!\*)(.+?)(?<!\*)\*/g, '<em>$1</em>');
+
+            // Inline code
+            md = md.replace(/`([^`]+)`/g, '<code class="md-code">$1</code>');
+
+            // Label cards (e.g. * **Benign**: content)
+            md = md.replace(/^[\*\-\u2022] +\*\*(.+?)\*\*:\s*(.+)$/gm, '<div class="triage-label-card"><span class="triage-label-tag">$1</span><span class="triage-label-body">$2</span></div>');
+            // Bullet items
+            md = md.replace(/^[\*\-\u2022] +(.+)$/gm, '<div class="triage-bullet">$1</div>');
+            // Numbered steps
+            md = md.replace(/^(\d+)\.\s+(.+)$/gm, '<div class="triage-step"><span class="triage-step-num">$1</span><span class="triage-step-body">$2</span></div>');
+            // Section labels (e.g. **Clinical Significance:**)
+            md = md.replace(/^(\*\*[^*]+\*\*):\s*/gm, '<br/><strong class="triage-section-label">$1</strong>:<br/>');
+
+            // Newlines
+            md = md.replace(/\n(?!<)/g, '<br>');
+
+            return contextHtml + thoughtHtml + md;
         }
 
-        // Strip markdown syntax for clean TTS text
+        // Strip markdown syntax + reasoning for clean TTS text
         function stripMd(text) {
-            return text
+            // Strip persona and reasoning — only speak the Response
+            let t = text.replace(/<context>[\s\S]*?<\/context>/gi, '');
+            const respIdx = t.search(/\bResponse:\s*/i);
+            if (respIdx >= 0) t = t.slice(respIdx).replace(/^Response:\s*/i, '');
+            t = t.replace(/<think>[\s\S]*?<\/think>/gi, '');
+            return t
                 .replace(/\*\*(.+?)\*\*/g, '$1')
                 .replace(/\*(.+?)\*/g, '$1')
                 .replace(/#{1,6}\s+/g, '')
                 .replace(/`(.+?)`/g, '$1')
-                .replace(/[*_#`]/g, '') // brute force catch any stragglers (multiline etc)
+                .replace(/[*_#`]/g, '')
                 .trim();
         }
 
@@ -698,6 +999,17 @@
 
             addRow('user', txt);
 
+            // Show image thumbnail in user bubble if attached
+            if (pendingImageDataUri) {
+                const lastBub = document.querySelector('#messages .row.user:last-child .bubble');
+                if (lastBub) {
+                    const thumbImg = document.createElement('img');
+                    thumbImg.src = pendingImageDataUri;
+                    thumbImg.style.cssText = 'max-width:100%;max-height:200px;border-radius:6px;margin-bottom:8px;display:block;border:1px solid var(--border)';
+                    lastBub.insertBefore(thumbImg, lastBub.firstChild);
+                }
+            }
+
             // ── Image Generation Intercept ──
             if (txt.toLowerCase().startsWith('/draw ')) {
                 const prompt = txt.substring(6).trim();
@@ -753,7 +1065,7 @@
                 const r = await fetch('/inference/stream', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ messages, max_tokens: 512, temperature: 0.7 })
+                    body: JSON.stringify({ messages, image: pendingImageDataUri || undefined, max_tokens: 2048, temperature: 0.7 })
                 });
                 if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
 
@@ -806,6 +1118,9 @@
                 );
 
                 hist.push({ role: 'assistant', content: full });
+
+                // Clear pending image after successful send
+                clearPendingImage();
 
                 // Speak button
                 if (full) {

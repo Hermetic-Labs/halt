@@ -34,6 +34,7 @@ import NetworkTab from './components/NetworkTab';
 import TriagePanel from './components/TriagePanel';
 import DistributionTab from './components/DistributionTab';
 import PublicLookup from './components/PublicLookup';
+
 import { PowerProvider, usePower } from './services/PowerContext';
 import { LangProvider, useT } from './services/i18n';
 import './index.css';
@@ -440,6 +441,7 @@ function AppInner(p: any) {
   const { lowPower, batteryLevel, toggleLowPower } = usePower();
   const { lang, t } = useT();
   const [showTriage, setShowTriage] = useState(false);
+
   const [lookupQR, setLookupQR] = useState<{ url: string; qr_image: string | null } | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -538,16 +540,15 @@ function AppInner(p: any) {
             >⚙</button>
             <button
               onClick={() => setShowTriage(!showTriage)}
-              title="Chat / Triage Assistant"
+              title="Triage AI"
               style={{
-                background: showTriage ? 'var(--surface3)' : 'transparent',
-                border: showTriage ? '1px solid var(--border)' : '1px solid transparent',
-                borderRadius: 6, padding: '4px 8px', cursor: 'pointer',
-                color: showTriage ? 'var(--text)' : 'var(--text-dim)',
-                fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                background: showTriage ? '#58a6ff15' : 'transparent',
+                border: showTriage ? '1px solid #58a6ff33' : '1px solid transparent',
+                borderRadius: 6, padding: '5px 7px', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
                 marginLeft: 4, flexShrink: 0, transition: 'all 0.15s',
               }}
-            >💬</button>
+            ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={showTriage ? '#58a6ff' : '#6e7681'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
             <span className="topbar-sep" />
             <span className="topbar-sep" />
 
@@ -916,6 +917,8 @@ function AppInner(p: any) {
         <div className="triage-container" style={showTriage ? undefined : { width: 0, overflow: 'hidden', borderLeft: 'none' }}>
           <TriagePanel onClose={() => setShowTriage(false)} />
         </div>
+
+
       </div>
     </PermissionGate>
   );
