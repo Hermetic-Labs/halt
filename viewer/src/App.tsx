@@ -34,6 +34,7 @@ import NetworkTab from './components/NetworkTab';
 import TriagePanel from './components/TriagePanel';
 import DistributionTab from './components/DistributionTab';
 import PublicLookup from './components/PublicLookup';
+import { useWebRTC } from './hooks/useWebRTC';
 
 import { PowerProvider, usePower } from './services/PowerContext';
 import { LangProvider, useT } from './services/i18n';
@@ -256,6 +257,7 @@ function AppOuter() {
     // Poll /health for model readiness
     let cancelled = false;
     const pollHealth = async () => {
+      let failures = 0;
       while (!cancelled) {
         try {
           const res = await fetch('/health');
@@ -270,8 +272,19 @@ function AppOuter() {
                 return; // Stop polling
               }
             }
+          } else {
+            failures++;
           }
-        } catch { /* server not up yet */ }
+        } catch {
+          failures++;
+        }
+        // After 5 failed attempts, let the app load anyway
+        // (cert not trusted yet, or models truly unavailable)
+        if (failures >= 5 && !cancelled) {
+          console.warn('[Health] Proceeding without model confirmation after', failures, 'failures');
+          setModelsReady(true);
+          return;
+        }
         await new Promise(r => setTimeout(r, 1500));
       }
     };
@@ -439,17 +452,26 @@ function AppInner(p: any) {
     handleSmallSelect,
   } = p;
   const { lowPower, batteryLevel, toggleLowPower } = usePower();
-  const { lang, t } = useT();
+  const { lang, t, loading: langLoading } = useT();
   const [showTriage, setShowTriage] = useState(false);
 
   const [lookupQR, setLookupQR] = useState<{ url: string; qr_image: string | null } | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // ── WebRTC — lifted to App level so signal listener persists across all tabs ──
+  const userName = localStorage.getItem('eve-mesh-name') || 'Unknown';
+  const userRole = localStorage.getItem('eve-mesh-role') || 'responder';
+  const webRTC = useWebRTC(userName, userRole);
+
   // ── Notification badges (unread messages & tasks) ──
   const [unreadMsgs, setUnreadMsgs] = useState(0);
   const [unreadTasks, setUnreadTasks] = useState(0);
-  const lastSeenMsgs = useRef(0);
-  const lastSeenTasks = useRef(0);
+  const lastSeenMsgs = useRef(
+      parseInt(localStorage.getItem('eve-mesh-last-seen-msgs') || '0', 10) || 0
+  );
+  const lastSeenTasks = useRef(
+      parseInt(localStorage.getItem('eve-mesh-last-seen-tasks') || '0', 10) || 0
+  );
 
   useEffect(() => {
     const myName = localStorage.getItem('eve-mesh-name') || '';
@@ -461,7 +483,7 @@ function AppInner(p: any) {
           const forMe = msgs.filter((m: { target_name?: string; sender_name?: string }) =>
             !m.target_name || m.target_name.toLowerCase() === myName.toLowerCase()
           );
-          if (tab === 'comms') lastSeenMsgs.current = forMe.length;
+          if (tab === 'comms') { lastSeenMsgs.current = forMe.length; localStorage.setItem('eve-mesh-last-seen-msgs', String(forMe.length)); }
           else setUnreadMsgs(Math.max(0, forMe.length - lastSeenMsgs.current));
         }
         const tr = await fetch('/api/tasks');
@@ -470,7 +492,7 @@ function AppInner(p: any) {
           const myTasks = tasks.filter((t: { status?: string; assignee_name?: string }) =>
             t.status !== 'done' && (!t.assignee_name || t.assignee_name.toLowerCase() === myName.toLowerCase())
           );
-          if (tab === 'tasks') lastSeenTasks.current = myTasks.length;
+          if (tab === 'tasks') { lastSeenTasks.current = myTasks.length; localStorage.setItem('eve-mesh-last-seen-tasks', String(myTasks.length)); }
           else setUnreadTasks(Math.max(0, myTasks.length - lastSeenTasks.current));
         }
       } catch { /* offline */ }
@@ -491,6 +513,23 @@ function AppInner(p: any) {
     <PermissionGate>
       <div className="app">
         <div className="main-content">
+          {/* ── Translation Overlay ─────────────────────────────── */}
+          {langLoading && (
+            <div style={{
+              position: 'absolute', inset: 0, zIndex: 900,
+              background: 'rgba(13, 17, 23, 0.75)', backdropFilter: 'blur(4px)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              transition: 'opacity 0.3s',
+            }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{
+                  width: 36, height: 36, border: '3px solid #222', borderTop: '3px solid #3fb950',
+                  borderRadius: '50%', animation: 'spin 0.8s linear infinite', margin: '0 auto 14px',
+                }} />
+                <div style={{ fontSize: 13, color: '#8b949e', letterSpacing: '0.06em' }}>Translating…</div>
+              </div>
+            </div>
+          )}
           {/* ── Topbar ──────────────────────────────────────────── */}
           <header className="topbar">
             {/* Hamburger — mobile only */}
@@ -566,6 +605,7 @@ function AppInner(p: any) {
               ))}
             </select>
             <span className="topbar-clock">{clock}</span>
+            <span style={{ fontSize: 10, color: '#888', marginLeft: 4, flexShrink: 0, paddingRight: 8 }}>v8a</span>
             {lowPower && (
               <button onClick={toggleLowPower} style={{ padding: '2px 8px', background: '#f0a500', border: 'none', borderRadius: 4, color: '#000', fontWeight: 700, fontSize: 11, cursor: 'pointer', marginLeft: 8 }}>{t('app.low_power')}</button>
             )}
@@ -613,6 +653,88 @@ function AppInner(p: any) {
           {/* Communications */}
           {tab === 'comms' && (
             <div style={fullTab}><CommsPanel /></div>
+          )}
+
+          {/* ═══ Global Call Overlay — renders on ANY tab ═══════════════ */}
+          {webRTC.callActive && (
+            <div className="call-overlay-global" style={{
+              position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+              zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center',
+              background: 'rgba(0, 0, 0, 0.7)', backdropFilter: 'blur(4px)',
+            }}>
+              <div style={{
+                width: '90%', maxWidth: 420, borderRadius: 20,
+                background: '#111', overflow: 'hidden',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.6)',
+                display: 'flex', flexDirection: 'column',
+                maxHeight: '90vh',
+              }}>
+                {/* Video or Voice avatar area */}
+                <div style={{ position: 'relative', background: '#000', minHeight: webRTC.callType === 'video' ? 260 : 140, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  {webRTC.callType === 'video' ? (
+                    <>
+                      <video ref={webRTC.remoteVideoRefCallback} autoPlay playsInline style={{ width: '100%', height: 260, objectFit: 'cover' }} />
+                      <div style={{ position: 'absolute', top: 12, right: 12, width: 90, height: 68, borderRadius: 10, overflow: 'hidden', border: '2px solid rgba(255,255,255,0.2)', boxShadow: '0 2px 10px #0008' }}>
+                        <video ref={webRTC.videoRefCallback} autoPlay muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      </div>
+                    </>
+                  ) : (
+                    <div style={{ textAlign: 'center', padding: 24 }}>
+                      {(() => { const lvl = webRTC.remoteAudioLevel; return (
+                        <div style={{
+                          width: 64, height: 64, borderRadius: '50%', margin: '0 auto 12px',
+                          background: '#3fb95022', border: '2px solid #3fb95044',
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          fontSize: 24, color: '#3fb950',
+                          boxShadow: lvl > 10 ? `0 0 ${lvl * 0.4}px ${lvl * 0.2}px rgba(63, 185, 80, ${Math.min(lvl / 180, 0.8)})` : 'none',
+                          transition: 'box-shadow 0.15s ease',
+                        }}>
+                          {webRTC.callTarget?.charAt(0).toUpperCase() || '?'}
+                        </div>
+                      ); })()}
+                      <div style={{ fontSize: 16, fontWeight: 600, color: '#fff' }}>{webRTC.callTarget || 'Unknown'}</div>
+                      <div style={{ fontSize: 12, color: '#888', marginTop: 4 }}>Voice Call</div>
+                    </div>
+                  )}
+                  <div style={{ position: 'absolute', top: 12, left: '50%', transform: 'translateX(-50%)', background: 'rgba(0,0,0,0.6)', padding: '3px 12px', borderRadius: 12, fontSize: 12, fontFamily: 'var(--font-mono)', color: webRTC.callType === 'video' ? '#3498db' : '#3fb950' }}>
+                    {webRTC.fmtDuration(webRTC.callDuration)}
+                  </div>
+                </div>
+                {/* Controls */}
+                <div style={{ display: 'flex', justifyContent: 'center', gap: 20, padding: '16px 24px', background: '#1a1a1a' }}>
+                  <button onClick={webRTC.toggleMute} title={webRTC.callMuted ? 'Unmute' : 'Mute'} style={{ width: 52, height: 52, borderRadius: '50%', background: webRTC.callMuted ? '#f0a50022' : '#ffffff15', border: `2px solid ${webRTC.callMuted ? '#f0a500' : '#555'}`, color: webRTC.callMuted ? '#f0a500' : '#fff', fontSize: 20, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    {webRTC.callMuted ? '🔇' : '🔊'}
+                  </button>
+                  <button onClick={webRTC.endCall} title="End Call" style={{ width: 52, height: 52, borderRadius: '50%', background: '#e74c3c', border: '2px solid #e74c3c', color: '#fff', fontSize: 20, fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    ✕
+                  </button>
+                  <button
+                    onClick={() => webRTC.transcribing ? webRTC.stopTranscription() : webRTC.startTranscription()}
+                    title={webRTC.transcribing ? 'Stop Subtitles' : 'Live Subtitles'}
+                    style={{
+                      width: 52, height: 52, borderRadius: '50%',
+                      background: webRTC.transcribing ? '#50C87822' : '#ffffff15',
+                      border: `2px solid ${webRTC.transcribing ? '#50C878' : '#555'}`,
+                      color: webRTC.transcribing ? '#50C878' : '#fff',
+                      fontSize: 20, cursor: 'pointer',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}
+                  >🌐</button>
+                </div>
+                {/* Subtitle Bar */}
+                {webRTC.subtitleText && (
+                  <div style={{
+                    padding: '10px 20px', background: 'rgba(0,0,0,0.85)',
+                    borderTop: '1px solid #333', textAlign: 'center',
+                    fontSize: 14, lineHeight: 1.5, color: '#fff',
+                    fontFamily: 'var(--font-sans)', whiteSpace: 'pre-wrap',
+                    animation: 'fadeIn 0.3s ease',
+                  }}>
+                    {webRTC.subtitleText}
+                  </div>
+                )}
+              </div>
+            </div>
           )}
 
           {/* Patient Intake / Mass Casualty */}
@@ -914,7 +1036,7 @@ function AppInner(p: any) {
 
 
         {/* Triage Side Panel — always rendered to preserve chat history */}
-        <div className="triage-container" style={showTriage ? undefined : { width: 0, overflow: 'hidden', borderLeft: 'none' }}>
+        <div className="triage-container" style={showTriage ? undefined : { display: 'none' }}>
           <TriagePanel onClose={() => setShowTriage(false)} />
         </div>
 

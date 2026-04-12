@@ -16,7 +16,9 @@ Five subsystems:
                         credentials for instant device onboarding.
 """
 import io
+import os
 import json
+import shutil
 import asyncio
 import base64
 import urllib.parse
@@ -25,10 +27,11 @@ import logging
 from datetime import datetime
 from typing import Optional
 
-from fastapi import APIRouter, HTTPException, WebSocket, WebSocketDisconnect, Query, Request
+from fastapi import APIRouter, HTTPException, WebSocket, WebSocketDisconnect, Query, Request, UploadFile, File
 from pydantic import BaseModel
 
 from storage import DATA_DIR, read_json, write_json, roster_path, tasks_path, chat_path, thread_path
+import contextlib
 
 logger = logging.getLogger("triage.mesh")
 router = APIRouter(tags=["mesh"])
@@ -88,6 +91,8 @@ class ChatMessage(BaseModel):
     message: str = ""
     target_name: str = ""
     reply_to: str = ""  # ID of message being replied to
+    attachment_url: str = ""  # URL of attached file (image, etc.)
+    attachment_name: str = ""  # Original filename of attachment
 
 
 class ReactRequest(BaseModel):
@@ -98,7 +103,7 @@ class ReactRequest(BaseModel):
 # ── Helpers ────────────────────────────────────────────────────────────────────
 
 
-async def broadcast_mesh(message: dict, exclude: str = None):
+async def broadcast_mesh(message: dict, exclude: str | None = None):
     """Send a message to all connected WebSocket clients."""
     dead = []
     for cid, ws in list(MESH_WS.items()):
@@ -127,10 +132,8 @@ async def _translate_and_broadcast(entry: dict):
         for lang_code in NLLB_LANG_MAP:
             if lang_code == "en":
                 continue
-            try:
+            with contextlib.suppress(Exception):
                 results[lang_code] = _translate(text, "en", lang_code)
-            except Exception:
-                pass
         return results
 
     try:
@@ -337,6 +340,7 @@ async def mesh_emergency(req: EmergencyRequest):
     write_json(cp, messages)
     return {"status": "broadcast", "recipients": len(MESH_WS), "categories": req.categories}
 
+
 @router.post("/api/mesh/announcement")
 async def mesh_announcement(req: AnnouncementRequest):
     """Broadcast a general announcement to ALL connected devices."""
@@ -391,6 +395,7 @@ def clear_chat():
         cp.write_text("[]", encoding="utf-8")
     return {"status": "cleared"}
 
+
 @router.post("/api/mesh/chat", status_code=201)
 async def send_chat(msg: ChatMessage):
     """Send a chat message and broadcast it via WebSocket."""
@@ -405,6 +410,8 @@ async def send_chat(msg: ChatMessage):
         "reply_to": msg.reply_to or "",
         "reactions": {},
         "translations": {},
+        "attachment_url": msg.attachment_url or "",
+        "attachment_name": msg.attachment_name or "",
         "timestamp": datetime.now().isoformat(),
     }
     messages.append(entry)
@@ -436,6 +443,33 @@ async def send_chat(msg: ChatMessage):
     else:
         await broadcast_mesh(ws_msg)
     return entry
+
+
+@router.post("/api/mesh/chat/upload")
+async def upload_chat_attachment(file: UploadFile = File(...)):
+    """Upload a file attachment for chat messages (images, documents)."""
+    attach_dir = DATA_DIR / "chat-attachments"
+    attach_dir.mkdir(exist_ok=True)
+    # Unique filename to avoid collisions
+    ts = datetime.now().strftime("%Y%m%d-%H%M%S-%f")
+    safe_name = file.filename.replace(" ", "_") if file.filename else "file"
+    dest_name = f"{ts}-{safe_name}"
+    dest = attach_dir / dest_name
+    with open(dest, "wb") as f:
+        shutil.copyfileobj(file.file, f)
+    url = f"/api/mesh/chat/attachments/{dest_name}"
+    return {"url": url, "filename": file.filename or safe_name}
+
+
+@router.get("/api/mesh/chat/attachments/{filename}")
+def get_chat_attachment(filename: str):
+    """Serve a chat attachment file."""
+    from fastapi.responses import FileResponse as FR
+
+    file_path = DATA_DIR / "chat-attachments" / filename
+    if not file_path.exists():
+        raise HTTPException(status_code=404, detail="File not found")
+    return FR(str(file_path))
 
 
 @router.get("/api/mesh/chat/thread/{member_name}")
@@ -486,7 +520,8 @@ def mesh_qr(
     # Draw truth directly from the live network traffic
     frontend_port = request.url.port or request.scope.get("server", [None, 7778])[1]
     local_ip = _get_local_ip()
-    app_url = f"http://{local_ip}:{frontend_port}"
+    proto = "https" if os.environ.get("HALT_USE_SSL") else str(request.url.scheme)
+    app_url = f"{proto}://{local_ip}:{frontend_port}"
     params = []
     if name:
         params.append(f"name={urllib.parse.quote(name)}")
@@ -712,23 +747,15 @@ async def stale_checker():
 
         # Tier 1: Remove registry entries for clients that have already disconnected
         # (no active WebSocket) after a short grace period for reconnections.
-        disconnected = [
-            cid for cid, c in MESH_CLIENTS.items()
-            if cid not in MESH_WS and now - c["last_ping"] > 15
-        ]
+        disconnected = [cid for cid, c in MESH_CLIENTS.items() if cid not in MESH_WS and now - c["last_ping"] > 15]
         for cid in disconnected:
             MESH_CLIENTS.pop(cid, None)
 
         # Tier 2: Force-close WebSockets that haven't sent a heartbeat
-        stale_ws = [
-            cid for cid, c in MESH_CLIENTS.items()
-            if cid in MESH_WS and now - c["last_ping"] > CLIENT_TIMEOUT
-        ]
+        stale_ws = [cid for cid, c in MESH_CLIENTS.items() if cid in MESH_WS and now - c["last_ping"] > CLIENT_TIMEOUT]
         for cid in stale_ws:
             ws = MESH_WS.pop(cid, None)
             MESH_CLIENTS.pop(cid, None)
             if ws:
-                try:
+                with contextlib.suppress(Exception):
                     await ws.close(code=1000, reason="Heartbeat timeout")
-                except Exception:
-                    pass

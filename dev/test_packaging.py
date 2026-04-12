@@ -37,10 +37,7 @@ def main():
     stage_dir = bd.stage_app(version)
     stage_time = time.time() - t0
     stage_files = sum(1 for _, _, fs in os.walk(stage_dir) for f in fs)
-    stage_mb = sum(
-        os.path.getsize(os.path.join(r, f))
-        for r, _, fs in os.walk(stage_dir) for f in fs
-    ) / (1024 ** 2)
+    stage_mb = sum(os.path.getsize(os.path.join(r, f)) for r, _, fs in os.walk(stage_dir) for f in fs) / (1024**2)
     print(f"  [TIMING]  Stage: {stage_time:.1f}s ({stage_files:,} files, {stage_mb:.0f} MB)\n")
 
     # ── Electron Build ───────────────────────────────────────────────────
@@ -51,10 +48,7 @@ def main():
         print("  [FAIL]    Electron build failed!")
         sys.exit(1)
     build_files = sum(1 for _, _, fs in os.walk(build_dir) for f in fs)
-    build_mb = sum(
-        os.path.getsize(os.path.join(r, f))
-        for r, _, fs in os.walk(build_dir) for f in fs
-    ) / (1024 ** 2)
+    build_mb = sum(os.path.getsize(os.path.join(r, f)) for r, _, fs in os.walk(build_dir) for f in fs) / (1024**2)
     print(f"  [TIMING]  Electron build: {build_time:.1f}s ({build_files:,} files, {build_mb:.0f} MB)\n")
 
     # ── Zip ──────────────────────────────────────────────────────────────
@@ -80,12 +74,12 @@ def main():
     root = contents[0] if len(contents) == 1 and contents[0].is_dir() else test_dir
 
     checks = [
-        ("Electron exe",  "HALT - Medical Triage.exe"),
-        ("main.js",       "main.js"),
-        ("start.py",      "start.py"),
-        ("Python runtime","python.exe"),
-        ("viewer index",  "index.html"),
-        ("MANIFEST",      "MANIFEST.sha256"),
+        ("Electron exe", "HALT - Medical Triage.exe"),
+        ("main.js", "main.js"),
+        ("start.py", "start.py"),
+        ("Python runtime", "python.exe"),
+        ("viewer index", "index.html"),
+        ("MANIFEST", "MANIFEST.sha256"),
     ]
 
     all_ok = True
@@ -102,7 +96,7 @@ def main():
     # Models check
     model_files = list(root.rglob("*.gguf")) + list(root.rglob("*.onnx"))
     if model_files:
-        total_model_mb = sum(f.stat().st_size for f in model_files) / (1024 ** 2)
+        total_model_mb = sum(f.stat().st_size for f in model_files) / (1024**2)
         print(f"            ✓ Models: {len(model_files)} files ({total_model_mb:.0f} MB)")
     else:
         print("            ⚠ Models: none found (will auto-download on first launch)")

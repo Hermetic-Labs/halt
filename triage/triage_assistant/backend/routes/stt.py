@@ -23,7 +23,7 @@ def _get_whisper():
     if _whisper:
         return _whisper
     try:
-        from faster_whisper import WhisperModel
+        from faster_whisper import WhisperModel  # type: ignore
 
         model_id = str(WHISPER_DIR) if WHISPER_DIR.exists() else "base"
         logger.info(f"Loading Whisper from {model_id} …")

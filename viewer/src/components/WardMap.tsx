@@ -388,7 +388,7 @@ export function PatientPanel({ summary, wards, activeWardId, onClose, onUpdated 
     }, [record]);
 
     return (
-        <div className="ward-panel" style={{ position: 'fixed', top: 0, right: 0, bottom: 0, width: '100%', maxWidth: 800, background: 'var(--bg)', boxShadow: '-4px 0 24px rgba(0,0,0,0.5)', zIndex: 100, display: 'flex', flexDirection: 'column' }}>
+        <div className="ward-panel" style={{ position: 'fixed', top: 0, right: 0, bottom: 0, width: '100%', maxWidth: 800, background: 'var(--bg)', boxShadow: '-4px 0 24px rgba(0,0,0,0.5)', zIndex: 100, display: 'flex', flexDirection: 'column', animation: 'slideInRight 0.25s ease-out' }}>
             <div style={{ padding: '16px 16px 12px', borderBottom: '1px solid var(--border)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <div style={{ minWidth: 0, flex: 1 }}>
@@ -1341,7 +1341,7 @@ export default function WardMap() {
                 <>
                     {/* Backdrop — click to close patient details */}
                     <div
-                        style={{ position: 'fixed', inset: 0, zIndex: 99, cursor: 'default' }}
+                        style={{ position: 'fixed', inset: 0, zIndex: 99, cursor: 'default', background: 'rgba(0,0,0,0.35)', backdropFilter: 'blur(2px)', transition: 'opacity 0.2s' }}
                         onClick={() => setSelected(null)}
                     />
                     <PatientPanel

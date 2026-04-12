@@ -19,6 +19,7 @@ import logging
 import tempfile
 from pathlib import Path
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
+import contextlib
 
 logger = logging.getLogger("triage.translate_stream")
 router = APIRouter(tags=["translate-stream"])
@@ -66,38 +67,38 @@ async def translate_stream_ws(websocket: WebSocket):
             return
 
         # Send transcript immediately
-        await websocket.send_json({
-            "type": "transcript",
-            "text": transcript_text,
-            "source_lang": detected_lang,
-        })
+        await websocket.send_json(
+            {
+                "type": "transcript",
+                "text": transcript_text,
+                "source_lang": detected_lang,
+            }
+        )
 
         # 4. NLLB Translation: source -> English -> target
         await websocket.send_json({"type": "status", "status": "translating"})
 
         # Normalize to English first (if not already English)
         if detected_lang != "en":
-            english_text = await asyncio.to_thread(
-                _nllb_translate, transcript_text, detected_lang, "en"
-            )
+            english_text = await asyncio.to_thread(_nllb_translate, transcript_text, detected_lang, "en")
         else:
             english_text = transcript_text
 
         # Translate English -> target (if target isn't English)
         if target_lang != "en":
-            target_text = await asyncio.to_thread(
-                _nllb_translate, english_text, "en", target_lang
-            )
+            target_text = await asyncio.to_thread(_nllb_translate, english_text, "en", target_lang)
         else:
             target_text = english_text
 
         # Send translation immediately
-        await websocket.send_json({
-            "type": "translation",
-            "text": target_text,
-            "target_lang": target_lang,
-            "english": english_text,
-        })
+        await websocket.send_json(
+            {
+                "type": "translation",
+                "text": target_text,
+                "target_lang": target_lang,
+                "english": english_text,
+            }
+        )
 
         # 5. Kokoro TTS: generate audio for translated text
         await websocket.send_json({"type": "status", "status": "synthesizing"})
@@ -105,21 +106,21 @@ async def translate_stream_ws(websocket: WebSocket):
         chunks_sent = await _kokoro_stream(websocket, target_text, target_lang, speed)
 
         # 6. Done — client plays buffered audio
-        await websocket.send_json({
-            "type": "done",
-            "chunks": chunks_sent,
-        })
+        await websocket.send_json(
+            {
+                "type": "done",
+                "chunks": chunks_sent,
+            }
+        )
 
     except WebSocketDisconnect:
         logger.info("Translate stream client disconnected")
     except asyncio.TimeoutError:
         logger.warning("Translate stream timeout waiting for config")
     except Exception as e:
-        logger.error(f"Translate stream error: {e}")
-        try:
+        logger.exception("Translate stream error")
+        with contextlib.suppress(Exception):
             await websocket.send_json({"type": "error", "error": str(e)})
-        except Exception:
-            pass
 
 
 # ── Pipeline helpers ──────────────────────────────────────────────────────────
@@ -141,8 +142,7 @@ async def _whisper_transcribe(audio_data: bytes, source_lang: str) -> tuple[str,
     try:
         lang_arg = None if source_lang == "auto" else source_lang
         segments, info = whisper.transcribe(
-            tmp_path, language=lang_arg, beam_size=5,
-            vad_filter=True, word_timestamps=False
+            tmp_path, language=lang_arg, beam_size=5, vad_filter=True, word_timestamps=False
         )
         text = " ".join(seg.text.strip() for seg in segments)
         return text, info.language
@@ -153,14 +153,21 @@ async def _whisper_transcribe(audio_data: bytes, source_lang: str) -> tuple[str,
 def _nllb_translate(text: str, source: str, target: str) -> str:
     """Translate using NLLB. Reuses the existing translate module singleton."""
     from routes.translate import _translate
+
     return _translate(text, source, target)
 
 
 async def _kokoro_stream(websocket: WebSocket, text: str, lang: str, speed: float) -> int:
     """Stream Kokoro TTS chunks to WebSocket. Returns count of chunks sent."""
     from routes.tts import (
-        _get_kokoro, _pick_voice, _espeak_code, _preprocess_text,
-        _to_wav, _tts_lock, DEFAULT_VOICE, _voices,
+        _get_kokoro,
+        _pick_voice,
+        _espeak_code,
+        _preprocess_text,
+        _to_wav,
+        _tts_lock,
+        DEFAULT_VOICE,
+        _voices,
     )
 
     k = _get_kokoro()
@@ -176,13 +183,11 @@ async def _kokoro_stream(websocket: WebSocket, text: str, lang: str, speed: floa
 
     async with _tts_lock:
         try:
-            async for samples, _phonemes in k.create_stream(
-                processed_text, voice=voice, speed=speed, lang=espeak
-            ):
+            async for samples, _phonemes in k.create_stream(processed_text, voice=voice, speed=speed, lang=espeak):
                 wav = _to_wav(samples)
                 await websocket.send_bytes(wav)
                 chunks_sent += 1
         except Exception as e:
-            logger.error(f"Kokoro stream error: {e}")
+            logger.exception("Kokoro stream error")
 
     return chunks_sent

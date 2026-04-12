@@ -249,7 +249,7 @@ export default function TaskBoard() {
                         fetch('/api/translate', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ text: englishText, from_lang: 'en', to_lang: lang }),
+                            body: JSON.stringify({ text: englishText, source: 'en', target: lang }),
                         }).then(r => r.ok ? r.json() : null).catch(() => null)
                     )
                 );
@@ -343,7 +343,7 @@ export default function TaskBoard() {
                         fetch('/api/translate', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ text: englishText, from_lang: 'en', to_lang: lang }),
+                            body: JSON.stringify({ text: englishText, source: 'en', target: lang }),
                         }).then(r => r.ok ? r.json() : null).catch(() => null)
                     )
                 );

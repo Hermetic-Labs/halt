@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadCertificateFileName</key>
+            <string>halt-local-ca.pem</string>
+            <key>PayloadContent</key>
+            <data>LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUV4akNDQXk2Z0F3SUJBZ0lSQU56L1JOVmVjR1ZYRVRtSzNnYnAyN2N3RFFZSktvWklodmNOQVFFTEJRQXcKZXpFZU1Cd0dBMVVFQ2hNVmJXdGpaWEowSUdSbGRtVnNiM0J0Wlc1MElFTkJNU2d3SmdZRFZRUUxEQjlJUlZKTgpTVlJCUjBWY1FteGxjM05BYUdWeWJXbDBZV2RsSUNoRUlGUXBNUzh3TFFZRFZRUUREQ1p0YTJObGNuUWdTRVZTClRVbFVRVWRGWEVKc1pYTnpRR2hsY20xcGRHRm5aU0FvUkNCVUtUQWVGdzB5TmpBME1EY3hPREV3TVRKYUZ3MHoKTmpBME1EY3hPREV3TVRKYU1Ic3hIakFjQmdOVkJBb1RGVzFyWTJWeWRDQmtaWFpsYkc5d2JXVnVkQ0JEUVRFbwpNQ1lHQTFVRUN3d2ZTRVZTVFVsVVFVZEZYRUpzWlhOelFHaGxjbTFwZEdGblpTQW9SQ0JVS1RFdk1DMEdBMVVFCkF3d21iV3RqWlhKMElFaEZVazFKVkVGSFJWeENiR1Z6YzBCb1pYSnRhWFJoWjJVZ0tFUWdWQ2t3Z2dHaU1BMEcKQ1NxR1NJYjNEUUVCQVFVQUE0SUJqd0F3Z2dHS0FvSUJnUURJdENqL29KV2k2dGNnbjU1bTB5SVF0U2ZHTkF4Lwovd29hQk5WbXdtb2NVS2pYSG12RUxvTHB4LzZHRkt0U25WV2cyOGxxck5abHFXZUp1eTlxbXlyRVJsbHR0S25tCmp0TnZkSzg1dFo1K2NaWnRSSi9rY21MM0pEeTZNdzgrdU1PT1dPY3MxV2thWExDNEdYM1ZLT2U5Vm9wcldhYisKMENWZ0s3eEJERm03YVowUnhFUlVHVDlmOXdISXFoekNTUnhHdzZhRWIxblFhQnBXTE5obWk4S25EVlZiUVBTUgozeGpwSUsyQzZpb3lnamxmcHdoMUVoVXZpSUwxOE1rODRISnl6SjMvUDVsd0hRR3hwdlZaeGozcnZKR09kRjF3ClJNSGZGRktDWHhNaWFlUktmdkRWWTAyUWc4eklZakVWUVdvV2IreHduc0t5bDhWVExtVS9oTENxTmxFUUpHcm8KN0w0QmIrbnIydlNsV0pSU2s4VERaTUUxa0Y4UG5VOWplZlpJanc3aDQ4a09PQzNYcjh4WVBlcWRBMkNzdEpXWgp4eHpMdWlLaENnMDZiakpZakhpVFAvczJsMk5xZzAvd05PMEZ1ak8vdCt3ekFSWlVXZ0ZnUGI2TDZoYno5eHo4CldkZWlSN3dkTDJIUHFXZEF3MnF5V1NxTVpBQ0RrQ3grM0UwQ0F3RUFBYU5GTUVNd0RnWURWUjBQQVFIL0JBUUQKQWdJRU1CSUdBMVVkRXdFQi93UUlNQVlCQWY4Q0FRQXdIUVlEVlIwT0JCWUVGTUw2VG9mbFIva1VLNmtZNjIvNwpHYUNTbVVEaE1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQmdRQUhEM0lhQk9WZnpiQ2tJcUZldTRwQU1VcEdqcGE4CnRWOG9YSE52U0FSQUo5YU9KbXhjOFhIMWFvWjJ3K2xYb3BlOWdVZ2FESXpQQnl5K0ZjL1Exb0VYTXNJY0E2clYKNWNhN1dtek5hd2swWU9CcWNCOHc2MzZnOVdocjhhK0dpRzIwZEdici91QzdyWW1jOXJnc01XYUl5a2k4QkYwZAovSDhuZGJGeXEvWVkrWVBGYkRzZTA1SGxjV0J2a3MyQ1FHTzE0YzA2UEJDT1FNSEY4MGdWUE14MUUzSXUvMXNpCkIzMSthc2JqTmdJZW0vZjB1bUw1eDdiZGJQaXpoT2E3SVgrMUViM1F4TTBTdGVNdlJKQXp5U0ZTSGJmbTBiVVcKdzdOZGltMlpZWkQreUpNeDd5NWY1SE1GTkJmTFRObmZPaEp5eC9YWEhORG5JbVVPdWNHdms0ODRQb3dscERuaApaMnRndS9sOUc3TDI0dXIzZ3E2dmUrSWdBdUMybVozZ2xFdWVhclBKaFVmc09vemJzMk5MYjBVWW5NUTlDNzVQCndseGkwdlVLT09nNXYvb1AxNjEyRHJFb3paa3NFQ2UxQ2dRR1NFRm1ZOTRTdk9OUitHK0phUHpGdzhSenE1YnIKNHhPUHlMWTdIdyswSXVaMm5VVWxndXl3NmFkSFJxZmd1bWc9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K</data>
+            <key>PayloadDescription</key>
+            <string>Installs the HALT local network certificate so your device can make secure video calls, use the camera, and access the microphone over your local WiFi.</string>
+            <key>PayloadDisplayName</key>
+            <string>HALT Medical - Local Network Security</string>
+            <key>PayloadIdentifier</key>
+            <string>com.hermeticlabs.halt.localca</string>
+            <key>PayloadType</key>
+            <string>com.apple.security.root</string>
+            <key>PayloadUUID</key>
+            <string>A1B2C3D4-E5F6-7890-ABCD-EF1234567890</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+        </dict>
+    </array>
+    <key>PayloadDescription</key>
+    <string>Required for secure video calls and camera/microphone access in HALT Medical Triage. This certificate verifies your device is communicating with the real HALT server on your local network.</string>
+    <key>PayloadDisplayName</key>
+    <string>HALT Medical - Secure Video</string>
+    <key>PayloadIdentifier</key>
+    <string>com.hermeticlabs.halt.profile</string>
+    <key>PayloadOrganization</key>
+    <string>Hermetic Labs</string>
+    <key>PayloadRemovalDisallowed</key>
+    <false/>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>F1E2D3C4-B5A6-7890-FEDC-BA0987654321</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+</dict>
+</plist>

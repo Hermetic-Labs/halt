@@ -30,13 +30,21 @@ BATCH_SIZE = 25  # How many texts per API call (keep small for NLLB memory)
 
 # Keys that are intentionally the same in all languages (codes, abbreviations, etc.)
 SKIP_RETRANSLATE = {
-    "vitals.hr", "vitals.sbp", "vitals.rr", "vitals.spo2", "vitals.gcs",
-    "unit.kg", "unit.c", "unit.f", "network.ssid", "network.emt",
+    "vitals.hr",
+    "vitals.sbp",
+    "vitals.rr",
+    "vitals.spo2",
+    "vitals.gcs",
+    "unit.kg",
+    "unit.c",
+    "unit.f",
+    "network.ssid",
+    "network.emt",
 }
 
 
 def load_json(path: Path) -> dict:
-    with open(path, "r", encoding="utf-8") as f:
+    with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -74,7 +82,8 @@ def sync_locale(lang: str, master: dict, port: int, dry_run: bool = False) -> in
 
     # Find untranslated keys (value matches English = fallback from a failed run)
     untranslated_keys = [
-        k for k in master
+        k
+        for k in master
         if k in locale
         and locale[k] == master[k]  # still English
         and k not in SKIP_RETRANSLATE
@@ -98,7 +107,7 @@ def sync_locale(lang: str, master: dict, port: int, dry_run: bool = False) -> in
         for k in all_keys[:10]:
             tag = "[NEW]" if k in missing_keys else "[RETRANSLATE]"
             val = master[k]
-            print(f"      {tag} {k}: \"{val[:60]}...\"" if len(val) > 60 else f"      {tag} {k}: \"{val}\"")
+            print(f'      {tag} {k}: "{val[:60]}..."' if len(val) > 60 else f'      {tag} {k}: "{val}"')
         if len(all_keys) > 10:
             print(f"      ... and {len(all_keys) - 10} more")
         return len(all_keys)
@@ -109,7 +118,7 @@ def sync_locale(lang: str, master: dict, port: int, dry_run: bool = False) -> in
     api_ok = True
 
     for i in range(0, len(english_values), BATCH_SIZE):
-        batch = english_values[i:i + BATCH_SIZE]
+        batch = english_values[i : i + BATCH_SIZE]
         batch_num = i // BATCH_SIZE + 1
         total_batches = (len(english_values) + BATCH_SIZE - 1) // BATCH_SIZE
         print(f"    translating batch {batch_num}/{total_batches} ({len(batch)} strings)...")
@@ -159,7 +168,9 @@ def main():
                 if not status.get("model_downloaded"):
                     print("[!] NLLB model not downloaded. Run scripts/download_nllb.py first.")
                     sys.exit(1)
-                print(f"NLLB: {'ready' if status.get('available') else 'loading...'} ({status.get('languages', 0)} languages)")
+                print(
+                    f"NLLB: {'ready' if status.get('available') else 'loading...'} ({status.get('languages', 0)} languages)"
+                )
         except urllib.error.URLError:
             print(f"ERROR: Cannot reach API at port {args.port}. Is the server running?")
             sys.exit(1)
@@ -168,10 +179,7 @@ def main():
     if args.lang:
         langs = args.lang
     else:
-        langs = sorted([
-            p.stem for p in LOCALES_DIR.glob("*.json")
-            if p.stem != "en"
-        ])
+        langs = sorted([p.stem for p in LOCALES_DIR.glob("*.json") if p.stem != "en"])
 
     print(f"Syncing {len(langs)} locale(s)...\n")
 
@@ -179,7 +187,9 @@ def main():
     for lang in langs:
         total_added += sync_locale(lang, master, args.port, args.dry_run)
 
-    print(f"\n{'[DRY RUN] ' if args.dry_run else ''}Done. {total_added} total keys {'would be ' if args.dry_run else ''}synced across {len(langs)} locales.")
+    print(
+        f"\n{'[DRY RUN] ' if args.dry_run else ''}Done. {total_added} total keys {'would be ' if args.dry_run else ''}synced across {len(langs)} locales."
+    )
 
 
 if __name__ == "__main__":

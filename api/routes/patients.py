@@ -17,6 +17,7 @@ Five major sections:
 All data lives as JSON files on disk (via storage.py), encrypted at rest
 when the cryptography package is available.
 """
+import os
 import shutil
 from datetime import datetime
 from pathlib import Path
@@ -130,10 +131,12 @@ def public_lookup_qr(request: Request):
 
     port = request.url.port or request.scope.get("server", [None, 7778])[1]
     local_ip = _get_local_ip()
-    lookup_url = f"http://{local_ip}:{port}/lookup"
+    proto = "https" if os.environ.get("HALT_USE_SSL") else "http"
+    lookup_url = f"{proto}://{local_ip}:{port}/lookup"
 
     try:
         import qrcode as qr_lib
+
         qr = qr_lib.QRCode(version=1, box_size=10, border=4)
         qr.add_data(lookup_url)
         qr.make(fit=True)
@@ -163,10 +166,12 @@ def discharge_qr(patient_id: str, request: Request, lang: str = "en"):
 
     port = request.url.port or request.scope.get("server", [None, 7778])[1]
     local_ip = _get_local_ip()
-    export_url = f"http://{local_ip}:{port}/api/patients/{patient_id}/export?lang={lang}"
+    proto = "https" if os.environ.get("HALT_USE_SSL") else "http"
+    export_url = f"{proto}://{local_ip}:{port}/lookup?id={patient_id}&lang={lang}"
 
     try:
         import qrcode as qr_lib
+
         qr = qr_lib.QRCode(version=1, box_size=10, border=4)
         qr.add_data(export_url)
         qr.make(fit=True)
@@ -490,7 +495,7 @@ def patient_pdf(patient_id: str):
     for xr in xrefs:
         pdf_parts.append(f"{xr:010d} 00000 n \n")
     pdf_parts.append(f"trailer\n<< /Size {len(objects) + 1} /Root 1 0 R >>\n" f"startxref\n{xref_start}\n%%EOF\n")
-    pdf_bytes = "".join(pdf_parts).encode("latin-1")
+    pdf_bytes = "".join(pdf_parts).encode("latin-1", errors="replace")
 
     return Response(
         content=pdf_bytes,

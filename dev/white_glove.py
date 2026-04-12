@@ -44,20 +44,42 @@ REPO_ROOT = SCRIPT_DIR.parent
 
 # ── Excluded directories (third-party, build artifacts, caches) ──────────────
 EXCLUDED_DIRS = {
-    "runtime", "models", "HALT-v1.0.01", "node_modules", "__pycache__",
-    ".git", ".github", ".vscode", ".idea", ".gemini", "builds",
-    "dist", "__fresh_test__", "site",
+    "runtime",
+    "models",
+    "HALT-v1.0.01",
+    "node_modules",
+    "__pycache__",
+    ".git",
+    ".github",
+    ".vscode",
+    ".idea",
+    ".gemini",
+    "builds",
+    "dist",
+    "__fresh_test__",
+    "site",
     # Triage generated medical data — not source code
-    "medications", "procedures", "conditions", "supplies",
-    "special_populations", "symptoms", "assessments", "interventions",
-    "equipment", "protocols", "flowcharts", "documentation_templates",
-    "anatomy_reference", "field_reference",
+    "medications",
+    "procedures",
+    "conditions",
+    "supplies",
+    "special_populations",
+    "symptoms",
+    "assessments",
+    "interventions",
+    "equipment",
+    "protocols",
+    "flowcharts",
+    "documentation_templates",
+    "anatomy_reference",
+    "field_reference",
 }
 
 
 # ═════════════════════════════════════════════════════════════════════════════
 #  UTILITIES
 # ═════════════════════════════════════════════════════════════════════════════
+
 
 def banner():
     print()
@@ -130,6 +152,7 @@ def issue_line(filepath, message):
 #  PASS 1: PYTHON — Ruff (ALL rules)
 # ═════════════════════════════════════════════════════════════════════════════
 
+
 def lint_python(fix=False, strict=False):
     """Run Ruff lint. Default = practical rules only. --strict = ALL rules."""
     files = find_files([".py"])
@@ -162,15 +185,21 @@ def lint_python(fix=False, strict=False):
         # STRICT: every rule, minimal ignores (only true conflicts)
         select = "ALL"
         ignore_rules = [
-            "D100", "D101", "D102", "D103", "D104", "D105", "D107",  # Missing docstrings
-            "D203",    # Conflicts with D211
-            "D213",    # Conflicts with D212
+            "D100",
+            "D101",
+            "D102",
+            "D103",
+            "D104",
+            "D105",
+            "D107",  # Missing docstrings
+            "D203",  # Conflicts with D211
+            "D213",  # Conflicts with D212
             "INP001",  # Implicit namespace package
-            "T201",    # print() — intentional in CLI scripts
-            "ANN",     # Type annotations — too strict for fast-moving codebase
+            "T201",  # print() — intentional in CLI scripts
+            "ANN",  # Type annotations — too strict for fast-moving codebase
             "ERA001",  # Commented-out code
             "FIX002",  # TODO comments
-            "TD",      # TODO format
+            "TD",  # TODO format
             "COM812",  # Trailing comma — conflicts with formatter
             "ISC001",  # String concat — conflicts with formatter
         ]
@@ -196,38 +225,46 @@ def lint_python(fix=False, strict=False):
         # FBT = boolean trap (boolean positional args)
         # ARG = unused arguments
         # PTH = pathlib (only in strict — os.path is fine)
-        select = ",".join([
-            "F",      # Pyflakes — unused imports, undefined names (THE essentials)
-            "E",      # pycodestyle errors — real formatting problems
-            "W",      # pycodestyle warnings — whitespace in blank lines
-            "C90",    # McCabe complexity — function too complex
-            "B",      # Bugbear — likely bugs and design problems
-            "RUF",    # Ruff-specific — ambiguous unicode, asyncio task bugs
-            "PERF",   # Performance — unnecessary list copies, etc.
-            "ASYNC",  # Async — blocking calls in async functions
-            "PLE",    # Pylint errors — actual code errors
-            "PLW",    # Pylint warnings — global, unreachable code
-            "PLR",    # Pylint refactor — too complex, too many branches
-            "SIM",    # Simplify — unnecessarily complex patterns
-            "TRY",    # Exception handling — bare except, wrong logging
-            "UP",     # Pyupgrade — deprecated syntax
-        ])
+        select = ",".join(
+            [
+                "F",  # Pyflakes — unused imports, undefined names (THE essentials)
+                "E",  # pycodestyle errors — real formatting problems
+                "W",  # pycodestyle warnings — whitespace in blank lines
+                "C90",  # McCabe complexity — function too complex
+                "B",  # Bugbear — likely bugs and design problems
+                "RUF",  # Ruff-specific — ambiguous unicode, asyncio task bugs
+                "PERF",  # Performance — unnecessary list copies, etc.
+                "ASYNC",  # Async — blocking calls in async functions
+                "PLE",  # Pylint errors — actual code errors
+                "PLW",  # Pylint warnings — global, unreachable code
+                "PLR",  # Pylint refactor — too complex, too many branches
+                "SIM",  # Simplify — unnecessarily complex patterns
+                "TRY",  # Exception handling — bare except, wrong logging
+                "UP",  # Pyupgrade — deprecated syntax
+            ]
+        )
         ignore_rules = [
-            "E501",    # Line too long — formatter handles this
+            "E501",  # Line too long — formatter handles this
             "TRY003",  # Long exception messages — fine for us
-            "PLR2004", # Magic values — too noisy, we know our HTTP codes
-            "PLR0913", # Too many function arguments — FastAPI routes need them
-            "UP007",   # X | Y union syntax — Optional[X] is still fine
+            "PLR2004",  # Magic values — too noisy, we know our HTTP codes
+            "PLR0913",  # Too many function arguments — FastAPI routes need them
+            "UP007",  # X | Y union syntax — Optional[X] is still fine
         ]
 
     # ── Lint check ────────────────────────────────────────────────────────
     cmd = [
-        "ruff", "check",
-        "--select", select,
-        "--target-version", "py311",
-        "--line-length", "120",
-        "--ignore", ",".join(ignore_rules),
-        "--output-format", "text",
+        "ruff",
+        "check",
+        "--select",
+        select,
+        "--target-version",
+        "py311",
+        "--line-length",
+        "120",
+        "--ignore",
+        ",".join(ignore_rules),
+        "--output-format",
+        "text",
     ]
 
     if fix:
@@ -249,9 +286,13 @@ def lint_python(fix=False, strict=False):
     print("    ── Format check (ruff format --check) ──")
 
     fmt_cmd = [
-        "ruff", "format", "--check",
-        "--target-version", "py311",
-        "--line-length", "120",
+        "ruff",
+        "format",
+        "--check",
+        "--target-version",
+        "py311",
+        "--line-length",
+        "120",
     ] + file_args
 
     fmt_code, fmt_out, fmt_err = run_tool(fmt_cmd, label="ruff format")
@@ -278,6 +319,7 @@ def lint_python(fix=False, strict=False):
 # ═════════════════════════════════════════════════════════════════════════════
 #  PASS 2: JAVASCRIPT — ESLint (strict)
 # ═════════════════════════════════════════════════════════════════════════════
+
 
 def lint_javascript():
     """Run ESLint with strict config via npx. No permanent install."""
@@ -394,6 +436,7 @@ export default [
 #  PASS 3: HTML — html-validate (strict)
 # ═════════════════════════════════════════════════════════════════════════════
 
+
 def lint_html():
     """Run html-validate via npx for strict HTML checking."""
     files = find_files([".html"])
@@ -435,6 +478,7 @@ def lint_html():
 # ═════════════════════════════════════════════════════════════════════════════
 #  PASS 4: SHELL — ShellCheck (severity=style)
 # ═════════════════════════════════════════════════════════════════════════════
+
 
 def lint_shell():
     """Run ShellCheck at maximum strictness (style level)."""
@@ -515,6 +559,7 @@ def _basic_shell_check(files):
 #  PASS 5: POWERSHELL — Syntax Parse Check
 # ═════════════════════════════════════════════════════════════════════════════
 
+
 def lint_powershell():
     """Parse-check PowerShell scripts and run PSScriptAnalyzer if available."""
     files = find_files([".ps1"])
@@ -528,8 +573,10 @@ def lint_powershell():
 
     # Try PSScriptAnalyzer first (the real linter)
     check_cmd = [
-        "powershell", "-NoProfile", "-Command",
-        "if (Get-Module -ListAvailable -Name PSScriptAnalyzer) { 'yes' } else { 'no' }"
+        "powershell",
+        "-NoProfile",
+        "-Command",
+        "if (Get-Module -ListAvailable -Name PSScriptAnalyzer) { 'yes' } else { 'no' }",
     ]
     code, out, _ = run_tool(check_cmd, label="PSScriptAnalyzer check")
     has_analyzer = "yes" in out.lower() if code == 0 else False
@@ -539,9 +586,11 @@ def lint_powershell():
         for fpath in files:
             rel = rel_path(fpath)
             cmd = [
-                "powershell", "-NoProfile", "-Command",
+                "powershell",
+                "-NoProfile",
+                "-Command",
                 f"Invoke-ScriptAnalyzer -Path '{fpath}' -Severity @('Error','Warning','Information') | "
-                f"ForEach-Object {{ '{0}:{{1}}:{{2}}: [{{3}}] {{4}}' -f $_.ScriptName, $_.Line, $_.Column, $_.Severity, $_.Message }}"
+                f"ForEach-Object {{ '{0}:{{1}}:{{2}}: [{{3}}] {{4}}' -f $_.ScriptName, $_.Line, $_.Column, $_.Severity, $_.Message }}",
             ]
             code, out, err = run_tool(cmd, label="PSScriptAnalyzer")
             combined = (out + err).strip()
@@ -558,9 +607,11 @@ def lint_powershell():
         for fpath in files:
             rel = rel_path(fpath)
             cmd = [
-                "powershell", "-NoProfile", "-Command",
+                "powershell",
+                "-NoProfile",
+                "-Command",
                 f"$null = [System.Management.Automation.Language.Parser]::ParseFile('{fpath}', [ref]$null, [ref]$errors); "
-                f"$errors | ForEach-Object {{ $_.Message }}"
+                f"$errors | ForEach-Object {{ $_.Message }}",
             ]
             code, out, err = run_tool(cmd, label="PS syntax check")
             combined = (out + err).strip()
@@ -580,6 +631,7 @@ def lint_powershell():
 # ═════════════════════════════════════════════════════════════════════════════
 #  PASS 6: MARKDOWN — markdownlint-cli2 (via npx)
 # ═════════════════════════════════════════════════════════════════════════════
+
 
 def lint_markdown():
     """Run markdownlint-cli2 via npx for strict Markdown checking."""
@@ -637,6 +689,7 @@ def lint_markdown():
 #  PASS 7: JSON / YAML — Syntax Validation
 # ═════════════════════════════════════════════════════════════════════════════
 
+
 def lint_data():
     """Validate JSON and YAML files for syntax correctness."""
     json_files = find_files([".json"])
@@ -668,6 +721,7 @@ def lint_data():
         rel = rel_path(fpath)
         try:
             import yaml
+
             content = fpath.read_text(encoding="utf-8")
             yaml.safe_load(content)
         except ImportError:
@@ -693,6 +747,7 @@ def lint_data():
 # ═════════════════════════════════════════════════════════════════════════════
 #  BONUS: TRAILING WHITESPACE + LINE ENDINGS + BOM
 # ═════════════════════════════════════════════════════════════════════════════
+
 
 def lint_hygiene():
     """Check for trailing whitespace, mixed line endings, BOM, tabs in Python."""
@@ -773,6 +828,7 @@ def lint_hygiene():
 #  SCOREBOARD
 # ═════════════════════════════════════════════════════════════════════════════
 
+
 def scoreboard(results):
     """Print the final scoreboard."""
     total = sum(v for v in results.values() if v > 0)
@@ -818,6 +874,7 @@ def scoreboard(results):
 #  MAIN
 # ═════════════════════════════════════════════════════════════════════════════
 
+
 def main():
     parser = argparse.ArgumentParser(
         description="HALT — White Glove Lint Pass (maximum strictness)",
@@ -836,10 +893,18 @@ def main():
     args = parser.parse_args()
 
     # If no specific pass selected, run all
-    run_all = not any([
-        args.python, args.js, args.html, args.shell,
-        args.powershell, args.markdown, args.data, args.hygiene,
-    ])
+    run_all = not any(
+        [
+            args.python,
+            args.js,
+            args.html,
+            args.shell,
+            args.powershell,
+            args.markdown,
+            args.data,
+            args.hygiene,
+        ]
+    )
 
     banner()
     start = time.time()

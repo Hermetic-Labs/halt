@@ -31,8 +31,33 @@ export default function PublicLookup() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
+    // Discharge QR: if ?id=PAT-xxx is present, show that patient's export directly
+    const [directId] = useState(() => new URLSearchParams(window.location.search).get('id'));
+    const [directHtml, setDirectHtml] = useState<string | null>(null);
+    const [directLoading, setDirectLoading] = useState(!!directId);
+
+    useEffect(() => {
+        if (!directId) return;
+        let cancelled = false;
+        const fetchExport = async () => {
+            try {
+                const res = await fetch(`/api/patients/${directId}/export?lang=${lang}`);
+                if (!res.ok) throw new Error('Patient not found');
+                const html = await res.text();
+                if (!cancelled) setDirectHtml(html);
+            } catch (e) {
+                if (!cancelled) setError(e instanceof Error ? e.message : 'Failed to load record');
+            } finally {
+                if (!cancelled) setDirectLoading(false);
+            }
+        };
+        fetchExport();
+        return () => { cancelled = true; };
+    }, [directId, lang]);
+
     // Fetch all opted-in patients on mount
     useEffect(() => {
+        if (directId) { setLoading(false); return; } // skip search fetch when viewing direct export
         let cancelled = false;
         const fetchAll = async () => {
             setLoading(true);
@@ -52,7 +77,7 @@ export default function PublicLookup() {
         // Refresh every 15 seconds for live updates
         const interval = setInterval(fetchAll, 15000);
         return () => { cancelled = true; clearInterval(interval); };
-    }, []);
+    }, [directId]);
 
     // Client-side live filtering
     const results = useMemo(() => {
@@ -62,6 +87,72 @@ export default function PublicLookup() {
     }, [allPatients, query]);
 
 
+    // Direct patient record view (discharge QR flow)
+    if (directId) {
+        return (
+            <div style={{
+                minHeight: '100vh',
+                background: '#0d1117',
+                color: '#e6edf3',
+                fontFamily: 'system-ui, -apple-system, sans-serif',
+                padding: '20px',
+            }}>
+                <div style={{ maxWidth: 700, margin: '0 auto' }}>
+                    {/* Language selector */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+                        <div style={{ fontSize: 14, color: '#8b949e' }}>
+                            🏥 {t('lookup.your_record', 'Your Medical Record')}
+                        </div>
+                        <select
+                            value={lang}
+                            onChange={e => setLang(e.target.value)}
+                            style={{
+                                background: '#161b22', color: '#8b949e',
+                                border: '1px solid #30363d', borderRadius: 6,
+                                padding: '5px 10px', fontSize: 12, cursor: 'pointer', outline: 'none',
+                            }}
+                        >
+                            {LANGS.map(([code, name]) => (
+                                <option key={code} value={code}>{name}</option>
+                            ))}
+                        </select>
+                    </div>
+
+                    {error && (
+                        <div style={{
+                            background: '#e74c3c22', border: '1px solid #e74c3c44',
+                            borderRadius: 8, padding: '14px 18px', color: '#e74c3c',
+                            marginBottom: 20, textAlign: 'center', fontSize: 13,
+                        }}>
+                            {error}
+                        </div>
+                    )}
+
+                    {directLoading ? (
+                        <div style={{ textAlign: 'center', padding: '36px 20px', color: '#484f58' }}>
+                            <div style={{
+                                width: 32, height: 32, border: '3px solid #21262d',
+                                borderTopColor: '#3fb950', borderRadius: '50%',
+                                animation: 'spin 0.8s linear infinite',
+                                margin: '0 auto 14px',
+                            }} />
+                            <p style={{ fontSize: 14 }}>{t('lookup.loading_record', 'Loading your record...')}</p>
+                            <style>{`@keyframes spin { to { transform: rotate(360deg) } }`}</style>
+                        </div>
+                    ) : directHtml ? (
+                        <iframe
+                            srcDoc={directHtml}
+                            title="Patient Record"
+                            style={{
+                                width: '100%', minHeight: '80vh', border: '1px solid #30363d',
+                                borderRadius: 8, background: '#fff',
+                            }}
+                        />
+                    ) : null}
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div style={{

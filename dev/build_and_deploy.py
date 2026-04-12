@@ -106,17 +106,17 @@ def stage_app(version):
         if not (viewer_dir / "node_modules").exists():
             print("  [BUILD]   Installing frontend dependencies (npm install)...")
             result = subprocess.run(
-                [npm_cmd, "install"], cwd=viewer_dir,
-                capture_output=True, text=True,
+                [npm_cmd, "install"],
+                cwd=viewer_dir,
+                capture_output=True,
+                text=True,
             )
             if result.returncode != 0:
                 print(f"            [ERROR] npm install failed:\n{result.stderr}")
                 sys.exit(1)
 
         print("  [BUILD]   Building frontend (npm run build)...")
-        result = subprocess.run(
-            [npm_cmd, "run", "build"], cwd=viewer_dir
-        )
+        result = subprocess.run([npm_cmd, "run", "build"], cwd=viewer_dir)
         if result.returncode != 0:
             print("            [ERROR] Frontend build failed (see output above)")
             sys.exit(1)
@@ -128,13 +128,11 @@ def stage_app(version):
     # NOTE: viewer/ — only ship the compiled dist/, NOT src/node_modules/configs.
     # Full source lives in git; only the production build goes into the Electron package.
     # triage/ has ~44K raw ICD-10 source files already compiled
-    # into viewer/dist/data/conditions-index.json. We only ship the backend
-    # code (triage_assistant/) — NOT the raw source data.
+    # into viewer/dist/data/conditions-index.json. We don't ship this raw source data.
     copies = [
         (REPO_ROOT / "api", stage_dir / "api"),
         (REPO_ROOT / "electron", stage_dir / "electron"),
         (REPO_ROOT / "viewer" / "dist", stage_dir / "viewer" / "dist"),
-        (REPO_ROOT / "triage" / "triage_assistant", stage_dir / "triage" / "triage_assistant"),
         (REPO_ROOT / "models", stage_dir / "models"),
         (REPO_ROOT / "runtime", stage_dir / "runtime"),
     ]
@@ -155,52 +153,29 @@ def stage_app(version):
     return stage_dir
 
 
-def build_electron(version, dev_mode=False):
-    """Run electron-builder to produce the Windows distribution."""
-    mode_label = "portable (--dev)" if dev_mode else "installer"
-    print(f"  [BUILD]   Running electron-builder (Windows, {mode_label})...")
+def build_tauri(version):
+    """Run Tauri builder to produce the native Windows MSIX/NSIS distributions."""
+    print("  [BUILD]   Running Tauri (Windows Native)...")
 
-    # Sync icon from repo assets into electron-builder's assets dir.
-    # package.json (win + nsis sections) references "assets/Icon.ico" — write
-    # directly to that name so there is exactly one source of truth.
-    repo_logo = REPO_ROOT / "assets" / "logo.png"
-    builder_assets = ELECTRON_DIR / "assets"
-    builder_assets.mkdir(exist_ok=True)
-    if repo_logo.exists():
-        # NSIS requires .ico — auto-convert if Pillow is available
-        ico_path = builder_assets / "Icon.ico"
-        if not ico_path.exists():
-            try:
-                from PIL import Image
-                img = Image.open(str(repo_logo)).convert("RGBA")
-                img = img.resize((256, 256), Image.LANCZOS)
-                img.save(str(ico_path), format="ICO",
-                         sizes=[(256, 256), (48, 48), (32, 32), (16, 16)])
-                print("            [OK] Generated Icon.ico from logo.png")
-            except Exception as e:
-                print(f"            [WARN] Could not generate .ico: {e}")
+    viewer_dir = REPO_ROOT / "viewer"
+    npm_cmd = "npm.cmd" if sys.platform == "win32" else "npm"
 
     # Ensure node_modules exist
-    if not (ELECTRON_DIR / "node_modules").exists():
+    if not (viewer_dir / "node_modules").exists():
         print("            Installing npm dependencies...")
-        subprocess.run(["npm", "install"], cwd=str(ELECTRON_DIR), check=True, shell=True)
+        subprocess.run([npm_cmd, "install"], cwd=str(viewer_dir), check=True, shell=sys.platform == "win32")
 
-    # Run the build
-    # --dev uses --dir (portable folder only, skips NSIS installer — much faster)
-    if dev_mode:
-        build_cmd = ["npx", "electron-builder", "--win", "--dir"]
-    else:
-        build_cmd = ["npm", "run", "build:win"]
+    # Sync icons to native framework
+    repo_logo = REPO_ROOT / "assets" / "logo.png"
+    if repo_logo.exists():
+        print("  [ICONS]   Regenerating Tauri asset pool from D:\\Halt\\assets\\logo.png")
+        subprocess.run([npm_cmd, "run", "tauri", "icon", str(repo_logo)], cwd=str(viewer_dir), shell=sys.platform == "win32")
 
     # ── Azure Trusted Signing (Authenticode — removes SmartScreen warning) ────
-    # Set these env vars to enable signing. All five must be present.
-    # Identity validation + Certificate Profile must be complete in Azure first.
     _signing_vars = [
         "AZURE_TENANT_ID",
         "AZURE_CLIENT_ID",
         "AZURE_CLIENT_SECRET",
-        "AZURE_ENDPOINT",          # https://eus.codesigning.azure.net
-        "AZURE_CERT_PROFILE",      # name of the Certificate Profile in Azure
     ]
     _signing_env = {k: os.environ[k] for k in _signing_vars if k in os.environ}
 
@@ -208,32 +183,37 @@ def build_electron(version, dev_mode=False):
     if len(_signing_env) == len(_signing_vars):
         build_env.update(_signing_env)
         print("  [SIGN]    Azure Trusted Signing credentials detected — build will be signed")
+        print("            Account: haltsigning | Profile: HaltSigningProfile")
     else:
         _missing = [k for k in _signing_vars if k not in os.environ]
         print(f"  [SIGN]    Skipping — missing env vars: {', '.join(_missing)}")
-        print("            Set all five AZURE_* vars to enable Authenticode signing")
+        print("            Set AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET to sign")
+
+    # ── CARGO TARGET DIR BYPASS (OS Error 4551 Mitigation) ────
+    # Cargo allows us to offload the execution of unverified binaries to a different drive.
+    # We will map the target output strictly to the User's C-Drive profile.
+    c_drive_target = Path(os.path.expanduser("~/Halt-Tauri-Target"))
+    build_env["CARGO_TARGET_DIR"] = str(c_drive_target)
+    print(f"  [RUST]    Offloading compile target to: {c_drive_target}")
 
     result = subprocess.run(
-        build_cmd,
-        cwd=str(ELECTRON_DIR),
-        shell=True,
+        [npm_cmd, "run", "tauri", "build", "--", "--bundles", "nsis"],
+        cwd=str(viewer_dir),
+        shell=sys.platform == "win32",
         env=build_env,
     )
 
-
     if result.returncode != 0:
-        print(f"  [ERROR]   electron-builder failed (exit {result.returncode})")
+        print(f"  [ERROR]   Tauri build failed (exit {result.returncode})")
         return None
 
-    # Find the win-unpacked output
-    dist_dir = ELECTRON_DIR / "dist"
-    win_unpacked = dist_dir / "win-unpacked"
-
-    if win_unpacked.exists():
-        print(f"  [OK]      Build complete: {win_unpacked}")
-        return win_unpacked
+    # Find the output
+    bundle_dir = c_drive_target / "release" / "bundle"
+    if bundle_dir.exists():
+        print(f"  [OK]      Build complete: {bundle_dir}")
+        return bundle_dir
     else:
-        print(f"  [ERROR]   win-unpacked not found in {dist_dir}")
+        print(f"  [ERROR]   bundle out not found in {bundle_dir}")
         return None
 
 
@@ -350,17 +330,17 @@ def stage_macos(version):
         if not (viewer_dir / "node_modules").exists():
             print("  [BUILD]   Installing frontend dependencies (npm install)...")
             result = subprocess.run(
-                [npm_cmd, "install"], cwd=viewer_dir,
-                capture_output=True, text=True,
+                [npm_cmd, "install"],
+                cwd=viewer_dir,
+                capture_output=True,
+                text=True,
             )
             if result.returncode != 0:
                 print(f"            [ERROR] npm install failed:\n{result.stderr}")
                 sys.exit(1)
 
         print("  [BUILD]   Building frontend (npm run build)...")
-        result = subprocess.run(
-            [npm_cmd, "run", "build"], cwd=viewer_dir
-        )
+        result = subprocess.run([npm_cmd, "run", "build"], cwd=viewer_dir)
         if result.returncode != 0:
             print("            [ERROR] Frontend build failed (see output above)")
             sys.exit(1)
@@ -371,12 +351,10 @@ def stage_macos(version):
     # Copy directories into stage.
     # NOTE: viewer/ — only ship the compiled dist/, NOT src/node_modules/configs.
     # triage/ has ~44K raw ICD-10 source files already compiled
-    # into viewer/dist/data/conditions-index.json. We only ship the backend
-    # code (triage_assistant/) — NOT the raw source data.
+    # into viewer/dist/data/conditions-index.json. We don't ship this raw source data.
     copies = [
         (REPO_ROOT / "api", stage_dir / "api"),
         (REPO_ROOT / "viewer" / "dist", stage_dir / "viewer" / "dist"),
-        (REPO_ROOT / "triage" / "triage_assistant", stage_dir / "triage" / "triage_assistant"),
         (REPO_ROOT / "models", stage_dir / "models"),
         (REPO_ROOT / "runtime", stage_dir / "runtime"),
         (REPO_ROOT / "assets", stage_dir / "assets"),
@@ -434,17 +412,47 @@ def zip_distribution(source_dir, version, platform_name="Windows"):
     # minutes on multi-GB files with near-zero size reduction.
     STORED_EXTENSIONS = {
         # AI models
-        ".gguf", ".onnx", ".bin", ".model", ".safetensors",
+        ".gguf",
+        ".onnx",
+        ".bin",
+        ".model",
+        ".safetensors",
         # Python runtime binaries
-        ".exe", ".dll", ".pyd", ".so", ".dylib", ".node",
+        ".exe",
+        ".dll",
+        ".pyd",
+        ".so",
+        ".dylib",
+        ".node",
         # Pre-compressed archives and packages
-        ".whl", ".zip", ".gz", ".tar", ".bz2", ".xz", ".zst",
+        ".whl",
+        ".zip",
+        ".gz",
+        ".tar",
+        ".bz2",
+        ".xz",
+        ".zst",
         # Media (already compressed)
-        ".png", ".jpg", ".jpeg", ".webp", ".ico", ".gif",
-        ".mp3", ".mp4", ".webm", ".wav", ".ogg",
-        ".woff", ".woff2", ".ttf", ".otf",
+        ".png",
+        ".jpg",
+        ".jpeg",
+        ".webp",
+        ".ico",
+        ".gif",
+        ".mp3",
+        ".mp4",
+        ".webm",
+        ".wav",
+        ".ogg",
+        ".woff",
+        ".woff2",
+        ".ttf",
+        ".otf",
         # Misc binary
-        ".pyc", ".pyo", ".db", ".sqlite",
+        ".pyc",
+        ".pyo",
+        ".db",
+        ".sqlite",
     }
 
     # ── Core files that get SHA-256 integrity hashes ──────────────────────
@@ -507,9 +515,13 @@ def zip_distribution(source_dir, version, platform_name="Windows"):
                 # Accept if the file is at root level or its parent is "api"
                 is_core = (
                     len(rel_parts) == 1  # root level (start.py)
-                    or any(part == "api" and idx == len(rel_parts) - 2 for idx, part in enumerate(rel_parts))  # api/X.py
+                    or any(
+                        part == "api" and idx == len(rel_parts) - 2 for idx, part in enumerate(rel_parts)
+                    )  # api/X.py
                     or "resources/app/api" in rel_in_stage.replace("\\", "/")  # Electron: resources/app/api/X.py
-                    or rel_in_stage.replace("\\", "/").endswith("resources/app/start.py")  # Electron: resources/app/start.py
+                    or rel_in_stage.replace("\\", "/").endswith(
+                        "resources/app/start.py"
+                    )  # Electron: resources/app/start.py
                 )
                 if is_core:
                     file_hash = hashlib.sha256(open(filepath, "rb").read()).hexdigest()
@@ -828,6 +840,199 @@ def github_release(version):
     return True
 
 
+# ── MSIX Packaging (Microsoft Store) ─────────────────────────────────────
+
+MAKEAPPX_PATHS = [
+    Path(r"C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\makeappx.exe"),
+    Path(r"C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64\makeappx.exe"),
+    Path(r"C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64\makeappx.exe"),
+    Path(r"C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\makeappx.exe"),
+]
+
+MSIX_MANIFEST_TEMPLATE = REPO_ROOT / "viewer" / "src-tauri" / "msix" / "AppxManifest.xml"
+
+
+def find_makeappx():
+    """Locate makeappx.exe from the Windows SDK."""
+    # Check PATH first
+    result = subprocess.run(
+        ["where.exe", "makeappx.exe"],
+        capture_output=True, text=True,
+    )
+    if result.returncode == 0:
+        return Path(result.stdout.strip().splitlines()[0])
+
+    # Check known SDK locations
+    for p in MAKEAPPX_PATHS:
+        if p.exists():
+            return p
+
+    # Glob search as last resort
+    sdk_root = Path(r"C:\Program Files (x86)\Windows Kits\10\bin")
+    if sdk_root.exists():
+        hits = sorted(sdk_root.glob("*/x64/makeappx.exe"), reverse=True)
+        if hits:
+            return hits[0]
+
+    return None
+
+
+def build_msix(version):
+    """Package the Tauri build output into a Store-ready .msix file.
+
+    Flow:
+      1. Locate the compiled HALT.exe from the Cargo target dir
+      2. Stage all app files + icons into an MSIX layout directory
+      3. Inject a version-stamped AppxManifest.xml
+      4. Run makeappx.exe pack to produce the .msix
+    """
+    print("  [MSIX]    Packaging for Microsoft Store...")
+
+    # ── Locate tools ──────────────────────────────────────────────────────
+    makeappx = find_makeappx()
+    if not makeappx:
+        print("  [ERROR]   makeappx.exe not found.")
+        print("            Install the Windows 10/11 SDK:")
+        print("            https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/")
+        return None
+    print(f"            SDK: {makeappx}")
+
+    # ── Locate the built Tauri executable ─────────────────────────────────
+    c_drive_target = Path(os.path.expanduser("~/Halt-Tauri-Target"))
+    tauri_exe = c_drive_target / "release" / "HALT.exe"
+
+    if not tauri_exe.exists():
+        print(f"  [ERROR]   HALT.exe not found at {tauri_exe}")
+        print("            Run a Tauri build first: python build_and_deploy.py --no-bump")
+        return None
+    print(f"            EXE: {tauri_exe} ({tauri_exe.stat().st_size / (1024**2):.1f} MB)")
+
+    # ── Prepare MSIX staging directory ────────────────────────────────────
+    msix_stage = BUILDS_DIR / "msix-stage"
+    if msix_stage.exists():
+        shutil.rmtree(msix_stage)
+    msix_stage.mkdir(parents=True)
+
+    # Copy the main executable
+    print("            Staging HALT.exe...")
+    shutil.copy2(tauri_exe, msix_stage / "HALT.exe")
+
+    # Copy WebView2Loader if present (Tauri dependency)
+    wv2_loader = c_drive_target / "release" / "WebView2Loader.dll"
+    if wv2_loader.exists():
+        shutil.copy2(wv2_loader, msix_stage / "WebView2Loader.dll")
+
+    # Copy any additional DLLs from the release dir
+    for dll in (c_drive_target / "release").glob("*.dll"):
+        dest = msix_stage / dll.name
+        if not dest.exists():
+            shutil.copy2(dll, dest)
+
+    # Copy bundled resources (api, models, patients, start.py)
+    resources = [
+        (REPO_ROOT / "api", msix_stage / "api"),
+        (REPO_ROOT / "models", msix_stage / "models"),
+        (REPO_ROOT / "patients", msix_stage / "patients"),
+    ]
+    for src, dst in resources:
+        if src.exists():
+            print(f"            Staging {src.name}/...")
+            shutil.copytree(src, dst, dirs_exist_ok=True)
+
+    # Copy start.py
+    start_py = REPO_ROOT / "start.py"
+    if start_py.exists():
+        shutil.copy2(start_py, msix_stage / "start.py")
+
+    # Copy the frontend dist (Tauri embeds this, but include for sidecar access)
+    viewer_dist = REPO_ROOT / "viewer" / "dist"
+    if viewer_dist.exists():
+        print("            Staging viewer/dist/...")
+        shutil.copytree(viewer_dist, msix_stage / "viewer" / "dist", dirs_exist_ok=True)
+
+    # ── Stage icon assets ─────────────────────────────────────────────────
+    assets_dir = msix_stage / "Assets"
+    assets_dir.mkdir()
+    icons_src = REPO_ROOT / "viewer" / "src-tauri" / "icons"
+
+    icon_map = [
+        "StoreLogo.png",
+        "Square44x44Logo.png",
+        "Square71x71Logo.png",
+        "Square150x150Logo.png",
+        "Square310x310Logo.png",
+    ]
+    for icon in icon_map:
+        src = icons_src / icon
+        if src.exists():
+            shutil.copy2(src, assets_dir / icon)
+        else:
+            print(f"            [WARN] Missing icon: {icon}")
+
+    # ── Inject version-stamped AppxManifest.xml ───────────────────────────
+    if not MSIX_MANIFEST_TEMPLATE.exists():
+        print(f"  [ERROR]   Manifest template not found: {MSIX_MANIFEST_TEMPLATE}")
+        return None
+
+    # MSIX requires 4-part version (Major.Minor.Patch.Revision)
+    parts = version.split("-")[0].split(".")
+    while len(parts) < 4:
+        parts.append("0")
+    msix_version = ".".join(parts[:4])
+
+    manifest_content = MSIX_MANIFEST_TEMPLATE.read_text(encoding="utf-8")
+    manifest_content = manifest_content.replace("{{VERSION}}", msix_version)
+    (msix_stage / "AppxManifest.xml").write_text(manifest_content, encoding="utf-8")
+    print(f"            Manifest version: {msix_version}")
+
+    # ── Clean up __pycache__ and .pyc ─────────────────────────────────────
+    for p in msix_stage.rglob("__pycache__"):
+        shutil.rmtree(p, ignore_errors=True)
+    for p in msix_stage.rglob("*.pyc"):
+        p.unlink(missing_ok=True)
+
+    # ── Count staged files ────────────────────────────────────────────────
+    file_count = sum(1 for _ in msix_stage.rglob("*") if _.is_file())
+    stage_size = sum(f.stat().st_size for f in msix_stage.rglob("*") if f.is_file())
+    print(f"            Staged: {file_count} files ({stage_size / (1024**2):.0f} MB)")
+
+    # ── Run makeappx.exe pack ─────────────────────────────────────────────
+    BUILDS_DIR.mkdir(exist_ok=True)
+    msix_output = BUILDS_DIR / f"HALT-v{version}.msix"
+
+    print(f"  [PACK]    Running makeappx.exe...")
+    result = subprocess.run(
+        [
+            str(makeappx),
+            "pack",
+            "/d", str(msix_stage),
+            "/p", str(msix_output),
+            "/o",  # overwrite existing
+            "/l",  # log output
+        ],
+        capture_output=True,
+        text=True,
+    )
+
+    if result.returncode != 0:
+        print(f"  [ERROR]   makeappx.exe failed (exit {result.returncode})")
+        print(f"            {result.stderr.strip()}")
+        if result.stdout.strip():
+            print(f"            {result.stdout.strip()[:500]}")
+        return None
+
+    msix_size = msix_output.stat().st_size
+    print(f"  [OK]      {msix_output.name} ({msix_size / (1024**2):.1f} MB)")
+    print(f"            Path: {msix_output}")
+    print()
+    print("            ┌─────────────────────────────────────────┐")
+    print("            │  Upload this file to Partner Center:    │")
+    print("            │  Submission 1 → Packages → drag & drop  │")
+    print("            └─────────────────────────────────────────┘")
+
+    return str(msix_output)
+
+
 def main():
     parser = argparse.ArgumentParser(description="HALT Build & Deploy Pipeline")
     parser.add_argument(
@@ -843,7 +1048,12 @@ def main():
     )
     parser.add_argument("--zip-only", action="store_true", help="Skip build, just zip existing build folder")
     parser.add_argument("--upload-assets", action="store_true", help="Zip and upload models/ + runtime/ to R2")
-    parser.add_argument("--dev", action="store_true", help="Dev mode: portable folder only, skip NSIS installer (faster)")
+    parser.add_argument(
+        "--dev", action="store_true", help="Dev mode: portable folder only, skip NSIS installer (faster)"
+    )
+    parser.add_argument(
+        "--msix", action="store_true", help="Build MSIX package for Microsoft Store submission"
+    )
     args = parser.parse_args()
 
     # --dev produces a portable folder only (no installer) — block accidental releases
@@ -898,6 +1108,7 @@ def main():
                 if len(_mac_sign_env) == len(_mac_sign_vars):
                     import base64
                     import tempfile
+
                     print("  [SIGN]    macOS Developer ID signing credentials detected")
 
                     # Write .p12 to temp file
@@ -906,33 +1117,61 @@ def main():
                         f.write(p12_bytes)
                         p12_tmp = f.name
 
-                    team_id   = _mac_sign_env["APPLE_TEAM_ID"]
-                    p12_pass  = _mac_sign_env["CSC_KEY_PASSWORD"]
-                    sign_id   = f"Developer ID Application: Hermetic Labs LLC ({team_id})"
+                    team_id = _mac_sign_env["APPLE_TEAM_ID"]
+                    p12_pass = _mac_sign_env["CSC_KEY_PASSWORD"]
+                    sign_id = f"Developer ID Application: Hermetic Labs LLC ({team_id})"
 
                     # Import cert into temp keychain
                     kc_tmp = tempfile.mktemp(suffix=".keychain-db")
                     subprocess.run(["security", "create-keychain", "-p", "halt-build", kc_tmp], check=True)
                     subprocess.run(["security", "unlock-keychain", "-p", "halt-build", kc_tmp], check=True)
-                    subprocess.run([
-                        "security", "import", p12_tmp,
-                        "-k", kc_tmp, "-P", p12_pass,
-                        "-T", "/usr/bin/codesign",
-                    ], check=True)
-                    subprocess.run([
-                        "security", "set-key-partition-list",
-                        "-S", "apple-tool:,apple:", "-s", "-k", "halt-build", kc_tmp,
-                    ], check=True)
+                    subprocess.run(
+                        [
+                            "security",
+                            "import",
+                            p12_tmp,
+                            "-k",
+                            kc_tmp,
+                            "-P",
+                            p12_pass,
+                            "-T",
+                            "/usr/bin/codesign",
+                        ],
+                        check=True,
+                    )
+                    subprocess.run(
+                        [
+                            "security",
+                            "set-key-partition-list",
+                            "-S",
+                            "apple-tool:,apple:",
+                            "-s",
+                            "-k",
+                            "halt-build",
+                            kc_tmp,
+                        ],
+                        check=True,
+                    )
 
                     # Sign the bundle (deep — signs all nested binaries)
                     print("  [SIGN]    Signing bundle with codesign --deep...")
-                    subprocess.run([
-                        "codesign", "--deep", "--force", "--verify", "--verbose=1",
-                        "--sign", sign_id,
-                        "--keychain", kc_tmp,
-                        "--options", "runtime",
-                        str(source_dir),
-                    ], check=True)
+                    subprocess.run(
+                        [
+                            "codesign",
+                            "--deep",
+                            "--force",
+                            "--verify",
+                            "--verbose=1",
+                            "--sign",
+                            sign_id,
+                            "--keychain",
+                            kc_tmp,
+                            "--options",
+                            "runtime",
+                            str(source_dir),
+                        ],
+                        check=True,
+                    )
                     print("  [OK]      Bundle signed")
 
                     # Cleanup temp keychain + p12
@@ -944,14 +1183,25 @@ def main():
                     if all(v in os.environ for v in _notarize_vars):
                         print("  [NOTARIZE] Submitting to Apple notary service...")
                         zip_for_notary = str(source_dir) + "-notary.zip"
-                        subprocess.run(["ditto", "-c", "-k", "--keepParent", str(source_dir), zip_for_notary], check=True)
-                        subprocess.run([
-                            "xcrun", "notarytool", "submit", zip_for_notary,
-                            "--apple-id", os.environ["APPLE_ID"],
-                            "--password", os.environ["APPLE_ID_PASSWORD"],
-                            "--team-id", team_id,
-                            "--wait",
-                        ], check=True)
+                        subprocess.run(
+                            ["ditto", "-c", "-k", "--keepParent", str(source_dir), zip_for_notary], check=True
+                        )
+                        subprocess.run(
+                            [
+                                "xcrun",
+                                "notarytool",
+                                "submit",
+                                zip_for_notary,
+                                "--apple-id",
+                                os.environ["APPLE_ID"],
+                                "--password",
+                                os.environ["APPLE_ID_PASSWORD"],
+                                "--team-id",
+                                team_id,
+                                "--wait",
+                            ],
+                            check=True,
+                        )
                         os.unlink(zip_for_notary)
                         print("  [OK]      Notarization complete")
                     else:
@@ -968,9 +1218,9 @@ def main():
         if args.zip_only:
             # Look for existing build output in the standard locations
             candidates = [
-                ELECTRON_DIR / "dist" / "win-unpacked",             # electron-builder output
-                BUILDS_DIR / f"HALT-v{version}-Windows",            # staged build folder
-                REPO_ROOT / f"HALT-v{version}",                     # legacy folder name
+                ELECTRON_DIR / "dist" / "win-unpacked",  # electron-builder output
+                BUILDS_DIR / f"HALT-v{version}-Windows",  # staged build folder
+                REPO_ROOT / f"HALT-v{version}",  # legacy folder name
             ]
             source_dir = None
             for c in candidates:
@@ -997,8 +1247,7 @@ def main():
                 sys.exit(1)
             print(f"  [SKIP]    Using existing build: {source_dir}")
         else:
-            stage_app(version)
-            source_dir = build_electron(version, dev_mode=args.dev)
+            source_dir = build_tauri(version)
             if source_dir is None:
                 print("\n  Build failed. Use --zip-only to package existing build.")
                 sys.exit(1)
@@ -1024,6 +1273,14 @@ def main():
     if args.release:
         print()
         github_release(version)
+
+    # ── MSIX Packaging (Microsoft Store) ───────────────────────────────
+    if args.msix and args.platform == "win":
+        print()
+        msix_path = build_msix(version)
+        if msix_path is None:
+            print("  [ERROR]   MSIX packaging failed")
+            sys.exit(1)
 
     if not args.deploy and not args.release:
         print()

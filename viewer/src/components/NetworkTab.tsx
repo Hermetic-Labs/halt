@@ -697,14 +697,32 @@ export default function NetworkTab() {
                             </div>`;
                         document.body.appendChild(overlay);
 
-                        // Accept → stop ring, remove banner, switch to Comms tab, dispatch accept
-                        document.getElementById('eve-call-accept')?.addEventListener('click', () => {
+                        // Accept → stop ring, remove banner, acquire media in gesture context, then dispatch
+                        document.getElementById('eve-call-accept')?.addEventListener('click', async () => {
                             if (_eveRingtone) { _eveRingtone.pause(); _eveRingtone = null; }
                             overlay.remove();
-                            // Navigate to Comms tab by clicking it
-                            const commsBtn = document.querySelector('.tab-btn:nth-child(2)') as HTMLElement;
+                            // Navigate to Comms tab — find by content, not position (mobile layout may differ)
+                            const allTabs = Array.from(document.querySelectorAll('.tab-btn'));
+                            const commsBtn = allTabs.find(el => el.textContent?.toLowerCase().includes('comm')) as HTMLElement;
                             if (commsBtn) commsBtn.click();
-                            window.dispatchEvent(new CustomEvent('eve-call-signal', { detail: { ...msg, type: 'call_accept_local' } }));
+
+                            // CRITICAL: acquire media HERE in the user gesture context.
+                            // iOS Safari blocks getUserMedia outside direct click handlers.
+                            const cType = msg.call_type || 'voice';
+                            let stream: MediaStream | null = null;
+                            try {
+                                const constraints: MediaStreamConstraints = cType === 'video'
+                                    ? { audio: true, video: { width: 640, height: 480 } }
+                                    : { audio: true };
+                                stream = await navigator.mediaDevices.getUserMedia(constraints);
+                            } catch (e) {
+                                console.error('[Call] getUserMedia denied:', e);
+                            }
+
+                            // Dispatch with the pre-acquired stream so useWebRTC doesn't need to call getUserMedia again
+                            window.dispatchEvent(new CustomEvent('eve-call-signal', {
+                                detail: { ...msg, type: 'call_accept_local', _stream: stream }
+                            }));
                         });
 
                         // Reject → stop ring, remove banner, send reject signal

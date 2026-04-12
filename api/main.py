@@ -22,12 +22,27 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.base import BaseHTTPMiddleware
 
-from routes import health, inference, tts, stt, translate_stream
+from routes import health, inference, tts, stt, translate_stream, translate_live, call_translate, video, setup
 from routes import patients, wards, inventory, roster, tasks, mesh, translate, distribution
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 _API_DIR = Path(__file__).resolve().parent
 _DIST_DIR = _API_DIR.parent / "viewer" / "dist"
+
+# ── Windows Proactor 10054 Silencer ────────────────────────────────────────────
+# Prevents harmless WinError 10054 console spam when Service Workers safely
+# terminate connections or refresh gracefully under Uvicorn/FastAPI.
+if _sys.platform == "win32":
+    import asyncio.proactor_events
+    _default_call_connection_lost = asyncio.proactor_events._ProactorBasePipeTransport._call_connection_lost
+
+    def _silenced_call_connection_lost(self, exc):
+        try:
+            _default_call_connection_lost(self, exc)
+        except ConnectionResetError:
+            pass
+            
+    asyncio.proactor_events._ProactorBasePipeTransport._call_connection_lost = _silenced_call_connection_lost
 
 
 # ── Lifespan ───────────────────────────────────────────────────────────────────
@@ -43,9 +58,11 @@ async def lifespan(app: FastAPI):
 
     # Background warmup — loads TTS model then signals readiness to health endpoint
     import threading
+
     def _warmup():
         from routes.tts import _get_kokoro
         from routes.health import set_models_ready
+
         try:
             _get_kokoro()  # Loads ONNX model + warmup step
             logger.info("Model warmup complete — marking system ready.")
@@ -73,12 +90,12 @@ app.add_middleware(
 # Replaces uvicorn's default access log with color-coded, friendlier output.
 
 _IS_TTY = _sys.stdout.isatty()
-_G = "\033[92m" if _IS_TTY else ""   # green
-_B = "\033[94m" if _IS_TTY else ""   # blue
-_Y = "\033[93m" if _IS_TTY else ""   # amber
-_R = "\033[91m" if _IS_TTY else ""   # red
-_D = "\033[90m" if _IS_TTY else ""   # dim
-_E = "\033[0m"  if _IS_TTY else ""   # reset
+_G = "\033[92m" if _IS_TTY else ""  # green
+_B = "\033[94m" if _IS_TTY else ""  # blue
+_Y = "\033[93m" if _IS_TTY else ""  # amber
+_R = "\033[91m" if _IS_TTY else ""  # red
+_D = "\033[90m" if _IS_TTY else ""  # dim
+_E = "\033[0m" if _IS_TTY else ""  # reset
 
 _STATUS_TEXT = {
     200: f"{_G}200 OK{_E}",
@@ -131,6 +148,9 @@ app.include_router(inference.router)
 app.include_router(tts.router, prefix="/tts")
 app.include_router(stt.router, prefix="/stt")
 app.include_router(translate_stream.router, prefix="/translate-stream")
+app.include_router(translate_live.router, prefix="/translate-live")
+app.include_router(call_translate.router, prefix="/call-translate")
+app.include_router(video.router, prefix="/video")
 
 
 # Domain routes
@@ -142,6 +162,7 @@ app.include_router(tasks.router)
 app.include_router(mesh.router)
 app.include_router(translate.router)
 app.include_router(distribution.router)
+app.include_router(setup.router)
 
 
 # ── Static frontend (pre-built Vite PWA) ──────────────────────────────────────

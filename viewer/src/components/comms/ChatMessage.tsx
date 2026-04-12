@@ -51,7 +51,7 @@ export default function ChatMessage({ msg, isMe, roster, formatTime, allMessages
         fetch('/api/translate', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ text: msg.message, from_lang: 'en', to_lang: userLang }),
+            body: JSON.stringify({ text: msg.message, source: 'en', target: userLang }),
         })
             .then(r => r.ok ? r.json() : null)
             .then(d => {
@@ -138,6 +138,28 @@ export default function ChatMessage({ msg, isMe, roster, formatTime, allMessages
                             <div style={{ fontSize: 11, color: 'var(--text-faint)', marginTop: 4, fontStyle: 'italic', opacity: 0.6 }}>{msg.message}</div>
                         </>
                     ) : msg.message}
+
+                    {/* Inline attachment */}
+                    {msg.attachment_url && (() => {
+                        const isImage = /\.(jpg|jpeg|png|gif|webp|bmp|svg)$/i.test(msg.attachment_url || '');
+                        return isImage ? (
+                            <a href={msg.attachment_url} target="_blank" rel="noopener noreferrer" style={{ display: 'block', marginTop: msg.message ? 6 : 0 }}>
+                                <img
+                                    src={msg.attachment_url}
+                                    alt={msg.attachment_name || 'image'}
+                                    style={{ maxWidth: '100%', maxHeight: 280, borderRadius: 6, cursor: 'pointer' }}
+                                />
+                            </a>
+                        ) : (
+                            <a
+                                href={msg.attachment_url}
+                                download={msg.attachment_name}
+                                style={{ display: 'block', marginTop: msg.message ? 6 : 0, fontSize: 12, color: '#58a6ff', textDecoration: 'underline' }}
+                            >
+                                📎 {msg.attachment_name || 'Download file'}
+                            </a>
+                        );
+                    })()}
                 </div>
 
                 {/* Reactions */}

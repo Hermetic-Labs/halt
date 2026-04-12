@@ -17,7 +17,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse
 
-from routes import health, inference, tts, stt, image
+from routes import health, inference, tts, stt
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(name)s] %(levelname)s: %(message)s", datefmt="%H:%M:%S")
 logger = logging.getLogger("triage")
@@ -34,7 +34,7 @@ app.include_router(health.router)
 app.include_router(inference.router)
 app.include_router(tts.router, prefix="/tts")
 app.include_router(stt.router, prefix="/stt")
-app.include_router(image.router, prefix="/image")
+
 
 if _frontend.is_dir():
     app.mount("/frontend", StaticFiles(directory=str(_frontend), html=True), name="frontend")

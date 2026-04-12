@@ -47,6 +47,7 @@ export default defineConfig({
       '/api': {
         target: 'http://127.0.0.1:7778',
         changeOrigin: true,
+        ws: true,
       },
       '/ws': {
         target: 'ws://127.0.0.1:7778',
@@ -60,22 +61,27 @@ export default defineConfig({
       '/stt': {
         target: 'http://127.0.0.1:7778',
         changeOrigin: true,
+        ws: true,
       },
       '/image': {
         target: 'http://127.0.0.1:7778',
         changeOrigin: true,
+        ws: true,
       },
       '/inference': {
         target: 'http://127.0.0.1:7778',
         changeOrigin: true,
+        ws: true,
       },
       '/models': {
         target: 'http://127.0.0.1:7778',
         changeOrigin: true,
+        ws: true,
       },
       '/health': {
         target: 'http://127.0.0.1:7778',
         changeOrigin: true,
+        ws: true,
       },
     },
   },

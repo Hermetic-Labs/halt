@@ -1,0 +1,269 @@
+﻿
+  ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+  Γòæ   HALT ΓÇö White Glove Lint Pass        Γòæ
+  Γòæ   The Pristine PassΓäó                  Γòæ
+  ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+
+  ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+  ≡ƒÉì  PYTHON ΓÇö Ruff (practical)  (33 files)
+  ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    Using: ruff 0.1.6
+    Mode: practical (bugs, unused code, complexity)
+    Tip:  use --strict for the full style sweep
+    api\main.py:42:5: RUF006 Store a reference to the return value of `asyncio.create_task`
+    api\routes\distribution.py:69:9: SIM105 Use `contextlib.suppress(RuntimeError)` instead of `try`-`except`-`pass`
+    api\routes\distribution.py:75:11: C901 `_download_pack` is too complex (15 > 10)
+    api\routes\distribution.py:75:11: PLR0915 Too many statements (76 > 50)
+    api\routes\distribution.py:77:12: PLW0603 Using the global statement to update `_progress_queue` is discouraged
+    api\routes\distribution.py:77:12: PLW0603 Using the global statement to update `_progress_queue` is discouraged
+    api\routes\distribution.py:103:18: ASYNC100 Async functions should not call blocking HTTP methods
+    api\routes\distribution.py:120:14: ASYNC100 Async functions should not call blocking HTTP methods
+    api\routes\distribution.py:122:18: ASYNC101 Async functions should not call `open`, `time.sleep`, or `subprocess` methods
+    api\routes\distribution.py:169:9: TRY400 Use `logging.exception` instead of `logging.error`
+    api\routes\distribution.py:231:9: RUF006 Store a reference to the return value of `asyncio.create_task`
+    api\routes\distribution.py:299:9: RUF006 Store a reference to the return value of `asyncio.create_task`
+    api\routes\inference.py:27:12: PLW0603 Using the global statement to update `_llm` is discouraged
+    api\routes\inference.py:27:18: PLW0603 Using the global statement to update `_llm_name` is discouraged
+    api\routes\inference.py:27:29: PLW0603 Using the global statement to update `_has_vision` is discouraged
+    api\routes\inference.py:37:13: TRY301 Abstract `raise` to an inner function
+    api\routes\inference.py:68:9: TRY300 Consider moving this statement to an `else` block
+    api\routes\inference.py:70:9: TRY400 Use `logging.exception` instead of `logging.error`
+    api\routes\inference.py:104:12: PLW0603 Using the global statement to update `_queue_waiting` is discouraged
+    api\routes\inference.py:112:20: PLW0603 Using the global statement to update `_queue_waiting` is discouraged
+    api\routes\inference.py:112:20: PLW0603 Using the global statement to update `_queue_waiting` is discouraged
+    api\routes\inference.py:112:36: PLW0603 Using the global statement to update `_queue_active` is discouraged
+    api\routes\inference.py:112:36: PLW0603 Using the global statement to update `_queue_active` is discouraged
+    api\routes\inference.py:112:51: PLW0603 Using the global statement to update `_active_user` is discouraged
+    api\routes\inference.py:112:51: PLW0603 Using the global statement to update `_active_user` is discouraged
+    api\routes\inference.py:141:16: PLW0603 Using the global statement to update `_queue_active` is discouraged
+    api\routes\inference.py:141:16: PLW0603 Using the global statement to update `_queue_active` is discouraged
+    api\routes\inference.py:141:31: PLW0603 Using the global statement to update `_active_user` is discouraged
+    api\routes\inference.py:141:31: PLW0603 Using the global statement to update `_active_user` is discouraged
+    api\routes\inference.py:157:11: C901 `_do_generate` is too complex (16 > 10)
+    api\routes\inventory.py:109:9: TRY300 Consider moving this statement to an `else` block
+    api\routes\inventory.py:364:9: TRY300 Consider moving this statement to an `else` block
+    api\routes\mesh.py:101:50: RUF013 PEP 484 prohibits implicit `Optional`
+    api\routes\mesh.py:115:11: C901 `_translate_and_broadcast` is too complex (11 > 10)
+    api\routes\mesh.py:130:13: SIM105 Use `contextlib.suppress(Exception)` instead of `try`-`except`-`pass`
+    api\routes\mesh.py:167:9: TRY300 Consider moving this statement to an `else` block
+    api\routes\mesh.py:242:12: PLW0603 Using the global statement to update `MESH_LEADER_ID` is discouraged
+    api\routes\mesh.py:369:5: RUF006 Store a reference to the return value of `asyncio.create_task`
+    api\routes\mesh.py:416:5: RUF006 Store a reference to the return value of `asyncio.create_task`
+    api\routes\mesh.py:520:11: C901 `mesh_websocket` is too complex (29 > 10)
+    api\routes\mesh.py:520:11: PLR0912 Too many branches (35 > 12)
+    api\routes\mesh.py:520:11: PLR0915 Too many statements (87 > 50)
+    api\routes\mesh.py:547:13: PERF401 Use a list comprehension to create a transformed list
+    api\routes\mesh.py:731:17: SIM105 Use `contextlib.suppress(Exception)` instead of `try`-`except`-`pass`
+    api\routes\patients.py:337:65: B008 Do not perform function call `File` in argument defaults; instead, perform the call within the function, or read the default from a module-level singleton variable
+    api\routes\patients.py:345:10: ASYNC101 Async functions should not call `open`, `time.sleep`, or `subprocess` methods
+    api\routes\patients.py:369:5: C901 `patient_pdf` is too complex (18 > 10)
+    api\routes\patients.py:369:5: PLR0912 Too many branches (16 > 12)
+    api\routes\patients.py:369:5: PLR0915 Too many statements (88 > 50)
+    api\routes\patients.py:413:13: PERF401 Use a list comprehension to create a transformed list
+    api\routes\patients.py:425:13: PERF401 Use a list comprehension to create a transformed list
+    api\routes\patients.py:432:13: PERF401 Use a list comprehension to create a transformed list
+    api\routes\patients.py:456:13: PLW2901 `for` loop variable `ln` overwritten by assignment target
+    api\routes\patients.py:491:9: PERF401 Use a list comprehension to create a transformed list
+    api\routes\patients.py:506:5: C901 `patient_export_html` is too complex (14 > 10)
+    api\routes\patients.py:715:5: C901 `shift_report` is too complex (15 > 10)
+    api\routes\patients.py:715:5: PLR0912 Too many branches (16 > 12)
+    api\routes\roster.py:136:60: B008 Do not perform function call `File` in argument defaults; instead, perform the call within the function, or read the default from a module-level singleton variable
+    api\routes\stt.py:21:12: PLW0603 Using the global statement to update `_whisper` is discouraged
+    api\routes\stt.py:31:9: TRY300 Consider moving this statement to an `else` block
+    api\routes\stt.py:33:9: TRY400 Use `logging.exception` instead of `logging.error`
+    api\routes\stt.py:44:38: B008 Do not perform function call `File` in argument defaults; instead, perform the call within the function, or read the default from a module-level singleton variable
+    api\routes\stt.py:63:9: TRY400 Use `logging.exception` instead of `logging.error`
+    api\routes\stt.py:64:9: B904 Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling
+    api\routes\stt.py:64:9: TRY200 Use `raise from` to specify exception cause
+    api\routes\translate.py:71:12: PLW0603 Using the global statement to update `_translator` is discouraged
+    api\routes\translate.py:71:25: PLW0603 Using the global statement to update `_sp` is discouraged
+    api\routes\translate.py:99:9: TRY300 Consider moving this statement to an `else` block
+    api\routes\translate.py:101:9: TRY400 Use `logging.exception` instead of `logging.error`
+    api\routes\translate.py:120:22: RUF005 Consider `[nllb_src, *tokens, "</s>"]` instead of concatenation
+    api\routes\translate.py:134:9: TRY300 Consider moving this statement to an `else` block
+    api\routes\translate.py:136:9: TRY400 Use `logging.exception` instead of `logging.error`
+    api\routes\translate_stream.py:28:11: C901 `translate_stream_ws` is too complex (13 > 10)
+    api\routes\translate_stream.py:28:11: PLR0912 Too many branches (16 > 12)
+    api\routes\translate_stream.py:28:11: PLR0915 Too many statements (51 > 50)
+    api\routes\translate_stream.py:118:9: TRY400 Use `logging.exception` instead of `logging.error`
+    api\routes\translate_stream.py:119:9: SIM105 Use `contextlib.suppress(Exception)` instead of `try`-`except`-`pass`
+    api\routes\translate_stream.py:186:13: TRY400 Use `logging.exception` instead of `logging.error`
+    api\routes\tts.py:146:6: RUF001 String contains ambiguous `├ú╞Æ┼╜` (KATAKANA LETTER NO). Did you mean `/` (SOLIDUS)?
+    api\routes\tts.py:253:12: PLW0603 Using the global statement to update `_ja_tagger` is discouraged
+    api\routes\tts.py:278:12: PLW0603 Using the global statement to update `_kokoro` is discouraged
+    api\routes\tts.py:278:21: PLW0603 Using the global statement to update `_voices` is discouraged
+    api\routes\tts.py:297:9: TRY300 Consider moving this statement to an `else` block
+    api\routes\tts.py:299:9: TRY400 Use `logging.exception` instead of `logging.error`
+    api\routes\tts.py:315:9: TRY400 Use `logging.exception` instead of `logging.error`
+    api\routes\tts.py:383:12: PLW0603 Using the global statement to update `_tts_queue_waiting` is discouraged
+    api\routes\tts.py:383:12: PLW0603 Using the global statement to update `_tts_queue_waiting` is discouraged
+    api\routes\tts.py:383:12: PLW0603 Using the global statement to update `_tts_queue_waiting` is discouraged
+    api\routes\tts.py:383:32: PLW0603 Using the global statement to update `_tts_active_user` is discouraged
+    api\routes\tts.py:383:32: PLW0603 Using the global statement to update `_tts_active_user` is discouraged
+    api\routes\tts.py:399:17: B904 Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling
+    api\routes\tts.py:399:17: TRY200 Use `raise from` to specify exception cause
+    api\routes\tts.py:406:9: B904 Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling
+    api\routes\tts.py:406:9: TRY200 Use `raise from` to specify exception cause
+    api\routes\tts.py:467:12: PLW0603 Using the global statement to update `_tts_queue_waiting` is discouraged
+    api\routes\tts.py:467:12: PLW0603 Using the global statement to update `_tts_queue_waiting` is discouraged
+    api\routes\tts.py:467:12: PLW0603 Using the global statement to update `_tts_queue_waiting` is discouraged
+    api\routes\tts.py:467:32: PLW0603 Using the global statement to update `_tts_active_user` is discouraged
+    api\routes\tts.py:467:32: PLW0603 Using the global statement to update `_tts_active_user` is discouraged
+    api\routes\tts.py:487:17: B904 Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling
+    api\routes\tts.py:487:17: TRY200 Use `raise from` to specify exception cause
+    api\routes\tts.py:494:9: B904 Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling
+    api\routes\tts.py:494:9: TRY200 Use `raise from` to specify exception cause
+    api\routes\tts.py:510:11: C901 `tts_ws` is too complex (16 > 10)
+    api\routes\tts.py:510:11: PLR0915 Too many statements (71 > 50)
+    api\routes\tts.py:528:16: PLW0603 Using the global statement to update `_tts_queue_waiting` is discouraged
+    api\routes\tts.py:528:16: PLW0603 Using the global statement to update `_tts_queue_waiting` is discouraged
+    api\routes\tts.py:528:36: PLW0603 Using the global statement to update `_tts_active_user` is discouraged
+    api\routes\tts.py:528:36: PLW0603 Using the global statement to update `_tts_active_user` is discouraged
+    api\routes\tts.py:528:36: PLW0603 Using the global statement to update `_tts_active_user` is discouraged
+    api\routes\tts.py:528:36: PLW0603 Using the global statement to update `_tts_active_user` is discouraged
+    api\routes\tts.py:541:21: SIM105 Use `contextlib.suppress(Exception)` instead of `try`-`except`-`pass`
+    api\routes\tts.py:555:29: TRY400 Use `logging.exception` instead of `logging.error`
+    api\routes\tts.py:567:29: TRY400 Use `logging.exception` instead of `logging.error`
+    api\routes\tts.py:573:13: TRY400 Use `logging.exception` instead of `logging.error`
+    api\routes\tts.py:591:9: TRY400 Use `logging.exception` instead of `logging.error`
+    api\routes\wards.py:4:71: RUF002 Docstring contains ambiguous `├óΓé¼ΓÇ£` (EN DASH). Did you mean `-` (HYPHEN-MINUS)?
+    dev\build_and_deploy.py:108:22: PLW1510 `subprocess.run` without explicit `check` argument
+    dev\build_and_deploy.py:117:18: PLW1510 `subprocess.run` without explicit `check` argument
+    dev\build_and_deploy.py:190:5: SIM108 Use ternary operator `build_cmd = ["npx", "electron-builder", "--win", "--dir"] if dev_mode else ["npm", "run", "build:win"]` instead of `if`-`else`-block
+    dev\build_and_deploy.py:216:14: PLW1510 `subprocess.run` without explicit `check` argument
+    dev\build_and_deploy.py:320:18: PLW1510 `subprocess.run` without explicit `check` argument
+    dev\build_and_deploy.py:331:5: C901 `stage_macos` is too complex (13 > 10)
+    dev\build_and_deploy.py:331:5: PLR0912 Too many branches (14 > 12)
+    dev\build_and_deploy.py:352:22: PLW1510 `subprocess.run` without explicit `check` argument
+    dev\build_and_deploy.py:361:18: PLW1510 `subprocess.run` without explicit `check` argument
+    dev\build_and_deploy.py:413:5: PLR0915 Too many statements (59 > 50)
+    dev\build_and_deploy.py:515:48: SIM115 Use context handler for opening files
+    dev\build_and_deploy.py:625:9: TRY300 Consider moving this statement to an `else` block
+    dev\build_and_deploy.py:632:5: C901 `upload_dev_assets` is too complex (11 > 10)
+    dev\build_and_deploy.py:671:19: B007 Loop control variable `dirs` not used within loop body
+    dev\build_and_deploy.py:673:17: PERF401 Use a list comprehension to create a transformed list
+    dev\build_and_deploy.py:723:18: PLW1510 `subprocess.run` without explicit `check` argument
+    dev\build_and_deploy.py:724:13: RUF005 Consider `["git", *list(cmd)]` instead of concatenation
+    dev\build_and_deploy.py:741:14: PLW1510 `subprocess.run` without explicit `check` argument
+    dev\build_and_deploy.py:751:5: PLW1510 `subprocess.run` without explicit `check` argument
+    dev\build_and_deploy.py:771:5: C901 `github_release` is too complex (11 > 10)
+    dev\build_and_deploy.py:786:13: SIM114 Combine `if` branches using logical `or` operator
+    dev\build_and_deploy.py:814:14: PLW1510 `subprocess.run` without explicit `check` argument
+    dev\build_and_deploy.py:831:5: C901 `main` is too complex (28 > 10)
+    dev\build_and_deploy.py:831:5: PLR0912 Too many branches (33 > 12)
+    dev\build_and_deploy.py:831:5: PLR0915 Too many statements (143 > 50)
+    dev\build_and_deploy.py:939:21: PLW1510 `subprocess.run` without explicit `check` argument
+    dev\generate_attention_wavs.py:16:8: F401 [*] `os` imported but unused
+    dev\generate_attention_wavs.py:95:13: F841 Local variable `size_kb` is assigned to but never used
+    dev\pull_and_inspect.py:102:5: C901 `main` is too complex (29 > 10)
+    dev\pull_and_inspect.py:102:5: PLR0912 Too many branches (39 > 12)
+    dev\pull_and_inspect.py:102:5: PLR0915 Too many statements (167 > 50)
+    dev\pull_and_inspect.py:234:18: PLW1510 `subprocess.run` without explicit `check` argument
+    dev\pull_and_inspect.py:274:17: PLW2901 `for` loop variable `line` overwritten by assignment target
+    dev\sync_locales.py:39:10: UP015 [*] Unnecessary open mode parameters
+    dev\sync_locales.py:63:5: C901 `sync_locale` is too complex (12 > 10)
+    dev\sync_locales.py:128:23: B905 `zip()` without an explicit `strict=` parameter
+    dev\sync_locales.py:168:5: SIM108 Use ternary operator `langs = args.lang if args.lang else sorted([p.stem for p in LOCALES_DIR.glob("*.json") if p.stem != "en"])` instead of `if`-`else`-block
+    dev\test_packaging.py:26:5: PLR0915 Too many statements (69 > 50)
+    dev\white_glove.py:80:17: PERF401 Use a list comprehension to create a transformed list
+    dev\white_glove.py:87:18: PLW1510 `subprocess.run` without explicit `check` argument
+    dev\white_glove.py:95:9: TRY300 Consider moving this statement to an `else` block
+    dev\white_glove.py:105:12: PLR1714 Consider merging multiple comparisons: `code in (0, 1)`. Use a `set` if the elements are hashable.
+    dev\white_glove.py:133:5: C901 `lint_python` is too complex (16 > 10)
+    dev\white_glove.py:133:5: PLR0912 Too many branches (17 > 12)
+    dev\white_glove.py:133:5: PLR0915 Too many statements (51 > 50)
+    dev\white_glove.py:145:8: PLR1714 Consider merging multiple comparisons: `code not in (0, -1)`. Use a `set` if the elements are hashable.
+    dev\white_glove.py:251:15: RUF005 Consider iterable unpacking instead of concatenation
+    dev\white_glove.py:271:5: PLR5501 Use `elif` instead of `else` then `if`, to reduce indentation
+    dev\white_glove.py:367:15: RUF005 Consider `["npx", "-y", "eslint@latest", *file_args]` instead of concatenation
+    dev\white_glove.py:378:17: SIM102 Use a single `if` statement instead of nested `if` statements
+    dev\white_glove.py:397:5: C901 `lint_html` is too complex (13 > 10)
+    dev\white_glove.py:420:9: SIM102 Use a single `if` statement instead of nested `if` statements
+    dev\white_glove.py:518:5: C901 `lint_powershell` is too complex (12 > 10)
+    dev\white_glove.py:612:15: RUF005 Consider iterable unpacking instead of concatenation
+    dev\white_glove.py:640:5: C901 `lint_data` is too complex (11 > 10)
+    dev\white_glove.py:640:5: PLR0912 Too many branches (13 > 12)
+    dev\white_glove.py:697:5: C901 `lint_hygiene` is too complex (13 > 10)
+    dev\white_glove.py:697:5: PLR0912 Too many branches (13 > 12)
+    start.py:53:35: RUF005 Consider `[_bundled_python, *sys.argv]` instead of concatenation
+    start.py:99:21: PLW1510 `subprocess.run` without explicit `check` argument
+    start.py:125:26: PLW1510 `subprocess.run` without explicit `check` argument
+    start.py:133:25: PLW1510 `subprocess.run` without explicit `check` argument
+    start.py:179:14: UP015 [*] Unnecessary open mode parameters
+    start.py:181:17: PLW2901 `for` loop variable `line` overwritten by assignment target
+    start.py:196:46: SIM115 Use context handler for opening files
+    start.py:290:5: C901 `start_backend` is too complex (12 > 10)
+    start.py:290:5: PLR0912 Too many branches (13 > 12)
+    start.py:333:13: B007 Loop control variable `i` not used within loop body
+    start.py:342:9: PLW0120 `else` clause on loop without a `break` statement; remove the `else` and de-indent all the code inside it
+    start.py:368:5: C901 `start_frontend` is too complex (11 > 10)
+    start.py:403:17: B007 Loop control variable `i` not used within loop body
+    start.py:414:45: B023 Function definition does not bind loop variable `url`
+    start.py:418:13: TRY300 Consider moving this statement to an `else` block
+    start.py:433:5: C901 `main` is too complex (11 > 10)
+    start.py:433:5: PLR0915 Too many statements (56 > 50)
+    start.py:500:17: TRY300 Consider moving this statement to an `else` block
+    triage\triage_assistant\backend\routes\image.py:25:12: PLW0603 Using the global statement to update `_pipeline` is discouraged
+    triage\triage_assistant\backend\routes\image.py:45:9: TRY300 Consider moving this statement to an `else` block
+    triage\triage_assistant\backend\routes\image.py:47:9: TRY400 Use `logging.exception` instead of `logging.error`
+    triage\triage_assistant\backend\routes\image.py:104:9: TRY400 Use `logging.exception` instead of `logging.error`
+    triage\triage_assistant\backend\routes\image.py:105:9: B904 Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling
+    triage\triage_assistant\backend\routes\image.py:105:9: TRY200 Use `raise from` to specify exception cause
+    triage\triage_assistant\backend\routes\inference.py:28:12: PLW0603 Using the global statement to update `_llm` is discouraged
+    triage\triage_assistant\backend\routes\inference.py:28:18: PLW0603 Using the global statement to update `_llm_name` is discouraged
+    triage\triage_assistant\backend\routes\inference.py:28:29: PLW0603 Using the global statement to update `_has_vision` is discouraged
+    triage\triage_assistant\backend\routes\inference.py:38:13: TRY301 Abstract `raise` to an inner function
+    triage\triage_assistant\backend\routes\inference.py:69:9: TRY300 Consider moving this statement to an `else` block
+    triage\triage_assistant\backend\routes\inference.py:71:9: TRY400 Use `logging.exception` instead of `logging.error`
+    triage\triage_assistant\backend\routes\inference.py:94:11: C901 `inference_stream` is too complex (11 > 10)
+    triage\triage_assistant\backend\routes\stt.py:22:12: PLW0603 Using the global statement to update `_whisper` is discouraged
+    triage\triage_assistant\backend\routes\stt.py:32:9: TRY300 Consider moving this statement to an `else` block
+    triage\triage_assistant\backend\routes\stt.py:34:9: TRY400 Use `logging.exception` instead of `logging.error`
+    triage\triage_assistant\backend\routes\stt.py:45:38: B008 Do not perform function call `File` in argument defaults; instead, perform the call within the function, or read the default from a module-level singleton variable
+    triage\triage_assistant\backend\routes\stt.py:62:9: TRY400 Use `logging.exception` instead of `logging.error`
+    triage\triage_assistant\backend\routes\stt.py:63:9: B904 Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling
+    triage\triage_assistant\backend\routes\stt.py:63:9: TRY200 Use `raise from` to specify exception cause
+    triage\triage_assistant\backend\routes\tts.py:29:12: PLW0603 Using the global statement to update `_kokoro` is discouraged
+    triage\triage_assistant\backend\routes\tts.py:29:21: PLW0603 Using the global statement to update `_voices` is discouraged
+    triage\triage_assistant\backend\routes\tts.py:48:9: TRY300 Consider moving this statement to an `else` block
+    triage\triage_assistant\backend\routes\tts.py:50:9: TRY400 Use `logging.exception` instead of `logging.error`
+    triage\triage_assistant\backend\routes\tts.py:142:9: B904 Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling
+    triage\triage_assistant\backend\routes\tts.py:142:9: TRY200 Use `raise from` to specify exception cause
+    triage\triage_assistant\backend\routes\tts.py:170:36: B007 Loop control variable `phonemes` not used within loop body
+    triage\triage_assistant\backend\routes\tts.py:174:17: TRY400 Use `logging.exception` instead of `logging.error`
+    triage\triage_assistant\backend\routes\tts.py:181:9: TRY400 Use `logging.exception` instead of `logging.error`
+    Found 222 errors.
+    [*] 3 fixable with the `--fix` option (20 hidden fixes can be enabled with the `--unsafe-fixes` option).
+
+    ΓöÇΓöÇ Format check (ruff format --check) ΓöÇΓöÇ
+    ΓÜá  Would reformat: api\main.py
+    ΓÜá  Would reformat: api\routes\distribution.py
+    ΓÜá  Would reformat: api\routes\inference.py
+    ΓÜá  Would reformat: api\routes\inventory.py
+    ΓÜá  Would reformat: api\routes\mesh.py
+    ΓÜá  Would reformat: api\routes\patients.py
+    ΓÜá  Would reformat: api\routes\translate_stream.py
+    ΓÜá  Would reformat: api\routes\tts.py
+    ΓÜá  Would reformat: dev\build_and_deploy.py
+    ΓÜá  Would reformat: dev\generate_attention_wavs.py
+    ΓÜá  Would reformat: dev\pull_and_inspect.py
+    ΓÜá  Would reformat: dev\sync_locales.py
+    ΓÜá  Would reformat: dev\test_packaging.py
+    ΓÜá  Would reformat: dev\white_glove.py
+    ΓÜá  Would reformat: start.py
+    ΓÜá  Would reformat: triage\triage_assistant\backend\routes\inference.py
+    16 files would be reformatted, 17 files left unchanged
+    Fix formatting: ruff format api\config.py api\main.py api\routes\__init__.py...
+
+
+  ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+  Γòæ           WHITE GLOVE SCOREBOARD                 Γòæ
+  ΓòáΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòú
+  Γòæ  ≡ƒö┤  Python (Ruff)                    239 issues        Γòæ
+  ΓòáΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòú
+  Γòæ  ≡ƒôï  239 total issues found                       Γòæ
+  ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+  Completed in 0.1s
+

@@ -224,8 +224,9 @@ async def consume_inventory(
     # Resolve location name for the log
     loc_name = _resolve_location_name(target.get("locationId", "loc-1"))
     item_label = f"{target.get('name', id)} [{loc_name}]"
-    log_activity(modified_by or "unknown", f"consumed {restock.amount}x", item_label,
-                 action_type="consumed", qty=restock.amount)
+    log_activity(
+        modified_by or "unknown", f"consumed {restock.amount}x", item_label, action_type="consumed", qty=restock.amount
+    )
 
     # ── Auto-alert on critical stock ──────────────────────────────────────
     qty = target.get("quantity", 0)
@@ -319,8 +320,13 @@ async def restock_inventory(
         raise HTTPException(status_code=404, detail="Inventory item not found.")
     write_json(inventory_path(), inv)
     loc_name = _resolve_location_name(target.get("locationId", "loc-1"))
-    log_activity(modified_by or "unknown", f"restocked {restock.amount}x", f"{target.get('name', id)} [{loc_name}]",
-                 action_type="restocked", qty=restock.amount)
+    log_activity(
+        modified_by or "unknown",
+        f"restocked {restock.amount}x",
+        f"{target.get('name', id)} [{loc_name}]",
+        action_type="restocked",
+        qty=restock.amount,
+    )
     return target
 
 

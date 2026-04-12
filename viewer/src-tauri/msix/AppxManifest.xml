@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  HALT — AppxManifest.xml (MSIX Template)
+  ========================================
+  This manifest is used by makeappx.exe to produce a Store-ready .msix package.
+  The {{VERSION}} placeholder is replaced at build time by build_and_deploy.py.
+  
+  Identity values sourced from Partner Center → Product Identity.
+  DO NOT change Name or Publisher — they must match exactly.
+-->
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  IgnorableNamespaces="uap rescap desktop">
+
+  <!-- ── Identity (from Partner Center — DO NOT MODIFY) ─────────────────── -->
+  <Identity
+    Name="HermeticLabs.HALT-HermeticAnonymousLocalTriage"
+    Publisher="CN=FD92FCE8-6D9F-43FF-876A-BE0D2CF446D5"
+    Version="{{VERSION}}"
+    ProcessorArchitecture="x64" />
+
+  <Properties>
+    <DisplayName>HALT - Hermetic Anonymous Local Triage</DisplayName>
+    <PublisherDisplayName>Hermetic Labs</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <Description>Offline-first field medical triage system for disaster response and conflict zones.</Description>
+  </Properties>
+
+  <!-- ── Target Windows 10 1809+ (build 17763) ─────────────────────────── -->
+  <Dependencies>
+    <TargetDeviceFamily
+      Name="Windows.Desktop"
+      MinVersion="10.0.17763.0"
+      MaxVersionTested="10.0.26100.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+
+  <!-- ── Application entry point ────────────────────────────────────────── -->
+  <Applications>
+    <Application
+      Id="HALT"
+      Executable="HALT.exe"
+      EntryPoint="Windows.FullTrustApplication">
+
+      <uap:VisualElements
+        DisplayName="HALT"
+        Description="Hermetic Anonymous Local Triage — offline field medical triage"
+        BackgroundColor="#0a0a0a"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png">
+
+        <uap:DefaultTile
+          Wide310x150Logo="Assets\Square310x310Logo.png"
+          Square71x71Logo="Assets\Square71x71Logo.png"
+          Square310x310Logo="Assets\Square310x310Logo.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+      </uap:VisualElements>
+
+    </Application>
+  </Applications>
+
+  <!-- ── Capabilities ───────────────────────────────────────────────────── -->
+  <Capabilities>
+    <!-- Internet access for WebRTC field coordination & optional API calls -->
+    <Capability Name="internetClient" />
+    <!-- Local network for the Python FastAPI backend (localhost) -->
+    <Capability Name="privateNetworkClientServer" />
+    <!-- Full trust required for Tauri/WebView2 desktop apps -->
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+
+</Package>

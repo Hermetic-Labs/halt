@@ -29,7 +29,7 @@ def _get_llm():
     if _llm:
         return _llm
     try:
-        from llama_cpp import Llama
+        from llama_cpp import Llama  # type: ignore
 
         gguf_files = sorted(MODELS_DIR.glob("*.gguf"))
         # Exclude mmproj files from the main model list
@@ -44,7 +44,7 @@ def _get_llm():
         chat_handler = None
         if mmproj_files:
             try:
-                from llama_cpp.llama_chat_format import Llava15ChatHandler
+                from llama_cpp.llama_chat_format import Llava15ChatHandler  # type: ignore
                 mmproj_path = mmproj_files[0]
                 chat_handler = Llava15ChatHandler(clip_model_path=str(mmproj_path))
                 logger.info(f"Vision projector loaded: {mmproj_path.name}")

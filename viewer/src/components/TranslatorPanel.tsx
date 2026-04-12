@@ -10,6 +10,7 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 import { useT } from '../services/i18n';
 import { useTranslateStream } from '../hooks/useTranslateStream';
 import type { TranslateStreamState } from '../hooks/useTranslateStream';
+import { useTranslateLive } from '../hooks/useTranslateLive';
 
 const LANGUAGES: { code: string; name: string }[] = [
     { code: 'en', name: 'English' },
@@ -76,9 +77,12 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
     const [playingId, setPlayingId] = useState<number | null>(null);
     const [autoPlay, setAutoPlay] = useState(true);
     const [streamMic, setStreamMic] = useState(true);
+    const [speakMode, setSpeakMode] = useState(false);
+    const [isHoverMic, setIsHoverMic] = useState(false);
     const autoPlayRef = useRef(true);
     const chatEndRef = useRef<HTMLDivElement>(null);
     const prevResultRef = useRef<string | null>(null);
+    const swapRestartRef = useRef(false);
     const [textInput, setTextInput] = useState('');
     const [textBusy, setTextBusy] = useState(false);
     const [sttBusy, setSttBusy] = useState(false);
@@ -94,6 +98,8 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
         isProcessing,
         isPlaying,
     } = useTranslateStream();
+
+    const live = useTranslateLive();
 
     // Auto-scroll to bottom when new messages appear
     useEffect(() => {
@@ -124,6 +130,15 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
     const targetLang = activeSide === 'left' ? rightLang : leftLang;
 
     const handleMicToggle = useCallback(() => {
+        if (speakMode) {
+            // Speak mode: toggle continuous live translation
+            if (live.isListening) {
+                live.stop();
+            } else if (!live.isActive || live.state === 'error') {
+                live.start(targetLang, sourceLang === 'en' ? 'auto' : sourceLang);
+            }
+            return;
+        }
         if (streamMic) {
             // Stream mode: toggle WebSocket pipeline
             if (isRecording) {
@@ -169,7 +184,7 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                 }).catch(() => setSttBusy(false));
             }
         }
-    }, [streamMic, state, isRecording, targetLang, sourceLang, startRecording, stopRecording, sttBusy]);
+    }, [speakMode, live, streamMic, state, isRecording, targetLang, sourceLang, startRecording, stopRecording, sttBusy]);
 
     // Replay a message via TTS
     const handleReplay = useCallback(async (msg: ChatMessage) => {
@@ -182,13 +197,11 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
             });
             if (r.ok) {
                 const buf = await r.arrayBuffer();
-                const ctx = new AudioContext();
-                const decoded = await ctx.decodeAudioData(buf);
-                const src = ctx.createBufferSource();
-                src.buffer = decoded;
-                src.connect(ctx.destination);
-                src.onended = () => setPlayingId(null);
-                src.start();
+                const blob = new Blob([buf], { type: 'audio/wav' });
+                const url = URL.createObjectURL(blob);
+                const audio = new Audio(url);
+                audio.onended = () => { setPlayingId(null); URL.revokeObjectURL(url); };
+                audio.play().catch(() => setPlayingId(null));
             } else {
                 setPlayingId(null);
             }
@@ -224,10 +237,34 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
     }, [textInput, textBusy, sourceLang, targetLang, activeSide, handleReplay]);
 
     const handleSwap = useCallback(() => {
+        if (speakMode && live.isActive) {
+            live.stop(true);
+            swapRestartRef.current = true;
+        } else if (streamMic && isRecording) {
+            stopRecording(true);
+            swapRestartRef.current = true;
+        }
         setActiveSide(s => s === 'left' ? 'right' : 'left');
-    }, []);
+    }, [speakMode, live, streamMic, isRecording, stopRecording]);
 
-    const statusText = error || STATUS_LABELS[state];
+    // Handle seamless mid-session proxy reconnection
+    useEffect(() => {
+        if (swapRestartRef.current) {
+            if (speakMode && live.state === 'idle') {
+                swapRestartRef.current = false;
+                live.start(targetLang, sourceLang === 'en' ? 'auto' : sourceLang);
+            } else if (streamMic && state === 'idle') {
+                swapRestartRef.current = false;
+                startRecording(targetLang, sourceLang === 'en' ? 'auto' : sourceLang);
+            }
+        }
+    }, [live.state, state, speakMode, streamMic, targetLang, sourceLang, live, startRecording]);
+
+    const liveStatusText = live.error
+        || (live.isListening ? '🎤 Listening (live)...'
+            : live.state === 'processing' ? '⚡ Processing...'
+            : '');
+    const statusText = speakMode ? liveStatusText : (error || STATUS_LABELS[state]);
     const leftName = langName(leftLang);
     const rightName = langName(rightLang);
 
@@ -247,10 +284,41 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                     {'🌐'} {t('translator.title', 'Translator')}
                 </h2>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    {/* Speak toggle pill (live continuous mode) */}
+                    <button
+                        onClick={() => {
+                            setSpeakMode(s => {
+                                if (!s) setStreamMic(false); // mutual exclusion
+                                return !s;
+                            });
+                        }}
+                        title="Speak continuously — auto-detects pauses and translates each phrase"
+                        style={{
+                            display: 'flex', alignItems: 'center', gap: 5,
+                            padding: '4px 10px', borderRadius: 12,
+                            border: `1px solid ${speakMode ? 'rgba(210,168,60,0.4)' : 'rgba(255,255,255,0.1)'}`,
+                            background: speakMode ? 'rgba(210,168,60,0.12)' : 'transparent',
+                            color: speakMode ? '#d2a83c' : '#484f58',
+                            fontSize: 11, fontWeight: 600, cursor: 'pointer',
+                            transition: 'all 0.2s', letterSpacing: '0.02em',
+                        }}
+                    >
+                        <span style={{
+                            width: 6, height: 6, borderRadius: '50%',
+                            background: speakMode ? '#d2a83c' : '#484f58',
+                            transition: 'background 0.2s',
+                        }} />
+                        Speak
+                    </button>
                     {/* Stream Mic toggle pill */}
                     <button
-                        onClick={() => setStreamMic(s => !s)}
-                        title="Stream microphone audio (continuous listening)"
+                        onClick={() => {
+                            setStreamMic(s => {
+                                if (!s) setSpeakMode(false); // mutual exclusion
+                                return !s;
+                            });
+                        }}
+                        title="Stream microphone audio (record full statement)"
                         style={{
                             display: 'flex', alignItems: 'center', gap: 5,
                             padding: '4px 10px', borderRadius: 12,
@@ -381,19 +449,24 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                                     title={t('translator.replay', 'Replay')}
                                     style={{
                                         background: 'none', border: 'none', cursor: 'pointer',
-                                        fontSize: 14, padding: 2, flexShrink: 0,
+                                        padding: 2, flexShrink: 0,
                                         color: isActive ? '#f0c674' : '#8b949e',
                                         opacity: isActive ? 1 : 0.6,
                                         transition: 'all 0.15s',
+                                        display: 'flex', alignItems: 'center', gap: 4,
+                                        fontWeight: 600, fontSize: 13,
                                     }}
-                                >{isActive ? '🔊' : '▶️'}</button>
+                                >
+                                    <span>{isActive ? '🔊' : '▶️'}</span>
+                                    <span>{isActive ? t('translator.playing', 'Playing') : t('translator.speak', 'Speak')}</span>
+                                </button>
                             </div>
                         </div>
                     );
                 })}
 
-                {/* Live transcription — only while waiting for translation */}
-                {result?.transcript && !result?.translation && state !== 'idle' && (
+                {/* Live transcription — only while waiting for translation (Stream mode) */}
+                {!speakMode && result?.transcript && !result?.translation && state !== 'idle' && (
                     <div style={{
                         alignSelf: activeSide === 'left' ? 'flex-start' : 'flex-end',
                         maxWidth: '85%',
@@ -423,6 +496,52 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                     </div>
                 )}
 
+                {/* Live segments — Speak mode */}
+                {speakMode && live.segments.map(seg => (
+                    <div
+                        key={seg.segmentId}
+                        style={{
+                            display: 'flex', flexDirection: 'column',
+                            alignItems: 'flex-start',
+                            maxWidth: '85%', alignSelf: 'flex-start',
+                        }}
+                    >
+                        <div style={{
+                            fontSize: 10, fontWeight: 600, textTransform: 'uppercase',
+                            letterSpacing: '0.06em', marginBottom: 3,
+                            color: '#d2a83c',
+                            paddingLeft: 12,
+                        }}>
+                            ⚡ Live · Segment {seg.segmentId}
+                        </div>
+                        <div style={{
+                            padding: '10px 14px',
+                            borderRadius: '4px 16px 16px 16px',
+                            background: seg.done
+                                ? 'rgba(88,166,255,0.12)'
+                                : 'rgba(210,168,60,0.08)',
+                            border: seg.done
+                                ? '1px solid rgba(88,166,255,0.2)'
+                                : '1px dashed rgba(210,168,60,0.3)',
+                            color: '#e6edf3',
+                            fontSize: 15, lineHeight: 1.5,
+                            maxWidth: '100%', wordBreak: 'break-word',
+                            transition: 'all 0.3s',
+                        }}>
+                            {seg.translation || '...'}
+                            {seg.transcript && (
+                                <div style={{
+                                    marginTop: 6, paddingTop: 6,
+                                    borderTop: '1px solid rgba(210,168,60,0.15)',
+                                    fontSize: 12, color: '#6e7681', fontStyle: 'italic',
+                                }}>
+                                    {seg.transcript}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                ))}
+
                 <div ref={chatEndRef} />
             </div>
 
@@ -445,9 +564,11 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                 background: 'rgba(0,0,0,0.4)',
                 padding: '12px 16px 20px',
                 display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12,
+                position: 'relative',
             }}>
                 {/* Text input (when stream OFF) — above speaker selectors */}
-                {!streamMic && (
+                {/* Text input (when stream OFF) or Waveform (when active) */}
+                {(!streamMic && !speakMode) ? (
                     <div style={{
                         display: 'flex', gap: 8, width: '100%', maxWidth: 500,
                         alignItems: 'flex-end',
@@ -487,6 +608,29 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                         >
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                         </button>
+                    </div>
+                ) : (
+                    <div style={{
+                        display: 'flex', gap: 4, height: 30, alignItems: 'center', justifyContent: 'center',
+                        width: '100%', maxWidth: 200, marginBottom: 6, marginTop: 4,
+                    }}>
+                        {[...Array(16)].map((_, i) => (
+                            <div key={i} style={{
+                                width: 3,
+                                height: (live.isListening || (isRecording && streamMic)) ? '100%' : '15%',
+                                background: (live.isListening || (isRecording && streamMic))
+                                    ? (activeSide === 'left' ? '#58a6ff' : '#3fb950')
+                                    : (isProcessing || sttBusy) ? '#f39c12' : '#30363d',
+                                borderRadius: 2,
+                                transition: 'all 0.3s ease',
+                                animation: (live.isListening || (isRecording && streamMic))
+                                    ? `waveform-bounce ${0.4 + (i % 3) * 0.15}s ease-in-out ${i * 0.05}s infinite alternate`
+                                    : (isProcessing || sttBusy)
+                                        ? `waveform-pulse 1s ease-in-out ${i * 0.1}s infinite alternate`
+                                        : 'none',
+                                opacity: (live.isListening || (isRecording && streamMic)) ? 1 : (isProcessing || sttBusy) ? 0.8 : 0.4,
+                            }} />
+                        ))}
                     </div>
                 )}
 
@@ -583,56 +727,84 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                     </div>
                 </div>
 
-                {/* Mic toggle button — tap to start, tap to stop */}
-                <button
-                    onClick={handleMicToggle}
-                    disabled={isProcessing || isPlaying || (playingId !== null)}
-                    style={{
-                        width: streamMic ? 56 : 40, height: streamMic ? 56 : 40,
-                        borderRadius: '50%',
-                        border: 'none',
-                        cursor: (isProcessing || isPlaying || playingId !== null) ? 'not-allowed' : 'pointer',
-                        background: (isPlaying || playingId !== null)
-                            ? '#6e7681'
-                            : sttBusy
-                                ? '#e74c3c'
-                                : isRecording
-                                    ? '#e74c3c'
-                                    : isProcessing
-                                        ? '#f39c12'
-                                        : activeSide === 'left' ? '#58a6ff' : '#3fb950',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        boxShadow: (isRecording || sttBusy)
-                            ? '0 0 30px rgba(231,76,60,0.4)'
-                            : `0 0 16px ${activeSide === 'left' ? 'rgba(88,166,255,0.25)' : 'rgba(63,185,80,0.25)'}`,
-                        transition: 'all 0.2s',
-                        transform: (isRecording || sttBusy) ? 'scale(1.1)' : 'scale(1)',
-                        animation: (isRecording || sttBusy) ? 'pulse-ring 1.5s ease infinite' : 'none',
-                        flexShrink: 0,
-                    }}
-                >
-                    {(isPlaying || playingId !== null) ? (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-                    ) : (isRecording || sttBusy) ? (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
-                    ) : isProcessing ? (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><circle cx="12" cy="12" r="10" strokeDasharray="31.4" strokeDashoffset="10"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.8s" repeatCount="indefinite"/></circle></svg>
-                    ) : (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="17" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
-                    )}
-                </button>
+                {/* Mic toggle button & Checkbox Container */}
+                <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    {/* Mic toggle button — tap to start, tap to stop */}
+                    <button
+                        onClick={handleMicToggle}
+                        onMouseEnter={() => setIsHoverMic(true)}
+                        onMouseLeave={() => setIsHoverMic(false)}
+                        disabled={!speakMode && (isProcessing || isPlaying || (playingId !== null))}
+                        style={{
+                            width: (streamMic || speakMode) ? 56 : 40, height: (streamMic || speakMode) ? 56 : 40,
+                            borderRadius: '50%',
+                            border: 'none',
+                            cursor: (!speakMode && (isProcessing || isPlaying || playingId !== null)) ? 'not-allowed' : 'pointer',
+                            background: speakMode
+                                ? (live.isListening ? '#e74c3c' : live.isActive ? '#f39c12' : '#d2a83c')
+                                : (isPlaying || playingId !== null)
+                                    ? '#6e7681'
+                                    : sttBusy
+                                        ? '#e74c3c'
+                                        : isRecording
+                                            ? '#e74c3c'
+                                            : isProcessing
+                                                ? '#f39c12'
+                                                : activeSide === 'left' ? '#58a6ff' : '#3fb950',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            boxShadow: (isRecording || sttBusy || live.isListening)
+                                ? '0 0 30px rgba(231,76,60,0.4)'
+                                : speakMode
+                                    ? '0 0 16px rgba(210,168,60,0.3)'
+                                    : `0 0 16px ${activeSide === 'left' ? 'rgba(88,166,255,0.25)' : 'rgba(63,185,80,0.25)'}`,
+                            transition: 'all 0.2s',
+                            transform: (isRecording || sttBusy || live.isListening) ? 'scale(1.1)' : 'scale(1)',
+                            animation: (isRecording || sttBusy || live.isListening) ? 'pulse-ring 1.5s ease infinite' : 'none',
+                            flexShrink: 0,
+                        }}
+                    >
+                        {(isPlaying || playingId !== null) ? (
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                        ) : (isRecording || sttBusy || (speakMode && live.isActive && isHoverMic)) ? (
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+                        ) : isProcessing ? (
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><circle cx="12" cy="12" r="10" strokeDasharray="31.4" strokeDashoffset="10"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.8s" repeatCount="indefinite"/></circle></svg>
+                        ) : (
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="17" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+                        )}
+                    </button>
+                </div>
             </div>
 
             {/* Animations */}
             <style>{`
                 @keyframes pulse-ring {
-                    0% { box-shadow: 0 0 20px rgba(231,76,60,0.3); transform: scale(1.1); }
-                    50% { box-shadow: 0 0 40px rgba(231,76,60,0.5); transform: scale(1.15); }
-                    100% { box-shadow: 0 0 20px rgba(231,76,60,0.3); transform: scale(1.1); }
+                    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(231,76,60,0.4); }
+                    70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(231,76,60,0); }
+                    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(231,76,60,0); }
                 }
                 @keyframes speaker-pulse {
-                    0%, 100% { opacity: 1; transform: scale(1); }
-                    50% { opacity: 0.5; transform: scale(1.3); }
+                    0% { transform: scale(1); opacity: 0.8; }
+                    50% { transform: scale(1.2); opacity: 1; }
+                    100% { transform: scale(1); opacity: 0.8; }
+                }
+                @keyframes waveform-bounce {
+                    0% { height: 15%; }
+                    100% { height: 100%; }
+                }
+                @keyframes waveform-pulse {
+                    0% { height: 15%; background: #f39c12; }
+                    100% { height: 40%; background: #e67e22; }
+                }
+                .stream-typing::after {
+                    content: '...';
+                    animation: dots 1.5s steps(4, end) infinite;
+                }
+                @keyframes dots {
+                    0%, 20% { color: rgba(0,0,0,0); text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0); }
+                    40% { color: inherit; text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0); }
+                    60% { text-shadow: .25em 0 0 inherit, .5em 0 0 rgba(0,0,0,0); }
+                    80%, 100% { text-shadow: .25em 0 0 inherit, .5em 0 0 inherit; }
                 }
             `}</style>
         </div>

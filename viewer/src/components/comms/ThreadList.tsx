@@ -2,10 +2,13 @@
  * ThreadList — sidebar showing Message Board + active DM threads.
  * Teams-style: left panel on desktop, slide-over on mobile.
  */
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useT } from '../../services/i18n';
 import { ROLE_COLORS } from '../../types/comms';
 import type { RosterMember, ChatMsg } from '../../types/comms';
+
+// Module-level cache so thread preview translations persist across re-renders
+const _threadPreviewCache = new Map<string, string>();
 
 export interface ThreadInfo {
     id: string;           // 'board' or member name
@@ -28,7 +31,7 @@ interface Props {
 }
 
 export default function ThreadList({ activeThread, roster, messages, userName, onSelect, onDelete }: Props) {
-    const { t } = useT();
+    const { t, lang } = useT();
 
     // Build thread list from messages — find all unique DM partners
     const threads = useMemo<ThreadInfo[]>(() => {
@@ -77,6 +80,35 @@ export default function ThreadList({ activeThread, roster, messages, userName, o
 
         return [board, ...dmThreads];
     }, [messages, roster, userName, t]);
+
+    // Counter bumped when async translations arrive — triggers re-render to read from cache
+    const [, setTranslationTick] = useState(0);
+
+    // Translate thread previews for non-English users (async only — no sync setState)
+    useEffect(() => {
+        if (lang === 'en') return;
+        let cancelled = false;
+        const toTranslate = threads.filter(th => th.lastMessage && !_threadPreviewCache.has(`${th.id}:${lang}:${th.lastMessage}`));
+        for (const th of toTranslate) {
+            const cacheKey = `${th.id}:${lang}:${th.lastMessage}`;
+            fetch('/api/translate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: th.lastMessage, source: 'en', target: lang }),
+            })
+                .then(r => r.ok ? r.json() : null)
+                .then(d => {
+                    if (cancelled || !d) return;
+                    const translated = d.translated || d.text || '';
+                    if (translated && translated !== th.lastMessage) {
+                        _threadPreviewCache.set(cacheKey, translated);
+                        setTranslationTick(n => n + 1);
+                    }
+                })
+                .catch(() => {});
+        }
+        return () => { cancelled = true; };
+    }, [threads, lang]);
 
     const formatPreviewTime = (iso?: string) => {
         if (!iso) return '';
@@ -163,9 +195,13 @@ export default function ThreadList({ activeThread, roster, messages, userName, o
                                         fontSize: 11, color: 'var(--text-faint)', marginTop: 2,
                                         overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                                     }}>
-                                        {thread.lastMessage.length > 60
-                                            ? thread.lastMessage.slice(0, 60) + '…'
-                                            : thread.lastMessage}
+                                {(() => {
+                                    const cacheKey = `${thread.id}:${lang}:${thread.lastMessage}`;
+                                    const displayText = (lang !== 'en' && _threadPreviewCache.get(cacheKey)) || thread.lastMessage;
+                                    return displayText!.length > 60
+                                        ? displayText!.slice(0, 60) + '…'
+                                        : displayText;
+                                })()}
                                     </div>
                                 )}
                             </div>
@@ -188,6 +224,75 @@ export default function ThreadList({ activeThread, roster, messages, userName, o
                     );
                 })}
             </div>
+
+            {/* ── People (roster) — click to start a DM ─────────────── */}
+            {(() => {
+                const others = roster.filter(r => r.name.toLowerCase() !== userName.toLowerCase());
+                if (others.length === 0) return null;
+                // Exclude people who already have a thread
+                const threadNames = new Set(threads.filter(t => t.id !== 'board').map(t => t.name.toLowerCase()));
+                const newContacts = others.filter(r => !threadNames.has(r.name.toLowerCase()));
+                if (newContacts.length === 0) return null;
+                return (
+                    <>
+                        <div style={{
+                            padding: '10px 16px 6px', fontSize: 10, fontWeight: 700,
+                            color: 'var(--text-faint)', textTransform: 'uppercase', letterSpacing: '0.08em',
+                            borderTop: '1px solid var(--border)',
+                        }}>
+                            👥 {t('comms.people', 'People')}
+                        </div>
+                        {newContacts.map(member => {
+                            const roleColor = ROLE_COLORS[member.role] || '#888';
+                            const isOnline = member.status === 'connected';
+                            const isActive = activeThread === member.name;
+                            return (
+                                <div
+                                    key={member.id}
+                                    onClick={() => onSelect(member.name)}
+                                    style={{
+                                        display: 'flex', alignItems: 'center', gap: 10,
+                                        padding: '8px 16px', cursor: 'pointer',
+                                        background: isActive ? 'var(--surface)' : 'transparent',
+                                        borderLeft: isActive ? '3px solid #3fb950' : '3px solid transparent',
+                                        transition: 'background 0.15s',
+                                    }}
+                                    onMouseEnter={e => { if (!isActive) (e.currentTarget as HTMLElement).style.background = 'var(--surface)'; }}
+                                    onMouseLeave={e => { if (!isActive) (e.currentTarget as HTMLElement).style.background = 'transparent'; }}
+                                >
+                                    {/* Avatar with online dot */}
+                                    <div style={{ position: 'relative', flexShrink: 0 }}>
+                                        <div style={{
+                                            width: 32, height: 32, borderRadius: '50%',
+                                            background: roleColor + '22', border: `2px solid ${roleColor}44`,
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            overflow: 'hidden',
+                                        }}>
+                                            {member.avatar_url
+                                                ? <img src={member.avatar_url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                : <span style={{ fontSize: 12, fontWeight: 700, color: roleColor }}>{member.name.charAt(0).toUpperCase()}</span>
+                                            }
+                                        </div>
+                                        <div style={{
+                                            position: 'absolute', bottom: -1, right: -1,
+                                            width: 10, height: 10, borderRadius: '50%',
+                                            background: isOnline ? '#3fb950' : '#484f58',
+                                            border: '2px solid var(--bg)',
+                                        }} />
+                                    </div>
+                                    <div style={{ flex: 1, minWidth: 0 }}>
+                                        <div style={{
+                                            fontSize: 12, fontWeight: 600, color: 'var(--text-muted)',
+                                            overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                                        }}>{member.name}</div>
+                                        <div style={{ fontSize: 10, color: roleColor }}>{member.role}</div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </>
+                );
+            })()}
         </div>
     );
 }

@@ -1,6 +1,5 @@
 """Health check — GET /health. Reports model readiness (GGUF, ONNX, Whisper) for the frontend setup wizard."""
 from fastapi import APIRouter
-from fastapi.responses import JSONResponse
 
 from config import MODELS_DIR
 
@@ -29,7 +28,7 @@ async def health():
         "onnx": [f.name for f in onnx],
         "whisper": whisper,
     }
-    # Return 503 if models aren't ready yet — Electron will keep retrying
-    if not _models_ready:
-        return JSONResponse(content=payload, status_code=503)
+    # Always 200 — both Electron and React read models_ready from the body.
+    # A 503 here caused both consumers to treat it as "server down" and
+    # block the user on loading screens instead of showing the app.
     return payload

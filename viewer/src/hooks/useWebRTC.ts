@@ -46,6 +46,9 @@ export function useWebRTC(userName: string, userRole: string) {
 
     // ── Peer Connection ──────────────────────────────────────────────────────
 
+    // Ref for audio analyser setup (avoids circular dep with createPeerConnection)
+    const setupAudioAnalyserRef = useRef<(stream: MediaStream) => void>(() => {});
+
     const createPeerConnection = useCallback((targetName: string, cType: CallType) => {
         const pc = new RTCPeerConnection(RTC_CONFIG);
         peerConnectionRef.current = pc;
@@ -67,7 +70,8 @@ export function useWebRTC(userName: string, userRole: string) {
             if (!remoteStreamRef.current) remoteStreamRef.current = new MediaStream();
             remoteStreamRef.current.addTrack(e.track);
 
-            if (cType === 'voice') {
+            // Always create a hidden audio element for playback (voice AND video)
+            if (e.track.kind === 'audio') {
                 if (!remoteAudioRef.current) {
                     const audio = document.createElement('audio');
                     audio.autoplay = true;
@@ -76,6 +80,8 @@ export function useWebRTC(userName: string, userRole: string) {
                     remoteAudioRef.current = audio;
                 }
                 remoteAudioRef.current.srcObject = remoteStreamRef.current;
+                // Start audio level analyser
+                setupAudioAnalyserRef.current(remoteStreamRef.current);
             }
             if (cType === 'video' && remoteVideoRef.current) {
                 remoteVideoRef.current.srcObject = remoteStreamRef.current;
@@ -182,18 +188,17 @@ export function useWebRTC(userName: string, userRole: string) {
             if (msg.type === 'call_accept_local') {
                 const cType = msg.call_type || 'voice';
                 const callerName = msg.caller_name || 'Unknown';
-                window.dispatchEvent(new CustomEvent('eve-call-send', {
-                    detail: {
-                        type: 'call_accept', target_name: callerName,
-                        caller_name: userName, caller_role: userRole, call_type: cType,
-                    }
-                }));
                 (async () => {
                     try {
-                        const constraints: MediaStreamConstraints = cType === 'video'
-                            ? { audio: true, video: { width: 640, height: 480 } }
-                            : { audio: true };
-                        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+                        // Use pre-acquired stream from gesture context (iOS Safari requires this).
+                        // Falls back to getUserMedia for desktop/Electron where gesture isn't needed.
+                        let stream: MediaStream | null = msg._stream || null;
+                        if (!stream) {
+                            const constraints: MediaStreamConstraints = cType === 'video'
+                                ? { audio: true, video: { width: 640, height: 480 } }
+                                : { audio: true };
+                            stream = await navigator.mediaDevices.getUserMedia(constraints);
+                        }
                         localStreamRef.current = stream;
 
                         // Attach local video preview
@@ -207,6 +212,14 @@ export function useWebRTC(userName: string, userRole: string) {
                         setCallDuration(0);
                         setCallMuted(false);
                         callTimerRef.current = window.setInterval(() => setCallDuration(d => d + 1), 1000);
+
+                        // NOW send accept — media is ready for the incoming offer
+                        window.dispatchEvent(new CustomEvent('eve-call-send', {
+                            detail: {
+                                type: 'call_accept', target_name: callerName,
+                                caller_name: userName, caller_role: userRole, call_type: cType,
+                            }
+                        }));
                     } catch { /* permission denied */ }
                 })();
 
@@ -244,6 +257,15 @@ export function useWebRTC(userName: string, userRole: string) {
                 (async () => {
                     try {
                         const cType = msg.call_type || 'voice';
+                        // Ensure local media exists before creating peer connection
+                        // (mobile may not have it yet if call_accept_local raced)
+                        if (!localStreamRef.current) {
+                            console.log('[WebRTC] Acquiring media before answering offer...');
+                            const constraints: MediaStreamConstraints = cType === 'video'
+                                ? { audio: true, video: { width: 640, height: 480 } }
+                                : { audio: true };
+                            localStreamRef.current = await navigator.mediaDevices.getUserMedia(constraints);
+                        }
                         const pc = createPeerConnection(msg.caller_name, cType);
                         await pc.setRemoteDescription(new RTCSessionDescription({ type: msg.sdpType || 'offer', sdp: msg.sdp }));
                         for (const ic of pendingIceCandidatesRef.current) {
@@ -306,10 +328,199 @@ export function useWebRTC(userName: string, userRole: string) {
 
     const fmtDuration = (s: number) => `${Math.floor(s / 60).toString().padStart(2, '0')}:${(s % 60).toString().padStart(2, '0')}`;
 
+    // ── Audio Level Visualizer ───────────────────────────────────────────────
+
+    const [remoteAudioLevel, setRemoteAudioLevel] = useState(0);
+    const audioCtxRef = useRef<AudioContext | null>(null);
+    const analyserRef = useRef<AnalyserNode | null>(null);
+    const levelIntervalRef = useRef<number | null>(null);
+
+    // Called when ontrack fires — sets up audio level polling
+    const setupAudioAnalyser = useCallback((stream: MediaStream) => {
+        try {
+            const ctx = new AudioContext();
+            const source = ctx.createMediaStreamSource(stream);
+            const analyser = ctx.createAnalyser();
+            analyser.fftSize = 256;
+            source.connect(analyser);
+            // Don't connect to destination — we just want to read levels
+            audioCtxRef.current = ctx;
+            analyserRef.current = analyser;
+
+            const dataArray = new Uint8Array(analyser.frequencyBinCount);
+            levelIntervalRef.current = window.setInterval(() => {
+                analyser.getByteFrequencyData(dataArray);
+                // Average the frequency bins for an overall level
+                const sum = dataArray.reduce((a, b) => a + b, 0);
+                const avg = Math.round(sum / dataArray.length);
+                setRemoteAudioLevel(avg);
+            }, 100);
+            console.log('[WebRTC] Audio analyser active');
+        } catch (err) {
+            console.warn('[WebRTC] Audio analyser setup failed:', err);
+        }
+    }, []);
+    // Keep ref in sync so ontrack (in createPeerConnection) can call it
+    useEffect(() => { setupAudioAnalyserRef.current = setupAudioAnalyser; }, [setupAudioAnalyser]);
+
+    // ── Live Call Transcription (via /call-translate/ws) ─────────────────────
+
+    const [subtitleText, setSubtitleText] = useState('');
+    const [transcribing, setTranscribing] = useState(false);
+    const [transcribeLang, setTranscribeLang] = useState('en');
+    const transcribeWsRef = useRef<WebSocket | null>(null);
+    const transcribeRecorderRef = useRef<MediaRecorder | null>(null);
+    const transcribeIntervalRef = useRef<number | null>(null);
+
+    const startTranscription = useCallback((targetLang?: string) => {
+        const stream = remoteStreamRef.current;
+        if (!stream || stream.getAudioTracks().length === 0) {
+            console.warn('[Transcribe] No remote audio tracks available');
+            return;
+        }
+        const lang = targetLang || transcribeLang;
+        setTranscribing(true);
+
+        // Open a single long-lived WebSocket for the entire call
+        const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        const ws = new WebSocket(`${protocol}//${window.location.host}/call-translate/ws`);
+        transcribeWsRef.current = ws;
+
+        const audioChunksRef: Blob[] = [];
+
+        ws.onopen = () => {
+            // Send config
+            ws.send(JSON.stringify({
+                target_lang: lang,
+                source_lang: 'auto',
+                mode: 'subtitles', // subtitles-only (no Kokoro TTS)
+                speed: 1.0,
+            }));
+            console.log('[Transcribe] Connected to /call-translate/ws');
+        };
+
+        ws.onmessage = (event) => {
+            if (typeof event.data === 'string') {
+                try {
+                    const msg = JSON.parse(event.data);
+                    if (msg.type === 'transcript' && msg.text?.trim()) {
+                        setSubtitleText(msg.text.trim());
+                        setTimeout(() => setSubtitleText(prev =>
+                            prev === msg.text.trim() ? '' : prev), 6000);
+                    } else if (msg.type === 'translation' && msg.text?.trim()) {
+                        setSubtitleText(prev =>
+                            prev ? `${prev}\n→ ${msg.text.trim()}` : `→ ${msg.text.trim()}`);
+                    } else if (msg.type === 'error') {
+                        console.warn('[Transcribe] Server error (non-fatal):', msg.error);
+                    }
+                } catch { /* ignore parse errors */ }
+            }
+            // Ignore binary (TTS audio chunks) — subtitles only mode
+        };
+
+        ws.onerror = () => {
+            console.warn('[Transcribe] WS error');
+        };
+
+        ws.onclose = () => {
+            console.log('[Transcribe] WS closed');
+        };
+
+        // Create MediaRecorder on remote stream audio
+        const audioStream = new MediaStream(stream.getAudioTracks());
+        const mimeType = MediaRecorder.isTypeSupported('audio/webm;codecs=opus')
+            ? 'audio/webm;codecs=opus' : 'audio/webm';
+        const recorder = new MediaRecorder(audioStream, { mimeType });
+        transcribeRecorderRef.current = recorder;
+
+        recorder.ondataavailable = (e) => {
+            if (e.data.size > 0) audioChunksRef.push(e.data);
+        };
+        recorder.start(500); // chunk every 500ms
+
+        // Every 4 seconds, flush accumulated audio to the long-lived WS
+        const flush = async () => {
+            if (audioChunksRef.length === 0) return;
+            if (!ws || ws.readyState !== WebSocket.OPEN) return;
+
+            const chunks = audioChunksRef.splice(0);
+            const blob = new Blob(chunks, { type: mimeType });
+            if (blob.size < 1000) return; // skip silence
+
+            try {
+                const buf = await blob.arrayBuffer();
+                ws.send(buf);
+                ws.send(JSON.stringify({ type: 'end_chunk' }));
+            } catch (err) {
+                console.error('[Transcribe] Send error:', err);
+            }
+        };
+
+        transcribeIntervalRef.current = window.setInterval(flush, 4000);
+        console.log('[Transcribe] Started live transcription');
+    }, [transcribeLang]);
+
+    const stopTranscription = useCallback(() => {
+        setTranscribing(false);
+        if (transcribeRecorderRef.current && transcribeRecorderRef.current.state !== 'inactive') {
+            transcribeRecorderRef.current.stop();
+        }
+        transcribeRecorderRef.current = null;
+        if (transcribeIntervalRef.current) {
+            clearInterval(transcribeIntervalRef.current);
+            transcribeIntervalRef.current = null;
+        }
+        if (transcribeWsRef.current) {
+            try {
+                transcribeWsRef.current.send(JSON.stringify({ type: 'end_session' }));
+            } catch { /* already closed */ }
+            transcribeWsRef.current.close();
+            transcribeWsRef.current = null;
+        }
+        setSubtitleText('');
+        console.log('[Transcribe] Stopped');
+    }, []);
+
+    // Auto-cleanup when call ends
+    useEffect(() => {
+        if (!callActive) return;
+        return () => {
+            // Stop transcription
+            if (transcribeRecorderRef.current && transcribeRecorderRef.current.state !== 'inactive') {
+                transcribeRecorderRef.current.stop();
+            }
+            transcribeRecorderRef.current = null;
+            if (transcribeIntervalRef.current) {
+                clearInterval(transcribeIntervalRef.current);
+                transcribeIntervalRef.current = null;
+            }
+            if (transcribeWsRef.current) {
+                transcribeWsRef.current.close();
+                transcribeWsRef.current = null;
+            }
+            // Stop audio analyser
+            if (levelIntervalRef.current) {
+                clearInterval(levelIntervalRef.current);
+                levelIntervalRef.current = null;
+            }
+            if (audioCtxRef.current) {
+                audioCtxRef.current.close().catch(() => {});
+                audioCtxRef.current = null;
+            }
+            analyserRef.current = null;
+            setRemoteAudioLevel(0);
+        };
+    }, [callActive]);
+
     return {
         callActive, callTarget, callType, callMuted, callDuration,
         startCall, endCall, toggleMute,
         videoRefCallback, remoteVideoRefCallback,
         fmtDuration,
+        // Audio level
+        remoteAudioLevel,
+        // Live transcription
+        subtitleText, transcribing, transcribeLang, setTranscribeLang,
+        startTranscription, stopTranscription,
     };
 }

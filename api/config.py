@@ -13,3 +13,4 @@ MODELS_DIR = Path(os.environ.get("HALT_MODELS_DIR", str(_PROJECT_ROOT / "models"
 
 # Data directory for patient records, inventory, roster, etc.
 DATA_DIR = Path(os.environ.get("HALT_DATA_DIR", str(_PROJECT_ROOT / "patients")))
+

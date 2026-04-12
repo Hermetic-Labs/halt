@@ -46,11 +46,12 @@ let isQuitting = false;
  */
 function getBackendPath() {
     if (CONFIG.isDev) {
-        // In dev mode, use Python directly
+        // In dev mode, use start.py (the universal launcher)
+        const projectRoot = path.join(__dirname, '..', '..');
         return {
             command: 'python',
-            args: ['run_uvicorn.py'],
-            cwd: path.join(__dirname, '..', '..'),
+            args: ['start.py', '--no-browser', '--api-port', String(CONFIG.backendPort)],
+            cwd: projectRoot,
             isExe: false
         };
     }
@@ -79,6 +80,7 @@ function getBackendPath() {
  * Runs on startup to ensure clean state.
  */
 function killOrphanProcesses() {
+    if (CONFIG.isDev) return; // Don't kill dev servers
     if (process.platform === 'win32') {
         const { execSync } = require('child_process');
         for (const port of [CONFIG.backendPort]) {
@@ -172,7 +174,7 @@ function waitForBackend() {
 
         const check = () => {
             attempts++;
-            updateSplashStatus(`Warming up AI models (attempt ${attempts})...`);
+            updateSplashStatus(`Connecting to backend (attempt ${attempts})...`);
 
             const req = http.get(`${BACKEND_URL}/api/health`, (res) => {
                 let body = '';
@@ -180,13 +182,11 @@ function waitForBackend() {
                 res.on('end', () => {
                     try {
                         const data = JSON.parse(body);
-                        if (data.models_ready === true) {
-                            console.log('[HALT] Backend and models are ready');
-                            resolve();
-                        } else {
-                            updateSplashStatus(`Models warming up (${data.status || 'loading'})...`);
-                            retry();
-                        }
+                        // Backend is alive — that's all we need to open the app.
+                        // Models warm up in the background; the React frontend
+                        // shows its own loading state for GGUF/Whisper readiness.
+                        console.log(`[HALT] Backend alive (models_ready=${data.models_ready})`);
+                        resolve();
                     } catch {
                         // Server is up but response isn't JSON yet — keep trying
                         retry();
@@ -309,6 +309,19 @@ function createMainWindow() {
     await ses.clearCache();
     await ses.clearStorageData({ storages: ['serviceworkers'] });
     console.log('[HALT] Cleared browser cache and service workers');
+
+    // Grant camera + microphone + screen capture for WebRTC calls & translator
+    // Without this, getUserMedia fails silently in Electron's sandboxed renderer
+    ses.setPermissionRequestHandler((_webContents, permission, callback) => {
+        const granted = ['media', 'mediaKeySystem', 'display-capture', 'notifications'].includes(permission);
+        console.log(`[HALT] Permission ${permission}: ${granted ? 'GRANTED' : 'DENIED'}`);
+        callback(granted);
+    });
+
+    // Also handle permission checks (Chromium queries before requesting)
+    ses.setPermissionCheckHandler((_webContents, permission) => {
+        return ['media', 'mediaKeySystem', 'display-capture', 'notifications'].includes(permission);
+    });
 
     // Load the frontend through the backend proxy (which serves viewer/dist)
     // This maintains window.location.host so WebSockets can resolve the LAN/Local IP properly.

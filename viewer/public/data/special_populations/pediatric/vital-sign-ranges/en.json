@@ -1,4 +1,4 @@
-﻿{
+{
     "id":  "pediatric-vital-sign-ranges",
     "name":  "Pediatric Normal Vital Sign Ranges",
     "description":  "Age-adjusted reference for HR, RR, and SBP. Critical for correct triage classification in pediatric patients -- adult normal ranges are incorrect for children.",

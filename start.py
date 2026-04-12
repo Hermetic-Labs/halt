@@ -98,7 +98,8 @@ class ProcessManager:
                     # the parent, leaving uvicorn workers orphaned on the port.
                     subprocess.run(
                         ["taskkill", "/pid", str(proc.pid), "/T", "/F"],
-                        capture_output=True, timeout=5,
+                        capture_output=True,
+                        timeout=5,
                     )
                 else:
                     proc.terminate()
@@ -117,24 +118,33 @@ class ProcessManager:
     def _kill_port_holders(self):
         """Kill any leftover processes on HALT's ports."""
         import socket
-        for port in [7778]:
+
+        for port in [7778, 7779]:
             try:
                 with socket.create_connection(("127.0.0.1", port), timeout=1):
                     pass
                 # Port is still in use — nuclear option
                 result = subprocess.run(
                     f"netstat -ano | findstr :{port} | findstr LISTENING",
-                    capture_output=True, text=True, shell=True, timeout=5,
+                    capture_output=True,
+                    text=True,
+                    shell=True,
+                    timeout=5,
                 )
+                killed_any = False
                 for line in result.stdout.strip().splitlines():
                     parts = line.strip().split()
                     pid = int(parts[-1])
                     if pid > 0:
                         subprocess.run(
                             ["taskkill", "/pid", str(pid), "/T", "/F"],
-                            capture_output=True, timeout=5,
+                            capture_output=True,
+                            timeout=5,
                         )
                         log("STOP", f"Killed orphan PID {pid} on port {port}", Colors.YELLOW)
+                        killed_any = True
+                if killed_any:
+                    time.sleep(1) # Give Windows a moment to release the socket
             except (socket.timeout, ConnectionRefusedError, OSError, Exception):
                 pass  # Port is clean
 
@@ -176,7 +186,7 @@ def verify_integrity(root_dir):
     checked = 0
 
     try:
-        with open(manifest_path, "r", encoding="utf-8") as f:
+        with open(manifest_path, encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
                 if not line or line.startswith("#"):
@@ -251,7 +261,7 @@ def ensure_models(root_dir):
 
         # Add explicit User-Agent to bypass Cloudflare R2's 403 Forbidden block
         opener = urllib.request.build_opener()
-        opener.addheaders = [('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) HALT/1.0.5')]
+        opener.addheaders = [("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) HALT/1.0.5")]
         urllib.request.install_opener(opener)
 
         urllib.request.urlretrieve(MODELS_URL, zip_path, reporthook=report)
@@ -303,8 +313,15 @@ def start_backend(root_dir, port=7778, manager=None, use_reload=False):
 
     log("INFO", f"Starting API server on port {port}...")
 
+    # Auto-detect SSL certs for HTTPS (required for iOS camera/mic over LAN)
+    ssl_dir = os.path.join(root_dir, "dev", "ssl")
+    cert_file = os.path.join(ssl_dir, "cert.pem")
+    key_file = os.path.join(ssl_dir, "key.pem")
+    use_ssl = os.path.isfile(cert_file) and os.path.isfile(key_file)
+
     env = os.environ.copy()
     env["PORT"] = str(port)
+    env["HALT_USE_SSL"] = "1" if use_ssl else ""
 
     # Set HALT env vars if not already set (matches Electron's startBackend)
     if "HALT_MODELS_DIR" not in env:
@@ -312,42 +329,65 @@ def start_backend(root_dir, port=7778, manager=None, use_reload=False):
     if "HALT_DATA_DIR" not in env:
         env["HALT_DATA_DIR"] = os.path.join(root_dir, "patients")
 
-    cmd = [sys.executable, "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", str(port)]
+    # Always run HTTP
+    cmd_http = [sys.executable, "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", str(port)]
     if use_reload:
-        cmd.append("--reload")
+        cmd_http.append("--reload")
 
     try:
-        kwargs = dict(
-            cwd=backend_dir,
-            env=env,
-        )
+        kwargs = dict(cwd=backend_dir, env=env)
         if IS_WINDOWS:
             kwargs["creationflags"] = subprocess.CREATE_NEW_PROCESS_GROUP
 
-        proc = subprocess.Popen(cmd, **kwargs)
-
+        proc_http = subprocess.Popen(cmd_http, **kwargs)
         if manager:
-            manager.add("API Server", proc)
+            manager.add("HTTP API Server", proc_http)
 
-        # Wait for server to be ready
-        for i in range(30):  # 30 second timeout
-            time.sleep(1)
-            if proc.poll() is not None:
-                log("ERROR", "API server exited prematurely", Colors.RED)
-                return None
-            # Check if port is listening
-            if is_port_open("127.0.0.1", port):
-                log("OK", f"API server ready on http://localhost:{port}", Colors.GREEN)
-                return proc
-        else:
-            log("WARN", "API server taking long to start...", Colors.YELLOW)
-            return proc
+        procs_to_wait = [(proc_http, port, "http")]
+
+        # Run HTTPS concurrently if certs exist
+        if use_ssl:
+            https_port = port + 1
+            cmd_https = [sys.executable, "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", str(https_port)]
+            if use_reload:
+                cmd_https.append("--reload")
+            cmd_https.extend(["--ssl-certfile", cert_file, "--ssl-keyfile", key_file])
+            
+            env_https = env.copy()
+            env_https["PORT"] = str(https_port)
+            kwargs_https = dict(cwd=backend_dir, env=env_https)
+            if IS_WINDOWS:
+                kwargs_https["creationflags"] = subprocess.CREATE_NEW_PROCESS_GROUP
+            
+            proc_https = subprocess.Popen(cmd_https, **kwargs_https)
+            if manager:
+                manager.add("HTTPS API Server", proc_https)
+                
+            procs_to_wait.append((proc_https, https_port, "https"))
+            log("OK", f"SSL certs found — serving HTTPS on {https_port}", Colors.GREEN)
+
+        # Wait for all servers to be ready
+        for proc, p_port, proto in procs_to_wait:
+            ready = False
+            for i in range(30):  # 30 second timeout
+                time.sleep(1)
+                if proc.poll() is not None:
+                    log("ERROR", f"{proto.upper()} server exited prematurely", Colors.RED)
+                    return None
+                if is_port_open("127.0.0.1", p_port):
+                    log("OK", f"{proto.upper()} server ready on {proto}://localhost:{p_port}", Colors.GREEN)
+                    ready = True
+                    break
+            if not ready:
+                log("WARN", f"{proto.upper()} server taking long to start...", Colors.YELLOW)
+
+        return procs_to_wait[0][0]
 
     except FileNotFoundError:
         log("ERROR", "Python or uvicorn not found. Is the virtual environment activated?", Colors.RED)
         return None
     except Exception as e:
-        log("ERROR", f"Failed to start API server: {e}", Colors.RED)
+        log("ERROR", f"Failed to start API servers: {e}", Colors.RED)
         return None
 
 
@@ -379,9 +419,13 @@ def start_frontend(root_dir, api_port=7778, open_browser=True):
         # Production mode — API server handles everything on one port
         log("INFO", f"Frontend served by API on port {api_port} (production mode)")
         if open_browser:
+
             def delayed_open():
                 time.sleep(2)
-                webbrowser.open(f"http://localhost:{api_port}")
+                _proto = "https" if os.environ.get("HALT_USE_SSL") else "http"
+                _port = api_port + 1 if _proto == "https" else api_port
+                webbrowser.open(f"{_proto}://localhost:{_port}")
+
             threading.Thread(target=delayed_open, daemon=True).start()
         return True
 
@@ -409,9 +453,11 @@ def start_frontend(root_dir, api_port=7778, open_browser=True):
                     url = f"http://localhost:{port}"
                     log("OK", f"Dev server ready at {url}", Colors.GREEN)
                     if open_browser:
+
                         def delayed_open():
                             time.sleep(2)
                             webbrowser.open(url)
+
                         threading.Thread(target=delayed_open, daemon=True).start()
                     return proc
             log("WARN", "Vite dev server taking long to start...", Colors.YELLOW)
@@ -421,10 +467,12 @@ def start_frontend(root_dir, api_port=7778, open_browser=True):
             return None
     else:
         log("WARN", "No viewer/dist/ found and HALT_DEV not set. Frontend unavailable.", Colors.YELLOW)
-        log("INFO", "Run 'cd viewer && npm run build' to build the frontend, or set HALT_DEV=1 for dev mode.", Colors.BLUE)
+        log(
+            "INFO",
+            "Run 'cd viewer && npm run build' to build the frontend, or set HALT_DEV=1 for dev mode.",
+            Colors.BLUE,
+        )
         return True
-
-
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
@@ -471,6 +519,20 @@ def main():
     if not IS_WINDOWS:
         signal.signal(signal.SIGTERM, signal_handler)
 
+    # Auto-generate SSL certs if missing or IP changed (for iOS camera/mic)
+    try:
+        sys.path.insert(0, os.path.join(root, "api"))
+        from routes.setup import ensure_certs
+        cert_status = ensure_certs()
+        if cert_status.get("action") == "regenerated":
+            reason = cert_status.get("reason", "")
+            log("OK", f"SSL certs auto-generated ({reason})", Colors.GREEN)
+        if cert_status.get("ready"):
+            os.environ["HALT_USE_SSL"] = "1"
+            log("OK", f"HTTPS enabled for {cert_status['ip']}", Colors.GREEN)
+    except Exception as e:
+        log("WARN", f"SSL auto-setup failed: {e} — running HTTP only", Colors.YELLOW)
+
     # Start backend (single process — serves API + static PWA)
     api_proc = start_backend(root, args.api_port, manager, use_reload=use_reload)
     if not api_proc:
@@ -484,16 +546,23 @@ def main():
     def _warmup_tts():
         """Send a tiny TTS request so Kokoro loads the model into memory."""
         import json as _json
+
         for _ in range(30):  # Retry up to 30s until server is ready
             time.sleep(1)
             try:
+                _proto = "https" if os.environ.get("HALT_USE_SSL") else "http"
+                _port = args.api_port + 1 if _proto == "https" else args.api_port
+                import ssl as _ssl
+                ctx = _ssl.create_default_context()
+                ctx.check_hostname = False
+                ctx.verify_mode = _ssl.CERT_NONE
                 req = urllib.request.Request(
-                    f"http://localhost:{args.api_port}/tts/synthesize",
+                    f"{_proto}://localhost:{_port}/tts/synthesize",
                     data=_json.dumps({"text": "ready", "voice": "af_heart", "rate": 1.0, "lang": "en"}).encode(),
                     headers={"Content-Type": "application/json"},
                     method="POST",
                 )
-                resp = urllib.request.urlopen(req, timeout=60)
+                resp = urllib.request.urlopen(req, timeout=60, context=ctx)
                 resp.read()
                 resp.close()
                 log("TTS", "Kokoro warmup complete — model loaded", Colors.GREEN)
@@ -508,14 +577,11 @@ def main():
     # Running
     print()
     log("START", "HALT is running!", Colors.GREEN + Colors.BOLD)
-    print(
-        f"""
-  App & API:   http://localhost:{args.api_port}
-  Lookup:      http://localhost:{args.api_port}/lookup
-
-  Press Ctrl+C to stop.
-"""
-    )
+    print("\n  App Access:")
+    print(f"    [HTTP]     http://localhost:{args.api_port}")
+    if os.environ.get("HALT_USE_SSL"):
+        print(f"    [HTTPS]    https://localhost:{args.api_port + 1}")
+    print("\n  Press Ctrl+C to stop.\n")
 
     # Keep alive
     try:

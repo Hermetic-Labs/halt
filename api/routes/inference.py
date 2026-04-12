@@ -44,6 +44,7 @@ def _get_llm():
         if mmproj_files:
             try:
                 from llama_cpp.llama_chat_format import Llava15ChatHandler
+
                 mmproj_path = mmproj_files[0]
                 chat_handler = Llava15ChatHandler(clip_model_path=str(mmproj_path))
                 logger.info(f"Vision projector loaded: {mmproj_path.name}")
@@ -67,7 +68,7 @@ def _get_llm():
         logger.info(f"LLM ready: {_llm_name} (vision={'yes' if _has_vision else 'no'})")
         return _llm
     except Exception as e:
-        logger.error(f"LLM load failed: {e}")
+        logger.exception("LLM load failed")
         return None
 
 

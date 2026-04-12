@@ -24,6 +24,7 @@ import logging
 from fastapi import APIRouter, HTTPException, Response, WebSocket, WebSocketDisconnect
 from pydantic import BaseModel, Field
 from config import MODELS_DIR
+import contextlib
 
 logger = logging.getLogger("triage.tts")
 router = APIRouter(tags=["tts"])
@@ -296,7 +297,7 @@ def _get_kokoro():
             pass
         return _kokoro
     except Exception as e:
-        logger.error(f"Kokoro load error: {e}")
+        logger.exception("Kokoro load error")
         return None
 
 
@@ -312,7 +313,7 @@ async def _wait_kokoro(timeout: float = 60.0):
 
         return await asyncio.to_thread(_get_kokoro)
     except Exception as e:
-        logger.error(f"Wait kokoro err: {e}")
+        logger.exception("Wait kokoro err")
         return None
 
 
@@ -396,21 +397,23 @@ async def synthesize(req: TTSRequest):
                     content=wav, media_type="audio/wav", headers={"Content-Disposition": "inline; filename=speech.wav"}
                 )
             except Exception as e:
-                raise HTTPException(503, str(e))
+                raise HTTPException(503, str(e)) from e
             finally:
                 _tts_active_user = ""
     except HTTPException:
         raise
     except Exception:
         _tts_queue_waiting = max(0, _tts_queue_waiting - 1)
-        raise HTTPException(503, "TTS queue error")
+        raise HTTPException(503, "TTS queue error") from None
 
 
 # ── Multi-language stitched synthesis ──────────────────────────────────────────
 
+
 class TTSSegment(BaseModel):
     text: str = Field(..., min_length=1, max_length=4000)
     lang: str = Field(default="en")
+
 
 class TTSMultiRequest(BaseModel):
     segments: list[TTSSegment] = Field(..., min_length=1, max_length=10)
@@ -476,25 +479,25 @@ async def synthesize_multi(req: TTSMultiRequest):
             loop = asyncio.get_event_loop()
             try:
                 segments = [{"text": s.text, "lang": s.lang} for s in req.segments]
-                wav = await loop.run_in_executor(
-                    None, _synth_multi, segments, req.rate, req.gap_seconds
-                )
+                wav = await loop.run_in_executor(None, _synth_multi, segments, req.rate, req.gap_seconds)
                 return Response(
-                    content=wav, media_type="audio/wav",
+                    content=wav,
+                    media_type="audio/wav",
                     headers={"Content-Disposition": "inline; filename=announcement.wav"},
                 )
             except Exception as e:
-                raise HTTPException(503, str(e))
+                raise HTTPException(503, str(e)) from e
             finally:
                 _tts_active_user = ""
     except HTTPException:
         raise
     except Exception:
         _tts_queue_waiting = max(0, _tts_queue_waiting - 1)
-        raise HTTPException(503, "TTS queue error")
+        raise HTTPException(503, "TTS queue error") from None
 
 
 # ── WebSocket streaming TTS ────────────────────────────────────────────────────
+
 
 @router.get("/queue")
 def tts_queue_status():
@@ -538,21 +541,21 @@ async def tts_ws(websocket: WebSocket):
                 if _tts_lock.locked():
                     _tts_queue_waiting += 1
                     position = _tts_queue_waiting
-                    try:
+                    with contextlib.suppress(Exception):
                         await websocket.send_json({"type": "queued", "position": position})
-                    except Exception:
-                        pass
 
                     async with _tts_lock:
                         _tts_queue_waiting = max(0, _tts_queue_waiting - 1)
                         _tts_active_user = f"ws-{lang}"
                         try:
                             espeak = _espeak_code(lang)
-                            async for samples, _phonemes in k.create_stream(text, voice=voice, speed=speed, lang=espeak):
+                            async for samples, _phonemes in k.create_stream(
+                                text, voice=voice, speed=speed, lang=espeak
+                            ):
                                 wav = _to_wav(samples)
                                 await websocket.send_bytes(wav)
                         except Exception as e:
-                            logger.error(f"WS TTS stream error: {e}")
+                            logger.exception("WS TTS stream error")
                         finally:
                             _tts_active_user = ""
                 else:
@@ -560,17 +563,19 @@ async def tts_ws(websocket: WebSocket):
                         _tts_active_user = f"ws-{lang}"
                         try:
                             espeak = _espeak_code(lang)
-                            async for samples, _phonemes in k.create_stream(text, voice=voice, speed=speed, lang=espeak):
+                            async for samples, _phonemes in k.create_stream(
+                                text, voice=voice, speed=speed, lang=espeak
+                            ):
                                 wav = _to_wav(samples)
                                 await websocket.send_bytes(wav)
                         except Exception as e:
-                            logger.error(f"WS TTS stream error: {e}")
+                            logger.exception("WS TTS stream error")
                         finally:
                             _tts_active_user = ""
 
                 await websocket.send_json({"type": "done"})
         except Exception as e:
-            logger.error(f"Generator err: {e}")
+            logger.exception("Generator err")
 
     gen_task = asyncio.create_task(_generator())
 
@@ -588,7 +593,7 @@ async def tts_ws(websocket: WebSocket):
     except WebSocketDisconnect:
         pass
     except Exception as e:
-        logger.error(f"WS TTS error: {e}")
+        logger.exception("WS TTS error")
     finally:
         await queue.put(None)
         await gen_task

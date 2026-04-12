@@ -29,6 +29,15 @@ function pickVoice(lang: string): string {
     return KOKORO_VOICE_MAP[lang] || KOKORO_VOICE_MAP['en'];
 }
 
+// Global shared AudioContext to prevent driver exclusivity locks with WebRTC
+export let globalAudioCtx: AudioContext | null = null;
+export function getSharedAudioContext() {
+    if (!globalAudioCtx || globalAudioCtx.state === 'closed') {
+        globalAudioCtx = new window.AudioContext();
+    }
+    return globalAudioCtx;
+}
+
 export function useTTS() {
     const wsRef = useRef<WebSocket | null>(null);
     const audioCtxRef = useRef<AudioContext | null>(null);
@@ -67,8 +76,8 @@ export function useTTS() {
     // ── WebSocket connection ─────────────────────────────────────────────────
 
     const ensureWs = useCallback(() => {
-        if (!audioCtxRef.current) {
-            audioCtxRef.current = new window.AudioContext();
+        if (!audioCtxRef.current || audioCtxRef.current.state === 'closed') {
+            audioCtxRef.current = getSharedAudioContext();
             nextTimeRef.current = audioCtxRef.current.currentTime + 0.1;
         }
 
@@ -126,7 +135,8 @@ export function useTTS() {
         ensureWs();
         return () => {
             if (wsRef.current) { wsRef.current.close(); wsRef.current = null; }
-            if (audioCtxRef.current) { audioCtxRef.current.close().catch(() => { }); audioCtxRef.current = null; }
+            // Do NOT close the shared AudioContext to prevent WebRTC hardware lock loss
+            audioCtxRef.current = null;
         };
     }, [ensureWs]);
 
@@ -134,7 +144,7 @@ export function useTTS() {
 
     const stopSpeak = useCallback(() => {
         if (audioCtxRef.current) {
-            try { audioCtxRef.current.close(); } catch { /* ignore */ }
+            // Do NOT close the shared AudioContext
             audioCtxRef.current = null;
         }
         if (wsRef.current) {
@@ -159,7 +169,7 @@ export function useTTS() {
             wsRef.current = null;
         }
         if (audioCtxRef.current) {
-            try { audioCtxRef.current.close(); } catch { /* ignore */ }
+            // Do NOT close the shared AudioContext
             audioCtxRef.current = null;
         }
         ttsQueueRef.current = [];
@@ -167,8 +177,8 @@ export function useTTS() {
         setIsSpeaking(true);
         setQueuePosition(null);
 
-        // Fresh audio context
-        audioCtxRef.current = new window.AudioContext();
+        // Reuse shared audio context
+        audioCtxRef.current = getSharedAudioContext();
         nextTimeRef.current = audioCtxRef.current.currentTime + 0.1;
         if (audioCtxRef.current.state === 'suspended') {
             audioCtxRef.current.resume().catch(() => { });

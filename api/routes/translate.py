@@ -98,7 +98,7 @@ def _load_nllb():
         logger.info("NLLB translation model ready (CTranslate2 + SentencePiece).")
         return _translator, _sp
     except Exception as e:
-        logger.error(f"Failed to load NLLB: {e}")
+        logger.exception("Failed to load NLLB")
         return None, None
 
 
@@ -133,7 +133,7 @@ def _translate(text: str, source: str, target: str) -> str:
         translated_text = sp.Decode(clean_tokens)
         return translated_text
     except Exception as e:
-        logger.error(f"Translation failed: {e}")
+        logger.exception("Translation failed")
         return text
 
 

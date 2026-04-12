@@ -33,7 +33,7 @@ def _get_kokoro():
         logger.error(f"Kokoro files missing in {MODELS_DIR}")
         return None
     try:
-        from kokoro_onnx import Kokoro
+        from kokoro_onnx import Kokoro  # type: ignore
 
         _kokoro = Kokoro(str(MODEL_PATH), str(VOICES_PATH))
         _voices = _kokoro.get_voices()
@@ -69,7 +69,7 @@ async def _wait_kokoro(timeout: float = 60.0):
 
 
 def _to_wav(samples, sample_rate: int = 24000) -> bytes:
-    import numpy as np
+    import numpy as np  # type: ignore
 
     audio = (samples * 32767).astype(np.int16)
     buf = io.BytesIO()

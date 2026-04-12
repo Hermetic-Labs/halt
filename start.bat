@@ -16,20 +16,23 @@ set "HALT_DATA_DIR=%~dp0patients"
 
 echo.
 echo   Cleaning stale port 7778...
-for /f "tokens=5" %%p in ('netstat -ano ^| findstr ":7778 " ^| findstr LISTENING 2^>nul') do (
+for /f "tokens=5" %%p in ('netstat -ano ^| findstr "LISTENING" ^| findstr ":7778 :7779"') do (
     taskkill /PID %%p /T /F >nul 2>&1
 )
 
 echo   Starting HALT (production mode)...
-echo   App ^& API: http://localhost:7778
+echo   App ^& API: Native Window (Tauri)
 echo   Press Ctrl+C to stop
 echo.
 
-:: ── Launch: single-port, no reload, auto-opens browser ───────
-python start.py --api-port 7778 --prod
+:: ── Launch: Tauri Native Desktop Shell ───────
+cd viewer
+call npm run tauri dev
+
+pause
 
 echo.
 echo   Closing HALT...
-for /f "tokens=5" %%p in ('netstat -ano ^| findstr ":7778 " ^| findstr LISTENING 2^>nul') do (
+for /f "tokens=5" %%p in ('netstat -ano ^| findstr "LISTENING" ^| findstr ":7778 :7779"') do (
     taskkill /PID %%p /T /F >nul 2>&1
 )

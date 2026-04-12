@@ -166,7 +166,7 @@ async def _download_pack(pack_id: str, url: str):
 
     except HTTPError as e:
         _publish_progress(phase="error", error=f"HTTP {e.code}: {e.reason}")
-        logger.error(f"[distribution] HTTP error downloading {pack_id}: {e}")
+        logger.exception(f"[distribution] HTTP error downloading {pack_id}")
         if archive_path.exists():
             archive_path.unlink(missing_ok=True)
     except Exception as e:
@@ -238,7 +238,6 @@ async def progress_stream():
     """SSE endpoint streaming download progress."""
 
     async def event_generator():
-
         # Wait for a download to start
         for _ in range(300):  # 30s max wait
             if _progress_queue is not None:

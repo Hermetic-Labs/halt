@@ -9,12 +9,15 @@ import { useT } from '../services/i18n';
 
 const STORAGE_KEY = 'eve-permissions-granted';
 const IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const IS_INSECURE = window.location.protocol === 'http:' && window.location.hostname !== 'localhost';
+
+type PermState = 'pending' | 'granted' | 'denied' | 'deferred';
 
 interface PermissionStatus {
-    audio: 'pending' | 'granted' | 'denied';
-    mic: 'pending' | 'granted' | 'denied';
-    camera: 'pending' | 'granted' | 'denied';
-    notifications: 'pending' | 'granted' | 'denied';
+    audio: PermState;
+    mic: PermState;
+    camera: PermState;
+    notifications: PermState;
 }
 
 export default function PermissionGate({ children }: { children: React.ReactNode }) {
@@ -43,7 +46,7 @@ export default function PermissionGate({ children }: { children: React.ReactNode
             source.buffer = buffer;
             source.connect(ctx.destination);
             source.start();
-            await ctx.resume();
+            ctx.resume().catch(() => {});
             newStatus.audio = 'granted';
         } catch {
             newStatus.audio = 'denied';
@@ -51,20 +54,27 @@ export default function PermissionGate({ children }: { children: React.ReactNode
 
         // 2. Microphone
         try {
-            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            const stream = await Promise.race([
+                navigator.mediaDevices.getUserMedia({ audio: true }),
+                new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 3000))
+            ]) as MediaStream;
             stream.getTracks().forEach(t => t.stop()); // release immediately
             newStatus.mic = 'granted';
         } catch {
-            newStatus.mic = 'denied';
+            // Browsers block getUserMedia over HTTP — defer to call-time gesture
+            newStatus.mic = IS_INSECURE ? 'deferred' : 'denied';
         }
 
         // 3. Camera
         try {
-            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            const stream = await Promise.race([
+                navigator.mediaDevices.getUserMedia({ video: true }),
+                new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 3000))
+            ]) as MediaStream;
             stream.getTracks().forEach(t => t.stop());
             newStatus.camera = 'granted';
         } catch {
-            newStatus.camera = 'denied';
+            newStatus.camera = IS_INSECURE ? 'deferred' : 'denied';
         }
 
         // 4. Notifications — skip on iOS Safari (not supported; use native Capacitor push instead)
@@ -108,10 +118,10 @@ export default function PermissionGate({ children }: { children: React.ReactNode
 
     if (!show) return <div>{children}</div>;
 
-    const statusIcon = (s: 'pending' | 'granted' | 'denied') =>
-        s === 'granted' ? '✓' : s === 'denied' ? 'x' : '--';
-    const statusColor = (s: 'pending' | 'granted' | 'denied') =>
-        s === 'granted' ? '#3fb950' : s === 'denied' ? '#e74c3c' : 'var(--text-muted)';
+    const statusIcon = (s: PermState) =>
+        s === 'granted' ? '✓' : s === 'denied' ? '✕' : s === 'deferred' ? '⏳' : '--';
+    const statusColor = (s: PermState) =>
+        s === 'granted' ? '#3fb950' : s === 'denied' ? '#e74c3c' : s === 'deferred' ? '#f0a500' : 'var(--text-muted)';
 
     return (
         <>
@@ -148,6 +158,56 @@ export default function PermissionGate({ children }: { children: React.ReactNode
                             </div>
                         ))}
                     </div>
+
+                    {/* iOS/Android secure video setup — shows when camera/mic need cert trust */}
+                    {(status.mic === 'deferred' || status.camera === 'deferred') && (
+                        <div style={{
+                            background: '#1a1500', border: '1px solid #f0a50044', borderRadius: 10,
+                            padding: '14px 16px', marginBottom: 16, textAlign: 'left',
+                        }}>
+                            <div style={{ fontSize: 13, fontWeight: 600, color: '#f0a500', marginBottom: 6 }}>
+                                📹 Video Call Setup Required
+                            </div>
+                            <div style={{ fontSize: 12, color: '#999', lineHeight: 1.5, marginBottom: 12 }}>
+                                To enable camera and microphone for video calls, install the HALT security certificate on this device. This is a one-time setup.
+                            </div>
+                            {IS_IOS ? (
+                                <>
+                                    <a
+                                        href="/api/setup/cert.mobileconfig"
+                                        style={{
+                                            display: 'block', textAlign: 'center', padding: '10px 16px',
+                                            background: '#f0a50015', border: '1px solid #f0a500',
+                                            borderRadius: 8, color: '#f0a500', fontSize: 13, fontWeight: 600,
+                                            textDecoration: 'none', marginBottom: 10,
+                                        }}
+                                    >
+                                        📥 Install Security Certificate
+                                    </a>
+                                    <div style={{ fontSize: 11, color: '#666', lineHeight: 1.5 }}>
+                                        After downloading: <strong style={{ color: '#999' }}>Settings → General → VPN &amp; Device Management</strong> → tap the HALT profile → Install. Then go to <strong style={{ color: '#999' }}>Settings → General → About → Certificate Trust Settings</strong> and enable trust.
+                                    </div>
+                                </>
+                            ) : (
+                                <>
+                                    <a
+                                        href="/api/setup/cert.pem"
+                                        style={{
+                                            display: 'block', textAlign: 'center', padding: '10px 16px',
+                                            background: '#f0a50015', border: '1px solid #f0a500',
+                                            borderRadius: 8, color: '#f0a500', fontSize: 13, fontWeight: 600,
+                                            textDecoration: 'none', marginBottom: 10,
+                                        }}
+                                    >
+                                        📥 Install Security Certificate
+                                    </a>
+                                    <div style={{ fontSize: 11, color: '#666', lineHeight: 1.5 }}>
+                                        After downloading: <strong style={{ color: '#999' }}>Settings → Security → Install from storage</strong> → select the downloaded file → Install as <strong style={{ color: '#999' }}>CA certificate</strong>.
+                                    </div>
+                                </>
+                            )}
+                        </div>
+                    )}
 
                     <div style={{ display: 'flex', gap: 10 }}>
                         <button onClick={skip} style={{ flex: 1, padding: '10px 16px', background: 'transparent', border: '1px solid #444', borderRadius: 8, color: '#888', fontSize: 13, cursor: 'pointer' }}>

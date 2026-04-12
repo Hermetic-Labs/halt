@@ -74,24 +74,39 @@ export function useTranslateStream() {
     const wsRef = useRef<WebSocket | null>(null);
     const mediaRecRef = useRef<MediaRecorder | null>(null);
     const audioCtxRef = useRef<AudioContext | null>(null);
+    const streamRef = useRef<MediaStream | null>(null);
+    const keepMicAliveRef = useRef(false);
 
     const cleanup = useCallback(() => {
         if (mediaRecRef.current && mediaRecRef.current.state !== 'inactive') {
             mediaRecRef.current.stop();
-            mediaRecRef.current.stream.getTracks().forEach(t => t.stop());
         }
         mediaRecRef.current = null;
+        if (streamRef.current && !keepMicAliveRef.current) {
+            streamRef.current.getTracks().forEach(t => t.stop());
+            streamRef.current = null;
+        }
         if (wsRef.current && wsRef.current.readyState <= 1) {
             wsRef.current.close();
         }
         wsRef.current = null;
+        keepMicAliveRef.current = false;
     }, []);
 
     /**
      * Start recording. Call with target language.
      */
     const startRecording = useCallback(async (targetLang: string, sourceLang = 'auto', speed = 1.0) => {
+        // Shield the active hardware stream from the mechanical safety teardown to prevent device locks
+        const hotStream = streamRef.current;
+        streamRef.current = null;
+
         cleanup();
+
+        if (hotStream) {
+            streamRef.current = hotStream;
+        }
+
         setResult(null);
         setError('');
 
@@ -167,8 +182,13 @@ export function useTranslateStream() {
                 ws.addEventListener('error', () => reject(new Error('WS connect failed')), { once: true });
             });
 
-            // Start mic
-            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            // Start mic (reuse if kept alive)
+            let stream = streamRef.current;
+            if (!stream || stream.getTracks().length === 0 || stream.getTracks()[0].readyState === 'ended') {
+                stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                streamRef.current = stream;
+            }
+
             let mimeType = '';
             for (const mime of ['audio/webm;codecs=opus', 'audio/webm', 'audio/ogg;codecs=opus']) {
                 if (MediaRecorder.isTypeSupported(mime)) { mimeType = mime; break; }
@@ -193,12 +213,19 @@ export function useTranslateStream() {
         }
     }, [cleanup]);
 
-    const stopRecording = useCallback(() => {
+    const stopRecording = useCallback((keepMicAlive = false) => {
+        if (keepMicAlive) {
+            keepMicAliveRef.current = true;
+        }
+
         if (mediaRecRef.current && mediaRecRef.current.state !== 'inactive') {
             mediaRecRef.current.stop();
-            mediaRecRef.current.stream.getTracks().forEach(t => t.stop());
         }
         mediaRecRef.current = null;
+        if (streamRef.current && !keepMicAliveRef.current) {
+            streamRef.current.getTracks().forEach(t => t.stop());
+            streamRef.current = null;
+        }
 
         if (wsRef.current && wsRef.current.readyState === WebSocket.OPEN) {
             wsRef.current.send(JSON.stringify({ type: 'end' }));

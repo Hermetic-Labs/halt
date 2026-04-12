@@ -21,6 +21,7 @@ interface I18nContext {
     setLang: (code: string) => void;
     t: (key: string, paramsOrFallback?: string | Record<string, string>) => string;
     tEn: (key: string, paramsOrFallback?: string | Record<string, string>) => string;
+    loading: boolean;
 }
 
 // ── Context ──────────────────────────────────────────────────────────────────
@@ -30,6 +31,7 @@ const Ctx = createContext<I18nContext>({
     setLang: () => { },
     t: (key: string, paramsOrFallback?: string | Record<string, string>) => (typeof paramsOrFallback === 'string' ? paramsOrFallback : key),
     tEn: (key: string, paramsOrFallback?: string | Record<string, string>) => (typeof paramsOrFallback === 'string' ? paramsOrFallback : key),
+    loading: false,
 });
 
 export function useT() {
@@ -41,6 +43,7 @@ export function useT() {
 export function LangProvider({ children }: { children: ReactNode }) {
     const [lang, setLangState] = useState(() => localStorage.getItem('eve-lang') || 'en');
     const [locale, setLocale] = useState<Locale>({});
+    const [loading, setLoading] = useState(() => (localStorage.getItem('eve-lang') || 'en') !== 'en');
     const enRef = useRef<Locale>({});
 
     // Load English as fallback baseline (always loaded)
@@ -57,20 +60,21 @@ export function LangProvider({ children }: { children: ReactNode }) {
         if (lang === 'en') {
             fetch(`/locales/en.json${bust}`)
                 .then(r => r.json())
-                .then(setLocale)
-                .catch(() => setLocale({}));
+                .then(d => { setLocale(d); setLoading(false); })
+                .catch(() => { setLocale({}); setLoading(false); });
         } else {
             fetch(`/locales/${lang}.json${bust}`)
                 .then(r => {
                     if (!r.ok) throw new Error('not found');
                     return r.json();
                 })
-                .then(setLocale)
-                .catch(() => setLocale({}));
+                .then(d => { setLocale(d); setLoading(false); })
+                .catch(() => { setLocale({}); setLoading(false); });
         }
     }, [lang]);
 
     const setLang = useCallback((code: string) => {
+        setLoading(true);
         setLangState(code);
         localStorage.setItem('eve-lang', code);
     }, []);
@@ -100,7 +104,7 @@ export function LangProvider({ children }: { children: ReactNode }) {
     }, []);
 
     return (
-        <Ctx.Provider value={{ lang, setLang, t, tEn }}>
+        <Ctx.Provider value={{ lang, setLang, t, tEn, loading }}>
             {children}
         </Ctx.Provider>
     );

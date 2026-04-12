@@ -6,7 +6,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { useT } from '../services/i18n';
 import { useChat } from '../hooks/useChat';
 import { useWebRTC } from '../hooks/useWebRTC';
-import { useTTS } from '../hooks/useTTS';
 import { ROLE_COLORS } from '../types/comms';
 import ChatMessage from './comms/ChatMessage';
 import ThreadList from './comms/ThreadList';
@@ -20,59 +19,20 @@ export default function CommsPanel() {
 
     const [showThreads, setShowThreads] = useState(true);
 
-    // Translation Room state
-    const [showTranslateRoom, setShowTranslateRoom] = useState(false);
-    const [trInput, setTrInput] = useState('');
-    const [trOutput, setTrOutput] = useState('');
-    const [trFrom, setTrFrom] = useState('en');
-    const [trTo, setTrTo] = useState('es');
-    const [trBusy, setTrBusy] = useState(false);
-    const { speak: ttsSpeak, stopSpeak: stopTrSpeak, isSpeaking: trSpeaking } = useTTS();
-
-    const TRANSLATE_LANGS: [string, string][] = [
-        ['en', 'English'], ['es', 'Español'], ['fr', 'Français'], ['de', 'Deutsch'],
-        ['pt', 'Português'], ['it', 'Italiano'], ['ar', 'العربية'], ['zh', '中文'],
-        ['ja', '日本語'], ['ko', '한국어'], ['hi', 'हिन्दी'], ['uk', 'Українська'],
-    ];
-
-    const handleTranslateRoom = useCallback(async () => {
-        if (!trInput.trim() || trBusy) return;
-        setTrBusy(true);
-        setTrOutput('');
-        const text = trInput.trim();
-        setTrInput('');
-        try {
-            const r = await fetch('/api/translate', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ text, source: trFrom, target: trTo }),
-            });
-            if (r.ok) {
-                const d = await r.json();
-                const translated = d.translated || text;
-                setTrOutput(translated);
-                // Auto-speak via WebSocket streaming TTS
-                ttsSpeak(translated, trTo);
-            }
-        } catch { /* offline */ }
-        setTrBusy(false);
-    }, [trInput, trBusy, trFrom, trTo, ttsSpeak]);
-
 
     const {
-        callActive, callTarget, callType, callMuted, callDuration,
-        startCall, endCall, toggleMute,
-        videoRefCallback, remoteVideoRefCallback,
-        fmtDuration,
+        callActive, callDuration, callType, fmtDuration, startCall
     } = useWebRTC(userName, userRole);
     const {
         roster, newMsg, setNewMsg,
         targetContact, setTargetContact,
         messagesEndRef,
-        sendMessage, clearMessages,
+        sendMessage, sendAttachment, clearMessages,
         connectedMembers, filteredMessages, callableMembers,
         formatTime, messages,
     } = useChat({ userName, userRole, lang, isLeader, callActive });
+
+    const [chatDragging, setChatDragging] = useState(false);
 
     // Permissions
     const checkPermissions = useCallback(async () => { }, []);
@@ -187,9 +147,6 @@ export default function CommsPanel() {
                     ) : (
                         <div style={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', gap: 8 }}>
                             <div style={{ flex: 1 }}>
-                                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text)' }}>
-                                    📋 {t('comms.message_board', 'Message Board')}
-                                </div>
                                 <div style={{ fontSize: 10, color: 'var(--text-faint)' }}>
                                     {connectedMembers.length} {t('comms.online', 'online')}
                                 </div>
@@ -254,181 +211,6 @@ export default function CommsPanel() {
                     )}
                 </div>
 
-                {/* ═══ Floating Call Popup (FaceTime style) ═══════════════ */}
-                {callActive && (
-                    <div style={{
-                        position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-                        zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        background: 'rgba(0, 0, 0, 0.7)', backdropFilter: 'blur(4px)',
-                    }}>
-                        <div style={{
-                            width: '90%', maxWidth: 420, borderRadius: 20,
-                            background: '#111', overflow: 'hidden',
-                            boxShadow: '0 20px 60px rgba(0,0,0,0.6)',
-                            display: 'flex', flexDirection: 'column',
-                            maxHeight: '90vh',
-                        }}>
-                            {/* Video area */}
-                            <div style={{ position: 'relative', background: '#000', minHeight: callType === 'video' ? 260 : 140, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                {callType === 'video' ? (
-                                    <>
-                                        {/* Remote video — full size */}
-                                        <video ref={remoteVideoRefCallback} autoPlay playsInline style={{ width: '100%', height: 260, objectFit: 'cover' }} />
-                                        {/* Local PiP — small corner */}
-                                        <div style={{
-                                            position: 'absolute', top: 12, right: 12,
-                                            width: 90, height: 68, borderRadius: 10, overflow: 'hidden',
-                                            border: '2px solid rgba(255,255,255,0.2)', boxShadow: '0 2px 10px #0008',
-                                        }}>
-                                            <video ref={videoRefCallback} autoPlay muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                                        </div>
-                                    </>
-                                ) : (
-                                    /* Voice call — avatar + name */
-                                    <div style={{ textAlign: 'center', padding: 24 }}>
-                                        <div style={{
-                                            width: 64, height: 64, borderRadius: '50%', margin: '0 auto 12px',
-                                            background: '#3fb95022', border: '2px solid #3fb95044',
-                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                            fontSize: 24, color: '#3fb950',
-                                        }}>{callTarget?.charAt(0).toUpperCase() || '?'}</div>
-                                        <div style={{ fontSize: 16, fontWeight: 600, color: '#fff' }}>{callTarget || 'Unknown'}</div>
-                                        <div style={{ fontSize: 12, color: '#888', marginTop: 4 }}>Voice Call</div>
-                                    </div>
-                                )}
-                                {/* Duration badge */}
-                                <div style={{
-                                    position: 'absolute', top: 12, left: '50%', transform: 'translateX(-50%)',
-                                    background: 'rgba(0,0,0,0.6)', padding: '3px 12px', borderRadius: 12,
-                                    fontSize: 12, fontFamily: 'var(--font-mono)',
-                                    color: callType === 'video' ? '#3498db' : '#3fb950',
-                                }}>{fmtDuration(callDuration)}</div>
-                            </div>
-
-                            {/* ── Control Bar ─────────────────────────────── */}
-                            <div style={{
-                                display: 'flex', justifyContent: 'center', gap: 20, padding: '16px 24px',
-                                background: '#1a1a1a',
-                            }}>
-                                {/* Mute */}
-                                <button
-                                    onClick={toggleMute}
-                                    title={callMuted ? 'Unmute' : 'Mute'}
-                                    style={{
-                                        width: 52, height: 52, borderRadius: '50%',
-                                        background: callMuted ? '#f0a50022' : '#ffffff15',
-                                        border: `2px solid ${callMuted ? '#f0a500' : '#555'}`,
-                                        color: callMuted ? '#f0a500' : '#fff', fontSize: 20, cursor: 'pointer',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                        transition: 'all 0.15s',
-                                    }}
-                                >{callMuted ? '🔇' : '🔊'}</button>
-
-                                {/* End Call */}
-                                <button
-                                    onClick={endCall}
-                                    title={t('comms.end_call', 'End Call')}
-                                    style={{
-                                        width: 52, height: 52, borderRadius: '50%',
-                                        background: '#e74c3c', border: '2px solid #e74c3c',
-                                        color: '#fff', fontSize: 20, fontWeight: 700, cursor: 'pointer',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                        transition: 'all 0.15s',
-                                    }}
-                                >✕</button>
-
-                                {/* Translate Toggle */}
-                                <button
-                                    onClick={() => setShowTranslateRoom(s => !s)}
-                                    title={t('comms.translate_room', 'Translation Room')}
-                                    style={{
-                                        width: 52, height: 52, borderRadius: '50%',
-                                        background: showTranslateRoom ? '#50C87822' : '#ffffff15',
-                                        border: `2px solid ${showTranslateRoom ? '#50C878' : '#555'}`,
-                                        color: showTranslateRoom ? '#50C878' : '#fff', fontSize: 20, cursor: 'pointer',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                        transition: 'all 0.15s',
-                                    }}
-                                >🌐</button>
-                            </div>
-
-                            {/* ── Translation Room (collapsible) ──────── */}
-                            {showTranslateRoom && (
-                                <div style={{ padding: '12px 20px 16px', background: '#151515', borderTop: '1px solid #333', maxHeight: 220, overflowY: 'auto' }}>
-                                    {/* Language selectors */}
-                                    <div style={{ display: 'flex', gap: 6, alignItems: 'center', marginBottom: 8 }}>
-                                        <select
-                                            value={trFrom}
-                                            onChange={e => setTrFrom(e.target.value)}
-                                            style={{ flex: 1, padding: '5px 8px', background: '#222', border: '1px solid #444', borderRadius: 6, color: '#ddd', fontSize: 12 }}
-                                        >
-                                            {TRANSLATE_LANGS.map(([c, n]) => <option key={c} value={c}>{n}</option>)}
-                                        </select>
-                                        <button
-                                            onClick={() => { setTrFrom(trTo); setTrTo(trFrom); setTrOutput(''); }}
-                                            style={{ background: 'none', border: '1px solid #444', borderRadius: 4, padding: '3px 6px', cursor: 'pointer', color: '#888', fontSize: 12 }}
-                                        >⇄</button>
-                                        <select
-                                            value={trTo}
-                                            onChange={e => setTrTo(e.target.value)}
-                                            style={{ flex: 1, padding: '5px 8px', background: '#222', border: '1px solid #444', borderRadius: 6, color: '#ddd', fontSize: 12 }}
-                                        >
-                                            {TRANSLATE_LANGS.map(([c, n]) => <option key={c} value={c}>{n}</option>)}
-                                        </select>
-                                    </div>
-                                    {/* Input + Translate */}
-                                    <div style={{ display: 'flex', gap: 6, marginBottom: 8 }}>
-                                        <input
-                                            style={{ flex: 1, fontSize: 12, padding: '8px 10px', borderRadius: 6, border: '1px solid #444', background: '#222', color: '#ddd' }}
-                                            placeholder={t('comms.type_to_translate', 'Type to translate...')}
-                                            value={trInput}
-                                            onChange={e => setTrInput(e.target.value)}
-                                            onKeyDown={e => { if (e.key === 'Enter') handleTranslateRoom(); }}
-                                        />
-                                        <button
-                                            onClick={handleTranslateRoom}
-                                            disabled={!trInput.trim() || trBusy}
-                                            style={{
-                                                padding: '6px 14px', borderRadius: 6, border: 'none', cursor: trInput.trim() && !trBusy ? 'pointer' : 'default',
-                                                background: trInput.trim() && !trBusy ? '#50C878' : '#333', color: trInput.trim() && !trBusy ? '#000' : '#666',
-                                                fontSize: 12, fontWeight: 600, transition: 'background 0.15s',
-                                            }}
-                                        >{trBusy ? '…' : '🌐'}</button>
-                                    </div>
-                                    {/* Output */}
-                                    {trOutput && (
-                                        <div>
-                                            <div style={{
-                                                padding: '8px 12px', background: '#222', borderRadius: 6,
-                                                border: '1px solid #444', fontSize: 13, lineHeight: 1.4,
-                                                color: '#ddd', whiteSpace: 'pre-wrap', marginBottom: 6,
-                                            }}>{trOutput}</div>
-                                            <div style={{ display: 'flex', gap: 6 }}>
-                                                <button
-                                                    onClick={trSpeaking ? stopTrSpeak : handleTranslateRoom}
-                                                    style={{
-                                                        padding: '4px 10px', fontSize: 11, borderRadius: 4, cursor: 'pointer',
-                                                        background: trSpeaking ? '#f0a50022' : '#3fb95022',
-                                                        border: `1px solid ${trSpeaking ? '#f0a500' : '#3fb950'}44`,
-                                                        color: trSpeaking ? '#f0a500' : '#3fb950',
-                                                    }}
-                                                >{trSpeaking ? `◼ ${t('comms.stop', 'Stop')}` : `▶ ${t('comms.speak', 'Speak')}`}</button>
-                                                <button
-                                                    onClick={() => { stopTrSpeak(); setTrOutput(''); }}
-                                                    style={{
-                                                        padding: '4px 10px', fontSize: 11, borderRadius: 4, cursor: 'pointer',
-                                                        background: 'transparent', border: '1px solid #444', color: '#888',
-                                                    }}
-                                                >✕</button>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                )}
-
                 {/* Message list */}
                 <div style={{ flex: 1, overflowY: 'auto', padding: '12px 16px' }}>
                     <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 4 }}>
@@ -483,10 +265,31 @@ export default function CommsPanel() {
                 )}
 
                 {/* Input bar */}
-                <div style={{
-                    borderTop: '1px solid var(--border)', padding: '10px 16px',
-                    display: 'flex', gap: 8, alignItems: 'center', background: 'var(--surface)',
-                }}>
+                <div
+                    style={{
+                        borderTop: chatDragging ? '2px solid #3fb950' : '1px solid var(--border)', padding: '10px 16px',
+                        display: 'flex', gap: 8, alignItems: 'center', background: chatDragging ? '#3fb95011' : 'var(--surface)',
+                        transition: 'background 0.15s, border-color 0.15s',
+                    }}
+                    onDragOver={e => { e.preventDefault(); setChatDragging(true); }}
+                    onDragLeave={() => setChatDragging(false)}
+                    onDrop={e => {
+                        e.preventDefault();
+                        setChatDragging(false);
+                        const files = e.dataTransfer.files;
+                        if (files.length > 0) sendAttachment(files[0]);
+                    }}
+                >
+                    {/* File attach button */}
+                    <label style={{ cursor: 'pointer', fontSize: 18, color: 'var(--text-faint)', flexShrink: 0, display: 'flex', alignItems: 'center' }} title={t('comms.attach', 'Attach file')}>
+                        📎
+                        <input
+                            type="file"
+                            accept="image/*,.pdf,.doc,.docx"
+                            style={{ display: 'none' }}
+                            onChange={e => { const f = e.target.files?.[0]; if (f) sendAttachment(f); e.target.value = ''; }}
+                        />
+                    </label>
                     <input
                         className="if-input"
                         style={{ flex: 1, fontSize: 13, padding: '10px 14px', borderRadius: 20, border: '1px solid var(--border)', background: 'var(--bg)' }}

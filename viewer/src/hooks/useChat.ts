@@ -150,6 +150,38 @@ export function useChat({ userName, userRole, lang, isLeader, callActive }: UseC
         } catch { /* offline */ }
     }, [newMsg, lang, userName, userRole, targetContact, fetchMessages]);
 
+    const sendAttachment = useCallback(async (file: File) => {
+        const fd = new FormData();
+        fd.append('file', file);
+        try {
+            const uploadRes = await fetch(`${API_BASE}/api/mesh/chat/upload`, { method: 'POST', body: fd });
+            if (!uploadRes.ok) return;
+            const { url, filename } = await uploadRes.json();
+            const r = await fetch(`${API_BASE}/api/mesh/chat`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    sender_name: userName,
+                    sender_role: userRole,
+                    message: '',
+                    target_name: targetContact,
+                    attachment_url: url,
+                    attachment_name: filename,
+                }),
+            });
+            if (r.ok) {
+                const entry: ChatMsg = await r.json();
+                setMessages(prev => {
+                    const updated = [...prev, entry];
+                    cacheMessages(userName, updated);
+                    return updated;
+                });
+            } else {
+                fetchMessages();
+            }
+        } catch { /* offline */ }
+    }, [userName, userRole, targetContact, fetchMessages]);
+
     // ── Filter ───────────────────────────────────────────────────────────────
 
     const connectedMembers = roster.filter(m => m.status === 'connected');
@@ -209,7 +241,7 @@ export function useChat({ userName, userRole, lang, isLeader, callActive }: UseC
         messages, roster, newMsg, setNewMsg,
         targetContact, setTargetContact,
         messagesEndRef,
-        sendMessage, fetchMessages, fetchRoster, clearMessages,
+        sendMessage, sendAttachment, fetchMessages, fetchRoster, clearMessages,
         connectedMembers, filteredMessages, callableMembers,
         formatTime,
     };

@@ -31,17 +31,18 @@ LATEST_URL = f"{R2_BASE}/HALT-latest-Windows.zip"
 
 # Key files that must exist in a valid build
 CHECKS = [
-    ("Electron exe",   "HALT - Medical Triage.exe"),
-    ("main.js",        "main.js"),
-    ("start.py",       "start.py"),
+    ("Electron exe", "HALT - Medical Triage.exe"),
+    ("main.js", "main.js"),
+    ("start.py", "start.py"),
     ("Python runtime", "python.exe"),
-    ("viewer index",   "index.html"),
-    ("MANIFEST",       "MANIFEST.sha256"),
-    ("Splash logo",    "logo.png"),              # Electron splash screen logo
+    ("viewer index", "index.html"),
+    ("MANIFEST", "MANIFEST.sha256"),
+    ("Splash logo", "logo.png"),  # Electron splash screen logo
 ]
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
+
 
 def _progress_bar(downloaded: int, total: int, width: int = 40) -> str:
     """Return a simple ASCII progress bar string."""
@@ -50,8 +51,8 @@ def _progress_bar(downloaded: int, total: int, width: int = 40) -> str:
     pct = downloaded / total
     filled = int(width * pct)
     bar = "█" * filled + "░" * (width - filled)
-    mb_done = downloaded / (1024 ** 2)
-    mb_total = total / (1024 ** 2)
+    mb_done = downloaded / (1024**2)
+    mb_total = total / (1024**2)
     return f"  [{bar}] {pct * 100:>5.1f}%  {mb_done:>7.1f} / {mb_total:.1f} MB"
 
 
@@ -69,8 +70,10 @@ def _make_hook(total_size: int):
             last_print[0] = now
         if downloaded >= total_size > 0:
             elapsed = now - start
-            print(f"\n            {total_size / (1024 ** 2):.1f} MB in {elapsed:.1f}s "
-                  f"({total_size / (1024 ** 2) / elapsed:.1f} MB/s)")
+            print(
+                f"\n            {total_size / (1024 ** 2):.1f} MB in {elapsed:.1f}s "
+                f"({total_size / (1024 ** 2) / elapsed:.1f} MB/s)"
+            )
 
     return hook
 
@@ -99,14 +102,14 @@ def _get_remote_size(url: str) -> int:
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Pull the live R2 build and inspect it.")
     parser.add_argument(
         "--version",
         default=None,
         metavar="VER",
-        help="Download a specific version, e.g. 1.0.3-alpha "
-             "(default: HALT-latest-Windows.zip)",
+        help="Download a specific version, e.g. 1.0.3-alpha " "(default: HALT-latest-Windows.zip)",
     )
     parser.add_argument(
         "--keep",
@@ -149,8 +152,10 @@ def main() -> None:
         if total_size and local_size == total_size:
             print(f"  [SKIP]    Zip already downloaded ({local_size / (1024 ** 2):.1f} MB)")
         else:
-            print(f"  [FETCH]   Re-downloading (local={local_size / (1024 ** 2):.1f} MB "
-                  f"remote={total_size / (1024 ** 2):.1f} MB)...")
+            print(
+                f"  [FETCH]   Re-downloading (local={local_size / (1024 ** 2):.1f} MB "
+                f"remote={total_size / (1024 ** 2):.1f} MB)..."
+            )
             zip_path.unlink()
     else:
         print("  [FETCH]   Downloading...")
@@ -158,9 +163,7 @@ def main() -> None:
     if not zip_path.exists():
         t0 = time.time()
         opener = urllib.request.build_opener()
-        opener.addheaders = [
-            ("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
-        ]
+        opener.addheaders = [("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")]
         urllib.request.install_opener(opener)
         try:
             urllib.request.urlretrieve(url, str(zip_path), _make_hook(total_size))
@@ -172,7 +175,7 @@ def main() -> None:
                 print(f"            2. Object exists: {url.split('/')[-1]}")
             sys.exit(1)
         dl_time = time.time() - t0
-        dl_mb = zip_path.stat().st_size / (1024 ** 2)
+        dl_mb = zip_path.stat().st_size / (1024**2)
         print(f"  [OK]      Downloaded in {dl_time:.1f}s  ({dl_mb:.1f} MB)\n")
 
     # ── Extract ───────────────────────────────────────────────────────────────
@@ -191,8 +194,7 @@ def main() -> None:
             zf.extract(member, str(extract_dir))
             if i % 500 == 0 or i == total_members:
                 pct = i / total_members * 100
-                print(f"\r  [UNZIP]   {i:>6,} / {total_members:,} files  ({pct:.0f}%)",
-                      end="", flush=True)
+                print(f"\r  [UNZIP]   {i:>6,} / {total_members:,} files  ({pct:.0f}%)", end="", flush=True)
     unzip_time = time.time() - t0
     unzip_files = sum(1 for _, _, fs in os.walk(extract_dir) for f in fs)
     print(f"\r  [OK]      {unzip_files:,} files extracted in {unzip_time:.1f}s\n")
@@ -216,7 +218,7 @@ def main() -> None:
     # ── Models ────────────────────────────────────────────────────────────────
     model_files = list(root.rglob("*.gguf")) + list(root.rglob("*.onnx"))
     if model_files:
-        model_mb = sum(f.stat().st_size for f in model_files) / (1024 ** 2)
+        model_mb = sum(f.stat().st_size for f in model_files) / (1024**2)
         print(f"            ✓  {'Models':<18} {len(model_files)} files  ({model_mb:.0f} MB)")
     else:
         print(f"            ⚠  {'Models':<18} none bundled (will auto-download on first launch)")
@@ -227,14 +229,12 @@ def main() -> None:
     exe_files = list(root.rglob("HALT - Medical Triage.exe"))
     if exe_files and sys.platform == "win32":
         import subprocess
+
         ps_cmd = (
             f"$s = Get-AuthenticodeSignature '{exe_files[0]}';"
             "$s.Status.ToString() + '|' + $s.SignerCertificate.Subject"
         )
-        result = subprocess.run(
-            ["powershell", "-NoProfile", "-Command", ps_cmd],
-            capture_output=True, text=True
-        )
+        result = subprocess.run(["powershell", "-NoProfile", "-Command", ps_cmd], capture_output=True, text=True)
         parts = result.stdout.strip().split("|", 1)
         sig_status = parts[0].strip()
         sig_subject = parts[1].strip() if len(parts) > 1 else ""
@@ -257,7 +257,6 @@ def main() -> None:
     else:
         print("            ✗  Exe not found — cannot check signature")
         all_ok = False
-
 
     # ── MANIFEST integrity check ───────────────────────────────────────────────
     if not args.no_verify:
@@ -298,7 +297,7 @@ def main() -> None:
             print("            ⚠  No MANIFEST.sha256 found — skipping integrity check")
 
     # ── Summary ───────────────────────────────────────────────────────────────
-    zip_mb = zip_path.stat().st_size / (1024 ** 2)
+    zip_mb = zip_path.stat().st_size / (1024**2)
     result_label = "ALL PASS ✓" if all_ok else "ISSUES   ✗"
 
     print("  ╔═══════════════════════════════════════╗")

@@ -1,6 +1,6 @@
 {
     "name": "halt-medical-triage",
-    "version": "1.0.5",
+    "version": "1.0.7",
     "description": "HALT Desktop Launcher - Hermetic Anonymous Local Triage",
     "main": "main.js",
     "author": "Hermetic Labs",
@@ -53,7 +53,12 @@
                 }
             ],
             "icon": "assets/logo.ico",
-            "artifactName": "HALT-Setup-${version}.${ext}"
+            "artifactName": "HALT-Setup-${version}.${ext}",
+            "azureSignOptions": {
+                "endpoint": "https://eus.codesigning.azure.net",
+                "certificateProfileName": "HaltSigningProfile",
+                "codeSigningAccountName": "haltsigning"
+            }
         },
         "mac": {
             "target": [
@@ -71,7 +76,12 @@
             "hardenedRuntime": true,
             "gatekeeperAssess": false,
             "entitlements": "entitlements.mac.plist",
-            "entitlementsInherit": "entitlements.mac.plist"
+            "entitlementsInherit": "entitlements.mac.plist",
+            "extendInfo": {
+                "NSMicrophoneUsageDescription": "HALT needs microphone access for voice/video calls and real-time translation.",
+                "NSCameraUsageDescription": "HALT needs camera access for video calls with team members.",
+                "NSLocalNetworkUsageDescription": "HALT uses the local network to connect team devices over WiFi mesh."
+            }
         },
         "linux": {
             "target": [

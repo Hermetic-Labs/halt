@@ -30,7 +30,7 @@ def _get_whisper():
         logger.info("Whisper loaded")
         return _whisper
     except Exception as e:
-        logger.error(f"Whisper load error: {e}")
+        logger.exception("Whisper load error")
         return None
 
 
@@ -60,7 +60,7 @@ async def listen(audio: UploadFile = File(...), language: Optional[str] = None):
         text = " ".join(seg.text.strip() for seg in segments)
         return {"text": text, "language": info.language, "language_probability": round(info.language_probability, 3)}
     except Exception as e:
-        logger.error(f"Transcription error: {e}")
-        raise HTTPException(500, f"Transcription failed: {e}")
+        logger.exception("Transcription error")
+        raise HTTPException(500, f"Transcription failed: {e}") from e
     finally:
         Path(tmp_path).unlink(missing_ok=True)
