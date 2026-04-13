@@ -58,7 +58,16 @@ jobs:
           projectPath: viewer
           tagName: app-v__VERSION__
           releaseName: "HALT Triage App v__VERSION__"
-          releaseBody: "Automated HALT build."
           releaseDraft: true
           prerelease: false
           args: ${{ matrix.args }} --features native_ml
+
+      - name: Publish to Microsoft Store
+        if: matrix.platform == 'windows-latest'
+        uses: microsoft/action-store-submission@v3
+        with:
+          tenant-id: ${{ secrets.STORE_TENANT_ID }}
+          client-id: ${{ secrets.STORE_CLIENT_ID }}
+          client-secret: ${{ secrets.STORE_CLIENT_SECRET }}
+          app-id: ${{ secrets.STORE_APP_ID }}
+          package-path: "viewer/src-tauri/target/release/bundle/msix/*.msix"
