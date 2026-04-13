@@ -4,6 +4,26 @@ All notable changes to HALT will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.7] — 2026-04-13
+
+### Architecture Overhaul: Native Tauri & Cloud CI 🚀
+
+HALT has successfully graduated from its legacy Electron/Python scaffolding into a pure, high-performance **Native Rust + Tauri v2** architecture. This massive optimization completely decouples the heavy inference models from the distribution binary, dropping the initial download size from ~5 Gigabytes down to a mere ~100 Megabytes, while increasing hardware acceleration stability.
+
+### Added
+
+- **Multi-Platform Cloud CI/CD** — Completely automated GitHub Actions pipeline (`release.yml`) that spins up pristine Microsoft and Apple cloud servers to compile, codesign, and autonomously publish both `.msix` and `.dmg` App Containers straight to the Microsoft Partner Portal and Apple TestFlight simultaneously.
+- **Native Async R2 Streaming** — Engineered a fully asynchronous `reqwest + rustls` byte-streaming pipeline in Rust. The Tauri native backend now securely taps the Cloudflare R2 bucket and pipes the 4.5GB model payloads directly onto the user's hard drive (`.tar.gz` via `flate2`) completely bypassing browser memory limits.
+- **Event Bus IPC UI** — The React frontend has been re-wired to listen directly to native generic `tauri::app.emit` signals, guaranteeing exact byte-for-byte visual download completion telemetry.
+- **Automated AI Packer** — Background script (`pack_models.py`) mapping the raw GGUF/ONNX/CT2 schemas into 4 optimized, multi-threaded `.tar.gz` bundles (`voice`, `stt`, `translation`, `ai`) to optimize payload transmission.
+
+### Removed
+
+- **Legacy Electron Deprecation** — Ripped out the heavy Electron web-shell and unmaintained Python deployment hooks (`build_and_deploy.py`), retiring localized laptop compilation in favor of the Cloud Builder.
+- **Payload Bloat** — Systematically destroyed ~35 GB of redundant Alpha Windows compilation artifacts polluting the Cloudflare CDN, establishing a clean, 4-bundle payload logic natively agnostic across Windows, macOS, and iOS environments.
+
+---
+
 ## [1.0.6] — 2026-04-05
 
 ### Added
