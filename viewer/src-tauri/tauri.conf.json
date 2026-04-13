@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "HALT",
   "version": "1.0.7",
-  "identifier": "com.hermeticlabs.halt",
+  "identifier": "HermeticLabs.HALT-HermeticAnonymousLocalTriage",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:7777",
@@ -25,7 +25,7 @@
   },
   "bundle": {
     "active": true,
-    "targets": "nsis",
+    "targets": ["nsis", "msix"],
     "publisher": "CN=FD92FCE8-6D9F-43FF-876A-BE0D2CF446D5",
     "resources": [
       "../../api/**/*",
