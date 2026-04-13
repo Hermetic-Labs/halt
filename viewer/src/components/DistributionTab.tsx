@@ -5,6 +5,8 @@
  * Streams progress via SSE from /api/distribution/progress.
  */
 import { useState, useEffect, useCallback } from 'react';
+import { listen } from '@tauri-apps/api/event';
+import { invoke } from '@tauri-apps/api/core';
 import { useT } from '../services/i18n';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -53,12 +55,13 @@ const PACK_META: Record<string, { label: string; icon: string; desc: string }> =
   },
 };
 
-// Default release URLs (placeholder — replace with actual GitHub release assets)
+const R2_BUCKET_URL = 'https://models.7hermeticloops.com'; // REPLACE with your pub-*.r2.dev link if it's not bound to this custom domain
+
 const DEFAULT_URLS: Record<string, string> = {
-  voice: 'https://github.com/example/medic-info/releases/download/models/voice.tar.gz',
-  stt: 'https://github.com/example/medic-info/releases/download/models/stt.tar.gz',
-  translation: 'https://github.com/example/medic-info/releases/download/models/translation.tar.gz',
-  ai: 'https://github.com/example/medic-info/releases/download/models/ai.tar.gz',
+  voice: `${R2_BUCKET_URL}/voice.tar.gz`,
+  stt: `${R2_BUCKET_URL}/stt.tar.gz`,
+  translation: `${R2_BUCKET_URL}/translation.tar.gz`,
+  ai: `${R2_BUCKET_URL}/ai.tar.gz`,
 };
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -74,49 +77,38 @@ export default function DistributionTab() {
   // Fetch pack status
   const fetchStatus = useCallback(async () => {
     try {
-      const res = await fetch('/api/distribution/status');
-      if (!res.ok) throw new Error('Failed to fetch status');
-      const data = await res.json();
+      const data = await invoke<PackStatus>('distribution_status');
       setStatus(data);
       setError(null);
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'API unavailable');
+      setError(typeof e === 'string' ? e : (e instanceof Error ? e.message : 'API unavailable'));
     } finally {
       setLoading(false);
     }
   }, []);
 
-  // SSE progress listener
+  // Native Tauri IPC listener
   const startProgressListener = useCallback(() => {
-    const es = new EventSource('/api/distribution/progress');
-
-    es.onmessage = (event) => {
-      try {
-        const data = JSON.parse(event.data) as Progress;
-        setProgress(data);
-        if (data.phase === 'complete' || data.phase === 'error') {
-          setDownloading(null);
-          if (data.phase === 'complete') {
-            fetchStatus(); // Refresh status
-          }
+    const unlistenPromise = listen<Progress>('distribution-progress', (event) => {
+      setProgress(event.payload);
+      if (event.payload.phase === 'complete' || event.payload.phase === 'error') {
+        setDownloading(null);
+        if (event.payload.phase === 'complete') {
+          fetchStatus();
         }
-      } catch {
-        // Ignore parse errors
       }
-    };
+    });
 
-    es.onerror = () => {
-      // Reconnect handled by EventSource
+    return () => {
+      unlistenPromise.then((unlisten) => unlisten());
     };
-
-    return es;
   }, [fetchStatus]);
 
   // Initial load
   useEffect(() => {
     fetchStatus();
-    const es = startProgressListener();
-    return () => es.close();
+    const cleanup = startProgressListener();
+    return cleanup;
   }, [fetchStatus, startProgressListener]);
 
   // Download a single pack
@@ -127,21 +119,14 @@ export default function DistributionTab() {
     setError(null);
 
     try {
-      const res = await fetch('/api/distribution/download', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+      await invoke('distribution_download', {
+        request: {
           pack: packId,
-          url: DEFAULT_URLS[packId] || `https://example.com/${packId}.tar.gz`,
-        }),
+          url: DEFAULT_URLS[packId] || `${R2_BUCKET_URL}/${packId}.tar.gz`,
+        }
       });
-
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({ detail: 'Download failed' }));
-        throw new Error(err.detail);
-      }
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Download failed');
+      setError(typeof e === 'string' ? e : (e as Error).message);
       setDownloading(null);
       setProgress({ phase: 'idle', percent: 0 });
     }
@@ -161,21 +146,9 @@ export default function DistributionTab() {
     setError(null);
 
     try {
-      const res = await fetch('/api/distribution/download-all', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          packs: missing,
-          urls: Object.fromEntries(missing.map((id) => [id, DEFAULT_URLS[id] || `https://example.com/${id}.tar.gz`])),
-        }),
-      });
-
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({ detail: 'Download failed' }));
-        throw new Error(err.detail);
-      }
+      await invoke('distribution_download_all');
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Download failed');
+      setError(typeof e === 'string' ? e : (e as Error).message);
       setDownloading(null);
       setProgress({ phase: 'idle', percent: 0 });
     }

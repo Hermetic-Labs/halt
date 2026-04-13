@@ -29,7 +29,6 @@
     "publisher": "CN=FD92FCE8-6D9F-43FF-876A-BE0D2CF446D5",
     "resources": [
       "../../api/**/*",
-      "../../models/**/*",
       "../../patients/**/*",
       "../../start.py"
     ],

@@ -7,6 +7,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { useT } from '../services/i18n';
 import { normalizeToEnglish } from '../services/i18nDynamic';
 import { useLanguageArray, AVAILABLE_LANGS } from '../hooks/useLanguageArray';
+import { api, apiMutate } from '../services/api';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -101,8 +102,7 @@ export default function TaskBoard() {
 
     const fetchTasks = useCallback(async () => {
         try {
-            const r = await fetch(`${API_BASE}/api/tasks`);
-            const data: MeshTask[] = await r.json();
+            const data = await api<MeshTask[]>('list_tasks', '/tasks');
             // Detect new tasks for animation
             if (data.length > prevTaskCountRef.current && prevTaskCountRef.current > 0) {
                 const existingIds = new Set(tasks.map(t => t.id));
@@ -120,15 +120,15 @@ export default function TaskBoard() {
 
     const fetchRoster = useCallback(async () => {
         try {
-            const r = await fetch(`${API_BASE}/api/roster`);
-            setRoster(await r.json());
+            const data = await api<RosterMember[]>('list_roster', '/roster');
+            setRoster(data);
         } catch { /* offline */ }
     }, []);
 
     useEffect(() => {
         fetchTasks();
         fetchRoster();
-        fetch(`${API_BASE}/api/wards`).then(r => r.json()).then(setWards).catch(() => { });
+        api<{ id: string; name: string }[]>('list_wards', '/wards').then(setWards).catch(() => { });
         const poll = setInterval(() => { fetchTasks(); fetchRoster(); }, POLL_INTERVAL);
         return () => clearInterval(poll);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -152,31 +152,30 @@ export default function TaskBoard() {
             body.escalate_at = new Date(Date.now() + mins * 60000).toISOString();
         }
         try {
-            const r = await fetch(`${API_BASE}/api/tasks`, {
+            await apiMutate('create_task', '/tasks', body, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
             });
-            if (r.ok) {
-                playSound('announcement');
-                fetchTasks();
-                setNewTask({ title: '', description: '', priority: 'normal', category: '', due_hint: '', escalate_minutes: '' });
-                setShowAddTask(false);
-            }
+            playSound('announcement');
+            fetchTasks();
+            setNewTask({ title: '', description: '', priority: 'normal', category: '', due_hint: '', escalate_minutes: '' });
+            setShowAddTask(false);
         } catch { /* offline */ }
     };
 
     const claimTask = async (taskId: string) => {
         try {
-            await fetch(`${API_BASE}/api/tasks/${taskId}/claim?member_name=${encodeURIComponent(userName)}`, { method: 'POST' });
+            await apiMutate('claim_task', `/tasks/${taskId}/claim?member_name=${encodeURIComponent(userName)}`, { task_id: taskId, member_name: userName }, { method: 'POST' });
             fetchTasks();
         } catch { /* offline */ }
     };
 
     const updateTaskStatus = async (task: MeshTask, newStatus: string) => {
         try {
-            await fetch(`${API_BASE}/api/tasks/${task.id}`, {
+            const updated = { ...task, status: newStatus };
+            await apiMutate('update_task', `/tasks/${task.id}`, { task_id: task.id, task: updated }, {
                 method: 'PUT', headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ ...task, status: newStatus }),
+                body: JSON.stringify(updated),
             });
             fetchTasks();
         } catch { /* offline */ }
@@ -184,9 +183,10 @@ export default function TaskBoard() {
 
     const reassignTask = async (task: MeshTask, memberName: string) => {
         try {
-            await fetch(`${API_BASE}/api/tasks/${task.id}`, {
+            const updated = { ...task, assignee_name: memberName, status: 'assigned' };
+            await apiMutate('update_task', `/tasks/${task.id}`, { task_id: task.id, task: updated }, {
                 method: 'PUT', headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ ...task, assignee_name: memberName, status: 'assigned' }),
+                body: JSON.stringify(updated),
             });
             setReassigning(null);
             fetchTasks();
@@ -195,22 +195,23 @@ export default function TaskBoard() {
 
     const deleteTask = async (id: string) => {
         try {
-            await fetch(`${API_BASE}/api/tasks/${id}`, { method: 'DELETE' });
+            await apiMutate('delete_task', `/tasks/${id}`, { task_id: id }, { method: 'DELETE' });
             fetchTasks();
         } catch { /* offline */ }
     };
 
     const sendAlert = async (targetName: string, message: string, priority = 'normal') => {
         try {
-            await fetch(`${API_BASE}/api/mesh/alert`, {
+            const payload = {
+                target_name: targetName,
+                message,
+                sender_name: userName,
+                priority,
+                sound: priority === 'critical' ? 'announcement' : 'alert',
+            };
+            await apiMutate('mesh_alert', '/mesh/alert', payload, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    target_name: targetName,
-                    message,
-                    sender_name: userName,
-                    priority,
-                    sound: priority === 'critical' ? 'announcement' : 'alert',
-                }),
+                body: JSON.stringify(payload),
             });
             setAlertSent(targetName || 'all');
             setTimeout(() => setAlertSent(null), 2000);
@@ -284,17 +285,18 @@ export default function TaskBoard() {
             } catch { /* TTS unavailable — broadcast text only */ }
 
             // Broadcast text + audio + translations
-            await fetch(`${API_BASE}/api/mesh/emergency`, {
+            const emergencyPayload = {
+                ward: emergencyForm.ward,
+                bed: emergencyForm.bed,
+                categories: emergencyForm.categories,
+                sender_name: userName,
+                notes: emergencyForm.notes,
+                audio_b64,
+                translations,
+            };
+            await apiMutate('mesh_emergency', '/mesh/emergency', emergencyPayload, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    ward: emergencyForm.ward,
-                    bed: emergencyForm.bed,
-                    categories: emergencyForm.categories,
-                    sender_name: userName,
-                    notes: emergencyForm.notes,
-                    audio_b64,
-                    translations,
-                }),
+                body: JSON.stringify(emergencyPayload),
             });
 
             setShowEmergency(false);
@@ -378,14 +380,15 @@ export default function TaskBoard() {
             } catch { /* TTS unavailable — broadcast text only */ }
 
             // Broadcast text + audio + translations
-            await fetch(`${API_BASE}/api/mesh/announcement`, {
+            const announcementPayload = {
+                message: englishText,
+                sender_name: userName,
+                audio_b64,
+                translations,
+            };
+            await apiMutate('mesh_announcement', '/mesh/announcement', announcementPayload, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    message: englishText,
-                    sender_name: userName,
-                    audio_b64,
-                    translations,
-                }),
+                body: JSON.stringify(announcementPayload),
             });
 
             setShowAnnouncement(false);

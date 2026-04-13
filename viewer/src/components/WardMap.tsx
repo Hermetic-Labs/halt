@@ -5,6 +5,7 @@ import * as store from '../services/PatientStore';
 import { useT } from '../services/i18n';
 import { normalizeToEnglish, precomputeAllLocales, flushPatientTranslations, hydratePatientTranslations, hasPatientTranslations, pt } from '../services/i18nDynamic';
 import { rebuildPlanFromRecord } from '../services/planEngine';
+import { apiMutate } from '../services/api';
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -184,7 +185,15 @@ export function PatientPanel({ summary, wards, activeWardId, onClose, onUpdated 
                 const nextCheck = new Date();
                 nextCheck.setMinutes(nextCheck.getMinutes() + intervalMin);
                 try {
-                    fetch('/api/tasks', {
+                    apiMutate('create_task', '/tasks', {
+                        title: 'Vitals check: ' + (record.name || record.id),
+                        description: intervalMin + 'min vitals recheck - Priority ' + prio,
+                        priority: prio === 'T1' ? 'critical' : prio === 'T2' ? 'urgent' : 'normal',
+                        category: 'vitals',
+                        due_hint: nextCheck.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                        created_by: localStorage.getItem('eve-mesh-name') || 'System',
+                        escalate_at: nextCheck.toISOString(),
+                    }, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
@@ -340,18 +349,19 @@ export function PatientPanel({ summary, wards, activeWardId, onClose, onUpdated 
 
         // Auto-create next-dose task in global task board
         try {
-            fetch('/api/tasks', {
+            const taskPayload = {
+                title: `Next dose: ${record.name || record.id}`,
+                description: `Administer scheduled meds: ${medsGiven}`,
+                priority: 'normal',
+                category: 'medication',
+                due_hint: next.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                created_by: localStorage.getItem('eve-mesh-name') || 'System',
+                escalate_at: next.toISOString(),
+            };
+            apiMutate('create_task', '/tasks', taskPayload, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    title: `Next dose: ${record.name || record.id}`,
-                    description: `Administer scheduled meds: ${medsGiven}`,
-                    priority: 'normal',
-                    category: 'medication',
-                    due_hint: next.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-                    created_by: localStorage.getItem('eve-mesh-name') || 'System',
-                    escalate_at: next.toISOString(),
-                }),
+                body: JSON.stringify(taskPayload),
             }).catch(() => { });
         } catch { /* offline — sync queue will handle it */ }
     };

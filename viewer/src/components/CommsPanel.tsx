@@ -9,6 +9,7 @@ import { useWebRTC } from '../hooks/useWebRTC';
 import { ROLE_COLORS } from '../types/comms';
 import ChatMessage from './comms/ChatMessage';
 import ThreadList from './comms/ThreadList';
+import { apiMutate } from '../services/api';
 
 export default function CommsPanel() {
     const { t, lang } = useT();
@@ -61,7 +62,7 @@ export default function CommsPanel() {
     // React handler
     const handleReact = async (msgId: string, emoji: string) => {
         try {
-            await fetch(`/api/mesh/chat/${msgId}/react`, {
+            await apiMutate('react_chat', `/mesh/chat/${msgId}/react`, { msg_id: msgId, emoji, user: userName }, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ emoji, user: userName }),
@@ -155,7 +156,7 @@ export default function CommsPanel() {
                                 <button
                                     onClick={async () => {
                                         if (!confirm(t('comms.clear_confirm', 'Clear all messages from the board?'))) return;
-                                        try { await fetch('/api/mesh/chat', { method: 'DELETE' }); clearMessages(); } catch { /* offline */ }
+                                        try { await apiMutate('clear_chat', '/mesh/chat', {}, { method: 'DELETE' }); clearMessages(); } catch { /* offline */ }
                                     }}
                                     style={{ padding: '4px 10px', fontSize: 11, background: 'transparent', border: '1px solid #e74c3c33', borderRadius: 4, color: '#e74c3c', cursor: 'pointer', flexShrink: 0 }}
                                     title={t('comms.clear_board', 'Clear Board')}

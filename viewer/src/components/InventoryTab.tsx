@@ -652,7 +652,7 @@ export default function InventoryTab() {
                     </select>
                     {activity.length > 0 && (
                         <button
-                            onClick={async (e) => { e.stopPropagation(); try { await fetch('/api/inventory/activity', { method: 'DELETE' }); await load(); } catch { /* offline */ } }}
+                            onClick={async (e) => { e.stopPropagation(); try { const { apiMutate: mut } = await import('../services/api'); await mut('clear_inventory_activity', '/inventory/activity', {}, { method: 'DELETE' }); await load(); } catch { /* offline */ } }}
                             style={{ fontSize: 11, padding: '4px 10px', background: 'transparent', border: '1px solid var(--border)', borderRadius: 4, color: 'var(--text-faint)', cursor: 'pointer', whiteSpace: 'nowrap' }}
                         >
                             {t('inv.clear', 'Clear')}

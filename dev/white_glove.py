@@ -11,6 +11,7 @@ Runs every possible linter across the entire codebase:
   📝 Markdown   → markdownlint-cli2 (via npx)
   📦 JSON/YAML  → Python built-in validation
   ⚡ PowerShell → Syntax parse check
+  🦀 Rust       → cargo clippy
 
 Usage:
   python dev/white_glove.py              # Full sweep
@@ -20,6 +21,7 @@ Usage:
   python dev/white_glove.py --shell      # Shell only
   python dev/white_glove.py --markdown   # Markdown only
   python dev/white_glove.py --data       # JSON/YAML only
+  python dev/white_glove.py --rust       # Rust only (cargo clippy)
   python dev/white_glove.py --fix        # Auto-fix where possible (Ruff)
 
 Prime author only. Not for distribution.
@@ -642,6 +644,71 @@ def lint_markdown():
         print("    No Markdown files found.")
         return 0
 
+# ═════════════════════════════════════════════════════════════════════════════
+#  PASS 8: RUST — Cargo Clippy + Format Check
+# ═════════════════════════════════════════════════════════════════════════════
+
+
+def lint_rust():
+    """Run `cargo clippy` and `cargo fmt -- --check` for Rust files."""
+    files = find_files([".rs"])
+    section_header("🦀", "RUST — Cargo Clippy & Format", len(files))
+
+    if not files:
+        print("    No Rust files found.")
+        return 0
+
+    # Ensure cargo is available
+    code, _, _ = run_tool(["cargo", "--version"])
+    if code != 0:
+        print("    ✗ Cargo not found.")
+        return -1
+
+    # In Tauri projects, Cargo.toml is usually in src-tauri
+    cargo_toml = REPO_ROOT / "viewer" / "src-tauri" / "Cargo.toml"
+    if not cargo_toml.exists():
+        print("    ✗ Cargo.toml not found in viewer/src-tauri")
+        return -1
+
+    cwd = str(cargo_toml.parent)
+    issues = 0
+
+    # Clippy execution
+    cmd_clippy = ["cargo", "clippy", f"--manifest-path={cargo_toml}", "--all-targets", "--all-features", "--", "-D", "warnings"]
+    code, out, err = run_tool(cmd_clippy, label="cargo clippy")
+    
+    combined = (out + err).strip()
+    if code != 0 and combined:
+        for line in combined.splitlines():
+            if "warning:" in line.lower() or "error:" in line.lower():
+                issues += 1
+                print(f"    ⚠  {line.strip()}")
+            elif "could not compile" in line.lower():
+                print(f"    {line.strip()}")
+                issues += 1
+
+    # Fmt check execution
+    print()
+    print("    ── Format check (cargo fmt -- --check) ──")
+    cmd_fmt = ["cargo", "fmt", f"--manifest-path={cargo_toml}", "--", "--check"]
+    fmt_code, fmt_out, fmt_err = run_tool(cmd_fmt, label="cargo fmt")
+    
+    fmt_issues = 0
+    if fmt_code != 0:
+        combined = (fmt_out + fmt_err).strip()
+        for line in combined.splitlines():
+            if "diff errors" in line or "Diff in" in line:
+                fmt_issues += 1
+                print(f"    ⚠  {line.strip()}")
+            
+    if issues == 0 and fmt_issues == 0:
+        print("    ✓  All Rust files pristine")
+    else:
+        if fmt_issues > 0:
+            print(f"    Fix formatting: cd viewer/src-tauri && cargo fmt")
+
+    return issues + fmt_issues
+
     # Write temp config (inline — no pollution)
     config_path = REPO_ROOT / ".markdownlint-cli2.jsonc"
     config_existed = config_path.exists()
@@ -887,6 +954,7 @@ def main():
     parser.add_argument("--powershell", action="store_true", help="PowerShell only")
     parser.add_argument("--markdown", action="store_true", help="Markdown only (markdownlint)")
     parser.add_argument("--data", action="store_true", help="JSON/YAML only")
+    parser.add_argument("--rust", action="store_true", help="Rust only (cargo clippy)")
     parser.add_argument("--hygiene", action="store_true", help="Whitespace/BOM/line-endings only")
     parser.add_argument("--fix", action="store_true", help="Auto-fix where possible (Ruff)")
     parser.add_argument("--strict", action="store_true", help="Maximum strictness (ALL Ruff rules, style opinions)")
@@ -902,6 +970,7 @@ def main():
             args.powershell,
             args.markdown,
             args.data,
+            args.rust,
             args.hygiene,
         ]
     )
@@ -930,6 +999,9 @@ def main():
 
     if run_all or args.data:
         results["JSON / YAML"] = lint_data()
+        
+    if run_all or args.rust:
+        results["Rust (Clippy)"] = lint_rust()
 
     if run_all or args.hygiene:
         results["Hygiene (ws/bom/eol)"] = lint_hygiene()

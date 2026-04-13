@@ -5,6 +5,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { ChatMsg, RosterMember } from '../types/comms';
 import { API_BASE, POLL_INTERVAL } from '../types/comms';
+import { api, apiMutate } from '../services/api';
 
 const STORAGE_CAP = 500; // match server cap
 
@@ -61,22 +62,19 @@ export function useChat({ userName, userRole, lang, isLeader, callActive }: UseC
 
     const fetchMessages = useCallback(async () => {
         try {
-            const r = await fetch(`${API_BASE}/api/mesh/chat?limit=200`);
-            if (r.ok) {
-                const serverMsgs: ChatMsg[] = await r.json();
-                setMessages(prev => {
-                    const merged = mergeMessages(serverMsgs, prev);
-                    cacheMessages(userName, merged);
-                    return merged;
-                });
-            }
+            const serverMsgs = await api<ChatMsg[]>('list_chat', '/mesh/chat?limit=200', { limit: 200 });
+            setMessages(prev => {
+                const merged = mergeMessages(serverMsgs, prev);
+                cacheMessages(userName, merged);
+                return merged;
+            });
         } catch { /* offline — keep showing cached messages */ }
     }, [userName]);
 
     const fetchRoster = useCallback(async () => {
         try {
-            const r = await fetch(`${API_BASE}/api/roster`);
-            if (r.ok) setRoster(await r.json());
+            const data = await api<RosterMember[]>('list_roster', '/roster');
+            setRoster(data);
         } catch { /* offline */ }
     }, []);
 
@@ -124,21 +122,20 @@ export function useChat({ userName, userRole, lang, isLeader, callActive }: UseC
         }
 
         try {
-            const r = await fetch(`${API_BASE}/api/mesh/chat`, {
+            const chatPayload = {
+                sender_name: userName,
+                sender_role: userRole,
+                message: messageToSend,
+                target_name: targetContact,
+                ...(replyTo ? { reply_to: replyTo } : {}),
+            };
+            const entry = await apiMutate<ChatMsg>('send_chat', '/mesh/chat', chatPayload, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    sender_name: userName,
-                    sender_role: userRole,
-                    message: messageToSend,
-                    target_name: targetContact,
-                    ...(replyTo ? { reply_to: replyTo } : {}),
-                }),
+                body: JSON.stringify(chatPayload),
             });
             setNewMsg('');
-            // Optimistic add: if server responds with the new entry, cache immediately
-            if (r.ok) {
-                const entry: ChatMsg = await r.json();
+            if (entry) {
                 setMessages(prev => {
                     const updated = [...prev, entry];
                     cacheMessages(userName, updated);

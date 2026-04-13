@@ -35,6 +35,7 @@ import TriagePanel from './components/TriagePanel';
 import DistributionTab from './components/DistributionTab';
 import PublicLookup from './components/PublicLookup';
 import { useWebRTC } from './hooks/useWebRTC';
+import { api } from './services/api';
 
 import { PowerProvider, usePower } from './services/PowerContext';
 import { LangProvider, useT } from './services/i18n';
@@ -477,24 +478,19 @@ function AppInner(p: any) {
     const myName = localStorage.getItem('eve-mesh-name') || '';
     const poll = setInterval(async () => {
       try {
-        const mr = await fetch('/api/mesh/chat');
-        if (mr.ok) {
-          const msgs = await mr.json();
-          const forMe = msgs.filter((m: { target_name?: string; sender_name?: string }) =>
-            !m.target_name || m.target_name.toLowerCase() === myName.toLowerCase()
-          );
-          if (tab === 'comms') { lastSeenMsgs.current = forMe.length; localStorage.setItem('eve-mesh-last-seen-msgs', String(forMe.length)); }
-          else setUnreadMsgs(Math.max(0, forMe.length - lastSeenMsgs.current));
-        }
-        const tr = await fetch('/api/tasks');
-        if (tr.ok) {
-          const tasks = await tr.json();
-          const myTasks = tasks.filter((t: { status?: string; assignee_name?: string }) =>
-            t.status !== 'done' && (!t.assignee_name || t.assignee_name.toLowerCase() === myName.toLowerCase())
-          );
-          if (tab === 'tasks') { lastSeenTasks.current = myTasks.length; localStorage.setItem('eve-mesh-last-seen-tasks', String(myTasks.length)); }
-          else setUnreadTasks(Math.max(0, myTasks.length - lastSeenTasks.current));
-        }
+        const msgs = await api<{ target_name?: string; sender_name?: string }[]>('list_chat', '/mesh/chat');
+        const forMe = msgs.filter((m) =>
+          !m.target_name || m.target_name.toLowerCase() === myName.toLowerCase()
+        );
+        if (tab === 'comms') { lastSeenMsgs.current = forMe.length; localStorage.setItem('eve-mesh-last-seen-msgs', String(forMe.length)); }
+        else setUnreadMsgs(Math.max(0, forMe.length - lastSeenMsgs.current));
+
+        const tasks = await api<{ status?: string; assignee_name?: string }[]>('list_tasks', '/tasks');
+        const myTasks = tasks.filter((t) =>
+          t.status !== 'done' && (!t.assignee_name || t.assignee_name.toLowerCase() === myName.toLowerCase())
+        );
+        if (tab === 'tasks') { lastSeenTasks.current = myTasks.length; localStorage.setItem('eve-mesh-last-seen-tasks', String(myTasks.length)); }
+        else setUnreadTasks(Math.max(0, myTasks.length - lastSeenTasks.current));
       } catch { /* offline */ }
     }, 5000);
     return () => clearInterval(poll);
@@ -1006,9 +1002,8 @@ function AppInner(p: any) {
                     <button
                       onClick={async () => {
                         try {
-                          const r = await fetch('/api/public/qr');
-                          if (!r.ok) throw new Error('QR gen failed');
-                          setLookupQR(await r.json());
+                          const data = await api<{ url: string; qr_image: string | null }>('public_qr', '/public/qr');
+                          setLookupQR(data);
                         } catch { window.open('/lookup', '_blank'); }
                       }}
                       style={{ padding: '8px 16px', background: '#1a3a1a', color: '#3fb950', border: '1px solid #3fb95055', borderRadius: 6, cursor: 'pointer', fontSize: 12, fontWeight: 600, width: '100%' }}

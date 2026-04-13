@@ -899,10 +899,18 @@ def build_msix(version):
 
     # ── Locate the built Tauri executable ─────────────────────────────────
     c_drive_target = Path(os.path.expanduser("~/Halt-Tauri-Target"))
+    # Tauri names the exe from Cargo.toml [package].name, with hyphens → hyphens
     tauri_exe = c_drive_target / "release" / "HALT.exe"
+    if not tauri_exe.exists():
+        tauri_exe = c_drive_target / "release" / "halt-triage.exe"
+    if not tauri_exe.exists():
+        # Also check for any .exe in the release dir that might be our binary
+        candidates = list((c_drive_target / "release").glob("halt*.exe"))
+        if candidates:
+            tauri_exe = candidates[0]
 
     if not tauri_exe.exists():
-        print(f"  [ERROR]   HALT.exe not found at {tauri_exe}")
+        print(f"  [ERROR]   HALT.exe not found at {c_drive_target / 'release'}")
         print("            Run a Tauri build first: python build_and_deploy.py --no-bump")
         return None
     print(f"            EXE: {tauri_exe} ({tauri_exe.stat().st_size / (1024**2):.1f} MB)")
@@ -913,7 +921,7 @@ def build_msix(version):
         shutil.rmtree(msix_stage)
     msix_stage.mkdir(parents=True)
 
-    # Copy the main executable
+    # Copy the main executable (always stage as HALT.exe to match AppxManifest)
     print("            Staging HALT.exe...")
     shutil.copy2(tauri_exe, msix_stage / "HALT.exe")
 
@@ -928,16 +936,18 @@ def build_msix(version):
         if not dest.exists():
             shutil.copy2(dll, dest)
 
-    # Copy bundled resources (api, models, patients, start.py)
+    # Copy bundled resources (api, patients, start.py)
+    # NOTE: models/ intentionally excluded — multi-GB GGUF files exceed Store size
+    #        limits and cause packaging to hang. Models are sideloaded post-install.
     resources = [
         (REPO_ROOT / "api", msix_stage / "api"),
-        (REPO_ROOT / "models", msix_stage / "models"),
         (REPO_ROOT / "patients", msix_stage / "patients"),
     ]
+    ignore_patterns = shutil.ignore_patterns("__pycache__", "*.pyc", "*.pyo")
     for src, dst in resources:
         if src.exists():
             print(f"            Staging {src.name}/...")
-            shutil.copytree(src, dst, dirs_exist_ok=True)
+            shutil.copytree(src, dst, dirs_exist_ok=True, ignore=ignore_patterns)
 
     # Copy start.py
     start_py = REPO_ROOT / "start.py"
@@ -1250,7 +1260,9 @@ def main():
             source_dir = build_tauri(version)
             if source_dir is None:
                 print("\n  Build failed. Use --zip-only to package existing build.")
-                sys.exit(1)
+                # Don't exit if --msix was requested — the EXE may still exist
+                if not args.msix:
+                    sys.exit(1)
 
     # ── Zip ───────────────────────────────────────────────────────────────
     zip_path = zip_distribution(source_dir, version, platform_name)

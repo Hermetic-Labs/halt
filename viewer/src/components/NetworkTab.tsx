@@ -7,6 +7,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 
 import { useT } from '../services/i18n';
 import { normalizeToEnglish } from '../services/i18nDynamic';
+import { api, apiMutate } from '../services/api';
 
 // Module-level ringtone reference for incoming call signaling
 let _eveRingtone: HTMLAudioElement | null = null;
@@ -365,10 +366,10 @@ export default function NetworkTab() {
         const role = localStorage.getItem('eve-mesh-role');
         if (!name || !clientId) return;
         // Check if already in roster
-        fetch(`${API_BASE}/api/roster`).then(r => r.json()).then((list: RosterMember[]) => {
+        api<RosterMember[]>('list_roster', '/roster').then((list: RosterMember[]) => {
             if (list.some(m => m.id === clientId)) return; // already there
             // Register self
-            return fetch(`${API_BASE}/api/roster`, {
+            return apiMutate('add_roster_member', '/roster', { id: clientId, name, role: role || 'responder', skills: [], status: 'online', assigned_task: '', notes: '' }, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ id: clientId, name, role: role || 'responder', skills: [], status: 'online', assigned_task: '', notes: '' }),
@@ -402,8 +403,8 @@ export default function NetworkTab() {
 
     const fetchClients = useCallback(async () => {
         try {
-            const r = await fetch(`${API_BASE}/api/mesh/clients`);
-            if (r.ok) setClients(await r.json());
+            const data = await api<MeshClient[]>('list_mesh_clients', '/mesh/clients');
+            setClients(data);
         } catch { /* offline */ }
     }, []);
 
@@ -412,21 +413,18 @@ export default function NetworkTab() {
             const params = new URLSearchParams();
             if (memberName) params.set('name', memberName);
             if (memberRole) params.set('role', memberRole);
-            const r = await fetch(`${API_BASE}/api/mesh/qr?${params.toString()}`);
-            if (r.ok) {
-                const data = await r.json();
-                setQrData(data);
-                setQrMemberName(memberName);
-                setQrMemberRole(memberRole);
-                setShowQR(true);
-            }
+            const data = await api<{ qr_image: string | null; app_url: string }>('mesh_qr', `/mesh/qr?${params.toString()}`, { name: memberName, role: memberRole });
+            setQrData(data);
+            setQrMemberName(memberName);
+            setQrMemberRole(memberRole);
+            setShowQR(true);
         } catch { /* offline */ }
     }, []);
 
     const fetchRoster = useCallback(async () => {
         try {
-            const r = await fetch(`${API_BASE}/api/roster`);
-            if (r.ok) setRoster(await r.json());
+            const data = await api<RosterMember[]>('list_roster', '/roster');
+            setRoster(data);
         } catch { /* offline */ }
     }, []);
 
@@ -441,26 +439,25 @@ export default function NetworkTab() {
             try { const { english } = await normalizeToEnglish(memberName, lang); memberName = english; } catch { /* fallback */ }
         }
         try {
-            const r = await fetch(`${API_BASE}/api/roster`, {
+            const memberPayload = { name: memberName, role: newMember.role, skills: selectedSkills };
+            await apiMutate('add_roster_member', '/roster', memberPayload, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name: memberName, role: newMember.role, skills: selectedSkills }),
+                body: JSON.stringify(memberPayload),
             });
-            if (r.ok) {
-                const addedName = newMember.name;
-                const addedRole = newMember.role;
-                fetchRoster();
-                setNewMember({ name: '', role: 'responder' });
-                setSelectedSkills([]);
-                setShowAddMember(false);
-                // Auto-show QR with the member's name/role pre-filled
-                fetchQR(addedName, addedRole);
-            }
+            const addedName = newMember.name;
+            const addedRole = newMember.role;
+            fetchRoster();
+            setNewMember({ name: '', role: 'responder' });
+            setSelectedSkills([]);
+            setShowAddMember(false);
+            // Auto-show QR with the member's name/role pre-filled
+            fetchQR(addedName, addedRole);
         } catch { /* offline */ }
     };
 
     const removeMember = async (id: string) => {
         try {
-            await fetch(`${API_BASE}/api/roster/${id}`, { method: 'DELETE' });
+            await apiMutate('delete_roster_member', `/roster/${id}`, { id }, { method: 'DELETE' });
             fetchRoster();
         } catch { /* offline */ }
     };
@@ -525,7 +522,24 @@ export default function NetworkTab() {
                     const translatedMessage = (userLang !== 'en' && translations?.[userLang]) || '';
                     const displayText = translatedMessage || `${catText}${notesText}`;
                     const bodyHTML = `<span style="font-size:13px;font-weight:400;opacity:0.9">${displayText}${senderText}</span>`;
-                    banner.innerHTML = `🚨 EMERGENCY${ward}${bed}<br/>${bodyHTML}`;
+
+                    // Build translations list for the card
+                    let translationsHTML = '';
+                    if (translations && Object.keys(translations).length > 0) {
+                        const langLabel = (code: string) => {
+                            const labels: Record<string, string> = { en:'English',ar:'Arabic',am:'Amharic',bn:'Bengali',de:'German',es:'Spanish',fa:'Farsi',fr:'French',ha:'Hausa',he:'Hebrew',hi:'Hindi',id:'Indonesian',it:'Italian',ja:'Japanese',ko:'Korean',ku:'Kurdish',nl:'Dutch',pl:'Polish',ps:'Pashto',pt:'Portuguese',ru:'Russian',so:'Somali',sw:'Swahili',ta:'Tamil',th:'Thai',tr:'Turkish',uk:'Ukrainian',ur:'Urdu',vi:'Vietnamese',zh:'Chinese',zu:'Zulu' };
+                            return labels[code] || code.toUpperCase();
+                        };
+                        const items = Object.entries(translations).map(([lc, txt]) =>
+                            `<div style="display:flex;align-items:baseline;gap:8px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.1)">`
+                            + `<span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.5);min-width:60px">${langLabel(lc)}</span>`
+                            + `<span style="font-size:12px;color:rgba(255,255,255,0.85);direction:${['ar','he','fa','ur','ps'].includes(lc)?'rtl':'ltr'}">${txt}</span></div>`
+                        ).join('');
+                        translationsHTML = `<div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.2);text-align:left;max-height:200px;overflow-y:auto">`
+                            + `<div style="font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px">TRANSLATIONS</div>`
+                            + items + `</div>`;
+                    }
+                    banner.innerHTML = `🚨 EMERGENCY${ward}${bed}<br/>${bodyHTML}${translationsHTML}`;
 
                     // Close button
                     const closeBtn = document.createElement('button');
@@ -580,7 +594,24 @@ export default function NetworkTab() {
 
                     // Instant translated text from precomputed map
                     const translatedAnn = (aUserLang !== 'en' && aTranslations?.[aUserLang]) || String(msg.message || '');
-                    aBanner.innerHTML = `📢 ANNOUNCEMENT<br/><span style="font-size:14px;font-weight:500">${translatedAnn}</span>${senderLine}`;
+
+                    // Build translations list for the announcement card
+                    let annTranslationsHTML = '';
+                    if (aTranslations && Object.keys(aTranslations).length > 0) {
+                        const langLabel = (code: string) => {
+                            const labels: Record<string, string> = { en:'English',ar:'Arabic',am:'Amharic',bn:'Bengali',de:'German',es:'Spanish',fa:'Farsi',fr:'French',ha:'Hausa',he:'Hebrew',hi:'Hindi',id:'Indonesian',it:'Italian',ja:'Japanese',ko:'Korean',ku:'Kurdish',nl:'Dutch',pl:'Polish',ps:'Pashto',pt:'Portuguese',ru:'Russian',so:'Somali',sw:'Swahili',ta:'Tamil',th:'Thai',tr:'Turkish',uk:'Ukrainian',ur:'Urdu',vi:'Vietnamese',zh:'Chinese',zu:'Zulu' };
+                            return labels[code] || code.toUpperCase();
+                        };
+                        const items = Object.entries(aTranslations).map(([lc, txt]) =>
+                            `<div style="display:flex;align-items:baseline;gap:8px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,0.08)">`
+                            + `<span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(0,0,0,0.4);min-width:60px">${langLabel(lc)}</span>`
+                            + `<span style="font-size:12px;color:rgba(0,0,0,0.75);direction:${['ar','he','fa','ur','ps'].includes(lc)?'rtl':'ltr'}">${txt}</span></div>`
+                        ).join('');
+                        annTranslationsHTML = `<div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(0,0,0,0.15);text-align:left;max-height:200px;overflow-y:auto">`
+                            + `<div style="font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,0,0,0.35);margin-bottom:6px">TRANSLATIONS</div>`
+                            + items + `</div>`;
+                    }
+                    aBanner.innerHTML = `📢 ANNOUNCEMENT<br/><span style="font-size:14px;font-weight:500">${translatedAnn}</span>${senderLine}${annTranslationsHTML}`;
 
                     // Close button
                     const aCloseBtn = document.createElement('button');
@@ -838,10 +869,11 @@ export default function NetworkTab() {
 
         // Only clients register in the roster — the leader manages it, not in it
         if (!asLeader) {
-            fetch(`${API_BASE}/api/roster`, {
+            const selfPayload = { id: cid, name: userName, role: userRole, skills: [], status: 'online', assigned_task: '', notes: '' };
+            apiMutate('add_roster_member', '/roster', selfPayload, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id: cid, name: userName, role: userRole, skills: [], status: 'online', assigned_task: '', notes: '' }),
+                body: JSON.stringify(selfPayload),
             }).then(() => {
                 // Re-upload avatar from localStorage if one exists
                 const av = localStorage.getItem('eve-mesh-avatar');
