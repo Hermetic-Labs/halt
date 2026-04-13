@@ -146,20 +146,20 @@ python start.py              # Auto-downloads AI models on first run (~4 GB)
 
 ## 🔨 Build & Deploy
 
-The build pipeline lives in [`dev/`](dev/) — see its [README](dev/README.md) for full docs.
+The entire software release pipeline has been modernized to a **Native Cloud CI/CD** stack to completely circumvent local Windows Defender (WDAC) blocks and safely publish natively to the Microsoft Store and Apple TestFlight.
 
 ```bash
-# ── Quick Reference (run from repo root) ──────────────────────
+# ── Cloud CI/CD Automated Build (GitHub Actions) ────────────────────
 
-# Dev iteration (fast portable build, no installer)
-python dev/build_and_deploy.py --platform win --dev --no-bump
+# 1. To officially release a new version 
+git tag v1.0.8
+git push origin v1.0.8
 
-# Production (full NSIS installer + ZIP)
-python dev/build_and_deploy.py --platform win
-
-# Ship it (build → git tag → R2 upload → GitHub release)
-python dev/build_and_deploy.py --platform win --release
+# 2. To manually trigger a Store Pipeline push
+# Open GitHub -> 'Actions' tab -> Click 'Release' -> 'Run workflow'
 ```
+
+> **Note:** The `windows-latest` cloud builders completely bypass local `os error 4551` constraints when packaging the `.msix` Windows App containers, compiling natively securely across MS + Mac architecture without relying on local machine dependencies.
 
 ### Output
 

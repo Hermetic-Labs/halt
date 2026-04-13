@@ -1,10 +1,16 @@
 # dev/
 
+> [!WARNING]
+> **DEPRECATED: LEGACY ELECTRON PIPELINE**
+> This directory served the original legacy `Electron + Python` build pipeline. The application has since been fully modernized to a **Native Tauri + Rust** architecture deployed via **GitHub Actions** (`.github/workflows/release.yml`).
+> 
+> **Do not use `build_and_deploy.py`.** All builds are now autonomously handled in the GitHub Cloud by simply pushing a Git Tag or clicking the "Run Workflow" Action interface. See the root `README.md` for current deployment instructions.
+
 > Build, deploy, and quality tooling — developer only. Nothing in this directory ships to end users.
 
-## Build & Deploy Pipeline
+## Legacy Build & Deploy Pipeline (Deprecated)
 
-The primary workflow for shipping HALT:
+The primary workflow for shipping HALT previously:
 
 ```bash
 # From repo root — always run from repo root, not from dev/
