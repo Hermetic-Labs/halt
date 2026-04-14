@@ -82,3 +82,9 @@ halt-log.txt
 *.p12
 *.cer
 dev/macos/*.pem
+
+# Apple distribution signing (never commit)
+*.key
+*.certSigningRequest
+*.cer
+*.p12

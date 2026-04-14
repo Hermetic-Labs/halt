@@ -66,8 +66,8 @@ pub fn list_models() -> Value {
     let model_path = llm::ensure_loaded().ok();
     let model_name = model_path
         .as_ref()
-        .and_then(|p| p.file_name())
-        .and_then(|n| n.to_str())
+        .and_then(|p: &std::path::PathBuf| p.file_name())
+        .and_then(|n: &std::ffi::OsStr| n.to_str())
         .unwrap_or("none");
 
     serde_json::json!({
@@ -99,7 +99,7 @@ pub fn inference_complete(request: InferenceRequest) -> Result<InferenceResponse
 
         let model_name = model_path
             .file_name()
-            .and_then(|n| n.to_str())
+            .and_then(|n: &std::ffi::OsStr| n.to_str())
             .unwrap_or("unknown")
             .to_string();
 
@@ -181,7 +181,7 @@ pub async fn inference_stream(
     let full_prompt = build_prompt(&request);
     let model_name = model_path
         .file_name()
-        .and_then(|n| n.to_str())
+        .and_then(|n: &std::ffi::OsStr| n.to_str())
         .unwrap_or("unknown")
         .to_string();
 

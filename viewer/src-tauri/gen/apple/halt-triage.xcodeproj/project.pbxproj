@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		59ECCA8973E5B0F467882F87 /* libapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6FF7E97117D5C01D6C0142 /* libapp.a */; };
+		5A580FC50B0C57C924B2EB38 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 80DF13C941306581CC14FBE8 /* main.mm */; };
+		5D70078FAF4E45C9909A5A23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E39B0D0C904317062CFEDAE /* Assets.xcassets */; };
+		7623F18BDE1B7611CC237F07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE00803C2FEEA046FDC14722 /* Security.framework */; };
+		8DE37D0AB8AB4B48DC471F8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF75B3013A17E253DBDD165 /* CoreGraphics.framework */; };
+		959F8F7F3D941A1E127F7753 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C699EB90404E9B3A3A96BB3D /* Metal.framework */; };
+		9E277D83EBB835BD85DCDB68 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4DB43FBF61DAF0D8D926C81 /* QuartzCore.framework */; };
+		A685116903DB38245B52B75F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0972A33EC050A725E8D3A1 /* UIKit.framework */; };
+		A917185A58478C6B3E590FD7 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253679FCBB6128C4BE1405B3 /* MetalKit.framework */; };
+		D013038B6903D399D87F781A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B4EE446A56A082020666CD2 /* LaunchScreen.storyboard */; };
+		D0F3C4AF49F67ED4DC17C429 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4971E94390799289249A08F /* WebKit.framework */; };
+		F5DEEFC3118D546C2A256DEB /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 340BD2176706B77B9CFE57DA /* assets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		040C0CA528591BF68C279DC0 /* main.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.rs; sourceTree = "<group>"; };
+		04FF4667C6025DD8B438403D /* setup.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup.rs; sourceTree = "<group>"; };
+		0BA980FC04FFFE233D31B2B1 /* translate.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = translate.rs; sourceTree = "<group>"; };
+		0F51DA4E2097764A14A61DB9 /* storage.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = storage.rs; sourceTree = "<group>"; };
+		147D5DAEF7854CFC00300744 /* bindings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bindings.h; sourceTree = "<group>"; };
+		253679FCBB6128C4BE1405B3 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		340BD2176706B77B9CFE57DA /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
+		34269C9D0E9C51B7376205B6 /* roster.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = roster.rs; sourceTree = "<group>"; };
+		3D51E4C1669278EEF4E25256 /* inventory.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = inventory.rs; sourceTree = "<group>"; };
+		3F0EE20EE2C0C680B46B2628 /* export.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = export.rs; sourceTree = "<group>"; };
+		404DD674CD1DF2BAFAF5C705 /* config.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config.rs; sourceTree = "<group>"; };
+		48CEE05BE24EBFDF643575B2 /* stt.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = stt.rs; sourceTree = "<group>"; };
+		5E39B0D0C904317062CFEDAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6933434F48B5F3461C9E2351 /* tasks.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = tasks.rs; sourceTree = "<group>"; };
+		7861547603DFE984470682A8 /* translate_stream.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = translate_stream.rs; sourceTree = "<group>"; };
+		7B4EE446A56A082020666CD2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7B6FF7E97117D5C01D6C0142 /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
+		80DF13C941306581CC14FBE8 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		8696BAEF0C85D15DF7501D23 /* chat.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = chat.rs; sourceTree = "<group>"; };
+		8CF75B3013A17E253DBDD165 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9639DB1251690C6E9669B47B /* mod.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = mod.rs; sourceTree = "<group>"; };
+		9B0972A33EC050A725E8D3A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A4F6D55D969D001F558FD371 /* alerts.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = alerts.rs; sourceTree = "<group>"; };
+		A6F50DD221194263ED570BD9 /* tts.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = tts.rs; sourceTree = "<group>"; };
+		A78122419CF861A2793CB987 /* inference.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = inference.rs; sourceTree = "<group>"; };
+		AEB0E49F71B089F8271F73A6 /* video.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = video.rs; sourceTree = "<group>"; };
+		B1B52DF05F4AED65358D8C85 /* qr.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = qr.rs; sourceTree = "<group>"; };
+		B4971E94390799289249A08F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		B954F07B4AE2ADDBAEC77D36 /* distribution.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = distribution.rs; sourceTree = "<group>"; };
+		C4DB43FBF61DAF0D8D926C81 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C6942C9BB086B96193B1B42F /* HALT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HALT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C699EB90404E9B3A3A96BB3D /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		DAD5BDF2F8BCD7CF5A2F76FD /* lib.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = lib.rs; sourceTree = "<group>"; };
+		DB07EA483AD1E84DE4F2F017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E956FE5FA649D6D6D5FC5AFF /* wards.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wards.rs; sourceTree = "<group>"; };
+		EC9CD00964AEE89FB31B65A2 /* halt-triage_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "halt-triage_iOS.entitlements"; sourceTree = "<group>"; };
+		EE00803C2FEEA046FDC14722 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F30C24F1A1D05A22123D3B43 /* patients.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = patients.rs; sourceTree = "<group>"; };
+		F4409C8C28BFB8353A50F300 /* mod.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = mod.rs; sourceTree = "<group>"; };
+		F81BDFA632679C58455340E8 /* health.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = health.rs; sourceTree = "<group>"; };
+		FF484CD3DB61E6BAE639C8F8 /* server.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = server.rs; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D9F8BE8DE507F107550B2C13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59ECCA8973E5B0F467882F87 /* libapp.a in Frameworks */,
+				8DE37D0AB8AB4B48DC471F8C /* CoreGraphics.framework in Frameworks */,
+				959F8F7F3D941A1E127F7753 /* Metal.framework in Frameworks */,
+				A917185A58478C6B3E590FD7 /* MetalKit.framework in Frameworks */,
+				9E277D83EBB835BD85DCDB68 /* QuartzCore.framework in Frameworks */,
+				7623F18BDE1B7611CC237F07 /* Security.framework in Frameworks */,
+				A685116903DB38245B52B75F /* UIKit.framework in Frameworks */,
+				D0F3C4AF49F67ED4DC17C429 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04C1A8A1425A61BB63154E70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CF75B3013A17E253DBDD165 /* CoreGraphics.framework */,
+				7B6FF7E97117D5C01D6C0142 /* libapp.a */,
+				C699EB90404E9B3A3A96BB3D /* Metal.framework */,
+				253679FCBB6128C4BE1405B3 /* MetalKit.framework */,
+				C4DB43FBF61DAF0D8D926C81 /* QuartzCore.framework */,
+				EE00803C2FEEA046FDC14722 /* Security.framework */,
+				9B0972A33EC050A725E8D3A1 /* UIKit.framework */,
+				B4971E94390799289249A08F /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0C01DE1F3601795380059104 /* mesh */ = {
+			isa = PBXGroup;
+			children = (
+				A4F6D55D969D001F558FD371 /* alerts.rs */,
+				8696BAEF0C85D15DF7501D23 /* chat.rs */,
+				F4409C8C28BFB8353A50F300 /* mod.rs */,
+				FF484CD3DB61E6BAE639C8F8 /* server.rs */,
+				7861547603DFE984470682A8 /* translate_stream.rs */,
+				AEB0E49F71B089F8271F73A6 /* video.rs */,
+			);
+			path = mesh;
+			sourceTree = "<group>";
+		};
+		0E745DF2B7835843985D7255 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6942C9BB086B96193B1B42F /* HALT.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E94AEBF2A7470DF92C000BA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5B3E1A7B7FA3A245CAC8D5DC /* halt-triage */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2E7D47EA38DB25569013BC2A /* halt-triage_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EC9CD00964AEE89FB31B65A2 /* halt-triage_iOS.entitlements */,
+				DB07EA483AD1E84DE4F2F017 /* Info.plist */,
+			);
+			path = "halt-triage_iOS";
+			sourceTree = "<group>";
+		};
+		5B3E1A7B7FA3A245CAC8D5DC /* halt-triage */ = {
+			isa = PBXGroup;
+			children = (
+				80DF13C941306581CC14FBE8 /* main.mm */,
+				D06FB8FBB41A58B818F283C7 /* bindings */,
+			);
+			path = "halt-triage";
+			sourceTree = "<group>";
+		};
+		85A9D428F85C0EB5C22A6D79 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		BCCBADB7B30ADAC1ABFB785D = {
+			isa = PBXGroup;
+			children = (
+				340BD2176706B77B9CFE57DA /* assets */,
+				5E39B0D0C904317062CFEDAE /* Assets.xcassets */,
+				7B4EE446A56A082020666CD2 /* LaunchScreen.storyboard */,
+				85A9D428F85C0EB5C22A6D79 /* Externals */,
+				2E7D47EA38DB25569013BC2A /* halt-triage_iOS */,
+				1E94AEBF2A7470DF92C000BA /* Sources */,
+				EA419942DC9EB89094386F2E /* src */,
+				04C1A8A1425A61BB63154E70 /* Frameworks */,
+				0E745DF2B7835843985D7255 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D06FB8FBB41A58B818F283C7 /* bindings */ = {
+			isa = PBXGroup;
+			children = (
+				147D5DAEF7854CFC00300744 /* bindings.h */,
+			);
+			path = bindings;
+			sourceTree = "<group>";
+		};
+		D21A8E6ABFB6F00B716B159D /* commands */ = {
+			isa = PBXGroup;
+			children = (
+				B954F07B4AE2ADDBAEC77D36 /* distribution.rs */,
+				3F0EE20EE2C0C680B46B2628 /* export.rs */,
+				F81BDFA632679C58455340E8 /* health.rs */,
+				A78122419CF861A2793CB987 /* inference.rs */,
+				3D51E4C1669278EEF4E25256 /* inventory.rs */,
+				9639DB1251690C6E9669B47B /* mod.rs */,
+				F30C24F1A1D05A22123D3B43 /* patients.rs */,
+				B1B52DF05F4AED65358D8C85 /* qr.rs */,
+				34269C9D0E9C51B7376205B6 /* roster.rs */,
+				04FF4667C6025DD8B438403D /* setup.rs */,
+				48CEE05BE24EBFDF643575B2 /* stt.rs */,
+				6933434F48B5F3461C9E2351 /* tasks.rs */,
+				0BA980FC04FFFE233D31B2B1 /* translate.rs */,
+				A6F50DD221194263ED570BD9 /* tts.rs */,
+				E956FE5FA649D6D6D5FC5AFF /* wards.rs */,
+			);
+			path = commands;
+			sourceTree = "<group>";
+		};
+		EA419942DC9EB89094386F2E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				404DD674CD1DF2BAFAF5C705 /* config.rs */,
+				DAD5BDF2F8BCD7CF5A2F76FD /* lib.rs */,
+				040C0CA528591BF68C279DC0 /* main.rs */,
+				0F51DA4E2097764A14A61DB9 /* storage.rs */,
+				D21A8E6ABFB6F00B716B159D /* commands */,
+				0C01DE1F3601795380059104 /* mesh */,
+			);
+			name = src;
+			path = ../../src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6CB4222F886A63D84C564B0C /* halt-triage_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 559CF52915BAE1A4D0EFEF5E /* Build configuration list for PBXNativeTarget "halt-triage_iOS" */;
+			buildPhases = (
+				1D3FA2477779EC31AC0C0ECC /* Build Rust Code */,
+				EE15F69C7E39F89DC5B3499D /* Sources */,
+				BE1F049F9C93F37B89108196 /* Resources */,
+				D9F8BE8DE507F107550B2C13 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "halt-triage_iOS";
+			packageProductDependencies = (
+			);
+			productName = "halt-triage_iOS";
+			productReference = C6942C9BB086B96193B1B42F /* HALT.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98B6C19BFB9C7B23CD7ED275 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 3773150AC91AB45C1334C7AD /* Build configuration list for PBXProject "halt-triage" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = BCCBADB7B30ADAC1ABFB785D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 0E745DF2B7835843985D7255 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6CB4222F886A63D84C564B0C /* halt-triage_iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE1F049F9C93F37B89108196 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D70078FAF4E45C9909A5A23 /* Assets.xcassets in Resources */,
+				D013038B6903D399D87F781A /* LaunchScreen.storyboard in Resources */,
+				F5DEEFC3118D546C2A256DEB /* assets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D3FA2477779EC31AC0C0ECC /* Build Rust Code */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Rust Code";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Externals/x86_64/${CONFIGURATION}/libapp.a",
+				"$(SRCROOT)/Externals/arm64/${CONFIGURATION}/libapp.a",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"/opt/homebrew/bin:$HOME/.local/node/bin:$HOME/.cargo/bin:$PATH\"\nnpm run -- tauri ios xcode-script -v --platform ${PLATFORM_DISPLAY_NAME:?} --sdk-root ${SDKROOT:?} --framework-search-paths \"${FRAMEWORK_SEARCH_PATHS:?}\" --header-search-paths \"${HEADER_SEARCH_PATHS:?}\" --gcc-preprocessor-definitions \"${GCC_PREPROCESSOR_DEFINITIONS:-}\" --configuration ${CONFIGURATION:?} ${FORCE_COLOR} ${ARCHS:?}";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE15F69C7E39F89DC5B3499D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A580FC50B0C57C924B2EB38 /* main.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0C31972D40722378F209CE4F /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "halt-triage_iOS/halt-triage_iOS.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q88YSQLQ8S;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = "halt-triage_iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = HALT;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = HermeticLabs.HALT-HermeticAnonymousLocalTriage;
+				PRODUCT_NAME = "HALT";
+				PROVISIONING_PROFILE_SPECIFIER = "HALT TestFlight Dist Profile";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = release;
+		};
+		C3A9279CAD384CDAFED2FA6C /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = release;
+		};
+		CBE7931E5E2A48799EFE4B4D /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = debug;
+		};
+		D59DB16A1A84FB0688B91C53 /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "halt-triage_iOS/halt-triage_iOS.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q88YSQLQ8S;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = "halt-triage_iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = HALT;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = HermeticLabs.HALT-HermeticAnonymousLocalTriage;
+				PRODUCT_NAME = "HALT";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3773150AC91AB45C1334C7AD /* Build configuration list for PBXProject "halt-triage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBE7931E5E2A48799EFE4B4D /* debug */,
+				C3A9279CAD384CDAFED2FA6C /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+		559CF52915BAE1A4D0EFEF5E /* Build configuration list for PBXNativeTarget "halt-triage_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D59DB16A1A84FB0688B91C53 /* debug */,
+				0C31972D40722378F209CE4F /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98B6C19BFB9C7B23CD7ED275 /* Project object */;
+}

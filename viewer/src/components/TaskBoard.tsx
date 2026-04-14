@@ -37,7 +37,6 @@ interface RosterMember {
 
 // ── Constants ────────────────────────────────────────────────────────────────
 
-const API_BASE = '';
 const POLL_INTERVAL = 3000;
 const PRIORITY_COLOR: Record<string, string> = { critical: '#e74c3c', urgent: '#f0a500', normal: '#3498db', low: '#888' };
 const STATUS_KEY: Record<string, string> = { open: 'tasks.status_open', assigned: 'tasks.status_assigned', in_progress: 'tasks.status_in_progress', done: 'tasks.status_done' };

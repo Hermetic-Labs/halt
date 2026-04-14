@@ -242,29 +242,16 @@ def ensure_models(root_dir):
     zip_path = os.path.join(root_dir, "models.zip")
 
     try:
-        # Get file size
-        req = urllib.request.Request(MODELS_URL, method="HEAD")
-        with urllib.request.urlopen(req):
-            pass  # HEAD request confirms URL is reachable
-
-        # Download with progress
-        downloaded = [0]
-
-        def report(block_num, block_size, total):
-            downloaded[0] += block_size
-            if total > 0:
-                pct = min(downloaded[0] / total * 100, 100)
-                mb = downloaded[0] / (1024**2)
-                total_mb = total / (1024**2)
-                sys.stdout.write(f"\r  [GET]     {pct:.0f}% ({mb:.0f} / {total_mb:.0f} MB)")
-                sys.stdout.flush()
-
-        # Add explicit User-Agent to bypass Cloudflare R2's 403 Forbidden block
-        opener = urllib.request.build_opener()
-        opener.addheaders = [("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) HALT/1.0.5")]
-        urllib.request.install_opener(opener)
-
-        urllib.request.urlretrieve(MODELS_URL, zip_path, reporthook=report)
+        # Use curl to bypass Cloudflare R2's Bot Fight Mode blocking Python urllib
+        curl_cmd = [
+            "curl", "-L", MODELS_URL,
+            "-o", zip_path,
+            "-#"
+        ]
+        result = subprocess.run(curl_cmd)
+        if result.returncode != 0:
+            raise Exception(f"curl failed with exit code {result.returncode}")
+        
         print()  # newline after progress
         log("OK", "Download complete", Colors.GREEN)
 

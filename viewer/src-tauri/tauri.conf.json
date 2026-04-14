@@ -25,13 +25,9 @@
   },
   "bundle": {
     "active": true,
-    "targets": ["nsis", "msix"],
+    "targets": "all",
     "publisher": "CN=FD92FCE8-6D9F-43FF-876A-BE0D2CF446D5",
-    "resources": [
-      "../../api/**/*",
-      "../../patients/**/*",
-      "../../start.py"
-    ],
+    "resources": [],
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
