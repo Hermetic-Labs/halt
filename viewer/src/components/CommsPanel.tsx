@@ -62,7 +62,7 @@ export default function CommsPanel() {
     // React handler
     const handleReact = async (msgId: string, emoji: string) => {
         try {
-            await apiMutate('react_chat', `/mesh/chat/${msgId}/react`, { msg_id: msgId, emoji, user: userName }, {
+            await apiMutate('react_to_message', `/mesh/chat/${msgId}/react`, { msg_id: msgId, emoji, user: userName }, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ emoji, user: userName }),

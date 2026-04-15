@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useT } from '../services/i18n';
 import { useTTS } from '../hooks/useTTS';
 import TranslatorPanel from './TranslatorPanel';
-import { isNative } from '../services/api';
+import { isNative, translateText, translateBatch, sttListen } from '../services/api';
 import './TriagePanel.css';
 
 interface Message {
@@ -134,17 +134,12 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
         queueMicrotask(() => setIsTriageTranslating(true));
         (async () => {
             try {
-                const res = await fetch('/api/translate/batch', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        texts: untranslated.map(m => m.content),
-                        source: 'en',
-                        target: targetLang,
-                    }),
-                });
-                if (res.ok && prevTriageLangRef.current === targetLang) {
-                    const data = await res.json();
+                const data = await translateBatch(
+                    untranslated.map(m => m.content),
+                    'en',
+                    targetLang,
+                );
+                if (prevTriageLangRef.current === targetLang) {
                     const newT: Record<string, string> = {};
                     untranslated.forEach((m, i) => {
                         triageTranslationCache[m.content] = data.translations[i];
@@ -362,15 +357,8 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
         let englishTxt = txt;
         if (lang !== 'en') {
             try {
-                const tr = await fetch('/api/translate', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ text: txt, source: lang, target: 'en' }),
-                });
-                if (tr.ok) {
-                    const td = await tr.json();
-                    englishTxt = td.translated || txt;
-                }
+                const td = await translateText(txt, lang, 'en');
+                englishTxt = td.translated || txt;
             } catch { /* fallback to original */ }
         }
 
@@ -407,7 +395,7 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                     : "You are a field medic AI in a survival kit. Give direct, actionable clinical information only. NO disclaimers, NO suggestions to see a doctor, NO hedging.";
 
                 let full = '';
-                const unlisten = await listen('inference-token', (event: any) => {
+                const unlisten = await listen('inference-token', (event: { payload: { done?: boolean; token?: string } }) => {
                     const d = event.payload;
                     if (d.done) {
                         return;
@@ -538,9 +526,7 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                 const fd = new FormData();
                 fd.append('audio', blob, `recording${ext}`);
                 try {
-                    const r = await fetch('/stt/listen', { method: 'POST', body: fd });
-                    if (!r.ok) throw new Error(`HTTP ${r.status}`);
-                    const d = await r.json();
+                    const d = await sttListen(fd);
                     const txt = (d.text || '').trim();
                     if (txt) {
                         setInput(prev => prev ? prev + ' ' + txt : txt);

@@ -8,6 +8,7 @@
  */
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { useT } from '../services/i18n';
+import { translateText, ttsSynthesize, sttListen } from '../services/api';
 import { useTranslateStream } from '../hooks/useTranslateStream';
 import type { TranslateStreamState } from '../hooks/useTranslateStream';
 import { useTranslateLive } from '../hooks/useTranslateLive';
@@ -164,11 +165,8 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                         fd.append('audio', blob, 'recording.webm');
                         if (sourceLang !== 'en') fd.append('language', sourceLang);
                         try {
-                            const r = await fetch('/stt/listen', { method: 'POST', body: fd });
-                            if (r.ok) {
-                                const d = await r.json();
-                                if (d.text) setTextInput(prev => prev ? prev + ' ' + d.text : d.text);
-                            }
+                            const d = await sttListen(fd);
+                            if (d.text) setTextInput(prev => prev ? prev + ' ' + d.text : d.text);
                         } catch { /* silent */ }
                         setSttBusy(false);
                     };
@@ -182,11 +180,7 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
     const handleReplay = useCallback(async (msg: ChatMessage) => {
         setPlayingId(msg.id);
         try {
-            const r = await fetch('/tts/synthesize', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ text: msg.text, lang: msg.lang }),
-            });
+            const r = await ttsSynthesize(msg.text, undefined, undefined, msg.lang);
             if (r.ok) {
                 const buf = await r.arrayBuffer();
                 const blob = new Blob([buf], { type: 'audio/wav' });
@@ -208,22 +202,15 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
         if (!text || textBusy) return;
         setTextBusy(true);
         try {
-            const r = await fetch('/api/translate', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ text, source: sourceLang, target: targetLang }),
-            });
-            if (r.ok) {
-                const d = await r.json();
-                const newMsg: ChatMessage = {
-                    id: ++_msgId, side: activeSide,
-                    text: d.translated, lang: targetLang,
-                    originalText: text, timestamp: Date.now(),
-                };
-                setChatMessages(prev => [...prev, newMsg]);
-                setTextInput('');
-                if (autoPlayRef.current) handleReplay(newMsg);
-            }
+            const d = await translateText(text, sourceLang, targetLang);
+            const newMsg: ChatMessage = {
+                id: ++_msgId, side: activeSide,
+                text: d.translated, lang: targetLang,
+                originalText: text, timestamp: Date.now(),
+            };
+            setChatMessages(prev => [...prev, newMsg]);
+            setTextInput('');
+            if (autoPlayRef.current) handleReplay(newMsg);
         } catch { /* silent */ }
         setTextBusy(false);
     }, [textInput, textBusy, sourceLang, targetLang, activeSide, handleReplay]);

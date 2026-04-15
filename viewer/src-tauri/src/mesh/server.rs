@@ -102,7 +102,9 @@ pub fn mesh_promote(client_id: String) -> Result<Value, String> {
         }
 
         // Promote new leader
-        let client = state.clients.get_mut(&client_id)
+        let client = state
+            .clients
+            .get_mut(&client_id)
             .ok_or_else(|| "Client not found".to_string())?;
         client.is_leader = true;
         state.leader_id = Some(client_id.clone());
@@ -117,7 +119,9 @@ pub fn mesh_promote(client_id: String) -> Result<Value, String> {
 #[tauri::command]
 pub fn mesh_snapshot() -> Value {
     with_state(|state| {
-        let clients: Vec<Value> = state.clients.values()
+        let clients: Vec<Value> = state
+            .clients
+            .values()
             .map(|c| serde_json::to_value(c).unwrap_or(Value::Null))
             .collect();
 
@@ -145,14 +149,17 @@ pub fn register_client(client_id: &str, name: &str, role: &str) {
     let now = chrono::Local::now().to_rfc3339();
     with_state(|state| {
         let is_first = state.clients.is_empty();
-        state.clients.insert(client_id.to_string(), MeshClient {
-            client_id: client_id.to_string(),
-            name: name.to_string(),
-            role: role.to_string(),
-            connected_at: now.clone(),
-            last_seen: now,
-            is_leader: is_first,
-        });
+        state.clients.insert(
+            client_id.to_string(),
+            MeshClient {
+                client_id: client_id.to_string(),
+                name: name.to_string(),
+                role: role.to_string(),
+                connected_at: now.clone(),
+                last_seen: now,
+                is_leader: is_first,
+            },
+        );
         if is_first {
             state.leader_id = Some(client_id.to_string());
         }
@@ -192,7 +199,9 @@ pub fn evict_stale() -> Vec<String> {
     let cutoff_str = cutoff.to_rfc3339();
 
     with_state(|state| {
-        let stale: Vec<String> = state.clients.iter()
+        let stale: Vec<String> = state
+            .clients
+            .iter()
             .filter(|(_, c)| c.last_seen < cutoff_str)
             .map(|(id, _)| id.clone())
             .collect();

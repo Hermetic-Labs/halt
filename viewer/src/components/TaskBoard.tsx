@@ -7,7 +7,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { useT } from '../services/i18n';
 import { normalizeToEnglish } from '../services/i18nDynamic';
 import { useLanguageArray, AVAILABLE_LANGS } from '../hooks/useLanguageArray';
-import { api, apiMutate } from '../services/api';
+import { api, apiMutate, translateText, ttsSynthesizeMulti } from '../services/api';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -246,11 +246,8 @@ export default function TaskBoard() {
             if (targetLangs.length > 0) {
                 const results = await Promise.all(
                     targetLangs.map(lang =>
-                        fetch('/api/translate', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ text: englishText, source: 'en', target: lang }),
-                        }).then(r => r.ok ? r.json() : null).catch(() => null)
+                        translateText(englishText, 'en', lang)
+                            .then(d => d).catch(() => null)
                     )
                 );
                 for (let i = 0; i < targetLangs.length; i++) {
@@ -268,11 +265,7 @@ export default function TaskBoard() {
             // Generate multi-language stitched audio (one blob, all languages)
             let audio_b64 = '';
             try {
-                const ttsRes = await fetch('/tts/synthesize-multi', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ segments: ttsSegments, rate: 1.0 }),
-                });
+                const ttsRes = await ttsSynthesizeMulti(ttsSegments, 1.0);
                 if (ttsRes.ok) {
                     const blob = await ttsRes.blob();
                     const buf = await blob.arrayBuffer();
@@ -341,11 +334,8 @@ export default function TaskBoard() {
             if (targetLangs.length > 0) {
                 const results = await Promise.all(
                     targetLangs.map(lang =>
-                        fetch('/api/translate', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ text: englishText, source: 'en', target: lang }),
-                        }).then(r => r.ok ? r.json() : null).catch(() => null)
+                        translateText(englishText, 'en', lang)
+                            .then(d => d).catch(() => null)
                     )
                 );
                 for (let i = 0; i < targetLangs.length; i++) {
@@ -363,11 +353,7 @@ export default function TaskBoard() {
             // Generate multi-language stitched audio (one blob, all languages)
             let audio_b64 = '';
             try {
-                const ttsRes = await fetch('/tts/synthesize-multi', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ segments: ttsSegments, rate: 1.0 }),
-                });
+                const ttsRes = await ttsSynthesizeMulti(ttsSegments, 1.0);
                 if (ttsRes.ok) {
                     const blob = await ttsRes.blob();
                     const buf = await blob.arrayBuffer();

@@ -88,7 +88,13 @@ async function httpCall<T>(path: string, options?: RequestInit): Promise<T> {
 }
 
 /**
- * Unified API call — tries Tauri invoke first, falls back to HTTP fetch.
+ * Unified API call — Rust invoke first, Python HTTP fallback.
+ *
+ * In Tauri (dev + store): tries invoke() → Rust. If it fails, falls
+ * back to Python sidecar on :7778. This dual-path ensures the app
+ * always works even if a Rust command has a bug.
+ *
+ * In browser-only mode: Python HTTP directly.
  *
  * @param command  - Tauri command name (snake_case, e.g. 'list_patients')
  * @param path     - HTTP path (e.g. '/patients')
@@ -101,18 +107,17 @@ export async function api<T>(
   args?: Record<string, unknown>,
   fetchOpt?: RequestInit,
 ): Promise<T> {
-  // Try native first
   if (isNative) {
     const result = await nativeCall<T>(command, args);
     if (result !== null) return result;
+    // Rust failed — fall through to Python sidecar
+    console.warn(`[api] Rust invoke(${command}) failed → falling back to Python`);
   }
-  // Fall back to HTTP
   return httpCall<T>(path, fetchOpt);
 }
 
 /**
- * Fire-and-forget native call with HTTP fallback.
- * Used for mutations (POST/PUT/DELETE) where the response shape doesn't matter.
+ * Fire-and-forget mutation — same Rust-first, Python-fallback pattern.
  */
 export async function apiMutate<T>(
   command: string,
@@ -123,8 +128,118 @@ export async function apiMutate<T>(
   if (isNative) {
     const result = await nativeCall<T>(command, args);
     if (result !== null) return result;
+    console.warn(`[api] Rust invoke(${command}) failed → falling back to Python`);
   }
   return httpCall<T>(path, fetchOpt);
 }
 
 export { httpCall, BASE };
+
+// ── Endpoint URL Resolution ──────────────────────────────────────────────────
+
+/**
+ * Resolve a backend URL.
+ * - Browser/dev: relative path (Vite proxy handles it)
+ * - Tauri store: absolute URL to native HTTP server on :7779
+ */
+export function resolveUrl(path: string): string {
+  if (isNative) return `http://127.0.0.1:7779${path}`;
+  return path;
+}
+
+// ── Typed Helpers — Rust invoke first, Python fetch fallback ─────────────────
+
+/** Translate a single text string. */
+export async function translateText(
+  text: string, source: string, target: string,
+): Promise<{ translated: string }> {
+  if (isNative) {
+    const r = await nativeCall<{ translated: string }>('translate_text', { text, source, target });
+    if (r) return r;
+  }
+  const res = await fetch(resolveUrl('/api/translate'), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ text, source, target }),
+  });
+  if (!res.ok) throw new Error(`translate failed: ${res.status}`);
+  return res.json();
+}
+
+/** Translate multiple texts at once. */
+export async function translateBatch(
+  texts: string[], source: string, target: string,
+): Promise<{ translations: string[] }> {
+  if (isNative) {
+    const r = await nativeCall<{ translations: string[] }>('translate_batch', { texts, source, target });
+    if (r) return r;
+  }
+  const res = await fetch(resolveUrl('/api/translate/batch'), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ texts, source, target }),
+  });
+  if (!res.ok) throw new Error(`translate batch failed: ${res.status}`);
+  return res.json();
+}
+
+/** Synthesize speech from text — returns JSON with audio_base64. */
+export async function ttsSynthesize(
+  text: string, voice?: string, speed?: number, lang?: string,
+): Promise<Response> {
+  if (isNative) {
+    const r = await nativeCall<{ audio_base64: string; sample_rate: number; duration_ms: number }>(
+      'tts_synthesize', { request: { text, voice: voice || 'af_heart', speed: speed || 1.0, lang: lang || '' } },
+    );
+    if (r) {
+      // Wrap Rust response in a Response object so callers can handle it uniformly
+      return new Response(JSON.stringify(r), { status: 200, headers: { 'Content-Type': 'application/json' } });
+    }
+  }
+  return fetch(resolveUrl('/tts/synthesize'), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ text, voice: voice || 'af_heart', speed: speed || 1.0, lang: lang || '' }),
+  });
+}
+
+/** Multi-segment TTS synthesis. */
+export async function ttsSynthesizeMulti(
+  segments: { text: string; lang: string }[], speed?: number,
+): Promise<Response> {
+  if (isNative) {
+    const r = await nativeCall<{ audio_base64: string; sample_rate: number; duration_ms: number }>(
+      'tts_synthesize_multi', { request: { segments, speed: speed || 1.0 } },
+    );
+    if (r) {
+      return new Response(JSON.stringify(r), { status: 200, headers: { 'Content-Type': 'application/json' } });
+    }
+  }
+  return fetch(resolveUrl('/tts/synthesize-multi'), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ segments, speed: speed || 1.0 }),
+  });
+}
+
+/** Speech-to-text — accepts FormData with audio file. */
+export async function sttListen(formData: FormData): Promise<{ text: string; language?: string }> {
+  if (isNative) {
+    // Convert FormData audio blob to base64 for Rust invoke
+    const audioFile = formData.get('audio') as File | Blob | null;
+    if (audioFile) {
+      const buf = await audioFile.arrayBuffer();
+      const bytes = new Uint8Array(buf);
+      let binary = '';
+      for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+      const b64 = btoa(binary);
+      const r = await nativeCall<{ text: string; language?: string }>(
+        'stt_listen', { audio_base64: b64, mime_type: audioFile.type || 'audio/webm' },
+      );
+      if (r) return r;
+    }
+  }
+  const res = await fetch(resolveUrl('/stt/listen'), { method: 'POST', body: formData });
+  if (!res.ok) throw new Error(`STT failed: ${res.status}`);
+  return res.json();
+}

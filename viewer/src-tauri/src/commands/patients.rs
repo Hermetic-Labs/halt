@@ -9,8 +9,8 @@
 //!   4. Snapshot/Restore — Full data dump and bulk import for mesh replication.
 //!   5. QR — Discharge and public lookup QR codes.
 
-use crate::storage;
 use crate::config;
+use crate::storage;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use std::fs;
@@ -137,11 +137,21 @@ pub struct PatientRecord {
     pub public_opt_in: bool,
 }
 
-fn default_age_unit() -> String { "years".into() }
-fn default_sex() -> String { "U".into() }
-fn default_weight() -> f64 { 70.0 }
-fn default_status() -> String { "active".into() }
-fn default_language() -> String { "English".into() }
+fn default_age_unit() -> String {
+    "years".into()
+}
+fn default_sex() -> String {
+    "U".into()
+}
+fn default_weight() -> f64 {
+    70.0
+}
+fn default_status() -> String {
+    "active".into()
+}
+fn default_language() -> String {
+    "English".into()
+}
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct PatientSummary {
@@ -207,7 +217,10 @@ pub fn list_patients(status: Option<String>, full: Option<bool>) -> Vec<Value> {
             if full {
                 results.push(data);
             } else {
-                let triage = data.get("triage").cloned().unwrap_or(Value::Object(Default::default()));
+                let triage = data
+                    .get("triage")
+                    .cloned()
+                    .unwrap_or(Value::Object(Default::default()));
                 results.push(serde_json::json!({
                     "id": data.get("id").and_then(|v| v.as_str()).unwrap_or(""),
                     "name": data.get("name").and_then(|v| v.as_str()).unwrap_or(""),
@@ -263,7 +276,10 @@ pub fn get_patient(patient_id: String) -> Result<Value, String> {
 }
 
 #[tauri::command]
-pub fn update_patient(patient_id: String, mut record: PatientRecord) -> Result<PatientRecord, String> {
+pub fn update_patient(
+    patient_id: String,
+    mut record: PatientRecord,
+) -> Result<PatientRecord, String> {
     let path = storage::patient_path(&patient_id);
     if !path.exists() {
         return Err("Patient not found".to_string());
@@ -282,8 +298,7 @@ pub fn add_patient_event(patient_id: String, event: PatientEvent) -> Result<Valu
     }
     let mut data = storage::read_json(&path)?;
 
-    let events = data.get_mut("events")
-        .and_then(|v| v.as_array_mut());
+    let events = data.get_mut("events").and_then(|v| v.as_array_mut());
 
     let event_val = serde_json::to_value(&event).map_err(|e| e.to_string())?;
 
@@ -336,7 +351,11 @@ pub fn delete_patient(patient_id: String) -> Result<(), String> {
 // ── Attachments ─────────────────────────────────────────────────────────────
 
 #[tauri::command]
-pub fn upload_attachment(patient_id: String, filename: String, data: Vec<u8>) -> Result<Value, String> {
+pub fn upload_attachment(
+    patient_id: String,
+    filename: String,
+    data: Vec<u8>,
+) -> Result<Value, String> {
     let path = storage::patient_path(&patient_id);
     if !path.exists() {
         return Err("Patient not found".to_string());
@@ -350,7 +369,8 @@ pub fn upload_attachment(patient_id: String, filename: String, data: Vec<u8>) ->
 
     // Update attachmentNames in patient record
     let mut patient_data = storage::read_json(&path)?;
-    let names = patient_data.get_mut("attachmentNames")
+    let names = patient_data
+        .get_mut("attachmentNames")
         .and_then(|v| v.as_array_mut());
 
     match names {
@@ -393,8 +413,14 @@ pub fn public_patient_lookup(name: Option<String>, all: Option<i32>) -> Vec<Valu
     for path in glob_patients() {
         if let Ok(record) = storage::read_json(&path) {
             // Only show opted-in patients
-            let opt_in = record.get("publicOptIn").and_then(|v| v.as_bool()).unwrap_or(false)
-                || record.get("public_opt_in").and_then(|v| v.as_bool()).unwrap_or(false);
+            let opt_in = record
+                .get("publicOptIn")
+                .and_then(|v| v.as_bool())
+                .unwrap_or(false)
+                || record
+                    .get("public_opt_in")
+                    .and_then(|v| v.as_bool())
+                    .unwrap_or(false);
             if !opt_in {
                 continue;
             }
@@ -407,11 +433,13 @@ pub fn public_patient_lookup(name: Option<String>, all: Option<i32>) -> Vec<Valu
                 }
             }
 
-            let attachment_names = record.get("attachmentNames")
+            let attachment_names = record
+                .get("attachmentNames")
                 .and_then(|v| v.as_array())
                 .cloned()
                 .unwrap_or_default();
-            let photo_name = attachment_names.iter()
+            let photo_name = attachment_names
+                .iter()
                 .filter_map(|n| n.as_str())
                 .find(|n| n.starts_with("photo."))
                 .map(|s| s.to_string());

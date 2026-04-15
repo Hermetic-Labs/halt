@@ -11,8 +11,8 @@
 //!     This enables any receiving client to display the message in their
 //!     configured language without a live round-trip.
 
-use crate::storage;
 use crate::models::nllb;
+use crate::storage;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
@@ -60,15 +60,22 @@ fn save_chat(messages: &[Value]) -> Result<(), String> {
 pub fn get_chat(limit: Option<usize>) -> Vec<Value> {
     let limit = limit.unwrap_or(100);
     let messages = load_chat();
-    let start = if messages.len() > limit { messages.len() - limit } else { 0 };
+    let start = if messages.len() > limit {
+        messages.len() - limit
+    } else {
+        0
+    };
     messages[start..].to_vec()
 }
 
 #[tauri::command]
 pub fn send_chat(mut msg: ChatMessage) -> Result<ChatMessage, String> {
     if msg.id.is_empty() {
-        msg.id = format!("MSG-{}-{}", chrono::Local::now().format("%Y%m%d%H%M%S"),
-            &uuid::Uuid::new_v4().to_string()[..8]);
+        msg.id = format!(
+            "MSG-{}-{}",
+            chrono::Local::now().format("%Y%m%d%H%M%S"),
+            &uuid::Uuid::new_v4().to_string()[..8]
+        );
     }
     if msg.timestamp.is_empty() {
         msg.timestamp = chrono::Local::now().to_rfc3339();
@@ -80,7 +87,7 @@ pub fn send_chat(mut msg: ChatMessage) -> Result<ChatMessage, String> {
         let lang_map = nllb::lang_map();
         let mut translations = serde_json::Map::new();
 
-        for (lang, _) in &lang_map {
+        for lang in lang_map.keys() {
             if *lang != source_lang {
                 let translated = nllb::translate(&msg.message, source_lang, lang);
                 if translated != msg.message {
@@ -109,27 +116,34 @@ pub fn clear_chat() -> Value {
 }
 
 #[tauri::command]
-pub fn react_to_message(message_id: String, emoji: String, member_name: String) -> Result<Value, String> {
+pub fn react_to_message(
+    message_id: String,
+    emoji: String,
+    member_name: String,
+) -> Result<Value, String> {
     let mut messages = load_chat();
 
-    let msg = messages.iter_mut()
+    let msg = messages
+        .iter_mut()
         .filter_map(|m| m.as_object_mut())
         .find(|m| m.get("id").and_then(|v| v.as_str()) == Some(&message_id))
         .ok_or("Message not found")?;
 
-    let reactions = msg.entry("reactions")
+    let reactions = msg
+        .entry("reactions")
         .or_insert_with(|| Value::Object(serde_json::Map::new()));
 
     if let Value::Object(ref mut rmap) = reactions {
-        let users = rmap.entry(emoji.clone())
+        let users = rmap
+            .entry(emoji.clone())
             .or_insert_with(|| Value::Array(Vec::new()));
 
         if let Value::Array(ref mut arr) = users {
             let name_val = Value::String(member_name.clone());
             if arr.contains(&name_val) {
-                arr.retain(|v| v != &name_val);  // Toggle off
+                arr.retain(|v| v != &name_val); // Toggle off
             } else {
-                arr.push(name_val);  // Toggle on
+                arr.push(name_val); // Toggle on
             }
             // Remove emoji key if no users left
             if arr.is_empty() {
@@ -160,11 +174,14 @@ pub fn upload_chat_attachment(filename: String, data: Vec<u8>) -> Result<Value, 
     let attach_dir = storage::attach_dir().join("chat");
     let _ = std::fs::create_dir_all(&attach_dir);
 
-    let safe_name = format!("{}-{}", chrono::Local::now().format("%Y%m%d%H%M%S"), filename);
+    let safe_name = format!(
+        "{}-{}",
+        chrono::Local::now().format("%Y%m%d%H%M%S"),
+        filename
+    );
     let dest = attach_dir.join(&safe_name);
 
-    std::fs::write(&dest, &data)
-        .map_err(|e| format!("Failed to write: {}", e))?;
+    std::fs::write(&dest, &data).map_err(|e| format!("Failed to write: {}", e))?;
 
     Ok(serde_json::json!({"filename": safe_name}))
 }

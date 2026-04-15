@@ -40,15 +40,14 @@ pub struct Task {
     pub escalate_at: String,
 }
 
-fn default_priority() -> String { "normal".to_string() }
-fn default_status() -> String { "open".to_string() }
+fn default_priority() -> String {
+    "normal".to_string()
+}
+fn default_status() -> String {
+    "open".to_string()
+}
 
-const PRIORITY_ORDER: &[(&str, i32)] = &[
-    ("critical", 0),
-    ("urgent", 1),
-    ("normal", 2),
-    ("low", 3),
-];
+const PRIORITY_ORDER: &[(&str, i32)] = &[("critical", 0), ("urgent", 1), ("normal", 2), ("low", 3)];
 
 fn priority_rank(p: &str) -> i32 {
     PRIORITY_ORDER
@@ -101,7 +100,11 @@ pub fn create_task(mut task: Task) -> Result<Task, String> {
     }
     task.updated_at = now;
 
-    let who = if task.created_by.is_empty() { "unknown" } else { &task.created_by };
+    let who = if task.created_by.is_empty() {
+        "unknown"
+    } else {
+        &task.created_by
+    };
     storage::log_activity(who, "created task", &task.title, None);
 
     tasks.push(task.clone());
@@ -113,7 +116,9 @@ pub fn create_task(mut task: Task) -> Result<Task, String> {
 pub fn update_task(task_id: String, mut task: Task) -> Result<Task, String> {
     let mut tasks = load_tasks();
 
-    let idx = tasks.iter().position(|t| t.id == task_id)
+    let idx = tasks
+        .iter()
+        .position(|t| t.id == task_id)
         .ok_or_else(|| format!("Task {} not found", task_id))?;
 
     task.id = task_id;
@@ -139,7 +144,9 @@ pub fn claim_task(
 ) -> Result<Task, String> {
     let mut tasks = load_tasks();
 
-    let idx = tasks.iter().position(|t| t.id == task_id)
+    let idx = tasks
+        .iter()
+        .position(|t| t.id == task_id)
         .ok_or_else(|| format!("Task {} not found", task_id))?;
 
     if tasks[idx].status != "open" {

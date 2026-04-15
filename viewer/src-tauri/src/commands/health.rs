@@ -18,18 +18,27 @@ pub struct HealthStatus {
 }
 
 /// Check if a GGUF model file exists in MODELS_DIR.
+/// Skips mmproj files (CLIP vision projectors, not main models).
 fn find_gguf_model() -> Option<String> {
     let models = config::models_dir();
     if !models.is_dir() {
         return None;
     }
 
-    // Look for any .gguf file
+    // Look for any .gguf file that isn't an mmproj (vision projector)
     if let Ok(entries) = std::fs::read_dir(&models) {
         for entry in entries.flatten() {
             let path = entry.path();
             if path.extension().and_then(|e| e.to_str()) == Some("gguf") {
-                return path.file_name().and_then(|n| n.to_str()).map(|s| s.to_string());
+                let name = path.file_name().unwrap_or_default().to_string_lossy().to_lowercase();
+                // Skip CLIP vision projectors — they crash llama.cpp if loaded as main model
+                if name.contains("mmproj") || name.contains("clip") {
+                    continue;
+                }
+                return path
+                    .file_name()
+                    .and_then(|n| n.to_str())
+                    .map(|s| s.to_string());
             }
         }
     }
@@ -45,15 +54,21 @@ pub fn check_health() -> HealthStatus {
     let gguf_model = find_gguf_model();
     let llm_ready = gguf_model.is_some();
 
-    let tts_ready = models_dir.join("kokoro-v1.0.onnx").exists()
-        && models_dir.join("voices-v1.0.bin").exists();
+    let tts_ready =
+        models_dir.join("kokoro-v1.0.onnx").exists() && models_dir.join("voices-v1.0.bin").exists();
 
-    let stt_ready = models_dir.join("faster-whisper-base").is_dir();
+    let stt_ready = models_dir.join("ggml-base.bin").exists()
+        || models_dir.join("ggml-base.en.bin").exists()
+        || models_dir.join("faster-whisper-base").is_dir();
 
     let translation_ready = models_dir.join("nllb-200-distilled-600M-ct2").is_dir();
 
     HealthStatus {
-        status: if llm_ready { "ready".into() } else { "waiting".into() },
+        status: if llm_ready {
+            "ready".into()
+        } else {
+            "waiting".into()
+        },
         models_dir: models_dir.to_string_lossy().to_string(),
         llm_ready,
         llm_model: gguf_model,

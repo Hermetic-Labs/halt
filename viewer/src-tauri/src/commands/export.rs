@@ -7,8 +7,8 @@
 //!   2. HTML — print-ready, locale-aware patient card for medevac handoff
 //!   3. Shift Report — cross-ward status rollup grouped by ward + priority
 
-use crate::storage;
 use crate::models::nllb;
+use crate::storage;
 use serde_json::Value;
 use std::collections::HashMap;
 
@@ -27,7 +27,10 @@ pub fn export_patient_pdf(patient_id: String) -> Result<Vec<u8>, String> {
 
     // Build text lines (identical to Python's line-building logic)
     let mut lines = Vec::new();
-    let name = rec.get("name").and_then(|v| v.as_str()).unwrap_or("Unknown");
+    let name = rec
+        .get("name")
+        .and_then(|v| v.as_str())
+        .unwrap_or("Unknown");
     let id = rec.get("id").and_then(|v| v.as_str()).unwrap_or("");
     let now = chrono::Local::now().format("%Y-%m-%d %H:%M").to_string();
 
@@ -35,47 +38,93 @@ pub fn export_patient_pdf(patient_id: String) -> Result<Vec<u8>, String> {
     lines.push(format!("ID: {}  |  Generated: {}", id, now));
     lines.push(String::new());
     lines.push("DEMOGRAPHICS".into());
-    lines.push(format!("  Name: {}  |  Age: {} {}  |  Sex: {}",
+    lines.push(format!(
+        "  Name: {}  |  Age: {} {}  |  Sex: {}",
         name,
         rec.get("age").and_then(|v| v.as_f64()).unwrap_or(0.0),
         rec.get("ageUnit").and_then(|v| v.as_str()).unwrap_or(""),
         rec.get("sex").and_then(|v| v.as_str()).unwrap_or("--"),
     ));
-    lines.push(format!("  Weight: {} kg  |  Pregnant: {}",
+    lines.push(format!(
+        "  Weight: {} kg  |  Pregnant: {}",
         rec.get("weight").and_then(|v| v.as_f64()).unwrap_or(0.0),
-        if rec.get("pregnant").and_then(|v| v.as_bool()).unwrap_or(false) { "Yes" } else { "No" },
+        if rec
+            .get("pregnant")
+            .and_then(|v| v.as_bool())
+            .unwrap_or(false)
+        {
+            "Yes"
+        } else {
+            "No"
+        },
     ));
-    let allergies = rec.get("allergies")
+    let allergies = rec
+        .get("allergies")
         .and_then(|v| v.as_array())
-        .map(|a| a.iter().filter_map(|v| v.as_str()).collect::<Vec<_>>().join(", "))
+        .map(|a| {
+            a.iter()
+                .filter_map(|v| v.as_str())
+                .collect::<Vec<_>>()
+                .join(", ")
+        })
         .unwrap_or_else(|| "None known".into());
     lines.push(format!("  Allergies: {}", allergies));
     lines.push(String::new());
     lines.push("ADMISSION".into());
-    lines.push(format!("  Admitted: {}  |  Mechanism: {}",
-        rec.get("admittedAt").and_then(|v| v.as_str()).unwrap_or("--"),
-        rec.get("mechanism").and_then(|v| v.as_str()).unwrap_or("--"),
+    lines.push(format!(
+        "  Admitted: {}  |  Mechanism: {}",
+        rec.get("admittedAt")
+            .and_then(|v| v.as_str())
+            .unwrap_or("--"),
+        rec.get("mechanism")
+            .and_then(|v| v.as_str())
+            .unwrap_or("--"),
     ));
-    lines.push(format!("  Ward: {}  |  Room: {}  |  Status: {}",
-        rec.get("wardId").and_then(|v| v.as_str()).unwrap_or("Unassigned"),
-        rec.get("roomNumber").and_then(|v| v.as_str()).unwrap_or("None"),
+    lines.push(format!(
+        "  Ward: {}  |  Room: {}  |  Status: {}",
+        rec.get("wardId")
+            .and_then(|v| v.as_str())
+            .unwrap_or("Unassigned"),
+        rec.get("roomNumber")
+            .and_then(|v| v.as_str())
+            .unwrap_or("None"),
         rec.get("status").and_then(|v| v.as_str()).unwrap_or("--"),
     ));
     lines.push(String::new());
 
-    let triage = rec.get("triage").cloned().unwrap_or(Value::Object(Default::default()));
+    let triage = rec
+        .get("triage")
+        .cloned()
+        .unwrap_or(Value::Object(Default::default()));
     lines.push("TRIAGE".into());
-    lines.push(format!("  Priority: {} ({})  |  Hemo: {}  |  GCS: {}",
-        triage.get("priority").and_then(|v| v.as_str()).unwrap_or("--"),
-        triage.get("priorityLabel").and_then(|v| v.as_str()).unwrap_or(""),
-        triage.get("hemoClass").and_then(|v| v.as_str()).unwrap_or("--"),
-        triage.get("gcsCat").and_then(|v| v.as_str()).unwrap_or("--"),
+    lines.push(format!(
+        "  Priority: {} ({})  |  Hemo: {}  |  GCS: {}",
+        triage
+            .get("priority")
+            .and_then(|v| v.as_str())
+            .unwrap_or("--"),
+        triage
+            .get("priorityLabel")
+            .and_then(|v| v.as_str())
+            .unwrap_or(""),
+        triage
+            .get("hemoClass")
+            .and_then(|v| v.as_str())
+            .unwrap_or("--"),
+        triage
+            .get("gcsCat")
+            .and_then(|v| v.as_str())
+            .unwrap_or("--"),
     ));
     lines.push(String::new());
 
-    let vitals = rec.get("initialVitals").cloned().unwrap_or(Value::Object(Default::default()));
+    let vitals = rec
+        .get("initialVitals")
+        .cloned()
+        .unwrap_or(Value::Object(Default::default()));
     lines.push("INITIAL VITALS".into());
-    lines.push(format!("  HR: {}  |  SBP: {}  |  RR: {}  |  SpO2: {}%  |  GCS: {}",
+    lines.push(format!(
+        "  HR: {}  |  SBP: {}  |  RR: {}  |  SpO2: {}%  |  GCS: {}",
         vitals.get("hr").and_then(|v| v.as_f64()).unwrap_or(0.0),
         vitals.get("sbp").and_then(|v| v.as_f64()).unwrap_or(0.0),
         vitals.get("rr").and_then(|v| v.as_f64()).unwrap_or(0.0),
@@ -89,7 +138,8 @@ pub fn export_patient_pdf(patient_id: String) -> Result<Vec<u8>, String> {
         if !events.is_empty() {
             lines.push("TIMELINE EVENTS".into());
             for ev in events {
-                lines.push(format!("  [{}] {} — {}",
+                lines.push(format!(
+                    "  [{}] {} — {}",
                     ev.get("type").and_then(|v| v.as_str()).unwrap_or(""),
                     ev.get("timestamp").and_then(|v| v.as_str()).unwrap_or(""),
                     ev.get("summary").and_then(|v| v.as_str()).unwrap_or(""),
@@ -99,7 +149,10 @@ pub fn export_patient_pdf(patient_id: String) -> Result<Vec<u8>, String> {
         }
     }
 
-    lines.push(format!("Notes: {}", rec.get("notes").and_then(|v| v.as_str()).unwrap_or("None")));
+    lines.push(format!(
+        "Notes: {}",
+        rec.get("notes").and_then(|v| v.as_str()).unwrap_or("None")
+    ));
 
     // Build minimal PDF (text-only, no external libs)
     // Direct translation of the PDF generation in patients.py
@@ -148,15 +201,22 @@ fn build_text_pdf(lines: &[String]) -> Vec<u8> {
             "12 TL".to_string(),
         ];
         for line in chunk {
-            let safe = line.replace('\\', "\\\\").replace('(', "\\(").replace(')', "\\)");
+            let safe = line
+                .replace('\\', "\\\\")
+                .replace('(', "\\(")
+                .replace(')', "\\)");
             stream_parts.push(format!("({}) '", safe));
         }
         stream_parts.push("ET".to_string());
         let stream = stream_parts.join("\n");
 
         let stream_obj_num = objects.len() + 1;
-        objects.push(format!("{} 0 obj\n<< /Length {} >>\nstream\n{}\nendstream\nendobj",
-            stream_obj_num, stream.len(), stream));
+        objects.push(format!(
+            "{} 0 obj\n<< /Length {} >>\nstream\n{}\nendstream\nendobj",
+            stream_obj_num,
+            stream.len(),
+            stream
+        ));
 
         let page_obj_num = objects.len() + 1;
         objects.push(format!("{} 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents {} 0 R /Resources << /Font << /F1 3 0 R >> >> >>\nendobj",
@@ -165,8 +225,16 @@ fn build_text_pdf(lines: &[String]) -> Vec<u8> {
     }
 
     // Fill in Pages object
-    let kids = page_refs.iter().map(|p| format!("{} 0 R", p)).collect::<Vec<_>>().join(" ");
-    objects[1] = format!("2 0 obj\n<< /Type /Pages /Kids [{}] /Count {} >>\nendobj", kids, page_refs.len());
+    let kids = page_refs
+        .iter()
+        .map(|p| format!("{} 0 R", p))
+        .collect::<Vec<_>>()
+        .join(" ");
+    objects[1] = format!(
+        "2 0 obj\n<< /Type /Pages /Kids [{}] /Count {} >>\nendobj",
+        kids,
+        page_refs.len()
+    );
 
     // Assemble PDF
     let mut pdf = String::from("%PDF-1.4\n");
@@ -174,17 +242,23 @@ fn build_text_pdf(lines: &[String]) -> Vec<u8> {
 
     for (i, obj) in objects.iter().enumerate() {
         xrefs.push(pdf.len());
-        pdf.push_str(&obj.replace(&format!("{} 0 obj", i + 1), &format!("{} 0 obj", i + 1)));
+        pdf.push_str(obj);
         pdf.push('\n');
     }
 
     let xref_start = pdf.len();
-    pdf.push_str(&format!("xref\n0 {}\n0000000000 65535 f \n", objects.len() + 1));
+    pdf.push_str(&format!(
+        "xref\n0 {}\n0000000000 65535 f \n",
+        objects.len() + 1
+    ));
     for xr in &xrefs {
         pdf.push_str(&format!("{:010} 00000 n \n", xr));
     }
-    pdf.push_str(&format!("trailer\n<< /Size {} /Root 1 0 R >>\nstartxref\n{}\n%%EOF\n",
-        objects.len() + 1, xref_start));
+    pdf.push_str(&format!(
+        "trailer\n<< /Size {} /Root 1 0 R >>\nstartxref\n{}\n%%EOF\n",
+        objects.len() + 1,
+        xref_start
+    ));
 
     pdf.into_bytes()
 }
@@ -201,8 +275,14 @@ pub fn export_patient_html(patient_id: String, lang: Option<String>) -> Result<S
         return Err("Patient not found".to_string());
     }
     let r = storage::read_json(&path)?;
-    let tri = r.get("triage").cloned().unwrap_or(Value::Object(Default::default()));
-    let v = r.get("initialVitals").cloned().unwrap_or(Value::Object(Default::default()));
+    let tri = r
+        .get("triage")
+        .cloned()
+        .unwrap_or(Value::Object(Default::default()));
+    let v = r
+        .get("initialVitals")
+        .cloned()
+        .unwrap_or(Value::Object(Default::default()));
 
     // Translate helper
     let tr = |text: &str| -> String {
@@ -226,7 +306,8 @@ pub fn export_patient_html(patient_id: String, lang: Option<String>) -> Result<S
     let status = r.get("status").and_then(|v| v.as_str()).unwrap_or("");
     let now = chrono::Local::now().format("%Y-%m-%d %H:%M").to_string();
 
-    let html = format!(r#"<!DOCTYPE html>
+    let html = format!(
+        r#"<!DOCTYPE html>
 <html><head><meta charset="utf-8"><title>Patient {id}</title>
 <style>
   *{{margin:0;padding:0;box-sizing:border-box}}
@@ -271,21 +352,44 @@ pub fn export_patient_html(patient_id: String, lang: Option<String>) -> Result<S
 <hr><p style="text-align:center;font-size:9px;color:#666">Medic Info — Air-Gapped Triage System — CONFIDENTIAL</p>
 </body></html>"#,
         id = r.get("id").and_then(|v| v.as_str()).unwrap_or(""),
-        name = name, pc = pc, pri = pri, now = now, status = status,
+        name = name,
+        pc = pc,
+        pri = pri,
+        now = now,
+        status = status,
         age = r.get("age").and_then(|v| v.as_f64()).unwrap_or(0.0),
         age_unit = r.get("ageUnit").and_then(|v| v.as_str()).unwrap_or(""),
         sex = r.get("sex").and_then(|v| v.as_str()).unwrap_or("--"),
         weight = r.get("weight").and_then(|v| v.as_f64()).unwrap_or(0.0),
-        pregnant = if r.get("pregnant").and_then(|v| v.as_bool()).unwrap_or(false) { "Yes" } else { "No" },
-        spoken_lang = r.get("spokenLanguage").and_then(|v| v.as_str()).unwrap_or("--"),
+        pregnant = if r.get("pregnant").and_then(|v| v.as_bool()).unwrap_or(false) {
+            "Yes"
+        } else {
+            "No"
+        },
+        spoken_lang = r
+            .get("spokenLanguage")
+            .and_then(|v| v.as_str())
+            .unwrap_or("--"),
         nok = r.get("nextOfKin").and_then(|v| v.as_str()).unwrap_or("--"),
-        allergies = r.get("allergies").and_then(|v| v.as_array())
-            .map(|a| a.iter().filter_map(|v| v.as_str()).collect::<Vec<_>>().join(", "))
+        allergies = r
+            .get("allergies")
+            .and_then(|v| v.as_array())
+            .map(|a| a
+                .iter()
+                .filter_map(|v| v.as_str())
+                .collect::<Vec<_>>()
+                .join(", "))
             .unwrap_or_else(|| "None known".into()),
         ward = r.get("wardId").and_then(|v| v.as_str()).unwrap_or(""),
         room = r.get("roomNumber").and_then(|v| v.as_str()).unwrap_or(""),
-        pri_label = tri.get("priorityLabel").and_then(|v| v.as_str()).unwrap_or(""),
-        hemo = tri.get("hemoClass").and_then(|v| v.as_str()).unwrap_or("--"),
+        pri_label = tri
+            .get("priorityLabel")
+            .and_then(|v| v.as_str())
+            .unwrap_or(""),
+        hemo = tri
+            .get("hemoClass")
+            .and_then(|v| v.as_str())
+            .unwrap_or("--"),
         gcs_cat = tri.get("gcsCat").and_then(|v| v.as_str()).unwrap_or("--"),
         hr = v.get("hr").and_then(|v| v.as_f64()).unwrap_or(0.0),
         sbp = v.get("sbp").and_then(|v| v.as_f64()).unwrap_or(0.0),
@@ -310,9 +414,17 @@ pub fn shift_report_html(lang: Option<String>) -> Result<String, String> {
 
     let mut patients: Vec<Value> = Vec::new();
     if data_dir.is_dir() {
-        for entry in std::fs::read_dir(&data_dir).into_iter().flatten().filter_map(|e| e.ok()) {
+        for entry in std::fs::read_dir(&data_dir)
+            .into_iter()
+            .flatten()
+            .filter_map(|e| e.ok())
+        {
             let p = entry.path();
-            if p.file_name().and_then(|n| n.to_str()).map(|n| n.starts_with("PAT-") && n.ends_with(".json")).unwrap_or(false) {
+            if p.file_name()
+                .and_then(|n| n.to_str())
+                .map(|n| n.starts_with("PAT-") && n.ends_with(".json"))
+                .unwrap_or(false)
+            {
                 if let Ok(data) = storage::read_json(&p) {
                     let status = data.get("status").and_then(|v| v.as_str()).unwrap_or("");
                     if status != "discharged" && status != "transferred" {
@@ -326,17 +438,31 @@ pub fn shift_report_html(lang: Option<String>) -> Result<String, String> {
     // Group by ward
     let mut wards: HashMap<String, Vec<Value>> = HashMap::new();
     for pt in &patients {
-        let wid = pt.get("wardId").and_then(|v| v.as_str()).unwrap_or("Unassigned").to_string();
+        let wid = pt
+            .get("wardId")
+            .and_then(|v| v.as_str())
+            .unwrap_or("Unassigned")
+            .to_string();
         wards.entry(wid).or_default().push(pt.clone());
     }
 
     // Sort by triage priority within each ward
     let pri_order = |p: &str| -> i32 {
-        match p { "T1" => 0, "T2" => 1, "T3" => 2, "T4" => 3, _ => 4 }
+        match p {
+            "T1" => 0,
+            "T2" => 1,
+            "T3" => 2,
+            "T4" => 3,
+            _ => 4,
+        }
     };
     for (_, pts) in wards.iter_mut() {
         pts.sort_by_key(|pt| {
-            let pri = pt.get("triage").and_then(|t| t.get("priority")).and_then(|v| v.as_str()).unwrap_or("--");
+            let pri = pt
+                .get("triage")
+                .and_then(|t| t.get("priority"))
+                .and_then(|v| v.as_str())
+                .unwrap_or("--");
             pri_order(pri)
         });
     }
@@ -351,16 +477,42 @@ pub fn shift_report_html(lang: Option<String>) -> Result<String, String> {
     for (wid, pts) in sorted_wards {
         ward_html.push_str(&format!("<h2>{} ({} patients)</h2><table><tr><th>Name</th><th>Room</th><th>Pri</th><th>Status</th><th>HR/SBP/SpO2</th><th>Meds</th><th>Allergies</th></tr>", wid, pts.len()));
         for pt in pts {
-            let t = pt.get("triage").cloned().unwrap_or(Value::Object(Default::default()));
-            let v = pt.get("initialVitals").cloned().unwrap_or(Value::Object(Default::default()));
+            let t = pt
+                .get("triage")
+                .cloned()
+                .unwrap_or(Value::Object(Default::default()));
+            let v = pt
+                .get("initialVitals")
+                .cloned()
+                .unwrap_or(Value::Object(Default::default()));
             let pc = match t.get("priority").and_then(|v| v.as_str()).unwrap_or("") {
-                "T1" => "#e74c3c", "T2" => "#f0a500", "T3" => "#3fb950", "T4" => "#8b949e", _ => "#58a6ff",
+                "T1" => "#e74c3c",
+                "T2" => "#f0a500",
+                "T3" => "#3fb950",
+                "T4" => "#8b949e",
+                _ => "#58a6ff",
             };
-            let drugs = pt.get("plan").and_then(|p| p.get("drugs")).and_then(|d| d.as_array())
-                .map(|a| a.iter().take(3).filter_map(|d| d.get("name").and_then(|n| n.as_str())).collect::<Vec<_>>().join(", "))
+            let drugs = pt
+                .get("plan")
+                .and_then(|p| p.get("drugs"))
+                .and_then(|d| d.as_array())
+                .map(|a| {
+                    a.iter()
+                        .take(3)
+                        .filter_map(|d| d.get("name").and_then(|n| n.as_str()))
+                        .collect::<Vec<_>>()
+                        .join(", ")
+                })
                 .unwrap_or_default();
-            let allergies = pt.get("allergies").and_then(|a| a.as_array())
-                .map(|a| a.iter().filter_map(|v| v.as_str()).collect::<Vec<_>>().join(", "))
+            let allergies = pt
+                .get("allergies")
+                .and_then(|a| a.as_array())
+                .map(|a| {
+                    a.iter()
+                        .filter_map(|v| v.as_str())
+                        .collect::<Vec<_>>()
+                        .join(", ")
+                })
                 .unwrap_or_else(|| "—".into());
             ward_html.push_str(&format!(
                 "<tr><td style=\"border-left:4px solid {}\">{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}/{}/{}</td><td>{}</td><td>{}</td></tr>",
@@ -378,7 +530,8 @@ pub fn shift_report_html(lang: Option<String>) -> Result<String, String> {
         ward_html.push_str("</table>");
     }
 
-    let html = format!(r#"<!DOCTYPE html>
+    let html = format!(
+        r#"<!DOCTYPE html>
 <html><head><meta charset="utf-8"><title>Shift Report</title>
 <style>
   *{{margin:0;padding:0;box-sizing:border-box}}
@@ -395,7 +548,10 @@ pub fn shift_report_html(lang: Option<String>) -> Result<String, String> {
 {ward_html}
 <hr><p style="text-align:center;font-size:9px;color:#666">Medic Info — Air-Gapped Triage System — CONFIDENTIAL</p>
 </body></html>"#,
-        now = now, total = total, ward_html = ward_html);
+        now = now,
+        total = total,
+        ward_html = ward_html
+    );
 
     Ok(html)
 }

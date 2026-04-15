@@ -8,7 +8,7 @@ import SiteMap from './SiteMap';
 
 import { useT } from '../services/i18n';
 import { normalizeToEnglish } from '../services/i18nDynamic';
-import { api, apiMutate } from '../services/api';
+import { api, apiMutate, ttsSynthesize, resolveUrl, isNative } from '../services/api';
 
 // Module-level ringtone reference for incoming call signaling
 let _eveRingtone: HTMLAudioElement | null = null;
@@ -62,11 +62,7 @@ function composeEmergencyText(msg: Record<string, unknown>): string {
  */
 async function fetchTTSAudio(text: string, lang = 'en'): Promise<HTMLAudioElement | null> {
     try {
-        const res = await fetch('/tts/synthesize', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ text, voice: 'af_heart', rate: 1.0, lang }),
-        });
+        const res = await ttsSynthesize(text, 'af_heart', 1.0, lang);
         if (!res.ok) return null;
         const blob = await res.blob();
         const url = URL.createObjectURL(blob);
@@ -220,8 +216,10 @@ const SKILL_OPTIONS = [
 
 // ── Constants ────────────────────────────────────────────────────────────────
 
-const API_BASE = '';  // relative — same origin, single port 7778
-const WS_BASE = `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}`;  // same host — Vite proxies /ws
+
+const WS_BASE = isNative
+    ? 'ws://127.0.0.1:7778'
+    : `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}`;
 const PING_INTERVAL = 5000;
 const POLL_INTERVAL = 3000;
 const RECONNECT_DELAY = 5000; // 5s between reconnect attempts
@@ -382,7 +380,7 @@ export default function NetworkTab() {
                     fetch(av).then(r => r.blob()).then(blob => {
                         const fd = new FormData();
                         fd.append('file', blob, 'avatar.webp');
-                        fetch(`${API_BASE}/api/roster/${clientId}/avatar`, { method: 'POST', body: fd }).catch(() => {});
+                        fetch(resolveUrl(`/api/roster/${clientId}/avatar`), { method: 'POST', body: fd }).catch(() => {});
                     }).catch(() => {});
                 }
             });
@@ -405,7 +403,7 @@ export default function NetworkTab() {
 
     const fetchClients = useCallback(async () => {
         try {
-            const data = await api<MeshClient[]>('list_mesh_clients', '/mesh/clients');
+            const data = await api<MeshClient[]>('mesh_clients', '/mesh/clients');
             setClients(data);
         } catch { /* offline */ }
     }, []);
@@ -683,7 +681,7 @@ export default function NetworkTab() {
                         overlay.id = 'eve-incoming-call';
                         overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:10002;display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:linear-gradient(135deg,#0d2d0d,#1a3a1a);border-bottom:3px solid #3fb950;box-shadow:0 4px 24px rgba(63,185,80,0.3);';
                         const callTypeLabel = msg.call_type === 'video' ? 'Video' : 'Voice';
-                        const icon = msg.call_type === 'video' ? 'ðŸ“¹' : 'ðŸ“ž';
+                        const icon = msg.call_type === 'video' ? '📹' : '📞';
                         overlay.innerHTML = `
                             <div style="display:flex;align-items:center;gap:12px">
                                 <span style="font-size:28px">${icon}</span>
@@ -833,7 +831,7 @@ export default function NetworkTab() {
         // ── Model Preflight Check (leader only) ──────────────────────────
         if (asLeader) {
             try {
-                const res = await fetch('/api/distribution/status');
+                const res = await fetch(resolveUrl('/api/distribution/status'));
                 if (res.ok) {
                     const data = await res.json();
                     const packs = data.packs || {};
@@ -882,7 +880,7 @@ export default function NetworkTab() {
                     fetch(av).then(r => r.blob()).then(blob => {
                         const fd = new FormData();
                         fd.append('file', blob, 'avatar.webp');
-                        fetch(`${API_BASE}/api/roster/${cid}/avatar`, { method: 'POST', body: fd }).catch(() => {});
+                        fetch(resolveUrl(`/api/roster/${cid}/avatar`), { method: 'POST', body: fd }).catch(() => {});
                     }).catch(() => {});
                 }
             }).catch(() => {});

@@ -1,39 +1,60 @@
-# HALT — Rust-Native Migration
+# HALT — Rust-Native Architecture
 
-> **Status: 89/89 commands registered · 91/91 Python routes covered · Compiling on Windows**
+> **Status: v1.1.0 — Single binary. Zero Python. All platforms.**
+
+---
+
+## Architecture
+
+HALT v1.1.0 is a **fully self-contained Rust binary**. No Python runtime, no sidecar, no pip dependencies.
+
+```
+┌──────────────────────────────────────────────┐
+│          halt-triage v1.1.0 (single binary)  │
+│                                              │
+│  ┌──────────┐  ┌──────────┐  ┌───────────┐  │
+│  │ Tauri UI │  │ HTTP REST│  │ Mesh WS   │  │
+│  │ (webview)│  │ :7779    │  │ :7778     │  │
+│  │ invoke() │  │ (axum)   │  │ (tungstn) │  │
+│  └────┬─────┘  └─────┬────┘  └─────┬─────┘  │
+│       │              │              │        │
+│  ┌────┴──────────────┴──────────────┴────┐   │
+│  │         commands/* (shared)           │   │
+│  │  patients · translate · tts · stt     │   │
+│  │  roster · tasks · inventory · wards   │   │
+│  └────┬───────────────┬─────────┬────────┘   │
+│       │               │         │            │
+│  ┌────┴────┐  ┌──────┴──┐  ┌──┴────────┐   │
+│  │ storage │  │ models/ │  │ mesh/     │   │
+│  │ (disk)  │  │ ONNX RT │  │ server.rs │   │
+│  └─────────┘  └─────────┘  └───────────┘   │
+└──────────────────────────────────────────────┘
+```
+
+### Three Access Paths
+
+1. **Tauri WebView** — Desktop app (Windows/macOS), uses `invoke()` IPC
+2. **HTTP REST** — Field devices (iPads/phones) connect via `http://leader:7779/`
+3. **Mesh WebSocket** — Real-time sync on `ws://leader:7778/`, patient updates, chat, WebRTC signaling
+
+All three paths share the same `commands/*` layer — no duplication.
 
 ---
 
 ## Coverage
 
-91 Python routes → 89 Rust commands (2 routes folded into Tauri events).
+89 Tauri commands registered. 25+ HTTP endpoints. Full WebSocket message router.
 
-| Layer | Files | Commands | Logic Status |
-|-------|:-----:|:--------:|:------------:|
-| 1 — Foundation | `config.rs`, `storage.rs`, `health.rs` | 1 | ✅ Fully functional |
-| 2 — Data CRUD | `patients.rs`, `wards.rs`, `roster.rs`, `tasks.rs`, `inventory.rs` | 38 | ✅ Fully functional |
-| 3 — Inference | `inference.rs`, `stt.rs`, `tts.rs`, `translate.rs` + 4 model singletons | 14 | ⬜ Needs C++ crates |
-| 4 — Mesh state | `server.rs`, `chat.rs`, `alerts.rs`, `video.rs` | 15 | ✅ State mgmt done, transport needs tokio-tungstenite |
-| 4b — Translation pipelines | `translate_stream.rs` | 6 | ⬜ Needs inference crates |
-| 5 — Utilities | `export.rs`, `qr.rs`, `distribution.rs`, `setup.rs` | 15 | Partial (see below) |
-
-### Layer 5 Detail
-
-| File | What Works Now | What's Blocked |
-|------|---------------|----------------|
-| `export.rs` | ✅ Full PDF + HTML generation | — |
-| `qr.rs` | ✅ URL generation | QR image (needs `qrcode` + `image`) |
-| `distribution.rs` | ✅ Status, checksums, set_checksums | Download (needs `reqwest` + `sha2` + `flate2` + `tar`) |
-| `setup.rs` | ✅ Status, mobileconfig XML, CA PEM | Cert generation (needs `rcgen` + `time`) |
-
-### What's Blocking
-
-All remaining unconverted logic requires crates that are blocked by Windows SmartScreen Application Control on the D: drive. Two categories:
-
-1. **Pure Rust crates** (qrcode, image, rcgen, reqwest, sha2, etc.) — will compile once SmartScreen is bypassed via the C: proxy script
-2. **C++ binding crates** (llama-cpp-2, whisper-rs, ort, ct2rs) — need C++ toolchain, will compile on Mac for iOS target
-
-The full conversion code for qr.rs, setup.rs, and distribution.rs exists in the conversation history. When crates are unblocked, it's a file replace + uncomment in Cargo.toml.
+| Layer | Files | Status |
+|-------|:-----:|:------:|
+| Foundation | `config.rs`, `storage.rs`, `health.rs` | ✅ Functional |
+| Data CRUD | `patients.rs`, `wards.rs`, `roster.rs`, `tasks.rs`, `inventory.rs` | ✅ Functional |
+| Inference | `inference.rs`, `stt.rs`, `tts.rs`, `translate.rs` | ✅ Native ML |
+| Mesh Network | `server.rs`, `chat.rs`, `alerts.rs`, `video.rs`, `ws_listener.rs` | ✅ Functional |
+| Translation Pipelines | `translate_stream.rs` | ✅ Functional |
+| Utilities | `export.rs`, `qr.rs`, `distribution.rs`, `setup.rs` | ✅ Functional |
+| HTTP Server | `http_server.rs` | ✅ 25+ routes |
+| Phonemizer | `models/phonemizer.rs` | ✅ espeak-ng → Kokoro tokens |
 
 ---
 
@@ -41,110 +62,37 @@ The full conversion code for qr.rs, setup.rs, and distribution.rs exists in the 
 
 | Script | Platform | What It Does |
 |--------|----------|-------------|
-| `start.bat` | Windows | Router — prompts Dev or Rust mode |
-| `start_dev.bat` | Windows | Python + Vite (current production desktop) |
 | `start_rust.bat` | Windows | Tauri native dev (`cargo tauri dev`) |
-| `start_rust.command` | macOS | Same as above, for Mac dev |
-| `build_ios.command` | macOS | Full TestFlight pipeline |
+| `start_rust.command` | macOS | Same for Mac |
+| `build_ios.command` | macOS | TestFlight pipeline |
 
 ---
 
-## Golden Pipeline (Windows → TestFlight)
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  WINDOWS (development)                                      │
-│                                                             │
-│  1. Develop in viewer/src-tauri/src/ (Rust)                 │
-│  2. Test with start_rust.bat                                │
-│  3. npx tsx verify_parity.ts → 89/89                        │
-│  4. git push                                                │
-├─────────────────────────────────────────────────────────────┤
-│  MAC (build machine)                                        │
-│                                                             │
-│  5. git pull                                                │
-│  6. Uncomment blocked crates in Cargo.toml                  │
-│  7. Replace stub files with full conversions                │
-│  8. cargo tauri ios build                                   │
-│  9. Xcode → Sign → Archive → TestFlight                    │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### Mac Setup
-
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-rustup target add aarch64-apple-ios
-brew install node cmake   # cmake for C++ inference crates
-cd halt && chmod +x build_ios.command && ./build_ios.command
-```
-
----
-
-## Verification
-
-```bash
-cd viewer && npx tsx verify_parity.ts
-```
-
-```
-╔══════════════════════════════════════════════════════╗
-║  Commands: 89/89 registered ✅
-║  Adapter:  ✅ Dual-path ready
-║  Store:    ✅ Wired to adapter
-╚══════════════════════════════════════════════════════╝
-🟢 PARITY VERIFIED — All systems go for TestFlight.
-```
-
----
-
-## iOS Strategy
-
-**Phase 1 (TestFlight v1):** Data layer works natively. Inference falls back to Python leader over HTTP.
-
-```
-iPad → invoke() → Rust (patients, wards, export, roster)  ← native
-iPad → fetch() → Windows leader:7778 → Python (LLM, TTS, STT)  ← fallback
-```
-
-**Phase 2:** Wire C++ inference crates on Mac. iOS gets standalone inference.
-
-**Phase 3:** Remove Python sidecar entirely.
-
----
-
-## Legacy Silo Plan
-
-Python code (`api/`, `start.py`, `requirements.txt`) stays put. It's the working production desktop backend.
-
-1. **Now** — Python stays, Rust handles iOS data layer
-2. **After TestFlight works** — Move Python to `legacy/`, update sidecar path
-3. **After 2-3 stable cycles** — Delete Python. One binary.
-
----
-
-## Cargo.toml Crate Status
+## Dependencies
 
 | Crate | Purpose | Status |
 |-------|---------|:------:|
 | serde, serde_json | Serialization | ✅ Active |
 | aes-gcm, rand, base64 | Encryption | ✅ Active |
-| chrono | Timestamps | ✅ Active |
-| uuid | IDs | ✅ Active |
-| log | Logging | ✅ Active |
-| sha2 | Checksums | ⬜ SmartScreen |
-| qrcode, image | QR generation | ⬜ SmartScreen |
-| hound | WAV writing | ⬜ SmartScreen |
-| rcgen, time | SSL certs | ⬜ SmartScreen |
-| tokio | Async runtime | ⬜ SmartScreen |
-| tokio-tungstenite | WebSocket | ⬜ SmartScreen |
-| reqwest | Downloads | ⬜ SmartScreen |
-| flate2, tar | Archive extraction | ⬜ SmartScreen |
-| futures-util | Stream utilities | ⬜ SmartScreen |
-| llama-cpp-2 | LLM | ⬜ C++ (Mac) |
-| whisper-rs | STT | ⬜ C++ (Mac) |
-| ort | TTS (ONNX) | ⬜ C++ (Mac) |
-| ct2rs | Translation | ⬜ C++ (Mac) |
+| chrono, uuid, log | Core utilities | ✅ Active |
+| qrcode | QR generation | ✅ Active |
+| rcgen | SSL cert generation | ✅ Active |
+| ndarray | Tensor manipulation | ✅ Active |
+| encoding_rs | Text encoding | ✅ Active |
+| tokio | Async runtime | ✅ Active |
+| tokio-tungstenite | WebSocket server | ✅ Active |
+| axum | HTTP framework | ✅ Active |
+| tower-http | CORS, static files | ✅ Active |
+| futures-util | Stream utilities | ✅ Active |
+| rayon | Parallel iteration | ✅ Feature-gated |
+| symphonia | Audio codec | ✅ Feature-gated |
+| llama-cpp-2 | LLM inference | ✅ Feature-gated |
+| whisper-rs | Speech-to-text | ✅ Feature-gated |
+| ort | TTS (ONNX Runtime) | ✅ Feature-gated |
+| ct2rs | Translation (NLLB) | ✅ Feature-gated |
+| sentencepiece | Tokenizer | ✅ Feature-gated |
+| reqwest | Model downloads | ✅ Feature-gated |
+| flate2, tar | Archive extraction | ✅ Feature-gated |
 
 ---
 
@@ -152,34 +100,48 @@ Python code (`api/`, `start.py`, `requirements.txt`) stays put. It's the working
 
 ```
 viewer/src-tauri/src/
-├── lib.rs                  ← 89 commands registered
+├── lib.rs                  ← App lifecycle + server spawns
 ├── config.rs               ← MODELS_DIR / DATA_DIR
 ├── storage.rs              ← JSON + AES-256-GCM
+├── http_server.rs          ← Axum REST API (:7779)
 ├── commands/
-│   ├── mod.rs
 │   ├── health.rs           ← Model readiness
-│   ├── patients.rs         ← 12 commands (full)
-│   ├── wards.rs            ← 4 commands (full)
-│   ├── roster.rs           ← 6 commands (full)
-│   ├── tasks.rs            ← 5 commands (full)
-│   ├── inventory.rs        ← 11 commands (full + chat alerts)
-│   ├── inference.rs        ← 3 commands (needs llama-cpp-2)
-│   ├── stt.rs              ← 2 commands (needs whisper-rs)
-│   ├── tts.rs              ← 5 commands (needs ort)
-│   ├── translate.rs        ← 3 commands (needs ct2rs/ort)
-│   ├── export.rs           ← 3 commands (full)
-│   ├── qr.rs               ← 3 commands (URL done, QR image needs crate)
-│   ├── distribution.rs     ← 5 commands (status done, download needs reqwest)
-│   └── setup.rs            ← 4 commands (status done, certs need rcgen)
+│   ├── patients.rs         ← 12 commands (full CRUD + events)
+│   ├── wards.rs            ← 4 commands
+│   ├── roster.rs           ← 6 commands
+│   ├── tasks.rs            ← 5 commands
+│   ├── inventory.rs        ← 11 commands
+│   ├── inference.rs        ← LLM inference
+│   ├── stt.rs              ← Whisper STT + symphonia decode
+│   ├── tts.rs              ← Kokoro TTS + romaji preprocessing
+│   ├── translate.rs        ← NLLB translation + rayon batch
+│   ├── export.rs           ← PDF + HTML generation
+│   ├── qr.rs               ← QR code generation
+│   ├── distribution.rs     ← R2 model downloads
+│   └── setup.rs            ← SSL cert management
 ├── models/
-│   ├── llm.rs              ← Singleton (needs llama-cpp-2)
-│   ├── whisper.rs          ← Singleton (needs whisper-rs)
-│   ├── kokoro.rs           ← Singleton + 12-lang voice map (needs ort)
-│   └── nllb.rs             ← Singleton + 41-lang BCP-47 map (needs ct2rs)
+│   ├── phonemizer.rs       ← espeak-ng IPA → Kokoro token IDs
+│   ├── llm.rs              ← LLM singleton
+│   ├── whisper.rs          ← Whisper singleton
+│   ├── kokoro.rs           ← TTS singleton + voice map
+│   └── nllb.rs             ← Translation singleton + lang map
 └── mesh/
-    ├── server.rs           ← Client registry + leader election (full)
-    ├── chat.rs             ← Chat + DM + reactions (full, broadcast needs transport)
-    ├── alerts.rs           ← Emergency + announcement (full, broadcast needs transport)
-    ├── video.rs            ← WebRTC signaling (state done)
-    └── translate_stream.rs ← 3 pipeline modes (needs inference crates)
+    ├── server.rs           ← Client registry + leader election
+    ├── chat.rs             ← Chat + DM + reactions
+    ├── alerts.rs           ← Emergency + announcement broadcast
+    ├── video.rs            ← WebRTC signaling state
+    ├── ws_listener.rs      ← tokio-tungstenite server (:7778)
+    └── translate_stream.rs ← Live translation pipeline
 ```
+
+---
+
+## Migration History
+
+| Version | Architecture | Status |
+|---------|-------------|:------:|
+| 1.0.0 | Electron + Python | 🪦 Archived |
+| 1.0.7 | Tauri + Python sidecar | 🪦 Archived |
+| **1.1.0** | **Single Rust binary** | ✅ **Current** |
+
+Legacy Python API preserved at `legacy/api/` (gitignored) for reference.

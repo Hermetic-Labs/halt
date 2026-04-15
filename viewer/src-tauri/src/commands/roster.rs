@@ -33,8 +33,12 @@ pub struct RosterMember {
     pub avatar_url: String,
 }
 
-fn default_role() -> String { "responder".to_string() }
-fn default_member_status() -> String { "available".to_string() }
+fn default_role() -> String {
+    "responder".to_string()
+}
+fn default_member_status() -> String {
+    "available".to_string()
+}
 
 fn avatar_path(member_id: &str) -> std::path::PathBuf {
     storage::avatar_dir().join(format!("{}.webp", member_id))
@@ -84,9 +88,9 @@ pub fn add_roster_member(member: RosterMember) -> Result<RosterMember, String> {
     let mut roster = load_roster();
 
     // Check for existing member by name (case-insensitive)
-    let existing_idx = roster.iter().position(|m| {
-        m.name.trim().to_lowercase() == member.name.trim().to_lowercase()
-    });
+    let existing_idx = roster
+        .iter()
+        .position(|m| m.name.trim().to_lowercase() == member.name.trim().to_lowercase());
 
     if let Some(idx) = existing_idx {
         let existing = &mut roster[idx];
@@ -107,7 +111,12 @@ pub fn add_roster_member(member: RosterMember) -> Result<RosterMember, String> {
             existing.id = member.id;
         }
 
-        storage::log_activity(&existing.name, "reconnected to roster", &existing.role, None);
+        storage::log_activity(
+            &existing.name,
+            "reconnected to roster",
+            &existing.role,
+            None,
+        );
 
         let mut result = existing.clone();
         enrich_with_avatar(&mut result);
@@ -134,10 +143,15 @@ pub fn add_roster_member(member: RosterMember) -> Result<RosterMember, String> {
 }
 
 #[tauri::command]
-pub fn update_roster_member(member_id: String, mut member: RosterMember) -> Result<RosterMember, String> {
+pub fn update_roster_member(
+    member_id: String,
+    mut member: RosterMember,
+) -> Result<RosterMember, String> {
     let mut roster = load_roster();
 
-    let idx = roster.iter().position(|m| m.id == member_id)
+    let idx = roster
+        .iter()
+        .position(|m| m.id == member_id)
         .ok_or_else(|| format!("Member {} not found", member_id))?;
 
     member.id = member_id;
@@ -150,9 +164,7 @@ pub fn update_roster_member(member_id: String, mut member: RosterMember) -> Resu
 #[tauri::command]
 pub fn delete_roster_member(member_id: String) -> Result<Value, String> {
     let roster = load_roster();
-    let filtered: Vec<RosterMember> = roster.into_iter()
-        .filter(|m| m.id != member_id)
-        .collect();
+    let filtered: Vec<RosterMember> = roster.into_iter().filter(|m| m.id != member_id).collect();
     save_roster(&filtered)?;
 
     // Clean up avatar file
@@ -175,8 +187,7 @@ pub fn upload_avatar(member_id: String, data: Vec<u8>) -> Result<Value, String> 
 
     let _ = fs::create_dir_all(storage::avatar_dir());
     let av = avatar_path(&member_id);
-    fs::write(&av, &data)
-        .map_err(|e| format!("Failed to write avatar: {}", e))?;
+    fs::write(&av, &data).map_err(|e| format!("Failed to write avatar: {}", e))?;
 
     Ok(serde_json::json!({"avatar_url": format!("/api/roster/{}/avatar", member_id)}))
 }

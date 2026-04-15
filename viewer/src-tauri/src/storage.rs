@@ -46,7 +46,7 @@ fn get_encryption_key() -> Option<[u8; 32]> {
         // Generate new key
         let mut key = [0u8; 32];
         OsRng.fill_bytes(&mut key);
-        if fs::write(&key_file, &key).is_ok() {
+        if fs::write(&key_file, key).is_ok() {
             log::info!("Generated new encryption key at {}", key_file.display());
             Some(key)
         } else {
@@ -160,10 +160,7 @@ pub fn write_json(path: &PathBuf, data: &Value) -> Result<(), String> {
     let payload = serde_json::to_string_pretty(data)
         .map_err(|e| format!("Failed to serialize JSON: {}", e))?;
 
-    let filename = path
-        .file_name()
-        .and_then(|f| f.to_str())
-        .unwrap_or("");
+    let filename = path.file_name().and_then(|f| f.to_str()).unwrap_or("");
 
     if filename.starts_with("PAT-") {
         // Encrypt patient files
@@ -173,7 +170,10 @@ pub fn write_json(path: &PathBuf, data: &Value) -> Result<(), String> {
             return Ok(());
         }
         // Fall through to plaintext if encryption fails
-        log::warn!("Encryption unavailable — writing {} as plaintext", path.display());
+        log::warn!(
+            "Encryption unavailable — writing {} as plaintext",
+            path.display()
+        );
     }
 
     fs::write(path, payload.as_bytes())

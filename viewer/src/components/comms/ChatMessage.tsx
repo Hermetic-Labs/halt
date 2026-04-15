@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from 'react';
 import type { ChatMsg, RosterMember } from '../../types/comms';
 import { ROLE_COLORS } from '../../types/comms';
 import { useT } from '../../services/i18n';
+import { translateText } from '../../services/api';
 
 // Module-level cache so translations persist across re-renders
 const _translationCache = new Map<string, string>();
@@ -54,15 +55,10 @@ export default function ChatMessage({ msg, isMe, roster, formatTime, allMessages
         const cacheKey = `${msg.id}:${userLang}`;
         if (_translationCache.has(cacheKey)) return; // already initialised from cache
         let cancelled = false;
-        fetch('/api/translate', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ text: msg.message, source: 'en', target: userLang }),
-        })
-            .then(r => r.ok ? r.json() : null)
+        translateText(msg.message, 'en', userLang)
             .then(d => {
                 if (cancelled || !d) return;
-                const t = d.translated || d.text || '';
+                const t = d.translated || '';
                 if (t && t !== msg.message) {
                     _translationCache.set(cacheKey, t);
                     setTranslatedText(t);

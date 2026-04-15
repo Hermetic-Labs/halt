@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import type { PatientRecord, WardConfig } from '../../types';
 import { useT } from '../../services/i18n';
+import { translateBatch } from '../../services/api';
 
 const rawTranslationCache: Record<string, string> = {};
 
@@ -47,13 +48,8 @@ export default function PatientRawView({ record, wards, onClose }: { record: Pat
         (async () => {
             setIsTranslating(true);
             try {
-                const res = await fetch('/api/translate/batch', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ texts: items.map(i => i.text), source: 'en', target: targetLang }),
-                });
-                if (res.ok && prevLangRef.current === targetLang) {
-                    const data = await res.json();
+                const data = await translateBatch(items.map(i => i.text), 'en', targetLang);
+                if (prevLangRef.current === targetLang) {
                     const newT: Record<string, string> = {};
                     items.forEach((item, idx) => {
                         rawTranslationCache[item.id] = data.translations[idx];

@@ -11,7 +11,7 @@
 
 // ── NLLB API ────────────────────────────────────────────────────────────────
 
-const API_BASE = '';
+import { translateBatch } from './api';
 
 const NLLB_LOCALES = [
     'am', 'ar', 'bn', 'de', 'es', 'fa', 'fr', 'ha', 'he', 'hi',
@@ -22,14 +22,8 @@ const NLLB_LOCALES = [
 
 async function nllbBatch(texts: string[], source: string, target: string): Promise<string[]> {
     try {
-        const res = await fetch(`${API_BASE}/api/translate/batch`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ texts, source, target }),
-        });
-        if (!res.ok) throw new Error(`NLLB error ${res.status}`);
-        const data = await res.json();
-        return data.translations as string[];
+        const data = await translateBatch(texts, source, target);
+        return data.translations;
     } catch (err) {
         console.warn(`[i18nDynamic] NLLB batch failed (${source}→${target}):`, err);
         return texts; // fallback: return originals

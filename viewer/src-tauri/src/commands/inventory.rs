@@ -34,7 +34,9 @@ pub struct InventoryItem {
     pub last_modified_at: String,
 }
 
-fn default_location() -> String { "loc-1".to_string() }
+fn default_location() -> String {
+    "loc-1".to_string()
+}
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct InventoryLocation {
@@ -50,40 +52,79 @@ pub struct InventoryRestock {
 fn default_inventory() -> Vec<InventoryItem> {
     vec![
         InventoryItem {
-            id: "inv-txa".into(), name: "TXA (Tranexamic Acid)".into(),
-            quantity: 10, min_threshold: 3, category: "Medication".into(),
-            alternatives: vec!["Direct Pressure".into(), "Tourniquet".into(), "Hemostatic Dressing".into()],
-            location_id: "loc-1".into(), last_modified_by: String::new(), last_modified_at: String::new(),
+            id: "inv-txa".into(),
+            name: "TXA (Tranexamic Acid)".into(),
+            quantity: 10,
+            min_threshold: 3,
+            category: "Medication".into(),
+            alternatives: vec![
+                "Direct Pressure".into(),
+                "Tourniquet".into(),
+                "Hemostatic Dressing".into(),
+            ],
+            location_id: "loc-1".into(),
+            last_modified_by: String::new(),
+            last_modified_at: String::new(),
         },
         InventoryItem {
-            id: "inv-gauze".into(), name: "Combat Gauze".into(),
-            quantity: 50, min_threshold: 10, category: "Bandage".into(),
+            id: "inv-gauze".into(),
+            name: "Combat Gauze".into(),
+            quantity: 50,
+            min_threshold: 10,
+            category: "Bandage".into(),
             alternatives: vec!["Standard Gauze".into(), "Clean Cloth".into()],
-            location_id: "loc-1".into(), last_modified_by: String::new(), last_modified_at: String::new(),
+            location_id: "loc-1".into(),
+            last_modified_by: String::new(),
+            last_modified_at: String::new(),
         },
         InventoryItem {
-            id: "inv-tourniquet".into(), name: "CAT Tourniquet".into(),
-            quantity: 25, min_threshold: 5, category: "Equipment".into(),
+            id: "inv-tourniquet".into(),
+            name: "CAT Tourniquet".into(),
+            quantity: 25,
+            min_threshold: 5,
+            category: "Equipment".into(),
             alternatives: vec!["Improvised Tourniquet (Cravat + Windlass)".into()],
-            location_id: "loc-1".into(), last_modified_by: String::new(), last_modified_at: String::new(),
+            location_id: "loc-1".into(),
+            last_modified_by: String::new(),
+            last_modified_at: String::new(),
         },
         InventoryItem {
-            id: "inv-iv-fluid".into(), name: "IV Fluids (Lactated Ringers 1L)".into(),
-            quantity: 20, min_threshold: 5, category: "Fluids".into(),
-            alternatives: vec!["Oral Rehydration Salts (if patient is conscious/can swallow)".into()],
-            location_id: "loc-1".into(), last_modified_by: String::new(), last_modified_at: String::new(),
+            id: "inv-iv-fluid".into(),
+            name: "IV Fluids (Lactated Ringers 1L)".into(),
+            quantity: 20,
+            min_threshold: 5,
+            category: "Fluids".into(),
+            alternatives: vec![
+                "Oral Rehydration Salts (if patient is conscious/can swallow)".into(),
+            ],
+            location_id: "loc-1".into(),
+            last_modified_by: String::new(),
+            last_modified_at: String::new(),
         },
         InventoryItem {
-            id: "inv-ketamine".into(), name: "Ketamine (500mg vial)".into(),
-            quantity: 15, min_threshold: 5, category: "Medication".into(),
-            alternatives: vec!["Fentanyl Lozenge (OTFC)".into(), "Morphine Auto-Injector".into()],
-            location_id: "loc-1".into(), last_modified_by: String::new(), last_modified_at: String::new(),
+            id: "inv-ketamine".into(),
+            name: "Ketamine (500mg vial)".into(),
+            quantity: 15,
+            min_threshold: 5,
+            category: "Medication".into(),
+            alternatives: vec![
+                "Fentanyl Lozenge (OTFC)".into(),
+                "Morphine Auto-Injector".into(),
+            ],
+            location_id: "loc-1".into(),
+            last_modified_by: String::new(),
+            last_modified_at: String::new(),
         },
         InventoryItem {
-            id: "inv-chest-seal".into(), name: "Vented Chest Seal".into(),
-            quantity: 30, min_threshold: 8, category: "Equipment".into(),
+            id: "inv-chest-seal".into(),
+            name: "Vented Chest Seal".into(),
+            quantity: 30,
+            min_threshold: 8,
+            category: "Equipment".into(),
             alternatives: vec!["Improvised 3-sided occlusive dressing (plastic + tape)".into()],
-            location_id: "loc-1".into(), last_modified_by: String::new(), last_modified_at: String::new(),
+            location_id: "loc-1".into(),
+            last_modified_by: String::new(),
+            last_modified_at: String::new(),
         },
     ]
 }
@@ -118,7 +159,11 @@ fn resolve_location_name(location_id: &str) -> String {
             }
         }
     }
-    if location_id == "loc-1" { "Main Supply Room".to_string() } else { location_id.to_string() }
+    if location_id == "loc-1" {
+        "Main Supply Room".to_string()
+    } else {
+        location_id.to_string()
+    }
 }
 
 /// Fire supply alerts via mesh broadcast.
@@ -162,7 +207,6 @@ fn fire_supply_alert(item: &InventoryItem, loc_name: &str) {
 
         // TODO(Layer 4): broadcast_mesh(emergency_msg) — wired when mesh module exists
         log::warn!("SUPPLY EMERGENCY: {} at {} is DEPLETED", name, loc_name);
-
     } else if qty <= min_t && min_t > 0 {
         // WARNING — item is critically low
         let _announcement_msg = serde_json::json!({
@@ -185,7 +229,13 @@ fn fire_supply_alert(item: &InventoryItem, loc_name: &str) {
         append_chat_message(chat_msg);
 
         // TODO(Layer 4): broadcast_mesh(announcement_msg)
-        log::warn!("SUPPLY ALERT: {} at {} — {} remaining (threshold: {})", name, loc_name, qty, min_t);
+        log::warn!(
+            "SUPPLY ALERT: {} at {} — {} remaining (threshold: {})",
+            name,
+            loc_name,
+            qty,
+            min_t
+        );
     }
 }
 
@@ -223,7 +273,10 @@ pub fn get_inventory() -> Vec<InventoryItem> {
 pub fn get_inventory_locations() -> Vec<InventoryLocation> {
     let path = storage::inventory_locations_path();
     if !path.exists() {
-        let default = vec![InventoryLocation { id: "loc-1".into(), name: "Main Supply Room".into() }];
+        let default = vec![InventoryLocation {
+            id: "loc-1".into(),
+            name: "Main Supply Room".into(),
+        }];
         let val = serde_json::to_value(&default).unwrap_or(Value::Array(vec![]));
         let _ = storage::write_json(&path, &val);
         return default;
@@ -231,17 +284,32 @@ pub fn get_inventory_locations() -> Vec<InventoryLocation> {
     storage::read_json(&path)
         .ok()
         .and_then(|v| serde_json::from_value(v).ok())
-        .unwrap_or_else(|| vec![InventoryLocation { id: "loc-1".into(), name: "Main Supply Room".into() }])
+        .unwrap_or_else(|| {
+            vec![InventoryLocation {
+                id: "loc-1".into(),
+                name: "Main Supply Room".into(),
+            }]
+        })
 }
 
 #[tauri::command]
 pub fn add_inventory_location(loc: InventoryLocation) -> Result<InventoryLocation, String> {
     let path = storage::inventory_locations_path();
     let mut locs: Vec<InventoryLocation> = if path.exists() {
-        storage::read_json(&path).ok().and_then(|v| serde_json::from_value(v).ok())
-            .unwrap_or_else(|| vec![InventoryLocation { id: "loc-1".into(), name: "Main Supply Room".into() }])
+        storage::read_json(&path)
+            .ok()
+            .and_then(|v| serde_json::from_value(v).ok())
+            .unwrap_or_else(|| {
+                vec![InventoryLocation {
+                    id: "loc-1".into(),
+                    name: "Main Supply Room".into(),
+                }]
+            })
     } else {
-        vec![InventoryLocation { id: "loc-1".into(), name: "Main Supply Room".into() }]
+        vec![InventoryLocation {
+            id: "loc-1".into(),
+            name: "Main Supply Room".into(),
+        }]
     };
 
     // Upsert by ID
@@ -257,16 +325,23 @@ pub fn add_inventory_location(loc: InventoryLocation) -> Result<InventoryLocatio
 }
 
 #[tauri::command]
-pub fn update_inventory_location(id: String, loc: InventoryLocation) -> Result<InventoryLocation, String> {
+pub fn update_inventory_location(
+    id: String,
+    loc: InventoryLocation,
+) -> Result<InventoryLocation, String> {
     let path = storage::inventory_locations_path();
     let mut locs: Vec<InventoryLocation> = if path.exists() {
-        storage::read_json(&path).ok().and_then(|v| serde_json::from_value(v).ok())
+        storage::read_json(&path)
+            .ok()
+            .and_then(|v| serde_json::from_value(v).ok())
             .unwrap_or_default()
     } else {
         return Err("Locations not found".to_string());
     };
 
-    let entry = locs.iter_mut().find(|l| l.id == id)
+    let entry = locs
+        .iter_mut()
+        .find(|l| l.id == id)
         .ok_or("Location not found")?;
     entry.name = loc.name.clone();
 
@@ -283,7 +358,9 @@ pub fn delete_inventory_location(id: String) -> Result<Value, String> {
 
     let path = storage::inventory_locations_path();
     let mut locs: Vec<InventoryLocation> = if path.exists() {
-        storage::read_json(&path).ok().and_then(|v| serde_json::from_value(v).ok())
+        storage::read_json(&path)
+            .ok()
+            .and_then(|v| serde_json::from_value(v).ok())
             .unwrap_or_default()
     } else {
         return Err("Locations not found".to_string());
@@ -331,11 +408,17 @@ pub fn delete_inventory_item(id: String) -> Result<Value, String> {
 }
 
 #[tauri::command]
-pub fn consume_inventory(id: String, restock: InventoryRestock, modified_by: Option<String>) -> Result<InventoryItem, String> {
+pub fn consume_inventory(
+    id: String,
+    restock: InventoryRestock,
+    modified_by: Option<String>,
+) -> Result<InventoryItem, String> {
     let who = modified_by.unwrap_or_default();
     let mut inv = load_inventory();
 
-    let target = inv.iter_mut().find(|i| i.id == id)
+    let target = inv
+        .iter_mut()
+        .find(|i| i.id == id)
         .ok_or("Inventory item not found.")?;
 
     target.quantity = (target.quantity - restock.amount).max(0);
@@ -355,7 +438,12 @@ pub fn consume_inventory(id: String, restock: InventoryRestock, modified_by: Opt
     let mut extra = serde_json::Map::new();
     extra.insert("action_type".into(), Value::String("consumed".into()));
     extra.insert("qty".into(), Value::Number(restock.amount.into()));
-    storage::log_activity(who_str, &format!("consumed {}x", restock.amount), &item_label, Some(extra));
+    storage::log_activity(
+        who_str,
+        &format!("consumed {}x", restock.amount),
+        &item_label,
+        Some(extra),
+    );
 
     // Auto-alert on critical stock
     if target_clone.quantity <= target_clone.min_threshold && target_clone.min_threshold > 0 {
@@ -366,11 +454,17 @@ pub fn consume_inventory(id: String, restock: InventoryRestock, modified_by: Opt
 }
 
 #[tauri::command]
-pub fn restock_inventory(id: String, restock: InventoryRestock, modified_by: Option<String>) -> Result<InventoryItem, String> {
+pub fn restock_inventory(
+    id: String,
+    restock: InventoryRestock,
+    modified_by: Option<String>,
+) -> Result<InventoryItem, String> {
     let who = modified_by.unwrap_or_default();
     let mut inv = load_inventory();
 
-    let target = inv.iter_mut().find(|i| i.id == id)
+    let target = inv
+        .iter_mut()
+        .find(|i| i.id == id)
         .ok_or("Inventory item not found.")?;
 
     target.quantity += restock.amount;
@@ -389,7 +483,12 @@ pub fn restock_inventory(id: String, restock: InventoryRestock, modified_by: Opt
     let mut extra = serde_json::Map::new();
     extra.insert("action_type".into(), Value::String("restocked".into()));
     extra.insert("qty".into(), Value::Number(restock.amount.into()));
-    storage::log_activity(who_str, &format!("restocked {}x", restock.amount), &item_label, Some(extra));
+    storage::log_activity(
+        who_str,
+        &format!("restocked {}x", restock.amount),
+        &item_label,
+        Some(extra),
+    );
 
     Ok(target_clone)
 }
@@ -408,7 +507,8 @@ pub fn get_inventory_activity(limit: Option<usize>) -> Vec<Value> {
         .unwrap_or_default();
 
     // Filter to inventory-related actions
-    let inv_actions: Vec<Value> = entries.into_iter()
+    let inv_actions: Vec<Value> = entries
+        .into_iter()
         .filter(|e| {
             let action = e.get("action").and_then(|a| a.as_str()).unwrap_or("");
             action.contains("consumed") || action.contains("restocked")
@@ -416,7 +516,11 @@ pub fn get_inventory_activity(limit: Option<usize>) -> Vec<Value> {
         .collect();
 
     // Return most recent first, limited
-    let start = if inv_actions.len() > limit { inv_actions.len() - limit } else { 0 };
+    let start = if inv_actions.len() > limit {
+        inv_actions.len() - limit
+    } else {
+        0
+    };
     inv_actions[start..].iter().rev().cloned().collect()
 }
 
@@ -433,7 +537,8 @@ pub fn clear_inventory_activity() -> Value {
         .unwrap_or_default();
 
     // Keep non-inventory entries, remove consumed/restocked
-    let kept: Vec<Value> = entries.iter()
+    let kept: Vec<Value> = entries
+        .iter()
         .filter(|e| {
             let action = e.get("action").and_then(|a| a.as_str()).unwrap_or("");
             !action.contains("consumed") && !action.contains("restocked")

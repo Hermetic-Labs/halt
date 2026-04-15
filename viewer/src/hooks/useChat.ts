@@ -4,8 +4,8 @@
  */
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { ChatMsg, RosterMember } from '../types/comms';
-import { API_BASE, POLL_INTERVAL } from '../types/comms';
-import { api, apiMutate } from '../services/api';
+import { POLL_INTERVAL } from '../types/comms';
+import { api, apiMutate, translateText, resolveUrl } from '../services/api';
 
 const STORAGE_CAP = 500; // match server cap
 
@@ -62,7 +62,7 @@ export function useChat({ userName, userRole, lang, isLeader, callActive }: UseC
 
     const fetchMessages = useCallback(async () => {
         try {
-            const serverMsgs = await api<ChatMsg[]>('list_chat', '/mesh/chat?limit=200', { limit: 200 });
+            const serverMsgs = await api<ChatMsg[]>('get_chat', '/mesh/chat?limit=200', { limit: 200 });
             setMessages(prev => {
                 const merged = mergeMessages(serverMsgs, prev);
                 cacheMessages(userName, merged);
@@ -109,15 +109,8 @@ export function useChat({ userName, userRole, lang, isLeader, callActive }: UseC
         let messageToSend = newMsg.trim();
         if (lang !== 'en') {
             try {
-                const tr = await fetch(`${API_BASE}/api/translate`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ text: messageToSend, source: lang, target: 'en' }),
-                });
-                if (tr.ok) {
-                    const td = await tr.json();
-                    messageToSend = td.translated || messageToSend;
-                }
+                const td = await translateText(messageToSend, lang, 'en');
+                messageToSend = td.translated || messageToSend;
             } catch { /* fallback to original */ }
         }
 
@@ -151,10 +144,10 @@ export function useChat({ userName, userRole, lang, isLeader, callActive }: UseC
         const fd = new FormData();
         fd.append('file', file);
         try {
-            const uploadRes = await fetch(`${API_BASE}/api/mesh/chat/upload`, { method: 'POST', body: fd });
+            const uploadRes = await fetch(resolveUrl('/api/mesh/chat/upload'), { method: 'POST', body: fd });
             if (!uploadRes.ok) return;
             const { url, filename } = await uploadRes.json();
-            const r = await fetch(`${API_BASE}/api/mesh/chat`, {
+            const r = await fetch(resolveUrl('/api/mesh/chat'), {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

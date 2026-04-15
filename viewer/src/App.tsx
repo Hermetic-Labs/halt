@@ -35,7 +35,7 @@ import TriagePanel from './components/TriagePanel';
 import DistributionTab from './components/DistributionTab';
 import PublicLookup from './components/PublicLookup';
 import { useWebRTC } from './hooks/useWebRTC';
-import { api } from './services/api';
+import { api, isNative, resolveUrl } from './services/api';
 
 import { PowerProvider, usePower } from './services/PowerContext';
 import { LangProvider, useT } from './services/i18n';
@@ -245,7 +245,7 @@ function AppOuter() {
   };
   const [authState, setAuthState] = useState<'loading' | 'setup' | 'ready'>('loading');
   const [modelsReady, setModelsReady] = useState(false);
-  const [healthStatus, setHealthStatus] = useState<{gguf?: string[]; onnx?: string[]; whisper?: boolean} | null>(null);
+  const [healthStatus, setHealthStatus] = useState<{llm_ready?: boolean; llm_model?: string; tts_ready?: boolean; stt_ready?: boolean; translation_ready?: boolean} | null>(null);
   const [tab, setTab] = useState<Tab>(hasQRParams ? 'settings' : 'tasks');
 
   // Initial identity check + model health gate
@@ -255,23 +255,34 @@ function AppOuter() {
       setAuthState(_isSetupComplete() ? 'ready' : 'setup');
     }, 400);
 
-    // Poll /health for model readiness
+    // Poll health for model readiness
     let cancelled = false;
     const pollHealth = async () => {
       let failures = 0;
       while (!cancelled) {
         try {
-          const res = await fetch('/health');
-          if (res.ok) {
-            const data = await res.json();
-            if (!cancelled) {
-              setHealthStatus(data);
-              const hasGGUF = (data.gguf?.length ?? 0) > 0;
-              const hasWhisper = !!data.whisper;
-              if (hasGGUF || hasWhisper) {
-                setModelsReady(true);
-                return; // Stop polling
-              }
+          // Try Rust invoke first (preferred in Tauri)
+          let data: Record<string, unknown> | null = null;
+          if (isNative) {
+            const inv = await import('@tauri-apps/api/core').catch(() => null);
+            if (inv) {
+              try { data = await inv.invoke('get_health') as Record<string, unknown>; } catch { /* fallback */ }
+            }
+          }
+          // Fall back to HTTP
+          if (!data) {
+            const res = await fetch(resolveUrl('/health'));
+            if (res.ok) data = await res.json();
+          }
+
+          if (data && !cancelled) {
+            setHealthStatus(data as typeof healthStatus);
+            // Check Rust field names (llm_ready, stt_ready) OR legacy Python names (gguf, whisper)
+            const ready = !!(data.llm_ready || (data as Record<string, unknown>).gguf);
+            const hasStt = !!(data.stt_ready || (data as Record<string, unknown>).whisper);
+            if (ready || hasStt) {
+              setModelsReady(true);
+              return;
             }
           } else {
             failures++;
@@ -280,7 +291,6 @@ function AppOuter() {
           failures++;
         }
         // After 5 failed attempts, let the app load anyway
-        // (cert not trusted yet, or models truly unavailable)
         if (failures >= 5 && !cancelled) {
           console.warn('[Health] Proceeding without model confirmation after', failures, 'failures');
           setModelsReady(true);
@@ -392,16 +402,16 @@ function AppOuter() {
           {healthStatus && (
             <div style={{ textAlign: 'left', padding: '14px 18px', background: '#161b22', borderRadius: 8, border: '1px solid #30363d', fontSize: 12 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
-                <span style={{ color: (healthStatus.gguf?.length ?? 0) > 0 ? '#3fb950' : '#f0a500' }}>●</span>
-                <span style={{ color: '#8b949e' }}>LLM (GGUF): {(healthStatus.gguf?.length ?? 0) > 0 ? `✓ ${healthStatus.gguf![0]}` : 'Loading…'}</span>
+                <span style={{ color: healthStatus.llm_ready ? '#3fb950' : '#f0a500' }}>●</span>
+                <span style={{ color: '#8b949e' }}>LLM (GGUF): {healthStatus.llm_ready ? `✓ ${healthStatus.llm_model || 'Ready'}` : 'Loading…'}</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
-                <span style={{ color: (healthStatus.onnx?.length ?? 0) > 0 ? '#3fb950' : '#484f58' }}>●</span>
-                <span style={{ color: '#8b949e' }}>Translation (ONNX): {(healthStatus.onnx?.length ?? 0) > 0 ? '✓ Ready' : 'Not loaded'}</span>
+                <span style={{ color: healthStatus.translation_ready ? '#3fb950' : '#484f58' }}>●</span>
+                <span style={{ color: '#8b949e' }}>Translation (NLLB): {healthStatus.translation_ready ? '✓ Ready' : 'Not loaded'}</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <span style={{ color: healthStatus.whisper ? '#3fb950' : '#484f58' }}>●</span>
-                <span style={{ color: '#8b949e' }}>Speech (Whisper): {healthStatus.whisper ? '✓ Ready' : 'Not loaded'}</span>
+                <span style={{ color: healthStatus.stt_ready ? '#3fb950' : '#484f58' }}>●</span>
+                <span style={{ color: '#8b949e' }}>Speech (Whisper): {healthStatus.stt_ready ? '✓ Ready' : 'Not loaded'}</span>
               </div>
             </div>
           )}
@@ -486,7 +496,7 @@ function AppInner(p: any) {
     const myName = localStorage.getItem('eve-mesh-name') || '';
     const poll = setInterval(async () => {
       try {
-        const msgs = await api<{ target_name?: string; sender_name?: string }[]>('list_chat', '/mesh/chat');
+        const msgs = await api<{ target_name?: string; sender_name?: string }[]>('get_chat', '/mesh/chat');
         const forMe = msgs.filter((m) =>
           !m.target_name || m.target_name.toLowerCase() === myName.toLowerCase()
         );
@@ -823,7 +833,7 @@ function AppInner(p: any) {
                                   if (!blob) return;
                                   const fd = new FormData();
                                   fd.append('file', blob, 'avatar.webp');
-                                  fetch(`/api/roster/${clientId}/avatar`, { method: 'POST', body: fd }).catch(() => {});
+                                  fetch(resolveUrl(`/api/roster/${clientId}/avatar`), { method: 'POST', body: fd }).catch(() => {});
                                 }, 'image/webp', 0.8);
                               }
                               e.target.value = '';
@@ -852,6 +862,15 @@ function AppInner(p: any) {
                       </div>
                     </div>
                   </div>
+                </div>
+
+                {/* ── System Status ────────────────────────────────── */}
+                <div style={{ background: 'var(--surface)', borderRadius: 10, border: '1px solid var(--border)', padding: '14px 20px', display: 'flex', flexWrap: 'wrap', gap: 12, fontSize: 12, color: 'var(--text-dim)' }}>
+                  <span>Backend: <strong style={{ color: isNative ? '#3fb950' : '#3498db' }}>{isNative ? '🦀 Rust' : '🐍 Python'}</strong></span>
+                  <span style={{ color: 'var(--border)' }}>|</span>
+                  <span>Protocol: <strong style={{ color: location.protocol === 'https:' ? '#3fb950' : '#f0a500' }}>{location.protocol === 'https:' ? '🔒 HTTPS' : '⚠ HTTP'}</strong></span>
+                  <span style={{ color: 'var(--border)' }}>|</span>
+                  <span>Mesh: <strong style={{ color: 'var(--text-muted)' }}>{location.host}</strong></span>
                 </div>
 
                 {/* ── Mesh Network Section ──────────────────────────── */}

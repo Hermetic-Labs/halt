@@ -5,7 +5,7 @@ import * as store from '../services/PatientStore';
 import { useT } from '../services/i18n';
 import { normalizeToEnglish, precomputeAllLocales, flushPatientTranslations, hydratePatientTranslations, hasPatientTranslations, pt } from '../services/i18nDynamic';
 import { rebuildPlanFromRecord } from '../services/planEngine';
-import { apiMutate } from '../services/api';
+import { apiMutate, resolveUrl } from '../services/api';
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -132,7 +132,7 @@ export function PatientPanel({ summary, wards, activeWardId, onClose, onUpdated 
     const handleExport = async () => {
         setExporting(true);
         try {
-            const res = await fetch(`/api/patients/${summary.id}/discharge-qr?lang=${lang}`);
+            const res = await fetch(resolveUrl(`/api/patients/${summary.id}/discharge-qr?lang=${lang}`));
             if (res.ok) {
                 const data = await res.json();
                 if (data.qr_image) {
@@ -143,7 +143,7 @@ export function PatientPanel({ summary, wards, activeWardId, onClose, onUpdated 
                 }
             } else {
                 // Fallback: open HTML export
-                const htmlRes = await fetch(`/api/patients/${summary.id}/export?lang=${lang}`);
+                const htmlRes = await fetch(resolveUrl(`/api/patients/${summary.id}/export?lang=${lang}`));
                 const html = await htmlRes.text();
                 const blob = new Blob([html], { type: 'text/html' });
                 window.open(URL.createObjectURL(blob), '_blank');
@@ -1251,7 +1251,7 @@ export default function WardMap() {
                         }}>🏷️ {t('ward.print_labels', 'Print Labels')}</button>
                         <button className="if-toggle" onClick={async () => {
                             try {
-                                const res = await fetch(`/api/reports/shift?lang=${lang}`);
+                                const res = await fetch(resolveUrl(`/api/reports/shift?lang=${lang}`));
                                 const html = await res.text();
                                 printViaIframe(html);
                             } catch { /* API offline */ }

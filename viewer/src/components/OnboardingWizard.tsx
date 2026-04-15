@@ -10,7 +10,7 @@
  * Reset via refresh.bat which wipes the Tauri WebView cache.
  */
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 
 const EULA_KEY = 'halt-eula-accepted';
 const PERMS_KEY = 'eve-permissions-granted';
@@ -55,16 +55,13 @@ const btnSecondary: React.CSSProperties = {
 // ─── Component ──────────────────────────────────────────────────────
 
 export default function OnboardingWizard({ children }: { children: React.ReactNode }) {
-  const [step, setStep] = useState<'legal' | 'permissions' | 'ready' | 'done'>('done');
-
-  // Check completion on mount
-  useEffect(() => {
+  const [step, setStep] = useState<'legal' | 'permissions' | 'ready' | 'done'>(() => {
     const eulaOk = localStorage.getItem(EULA_KEY) === 'true';
     const permsOk = localStorage.getItem(PERMS_KEY) === 'true';
-    if (!eulaOk) setStep('legal');
-    else if (!permsOk) setStep('permissions');
-    else setStep('done');
-  }, []);
+    if (!eulaOk) return 'legal';
+    if (!permsOk) return 'permissions';
+    return 'done';
+  });
 
   if (step === 'done') return <>{children}</>;
 

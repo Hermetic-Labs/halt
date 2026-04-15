@@ -3,6 +3,8 @@
  */
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { RosterMember, CallType } from '../types/comms';
+import { isNative, sttListen, translateText } from '../services/api';
+
 
 const RTC_CONFIG: RTCConfiguration = {
     iceServers: [{ urls: 'stun:stun.l.google.com:19302' }],
@@ -47,7 +49,7 @@ export function useWebRTC(userName: string, userRole: string) {
     // ── Peer Connection ──────────────────────────────────────────────────────
 
     // Ref for audio analyser setup (avoids circular dep with createPeerConnection)
-    const setupAudioAnalyserRef = useRef<(stream: MediaStream) => void>(() => {});
+    const setupAudioAnalyserRef = useRef<(stream: MediaStream) => void>(() => { });
 
     const createPeerConnection = useCallback((targetName: string, cType: CallType) => {
         const pc = new RTCPeerConnection(RTC_CONFIG);
@@ -381,6 +383,38 @@ export function useWebRTC(userName: string, userRole: string) {
         const lang = targetLang || transcribeLang;
         setTranscribing(true);
 
+        // ── Native path: record remote audio chunks → sttListen → translateText ──
+        if (isNative) {
+            const audioStream = new MediaStream(stream.getAudioTracks());
+            const mimeType = MediaRecorder.isTypeSupported('audio/webm;codecs=opus')
+                ? 'audio/webm;codecs=opus' : 'audio/webm';
+            const recorder = new MediaRecorder(audioStream, { mimeType });
+            transcribeRecorderRef.current = recorder;
+            const nativeChunks: Blob[] = [];
+            recorder.ondataavailable = (e) => { if (e.data.size > 0) nativeChunks.push(e.data); };
+            recorder.start(500);
+            transcribeIntervalRef.current = window.setInterval(async () => {
+                if (nativeChunks.length === 0) return;
+                const grabbed = nativeChunks.splice(0);
+                const blob = new Blob(grabbed, { type: mimeType });
+                if (blob.size < 1000) return;
+                try {
+                    const fd = new FormData();
+                    fd.append('audio', blob, 'chunk.webm');
+                    const stt = await sttListen(fd);
+                    const txt = stt.text?.trim();
+                    if (!txt) return;
+                    setSubtitleText(txt);
+                    if (lang !== 'en') {
+                        const tr = await translateText(txt, 'auto', lang);
+                        if (tr.translated) setSubtitleText(prev => prev ? `${prev}\n→ ${tr.translated}` : `→ ${tr.translated}`);
+                    }
+                    setTimeout(() => setSubtitleText(prev => prev?.startsWith(txt) ? '' : prev), 6000);
+                } catch { /* non-fatal */ }
+            }, 4000);
+            return;
+        }
+
         // Open a single long-lived WebSocket for the entire call
         const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
         const ws = new WebSocket(`${protocol}//${window.location.host}/call-translate/ws`);
@@ -504,7 +538,7 @@ export function useWebRTC(userName: string, userRole: string) {
                 levelIntervalRef.current = null;
             }
             if (audioCtxRef.current) {
-                audioCtxRef.current.close().catch(() => {});
+                audioCtxRef.current.close().catch(() => { });
                 audioCtxRef.current = null;
             }
             analyserRef.current = null;

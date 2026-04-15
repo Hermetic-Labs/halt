@@ -12,8 +12,8 @@
 //!   2. English bridge (if source isn't English)
 //!   3. Target language (receiver's configured language)
 
-use crate::storage;
 use crate::models::nllb;
+use crate::storage;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
@@ -86,7 +86,10 @@ fn build_alert_payload(req: &AlertRequest) -> Value {
 pub fn mesh_emergency(req: EmergencyRequest) -> Result<Value, String> {
     let now = chrono::Local::now();
     let notes_text = if req.notes.is_empty() {
-        format!("EMERGENCY in {} bed {}: {}", req.ward, req.bed, req.categories_text)
+        format!(
+            "EMERGENCY in {} bed {}: {}",
+            req.ward, req.bed, req.categories_text
+        )
     } else {
         req.notes.clone()
     };
@@ -109,7 +112,7 @@ pub fn mesh_emergency(req: EmergencyRequest) -> Result<Value, String> {
     // This is the 3-phase card: source → english bridge → target
     let lang_map = nllb::lang_map();
     let mut translations = serde_json::Map::new();
-    for (lang, _) in &lang_map {
+    for lang in lang_map.keys() {
         if *lang != "en" {
             let translated = nllb::translate(&notes_text, "en", lang);
             if translated != notes_text {
@@ -133,7 +136,12 @@ pub fn mesh_emergency(req: EmergencyRequest) -> Result<Value, String> {
     // TODO: Broadcast to all connected WebSocket clients
     // server::broadcast(payload.clone());
 
-    log::warn!("🚨 EMERGENCY broadcast: {} bed {} — {}", req.ward, req.bed, notes_text);
+    log::warn!(
+        "🚨 EMERGENCY broadcast: {} bed {} — {}",
+        req.ward,
+        req.bed,
+        notes_text
+    );
 
     Ok(payload)
 }
@@ -179,7 +187,7 @@ pub fn mesh_announcement(req: AnnouncementRequest) -> Result<Value, String> {
     // Start with provided translations, then fill in any missing languages
     let mut translations = req.translations.clone();
     let lang_map = nllb::lang_map();
-    for (lang, _) in &lang_map {
+    for lang in lang_map.keys() {
         if *lang != "en" && !translations.contains_key(*lang) {
             let translated = nllb::translate(&req.message, "en", lang);
             if translated != req.message {

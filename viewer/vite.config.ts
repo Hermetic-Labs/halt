@@ -44,42 +44,44 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 7777,
     proxy: {
+      // REST API → axum HTTP server (:7779)
       '/api': {
-        target: 'http://127.0.0.1:7778',
+        target: 'http://127.0.0.1:7779',
         changeOrigin: true,
-        ws: true,
       },
+      '/tts': {
+        target: 'http://127.0.0.1:7779',
+        changeOrigin: true,
+      },
+      '/stt': {
+        target: 'http://127.0.0.1:7779',
+        changeOrigin: true,
+      },
+      '/inference': {
+        target: 'http://127.0.0.1:7779',
+        changeOrigin: true,
+      },
+      '/health': {
+        target: 'http://127.0.0.1:7779',
+        changeOrigin: true,
+      },
+      // WebSocket → tokio-tungstenite mesh server (:7778)
       '/ws': {
         target: 'ws://127.0.0.1:7778',
         ws: true,
       },
-      '/tts': {
-        target: 'http://127.0.0.1:7778',
+      '/translate-live': {
+        target: 'http://127.0.0.1:7779',
         changeOrigin: true,
         ws: true,
       },
-      '/stt': {
-        target: 'http://127.0.0.1:7778',
+      '/translate-stream': {
+        target: 'http://127.0.0.1:7779',
         changeOrigin: true,
         ws: true,
       },
-      '/image': {
-        target: 'http://127.0.0.1:7778',
-        changeOrigin: true,
-        ws: true,
-      },
-      '/inference': {
-        target: 'http://127.0.0.1:7778',
-        changeOrigin: true,
-        ws: true,
-      },
-      '/models': {
-        target: 'http://127.0.0.1:7778',
-        changeOrigin: true,
-        ws: true,
-      },
-      '/health': {
-        target: 'http://127.0.0.1:7778',
+      '/call-translate': {
+        target: 'http://127.0.0.1:7779',
         changeOrigin: true,
         ws: true,
       },

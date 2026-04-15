@@ -13,6 +13,7 @@
  */
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { getSharedAudioContext } from './useTTS';
+import { isNative, sttListen, translateText, ttsSynthesize } from '../services/api';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -288,6 +289,127 @@ export function useTranslateLive() {
         const sessionId = crypto.randomUUID();
         sessionIdRef.current = sessionId;
 
+        // ── Native (Tauri) path: VAD + sttListen → translateText → ttsSynthesize chain ──
+        if (isNative) {
+            try {
+                // Get mic
+                let stream = streamRef.current;
+                if (!stream || stream.getTracks().length === 0 || stream.getTracks()[0].readyState === 'ended') {
+                    stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    streamRef.current = stream;
+                }
+
+                // Start local mic recorder
+                let segId = 0;
+                let mimeType = '';
+                for (const m of ['audio/webm;codecs=opus', 'audio/webm', 'audio/ogg;codecs=opus']) {
+                    if (MediaRecorder.isTypeSupported(m)) { mimeType = m; break; }
+                }
+
+                const startSegmentRecorder = () => {
+                    if (!streamRef.current) return;
+                    const mr = new MediaRecorder(streamRef.current, mimeType ? { mimeType } : {});
+                    mediaRecRef.current = mr;
+                    const chunks: Blob[] = [];
+
+                    mr.ondataavailable = (e) => { if (e.data.size > 0) chunks.push(e.data); };
+
+                    mr.onstop = async () => {
+                        const currentSegId = segId++;
+                        try {
+                            isTranslatingRef.current = true;
+                            setIsTranslating(true);
+
+                            // 1. STT
+                            const audioBlob = new Blob(chunks, { type: mimeType || 'audio/webm' });
+                            const fd = new FormData();
+                            fd.append('audio', audioBlob, 'recording.webm');
+                            const sttResult = await sttListen(fd);
+                            const transcript = sttResult.text || '';
+                            const detectedLang = sttResult.language || sourceLang;
+
+                            if (!transcript.trim()) {
+                                isTranslatingRef.current = false;
+                                setIsTranslating(false);
+                                tryResumeRecording();
+                                return;
+                            }
+
+                            setActiveTranscript(transcript);
+                            setSegments(prev => [...prev, {
+                                segmentId: currentSegId,
+                                transcript,
+                                sourceLang: detectedLang,
+                                translation: '',
+                                targetLang,
+                                done: false,
+                            }]);
+
+                            // 2. Translate
+                            const trResult = await translateText(
+                                transcript,
+                                detectedLang === 'auto' ? 'en' : detectedLang,
+                                targetLang
+                            );
+                            const translation = trResult.translated || transcript;
+
+                            setSegments(prev => prev.map(s =>
+                                s.segmentId === currentSegId
+                                    ? { ...s, translation, targetLang }
+                                    : s
+                            ));
+
+                            // 3. TTS (if not muted)
+                            if (!muteTTSRef.current) {
+                                const ttsRes = await ttsSynthesize(translation, undefined, 1.0, targetLang);
+                                if (ttsRes.ok) {
+                                    const ttsData = await ttsRes.json();
+                                    if (ttsData.audio_base64) {
+                                        const b64 = ttsData.audio_base64.includes(',')
+                                            ? ttsData.audio_base64.split(',')[1]
+                                            : ttsData.audio_base64;
+                                        const bin = atob(b64);
+                                        const buf = new Uint8Array(bin.length);
+                                        for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+                                        await playChunk(buf.buffer);
+                                    }
+                                }
+                            }
+
+                            // Mark segment done
+                            setSegments(prev => prev.map(s =>
+                                s.segmentId === currentSegId ? { ...s, done: true } : s
+                            ));
+                            setActiveTranscript('');
+                        } catch (err) {
+                            setError((err as Error).message);
+                        } finally {
+                            isTranslatingRef.current = false;
+                            setIsTranslating(false);
+                            tryResumeRecording();
+                        }
+                    };
+
+                    try { mr.start(); } catch { /* ignore */ }
+                };
+
+
+                // Start first segment recorder
+                startSegmentRecorder();
+
+                // Start silence detection (uses flushSegment which stops MediaRecorder)
+                startSilenceDetection(stream);
+
+                setState('listening');
+            } catch (err) {
+                setError((err as Error).message);
+                setState('error');
+                cleanup();
+            }
+            return;
+        }
+
+        // ── WebSocket path (browser / dev) ──────────────────────────────────
         try {
             // 1. Open output socket first (so it's ready to receive)
             const outputWs = new WebSocket(OUTPUT_URL());

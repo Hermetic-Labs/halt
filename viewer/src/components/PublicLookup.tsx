@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useT } from '../services/i18n';
+import { resolveUrl } from '../services/api';
 
 const LANGS = [
     ['en','English'],['ar','العربية'],['am','አማርኛ'],['bn','বাংলা'],['de','Deutsch'],
@@ -41,7 +42,7 @@ export default function PublicLookup() {
         let cancelled = false;
         const fetchExport = async () => {
             try {
-                const res = await fetch(`/api/patients/${directId}/export?lang=${lang}`);
+                const res = await fetch(resolveUrl(`/api/patients/${directId}/export?lang=${lang}`));
                 if (!res.ok) throw new Error('Patient not found');
                 const html = await res.text();
                 if (!cancelled) setDirectHtml(html);
@@ -63,7 +64,7 @@ export default function PublicLookup() {
             setLoading(true);
             try {
                 // Fetch full list — backend returns all opted-in patients when name is empty or '*'
-                const res = await fetch('/api/public/patients?all=1');
+                const res = await fetch(resolveUrl('/api/public/patients?all=1'));
                 if (!res.ok) throw new Error('Failed to load patients');
                 const data = await res.json();
                 if (!cancelled) setAllPatients(Array.isArray(data) ? data : data.results || []);

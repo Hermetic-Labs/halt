@@ -7,8 +7,8 @@
 //! audio/video streams go peer-to-peer via WebRTC (handled entirely
 //! in the frontend by useWebRTC.ts).
 
-use serde_json::Value;
 use super::server;
+use serde_json::Value;
 
 #[tauri::command]
 pub fn active_video_calls() -> Value {

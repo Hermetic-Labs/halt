@@ -1,24 +1,19 @@
 //! Distribution — model pack download, verification, and extraction.
 //!
-//! Full conversion exists (uses reqwest + sha2 + flate2 + tar).
-//! Currently: status checking works, download defers to sidecar.
+//! Handles checking which model packs are installed, downloading them from R2,
+//! and extracting tar.gz archives into the models directory.
 //!
 //! Python source: distribution.py (all 5 endpoints)
 
 use crate::config;
+use futures_util::StreamExt;
 use serde::{Deserialize, Serialize};
+use std::io::Write;
+use tauri::Emitter;
 
 use serde_json::Value;
 use std::fs;
 use std::sync::atomic::{AtomicBool, Ordering};
-#[cfg(feature = "native_ml")]
-
-#[cfg(feature = "native_ml")]
-use tauri::Emitter;
-#[cfg(feature = "native_ml")]
-use futures_util::StreamExt;
-#[cfg(feature = "native_ml")]
-use std::io::Write;
 
 static DOWNLOAD_BUSY: AtomicBool = AtomicBool::new(false);
 
@@ -32,9 +27,11 @@ fn pack_installed(pack_id: &str) -> bool {
         "stt" => dir.join("faster-whisper-base").is_dir(),
         "translation" => dir.join("nllb-200-distilled-600M-ct2").is_dir(),
         "ai" => fs::read_dir(&dir)
-            .map(|entries| entries.flatten().any(|e| {
-                e.path().extension().and_then(|x| x.to_str()) == Some("gguf")
-            }))
+            .map(|entries| {
+                entries
+                    .flatten()
+                    .any(|e| e.path().extension().and_then(|x| x.to_str()) == Some("gguf"))
+            })
             .unwrap_or(false),
         _ => false,
     }
@@ -57,16 +54,18 @@ pub struct DownloadRequest {
 }
 
 /// Translation of distribution.py:get_status() (line 203).
-/// Fully functional — only uses filesystem checks.
 #[tauri::command]
 pub fn distribution_status() -> Value {
     let dir = config::models_dir();
     let mut packs = serde_json::Map::new();
     for &pack_id in PACK_IDS {
-        packs.insert(pack_id.to_string(), serde_json::json!({
-            "installed": pack_installed(pack_id),
-            "size_mb": pack_size_mb(pack_id),
-        }));
+        packs.insert(
+            pack_id.to_string(),
+            serde_json::json!({
+                "installed": pack_installed(pack_id),
+                "size_mb": pack_size_mb(pack_id),
+            }),
+        );
     }
     serde_json::json!({
         "packs": packs,
@@ -75,7 +74,6 @@ pub fn distribution_status() -> Value {
 }
 
 /// Safely fetches and extracts a model pack.
-#[cfg(feature = "native_ml")]
 #[tauri::command]
 pub async fn distribution_download(
     app: tauri::AppHandle,
@@ -90,19 +88,25 @@ pub async fn distribution_download(
 
     let pack = request.pack.clone();
     let url = request.url.clone();
-    
+
     // Offload to background tokio task
     tauri::async_runtime::spawn(async move {
         match download_and_extract(app.clone(), &pack, &url).await {
             Ok(_) => {
-                let _ = app.emit("distribution-progress", serde_json::json!({
-                    "pack": pack, "phase": "complete", "percent": 100
-                }));
+                let _ = app.emit(
+                    "distribution-progress",
+                    serde_json::json!({
+                        "pack": pack, "phase": "complete", "percent": 100
+                    }),
+                );
             }
             Err(e) => {
-                let _ = app.emit("distribution-progress", serde_json::json!({
-                    "pack": pack, "phase": "error", "percent": 0, "error": e
-                }));
+                let _ = app.emit(
+                    "distribution-progress",
+                    serde_json::json!({
+                        "pack": pack, "phase": "error", "percent": 0, "error": e
+                    }),
+                );
             }
         }
         DOWNLOAD_BUSY.store(false, Ordering::SeqCst);
@@ -111,31 +115,24 @@ pub async fn distribution_download(
     Ok(serde_json::json!({"status": "started", "pack": request.pack}))
 }
 
-#[cfg(not(feature = "native_ml"))]
-#[tauri::command]
-pub async fn distribution_download(
-    app: tauri::AppHandle,
-    request: DownloadRequest,
-) -> Result<Value, String> {
-    Err("Download natively requires reqwest crates which are disabled in UI-only build. Compile with --features native_ml.".to_string())
-}
-
-#[cfg(feature = "native_ml")]
 async fn download_and_extract(app: tauri::AppHandle, pack: &str, url: &str) -> Result<(), String> {
     let dir = config::models_dir();
     let archive_path = dir.join(format!("{}.tar.gz", pack));
 
-    let _ = app.emit("distribution-progress", serde_json::json!({
-        "pack": pack, "phase": "downloading", "percent": 0,
-    }));
+    let _ = app.emit(
+        "distribution-progress",
+        serde_json::json!({
+            "pack": pack, "phase": "downloading", "percent": 0,
+        }),
+    );
 
     // ── Phase 1: Download ──
     let response = reqwest::get(url).await.map_err(|e| e.to_string())?;
     let total_size = response.content_length().unwrap_or(0);
-    
+
     let mut file = std::fs::File::create(&archive_path).map_err(|e| e.to_string())?;
     let mut downloaded: u64 = 0;
-    
+
     let mut stream = response.bytes_stream();
     let mut last_percent = 0;
 
@@ -152,35 +149,43 @@ async fn download_and_extract(app: tauri::AppHandle, pack: &str, url: &str) -> R
 
         if percent != last_percent {
             last_percent = percent;
-            let _ = app.emit("distribution-progress", serde_json::json!({
-                "pack": pack, "phase": "downloading", "percent": percent,
-                "bytes_done": downloaded, "bytes_total": total_size
-            }));
+            let _ = app.emit(
+                "distribution-progress",
+                serde_json::json!({
+                    "pack": pack, "phase": "downloading", "percent": percent,
+                    "bytes_done": downloaded, "bytes_total": total_size
+                }),
+            );
         }
     }
-    
+
     // Explicitly sync and close file
     file.sync_all().map_err(|e| e.to_string())?;
     drop(file);
 
     // ── Phase 2: Unzip ──
-    let _ = app.emit("distribution-progress", serde_json::json!({
-        "pack": pack, "phase": "extracting", "percent": 0
-    }));
+    let _ = app.emit(
+        "distribution-progress",
+        serde_json::json!({
+            "pack": pack, "phase": "extracting", "percent": 0
+        }),
+    );
 
     let archive_path_clone = archive_path.clone();
     let dir_clone = dir.clone();
-    
+
     // Blocking I/O inside spawn_blocking
     tauri::async_runtime::spawn_blocking(move || -> Result<(), String> {
         let tar_gz = std::fs::File::open(&archive_path_clone).map_err(|e| e.to_string())?;
         let tar = flate2::read::GzDecoder::new(tar_gz);
         let mut archive = tar::Archive::new(tar);
-        
+
         archive.unpack(&dir_clone).map_err(|e| e.to_string())?;
         let _ = std::fs::remove_file(archive_path_clone);
         Ok(())
-    }).await.map_err(|e| e.to_string())??;
+    })
+    .await
+    .map_err(|e| e.to_string())??;
 
     Ok(())
 }
@@ -191,7 +196,6 @@ pub async fn distribution_download_all(_app: tauri::AppHandle) -> Result<Value, 
 }
 
 /// Translation of distribution.py:get_checksums() (line 311).
-/// Fully functional — reads checksums.json from models dir.
 #[tauri::command]
 pub fn distribution_checksums() -> Value {
     let path = config::models_dir().join("checksums.json");
@@ -206,7 +210,6 @@ pub fn distribution_checksums() -> Value {
 }
 
 /// Translation of distribution.py:set_checksums() (line 317).
-/// Fully functional — writes checksums.json to models dir.
 #[tauri::command]
 pub fn set_checksums(checksums: Value) -> Result<Value, String> {
     let path = config::models_dir().join("checksums.json");

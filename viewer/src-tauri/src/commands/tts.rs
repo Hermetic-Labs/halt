@@ -10,6 +10,7 @@
 //!   - Queue/lock to serialize TTS requests (shared with translate_stream)
 
 use crate::models::kokoro;
+use crate::models::phonemizer;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -30,8 +31,12 @@ pub struct SynthesizeRequest {
     pub lang: String,
 }
 
-fn default_voice() -> String { "af_heart".to_string() }
-fn default_speed() -> f32 { 1.0 }
+fn default_voice() -> String {
+    "af_heart".to_string()
+}
+fn default_speed() -> f32 {
+    1.0
+}
 
 #[derive(Debug, Deserialize)]
 pub struct MultiSynthRequest {
@@ -56,14 +61,15 @@ pub struct SynthesizeResponse {
 #[tauri::command]
 pub fn tts_health() -> Value {
     serde_json::json!({
-        "ready": kokoro::is_loaded() || kokoro::ensure_loaded().is_ok(),
+        "ready": kokoro::is_loaded(),
     })
 }
 
 #[tauri::command]
 pub fn tts_voices() -> Value {
     let map = kokoro::voice_map();
-    let voices: Vec<Value> = map.iter()
+    let voices: Vec<Value> = map
+        .iter()
         .map(|(lang, voice)| serde_json::json!({"lang": lang, "voice": voice}))
         .collect();
     serde_json::json!({"voices": voices})
@@ -85,60 +91,73 @@ pub fn tts_synthesize(request: SynthesizeRequest) -> Result<SynthesizeResponse, 
     }
 
     let result = (|| {
+        log::info!("[TTS] Starting synthesis: text='{}', voice='{}', lang='{}', speed={}", 
+            &request.text[..request.text.len().min(60)], request.voice, request.lang, request.speed);
+
         let (_model, _voices) = kokoro::ensure_loaded()?;
+        log::info!("[TTS] Model loaded OK");
 
         // Resolve voice from language if no explicit voice
-        let voice = if request.voice == "af_heart" && !request.lang.is_empty() {
+        let _voice = if request.voice == "af_heart" && !request.lang.is_empty() {
             let map = kokoro::voice_map();
-            map.get(request.lang.as_str()).copied().unwrap_or("af_heart").to_string()
+            map.get(request.lang.as_str())
+                .copied()
+                .unwrap_or("af_heart")
+                .to_string()
         } else {
             request.voice.clone()
         };
+        log::info!("[TTS] Voice resolved: {}", _voice);
 
         let text = preprocess_text(&request.text, &request.lang);
+        log::info!("[TTS] Preprocessed text: '{}'", &text[..text.len().min(80)]);
 
-        #[cfg(feature = "native_ml")]
-        {
-            let session = kokoro::get_session()?;
-            let _voices_bin = kokoro::get_voices_bin()?;
-            
-            // In a full implementation, you'd map text -> phonemes (eSpeak) -> tokens.
-            // As eSpeak-ng C-bindings aren't cleanly bundled in this repo yet,
-            // we prepare the explicit ONNX input arrays for Kokoro here.
-            let tokens: Vec<i64> = vec![0; text.len().max(1)]; // Dummy phonetic tokens 
-            let style: Vec<f32> = vec![0.0; 256];              // Dummy voice style vector
-            let speed = request.speed;
-            
-            // Execute the ORT session
-            let input_values = ort::inputs![
-                "tokens" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(tokens.clone()).into_shape_with_order((1, tokens.len())).unwrap()).unwrap(),
-                "style" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(style.clone())).unwrap(),
-                "speed" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(vec![speed])).unwrap(),
-            ];
-            
-            let mut session = session.lock().unwrap();
-            let outputs = session.run(input_values).map_err(|e| format!("ORT Run error: {}", e))?;
-            let audio_tensor = outputs["audio"].try_extract_tensor::<f32>().map_err(|e| format!("Tensor error: {}", e))?;
-            let pcm_f32: Vec<f32> = audio_tensor.1.iter().copied().collect();
-            
-            let b64 = f32_to_wav_base64(&pcm_f32, 24000);
-            
-            return Ok(SynthesizeResponse {
-                audio_base64: format!("data:audio/wav;base64,{}", b64),
-                sample_rate: 24000,
-                duration_ms: (pcm_f32.len() as u64 * 1000) / 24000,
-            });
-        }
-        
-        #[cfg(not(feature = "native_ml"))]
-        {
-            log::debug!("TTS stub: '{}' voice={} speed={}", &text[..text.len().min(50)], voice, request.speed);
-            Ok(SynthesizeResponse {
-                audio_base64: String::new(),
-                sample_rate: 24000,
-                duration_ms: 0,
-            })
-        }
+        // Phonemize: text → espeak-ng IPA → Kokoro token IDs
+        let tokens = phonemizer::text_to_tokens(&text, &request.lang).unwrap_or_else(|e| {
+            log::warn!("[TTS] Phonemization failed, using fallback: {}", e);
+            vec![0; text.len().max(1)] // fallback: placeholder tokens
+        });
+        log::info!("[TTS] Phonemized: {} tokens", tokens.len());
+
+        // Extract voice style vector: voice_array[len(tokens)] → [1, 256]
+        // Matches Python: style = voice_array[len(tokens)]
+        let style = kokoro::get_voice_style(&_voice, tokens.len()).unwrap_or_else(|e| {
+            log::warn!("[TTS] Voice style extraction failed ({}), using zeros", e);
+            vec![0.0f32; 256]
+        });
+        let speed = request.speed;
+
+        log::info!("[TTS] Getting ORT session...");
+        let session = kokoro::get_session()?;
+        log::info!("[TTS] Building input tensors (tokens={}, style={}, speed={})...", tokens.len(), style.len(), speed);
+
+        let input_values = ort::inputs![
+            "tokens" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(tokens.clone()).into_shape_with_order((1, tokens.len())).unwrap()).unwrap(),
+            "style" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(style).into_shape_with_order((1, 256)).unwrap()).unwrap(),
+            "speed" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(vec![speed])).unwrap(),
+        ];
+
+        log::info!("[TTS] Running ORT inference...");
+        let mut session = session.lock().unwrap();
+        let outputs = session
+            .run(input_values)
+            .map_err(|e| format!("ORT Run error: {}", e))?;
+        log::info!("[TTS] ORT inference complete, extracting audio...");
+
+        let audio_tensor = outputs["audio"]
+            .try_extract_tensor::<f32>()
+            .map_err(|e| format!("Tensor error: {}", e))?;
+        let pcm_f32: Vec<f32> = audio_tensor.1.to_vec();
+        log::info!("[TTS] Audio extracted: {} samples ({:.1}s at 24kHz)", pcm_f32.len(), pcm_f32.len() as f32 / 24000.0);
+
+        let b64 = f32_to_wav_base64(&pcm_f32, 24000);
+        log::info!("[TTS] WAV encoded: {} bytes base64", b64.len());
+
+        Ok(SynthesizeResponse {
+            audio_base64: format!("data:audio/wav;base64,{}", b64),
+            sample_rate: 24000,
+            duration_ms: (pcm_f32.len() as u64 * 1000) / 24000,
+        })
     })();
 
     TTS_BUSY.store(false, Ordering::SeqCst);
@@ -157,53 +176,50 @@ pub fn tts_synthesize_multi(request: MultiSynthRequest) -> Result<SynthesizeResp
         let (_model, _voices) = kokoro::ensure_loaded()?;
         let map = kokoro::voice_map();
 
-        #[cfg(feature = "native_ml")]
-        {
-            let session = kokoro::get_session()?;
-            let mut all_pcm = Vec::new();
+        let session = kokoro::get_session()?;
+        let mut all_pcm = Vec::new();
 
-            for seg in &request.segments {
-                let _voice = map.get(seg.lang.as_str()).copied().unwrap_or("af_heart");
-                let text = preprocess_text(&seg.text, &seg.lang);
-                
-                // ORT run per segment
-                let tokens: Vec<i64> = vec![0; text.len().max(1)]; 
-                let style: Vec<f32> = vec![0.0; 256];
-                
-                let input_values = ort::inputs![
-                    "tokens" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(tokens.clone()).into_shape_with_order((1, tokens.len())).unwrap()).unwrap(),
-                    "style" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(style.clone())).unwrap(),
-                    "speed" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(vec![request.speed])).unwrap(),
-                ];
-                
-                let mut session_lock = session.lock().unwrap();
-                let outputs = session_lock.run(input_values).map_err(|e| format!("ORT Run error: {}", e))?;
-                let audio_tensor = outputs["audio"].try_extract_tensor::<f32>().map_err(|e| format!("Tensor error: {}", e))?;
-                let pcm_f32: Vec<f32> = audio_tensor.1.iter().copied().collect();
-                
-                all_pcm.extend_from_slice(&pcm_f32);
-                
-                // 300ms silence
-                all_pcm.extend(vec![0.0f32; (24000.0 * 0.3) as usize]);
-            }
+        for seg in &request.segments {
+            let _voice = map.get(seg.lang.as_str()).copied().unwrap_or("af_heart");
+            let text = preprocess_text(&seg.text, &seg.lang);
 
-            let b64 = f32_to_wav_base64(&all_pcm, 24000);
-            return Ok(SynthesizeResponse {
-                audio_base64: format!("data:audio/wav;base64,{}", b64),
-                sample_rate: 24000,
-                duration_ms: (all_pcm.len() as u64 * 1000) / 24000,
+            // Phonemize per-segment
+            let tokens = phonemizer::text_to_tokens(&text, &seg.lang).unwrap_or_else(|e| {
+                log::warn!("Phonemization failed for segment: {}", e);
+                vec![0; text.len().max(1)]
             });
+            let style = kokoro::get_voice_style(_voice, tokens.len()).unwrap_or_else(|e| {
+                log::warn!("[TTS-multi] Voice style failed ({}), using zeros", e);
+                vec![0.0f32; 256]
+            });
+
+            let input_values = ort::inputs![
+                "tokens" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(tokens.clone()).into_shape_with_order((1, tokens.len())).unwrap()).unwrap(),
+                "style" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(style).into_shape_with_order((1, 256)).unwrap()).unwrap(),
+                "speed" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(vec![request.speed])).unwrap(),
+            ];
+
+            let mut session_lock = session.lock().unwrap();
+            let outputs = session_lock
+                .run(input_values)
+                .map_err(|e| format!("ORT Run error: {}", e))?;
+            let audio_tensor = outputs["audio"]
+                .try_extract_tensor::<f32>()
+                .map_err(|e| format!("Tensor error: {}", e))?;
+            let pcm_f32: Vec<f32> = audio_tensor.1.to_vec();
+
+            all_pcm.extend_from_slice(&pcm_f32);
+
+            // 300ms silence
+            all_pcm.extend(vec![0.0f32; (24000.0 * 0.3) as usize]);
         }
 
-        #[cfg(not(feature = "native_ml"))]
-        {
-            log::debug!("TTS multi-synth stub: {} segments", request.segments.len());
-            Ok(SynthesizeResponse {
-                audio_base64: String::new(),
-                sample_rate: 24000,
-                duration_ms: 0,
-            })
-        }
+        let b64 = f32_to_wav_base64(&all_pcm, 24000);
+        Ok(SynthesizeResponse {
+            audio_base64: format!("data:audio/wav;base64,{}", b64),
+            sample_rate: 24000,
+            duration_ms: (all_pcm.len() as u64 * 1000) / 24000,
+        })
     })();
 
     TTS_BUSY.store(false, Ordering::SeqCst);
@@ -213,15 +229,11 @@ pub fn tts_synthesize_multi(request: MultiSynthRequest) -> Result<SynthesizeResp
 /// Preprocess text for TTS — handles Japanese romaji conversion.
 /// Direct translation of `_to_romaji()` and `_preprocess()` from tts.py.
 fn preprocess_text(text: &str, lang: &str) -> String {
-    let mut processed = text.to_string();
-
-    // Japanese: convert katakana to romaji for Kokoro
-    // (Kokoro handles romaji better than raw katakana/hiragana)
-    if lang == "ja" {
-        // TODO: Full romaji conversion using a library like kakasi or wana_kana
-        // For now, pass through — the model handles basic Japanese
-        log::debug!("Japanese text preprocessing (romaji conversion pending)");
-    }
+    let mut processed = if lang == "ja" {
+        katakana_to_romaji(text)
+    } else {
+        text.to_string()
+    };
 
     // Trim to max 1000 chars per segment (Kokoro limit)
     if processed.len() > 1000 {
@@ -231,10 +243,179 @@ fn preprocess_text(text: &str, lang: &str) -> String {
     processed
 }
 
-#[cfg(feature = "native_ml")]
+/// Convert katakana to romaji for Kokoro TTS.
+/// Direct port of `_KATA` lookup table + `_kata_to_romaji()` from tts.py.
+fn katakana_to_romaji(text: &str) -> String {
+    let chars: Vec<char> = text.chars().collect();
+    let mut result = String::with_capacity(text.len());
+    let mut i = 0;
+
+    while i < chars.len() {
+        // Try two-char combo first (キャ, シャ, etc.)
+        if i + 1 < chars.len() {
+            let two: String = chars[i..=i + 1].iter().collect();
+            if let Some(rom) = kata_lookup(&two) {
+                result.push_str(rom);
+                i += 2;
+                continue;
+            }
+        }
+
+        // Single-char lookup
+        let one = chars[i].to_string();
+        if let Some(rom) = kata_lookup(&one) {
+            // Gemination: ッ doubles the next consonant
+            if chars[i] == 'ッ' && i + 1 < chars.len() {
+                let next = chars[i + 1].to_string();
+                if let Some(nxt) = kata_lookup(&next) {
+                    if let Some(c) = nxt.chars().next() {
+                        result.push(c);
+                    }
+                }
+            } else {
+                result.push_str(rom);
+            }
+            i += 1;
+        } else {
+            // Pass through non-katakana (kanji, latin, punctuation)
+            result.push(chars[i]);
+            i += 1;
+        }
+    }
+
+    result
+}
+
+/// Katakana → romaji lookup. Port of Python `_KATA` dict from tts.py.
+fn kata_lookup(s: &str) -> Option<&'static str> {
+    match s {
+        // Combo mora (must be checked before singles)
+        "キャ" => Some("kya"),
+        "キュ" => Some("kyu"),
+        "キョ" => Some("kyo"),
+        "シャ" => Some("sha"),
+        "シュ" => Some("shu"),
+        "ショ" => Some("sho"),
+        "チャ" => Some("cha"),
+        "チュ" => Some("chu"),
+        "チョ" => Some("cho"),
+        "ニャ" => Some("nya"),
+        "ニュ" => Some("nyu"),
+        "ニョ" => Some("nyo"),
+        "ヒャ" => Some("hya"),
+        "ヒュ" => Some("hyu"),
+        "ヒョ" => Some("hyo"),
+        "ミャ" => Some("mya"),
+        "ミュ" => Some("myu"),
+        "ミョ" => Some("myo"),
+        "リャ" => Some("rya"),
+        "リュ" => Some("ryu"),
+        "リョ" => Some("ryo"),
+        "ギャ" => Some("gya"),
+        "ギュ" => Some("gyu"),
+        "ギョ" => Some("gyo"),
+        "ジャ" => Some("ja"),
+        "ジュ" => Some("ju"),
+        "ジョ" => Some("jo"),
+        "ビャ" => Some("bya"),
+        "ビュ" => Some("byu"),
+        "ビョ" => Some("byo"),
+        "ピャ" => Some("pya"),
+        "ピュ" => Some("pyu"),
+        "ピョ" => Some("pyo"),
+        // Vowels
+        "ア" => Some("a"),
+        "イ" => Some("i"),
+        "ウ" => Some("u"),
+        "エ" => Some("e"),
+        "オ" => Some("o"),
+        // K-row
+        "カ" => Some("ka"),
+        "キ" => Some("ki"),
+        "ク" => Some("ku"),
+        "ケ" => Some("ke"),
+        "コ" => Some("ko"),
+        // S-row
+        "サ" => Some("sa"),
+        "シ" => Some("shi"),
+        "ス" => Some("su"),
+        "セ" => Some("se"),
+        "ソ" => Some("so"),
+        // T-row
+        "タ" => Some("ta"),
+        "チ" => Some("chi"),
+        "ツ" => Some("tsu"),
+        "テ" => Some("te"),
+        "ト" => Some("to"),
+        // N-row
+        "ナ" => Some("na"),
+        "ニ" => Some("ni"),
+        "ヌ" => Some("nu"),
+        "ネ" => Some("ne"),
+        "ノ" => Some("no"),
+        // H-row
+        "ハ" => Some("ha"),
+        "ヒ" => Some("hi"),
+        "フ" => Some("fu"),
+        "ヘ" => Some("he"),
+        "ホ" => Some("ho"),
+        // M-row
+        "マ" => Some("ma"),
+        "ミ" => Some("mi"),
+        "ム" => Some("mu"),
+        "メ" => Some("me"),
+        "モ" => Some("mo"),
+        // Y-row
+        "ヤ" => Some("ya"),
+        "ユ" => Some("yu"),
+        "ヨ" => Some("yo"),
+        // R-row
+        "ラ" => Some("ra"),
+        "リ" => Some("ri"),
+        "ル" => Some("ru"),
+        "レ" => Some("re"),
+        "ロ" => Some("ro"),
+        // W-row + N
+        "ワ" => Some("wa"),
+        "ヲ" => Some("wo"),
+        "ン" => Some("n"),
+        // Dakuten (voiced)
+        "ガ" => Some("ga"),
+        "ギ" => Some("gi"),
+        "グ" => Some("gu"),
+        "ゲ" => Some("ge"),
+        "ゴ" => Some("go"),
+        "ザ" => Some("za"),
+        "ジ" => Some("ji"),
+        "ズ" => Some("zu"),
+        "ゼ" => Some("ze"),
+        "ゾ" => Some("zo"),
+        "ダ" => Some("da"),
+        "ヂ" => Some("di"),
+        "ヅ" => Some("du"),
+        "デ" => Some("de"),
+        "ド" => Some("do"),
+        "バ" => Some("ba"),
+        "ビ" => Some("bi"),
+        "ブ" => Some("bu"),
+        "ベ" => Some("be"),
+        "ボ" => Some("bo"),
+        // Handakuten (p-row)
+        "パ" => Some("pa"),
+        "ピ" => Some("pi"),
+        "プ" => Some("pu"),
+        "ペ" => Some("pe"),
+        "ポ" => Some("po"),
+        // Special
+        "ッ" => Some(""), // gemination handled in caller
+        "ー" => Some(""), // long vowel mark — skip
+        _ => None,
+    }
+}
+
 fn f32_to_wav_base64(pcm: &[f32], sample_rate: u32) -> String {
     use base64::Engine;
-    
+
     let mut buf = Vec::new();
     let audio_len = pcm.len() * 2;
     buf.extend_from_slice(b"RIFF");
@@ -242,11 +423,11 @@ fn f32_to_wav_base64(pcm: &[f32], sample_rate: u32) -> String {
     buf.extend_from_slice(b"WAVE");
     buf.extend_from_slice(b"fmt ");
     buf.extend_from_slice(&16u32.to_le_bytes()); // Subchunk1Size
-    buf.extend_from_slice(&1u16.to_le_bytes());  // AudioFormat (PCM)
-    buf.extend_from_slice(&1u16.to_le_bytes());  // NumChannels (1)
+    buf.extend_from_slice(&1u16.to_le_bytes()); // AudioFormat (PCM)
+    buf.extend_from_slice(&1u16.to_le_bytes()); // NumChannels (1)
     buf.extend_from_slice(&sample_rate.to_le_bytes()); // SampleRate
     buf.extend_from_slice(&(sample_rate * 2).to_le_bytes()); // ByteRate
-    buf.extend_from_slice(&2u16.to_le_bytes());  // BlockAlign
+    buf.extend_from_slice(&2u16.to_le_bytes()); // BlockAlign
     buf.extend_from_slice(&16u16.to_le_bytes()); // BitsPerSample
     buf.extend_from_slice(b"data");
     buf.extend_from_slice(&(audio_len as u32).to_le_bytes());

@@ -11,6 +11,7 @@ use serde_json::Value;
 use std::sync::atomic::{AtomicBool, Ordering};
 
 static INFERENCE_BUSY: AtomicBool = AtomicBool::new(false);
+static STOP_REQUESTED: AtomicBool = AtomicBool::new(false);
 
 #[derive(Debug, Deserialize)]
 pub struct InferenceRequest {
@@ -27,8 +28,12 @@ pub struct InferenceRequest {
     pub stream: bool,
 }
 
-fn default_max_tokens() -> u32 { 2048 }
-fn default_temperature() -> f32 { 0.7 }
+fn default_max_tokens() -> u32 {
+    2048
+}
+fn default_temperature() -> f32 {
+    0.7
+}
 
 #[derive(Debug, Serialize)]
 pub struct InferenceResponse {
@@ -45,9 +50,11 @@ fn build_prompt(req: &InferenceRequest) -> String {
         match req.persona.as_str() {
             "medic" => "You are an experienced combat medic assistant. Provide clear, \
                         evidence-based medical guidance for field triage situations. \
-                        Be concise and prioritize life-saving actions.".to_string(),
+                        Be concise and prioritize life-saving actions."
+                .to_string(),
             "translator" => "You are a medical translation assistant. Accurately translate \
-                           medical terminology while preserving clinical meaning.".to_string(),
+                           medical terminology while preserving clinical meaning."
+                .to_string(),
             _ => String::new(),
         }
     } else {
@@ -57,7 +64,10 @@ fn build_prompt(req: &InferenceRequest) -> String {
     if system.is_empty() {
         req.prompt.clone()
     } else {
-        format!("[INST] <<SYS>>\n{}\n<</SYS>>\n\n{} [/INST]", system, req.prompt)
+        format!(
+            "[INST] <<SYS>>\n{}\n<</SYS>>\n\n{} [/INST]",
+            system, req.prompt
+        )
     }
 }
 
@@ -86,12 +96,21 @@ pub fn inference_queue_status() -> Value {
     })
 }
 
+/// Stop a running inference.
+#[tauri::command]
+pub fn inference_stop() -> Value {
+    STOP_REQUESTED.store(true, Ordering::SeqCst);
+    log::info!("Inference stop requested");
+    serde_json::json!({ "stopped": true })
+}
+
 /// One-shot inference (non-streaming).
 #[tauri::command]
 pub fn inference_complete(request: InferenceRequest) -> Result<InferenceResponse, String> {
     if INFERENCE_BUSY.swap(true, Ordering::SeqCst) {
         return Err("Inference engine is busy. Please wait.".to_string());
     }
+    STOP_REQUESTED.store(false, Ordering::SeqCst);
 
     let result = (|| {
         let model_path = llm::ensure_loaded()?;
@@ -103,61 +122,59 @@ pub fn inference_complete(request: InferenceRequest) -> Result<InferenceResponse
             .unwrap_or("unknown")
             .to_string();
 
-        #[cfg(feature = "native_ml")]
-        {
-            let m = llm::get_model()?;
-            let backend = llm::LLAMA_BACKEND.get().ok_or("Llama Backend missing")?;
-            let mut ctx_params = llama_cpp_2::context::params::LlamaContextParams::default();
-            ctx_params = ctx_params.with_n_ctx(Some(std::num::NonZeroU32::new(8192).unwrap()));
-            let mut ctx = m.new_context(backend, ctx_params).map_err(|e| format!("Ctx err: {}", e))?;
-            
-            let tokens_list = m.str_to_token(&full_prompt, llama_cpp_2::model::AddBos::Always)
-                .map_err(|e| format!("Tokenize err: {}", e))?;
-            
-            let mut batch = llama_cpp_2::llama_batch::LlamaBatch::new(512, 1);
-            let last_index = tokens_list.len() - 1;
-            for (i, token) in tokens_list.into_iter().enumerate() {
-                let is_last = i == last_index;
-                batch.add(token, i as i32, &[0], is_last).unwrap();
+        let m = llm::get_model()?;
+        let backend = llm::LLAMA_BACKEND.get().ok_or("Llama Backend missing")?;
+        let mut ctx_params = llama_cpp_2::context::params::LlamaContextParams::default();
+        ctx_params = ctx_params.with_n_ctx(Some(std::num::NonZeroU32::new(8192).unwrap()));
+        let mut ctx = m
+            .new_context(backend, ctx_params)
+            .map_err(|e| format!("Ctx err: {}", e))?;
+
+        let tokens_list = m
+            .str_to_token(&full_prompt, llama_cpp_2::model::AddBos::Always)
+            .map_err(|e| format!("Tokenize err: {}", e))?;
+
+        let mut batch = llama_cpp_2::llama_batch::LlamaBatch::new(512, 1);
+        let last_index = tokens_list.len() - 1;
+        for (i, token) in tokens_list.into_iter().enumerate() {
+            let is_last = i == last_index;
+            batch.add(token, i as i32, &[0], is_last).unwrap();
+        }
+        ctx.decode(&mut batch)
+            .map_err(|e| format!("Decode err: {}", e))?;
+
+        let mut n_cur = batch.n_tokens();
+        let mut result_text = String::new();
+        let mut decoder = encoding_rs::UTF_8.new_decoder();
+
+        while n_cur <= request.max_tokens as i32 {
+            if STOP_REQUESTED.load(Ordering::Relaxed) {
+                log::info!("Inference stopped by user");
+                break;
             }
-            ctx.decode(&mut batch).map_err(|e| format!("Decode err: {}", e))?;
-            
-            let mut n_cur = batch.n_tokens();
-            let mut result_text = String::new();
-            let mut decoder = encoding_rs::UTF_8.new_decoder();
-            
-            while n_cur <= request.max_tokens as i32 {
-                let mut sampler = llama_cpp_2::sampling::LlamaSampler::greedy();
-                let new_token_id = sampler.sample(&ctx, batch.n_tokens() - 1);
-                
-                if new_token_id == m.token_eos() { break; }
-                
-                if let Ok(piece) = m.token_to_piece(new_token_id, &mut decoder, true, None) {
-                    result_text.push_str(&piece);
-                }
-                
-                batch.clear();
-                batch.add(new_token_id, n_cur, &[0], true).unwrap();
-                ctx.decode(&mut batch).map_err(|e| format!("Ctx error: {}", e))?;
-                n_cur += 1;
+            let mut sampler = llama_cpp_2::sampling::LlamaSampler::greedy();
+            let new_token_id = sampler.sample(&ctx, batch.n_tokens() - 1);
+
+            if new_token_id == m.token_eos() {
+                break;
             }
-            
-            return Ok(InferenceResponse {
-                text: result_text,
-                tokens_generated: n_cur as u32,
-                model: model_name,
-            });
+
+            if let Ok(piece) = m.token_to_piece(new_token_id, &mut decoder, true, None) {
+                result_text.push_str(&piece);
+            }
+
+            batch.clear();
+            batch.add(new_token_id, n_cur, &[0], true).unwrap();
+            ctx.decode(&mut batch)
+                .map_err(|e| format!("Ctx error: {}", e))?;
+            n_cur += 1;
         }
 
-        #[cfg(not(feature = "native_ml"))]
-        {
-            log::debug!("Inference stub for prompt: {}...", &full_prompt[..full_prompt.len().min(100)]);
-            Ok(InferenceResponse {
-                text: "[Inference engine not yet connected — compile with --features native_ml]".to_string(),
-                tokens_generated: 0,
-                model: model_name,
-            })
-        }
+        Ok(InferenceResponse {
+            text: result_text,
+            tokens_generated: n_cur as u32,
+            model: model_name,
+        })
     })();
 
     INFERENCE_BUSY.store(false, Ordering::SeqCst);
@@ -176,6 +193,7 @@ pub async fn inference_stream(
     if INFERENCE_BUSY.swap(true, Ordering::SeqCst) {
         return Err("Inference engine is busy".to_string());
     }
+    STOP_REQUESTED.store(false, Ordering::SeqCst);
 
     let model_path = llm::ensure_loaded()?;
     let full_prompt = build_prompt(&request);
@@ -185,55 +203,61 @@ pub async fn inference_stream(
         .unwrap_or("unknown")
         .to_string();
 
-    #[cfg(feature = "native_ml")]
-    {
-        let m = llm::get_model()?;
-        let backend = llm::LLAMA_BACKEND.get().ok_or("Llama Backend missing")?;
-        let mut ctx_params = llama_cpp_2::context::params::LlamaContextParams::default();
-        ctx_params = ctx_params.with_n_ctx(Some(std::num::NonZeroU32::new(8192).unwrap()));
-        let mut ctx = m.new_context(backend, ctx_params).map_err(|e| format!("Ctx error: {}", e))?;
-        
-        let tokens_list = m.str_to_token(&full_prompt, llama_cpp_2::model::AddBos::Always)
-            .map_err(|e| format!("Tokenize err: {}", e))?;
-            
-        let mut batch = llama_cpp_2::llama_batch::LlamaBatch::new(512, 1);
-        let last_index = tokens_list.len() - 1;
-        for (i, token) in tokens_list.into_iter().enumerate() {
-            let is_last = i == last_index;
-            batch.add(token, i as i32, &[0], is_last).unwrap();
+    let m = llm::get_model()?;
+    let backend = llm::LLAMA_BACKEND.get().ok_or("Llama Backend missing")?;
+    let mut ctx_params = llama_cpp_2::context::params::LlamaContextParams::default();
+    ctx_params = ctx_params.with_n_ctx(Some(std::num::NonZeroU32::new(8192).unwrap()));
+    let mut ctx = m
+        .new_context(backend, ctx_params)
+        .map_err(|e| format!("Ctx error: {}", e))?;
+
+    let tokens_list = m
+        .str_to_token(&full_prompt, llama_cpp_2::model::AddBos::Always)
+        .map_err(|e| format!("Tokenize err: {}", e))?;
+
+    let mut batch = llama_cpp_2::llama_batch::LlamaBatch::new(512, 1);
+    let last_index = tokens_list.len() - 1;
+    for (i, token) in tokens_list.into_iter().enumerate() {
+        let is_last = i == last_index;
+        batch.add(token, i as i32, &[0], is_last).unwrap();
+    }
+    ctx.decode(&mut batch)
+        .map_err(|e| format!("Decode err: {}", e))?;
+
+    let mut n_cur = batch.n_tokens();
+    let mut decoder = encoding_rs::UTF_8.new_decoder();
+
+    while n_cur <= request.max_tokens as i32 {
+        if STOP_REQUESTED.load(Ordering::Relaxed) {
+            log::info!("Streaming inference stopped by user");
+            break;
         }
-        ctx.decode(&mut batch).map_err(|e| format!("Decode err: {}", e))?;
-        
-        let mut n_cur = batch.n_tokens();
-        let mut decoder = encoding_rs::UTF_8.new_decoder();
-        
-        while n_cur <= request.max_tokens as i32 {
-            let mut sampler = llama_cpp_2::sampling::LlamaSampler::greedy();
-            let new_token_id = sampler.sample(&ctx, batch.n_tokens() - 1);
-            
-            if new_token_id == m.token_eos() { break; }
-            
-            if let Ok(piece) = m.token_to_piece(new_token_id, &mut decoder, true, None) {
-                let _ = app.emit("inference-token", serde_json::json!({"token": piece}));
-            }
-            
-            batch.clear();
-            batch.add(new_token_id, n_cur, &[0], true).unwrap();
-            ctx.decode(&mut batch).map_err(|e| format!("Ctx error: {}", e))?;
-            n_cur += 1;
+        let mut sampler = llama_cpp_2::sampling::LlamaSampler::greedy();
+        let new_token_id = sampler.sample(&ctx, batch.n_tokens() - 1);
+
+        if new_token_id == m.token_eos() {
+            break;
         }
+
+        if let Ok(piece) = m.token_to_piece(new_token_id, &mut decoder, true, None) {
+            let _ = app.emit("inference-token", serde_json::json!({"token": piece}));
+        }
+
+        batch.clear();
+        batch.add(new_token_id, n_cur, &[0], true).unwrap();
+        ctx.decode(&mut batch)
+            .map_err(|e| format!("Ctx error: {}", e))?;
+        n_cur += 1;
     }
 
-    #[cfg(not(feature = "native_ml"))]
-    {
-        // Emit completion signal directly if stubbed
-    }
-
-    let _ = app.emit("inference-token", serde_json::json!({
-        "token": "",
-        "done": true,
-        "model": model_name,
-    }));
+    let _ = app.emit(
+        "inference-token",
+        serde_json::json!({
+            "token": "",
+            "done": true,
+            "model": model_name,
+        }),
+    );
 
     INFERENCE_BUSY.store(false, Ordering::SeqCst);
 

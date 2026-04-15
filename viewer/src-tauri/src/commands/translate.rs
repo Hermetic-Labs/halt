@@ -26,7 +26,9 @@ pub struct BatchTranslateRequest {
     pub target: String,
 }
 
-fn default_source() -> String { "en".to_string() }
+fn default_source() -> String {
+    "en".to_string()
+}
 
 #[derive(Debug, Serialize)]
 pub struct TranslateResponse {
@@ -61,9 +63,26 @@ pub fn translate_text(request: TranslateRequest) -> Result<TranslateResponse, St
 
 #[tauri::command]
 pub fn translate_batch(request: BatchTranslateRequest) -> Result<BatchTranslateResponse, String> {
-    let translations: Vec<String> = request.texts.iter()
-        .map(|t| nllb::translate(t, &request.source, &request.target))
-        .collect();
+    let translations: Vec<String> = {
+        #[cfg(feature = "native_ml")]
+        {
+            use rayon::prelude::*;
+            request
+                .texts
+                .par_iter()
+                .map(|t| nllb::translate(t, &request.source, &request.target))
+                .collect()
+        }
+
+        #[cfg(not(feature = "native_ml"))]
+        {
+            request
+                .texts
+                .iter()
+                .map(|t| nllb::translate(t, &request.source, &request.target))
+                .collect()
+        }
+    };
 
     Ok(BatchTranslateResponse {
         translations,

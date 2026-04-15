@@ -6,6 +6,7 @@ import { useMemo, useState, useEffect } from 'react';
 import { useT } from '../../services/i18n';
 import { ROLE_COLORS } from '../../types/comms';
 import type { RosterMember, ChatMsg } from '../../types/comms';
+import { translateText } from '../../services/api';
 
 // Module-level cache so thread preview translations persist across re-renders
 const _threadPreviewCache = new Map<string, string>();
@@ -91,15 +92,10 @@ export default function ThreadList({ activeThread, roster, messages, userName, o
         const toTranslate = threads.filter(th => th.lastMessage && !_threadPreviewCache.has(`${th.id}:${lang}:${th.lastMessage}`));
         for (const th of toTranslate) {
             const cacheKey = `${th.id}:${lang}:${th.lastMessage}`;
-            fetch('/api/translate', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ text: th.lastMessage, source: 'en', target: lang }),
-            })
-                .then(r => r.ok ? r.json() : null)
+            translateText(th.lastMessage!, 'en', lang)
                 .then(d => {
                     if (cancelled || !d) return;
-                    const translated = d.translated || d.text || '';
+                    const translated = d.translated || '';
                     if (translated && translated !== th.lastMessage) {
                         _threadPreviewCache.set(cacheKey, translated);
                         setTranslationTick(n => n + 1);

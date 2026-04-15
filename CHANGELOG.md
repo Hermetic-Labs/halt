@@ -4,6 +4,45 @@ All notable changes to HALT will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] — 2026-04-15
+
+### Single Binary Architecture — Python Sidecar Eliminated 🦀
+
+HALT is now a **fully self-contained Rust binary**. The Python FastAPI sidecar, its runtime, and all pip dependencies have been removed. The app launches instantly with zero external dependencies, enabling true air-gapped deployment on any platform including iOS.
+
+### Added
+
+- **Native Phonemizer** (`models/phonemizer.rs`) — espeak-ng subprocess produces IPA phonemes, mapped to Kokoro's 178-token vocabulary. Replaces the Python `phonemizer` library for TTS preprocessing
+- **Audio Decoder** (`commands/stt.rs`) — `symphonia`-based decode pipeline handles WebM/Opus, WAV, OGG, and MP3 natively. Auto-resamples to 16kHz mono for Whisper compatibility
+- **Japanese Romaji** (`commands/tts.rs`) — 105-entry katakana→romaji lookup table ported from Python for native Japanese TTS
+- **Batch Parallelism** (`commands/translate.rs`) — `rayon` `par_iter` for multi-language batch translation
+- **Mesh WebSocket Server** (`mesh/ws_listener.rs`) — `tokio-tungstenite` listener on port 7778. Full message router: ping/pong, set_name, patient sync, call signaling, WebRTC relay, stale client eviction
+- **HTTP REST Server** (`http_server.rs`) — `axum` server on port 7779 with 25+ endpoints wrapping existing Tauri commands. CORS enabled for cross-origin field devices (iPads/phones)
+
+### Removed
+
+- **Python FastAPI sidecar** — `api/` directory archived to `legacy/api/` (gitignored)
+- **Python sidecar spawn** — `lib.rs` no longer shells out to `python start.py`
+- **BackendProcess exit handler** — no more `taskkill` process tree cleanup
+- **Runtime dependencies** — Python 3.x, uvicorn, FastAPI, pip packages all eliminated
+
+### Changed
+
+- Version bumped to 1.1.0 (Cargo.toml + tauri.conf.json)
+- `futures-util` promoted from optional to always-on dependency (used by WS server)
+- `.gitignore` updated: `legacy/` added
+
+### Dependencies Added
+
+- `tokio` 1.x (async runtime, net, sync, time)
+- `tokio-tungstenite` 0.24 (WebSocket server)
+- `axum` 0.8 (HTTP framework)
+- `tower-http` 0.6 (CORS, static file serving)
+- `rayon` 1.10 (parallel iteration — feature-gated)
+- `symphonia` 0.5 (audio codec — feature-gated)
+
+---
+
 ## [1.0.8] — 2026-04-15
 
 ### Microsoft Store Launch 🏪
