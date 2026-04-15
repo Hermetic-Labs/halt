@@ -12,6 +12,7 @@
 //!   2. English bridge (if source isn't English)
 //!   3. Target language (receiver's configured language)
 
+use crate::mesh::ws_listener;
 use crate::storage;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
@@ -122,8 +123,8 @@ pub fn mesh_emergency(req: EmergencyRequest) -> Result<Value, String> {
     });
     append_to_chat(chat_msg);
 
-    // TODO: Broadcast to all connected WebSocket clients
-    // server::broadcast(payload.clone());
+    // Broadcast to all connected WebSocket clients
+    ws_listener::broadcast_message(payload.clone());
 
     log::warn!(
         "🚨 EMERGENCY broadcast: {} bed {} — {}",
@@ -153,8 +154,8 @@ pub fn mesh_alert(req: AlertRequest) -> Result<Value, String> {
     });
     append_to_chat(chat_msg);
 
-    // TODO: Broadcast to all connected WebSocket clients
-    // server::broadcast(payload.clone());
+    // Broadcast to all connected WebSocket clients
+    ws_listener::broadcast_message(payload.clone());
 
     Ok(payload)
 }
@@ -198,8 +199,8 @@ pub fn mesh_announcement(req: AnnouncementRequest) -> Result<Value, String> {
     });
     append_to_chat(chat_msg);
 
-    // TODO: Broadcast to all connected WebSocket clients
-    // server::broadcast(payload.clone());
+    // Broadcast to all connected WebSocket clients
+    ws_listener::broadcast_message(payload.clone());
 
     log::info!("📢 Announcement broadcast: {}", req.message);
 

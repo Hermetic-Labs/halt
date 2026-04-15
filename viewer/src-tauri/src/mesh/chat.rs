@@ -104,8 +104,9 @@ pub fn send_chat(mut msg: ChatMessage) -> Result<ChatMessage, String> {
     messages.push(msg_val);
     save_chat(&messages)?;
 
-    // TODO(Layer 4 wiring): broadcast to all connected WebSocket clients
-    // server::broadcast(serde_json::json!({ "type": "chat", "message": msg }));
+    // Broadcast to all connected WebSocket clients
+    let broadcast_payload = serde_json::json!({ "type": "chat", "sender_name": msg.sender_name, "message": msg.message, "target_name": msg.target_name, "timestamp": msg.timestamp });
+    crate::mesh::ws_listener::broadcast_message(broadcast_payload);
 
     Ok(msg)
 }

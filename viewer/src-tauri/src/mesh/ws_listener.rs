@@ -27,6 +27,21 @@ type WsSender =
 /// Active WebSocket writers keyed by client_id.
 type WsClients = Arc<RwLock<HashMap<String, Arc<Mutex<WsSender>>>>>;
 
+/// Global reference to WsClients so alerts/chat can broadcast from Tauri commands.
+static GLOBAL_CLIENTS: std::sync::OnceLock<WsClients> = std::sync::OnceLock::new();
+
+/// Broadcast a JSON payload to all connected WebSocket clients.
+/// Safe to call from sync context — spawns the async send on the tokio runtime.
+pub fn broadcast_message(msg: Value) {
+    let Some(clients) = GLOBAL_CLIENTS.get().cloned() else { return };
+    // Use tokio::spawn to run the async broadcast from sync code
+    if let Ok(handle) = tokio::runtime::Handle::try_current() {
+        handle.spawn(async move {
+            broadcast(&clients, &msg, None).await;
+        });
+    }
+}
+
 /// Start the mesh WebSocket server on the given port.
 /// Called from lib.rs during app setup.
 pub async fn start(port: u16) {
@@ -41,6 +56,7 @@ pub async fn start(port: u16) {
     log::info!("Mesh WS server listening on ws://{}", addr);
 
     let clients: WsClients = Arc::new(RwLock::new(HashMap::new()));
+    let _ = GLOBAL_CLIENTS.set(clients.clone());
 
     // Spawn background stale eviction
     {
