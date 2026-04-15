@@ -551,7 +551,7 @@ export default function NetworkTab() {
                     closeBtn.onclick = (e) => { e.stopPropagation(); dismissOverlay(); };
                     banner.appendChild(closeBtn);
 
-                    const eAudioB64 = msg.audio_base64 ? String(msg.audio_base64) : undefined;
+                    const eAudioB64 = (msg.audio_base64 || msg.audio_b64) ? String(msg.audio_base64 || msg.audio_b64) : undefined;
 
                     overlay.appendChild(banner);
                     document.body.appendChild(overlay);
@@ -607,7 +607,7 @@ export default function NetworkTab() {
                     aCloseBtn.onclick = (ev) => { ev.stopPropagation(); dismissAOverlay(); };
                     aBanner.appendChild(aCloseBtn);
 
-                    const aAudioB64 = msg.audio_base64 ? String(msg.audio_base64) : undefined;
+                    const aAudioB64 = (msg.audio_base64 || msg.audio_b64) ? String(msg.audio_base64 || msg.audio_b64) : undefined;
 
                     aOverlay.appendChild(aBanner);
                     document.body.appendChild(aOverlay);
@@ -619,7 +619,7 @@ export default function NetworkTab() {
                 } else if (msg.type === 'broadcast_audio') {
                     // Server-synthesized TTS audio — play immediately on all devices
                     try {
-                        const audio = new Audio(`data:audio/wav;base64,${msg.audio_b64}`);
+                        const audio = new Audio(`data:audio/wav;base64,${msg.audio_base64 || msg.audio_b64}`);
                         audio.volume = 1.0;
                         audio.play().catch(() => {});
                     } catch { /* no audio support */ }
