@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.5-blue?style=flat-square" alt="Version" />
+  <img src="https://img.shields.io/badge/version-1.0.6-blue?style=flat-square" alt="Version" />
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License" />
   <img src="https://img.shields.io/badge/python-3.13-yellow?style=flat-square" alt="Python" />
   <img src="https://img.shields.io/badge/AI-100%25_Local-red?style=flat-square" alt="AI Local" />
@@ -24,7 +24,7 @@
 
 > *These places will be out of internet, out of power, and out of range, and still in pain. That's what we're solving.*
 
-HALT is an air-gapped medical triage system that runs entirely on-device. It bundles AI models for inference, text-to-speech, speech-to-text, and real-time translation across 200+ languages — no cloud connection required. Built for medics in conflict zones, disaster areas, and resource-limited settings where every second matters.
+HALT is an air-gapped medical triage system that runs entirely on-device. It bundles AI models for inference, text-to-speech, speech-to-text, and real-time translation across 41 languages — no cloud connection required. Built for medics in conflict zones, disaster areas, and resource-limited settings where every second matters.
 
 ---
 
@@ -133,13 +133,14 @@ python start.py              # Auto-downloads AI models on first run (~4 GB)
 
 | Directory | Contents |
 |:----------|:---------|
-| `api/` | FastAPI backend — 13 API routes, CORS open for mesh clients |
-| `viewer/` | Pre-built React PWA (served by the backend on `:7778`) |
-| `electron/` | Electron shell for desktop packaging |
+| `api/` | FastAPI backend — 15+ API routes, CORS open for mesh clients |
+| `viewer/` | React PWA + Tauri 2.0 native shell (served by backend on `:7778`) |
+| `viewer/src-tauri/` | Rust-based Tauri shell for native MSIX/macOS packaging |
 | `triage/` | Medical protocols, conditions, pharmacology, procedures (JSON) |
-| `models/` | AI models — downloaded via `dev/setup.py` |
+| `models/` | AI models — downloaded via `dev/setup.py` or in-app download |
 | `runtime/` | Portable Python 3.13 — downloaded via `dev/setup.py` |
-| `dev/` | Build scripts, installers, and deployment tooling |
+| `dev/` | Build scripts, locale sync, store listing tools, and deployment |
+| `site/` | Microsoft Store listing assets (41-language CSV + logos) |
 | `assets/` | Logo and branding |
 
 ---
@@ -165,8 +166,8 @@ git push origin v1.0.8
 
 | Artifact | Path |
 |:---------|:-----|
-| Portable app | `dev/electron-launcher/dist/win-unpacked/HALT - Medical Triage.exe` |
-| NSIS installer | `dev/electron-launcher/dist/HALT-Setup-X.X.X.exe` |
+| Windows MSIX | `viewer/src-tauri/target/release/bundle/msix/` |
+| Microsoft Store | Published via Partner Center (closed beta) |
 | Distribution ZIP | `builds/HALT-vX.X.X-Windows.zip` |
 
 ---
@@ -195,7 +196,7 @@ git push origin v1.0.8
 
 NLLB translation and Kokoro TTS still function for these languages — only the speech-to-text input is affected.
 
-**VAD (Voice Activity Detection):** Whisper's Silero VAD filter is enabled (`vad_filter=True`) for silence removal during transcription, but it operates **post-hoc** — the full audio recording is collected first, then processed as a batch. Real-time VAD-based chunking (streaming partial transcriptions while the user speaks) is not currently implemented. The user signals speech completion by tapping the mic button.
+**VAD (Voice Activity Detection):** HALT supports two translation input modes. **Speak mode** uses real-time client-side VAD via `AnalyserNode` — continuous 50ms volume polling with automatic silence detection (-45dBFS threshold, 800ms cutoff) that segments and sends audio to Whisper hands-free. **Stream mode** uses manual tap-to-talk where the user controls recording start/stop. Both modes feed into the same Whisper → NLLB → Kokoro pipeline.
 
 ---
 
@@ -203,10 +204,10 @@ NLLB translation and Kokoro TTS still function for these languages — only the 
 
 | Platform | Role | Status |
 |:---------|:-----|:------:|
-| **Windows** | Full server + Electron shell | ✅ Working |
-| **macOS** | Full server + native build | ✅ Planned |
+| **Windows** | Full server + Tauri 2.0 shell (Microsoft Store) | ✅ Working |
+| **macOS** | Full server + native Tauri build | 🚧 In progress |
 | **Raspberry Pi 5** | Kiosk server for field stations | ✅ Working |
-| **iOS** | Client (Capacitor companion + HealthKit) | ✅ Companion app |
+| **iOS** | Client (Capacitor companion + HealthKit) | 🚧 Companion app |
 | **Android / any device** | Client (open browser to server IP) | ✅ Browser PWA |
 
 ---

@@ -4,6 +4,35 @@ All notable changes to HALT will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.8] — 2026-04-15
+
+### Microsoft Store Launch 🏪
+
+Full i18n coverage, model safety gates, and Store listing localization for the public beta launch.
+
+### Added
+
+- **Model Preflight Check** — mesh creation now blocked if voice (Kokoro), stt (Whisper), or translation (NLLB) packs are not installed; graceful fallback for air-gap scenarios
+- **Board Translation Pipeline** — announcements and emergencies carry precomputed translations in all 41 languages; ChatMessage falls back to live NLLB for older messages
+- **Store Listing Sync** — `dev/sync_store_listing.py` translates all Partner Center listing fields into 41 languages via NLLB and outputs a CSV + per-locale asset folder for bulk import
+- **i18n Keys** — `comms.announcement_prefix`, `comms.emergency_prefix`, `comms.voice_call`, model check labels, TranslatorPanel strings all registered and synced to 41 locales
+- **OnboardingWizard** — first-run setup flow component
+- **SiteMap** — visual sitemap component
+
+### Changed
+
+- `ANNOUNCEMENT` / `EMERGENCY` prefixes now translate via static `t()` instead of hardcoded English
+- TranslatorPanel: 16 strings wired to i18n, footer disclaimer synced
+- README updated: version badge 1.0.6, Electron→Tauri references, platform statuses, directory table
+- Root utility scripts (`clean_r2.py`, `list_r2.py`, `pack_models.py`) moved to `dev/`
+
+### Fixed
+
+- `bn.json` locale corruption (trailing comma causing JSON parse failure)
+- React Compiler ref error in useWebRTC (destructured to avoid direct ref return)
+- Replay buttons removed from announcement/emergency overlays (duplicate with board replay)
+- System messages (announcements/emergencies) now always translate even when sent by self
+
 ## [1.0.7] — 2026-04-13
 
 ### Architecture Overhaul: Native Tauri & Cloud CI 🚀
@@ -59,9 +88,7 @@ HALT has successfully graduated from its legacy Electron/Python scaffolding into
 ### Documented
 
 - Translation bridge known limitations: Amharic, Hausa, Kurdish not natively supported by Faster Whisper (auto-detect fallback)
-- VAD architecture: `vad_filter=True` operates post-hoc only; no real-time VAD-based chunking
-
-## [Unreleased]
+- VAD architecture: **Speak mode** uses real-time client-side VAD via `AnalyserNode` (50ms polling, -45dBFS threshold, 800ms silence cutoff) for automatic segment chunking. **Stream mode** uses manual tap-to-talk where the user controls recording start/stop.
 
 ## [1.0.5] — 2026-04-01
 

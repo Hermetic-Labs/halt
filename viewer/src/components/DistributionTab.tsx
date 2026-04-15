@@ -55,7 +55,7 @@ const PACK_META: Record<string, { label: string; icon: string; desc: string }> =
   },
 };
 
-const R2_BUCKET_URL = 'https://models.7hermeticloops.com'; // REPLACE with your pub-*.r2.dev link if it's not bound to this custom domain
+const R2_BUCKET_URL = 'https://pub-b841d8ac01084f8f822078f923a49a87.r2.dev';
 
 const DEFAULT_URLS: Record<string, string> = {
   voice: `${R2_BUCKET_URL}/voice.tar.gz`,
