@@ -34,7 +34,11 @@ export default function ChatMessage({ msg, isMe, roster, formatTime, allMessages
     const [showEmojis, setShowEmojis] = useState(false);
     const emojiRef = useRef<HTMLDivElement>(null);
     const [translatedText, setTranslatedText] = useState<string | null>(() => {
-        if (userLang === 'en' || isMe) return null;
+        const isSystem = msg.sender_role === 'system';
+        if (userLang === 'en' || (isMe && !isSystem)) return null;
+        // Use precomputed server-side translations first (announcements, emergencies, fan-out)
+        const precomputed = msg.translations?.[userLang];
+        if (precomputed) return precomputed;
         return _translationCache.get(`${msg.id}:${userLang}`) || null;
     });
 
@@ -42,9 +46,11 @@ export default function ChatMessage({ msg, isMe, roster, formatTime, allMessages
     const showCallActions = !isMe && msg.sender_role !== 'system';
 
     // Client-side translation: translate incoming messages when user's lang ≠ 'en'
-    const shouldTranslate = userLang !== 'en' && !isMe;
+    const shouldTranslate = userLang !== 'en' && (!isMe || msg.sender_role === 'system');
     useEffect(() => {
         if (!shouldTranslate) return;
+        // Skip if precomputed translations already available
+        if (msg.translations?.[userLang]) return;
         const cacheKey = `${msg.id}:${userLang}`;
         if (_translationCache.has(cacheKey)) return; // already initialised from cache
         let cancelled = false;
@@ -132,12 +138,22 @@ export default function ChatMessage({ msg, isMe, roster, formatTime, allMessages
                     border: `1px solid ${isMe ? '#3fb95033' : 'var(--border)'}`,
                     color: 'var(--text)', wordBreak: 'break-word',
                 }}>
-                    {translatedText ? (
-                        <>
-                            <div>{translatedText}</div>
-                            <div style={{ fontSize: 11, color: 'var(--text-faint)', marginTop: 4, fontStyle: 'italic', opacity: 0.6 }}>{msg.message}</div>
-                        </>
-                    ) : msg.message}
+                    {(() => {
+                        // Replace hardcoded English prefixes with i18n translations
+                        const localize = (text: string) => {
+                            if (text.startsWith('📢 ANNOUNCEMENT: '))
+                                return `📢 ${t('comms.announcement_prefix', 'ANNOUNCEMENT')}: ${text.slice('📢 ANNOUNCEMENT: '.length)}`;
+                            if (text.startsWith('🚨 EMERGENCY: '))
+                                return `🚨 ${t('comms.emergency_prefix', 'EMERGENCY')}: ${text.slice('🚨 EMERGENCY: '.length)}`;
+                            return text;
+                        };
+                        return translatedText ? (
+                            <>
+                                <div>{localize(translatedText)}</div>
+                                <div style={{ fontSize: 11, color: 'var(--text-faint)', marginTop: 4, fontStyle: 'italic', opacity: 0.6 }}>{msg.message}</div>
+                            </>
+                        ) : localize(msg.message);
+                    })()}
 
                     {/* Inline attachment */}
                     {msg.attachment_url && (() => {

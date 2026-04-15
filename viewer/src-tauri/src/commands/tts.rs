@@ -111,14 +111,15 @@ pub fn tts_synthesize(request: SynthesizeRequest) -> Result<SynthesizeResponse, 
             
             // Execute the ORT session
             let input_values = ort::inputs![
-                "tokens" => ndarray::Array1::from_vec(tokens.clone()).into_shape((1, tokens.len())).unwrap(),
-                "style" => ndarray::Array1::from_vec(style.clone()),
-                "speed" => ndarray::Array1::from_vec(vec![speed]),
-            ].map_err(|e| format!("ORT Input error: {}", e))?;
+                "tokens" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(tokens.clone()).into_shape_with_order((1, tokens.len())).unwrap()).unwrap(),
+                "style" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(style.clone())).unwrap(),
+                "speed" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(vec![speed])).unwrap(),
+            ];
             
+            let mut session = session.lock().unwrap();
             let outputs = session.run(input_values).map_err(|e| format!("ORT Run error: {}", e))?;
             let audio_tensor = outputs["audio"].try_extract_tensor::<f32>().map_err(|e| format!("Tensor error: {}", e))?;
-            let pcm_f32: Vec<f32> = audio_tensor.iter().copied().collect();
+            let pcm_f32: Vec<f32> = audio_tensor.1.iter().copied().collect();
             
             let b64 = f32_to_wav_base64(&pcm_f32, 24000);
             
@@ -170,14 +171,15 @@ pub fn tts_synthesize_multi(request: MultiSynthRequest) -> Result<SynthesizeResp
                 let style: Vec<f32> = vec![0.0; 256];
                 
                 let input_values = ort::inputs![
-                    "tokens" => ndarray::Array1::from_vec(tokens.clone()).into_shape((1, tokens.len())).unwrap(),
-                    "style" => ndarray::Array1::from_vec(style.clone()),
-                    "speed" => ndarray::Array1::from_vec(vec![request.speed]),
-                ].map_err(|e| format!("ORT Input error: {}", e))?;
+                    "tokens" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(tokens.clone()).into_shape_with_order((1, tokens.len())).unwrap()).unwrap(),
+                    "style" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(style.clone())).unwrap(),
+                    "speed" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(vec![request.speed])).unwrap(),
+                ];
                 
-                let outputs = session.run(input_values).map_err(|e| format!("ORT Run error: {}", e))?;
+                let mut session_lock = session.lock().unwrap();
+                let outputs = session_lock.run(input_values).map_err(|e| format!("ORT Run error: {}", e))?;
                 let audio_tensor = outputs["audio"].try_extract_tensor::<f32>().map_err(|e| format!("Tensor error: {}", e))?;
-                let pcm_f32: Vec<f32> = audio_tensor.iter().copied().collect();
+                let pcm_f32: Vec<f32> = audio_tensor.1.iter().copied().collect();
                 
                 all_pcm.extend_from_slice(&pcm_f32);
                 

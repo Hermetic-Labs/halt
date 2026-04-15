@@ -4,6 +4,7 @@
  */
 
 import { useState, useEffect, useRef, useCallback } from 'react';
+import SiteMap from './SiteMap';
 
 import { useT } from '../services/i18n';
 import { normalizeToEnglish } from '../services/i18nDynamic';
@@ -338,6 +339,7 @@ export default function NetworkTab() {
 
     // Connection state
     const [connected, setConnected] = useState(false);
+    const [showSiteMap, setShowSiteMap] = useState(false);
     const [clients, setClients] = useState<MeshClient[]>([]);
 
 
@@ -551,23 +553,7 @@ export default function NetworkTab() {
                     closeBtn.onclick = (e) => { e.stopPropagation(); dismissOverlay(); };
                     banner.appendChild(closeBtn);
 
-                    // 🔊 Replay button — replays the cached multi-language blob
                     const eAudioB64 = msg.audio_b64 ? String(msg.audio_b64) : undefined;
-                    if (eAudioB64) {
-                        const speakerBtn = document.createElement('button');
-                        speakerBtn.innerHTML = '🔊 Replay';
-                        speakerBtn.title = 'Replay announcement';
-                        speakerBtn.style.cssText = 'position:relative;margin-top:12px;padding:8px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.15);color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;';
-                        speakerBtn.onclick = async () => {
-                            speakerBtn.disabled = true;
-                            speakerBtn.innerHTML = '⏳';
-                            await playEmergencySequence(eAudioB64);
-                            speakerBtn.disabled = false;
-                            speakerBtn.innerHTML = '🔊 Replay';
-                        };
-                        banner.appendChild(document.createElement('br'));
-                        banner.appendChild(speakerBtn);
-                    }
 
                     overlay.appendChild(banner);
                     document.body.appendChild(overlay);
@@ -623,23 +609,7 @@ export default function NetworkTab() {
                     aCloseBtn.onclick = (ev) => { ev.stopPropagation(); dismissAOverlay(); };
                     aBanner.appendChild(aCloseBtn);
 
-                    // 🔊 Replay button — replays the cached multi-language blob
                     const aAudioB64 = msg.audio_b64 ? String(msg.audio_b64) : undefined;
-                    if (aAudioB64) {
-                        const aSpeakerBtn = document.createElement('button');
-                        aSpeakerBtn.innerHTML = '🔊 Replay';
-                        aSpeakerBtn.title = 'Replay announcement';
-                        aSpeakerBtn.style.cssText = 'position:relative;margin-top:12px;padding:8px 16px;border-radius:8px;border:1px solid rgba(0,0,0,0.2);background:rgba(0,0,0,0.1);color:#000;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;';
-                        aSpeakerBtn.onclick = async () => {
-                            aSpeakerBtn.disabled = true;
-                            aSpeakerBtn.innerHTML = '⏳';
-                            await playAnnouncementSequence(aAudioB64);
-                            aSpeakerBtn.disabled = false;
-                            aSpeakerBtn.innerHTML = '🔊 Replay';
-                        };
-                        aBanner.appendChild(document.createElement('br'));
-                        aBanner.appendChild(aSpeakerBtn);
-                    }
 
                     aOverlay.appendChild(aBanner);
                     document.body.appendChild(aOverlay);
@@ -857,8 +827,39 @@ export default function NetworkTab() {
 
     // ── Activate / Disconnect ────────────────────────────────────────────────
 
-    const handleActivate = (asLeader = false) => {
+    const handleActivate = async (asLeader = false) => {
         if (!userName.trim()) return;
+
+        // ── Model Preflight Check (leader only) ──────────────────────────
+        if (asLeader) {
+            try {
+                const res = await fetch('/api/distribution/status');
+                if (res.ok) {
+                    const data = await res.json();
+                    const packs = data.packs || {};
+                    const requiredPacks = ['voice', 'stt', 'translation'];
+                    const packLabels: Record<string, string> = {
+                        voice: t('network.model_voice', 'Voice (Kokoro TTS)'),
+                        stt: t('network.model_stt', 'Speech-to-Text (Whisper)'),
+                        translation: t('network.model_translation', 'Translation (NLLB)'),
+                    };
+                    const missing = requiredPacks.filter(p => !packs[p]?.installed);
+                    if (missing.length > 0) {
+                        const names = missing.map(p => packLabels[p] || p).join(', ');
+                        alert(
+                            `${t('network.models_required', 'Required AI models are not installed')}\n\n`
+                            + t('network.models_missing', 'The following model packs must be downloaded before starting a mesh: {packs}')
+                                .replace('{packs}', names)
+                        );
+                        return; // Block mesh creation
+                    }
+                }
+            } catch {
+                // API unreachable — allow activation (air-gap / offline scenario)
+                console.warn('[Mesh] Could not check model status — proceeding anyway');
+            }
+        }
+
         const cid = localStorage.getItem('eve-mesh-client-id') || `node-${Date.now().toString(36)}`;
         localStorage.setItem('eve-mesh-name', userName);
         localStorage.setItem('eve-mesh-role', userRole);
@@ -986,14 +987,14 @@ export default function NetworkTab() {
                         </select>
                     </div>
 
-                    {/* Two distinct paths */}
-                    <div style={{ display: 'flex', gap: 16, marginBottom: 16 }}>
+                    {/* Leader-only activation — clients must use QR scan */}
+                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}>
                         {/* Start Network (Leader) */}
                         <button
                             onClick={() => handleActivate(true)}
                             disabled={!userName.trim()}
                             style={{
-                                flex: 1, padding: '20px 16px', background: '#0d1f0d',
+                                width: '100%', maxWidth: 320, padding: '20px 16px', background: '#0d1f0d',
                                 border: '2px solid #3fb950', borderRadius: 12, color: '#3fb950',
                                 cursor: userName.trim() ? 'pointer' : 'not-allowed',
                                 opacity: userName.trim() ? 1 : 0.4,
@@ -1005,24 +1006,9 @@ export default function NetworkTab() {
                             <span style={{ fontSize: 14, fontWeight: 700 }}>{t('network.create_mesh', 'Create Mesh')}</span>
                             <span style={{ fontSize: 10, color: 'var(--text-faint)', textAlign: 'center' }}>{t('network.create_mesh_desc', 'Create a new mesh as the leader')}</span>
                         </button>
-
-                        {/* Join Nearby (Client) */}
-                        <button
-                            onClick={() => handleActivate(false)}
-                            disabled={!userName.trim()}
-                            style={{
-                                flex: 1, padding: '20px 16px', background: '#0d1a2d',
-                                border: '2px solid #3498db', borderRadius: 12, color: '#3498db',
-                                cursor: userName.trim() ? 'pointer' : 'not-allowed',
-                                opacity: userName.trim() ? 1 : 0.4,
-                                display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6,
-                                transition: 'all 0.2s',
-                            }}
-                        >
-                            <span style={{ fontSize: 24 }}>🔄</span>
-                            <span style={{ fontSize: 14, fontWeight: 700 }}>{t('network.join_mesh', 'Join Mesh')}</span>
-                            <span style={{ fontSize: 10, color: 'var(--text-faint)', textAlign: 'center' }}>{t('network.rejoin_mesh_desc', 'Rejoin an existing mesh')}</span>
-                        </button>
+                    </div>
+                    <div style={{ textAlign: 'center', fontSize: 11, color: 'var(--text-faint)', marginBottom: 8 }}>
+                        {t('network.qr_join_hint', 'Team members join by scanning a QR code from the leader\'s device')}
                     </div>
                     <div style={{ textAlign: 'center', marginTop: 24, fontSize: 11, color: 'var(--text-faint)' }}>{t('network.footer')}</div>
                 </div>
@@ -1064,6 +1050,9 @@ export default function NetworkTab() {
                     </div>
                 </div>
                 <div style={{ display: 'flex', gap: 8 }}>
+                    {mode === 'leader' && (
+                        <button className="if-toggle" onClick={() => setShowSiteMap(true)} style={{ background: '#0d1f0d', color: '#3fb950', borderColor: '#3fb95055' }}>🗺 Site Map</button>
+                    )}
                     <button className="if-toggle" onClick={handleDisconnect} style={{ color: '#e74c3c', borderColor: '#e74c3c55' }}>{t("network.disconnect")}</button>
                 </div>
             </div>
@@ -1073,6 +1062,17 @@ export default function NetworkTab() {
 
 
             {/* Single unified content area */}
+            {showSiteMap ? (
+                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 500 }}>
+                    <SiteMap
+                        isLeader={mode === 'leader'}
+                        clients={clients}
+                        roster={roster}
+                        leaderName={leaderName || userName}
+                        onClose={() => setShowSiteMap(false)}
+                    />
+                </div>
+            ) : (
             <div style={{ flex: 1, overflowY: 'auto', padding: 24, display: 'flex', flexDirection: 'column', gap: 16 }}>
 
 
@@ -1153,6 +1153,7 @@ export default function NetworkTab() {
                     </div>
                 )}
             </div>
+            )}
 
             {/* QR Modal */}
             {showQR && qrData && (
@@ -1166,7 +1167,21 @@ export default function NetworkTab() {
                             <div style={{ width: 220, height: 220, background: '#eee', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', borderRadius: 8, color: '#999' }}>{t('network.qr_unavailable')}</div>
                         )}
                         <div style={{ fontSize: 12, color: '#666', marginTop: 8, wordBreak: 'break-all' }}><strong>URL:</strong> {qrData.app_url}</div>
-                        <button onClick={() => setShowQR(false)} style={{ marginTop: 20, width: '100%', padding: 12, background: '#222', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer', fontWeight: 600 }}>{t('network.close')}</button>
+                        <div style={{ display: 'flex', gap: 8, marginTop: 20 }}>
+                            <button onClick={() => {
+                                const printWin = window.open('', '_blank', 'width=400,height=600');
+                                if (!printWin) return;
+                                printWin.document.write(`<!DOCTYPE html><html><head><title>QR - ${qrMemberName || 'Join'}</title><style>body{font-family:sans-serif;text-align:center;padding:40px}img{width:260px;height:260px}h2{margin:0 0 4px}p{color:#666;font-size:13px}small{color:#999;word-break:break-all;font-size:11px}</style></head><body>`);
+                                printWin.document.write(`<h2>${qrMemberName || 'Join Network'}</h2>`);
+                                if (qrMemberRole) printWin.document.write(`<p>Role: ${qrMemberRole.toUpperCase()}</p>`);
+                                if (qrData.qr_image) printWin.document.write(`<img src="${qrData.qr_image}" />`);
+                                printWin.document.write(`<br/><small>${qrData.app_url}</small>`);
+                                printWin.document.write(`</body></html>`);
+                                printWin.document.close();
+                                setTimeout(() => printWin.print(), 300);
+                            }} style={{ flex: 1, padding: 12, background: '#f5f5f5', color: '#333', border: '1px solid #ddd', borderRadius: 8, cursor: 'pointer', fontWeight: 600 }}>🖨 {t('network.print', 'Print')}</button>
+                            <button onClick={() => setShowQR(false)} style={{ flex: 1, padding: 12, background: '#222', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer', fontWeight: 600 }}>{t('network.close')}</button>
+                        </div>
                     </div>
                 </div>
             )}

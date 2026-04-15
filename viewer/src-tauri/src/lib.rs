@@ -1,3 +1,4 @@
+#![allow(dead_code, unused_variables, unused_imports, clippy::suspicious_double_ref_op)]
 mod config;
 mod storage;
 mod commands;
@@ -147,12 +148,65 @@ pub fn run() {
             {
                 if let Some(state) = app_handle.try_state::<BackendProcess>() {
                     let mut child_guard = state.0.lock().unwrap();
-                    if let Some(mut child) = child_guard.take() {
-                        let _ = child.kill();
+                    if let Some(child) = child_guard.take() {
+                        // On Windows, kill the entire process tree so uvicorn
+                        // workers don't survive as orphans holding ports.
+                        #[cfg(windows)]
+                        {
+                            let pid = child.id();
+                            let _ = std::process::Command::new("taskkill")
+                                .args(["/F", "/T", "/PID", &pid.to_string()])
+                                .output();
+                        }
+                        #[cfg(not(windows))]
+                        {
+                            let _ = child.kill();
+                        }
                     }
                 }
             }
         }
         _ => {}
     });
+}
+
+pub fn benchmark_llm() {
+    #[cfg(feature = "native_ml")]
+    {
+        println!("Starting Rust native_ml benchmark...");
+        let start = std::time::Instant::now();
+        match models::llm::ensure_loaded() {
+            Ok(_) => {
+                let load_time = start.elapsed().as_secs_f32();
+                println!("Model loaded in {:.2}s", load_time);
+                
+                let req = commands::inference::InferenceRequest {
+                    prompt: "What are the 5 phases of triage?".to_string(),
+                    system: "You are a combat medic. Keep it very short.".to_string(),
+                    max_tokens: 128,
+                    temperature: 0.1,
+                    persona: "".to_string(),
+                    stream: false,
+                };
+                
+                let inf_start = std::time::Instant::now();
+                match commands::inference::inference_complete(req) {
+                    Ok(res) => {
+                        let dur = inf_start.elapsed().as_secs_f32();
+                        let tps = res.tokens_generated as f32 / dur;
+                        println!("Generated {} tokens in {:.2}s ({:.2} tokens/sec)", res.tokens_generated, dur, tps);
+                        println!("Response: {}", res.text.trim());
+                    }
+                    Err(e) => println!("Inference failed: {}", e),
+                }
+            }
+            Err(e) => println!("Failed to load model: {}", e),
+        }
+        models::llm::unload();
+    }
+    #[cfg(not(feature = "native_ml"))]
+    {
+        println!("Rust native_ml is NOT enabled in this build.");
+        println!("Run with: cargo run --features native_ml -- --benchmark-llm");
+    }
 }

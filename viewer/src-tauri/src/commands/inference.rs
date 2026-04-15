@@ -109,7 +109,7 @@ pub fn inference_complete(request: InferenceRequest) -> Result<InferenceResponse
             let backend = llm::LLAMA_BACKEND.get().ok_or("Llama Backend missing")?;
             let mut ctx_params = llama_cpp_2::context::params::LlamaContextParams::default();
             ctx_params = ctx_params.with_n_ctx(Some(std::num::NonZeroU32::new(8192).unwrap()));
-            let mut ctx = m.create_context(backend, ctx_params).map_err(|e| format!("Ctx err: {}", e))?;
+            let mut ctx = m.new_context(backend, ctx_params).map_err(|e| format!("Ctx err: {}", e))?;
             
             let tokens_list = m.str_to_token(&full_prompt, llama_cpp_2::model::AddBos::Always)
                 .map_err(|e| format!("Tokenize err: {}", e))?;
@@ -124,15 +124,15 @@ pub fn inference_complete(request: InferenceRequest) -> Result<InferenceResponse
             
             let mut n_cur = batch.n_tokens();
             let mut result_text = String::new();
+            let mut decoder = encoding_rs::UTF_8.new_decoder();
             
             while n_cur <= request.max_tokens as i32 {
-                let candidates = ctx.candidates_ith(batch.n_tokens() - 1);
-                let candidates_p = llama_cpp_2::token::data_array::LlamaTokenDataArray::from_iter(candidates, false);
-                let new_token_id = ctx.sample_token_greedy(candidates_p);
+                let mut sampler = llama_cpp_2::sampling::LlamaSampler::greedy();
+                let new_token_id = sampler.sample(&ctx, batch.n_tokens() - 1);
                 
                 if new_token_id == m.token_eos() { break; }
                 
-                if let Ok(piece) = String::from_utf8(m.token_to_piece(new_token_id)) {
+                if let Ok(piece) = m.token_to_piece(new_token_id, &mut decoder, true, None) {
                     result_text.push_str(&piece);
                 }
                 
@@ -191,7 +191,7 @@ pub async fn inference_stream(
         let backend = llm::LLAMA_BACKEND.get().ok_or("Llama Backend missing")?;
         let mut ctx_params = llama_cpp_2::context::params::LlamaContextParams::default();
         ctx_params = ctx_params.with_n_ctx(Some(std::num::NonZeroU32::new(8192).unwrap()));
-        let mut ctx = m.create_context(backend, ctx_params).map_err(|e| format!("Ctx error: {}", e))?;
+        let mut ctx = m.new_context(backend, ctx_params).map_err(|e| format!("Ctx error: {}", e))?;
         
         let tokens_list = m.str_to_token(&full_prompt, llama_cpp_2::model::AddBos::Always)
             .map_err(|e| format!("Tokenize err: {}", e))?;
@@ -205,15 +205,15 @@ pub async fn inference_stream(
         ctx.decode(&mut batch).map_err(|e| format!("Decode err: {}", e))?;
         
         let mut n_cur = batch.n_tokens();
+        let mut decoder = encoding_rs::UTF_8.new_decoder();
         
         while n_cur <= request.max_tokens as i32 {
-            let candidates = ctx.candidates_ith(batch.n_tokens() - 1);
-            let candidates_p = llama_cpp_2::token::data_array::LlamaTokenDataArray::from_iter(candidates, false);
-            let new_token_id = ctx.sample_token_greedy(candidates_p);
+            let mut sampler = llama_cpp_2::sampling::LlamaSampler::greedy();
+            let new_token_id = sampler.sample(&ctx, batch.n_tokens() - 1);
             
             if new_token_id == m.token_eos() { break; }
             
-            if let Ok(piece) = String::from_utf8(m.token_to_piece(new_token_id)) {
+            if let Ok(piece) = m.token_to_piece(new_token_id, &mut decoder, true, None) {
                 let _ = app.emit("inference-token", serde_json::json!({"token": piece}));
             }
             

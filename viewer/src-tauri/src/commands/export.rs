@@ -346,7 +346,7 @@ pub fn shift_report_html(lang: Option<String>) -> Result<String, String> {
 
     let mut ward_html = String::new();
     let mut sorted_wards: Vec<_> = wards.iter().collect();
-    sorted_wards.sort_by_key(|(k, _)| k.clone());
+    sorted_wards.sort_by_key(|(k, _)| k.to_string());
 
     for (wid, pts) in sorted_wards {
         ward_html.push_str(&format!("<h2>{} ({} patients)</h2><table><tr><th>Name</th><th>Room</th><th>Pri</th><th>Status</th><th>HR/SBP/SpO2</th><th>Meds</th><th>Allergies</th></tr>", wid, pts.len()));

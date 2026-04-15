@@ -7,11 +7,12 @@
 
 use crate::config;
 use serde::{Deserialize, Serialize};
+
 use serde_json::Value;
 use std::fs;
 use std::sync::atomic::{AtomicBool, Ordering};
 #[cfg(feature = "native_ml")]
-use std::sync::Arc;
+
 #[cfg(feature = "native_ml")]
 use tauri::Emitter;
 #[cfg(feature = "native_ml")]
@@ -129,7 +130,7 @@ async fn download_and_extract(app: tauri::AppHandle, pack: &str, url: &str) -> R
     }));
 
     // ── Phase 1: Download ──
-    let mut response = reqwest::get(url).await.map_err(|e| e.to_string())?;
+    let response = reqwest::get(url).await.map_err(|e| e.to_string())?;
     let total_size = response.content_length().unwrap_or(0);
     
     let mut file = std::fs::File::create(&archive_path).map_err(|e| e.to_string())?;
@@ -185,7 +186,7 @@ async fn download_and_extract(app: tauri::AppHandle, pack: &str, url: &str) -> R
 }
 
 #[tauri::command]
-pub async fn distribution_download_all(app: tauri::AppHandle) -> Result<Value, String> {
+pub async fn distribution_download_all(_app: tauri::AppHandle) -> Result<Value, String> {
     Err("Batch download not fully ported yet; please download components individually.".to_string())
 }
 

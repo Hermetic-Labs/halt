@@ -12,6 +12,7 @@
  *   speak("Hello world", "en");
  */
 import { useState, useRef, useCallback, useEffect } from 'react';
+import { isNative } from '../services/api';
 
 // Kokoro native voice map — must match backend KOKORO_VOICE_MAP
 const KOKORO_VOICE_MAP: Record<string, string> = {
@@ -203,6 +204,44 @@ export function useTTS() {
         const validChunks = chunks.map(c => c.trim()).filter(c => c.length > 0);
         const voice = pickVoice(lang);
 
+        if (isNative) {
+            pendingChunksRef.current = validChunks.length;
+            (async () => {
+                try {
+                    const { invoke } = await import('@tauri-apps/api/core');
+                    for (const c of validChunks) {
+                        if (!audioCtxRef.current) break;
+                        try {
+                            const res = await invoke<{ audio_base64?: string }>('tts_synthesize', { request: { text: c, voice, speed: 1.0, lang } });
+                            if (!audioCtxRef.current) break;
+                            if (res && res.audio_base64) {
+                                const b64 = res.audio_base64.split(',')[1];
+                                const bin = atob(b64);
+                                const buf = new Uint8Array(bin.length);
+                                for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+                                await playChunk(buf.buffer);
+                            }
+                        } catch (e) {
+                            console.error('[TTS native error]', e);
+                        }
+                        pendingChunksRef.current = Math.max(0, pendingChunksRef.current - 1);
+                    }
+                } finally {
+                    if (audioCtxRef.current && pendingChunksRef.current === 0) {
+                        if (lastSourceRef.current) {
+                            lastSourceRef.current.onended = () => {
+                                setIsSpeaking(false);
+                                lastSourceRef.current = null;
+                            };
+                        } else {
+                            setIsSpeaking(false);
+                        }
+                    }
+                }
+            })();
+            return;
+        }
+
         const ws = ensureWs();
         pendingChunksRef.current = validChunks.length;
 
@@ -211,7 +250,7 @@ export function useTTS() {
         } else {
             validChunks.forEach(c => ttsQueueRef.current.push({ text: c, lang }));
         }
-    }, [ensureWs]);
+    }, [ensureWs, playChunk]);
 
     return { speak, stopSpeak, isSpeaking, queuePosition, pickVoice };
 }

@@ -197,9 +197,14 @@ export default function ThreadList({ activeThread, roster, messages, userName, o
                                     }}>
                                 {(() => {
                                     const cacheKey = `${thread.id}:${lang}:${thread.lastMessage}`;
-                                    const displayText = (lang !== 'en' && _threadPreviewCache.get(cacheKey)) || thread.lastMessage;
-                                    return displayText!.length > 60
-                                        ? displayText!.slice(0, 60) + '…'
+                                    let displayText = (lang !== 'en' && _threadPreviewCache.get(cacheKey)) || thread.lastMessage || '';
+                                    // Localize system prefixes
+                                    if (displayText.startsWith('📢 ANNOUNCEMENT: '))
+                                        displayText = `📢 ${t('comms.announcement_prefix', 'ANNOUNCEMENT')}: ${displayText.slice('📢 ANNOUNCEMENT: '.length)}`;
+                                    else if (displayText.startsWith('🚨 EMERGENCY: '))
+                                        displayText = `🚨 ${t('comms.emergency_prefix', 'EMERGENCY')}: ${displayText.slice('🚨 EMERGENCY: '.length)}`;
+                                    return displayText.length > 60
+                                        ? displayText.slice(0, 60) + '…'
                                         : displayText;
                                 })()}
                                     </div>
@@ -285,7 +290,7 @@ export default function ThreadList({ activeThread, roster, messages, userName, o
                                             fontSize: 12, fontWeight: 600, color: 'var(--text-muted)',
                                             overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                                         }}>{member.name}</div>
-                                        <div style={{ fontSize: 10, color: roleColor }}>{member.role}</div>
+                                        <div style={{ fontSize: 10, color: roleColor }}>{t(`network.${member.role}`, member.role)}</div>
                                     </div>
                                 </div>
                             );

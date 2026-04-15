@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useT } from '../services/i18n';
 import { useTTS } from '../hooks/useTTS';
 import TranslatorPanel from './TranslatorPanel';
+import { isNative } from '../services/api';
 import './TriagePanel.css';
 
 interface Message {
@@ -390,47 +391,95 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
         }
 
         try {
-            const r = await fetch('/inference/stream', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    messages: payloadHist,
-                    image: imageToSend || undefined,
-                    max_tokens: deepAnalysis ? 4096 : 2048,
-                    temperature: deepAnalysis ? 0.4 : 0.7,
-                    user_name: localStorage.getItem('eve-mesh-name') || '',
-                }),
-            });
-            if (!r.ok) throw new Error(`${r.statusText}`);
-
-            if (!r.body) throw new Error("No body");
-            const reader = r.body.getReader();
-            const dec = new TextDecoder();
-            let full = '';
-
-            while (true) {
-                const { done, value } = await reader.read();
-                if (done) break;
-                for (const line of dec.decode(value).split('\n')) {
-                    if (!line.startsWith('data: ')) continue;
-                    try {
-                        const d = JSON.parse(line.slice(6));
-                        if (d.type === 'queued') {
-                            setStreamingText(`\u23f3 In queue (position ${d.position})${d.active_user ? ` -- ${d.active_user} is generating...` : '...'}`);
-                        } else if (d.type === 'token') {
-                            full += d.token;
-                            setStreamingText(full);
-                        }
-                    } catch { /* incomplete json chunk */ }
+            if (isNative) {
+                const { invoke } = await import('@tauri-apps/api/core');
+                const { listen } = await import('@tauri-apps/api/event');
+                
+                let promptStr = '';
+                for (const m of payloadHist) {
+                    if (m.role === 'user') promptStr += `USER: ${m.content}\n`;
+                    if (m.role === 'assistant') promptStr += `ASSISTANT: ${m.content}\n`;
                 }
-            }
+                promptStr += "ASSISTANT:";
 
-            if (!full.trim()) {
-                setMessages(prev => [...prev, { role: 'assistant', content: t('triage.empty_response', 'The AI model did not return a response. This can happen when the model is still loading or the request was too complex. Please try again.') }]);
+                const systemStr = deepAnalysis 
+                    ? "You are a field medic AI in a survival kit. Think step-by-step. Provide detailed clinical reasoning, differential diagnosis, relevant anatomy, and supporting evidence. Structure your response with headers and bullet points. NO disclaimers, NO suggestions to see a doctor, NO hedging. After your analysis, give a clear final assessment."
+                    : "You are a field medic AI in a survival kit. Give direct, actionable clinical information only. NO disclaimers, NO suggestions to see a doctor, NO hedging.";
+
+                let full = '';
+                const unlisten = await listen('inference-token', (event: any) => {
+                    const d = event.payload;
+                    if (d.done) {
+                        return;
+                    }
+                    if (d.token) {
+                        full += d.token;
+                        setStreamingText(full);
+                    }
+                });
+
+                await invoke('inference_stream', {
+                    request: {
+                        prompt: promptStr,
+                        system: systemStr,
+                        max_tokens: deepAnalysis ? 4096 : 2048,
+                        temperature: deepAnalysis ? 0.4 : 0.7,
+                        persona: '',
+                        stream: true
+                    }
+                });
+                
+                unlisten();
+
+                if (!full.trim()) {
+                    setMessages(prev => [...prev, { role: 'assistant', content: t('triage.empty_response', 'The AI model did not return a response. This can happen when the model is still loading or the request was too complex. Please try again.') }]);
+                } else {
+                    setMessages(prev => [...prev, { role: 'assistant', content: full }]);
+                }
+                setStreamingText('');
             } else {
-                setMessages(prev => [...prev, { role: 'assistant', content: full }]);
+                const r = await fetch('/inference/stream', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        messages: payloadHist,
+                        image: imageToSend || undefined,
+                        max_tokens: deepAnalysis ? 4096 : 2048,
+                        temperature: deepAnalysis ? 0.4 : 0.7,
+                        user_name: localStorage.getItem('eve-mesh-name') || '',
+                    }),
+                });
+                if (!r.ok) throw new Error(`${r.statusText}`);
+
+                if (!r.body) throw new Error("No body");
+                const reader = r.body.getReader();
+                const dec = new TextDecoder();
+                let full = '';
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    for (const line of dec.decode(value).split('\n')) {
+                        if (!line.startsWith('data: ')) continue;
+                        try {
+                            const d = JSON.parse(line.slice(6));
+                            if (d.type === 'queued') {
+                                setStreamingText(`\u23f3 In queue (position ${d.position})${d.active_user ? ` -- ${d.active_user} is generating...` : '...'}`);
+                            } else if (d.type === 'token') {
+                                full += d.token;
+                                setStreamingText(full);
+                            }
+                        } catch { /* incomplete json chunk */ }
+                    }
+                }
+
+                if (!full.trim()) {
+                    setMessages(prev => [...prev, { role: 'assistant', content: t('triage.empty_response', 'The AI model did not return a response. This can happen when the model is still loading or the request was too complex. Please try again.') }]);
+                } else {
+                    setMessages(prev => [...prev, { role: 'assistant', content: full }]);
+                }
+                setStreamingText('');
             }
-            setStreamingText('');
 
         } catch (e) {
             const errMsg = (e as Error).message || 'Unknown error';

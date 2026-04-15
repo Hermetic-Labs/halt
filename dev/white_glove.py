@@ -942,6 +942,87 @@ def scoreboard(results):
 # ═════════════════════════════════════════════════════════════════════════════
 
 
+def benchmark_models():
+    """Automate ML prompts to test both Rust and Python backends."""
+    section_header("🤖", "MACHINE LEARNING — AI Prompts Speed Test", 2)
+    issues = 0
+
+    print("  [1] Starting Rust Native ML Benchmark (cargo run --features native_ml)...")
+    rust_cmd = ["cargo", "run", "-q", "--manifest-path=" + str(REPO_ROOT / "viewer" / "src-tauri" / "Cargo.toml"), "--features", "native_ml", "--", "--benchmark-llm"]
+    code, out, err = run_tool(rust_cmd, label="rust ml", capture=True)
+    if code == 0:
+        for line in out.splitlines():
+            if "tokens/sec" in line or "loaded in" in line.lower() or "Response:" in line:
+                print(f"      {line.strip()}")
+            elif "NOT enabled" in line:
+                print(f"      {line.strip()}")
+    else:
+        print("      ⚠ Rust benchmark failed or native_ml not supported on this device.")
+        if "could not compile" in err or "link" in err.lower() or "error:" in err.lower():
+             print("      (Missing C++ Build Tools or unsupported compiler)")
+        
+    print()
+    print("  [2] Starting Python FastAPI Fallback Benchmark...")
+    api_dir = str(REPO_ROOT / "api")
+    import socket, urllib.request
+    
+    port = 7799
+    proc = subprocess.Popen([sys.executable, "-m", "uvicorn", "main:app", "--port", str(port)], cwd=api_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    try:
+        ready = False
+        for _ in range(40):
+            try:
+                with socket.create_connection(("127.0.0.1", port), timeout=0.5):
+                    ready = True
+                    break
+            except:
+                time.sleep(0.5)
+        
+        if not ready:
+            print("      ⚠ Python server failed to start.")
+            issues += 1
+        else:
+            print("      Python API ready. Sending prompt...")
+            req_data = json.dumps({"messages": [{"role": "user", "content": "What are the 5 phases of triage?"}], "max_tokens": 128, "temperature": 0.1}).encode("utf-8")
+            req = urllib.request.Request(f"http://127.0.0.1:{port}/inference/stream", data=req_data, headers={"Content-Type": "application/json"})
+            start_t = time.time()
+            ttft = None
+            tokens = 0
+            full = ""
+            try:
+                with urllib.request.urlopen(req, timeout=120) as resp:
+                    for raw_line in resp:
+                        line = raw_line.decode("utf-8").strip()
+                        if line.startswith("data: "):
+                            data_str = line[6:]
+                            try:
+                                data = json.loads(data_str)
+                                if "token" in data and data["token"]:
+                                    if ttft is None:
+                                        ttft = time.time() - start_t
+                                    tokens += 1
+                                    full += data["token"]
+                            except:
+                                pass
+                end_t = time.time()
+                dur = end_t - start_t
+                tps = tokens / dur if dur > 0 else 0
+                if ttft:
+                    print(f"      Model TTFT (Time to first token): {ttft:.2f}s")
+                print(f"      Generated {tokens} tokens in {dur:.2f}s ({tps:.2f} tokens/sec)")
+                print(f"      Response: {full.strip()}")
+            except Exception as e:
+                print(f"      ⚠ Python benchmark request failed: {e}")
+                issues += 1
+    finally:
+        proc.terminate()
+        try:
+            proc.wait(5)
+        except:
+            proc.kill()
+        
+    return issues
+
 def main():
     parser = argparse.ArgumentParser(
         description="HALT — White Glove Lint Pass (maximum strictness)",
@@ -955,7 +1036,8 @@ def main():
     parser.add_argument("--markdown", action="store_true", help="Markdown only (markdownlint)")
     parser.add_argument("--data", action="store_true", help="JSON/YAML only")
     parser.add_argument("--rust", action="store_true", help="Rust only (cargo clippy)")
-    parser.add_argument("--hygiene", action="store_true", help="Whitespace/BOM/line-endings only")
+    parser.add_argument("--hygiene", action="store_true", help="Run hygiene checks (whitespace, BOM)")
+    parser.add_argument("--ml-benchmark", action="store_true", help="Automate ML prompts for speed reporting")
     parser.add_argument("--fix", action="store_true", help="Auto-fix where possible (Ruff)")
     parser.add_argument("--strict", action="store_true", help="Maximum strictness (ALL Ruff rules, style opinions)")
     args = parser.parse_args()
@@ -972,6 +1054,7 @@ def main():
             args.data,
             args.rust,
             args.hygiene,
+            args.ml_benchmark,
         ]
     )
 
@@ -1005,6 +1088,9 @@ def main():
 
     if run_all or args.hygiene:
         results["Hygiene (ws/bom/eol)"] = lint_hygiene()
+
+    if run_all or args.ml_benchmark:
+        results["ML Benchmark"] = benchmark_models()
 
     elapsed = time.time() - start
     total = scoreboard(results)

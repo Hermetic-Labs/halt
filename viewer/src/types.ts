@@ -197,3 +197,16 @@ export interface InventoryRestock {
     timestamp: string;
     restockedBy: string;
 }
+
+// ─── Site Map / Field Map ────────────────────────────────────────────
+
+export type LineStyle = 'straight' | 'curve-left' | 'curve-right' | 'dotted' | 'ascending' | 'descending';
+
+export interface FieldNode {
+    id: string;
+    label: string;
+    x: number;   // 0–100 percentage
+    y: number;
+    type: 'base' | 'pivot' | 'ward' | 'inventory';
+    style?: LineStyle;
+}

@@ -1884,6 +1884,28 @@ body,
   color: #e74c3c;
 }
 
+/* ── Site Map SVG ──────────────────────────────── */
+
+.sitemap-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  background: var(--bg);
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+}
+
+.sitemap-topbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
 /* ── Spin animation (translation loading) ── */
 @keyframes spin {
   from { transform: rotate(0deg); }

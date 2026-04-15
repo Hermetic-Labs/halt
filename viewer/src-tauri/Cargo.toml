@@ -8,8 +8,6 @@ repository = "https://github.com/Hermetic-Labs/halt"
 edition = "2021"
 rust-version = "1.77.2"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [lib]
 name = "app_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
@@ -24,22 +22,21 @@ log = "0.4"
 tauri = { version = "2.10.3", features = [] }
 tauri-plugin-log = "2"
 
-# Layer 1: Foundation
-aes-gcm = "0.10"          # AES-256-GCM encryption for patient files
-rand = "0.8"              # Key generation (OsRng)
-base64 = "0.22"           # Fernet compatibility
-chrono = "0.4"            # Timestamps for activity log
-
-# Layer 4: Mesh + Real-time
-uuid = { version = "1", features = ["v4"] }  # Message/client IDs
+aes-gcm = "0.10"
+rand = "0.8"
+base64 = "0.22"
+chrono = "0.4"
+uuid = { version = "1", features = ["v4"] }
 sentencepiece = { version = "0.13.1", optional = true }
 ct2rs = { version = "0.9.18", optional = true }
 llama-cpp-2 = { version = "0.1.143", optional = true }
 whisper-rs = { version = "0.16.0", optional = true }
 ort = { version = "2.0.0-rc.9", optional = true }
+encoding_rs = "0.8.35"
+ndarray = "0.17.2"
 
 [features]
-default = []
+default = ["native_ml"]
 native_ml = [
     "dep:sentencepiece", 
     "dep:ct2rs", 
@@ -70,18 +67,6 @@ optional = true
 version = "0.3"
 optional = true
 
-# ── Blocked by SmartScreen on D: — uncomment when compiling via C: proxy ──
-# sha2 = "0.10"             # File checksums (replaces hashlib)
-# qrcode = "0.14"           # QR codes (replaces Python qrcode)
-# image = "0.25"            # Image processing for QR output (replaces Pillow)
-# hound = "3.5"             # WAV file writing (replaces struct.pack)
-# rcgen = "0.13"            # Self-signed SSL certs (replaces cryptography x509)
-# tokio = { version = "1", features = ["full"] }  # Async runtime
-# tokio-tungstenite = "0.24" # WebSocket server
-# time = "0.3"              # OffsetDateTime for rcgen cert validity
-
-# ── Inference — uncomment on Mac with C++ toolchain ──
-# llama-cpp-2 = "0.1"       # llama.cpp LLM
-# whisper-rs = "0.12"       # whisper.cpp STT
-# ort = { version = "2", features = ["load-dynamic"] }  # ONNX Runtime (Kokoro TTS)
-# ct2rs = "0.9"             # CTranslate2 (NLLB translation)
+[patch.crates-io]
+ct2rs = { path = "vendor/ct2rs" }
+esaxx-rs = { path = "vendor/esaxx-rs" }

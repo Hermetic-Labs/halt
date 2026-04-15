@@ -47,13 +47,15 @@ pub fn stt_listen(audio_data: Vec<u8>, language: Option<String>) -> Result<Trans
         params.set_print_realtime(false);
         
         state.full(params, &pcm_data).map_err(|e| format!("Whisper eval error: {}", e))?;
-        let num_segments = state.full_n_segments().map_err(|e| format!("Segments error: {}", e))?;
+        let num_segments = state.full_n_segments();
         
         let mut result_text = String::new();
         for i in 0..num_segments {
-            if let Ok(segment) = state.full_get_segment_text(i) {
-                result_text.push_str(&segment);
-                result_text.push(' ');
+            if let Some(segment) = state.get_segment(i) {
+                if let Ok(text) = segment.to_str_lossy() {
+                    result_text.push_str(&text);
+                    result_text.push(' ');
+                }
             }
         }
         

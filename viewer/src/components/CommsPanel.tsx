@@ -90,7 +90,37 @@ export default function CommsPanel() {
                     inset: window.innerWidth < 700 ? 0 : undefined,
                     zIndex: window.innerWidth < 700 ? 10 : undefined,
                     background: 'var(--bg)',
+                    display: 'flex', flexDirection: 'column',
                 }}>
+                    {/* Sidebar header: toggle + online count + clear */}
+                    <div style={{
+                        display: 'flex', alignItems: 'center', gap: 8,
+                        padding: '10px 14px', borderBottom: '1px solid var(--border)',
+                        background: 'var(--surface)', flexShrink: 0,
+                    }}>
+                        <button
+                            onClick={() => setShowThreads(s => !s)}
+                            style={{
+                                background: 'none', border: 'none', fontSize: 18,
+                                cursor: 'pointer', color: 'var(--text-muted)', padding: '2px 6px',
+                                lineHeight: 1,
+                            }}
+                            title={t('comms.hide_threads', 'Hide threads')}
+                        >◀</button>
+                        <div style={{ flex: 1, fontSize: 10, color: 'var(--text-faint)' }}>
+                            {connectedMembers.length} {t('comms.online', 'online')}
+                        </div>
+                        {isLeader && (
+                            <button
+                                onClick={async () => {
+                                    if (!confirm(t('comms.clear_confirm', 'Clear all messages from the board?'))) return;
+                                    try { await apiMutate('clear_chat', '/mesh/chat', {}, { method: 'DELETE' }); clearMessages(); } catch { /* offline */ }
+                                }}
+                                style={{ padding: '3px 8px', fontSize: 10, background: 'transparent', border: '1px solid #e74c3c33', borderRadius: 4, color: '#e74c3c', cursor: 'pointer', flexShrink: 0 }}
+                                title={t('comms.clear_board', 'Clear Board')}
+                            >🗑</button>
+                        )}
+                    </div>
                     <ThreadList
                         activeThread={targetContact || 'board'}
                         roster={roster}
@@ -111,16 +141,18 @@ export default function CommsPanel() {
                     padding: '12px 16px', borderBottom: '1px solid var(--border)',
                     background: 'var(--surface)', flexShrink: 0,
                 }}>
-                    {/* Toggle threads button */}
-                    <button
-                        onClick={() => setShowThreads(s => !s)}
-                        style={{
-                            background: 'none', border: 'none', fontSize: 18,
-                            cursor: 'pointer', color: 'var(--text-muted)', padding: '2px 6px',
-                            lineHeight: 1,
-                        }}
-                        title={showThreads ? t('comms.hide_threads', 'Hide threads') : t('comms.show_threads', 'Show threads')}
-                    >{showThreads ? '◀' : '☰'}</button>
+                    {/* Toggle threads button (only when sidebar is hidden) */}
+                    {!showThreads && (
+                        <button
+                            onClick={() => setShowThreads(true)}
+                            style={{
+                                background: 'none', border: 'none', fontSize: 18,
+                                cursor: 'pointer', color: 'var(--text-muted)', padding: '2px 6px',
+                                lineHeight: 1,
+                            }}
+                            title={t('comms.show_threads', 'Show threads')}
+                        >☰</button>
+                    )}
 
                     {/* Contact info */}
                     {targetContact ? (
@@ -146,22 +178,8 @@ export default function CommsPanel() {
                             </div>
                         </div>
                     ) : (
-                        <div style={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', gap: 8 }}>
-                            <div style={{ flex: 1 }}>
-                                <div style={{ fontSize: 10, color: 'var(--text-faint)' }}>
-                                    {connectedMembers.length} {t('comms.online', 'online')}
-                                </div>
-                            </div>
-                            {isLeader && (
-                                <button
-                                    onClick={async () => {
-                                        if (!confirm(t('comms.clear_confirm', 'Clear all messages from the board?'))) return;
-                                        try { await apiMutate('clear_chat', '/mesh/chat', {}, { method: 'DELETE' }); clearMessages(); } catch { /* offline */ }
-                                    }}
-                                    style={{ padding: '4px 10px', fontSize: 11, background: 'transparent', border: '1px solid #e74c3c33', borderRadius: 4, color: '#e74c3c', cursor: 'pointer', flexShrink: 0 }}
-                                    title={t('comms.clear_board', 'Clear Board')}
-                                >🗑 {t('comms.clear_board', 'Clear Board')}</button>
-                            )}
+                        <div style={{ flex: 1, fontSize: 14, fontWeight: 600, color: 'var(--text)' }}>
+                            {t('comms.board', 'Board')}
                         </div>
                     )}
 
@@ -197,7 +215,7 @@ export default function CommsPanel() {
                         </div>
                     )}
 
-                    {/* Active call — small header indicator (popup has the controls) */}
+                    {/* Active call — small header indicator */}
                     {callActive && (
                         <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
                             <div style={{

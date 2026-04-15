@@ -45,15 +45,7 @@ const LANGUAGES: { code: string; name: string }[] = [
     { code: 'ku', name: 'Kurdî' },
 ];
 
-const STATUS_LABELS: Record<TranslateStreamState, string> = {
-    idle: '',
-    listening: '🎤 Listening...',
-    transcribing: '🔍 Transcribing...',
-    translating: '🌐 Translating...',
-    synthesizing: '🔊 Generating speech...',
-    playing: '▶️ Playing...',
-    error: '❌ Error',
-};
+// Status labels are resolved at render time via t() — see statusLabels below
 
 const langName = (code: string) => LANGUAGES.find(l => l.code === code)?.name || code.toUpperCase();
 
@@ -260,11 +252,20 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
         }
     }, [live.state, state, speakMode, streamMic, targetLang, sourceLang, live, startRecording]);
 
+    const statusLabels: Record<TranslateStreamState, string> = {
+        idle: '',
+        listening: '🎤 ' + t('translator.status_listening', 'Listening...'),
+        transcribing: '🔍 ' + t('translator.status_transcribing', 'Transcribing...'),
+        translating: '🌐 ' + t('translator.status_translating', 'Translating...'),
+        synthesizing: '🔊 ' + t('translator.status_synthesizing', 'Generating speech...'),
+        playing: '▶️ ' + t('translator.playing', 'Playing...'),
+        error: '❌ ' + t('translator.status_error', 'Error'),
+    };
     const liveStatusText = live.error
-        || (live.isListening ? '🎤 Listening (live)...'
-            : live.state === 'processing' ? '⚡ Processing...'
+        || (live.isListening ? '🎤 ' + t('translator.status_listening_live', 'Listening (live)...')
+            : live.state === 'processing' ? '⚡ ' + t('translator.status_processing', 'Processing...')
             : '');
-    const statusText = speakMode ? liveStatusText : (error || STATUS_LABELS[state]);
+    const statusText = speakMode ? liveStatusText : (error || statusLabels[state]);
     const leftName = langName(leftLang);
     const rightName = langName(rightLang);
 
@@ -308,7 +309,7 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                             background: speakMode ? '#d2a83c' : '#484f58',
                             transition: 'background 0.2s',
                         }} />
-                        Speak
+                        {t('translator.speak_mode', 'Speak')}
                     </button>
                     {/* Stream Mic toggle pill */}
                     <button
@@ -334,7 +335,7 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                             background: streamMic ? '#58a6ff' : '#484f58',
                             transition: 'background 0.2s',
                         }} />
-                        Stream
+                        {t('translator.stream_mode', 'Stream')}
                     </button>
                     {/* Auto Play toggle pill */}
                     <button
@@ -355,7 +356,7 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                             background: autoPlay ? '#3fb950' : '#484f58',
                             transition: 'background 0.2s',
                         }} />
-                        Auto Play
+                        {t('translator.auto_play', 'Auto Play')}
                     </button>
                     <button
                         onClick={onClose}
@@ -381,11 +382,10 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                     }}>
                         <div style={{ fontSize: 48, opacity: 0.3 }}>{'\ud83c\udf10'}</div>
                         <div style={{ fontSize: 15, fontWeight: 500 }}>
-                            Turn-based translation
+                            {t('translator.turn_based', 'Turn-based translation')}
                         </div>
                         <div style={{ fontSize: 12, maxWidth: 300, lineHeight: 1.6 }}>
-                            Tap the mic, speak, and the translation will appear.
-                            Use the arrow to switch speakers between <span style={{ color: '#58a6ff' }}>{leftName}</span> and <span style={{ color: '#3fb950' }}>{rightName}</span>
+                            {t('translator.empty_hint', 'Tap the mic, speak, and the translation will appear. Use the arrow to switch speakers between {left} and {right}').split('{left}').map((part, i) => i === 0 ? part : <><span key='l' style={{ color: '#58a6ff' }}>{leftName}</span>{part}</>).flatMap((part, i) => typeof part === 'string' ? part.split('{right}').map((p2, j) => j === 0 ? p2 : <><span key={`r${i}${j}`} style={{ color: '#3fb950' }}>{rightName}</span>{p2}</>) : part)}
                         </div>
                     </div>
                 )}
@@ -512,7 +512,7 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                             color: '#d2a83c',
                             paddingLeft: 12,
                         }}>
-                            ⚡ Live · Segment {seg.segmentId}
+                            ⚡ {t('translator.live_segment', 'Live · Segment {id}').replace('{id}', String(seg.segmentId))}
                         </div>
                         <div style={{
                             padding: '10px 14px',
@@ -577,7 +577,7 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                             value={textInput}
                             onChange={e => setTextInput(e.target.value)}
                             onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleTextSubmit(); } }}
-                            placeholder={`Type in ${langName(sourceLang)}...`}
+                            placeholder={t('translator.type_in', 'Type in {lang}...').replace('{lang}', langName(sourceLang))}
                             disabled={textBusy}
                             rows={1}
                             style={{
@@ -652,7 +652,7 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                             <span style={{
                                 display: 'inline-block',
                                 animation: activeSide === 'left' ? 'speaker-pulse 1.8s ease-in-out infinite' : 'none',
-                            }}>{activeSide === 'left' ? '●' : '○'}</span> {activeSide === 'left' ? 'Speaking' : 'Listening'}
+                            }}>{activeSide === 'left' ? '●' : '○'}</span> {activeSide === 'left' ? t('translator.speaking', 'SPEAKING') : t('translator.listening', 'LISTENING')}
                         </div>
                         <select
                             value={leftLang}
@@ -704,7 +704,7 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                             <span style={{
                                 display: 'inline-block',
                                 animation: activeSide === 'right' ? 'speaker-pulse 1.8s ease-in-out infinite' : 'none',
-                            }}>{activeSide === 'right' ? '●' : '○'}</span> {activeSide === 'right' ? 'Speaking' : 'Listening'}
+                            }}>{activeSide === 'right' ? '●' : '○'}</span> {activeSide === 'right' ? t('translator.speaking', 'SPEAKING') : t('translator.listening', 'LISTENING')}
                         </div>
                         <select
                             value={rightLang}

@@ -12,6 +12,7 @@ export interface ChatMsg {
     timestamp: string;
     reply_to?: string;
     reactions?: Record<string, string[]>;
+    translations?: Record<string, string>;
     attachment_url?: string;
     attachment_name?: string;
 }

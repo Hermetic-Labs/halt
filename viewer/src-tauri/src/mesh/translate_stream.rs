@@ -87,16 +87,18 @@ fn pipeline_stt(audio_data: &[u8], source_lang: &str) -> Result<(String, String)
         params.set_print_realtime(false);
         
         state.full(params, &pcm_data).map_err(|e| format!("Whisper eval: {}", e))?;
-        let num_segments = state.full_n_segments().map_err(|e| format!("Segments: {}", e))?;
+        let num_segments = state.full_n_segments();
         
         let mut result_text = String::new();
         for i in 0..num_segments {
-            if let Ok(segment) = state.full_get_segment_text(i) {
-                let trimmed = segment.trim();
-                // Filter out common whisper hallucinations
-                if !trimmed.starts_with("[") && !trimmed.starts_with("(") {
-                    result_text.push_str(trimmed);
-                    result_text.push(' ');
+            if let Some(segment) = state.get_segment(i) {
+                if let Ok(text) = segment.to_str_lossy() {
+                    let trimmed = text.trim();
+                    // Filter out common whisper hallucinations
+                    if !trimmed.starts_with("[") && !trimmed.starts_with("(") {
+                        result_text.push_str(trimmed);
+                        result_text.push(' ');
+                    }
                 }
             }
         }
@@ -153,14 +155,15 @@ fn pipeline_tts(text: &str, lang: &str, speed: f32) -> Result<Vec<u8>, String> {
             let style: Vec<f32> = vec![0.0; 256];
             
             let input_values = ort::inputs![
-                "tokens" => ndarray::Array1::from_vec(tokens.clone()).into_shape((1, tokens.len())).unwrap(),
-                "style" => ndarray::Array1::from_vec(style.clone()),
-                "speed" => ndarray::Array1::from_vec(vec![speed]),
-            ].map_err(|e| format!("ORT Input err: {}", e))?;
+                "tokens" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(tokens.clone()).into_shape_with_order((1, tokens.len())).unwrap()).unwrap(),
+                "style" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(style.clone())).unwrap(),
+                "speed" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(vec![speed])).unwrap(),
+            ];
             
+            let mut session = session.lock().unwrap();
             let outputs = session.run(input_values).map_err(|e| format!("ORT Run err: {}", e))?;
             let audio_tensor = outputs["audio"].try_extract_tensor::<f32>().map_err(|e| format!("Tensor err: {}", e))?;
-            let pcm_f32: Vec<f32> = audio_tensor.iter().copied().collect();
+            let pcm_f32: Vec<f32> = audio_tensor.1.iter().copied().collect();
             
             let mut buf = Vec::new();
             let audio_len = pcm_f32.len() * 2;

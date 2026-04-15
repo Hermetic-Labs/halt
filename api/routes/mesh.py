@@ -127,13 +127,22 @@ async def _translate_and_broadcast(entry: dict):
     if not text.strip():
         return
 
+    # Strip system prefixes so NLLB only translates the actual content
+    prefix = ""
+    for pfx in ("📢 ANNOUNCEMENT: ", "🚨 EMERGENCY: "):
+        if text.startswith(pfx):
+            prefix = pfx.split(": ")[0] + ": "  # keep emoji + colon, drop English word
+            text = text[len(pfx):]
+            break
+
     def _do_all():
         results = {}
         for lang_code in NLLB_LANG_MAP:
             if lang_code == "en":
                 continue
             with contextlib.suppress(Exception):
-                results[lang_code] = _translate(text, "en", lang_code)
+                translated = _translate(text, "en", lang_code)
+                results[lang_code] = f"{prefix}{translated}" if prefix else translated
         return results
 
     try:
@@ -330,6 +339,7 @@ async def mesh_emergency(req: EmergencyRequest):
         "sender_role": "system",
         "message": f"🚨 EMERGENCY: {cat_text}{ward_bed}{notes_str}",
         "target_name": "",
+        "translations": req.translations if req.translations else {},
         "timestamp": datetime.now().isoformat(),
     }
     cp = chat_path()
@@ -338,6 +348,9 @@ async def mesh_emergency(req: EmergencyRequest):
     if len(messages) > 500:
         messages = messages[-500:]
     write_json(cp, messages)
+    # Only run background NLLB translation if sender didn't precompute
+    if not req.translations:
+        asyncio.create_task(_translate_and_broadcast(chat_entry))
     return {"status": "broadcast", "recipients": len(MESH_WS), "categories": req.categories}
 
 
@@ -361,7 +374,7 @@ async def mesh_announcement(req: AnnouncementRequest):
         "sender_role": "system",
         "message": f"📢 ANNOUNCEMENT: {req.message}",
         "target_name": "",
-        "translations": {},
+        "translations": req.translations if req.translations else {},
         "timestamp": datetime.now().isoformat(),
     }
     cp = chat_path()
@@ -370,10 +383,9 @@ async def mesh_announcement(req: AnnouncementRequest):
     if len(messages) > 500:
         messages = messages[-500:]
     write_json(cp, messages)
-    asyncio.create_task(_translate_and_broadcast(chat_entry))
-    # If sender already precomputed translations, patch the entry directly
-    if req.translations:
-        chat_entry["translations"] = req.translations
+    # Only run background NLLB translation if sender didn't precompute
+    if not req.translations:
+        asyncio.create_task(_translate_and_broadcast(chat_entry))
     return {"status": "broadcast", "recipients": len(MESH_WS)}
 
 

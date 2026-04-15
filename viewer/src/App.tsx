@@ -27,7 +27,7 @@ import PatientIntake from './components/PatientIntake';
 import MassCasIntake from './components/MassCasIntake';
 import TaskBoard from './components/TaskBoard';
 import CommsPanel from './components/CommsPanel';
-import PermissionGate from './components/PermissionGate';
+import OnboardingWizard from './components/OnboardingWizard';
 import WardMap from './components/WardMap';
 import InventoryTab from './components/InventoryTab';
 import NetworkTab from './components/NetworkTab';
@@ -414,13 +414,13 @@ function AppOuter() {
   // ── Setup screen — hold here until identity is established ──
   if (authState === 'setup') {
     return (
-      <PermissionGate>
+      <OnboardingWizard>
         <div className="app">
           <div className="main-content" style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
             <NetworkTab />
           </div>
         </div>
-      </PermissionGate>
+      </OnboardingWizard>
     );
   }
 
@@ -463,6 +463,14 @@ function AppInner(p: any) {
   const userName = localStorage.getItem('eve-mesh-name') || 'Unknown';
   const userRole = localStorage.getItem('eve-mesh-role') || 'responder';
   const webRTC = useWebRTC(userName, userRole);
+  const {
+    callActive, callTarget, callType, callMuted, callDuration,
+    endCall, toggleMute,
+    videoRefCallback, remoteVideoRefCallback,
+    fmtDuration, remoteAudioLevel,
+    subtitleText, transcribing,
+    startTranscription, stopTranscription,
+  } = webRTC;
 
   // ── Notification badges (unread messages & tasks) ──
   const [unreadMsgs, setUnreadMsgs] = useState(0);
@@ -506,7 +514,7 @@ function AppInner(p: any) {
   ) : null;
 
   return (
-    <PermissionGate>
+    <OnboardingWizard>
       <div className="app">
         <div className="main-content">
           {/* ── Translation Overlay ─────────────────────────────── */}
@@ -652,7 +660,7 @@ function AppInner(p: any) {
           )}
 
           {/* ═══ Global Call Overlay — renders on ANY tab ═══════════════ */}
-          {webRTC.callActive && (
+          {callActive && (
             <div className="call-overlay-global" style={{
               position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
               zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -666,17 +674,17 @@ function AppInner(p: any) {
                 maxHeight: '90vh',
               }}>
                 {/* Video or Voice avatar area */}
-                <div style={{ position: 'relative', background: '#000', minHeight: webRTC.callType === 'video' ? 260 : 140, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  {webRTC.callType === 'video' ? (
+                <div style={{ position: 'relative', background: '#000', minHeight: callType === 'video' ? 260 : 140, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  {callType === 'video' ? (
                     <>
-                      <video ref={webRTC.remoteVideoRefCallback} autoPlay playsInline style={{ width: '100%', height: 260, objectFit: 'cover' }} />
+                      <video ref={remoteVideoRefCallback} autoPlay playsInline style={{ width: '100%', height: 260, objectFit: 'cover' }} />
                       <div style={{ position: 'absolute', top: 12, right: 12, width: 90, height: 68, borderRadius: 10, overflow: 'hidden', border: '2px solid rgba(255,255,255,0.2)', boxShadow: '0 2px 10px #0008' }}>
-                        <video ref={webRTC.videoRefCallback} autoPlay muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <video ref={videoRefCallback} autoPlay muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       </div>
                     </>
                   ) : (
                     <div style={{ textAlign: 'center', padding: 24 }}>
-                      {(() => { const lvl = webRTC.remoteAudioLevel; return (
+                      {(() => { const lvl = remoteAudioLevel; return (
                         <div style={{
                           width: 64, height: 64, borderRadius: '50%', margin: '0 auto 12px',
                           background: '#3fb95022', border: '2px solid #3fb95044',
@@ -685,40 +693,40 @@ function AppInner(p: any) {
                           boxShadow: lvl > 10 ? `0 0 ${lvl * 0.4}px ${lvl * 0.2}px rgba(63, 185, 80, ${Math.min(lvl / 180, 0.8)})` : 'none',
                           transition: 'box-shadow 0.15s ease',
                         }}>
-                          {webRTC.callTarget?.charAt(0).toUpperCase() || '?'}
+                          {callTarget?.charAt(0).toUpperCase() || '?'}
                         </div>
                       ); })()}
-                      <div style={{ fontSize: 16, fontWeight: 600, color: '#fff' }}>{webRTC.callTarget || 'Unknown'}</div>
+                      <div style={{ fontSize: 16, fontWeight: 600, color: '#fff' }}>{callTarget || 'Unknown'}</div>
                       <div style={{ fontSize: 12, color: '#888', marginTop: 4 }}>Voice Call</div>
                     </div>
                   )}
-                  <div style={{ position: 'absolute', top: 12, left: '50%', transform: 'translateX(-50%)', background: 'rgba(0,0,0,0.6)', padding: '3px 12px', borderRadius: 12, fontSize: 12, fontFamily: 'var(--font-mono)', color: webRTC.callType === 'video' ? '#3498db' : '#3fb950' }}>
-                    {webRTC.fmtDuration(webRTC.callDuration)}
+                  <div style={{ position: 'absolute', top: 12, left: '50%', transform: 'translateX(-50%)', background: 'rgba(0,0,0,0.6)', padding: '3px 12px', borderRadius: 12, fontSize: 12, fontFamily: 'var(--font-mono)', color: callType === 'video' ? '#3498db' : '#3fb950' }}>
+                    {fmtDuration(callDuration)}
                   </div>
                 </div>
                 {/* Controls */}
                 <div style={{ display: 'flex', justifyContent: 'center', gap: 20, padding: '16px 24px', background: '#1a1a1a' }}>
-                  <button onClick={webRTC.toggleMute} title={webRTC.callMuted ? 'Unmute' : 'Mute'} style={{ width: 52, height: 52, borderRadius: '50%', background: webRTC.callMuted ? '#f0a50022' : '#ffffff15', border: `2px solid ${webRTC.callMuted ? '#f0a500' : '#555'}`, color: webRTC.callMuted ? '#f0a500' : '#fff', fontSize: 20, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    {webRTC.callMuted ? '🔇' : '🔊'}
+                  <button onClick={toggleMute} title={callMuted ? 'Unmute' : 'Mute'} style={{ width: 52, height: 52, borderRadius: '50%', background: callMuted ? '#f0a50022' : '#ffffff15', border: `2px solid ${callMuted ? '#f0a500' : '#555'}`, color: callMuted ? '#f0a500' : '#fff', fontSize: 20, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    {callMuted ? '🔇' : '🔊'}
                   </button>
-                  <button onClick={webRTC.endCall} title="End Call" style={{ width: 52, height: 52, borderRadius: '50%', background: '#e74c3c', border: '2px solid #e74c3c', color: '#fff', fontSize: 20, fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <button onClick={endCall} title="End Call" style={{ width: 52, height: 52, borderRadius: '50%', background: '#e74c3c', border: '2px solid #e74c3c', color: '#fff', fontSize: 20, fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     ✕
                   </button>
                   <button
-                    onClick={() => webRTC.transcribing ? webRTC.stopTranscription() : webRTC.startTranscription()}
-                    title={webRTC.transcribing ? 'Stop Subtitles' : 'Live Subtitles'}
+                    onClick={() => transcribing ? stopTranscription() : startTranscription()}
+                    title={transcribing ? 'Stop Subtitles' : 'Live Subtitles'}
                     style={{
                       width: 52, height: 52, borderRadius: '50%',
-                      background: webRTC.transcribing ? '#50C87822' : '#ffffff15',
-                      border: `2px solid ${webRTC.transcribing ? '#50C878' : '#555'}`,
-                      color: webRTC.transcribing ? '#50C878' : '#fff',
+                      background: transcribing ? '#50C87822' : '#ffffff15',
+                      border: `2px solid ${transcribing ? '#50C878' : '#555'}`,
+                      color: transcribing ? '#50C878' : '#fff',
                       fontSize: 20, cursor: 'pointer',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                     }}
                   >🌐</button>
                 </div>
                 {/* Subtitle Bar */}
-                {webRTC.subtitleText && (
+                {subtitleText && (
                   <div style={{
                     padding: '10px 20px', background: 'rgba(0,0,0,0.85)',
                     borderTop: '1px solid #333', textAlign: 'center',
@@ -726,7 +734,7 @@ function AppInner(p: any) {
                     fontFamily: 'var(--font-sans)', whiteSpace: 'pre-wrap',
                     animation: 'fadeIn 0.3s ease',
                   }}>
-                    {webRTC.subtitleText}
+                    {subtitleText}
                   </div>
                 )}
               </div>
@@ -1026,6 +1034,9 @@ function AppInner(p: any) {
             borderTop: '1px solid var(--border)', opacity: 0.7,
           }}>
             {t('app.footer')}
+            <div style={{ marginTop: 4, fontSize: 9, lineHeight: 1.4, opacity: 0.6, maxWidth: 800, margin: '4px auto 0' }}>
+              {t('app.disclaimer')}
+            </div>
           </footer>
         </div>
 
@@ -1037,6 +1048,6 @@ function AppInner(p: any) {
 
 
       </div>
-    </PermissionGate>
+    </OnboardingWizard>
   );
 }
