@@ -208,7 +208,7 @@ export default function TaskBoard() {
                 priority,
                 sound: priority === 'critical' ? 'announcement' : 'alert',
             };
-            await apiMutate('mesh_alert', '/mesh/alert', payload, {
+            await apiMutate('mesh_alert', '/mesh/alert', { req: payload }, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),
             });
@@ -252,7 +252,7 @@ export default function TaskBoard() {
                 );
                 for (let i = 0; i < targetLangs.length; i++) {
                     const lang = targetLangs[i];
-                    const translated = results[i]?.translated || results[i]?.text;
+                    const translated = results[i]?.translated;
                     if (translated) {
                         translations[lang] = translated;
                         ttsSegments.push({ text: translated, lang });
@@ -281,12 +281,14 @@ export default function TaskBoard() {
                 ward: emergencyForm.ward,
                 bed: emergencyForm.bed,
                 categories: emergencyForm.categories,
+                categories_text: emergencyForm.categories.map(c => c.replace('_', ' ').toUpperCase()).join(', '),
                 sender_name: userName,
                 notes: emergencyForm.notes,
-                audio_b64,
+                audio_base64: audio_b64,
                 translations,
+                sound: '',
             };
-            await apiMutate('mesh_emergency', '/mesh/emergency', emergencyPayload, {
+            await apiMutate('mesh_emergency', '/mesh/emergency', { req: emergencyPayload }, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(emergencyPayload),
             });
@@ -340,7 +342,7 @@ export default function TaskBoard() {
                 );
                 for (let i = 0; i < targetLangs.length; i++) {
                     const lang = targetLangs[i];
-                    const translated = results[i]?.translated || results[i]?.text;
+                    const translated = results[i]?.translated;
                     if (translated) {
                         translations[lang] = translated;
                         ttsSegments.push({ text: translated, lang });
@@ -368,10 +370,11 @@ export default function TaskBoard() {
             const announcementPayload = {
                 message: englishText,
                 sender_name: userName,
-                audio_b64,
+                audio_base64: audio_b64,
                 translations,
+                sound: '',
             };
-            await apiMutate('mesh_announcement', '/mesh/announcement', announcementPayload, {
+            await apiMutate('mesh_announcement', '/mesh/announcement', { req: announcementPayload }, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(announcementPayload),
             });
