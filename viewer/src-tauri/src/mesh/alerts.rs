@@ -12,7 +12,6 @@
 //!   2. English bridge (if source isn't English)
 //!   3. Target language (receiver's configured language)
 
-use crate::models::nllb;
 use crate::storage;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
@@ -108,19 +107,8 @@ pub fn mesh_emergency(req: EmergencyRequest) -> Result<Value, String> {
         "time_str": now.format("%H:%M:%S").to_string(),
     });
 
-    // Generate translations for the emergency message
-    // This is the 3-phase card: source → english bridge → target
-    let lang_map = nllb::lang_map();
-    let mut translations = serde_json::Map::new();
-    for lang in lang_map.keys() {
-        if *lang != "en" {
-            if let Ok(translated) = nllb::translate(&notes_text, "en", lang) {
-                if translated != notes_text {
-                    translations.insert(lang.to_string(), Value::String(translated));
-                }
-            }
-        }
-    }
+    // Translations provided by frontend (language picker scoped)
+    let translations = serde_json::Map::new();
     payload["translations"] = Value::Object(translations);
 
     // Log to chat record
@@ -185,18 +173,8 @@ pub fn mesh_alert(req: AlertRequest) -> Result<Value, String> {
 pub fn mesh_announcement(req: AnnouncementRequest) -> Result<Value, String> {
     let now = chrono::Local::now();
 
-    // Start with provided translations, then fill in any missing languages
-    let mut translations = req.translations.clone();
-    let lang_map = nllb::lang_map();
-    for lang in lang_map.keys() {
-        if *lang != "en" && !translations.contains_key(*lang) {
-            if let Ok(translated) = nllb::translate(&req.message, "en", lang) {
-                if translated != req.message {
-                    translations.insert(lang.to_string(), Value::String(translated));
-                }
-            }
-        }
-    }
+    // Use translations provided by frontend (language picker scoped)
+    let translations = req.translations.clone();
 
     let payload = serde_json::json!({
         "type": "announcement",

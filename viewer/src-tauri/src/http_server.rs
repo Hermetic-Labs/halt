@@ -17,6 +17,7 @@ use serde_json::Value;
 use tower_http::cors::{Any, CorsLayer};
 
 use crate::commands::*;
+use crate::mesh::alerts;
 
 /// Build the axum router with all REST endpoints.
 pub fn build_router() -> Router {
@@ -74,6 +75,12 @@ pub fn build_router() -> Router {
         .route("/api/mesh/chat", get(chat_list_handler))
         .route("/api/mesh/chat", post(chat_send_handler))
         .route("/api/mesh/chat", delete(chat_clear_handler))
+        .route("/api/mesh/announcement", post(mesh_announcement_handler))
+        .route("/api/mesh/emergency", post(mesh_emergency_handler))
+        .route("/api/mesh/alert", post(mesh_alert_handler))
+        .route("/mesh/announcement", post(mesh_announcement_handler))
+        .route("/mesh/emergency", post(mesh_emergency_handler))
+        .route("/mesh/alert", post(mesh_alert_handler))
         .layer(cors)
 }
 
@@ -161,9 +168,11 @@ async fn translate_text_handler(Json(body): Json<Value>) -> impl IntoResponse {
         source: body["source"].as_str().unwrap_or("en").to_string(),
         target: body["target"].as_str().unwrap_or("en").to_string(),
     };
-    match translate::translate_text(req) {
-        Ok(r) => Json(serde_json::to_value(r).unwrap_or_default()),
-        Err(e) => Json(serde_json::json!({"error": e})),
+    let result = tokio::task::spawn_blocking(move || translate::translate_text(req)).await;
+    match result {
+        Ok(Ok(r)) => Json(serde_json::to_value(r).unwrap_or_default()),
+        Ok(Err(e)) => Json(serde_json::json!({"error": e})),
+        Err(e) => Json(serde_json::json!({"error": format!("Task: {}", e)})),
     }
 }
 
@@ -181,9 +190,11 @@ async fn translate_batch_handler(Json(body): Json<Value>) -> impl IntoResponse {
         source: body["source"].as_str().unwrap_or("en").to_string(),
         target: body["target"].as_str().unwrap_or("en").to_string(),
     };
-    match translate::translate_batch(req) {
-        Ok(r) => Json(serde_json::to_value(r).unwrap_or_default()),
-        Err(e) => Json(serde_json::json!({"error": e})),
+    let result = tokio::task::spawn_blocking(move || translate::translate_batch(req)).await;
+    match result {
+        Ok(Ok(r)) => Json(serde_json::to_value(r).unwrap_or_default()),
+        Ok(Err(e)) => Json(serde_json::json!({"error": e})),
+        Err(e) => Json(serde_json::json!({"error": format!("Task: {}", e)})),
     }
 }
 
@@ -247,9 +258,14 @@ async fn stt_health_handler() -> impl IntoResponse {
 }
 
 async fn stt_listen_handler(body: axum::body::Bytes) -> impl IntoResponse {
-    match stt::stt_listen(body.to_vec(), Some("en".to_string())) {
-        Ok(r) => Json(serde_json::to_value(r).unwrap_or_default()),
-        Err(e) => Json(serde_json::json!({"error": e})),
+    let audio = body.to_vec();
+    let result = tokio::task::spawn_blocking(move || {
+        stt::stt_listen(audio, Some("en".to_string()))
+    }).await;
+    match result {
+        Ok(Ok(r)) => Json(serde_json::to_value(r).unwrap_or_default()),
+        Ok(Err(e)) => Json(serde_json::json!({"error": e})),
+        Err(e) => Json(serde_json::json!({"error": format!("Task: {}", e)})),
     }
 }
 
@@ -338,4 +354,57 @@ async fn chat_send_handler(Json(body): Json<Value>) -> impl IntoResponse {
 
 async fn chat_clear_handler() -> impl IntoResponse {
     Json(crate::mesh::chat::clear_chat())
+}
+
+// ── Mesh Alerts ──────────────────────────────────────────────────────────────
+
+async fn mesh_announcement_handler(Json(body): Json<Value>) -> impl IntoResponse {
+    let req = alerts::AnnouncementRequest {
+        message: body["message"].as_str().unwrap_or("").to_string(),
+        sender_name: body["sender_name"].as_str().unwrap_or("").to_string(),
+        sound: body["sound"].as_str().unwrap_or("").to_string(),
+        audio_base64: body["audio_base64"].as_str().unwrap_or("").to_string(),
+        translations: body["translations"].as_object().cloned().unwrap_or_default(),
+    };
+    match alerts::mesh_announcement(req) {
+        Ok(r) => Json(r),
+        Err(e) => Json(serde_json::json!({"error": e})),
+    }
+}
+
+async fn mesh_emergency_handler(Json(body): Json<Value>) -> impl IntoResponse {
+    let req = alerts::EmergencyRequest {
+        ward: body["ward"].as_str().unwrap_or("").to_string(),
+        bed: body["bed"].as_str().unwrap_or("").to_string(),
+        categories: body["categories"].as_array()
+            .map(|a| a.iter().filter_map(|v| v.as_str().map(String::from)).collect())
+            .unwrap_or_default(),
+        categories_text: body["categories_text"].as_str().unwrap_or("").to_string(),
+        sender_name: body["sender_name"].as_str().unwrap_or("").to_string(),
+        notes: body["notes"].as_str().unwrap_or("").to_string(),
+        sound: body["sound"].as_str().unwrap_or("").to_string(),
+    };
+    let result = tokio::task::spawn_blocking(move || alerts::mesh_emergency(req)).await;
+    match result {
+        Ok(Ok(r)) => Json(r),
+        Ok(Err(e)) => Json(serde_json::json!({"error": e})),
+        Err(e) => Json(serde_json::json!({"error": format!("Task: {}", e)})),
+    }
+}
+
+async fn mesh_alert_handler(Json(body): Json<Value>) -> impl IntoResponse {
+    let req = alerts::AlertRequest {
+        ward: body["ward"].as_str().unwrap_or("").to_string(),
+        bed: body["bed"].as_str().unwrap_or("").to_string(),
+        categories: body["categories"].as_array()
+            .map(|a| a.iter().filter_map(|v| v.as_str().map(String::from)).collect())
+            .unwrap_or_default(),
+        categories_text: body["categories_text"].as_str().unwrap_or("").to_string(),
+        sender_name: body["sender_name"].as_str().unwrap_or("").to_string(),
+        notes: body["notes"].as_str().unwrap_or("").to_string(),
+    };
+    match alerts::mesh_alert(req) {
+        Ok(r) => Json(r),
+        Err(e) => Json(serde_json::json!({"error": e})),
+    }
 }
