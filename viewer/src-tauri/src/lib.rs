@@ -10,6 +10,18 @@ use tauri::RunEvent;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
+    // Suppress Windows debug CRT assertions (dialog popups) in dev builds.
+    // Both whisper.cpp and llama.cpp statically link ggml, causing file handle
+    // conflicts in the debug CRT. Release builds are unaffected.
+    #[cfg(all(debug_assertions, target_os = "windows"))]
+    unsafe {
+        // _CrtSetReportMode(_CRT_ASSERT, _CRTDBG_MODE_DEBUG) — log to debugger, don't popup
+        extern "C" {
+            fn _CrtSetReportMode(report_type: i32, report_mode: i32) -> i32;
+        }
+        _CrtSetReportMode(2, 2); // _CRT_ASSERT=2, _CRTDBG_MODE_DEBUG=2
+    }
+
     // Ensure data directories exist on startup
     storage::ensure_dirs();
 
@@ -164,37 +176,60 @@ pub fn run() {
             // Native Rust servers now handle all HTTP (port 7779) and WS (port 7778).
 
             // Sequential model warmup — load models one at a time on a background thread.
-            // Prevents concurrent memory pressure crash.
-            // Order matters: Whisper and LLM both link ggml statically.
-            // Load Whisper first (smaller) to avoid file handle conflicts.
+            // Each load is wrapped in catch_unwind so a C-level crash in one model
+            // doesn't kill the app. Failed models load lazily on first use.
+            // Whisper runs as a separate process (halt-whisper:7780) to avoid ggml conflicts.
             std::thread::spawn(|| {
                 log::info!("[warmup] Starting sequential model warmup...");
 
-                // 1. Whisper STT (load before LLM — both use ggml, order avoids handle clash)
-                match models::whisper::ensure_loaded() {
-                    Ok(p) => log::info!("[warmup] Whisper loaded: {}", p.display()),
-                    Err(e) => log::warn!("[warmup] Whisper unavailable: {}", e),
+                // Helper: load a model on a dedicated thread with catch_unwind
+                fn safe_load<F: FnOnce() + Send + 'static>(name: &str, f: F) {
+                    let label = name.to_string();
+                    let handle = std::thread::Builder::new()
+                        .name(format!("warmup-{}", label))
+                        .stack_size(8 * 1024 * 1024)
+                        .spawn(move || std::panic::catch_unwind(std::panic::AssertUnwindSafe(f)))
+                        .expect("spawn warmup thread");
+                    match handle.join() {
+                        Ok(Ok(())) => {}
+                        Ok(Err(_)) => log::warn!("[warmup] {} panicked — will load lazily", label),
+                        Err(_) => log::warn!("[warmup] {} thread crashed — will load lazily", label),
+                    }
                 }
 
-                // 2. LLM (largest model)
-                match models::llm::ensure_loaded() {
-                    Ok(_) => log::info!("[warmup] LLM loaded"),
-                    Err(e) => log::warn!("[warmup] LLM unavailable: {}", e),
-                }
+                // 1. Whisper STT — spawns halt-whisper subprocess on port 7780
+                safe_load("whisper", || {
+                    match models::whisper::ensure_loaded() {
+                        Ok(_) => log::info!("[warmup] Whisper STT subprocess ready"),
+                        Err(e) => log::warn!("[warmup] Whisper unavailable: {}", e),
+                    }
+                });
 
-                // 3. NLLB Translation
-                match models::nllb::ensure_loaded() {
-                    Ok(_) => log::info!("[warmup] NLLB translation loaded"),
-                    Err(e) => log::warn!("[warmup] NLLB unavailable: {}", e),
-                }
+                // 2. NLLB Translation (load BEFORE LLM — ct2rs crashes if loaded after llama.cpp)
+                safe_load("nllb", || {
+                    match models::nllb::ensure_loaded() {
+                        Ok(_) => log::info!("[warmup] NLLB translation loaded"),
+                        Err(e) => log::warn!("[warmup] NLLB unavailable: {}", e),
+                    }
+                });
 
-                // 4. Kokoro TTS
-                match models::kokoro::ensure_loaded() {
-                    Ok(_) => log::info!("[warmup] Kokoro TTS loaded"),
-                    Err(e) => log::warn!("[warmup] Kokoro unavailable: {}", e),
-                }
+                // 3. Kokoro TTS (ORT — load before LLM too)
+                safe_load("kokoro", || {
+                    match models::kokoro::ensure_loaded() {
+                        Ok(_) => log::info!("[warmup] Kokoro TTS loaded"),
+                        Err(e) => log::warn!("[warmup] Kokoro unavailable: {}", e),
+                    }
+                });
 
-                log::info!("[warmup] All models loaded. System ready.");
+                // 4. LLM (llama.cpp — load last, its ggml poisons the CRT for other C libs)
+                safe_load("llm", || {
+                    match models::llm::ensure_loaded() {
+                        Ok(_) => log::info!("[warmup] LLM loaded"),
+                        Err(e) => log::warn!("[warmup] LLM unavailable: {}", e),
+                    }
+                });
+
+                log::info!("[warmup] Model warmup complete.");
             });
 
             Ok(())

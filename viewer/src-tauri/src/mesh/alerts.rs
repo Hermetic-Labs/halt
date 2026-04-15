@@ -114,9 +114,10 @@ pub fn mesh_emergency(req: EmergencyRequest) -> Result<Value, String> {
     let mut translations = serde_json::Map::new();
     for lang in lang_map.keys() {
         if *lang != "en" {
-            let translated = nllb::translate(&notes_text, "en", lang);
-            if translated != notes_text {
-                translations.insert(lang.to_string(), Value::String(translated));
+            if let Ok(translated) = nllb::translate(&notes_text, "en", lang) {
+                if translated != notes_text {
+                    translations.insert(lang.to_string(), Value::String(translated));
+                }
             }
         }
     }
@@ -189,9 +190,10 @@ pub fn mesh_announcement(req: AnnouncementRequest) -> Result<Value, String> {
     let lang_map = nllb::lang_map();
     for lang in lang_map.keys() {
         if *lang != "en" && !translations.contains_key(*lang) {
-            let translated = nllb::translate(&req.message, "en", lang);
-            if translated != req.message {
-                translations.insert(lang.to_string(), Value::String(translated));
+            if let Ok(translated) = nllb::translate(&req.message, "en", lang) {
+                if translated != req.message {
+                    translations.insert(lang.to_string(), Value::String(translated));
+                }
             }
         }
     }

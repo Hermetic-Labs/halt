@@ -289,7 +289,7 @@ pub fn export_patient_html(patient_id: String, lang: Option<String>) -> Result<S
         if lang == "en" || text.trim().is_empty() {
             text.to_string()
         } else {
-            nllb::translate(text, "en", &lang)
+            nllb::translate(text, "en", &lang).unwrap_or_else(|_| text.to_string())
         }
     };
 

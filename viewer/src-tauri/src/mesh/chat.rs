@@ -89,9 +89,10 @@ pub fn send_chat(mut msg: ChatMessage) -> Result<ChatMessage, String> {
 
         for lang in lang_map.keys() {
             if *lang != source_lang {
-                let translated = nllb::translate(&msg.message, source_lang, lang);
-                if translated != msg.message {
-                    translations.insert(lang.to_string(), Value::String(translated));
+                if let Ok(translated) = nllb::translate(&msg.message, source_lang, lang) {
+                    if translated != msg.message {
+                        translations.insert(lang.to_string(), Value::String(translated));
+                    }
                 }
             }
         }

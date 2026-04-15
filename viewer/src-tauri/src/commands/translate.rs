@@ -47,13 +47,13 @@ pub struct BatchTranslateResponse {
 #[tauri::command]
 pub fn translate_status() -> Value {
     serde_json::json!({
-        "ready": nllb::is_loaded() || nllb::ensure_loaded().is_ok(),
+        "ready": nllb::is_loaded(),
     })
 }
 
 #[tauri::command]
 pub fn translate_text(request: TranslateRequest) -> Result<TranslateResponse, String> {
-    let translated = nllb::translate(&request.text, &request.source, &request.target);
+    let translated = nllb::translate(&request.text, &request.source, &request.target)?;
     Ok(TranslateResponse {
         translated,
         source: request.source,
@@ -70,7 +70,7 @@ pub fn translate_batch(request: BatchTranslateRequest) -> Result<BatchTranslateR
             request
                 .texts
                 .par_iter()
-                .map(|t| nllb::translate(t, &request.source, &request.target))
+                .map(|t| nllb::translate(t, &request.source, &request.target).unwrap_or_else(|_| t.clone()))
                 .collect()
         }
 
@@ -79,7 +79,7 @@ pub fn translate_batch(request: BatchTranslateRequest) -> Result<BatchTranslateR
             request
                 .texts
                 .iter()
-                .map(|t| nllb::translate(t, &request.source, &request.target))
+                .map(|t| nllb::translate(t, &request.source, &request.target).unwrap_or_else(|_| t.clone()))
                 .collect()
         }
     };

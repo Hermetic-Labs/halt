@@ -56,74 +56,10 @@ where
 // ── Pipeline Helpers ────────────────────────────────────────────────────────
 
 /// Whisper STT: audio bytes → (text, detected_language).
-/// Direct translation of _whisper_transcribe() from translate_stream.py.
+/// Proxied to halt-whisper subprocess on port 7780.
 fn pipeline_stt(audio_data: &[u8], source_lang: &str) -> Result<(String, String), String> {
-    let ctx = whisper::get_context()?;
-
-    let mut pcm_data = Vec::with_capacity(audio_data.len() / 4);
-    for chunk in audio_data.chunks_exact(4) {
-        pcm_data.push(f32::from_le_bytes(chunk.try_into().unwrap_or([0; 4])));
-    }
-
-    // --- Strong Base VAD (Voice Activity Detection) ---
-    // Discard frames that are pure background noise to prevent hallucination looping
-    let sum_sq: f32 = pcm_data.iter().map(|&s| s * s).sum();
-    let rms = if pcm_data.is_empty() {
-        0.0
-    } else {
-        (sum_sq / pcm_data.len() as f32).sqrt()
-    };
-    if rms < 0.005 {
-        log::debug!("VAD Active: Audio discarded (too quiet, RMS {:.4})", rms);
-        let fallback_lang = if source_lang == "auto" {
-            "en"
-        } else {
-            source_lang
-        };
-        return Ok(("".to_string(), fallback_lang.to_string()));
-    }
-
-    let mut state = ctx
-        .create_state()
-        .map_err(|e| format!("State error: {}", e))?;
-    let mut params =
-        whisper_rs::FullParams::new(whisper_rs::SamplingStrategy::BeamSearch { beam_size: 5, patience: 1.0 });
-    let lang_opt = if source_lang == "auto" {
-        "auto"
-    } else {
-        source_lang
-    };
-    params.set_language(Some(lang_opt));
-    params.set_no_speech_thold(0.65); // Aggressive whisper-native VAD
-    params.set_print_progress(false);
-    params.set_print_special(false);
-    params.set_print_realtime(false);
-
-    state
-        .full(params, &pcm_data)
-        .map_err(|e| format!("Whisper eval: {}", e))?;
-    let num_segments = state.full_n_segments();
-
-    let mut result_text = String::new();
-    for i in 0..num_segments {
-        if let Some(segment) = state.get_segment(i) {
-            if let Ok(text) = segment.to_str_lossy() {
-                let trimmed = text.trim();
-                // Filter out common whisper hallucinations
-                if !trimmed.starts_with("[") && !trimmed.starts_with("(") {
-                    result_text.push_str(trimmed);
-                    result_text.push(' ');
-                }
-            }
-        }
-    }
-
-    let detected = if source_lang == "auto" {
-        "en"
-    } else {
-        source_lang
-    };
-    Ok((result_text.trim().to_string(), detected.to_string()))
+    let (text, lang, _duration) = whisper::transcribe(audio_data, source_lang)?;
+    Ok((text, lang))
 }
 
 /// NLLB translate: source → English → target (two-hop bridge).
@@ -131,14 +67,20 @@ fn pipeline_stt(audio_data: &[u8], source_lang: &str) -> Result<(String, String)
 fn pipeline_translate(text: &str, source_lang: &str, target_lang: &str) -> (String, String) {
     // Source → English (if not already English)
     let english = if source_lang != "en" {
-        nllb::translate(text, source_lang, "en")
+        nllb::translate(text, source_lang, "en").unwrap_or_else(|e| {
+            log::warn!("NLLB src→en failed: {}", e);
+            text.to_string()
+        })
     } else {
         text.to_string()
     };
 
     // English → Target (if target isn't English)
     let translation = if target_lang != "en" {
-        nllb::translate(&english, "en", target_lang)
+        nllb::translate(&english, "en", target_lang).unwrap_or_else(|e| {
+            log::warn!("NLLB en→tgt failed: {}", e);
+            english.clone()
+        })
     } else {
         english.clone()
     };

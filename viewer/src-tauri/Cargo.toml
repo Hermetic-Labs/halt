@@ -2,6 +2,7 @@
 name = "halt-triage"
 version = "1.1.0"
 description = "HALT — Hermetic Anonymous Local Triage. Offline-first field medical triage system."
+default-run = "halt-triage"
 authors = ["Hermetic Labs <Frontdesk@7hermeticlabs.com>"]
 license = "MIT"
 repository = "https://github.com/Hermetic-Labs/halt"
@@ -47,23 +48,28 @@ tower-http = { version = "0.6", features = ["cors", "fs"] }
 [features]
 default = ["native_ml"]
 native_ml = [
-    "dep:sentencepiece", 
-    "dep:ct2rs", 
     "dep:llama-cpp-2", 
-    "dep:whisper-rs", 
     "dep:ort",
-    "dep:reqwest",
     "dep:flate2",
     "dep:tar",
     "dep:rayon",
     "dep:symphonia"
 ]
+# Standalone whisper binary — separate process to avoid ggml symbol clash
+whisper_stt = [
+    "dep:whisper-rs",
+    "dep:symphonia"
+]
+# Standalone NLLB binary — separate process to avoid CTranslate2 CRT crashes
+nllb_translate = [
+    "dep:sentencepiece",
+    "dep:ct2rs"
+]
 
 [dependencies.reqwest]
 version = "0.12"
-features = ["stream", "rustls-tls"]
+features = ["stream", "rustls-tls", "blocking", "json"]
 default-features = false
-optional = true
 
 [dependencies.flate2]
 version = "1"
@@ -76,6 +82,33 @@ optional = true
 [dependencies.futures-util]
 version = "0.3"
 
+[[bin]]
+name = "halt-whisper"
+path = "src/bin/halt_whisper.rs"
+required-features = ["whisper_stt"]
+
+[[bin]]
+name = "halt-nllb"
+path = "src/bin/halt_nllb.rs"
+required-features = ["nllb_translate"]
+
 [patch.crates-io]
 ct2rs = { path = "vendor/ct2rs" }
 esaxx-rs = { path = "vendor/esaxx-rs" }
+
+# Build C/C++ dependencies in release mode even during debug builds.
+# Prevents debug CRT /GS security cookie crashes from ggml symbol conflicts.
+[profile.dev.build-override]
+opt-level = 2
+
+[profile.dev.package."llama-cpp-sys-2"]
+opt-level = 2
+
+[profile.dev.package."ct2rs"]
+opt-level = 2
+
+[profile.dev.package."sentencepiece-sys"]
+opt-level = 2
+
+[profile.dev.package."ort-sys"]
+opt-level = 2

@@ -32,8 +32,10 @@ set "CMAKE_GENERATOR=Visual Studio 17 2022"
 
 :: ── Kill orphaned processes holding ports ──────────────────────
 taskkill /F /IM halt-triage.exe 2>nul
+taskkill /F /IM halt-whisper.exe 2>nul
 for /f "tokens=5" %%p in ('netstat -ano ^| findstr ":7778.*LISTEN" 2^>nul') do taskkill /F /PID %%p 2>nul
 for /f "tokens=5" %%p in ('netstat -ano ^| findstr ":7779.*LISTEN" 2^>nul') do taskkill /F /PID %%p 2>nul
+for /f "tokens=5" %%p in ('netstat -ano ^| findstr ":7780.*LISTEN" 2^>nul') do taskkill /F /PID %%p 2>nul
 
 :: ── Splash ───────────────────────────────────────────────────
 
@@ -85,6 +87,30 @@ if not exist "viewer\node_modules" (
     cd viewer
     call npm install
     cd ..
+)
+
+:: ── Build ML subprocesses (release, only if missing) ─────────
+set "WHISPER_BIN=viewer\src-tauri\target\release\halt-whisper.exe"
+set "NLLB_BIN=viewer\src-tauri\target\release\halt-nllb.exe"
+
+if not exist "%WHISPER_BIN%" (
+    echo.
+    echo    Building halt-whisper [release]...
+    cd viewer\src-tauri
+    cargo build --bin halt-whisper --release --features whisper_stt
+    cd ..\..
+) else (
+    echo    halt-whisper: cached
+)
+
+if not exist "%NLLB_BIN%" (
+    echo.
+    echo    Building halt-nllb [release]...
+    cd viewer\src-tauri
+    cargo build --bin halt-nllb --release --features nllb_translate
+    cd ..\..
+) else (
+    echo    halt-nllb: cached
 )
 
 :: ── Launch ───────────────────────────────────────────────────
