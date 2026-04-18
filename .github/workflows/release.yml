@@ -119,9 +119,14 @@ jobs:
           PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
           KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
 
-          # Import certificate and provisioning profile from secrets
-          echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode -o $CERTIFICATE_PATH
-          echo -n "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode -o $PP_PATH
+          # Import certificate and provisioning profile using Python to ensure robust decoding (ignoring headers/newlines)
+          python3 -c "import base64, os, re; \
+            cert = os.environ['BUILD_CERTIFICATE_BASE64']; \
+            pp = os.environ['BUILD_PROVISION_PROFILE_BASE64']; \
+            cert = re.sub(r'-----.*?-----|\s+', '', cert); \
+            pp = re.sub(r'-----.*?-----|\s+', '', pp); \
+            open('$CERTIFICATE_PATH', 'wb').write(base64.b64decode(cert)); \
+            open('$PP_PATH', 'wb').write(base64.b64decode(pp))"
 
           # Create temporary keychain
           security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
