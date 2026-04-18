@@ -16,7 +16,7 @@ jobs:
           - platform: "macos-latest"
             args: "--target x86_64-apple-darwin"
           - platform: "windows-latest"
-            args: "--bundles msix"
+            args: "--bundles msi"
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -39,9 +39,13 @@ jobs:
         with:
           targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
-      - name: Install LLVM/Clang (Windows native_ml bindgen)
+      - name: Install LLVM/Clang (Windows)
         if: matrix.platform == 'windows-latest'
         run: choco install llvm -y
+
+      - name: Install LLVM/Clang (macOS)
+        if: matrix.platform == 'macos-latest'
+        run: brew install llvm
 
       - name: Install Frontend Dependencies
         working-directory: viewer
@@ -53,7 +57,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
-          LIBCLANG_PATH: 'C:\Program Files\LLVM\bin'
+          LIBCLANG_PATH: ${{ matrix.platform == 'windows-latest' && 'C:\Program Files\LLVM\bin' || '/opt/homebrew/opt/llvm/lib' }}
         with:
           projectPath: viewer
           tagName: app-v__VERSION__
@@ -66,6 +70,10 @@ jobs:
         if: matrix.platform == 'windows-latest'
         uses: microsoft/setup-msstore-cli@v1
 
+      - name: Package MSIX for Store
+        if: matrix.platform == 'windows-latest'
+        run: python dev/build_and_deploy.py --msix --zip-only --no-bump
+
       - name: Publish to Microsoft Store
         if: matrix.platform == 'windows-latest'
         env:
@@ -76,7 +84,7 @@ jobs:
           APP_ID: ${{ secrets.STORE_APP_ID }}
         run: |
           msstore reconfigure --tenantId $env:TENANT_ID --sellerId $env:SELLER_ID --clientId $env:CLIENT_ID --clientSecret $env:CLIENT_SECRET
-          msstore submission publish $env:APP_ID --package-path "viewer/src-tauri/target/release/bundle/msix/*.msix"
+          msstore submission publish $env:APP_ID --package-path "builds/*.msix"
 
   ios:
     runs-on: macos-latest
@@ -93,6 +101,9 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: aarch64-apple-ios,x86_64-apple-ios
+
+      - name: Install LLVM/Clang (iOS)
+        run: brew install llvm
 
       - name: Install Apple Certificates and Profiles
         env:
@@ -129,6 +140,8 @@ jobs:
 
       - name: Tauri iOS Build
         working-directory: viewer
+        env:
+          LIBCLANG_PATH: '/opt/homebrew/opt/llvm/lib'
         run: |
           npm run tauri ios build -- --export-method app-store-connect
 
