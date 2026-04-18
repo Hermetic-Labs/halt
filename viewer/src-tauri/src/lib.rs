@@ -154,14 +154,14 @@ pub fn run() {
             std::thread::spawn(|| {
                 let rt = tokio::runtime::Runtime::new().expect("Failed to create tokio runtime");
                 rt.block_on(async {
-                    // Mesh WebSocket server on port 7778
+                    // Mesh WebSocket server on port 7779
                     tokio::spawn(async {
-                        mesh::ws_listener::start(7778).await;
+                        mesh::ws_listener::start(7779).await;
                     });
 
-                    // HTTP REST server on port 7779
+                    // HTTP REST server on port 7778
                     let app = http_server::build_router();
-                    let addr = "0.0.0.0:7779";
+                    let addr = "0.0.0.0:7778";
                     log::info!("HTTP REST server listening on http://{}", addr);
                     let listener = tokio::net::TcpListener::bind(addr)
                         .await
@@ -229,6 +229,17 @@ pub fn run() {
                     }
                 });
 
+                // 5. Vision — runs as sidecar (halt-vision on port 7782)
+                safe_load("vision", || {
+                    match std::net::TcpStream::connect_timeout(
+                        &"127.0.0.1:7782".parse().unwrap(),
+                        std::time::Duration::from_secs(30),
+                    ) {
+                        Ok(_) => log::info!("[warmup] Vision sidecar reachable on :7782"),
+                        Err(_) => log::info!("[warmup] Vision sidecar not yet ready (will retry on first image)"),
+                    }
+                });
+
                 log::info!("[warmup] Model warmup complete.");
             });
 
@@ -254,6 +265,7 @@ pub fn benchmark_llm() {
                 temperature: 0.1,
                 persona: "".to_string(),
                 stream: false,
+                image_b64: None,
             };
 
             let inf_start = std::time::Instant::now();

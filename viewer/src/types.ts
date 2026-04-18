@@ -210,3 +210,9 @@ export interface FieldNode {
     type: 'base' | 'pivot' | 'ward' | 'inventory';
     style?: LineStyle;
 }
+
+export const SKILL_OPTIONS = [
+    'First Aid', 'CPR', 'IV Lines', 'Splinting', 'Airway', 'Sutures',
+    'Triage', 'Medication', 'Wound Care', 'Childbirth', 'Vitals',
+    'Radio/Comms', 'Translation', 'Logistics', 'Security', 'Search & Rescue',
+];

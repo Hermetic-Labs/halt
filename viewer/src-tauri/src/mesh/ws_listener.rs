@@ -2,7 +2,7 @@
 //!
 //! Direct replacement for the Python WebSocket handler in `mesh.py`.
 //!
-//! Listens on port 7778 (same as the Python sidecar) and handles:
+//! Listens on port 7779 (same as the Python sidecar) and handles:
 //!   - Client registration (set_name)
 //!   - Heartbeat ping/pong with leader heartbeat broadcast
 //!   - Patient update/create broadcast
@@ -30,21 +30,30 @@ type WsClients = Arc<RwLock<HashMap<String, Arc<Mutex<WsSender>>>>>;
 /// Global reference to WsClients so alerts/chat can broadcast from Tauri commands.
 static GLOBAL_CLIENTS: std::sync::OnceLock<WsClients> = std::sync::OnceLock::new();
 
+/// Global handle to the tokio runtime so Tauri (non-tokio) threads can spawn async tasks.
+static RUNTIME_HANDLE: std::sync::OnceLock<tokio::runtime::Handle> = std::sync::OnceLock::new();
+
 /// Broadcast a JSON payload to all connected WebSocket clients.
 /// Safe to call from sync context — spawns the async send on the tokio runtime.
 pub fn broadcast_message(msg: Value) {
     let Some(clients) = GLOBAL_CLIENTS.get().cloned() else { return };
-    // Use tokio::spawn to run the async broadcast from sync code
-    if let Ok(handle) = tokio::runtime::Handle::try_current() {
+    // Use the global tokio handle to spawn the broadcast, so this works
+    // even when called from Tauri's blocking command thread pool.
+    if let Some(handle) = RUNTIME_HANDLE.get() {
         handle.spawn(async move {
             broadcast(&clients, &msg, None).await;
         });
+    } else {
+        log::error!("Mesh WS: No tokio runtime handle available to broadcast!");
     }
 }
 
 /// Start the mesh WebSocket server on the given port.
 /// Called from lib.rs during app setup.
 pub async fn start(port: u16) {
+    // Stash the handle for sync -> async calls
+    let _ = RUNTIME_HANDLE.set(tokio::runtime::Handle::current());
+
     let addr = format!("0.0.0.0:{}", port);
     let listener = match TcpListener::bind(&addr).await {
         Ok(l) => l,

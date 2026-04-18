@@ -22,7 +22,14 @@ pause
 echo.
 echo   [1/4] Stopping any running HALT processes...
 taskkill /F /IM halt-triage.exe 2>nul
+taskkill /F /IM halt-whisper.exe 2>nul
+taskkill /F /IM halt-nllb.exe 2>nul
 taskkill /F /IM node.exe 2>nul
+
+for /f "tokens=5" %%p in ('netstat -ano ^| findstr ":7778.*LISTEN" 2^>nul') do taskkill /F /PID %%p 2>nul
+for /f "tokens=5" %%p in ('netstat -ano ^| findstr ":7779.*LISTEN" 2^>nul') do taskkill /F /PID %%p 2>nul
+for /f "tokens=5" %%p in ('netstat -ano ^| findstr ":7780.*LISTEN" 2^>nul') do taskkill /F /PID %%p 2>nul
+
 timeout /t 2 /nobreak >nul
 
 :: ── Clear patient data directory ──────────────────────────

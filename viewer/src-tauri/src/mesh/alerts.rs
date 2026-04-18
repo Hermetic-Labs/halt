@@ -41,6 +41,12 @@ pub struct EmergencyRequest {
     pub notes: String,
     #[serde(default)]
     pub sound: String,
+    #[serde(default)]
+    pub audio_base64: String,
+    #[serde(default)]
+    pub message: String,
+    #[serde(default)]
+    pub translations: serde_json::Map<String, Value>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -95,7 +101,7 @@ pub fn mesh_emergency(req: EmergencyRequest) -> Result<Value, String> {
     };
 
     // Build broadcast payload
-    let mut payload = serde_json::json!({
+    let payload = serde_json::json!({
         "type": "emergency",
         "ward": req.ward,
         "bed": req.bed,
@@ -104,13 +110,12 @@ pub fn mesh_emergency(req: EmergencyRequest) -> Result<Value, String> {
         "sender_name": req.sender_name,
         "notes": notes_text,
         "sound": if req.sound.is_empty() { "emergency" } else { &req.sound },
+        "audio_base64": req.audio_base64,
+        "message": req.message,
+        "translations": req.translations,
         "timestamp": now.timestamp(),
         "time_str": now.format("%H:%M:%S").to_string(),
     });
-
-    // Translations provided by frontend (language picker scoped)
-    let translations = serde_json::Map::new();
-    payload["translations"] = Value::Object(translations);
 
     // Log to chat record
     let chat_msg = serde_json::json!({
@@ -171,18 +176,18 @@ pub fn mesh_alert(req: AlertRequest) -> Result<Value, String> {
 /// The receiving UI renders the card in the receiver's configured language
 /// with a play button for the audio. No network round-trip needed.
 #[tauri::command]
-pub fn mesh_announcement(req: AnnouncementRequest) -> Result<Value, String> {
+pub fn mesh_announcement(request: AnnouncementRequest) -> Result<Value, String> {
     let now = chrono::Local::now();
 
     // Use translations provided by frontend (language picker scoped)
-    let translations = req.translations.clone();
+    let translations = request.translations.clone();
 
     let payload = serde_json::json!({
         "type": "announcement",
-        "message": req.message,
-        "sender_name": req.sender_name,
-        "sound": if req.sound.is_empty() { "announcement" } else { &req.sound },
-        "audio_base64": req.audio_base64,
+        "message": request.message,
+        "sender_name": request.sender_name,
+        "sound": if request.sound.is_empty() { "announcement" } else { &request.sound },
+        "audio_base64": request.audio_base64,
         "translations": translations,
         "timestamp": now.timestamp(),
         "time_str": now.format("%H:%M:%S").to_string(),
@@ -191,9 +196,9 @@ pub fn mesh_announcement(req: AnnouncementRequest) -> Result<Value, String> {
     // Log to chat
     let chat_msg = serde_json::json!({
         "id": format!("ANN-{}", now.format("%Y%m%d-%H%M%S-%f")),
-        "sender_name": req.sender_name,
+        "sender_name": request.sender_name,
         "sender_role": "system",
-        "message": format!("📢 ANNOUNCEMENT: {}", req.message),
+        "message": format!("📢 ANNOUNCEMENT: {}", request.message),
         "target_name": "",
         "timestamp": now.to_rfc3339(),
     });
@@ -202,7 +207,7 @@ pub fn mesh_announcement(req: AnnouncementRequest) -> Result<Value, String> {
     // Broadcast to all connected WebSocket clients
     ws_listener::broadcast_message(payload.clone());
 
-    log::info!("📢 Announcement broadcast: {}", req.message);
+    log::info!("📢 Announcement broadcast: {}", request.message);
 
     Ok(payload)
 }

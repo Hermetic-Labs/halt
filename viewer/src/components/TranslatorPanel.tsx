@@ -46,6 +46,8 @@ const LANGUAGES: { code: string; name: string }[] = [
     { code: 'ku', name: 'Kurdî' },
 ];
 
+import { convertWebmToWav } from '../services/audioUtils';
+
 // Status labels are resolved at render time via t() — see statusLabels below
 
 const langName = (code: string) => LANGUAGES.find(l => l.code === code)?.name || code.toUpperCase();
@@ -63,8 +65,8 @@ let _msgId = 0;
 
 export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
     const { t, lang } = useT();
-    const [leftLang, setLeftLang] = useState(lang === 'en' ? 'en' : lang);
-    const [rightLang, setRightLang] = useState(lang === 'en' ? 'es' : 'en');
+    const leftLang = LANGUAGES.find(l => l.code === lang?.split('-')[0])?.code || 'en';
+    const [rightLang, setRightLang] = useState(leftLang === 'en' ? 'es' : 'en');
     const [activeSide, setActiveSide] = useState<'left' | 'right'>('left');
     const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
     const [playingId, setPlayingId] = useState<number | null>(null);
@@ -94,10 +96,10 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
 
     const live = useTranslateLive();
 
-    // Auto-scroll to bottom when new messages appear
+    // Auto-scroll to bottom when new messages or live segments appear
     useEffect(() => {
         chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }, [chatMessages.length]);
+    }, [chatMessages.length, live.segments.length, result?.transcript, live.isTranslating]);
 
     // When a result completes, add messages to chat + auto-play
     useEffect(() => {
@@ -106,15 +108,19 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
         const key = result.transcript + result.translation;
         if (prevResultRef.current === key) return;
         prevResultRef.current = key;
+        // Derive speaker side strictly from result context to prevent Swap-Bug
+        let speakerSide = activeSide;
+        if (result.targetLang === leftLang) {
+            speakerSide = 'right';
+        } else if (result.targetLang === rightLang) {
+            speakerSide = 'left';
+        }
 
-        const speakerSide = activeSide;
-        const tgtLang = activeSide === 'left' ? rightLang : leftLang;
-
-        const newMsg: ChatMessage = { id: ++_msgId, side: speakerSide, text: result.translation, lang: tgtLang, originalText: result.transcript, timestamp: Date.now() };
+        const newMsg: ChatMessage = { id: ++_msgId, side: speakerSide, text: result.translation, lang: result.targetLang, originalText: result.transcript, timestamp: Date.now() };
         setChatMessages(prev => [...prev, newMsg]);
 
-        // Auto-play the translation via TTS (if enabled)
-        if (autoPlayRef.current) handleReplay(newMsg);
+        // autoPlay is natively handled by gapless `playBufferedAudio` in useTranslateStream.
+        // We do NOT call `handleReplay(newMsg)` here to prevent the overlap and double-lock echo bug.
     // activeSide at capture time matters, don't re-run on activeSide change
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [result?.transcript, result?.translation]);
@@ -161,14 +167,34 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                     mr.onstop = async () => {
                         stream.getTracks().forEach(t => t.stop());
                         const blob = new Blob(chunks, { type: mimeType || 'audio/webm' });
-                        const fd = new FormData();
-                        fd.append('audio', blob, 'recording.webm');
-                        if (sourceLang !== 'en') fd.append('language', sourceLang);
+                        
+                        // Visual feedback handled automatically by 'sttBusy' pulsing waveform
                         try {
+                            setSttBusy(false);
+                            setTextBusy(true);
+                            const wavBlob = await convertWebmToWav(blob);
+                            const fd = new FormData();
+                            fd.append('audio', wavBlob, 'recording.wav');
+                            if (sourceLang !== 'en') fd.append('language', sourceLang);
+                            
+                            const sttStartTime = Date.now();
+                            console.log(`[Manual STT] Sending ${wavBlob.size} bytes (WAV) to native STT handler...`);
                             const d = await sttListen(fd);
-                            if (d.text) setTextInput(prev => prev ? prev + ' ' + d.text : d.text);
-                        } catch { /* silent */ }
-                        setSttBusy(false);
+                            console.log(`[Manual STT] Result (${Date.now() - sttStartTime}ms):`, d);
+                            
+                            if (d.text && d.text.trim().length > 0) {
+                                // Standard Non-Stream Mode: Populate textbox
+                                const transcription = d.text.trim();
+                                setTextInput(prev => prev ? prev + ' ' + transcription : transcription);
+                            } else {
+                                console.warn(`[Manual STT] Whisper dropped! Payload size: ${wavBlob.size} | API Response:`, d);
+                            }
+                        } catch (err) {
+                            console.error('[Manual STT] ❌ Pipeline Exception:', err);
+                        } finally {
+                            setSttBusy(false);
+                            setTextBusy(false);
+                        }
                     };
                     mr.start(250);
                 }).catch(() => setSttBusy(false));
@@ -182,11 +208,9 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
         try {
             const r = await ttsSynthesize(msg.text, undefined, undefined, msg.lang);
             if (r.ok) {
-                const buf = await r.arrayBuffer();
-                const blob = new Blob([buf], { type: 'audio/wav' });
-                const url = URL.createObjectURL(blob);
-                const audio = new Audio(url);
-                audio.onended = () => { setPlayingId(null); URL.revokeObjectURL(url); };
+                const data = await r.json();
+                const audio = new Audio(data.audio_base64);
+                audio.onended = () => { setPlayingId(null); };
                 audio.play().catch(() => setPlayingId(null));
             } else {
                 setPlayingId(null);
@@ -211,7 +235,10 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
             setChatMessages(prev => [...prev, newMsg]);
             setTextInput('');
             if (autoPlayRef.current) handleReplay(newMsg);
-        } catch { /* silent */ }
+        } catch (err) {
+            console.error('[Manual Translate] ❌ Pipeline Exception:', err);
+            setTextInput(prev => `${prev ? prev + '\n' : ''}[ERROR: ${(err as Error).message}]`);
+        }
         setTextBusy(false);
     }, [textInput, textBusy, sourceLang, targetLang, activeSide, handleReplay]);
 
@@ -275,10 +302,14 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                     {/* Speak toggle pill (live continuous mode) */}
                     <button
                         onClick={() => {
-                            setSpeakMode(s => {
-                                if (!s) setStreamMic(false); // mutual exclusion
-                                return !s;
-                            });
+                            if (!speakMode) {
+                                if (isRecording) stopRecording(false);
+                                setStreamMic(false);
+                                setSpeakMode(true);
+                            } else {
+                                if (live.isActive) live.stop();
+                                setSpeakMode(false);
+                            }
                         }}
                         title="Speak continuously — auto-detects pauses and translates each phrase"
                         style={{
@@ -301,10 +332,14 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                     {/* Stream Mic toggle pill */}
                     <button
                         onClick={() => {
-                            setStreamMic(s => {
-                                if (!s) setSpeakMode(false); // mutual exclusion
-                                return !s;
-                            });
+                            if (!streamMic) {
+                                if (live.isActive) live.stop();
+                                setSpeakMode(false);
+                                setStreamMic(true);
+                            } else {
+                                if (isRecording) stopRecording(false);
+                                setStreamMic(false);
+                            }
                         }}
                         title="Stream microphone audio (record full statement)"
                         style={{
@@ -528,6 +563,28 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                         </div>
                     </div>
                 ))}
+                
+                {/* Stream processing indicator */}
+                {speakMode && live.isTranslating && (
+                    <div style={{
+                        display: 'flex', alignItems: 'center', gap: 8,
+                        padding: '10px 14px', borderRadius: 16,
+                        background: 'rgba(255,255,255,0.05)',
+                        border: `1px solid rgba(255,255,255,0.1)`,
+                        alignSelf: activeSide === 'left' ? 'flex-start' : 'flex-end',
+                        maxWidth: '85%',
+                    }}>
+                        <div style={{
+                            width: 14, height: 14, border: '2px solid rgba(255,255,255,0.2)',
+                            borderTop: `2px solid ${activeSide === 'left' ? '#58a6ff' : '#3fb950'}`,
+                            borderRadius: '50%',
+                            animation: 'spin 0.8s linear infinite',
+                        }} />
+                        <span style={{ fontSize: 13, color: '#8b949e', fontStyle: 'italic' }}>
+                            {t('translator.processing_stream', 'Processing...')}
+                        </span>
+                    </div>
+                )}
 
                 <div ref={chatEndRef} />
             </div>
@@ -641,24 +698,24 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                                 animation: activeSide === 'left' ? 'speaker-pulse 1.8s ease-in-out infinite' : 'none',
                             }}>{activeSide === 'left' ? '●' : '○'}</span> {activeSide === 'left' ? t('translator.speaking', 'SPEAKING') : t('translator.listening', 'LISTENING')}
                         </div>
-                        <select
-                            value={leftLang}
-                            onChange={e => setLeftLang(e.target.value)}
+                        <div
                             style={{
                                 width: '100%', padding: '8px 10px', borderRadius: 8,
-                                background: '#000',
-                                color: '#fff',
+                                background: 'rgba(255,255,255,0.03)',
+                                color: '#8b949e',
                                 border: activeSide === 'left'
-                                    ? '1px solid rgba(88,166,255,0.4)'
-                                    : '1px solid rgba(255,255,255,0.1)',
+                                    ? '1px solid rgba(88,166,255,0.2)'
+                                    : '1px solid rgba(255,255,255,0.05)',
                                 fontSize: 13, textAlign: 'center',
                                 transition: 'all 0.2s',
+                                userSelect: 'none',
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden', textOverflow: 'ellipsis',
                             }}
+                            title={t('translator.system_locked', 'Language locked to global system locale')}
                         >
-                            {LANGUAGES.map(l => (
-                                <option key={l.code} value={l.code}>{l.name}</option>
-                            ))}
-                        </select>
+                            {langName(leftLang)} (System)
+                        </div>
                     </div>
 
                     {/* Direction arrow */}
@@ -731,13 +788,11 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                                 ? (live.isListening ? '#e74c3c' : live.isActive ? '#f39c12' : '#d2a83c')
                                 : (isPlaying || playingId !== null)
                                     ? '#6e7681'
-                                    : sttBusy
+                                    : (isRecording || sttBusy)
                                         ? '#e74c3c'
-                                        : isRecording
-                                            ? '#e74c3c'
-                                            : isProcessing
-                                                ? '#f39c12'
-                                                : activeSide === 'left' ? '#58a6ff' : '#3fb950',
+                                        : (isProcessing || textBusy)
+                                            ? '#f39c12'
+                                            : activeSide === 'left' ? '#58a6ff' : '#3fb950',
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                             boxShadow: (isRecording || sttBusy || live.isListening)
                                 ? '0 0 30px rgba(231,76,60,0.4)'
@@ -754,7 +809,7 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
                         ) : (isRecording || sttBusy || (speakMode && live.isActive && isHoverMic)) ? (
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
-                        ) : isProcessing ? (
+                        ) : (isProcessing || textBusy) ? (
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><circle cx="12" cy="12" r="10" strokeDasharray="31.4" strokeDashoffset="10"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.8s" repeatCount="indefinite"/></circle></svg>
                         ) : (
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="17" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>

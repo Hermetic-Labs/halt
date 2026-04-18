@@ -9,6 +9,7 @@ import SiteMap from './SiteMap';
 import { useT } from '../services/i18n';
 import { normalizeToEnglish } from '../services/i18nDynamic';
 import { api, apiMutate, ttsSynthesize, resolveUrl, isNative } from '../services/api';
+import { SKILL_OPTIONS } from '../types';
 
 // Module-level ringtone reference for incoming call signaling
 let _eveRingtone: HTMLAudioElement | null = null;
@@ -46,6 +47,7 @@ function fireSystemNotification(title: string, body: string, tag: string, urgent
  * Format: "Alert. [group]. [ward/bed]. [notes]."
  */
 function composeEmergencyText(msg: Record<string, unknown>): string {
+    if (typeof msg.message === 'string' && msg.message) return msg.message;
     const parts: string[] = ['Alert.'];
     if (msg.categories_text) parts.push(`${msg.categories_text}.`);
     if (msg.ward) parts.push(`Ward ${msg.ward}.`);
@@ -64,6 +66,15 @@ async function fetchTTSAudio(text: string, lang = 'en'): Promise<HTMLAudioElemen
     try {
         const res = await ttsSynthesize(text, 'af_heart', 1.0, lang);
         if (!res.ok) return null;
+        
+        // Prevent parsing JSON error fallbacks as Audio Blobs
+        const ct = res.headers.get('content-type');
+        if (ct?.includes('application/json')) {
+            const data = await res.json();
+            if (!data.audio_base64) return null;
+            return audioFromB64(data.audio_base64);
+        }
+        
         const blob = await res.blob();
         const url = URL.createObjectURL(blob);
         const audio = new Audio(url);
@@ -81,16 +92,13 @@ async function fetchTTSAudio(text: string, lang = 'en'): Promise<HTMLAudioElemen
 function audioFromB64(b64: string): HTMLAudioElement | null {
     if (!b64) return null;
     try {
-        const binary = atob(b64);
-        const bytes = new Uint8Array(binary.length);
-        for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-        const blob = new Blob([bytes], { type: 'audio/wav' });
-        const url = URL.createObjectURL(blob);
-        const audio = new Audio(url);
+        // Strip any existing prefix just in case to avoid doubling it
+        const cleanB64 = b64.includes(',') ? b64.split(',')[1] : b64;
+        const audio = new Audio(`data:audio/wav;base64,${cleanB64}`);
         audio.volume = 0.9;
-        audio.addEventListener('ended', () => URL.revokeObjectURL(url));
         return audio;
-    } catch {
+    } catch (err) {
+        console.error('audioFromB64 failed to construct Audio:', err);
         return null;
     }
 }
@@ -109,14 +117,33 @@ function abortCadence() {
 }
 
 /** Play an audio element, tracking it for interruption. Rejects on abort. */
-function playTracked(audio: HTMLAudioElement, signal: AbortSignal): Promise<void> {
+function playTracked(audio: HTMLAudioElement, signal: AbortSignal, label = 'audio'): Promise<void> {
     return new Promise<void>((resolve, reject) => {
-        if (signal.aborted) { reject(new DOMException('Aborted', 'AbortError')); return; }
+        if (signal.aborted) {
+            console.warn(`[playTracked] ${label} aborted before start`);
+            reject(new DOMException('Aborted', 'AbortError')); 
+            return; 
+        }
         _activeAudio.add(audio);
         const cleanup = () => { _activeAudio.delete(audio); };
-        audio.addEventListener('ended', () => { cleanup(); resolve(); }, { once: true });
-        signal.addEventListener('abort', () => { audio.pause(); audio.currentTime = 0; cleanup(); reject(new DOMException('Aborted', 'AbortError')); }, { once: true });
-        audio.play().catch(() => { cleanup(); resolve(); });
+        
+        audio.addEventListener('ended', () => { 
+            console.log(`[playTracked] ${label} finished successfully`);
+            cleanup(); 
+            resolve(); 
+        }, { once: true });
+        
+        signal.addEventListener('abort', () => { 
+            console.warn(`[playTracked] ${label} aborted during playback`);
+            audio.pause(); audio.currentTime = 0; cleanup(); reject(new DOMException('Aborted', 'AbortError')); 
+        }, { once: true });
+        
+        console.log(`[playTracked] Attempting to play ${label}... (src: ${audio.src.substring(0, 100)})`);
+        audio.play().catch((err) => { 
+            console.error(`[playTracked] Error playing ${label}:`, err, audio.src.substring(0, 100));
+            cleanup(); 
+            resolve(); // Don't block the sequence, just skip this track
+        });
     });
 }
 
@@ -127,27 +154,42 @@ function playTracked(audio: HTMLAudioElement, signal: AbortSignal): Promise<void
  * Aborts any in-progress cadence before starting.
  */
 async function playEmergencySequence(audio_b64?: string, text?: string, lang?: string) {
+    console.log(`[EmergencySeq] Starting sequence. Audio provided? ${!!audio_b64}, Text provided? ${!!text}`);
     abortCadence();
     const ac = new AbortController();
     _cadenceAbort = ac;
     const signal = ac.signal;
 
+    const toneSrc = '/data/sounds/triage%20announcement.wav';
     const ttsAudio = audio_b64 ? audioFromB64(audio_b64) : (text ? await fetchTTSAudio(text, lang || 'en') : null);
-    const toneSrc = '/data/sounds/triage announcement.wav';
 
-    const playTone = () => {
-        const a = new Audio(toneSrc); a.volume = 0.8;
-        return playTracked(a, signal);
+    const playTone = (num: number) => {
+        const a = new Audio(toneSrc); a.volume = 1.0;
+        return playTracked(a, signal, `emergency_tone_${num}`);
     };
 
     try {
-        await playTone();
-        await playTone();
+        console.log(`[EmergencySeq] Playing first tone...`);
+        await playTone(1);
+        console.log(`[EmergencySeq] Playing second tone...`);
+        await playTone(2);
         if (ttsAudio) {
+            console.log(`[EmergencySeq] Playing TTS payload...`);
             ttsAudio.currentTime = 0;
-            await playTracked(ttsAudio, signal);
+            await playTracked(ttsAudio, signal, 'emergency_tts');
+            console.log(`[EmergencySeq] Playing ending tone...`);
+            await playTone(3);
+        } else {
+            console.warn(`[EmergencySeq] No TTS audio resolved!`);
         }
-    } catch (e) { if (e instanceof DOMException && e.name === 'AbortError') return; /* interrupted — graceful */ }
+        console.log(`[EmergencySeq] Sequence complete.`);
+    } catch (e) { 
+        if (e instanceof DOMException && e.name === 'AbortError') {
+            console.warn(`[EmergencySeq] Interrupted / Aborted.`);
+            return;
+        }
+        console.error(`[EmergencySeq] Unexpected error:`, e);
+    }
 }
 
 /**
@@ -156,6 +198,7 @@ async function playEmergencySequence(audio_b64?: string, text?: string, lang?: s
  * Aborts any in-progress cadence before starting.
  */
 async function playAnnouncementSequence(audio_b64?: string, text?: string, lang?: string) {
+    console.log(`[AnnounceSeq] Starting sequence. Audio provided? ${!!audio_b64}, Text provided? ${!!text}`);
     abortCadence();
     const ac = new AbortController();
     _cadenceAbort = ac;
@@ -165,19 +208,24 @@ async function playAnnouncementSequence(audio_b64?: string, text?: string, lang?
     const endSrc = '/data/sounds/General_end.wav';
     const ttsAudio = audio_b64 ? audioFromB64(audio_b64) : (text ? await fetchTTSAudio(text, lang || 'en') : null);
 
-    const playSound = (src: string) => {
+    const playSound = (src: string, label: string) => {
         const a = new Audio(src); a.volume = 0.8;
-        return playTracked(a, signal);
+        return playTracked(a, signal, label);
     };
 
     try {
-        await playSound(startSrc);
+        await playSound(startSrc, 'announce_start_tone');
         if (ttsAudio) {
             ttsAudio.currentTime = 0;
-            await playTracked(ttsAudio, signal);
+            await playTracked(ttsAudio, signal, 'announce_tts');
         }
-        await playSound(endSrc);
-    } catch (e) { if (e instanceof DOMException && e.name === 'AbortError') return; /* interrupted — graceful */ }
+        await playSound(endSrc, 'announce_end_tone');
+        console.log(`[AnnounceSeq] Sequence complete.`);
+    } catch (e) { 
+        if (e instanceof DOMException && e.name === 'AbortError') {
+            return;
+        }
+    }
 }
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -208,17 +256,13 @@ interface RosterMember {
 
 type NetworkMode = 'setup' | 'confirming' | 'leader' | 'client';
 
-const SKILL_OPTIONS = [
-    'First Aid', 'CPR', 'IV Lines', 'Splinting', 'Airway', 'Sutures',
-    'Triage', 'Medication', 'Wound Care', 'Childbirth', 'Vitals',
-    'Radio/Comms', 'Translation', 'Logistics', 'Security', 'Search & Rescue',
-];
+
 
 // ── Constants ────────────────────────────────────────────────────────────────
 
 
 const WS_BASE = isNative
-    ? 'ws://127.0.0.1:7778'
+    ? 'ws://127.0.0.1:7779'
     : `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}`;
 const PING_INTERVAL = 5000;
 const POLL_INTERVAL = 3000;
@@ -499,7 +543,7 @@ export default function NetworkTab() {
                     // Emergency — alarm on ALL devices
                     fireSystemNotification(
                         '🚨 EMERGENCY',
-                        `${msg.categories_text || 'General Emergency'}${msg.ward ? ' — Ward: ' + msg.ward : ''}${msg.notes ? ' | ' + msg.notes : ''}`,
+                        String(msg.message) || `${msg.categories_text || 'General Emergency'}${msg.ward ? ' — Ward: ' + msg.ward : ''}${msg.notes ? ' | ' + msg.notes : ''}`,
                         'eve-emergency',
                         true,
                     );
@@ -507,21 +551,20 @@ export default function NetworkTab() {
                     const userLang = localStorage.getItem('eve-lang') || 'en';
                     const translations = msg.translations as Record<string, string> | undefined;
 
-                    // Full-screen emergency banner
+                    // Full-screen premium glass emergency banner
                     const overlay = document.createElement('div');
-                    overlay.style.cssText = 'position:fixed;inset:0;z-index:10001;background:rgba(231,76,60,0.15);display:flex;align-items:center;justify-content:center;';
+                    overlay.style.cssText = 'position:fixed;inset:0;z-index:10001;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);';
                     const banner = document.createElement('div');
-                    banner.style.cssText = 'background:#e74c3c;color:#fff;padding:24px 40px;border-radius:16px;font-size:16px;font-weight:700;text-align:center;box-shadow:0 0 80px rgba(231,76,60,0.6);max-width:90%;position:relative;min-width:320px;';
-                    const ward = msg.ward ? ` — Ward: ${msg.ward}` : '';
-                    const bed = msg.bed ? ` Bed: ${msg.bed}` : '';
+                    banner.style.cssText = 'background:linear-gradient(180deg, rgba(30,10,10,0.95), rgba(15,5,5,0.98));color:#fff;padding:36px 48px;border-radius:24px;border:1px solid rgba(231,76,60,0.3);text-align:center;box-shadow:0 30px 80px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.05), 0 0 120px rgba(231,76,60,0.15);max-width:85%;position:relative;min-width:380px;transform:translateY(20px) scale(0.95);transition:all 0.5s cubic-bezier(0.16, 1, 0.3, 1);';
+
                     const catText = msg.categories_text || 'General Emergency';
                     const notesText = msg.notes ? `<br/>${msg.notes}` : '';
                     const senderText = msg.sender_name ? `<br/>— ${msg.sender_name}` : '';
 
-                    // Use precomputed translation if available, else fall back to English
+                    // Use precomputed translation if available, else fall back to English message
                     const translatedMessage = (userLang !== 'en' && translations?.[userLang]) || '';
-                    const displayText = translatedMessage || `${catText}${notesText}`;
-                    const bodyHTML = `<span style="font-size:13px;font-weight:400;opacity:0.9">${displayText}${senderText}</span>`;
+                    const displayText = translatedMessage || String(msg.message || '') || `${catText}${notesText}`;
+                    const bodyHTML = `<div style="font-size:20px;font-weight:500;line-height:1.4;color:rgba(255,255,255,0.95);margin-bottom:16px;">${displayText}</div>${senderText ? `<div style="font-size:12px;color:rgba(255,255,255,0.5);font-style:italic;">${senderText}</div>` : ''}`;
 
                     // Build translations list for the card
                     let translationsHTML = '';
@@ -536,10 +579,17 @@ export default function NetworkTab() {
                             + `<span style="font-size:12px;color:rgba(255,255,255,0.85);direction:${['ar','he','fa','ur','ps'].includes(lc)?'rtl':'ltr'}">${txt}</span></div>`
                         ).join('');
                         translationsHTML = `<div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.2);text-align:left;max-height:200px;overflow-y:auto">`
-                            + `<div style="font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px">TRANSLATIONS</div>`
+                            + `<div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(231,76,60,0.8);margin-bottom:10px">Multilingual Broadcast</div>`
                             + items + `</div>`;
                     }
-                    banner.innerHTML = `🚨 EMERGENCY${ward}${bed}<br/>${bodyHTML}${translationsHTML}`;
+                    banner.innerHTML = `
+                        <div style="font-size:11px;font-weight:800;letter-spacing:0.2em;color:#e74c3c;margin-bottom:16px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:10px;">
+                            <span style="display:inline-block;width:8px;height:8px;background:#e74c3c;border-radius:50%;box-shadow:0 0 12px #e74c3c;"></span>
+                            SYSTEM EMERGENCY
+                        </div>
+                        ${bodyHTML}
+                        ${translationsHTML}
+                    `;
 
                     // Close button
                     const closeBtn = document.createElement('button');
@@ -556,6 +606,12 @@ export default function NetworkTab() {
                     overlay.appendChild(banner);
                     document.body.appendChild(overlay);
 
+                    // Trigger smooth entry animation
+                    requestAnimationFrame(() => {
+                        overlay.style.opacity = '1';
+                        banner.style.transform = 'translateY(0) scale(1)';
+                    });
+
                     // Auto-play multi-language blob on ALL devices
                     playEmergencySequence(eAudioB64, composeEmergencyText(msg), 'en').then(() => {
                         if (overlay.parentNode) dismissOverlay();
@@ -571,10 +627,10 @@ export default function NetworkTab() {
                     const aTranslations = msg.translations as Record<string, string> | undefined;
 
                     const aOverlay = document.createElement('div');
-                    aOverlay.style.cssText = 'position:fixed;inset:0;z-index:10001;background:rgba(240,165,0,0.1);display:flex;align-items:center;justify-content:center;';
+                    aOverlay.style.cssText = 'position:fixed;inset:0;z-index:10001;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);';
                     const aBanner = document.createElement('div');
-                    aBanner.style.cssText = 'background:#f0a500;color:#000;padding:24px 40px;border-radius:16px;font-size:16px;font-weight:700;text-align:center;box-shadow:0 0 80px rgba(240,165,0,0.5);max-width:90%;position:relative;min-width:320px;';
-                    const senderLine = msg.sender_name ? `<br/><span style="font-size:11px;font-weight:400;opacity:0.7">— ${msg.sender_name}</span>` : '';
+                    aBanner.style.cssText = 'background:linear-gradient(180deg, rgba(30,25,10,0.95), rgba(15,12,5,0.98));color:#fff;padding:36px 48px;border-radius:24px;border:1px solid rgba(240,165,0,0.3);text-align:center;box-shadow:0 30px 80px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.05), 0 0 80px rgba(240,165,0,0.1);max-width:85%;position:relative;min-width:380px;transform:translateY(20px) scale(0.95);transition:all 0.5s cubic-bezier(0.16, 1, 0.3, 1);';
+                    const senderLine = msg.sender_name ? `<div style="font-size:12px;color:rgba(255,255,255,0.4);font-style:italic;margin-top:8px;">— ${msg.sender_name}</div>` : '';
 
                     // Instant translated text from precomputed map
                     const translatedAnn = (aUserLang !== 'en' && aTranslations?.[aUserLang]) || String(msg.message || '');
@@ -587,22 +643,32 @@ export default function NetworkTab() {
                             return labels[code] || code.toUpperCase();
                         };
                         const items = Object.entries(aTranslations).map(([lc, txt]) =>
-                            `<div style="display:flex;align-items:baseline;gap:8px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,0.08)">`
-                            + `<span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(0,0,0,0.4);min-width:60px">${langLabel(lc)}</span>`
-                            + `<span style="font-size:12px;color:rgba(0,0,0,0.75);direction:${['ar','he','fa','ur','ps'].includes(lc)?'rtl':'ltr'}">${txt}</span></div>`
+                            `<div style="display:flex;align-items:baseline;gap:8px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.1)">`
+                            + `<span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.5);min-width:60px">${langLabel(lc)}</span>`
+                            + `<span style="font-size:12px;color:rgba(255,255,255,0.85);direction:${['ar','he','fa','ur','ps'].includes(lc)?'rtl':'ltr'}">${txt}</span></div>`
                         ).join('');
-                        annTranslationsHTML = `<div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(0,0,0,0.15);text-align:left;max-height:200px;overflow-y:auto">`
-                            + `<div style="font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,0,0,0.35);margin-bottom:6px">TRANSLATIONS</div>`
+                        annTranslationsHTML = `<div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.2);text-align:left;max-height:200px;overflow-y:auto">`
+                            + `<div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,165,0,0.8);margin-bottom:10px">Multilingual Details</div>`
                             + items + `</div>`;
                     }
-                    aBanner.innerHTML = `📢 ANNOUNCEMENT<br/><span style="font-size:14px;font-weight:500">${translatedAnn}</span>${senderLine}${annTranslationsHTML}`;
+                    aBanner.innerHTML = `
+                        <div style="font-size:11px;font-weight:800;letter-spacing:0.2em;color:#f0a500;margin-bottom:16px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:10px;">
+                            <span style="display:inline-block;width:8px;height:8px;background:#f0a500;border-radius:50%;box-shadow:0 0 12px #f0a500;"></span>
+                            STAFF ANNOUNCEMENT
+                        </div>
+                        <div style="font-size:20px;font-weight:500;line-height:1.4;color:rgba(255,255,255,0.95);margin-bottom:8px;">
+                            ${translatedAnn}
+                        </div>
+                        ${senderLine}
+                        ${annTranslationsHTML}
+                    `;
 
                     // Close button
                     const aCloseBtn = document.createElement('button');
                     aCloseBtn.textContent = '×';
-                    aCloseBtn.style.cssText = 'position:absolute;top:8px;right:12px;background:none;border:none;color:#000;font-size:22px;cursor:pointer;opacity:0.5;line-height:1;padding:0 4px;';
-                    aCloseBtn.onmouseenter = () => { aCloseBtn.style.opacity = '0.8'; };
-                    aCloseBtn.onmouseleave = () => { aCloseBtn.style.opacity = '0.5'; };
+                    aCloseBtn.style.cssText = 'position:absolute;top:8px;right:12px;background:none;border:none;color:#fff;font-size:22px;cursor:pointer;opacity:0.7;line-height:1;padding:0 4px;';
+                    aCloseBtn.onmouseenter = () => { aCloseBtn.style.opacity = '1'; };
+                    aCloseBtn.onmouseleave = () => { aCloseBtn.style.opacity = '0.7'; };
                     const dismissAOverlay = () => { aOverlay.style.opacity = '0'; aOverlay.style.transition = 'opacity 0.6s'; setTimeout(() => aOverlay.remove(), 700); };
                     aCloseBtn.onclick = (ev) => { ev.stopPropagation(); dismissAOverlay(); };
                     aBanner.appendChild(aCloseBtn);
@@ -611,6 +677,12 @@ export default function NetworkTab() {
 
                     aOverlay.appendChild(aBanner);
                     document.body.appendChild(aOverlay);
+
+                    // Trigger smooth entry animation
+                    requestAnimationFrame(() => {
+                        aOverlay.style.opacity = '1';
+                        aBanner.style.transform = 'translateY(0) scale(1)';
+                    });
 
                     // Auto-play multi-language blob on ALL devices
                     playAnnouncementSequence(aAudioB64, String(msg.message || ''), 'en').then(() => {
@@ -743,7 +815,9 @@ export default function NetworkTab() {
                         document.getElementById('eve-incoming-call')?.remove();
                     }
                 }
-            } catch { /* ignore */ }
+            } catch (err) {
+                console.error('WS onmessage handling error:', err);
+            }
         };
 
         ws.onclose = () => {

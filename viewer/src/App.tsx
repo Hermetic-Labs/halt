@@ -400,18 +400,40 @@ function AppOuter() {
             {authState === 'loading' ? 'Checking identity…' : 'Waiting for models…'}
           </div>
           {healthStatus && (
-            <div style={{ textAlign: 'left', padding: '14px 18px', background: '#161b22', borderRadius: 8, border: '1px solid #30363d', fontSize: 12 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
-                <span style={{ color: healthStatus.llm_ready ? '#3fb950' : '#f0a500' }}>●</span>
-                <span style={{ color: '#8b949e' }}>LLM (GGUF): {healthStatus.llm_ready ? `✓ ${healthStatus.llm_model || 'Ready'}` : 'Loading…'}</span>
+            <div style={{ textAlign: 'left', padding: '14px 18px', background: '#161b22', borderRadius: 8, border: '1px solid #30363d', fontSize: 12, boxShadow: '0 8px 24px rgba(0,0,0,0.5)' }}>
+              
+              {/* Models Section */}
+              <div style={{ marginBottom: 12 }}>
+                <div style={{ fontSize: 10, fontWeight: 700, color: '#8b949e', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>Models</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                  <span style={{ color: healthStatus.llm_ready ? '#3fb950' : '#f0a500' }}>●</span>
+                  <span style={{ color: '#c9d1d9' }}>LLM (GGUF): <span style={{ color: '#8b949e' }}>{healthStatus.llm_ready ? `✓ ${healthStatus.llm_model || 'Ready'}` : 'Loading…'}</span></span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                  <span style={{ color: healthStatus.translation_ready ? '#3fb950' : '#484f58' }}>●</span>
+                  <span style={{ color: '#c9d1d9' }}>NLLB: <span style={{ color: '#8b949e' }}>{healthStatus.translation_ready ? '✓ Ready' : 'Not loaded'}</span></span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <span style={{ color: healthStatus.stt_ready ? '#3fb950' : '#484f58' }}>●</span>
+                  <span style={{ color: '#c9d1d9' }}>Whisper: <span style={{ color: '#8b949e' }}>{healthStatus.stt_ready ? '✓ Ready' : 'Not loaded'}</span></span>
+                </div>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
-                <span style={{ color: healthStatus.translation_ready ? '#3fb950' : '#484f58' }}>●</span>
-                <span style={{ color: '#8b949e' }}>Translation (NLLB): {healthStatus.translation_ready ? '✓ Ready' : 'Not loaded'}</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <span style={{ color: healthStatus.stt_ready ? '#3fb950' : '#484f58' }}>●</span>
-                <span style={{ color: '#8b949e' }}>Speech (Whisper): {healthStatus.stt_ready ? '✓ Ready' : 'Not loaded'}</span>
+
+              {/* Socket & Network Section */}
+              <div style={{ borderTop: '1px solid #30363d', paddingTop: 10, marginTop: 4 }}>
+                <div style={{ fontSize: 10, fontWeight: 700, color: '#8b949e', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>Network & Sockets</div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4, fontFamily: 'ui-monospace, Consolas, monospace' }}>
+                  <span style={{ color: '#8b949e' }}>Mesh Host (WS)</span>
+                  <span style={{ color: '#44ff88' }}>:7779</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4, fontFamily: 'ui-monospace, Consolas, monospace' }}>
+                  <span style={{ color: '#8b949e' }}>HTTP API (REST)</span>
+                  <span style={{ color: '#44ff88' }}>:7778</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'ui-monospace, Consolas, monospace' }}>
+                  <span style={{ color: '#8b949e' }}>Whisper Pipeline</span>
+                  <span style={{ color: healthStatus.stt_ready ? '#44ff88' : '#f0a500' }}>:7780</span>
+                </div>
               </div>
             </div>
           )}

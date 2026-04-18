@@ -138,9 +138,25 @@ export function useTranslateStream() {
                     try {
                         // 1. STT
                         setState('transcribing');
-                        const audioBlob = new Blob(chunks, { type: mimeType || 'audio/webm' });
+                        const ext = mimeType.includes('webm') ? 'webm' : mimeType.includes('opus') ? 'ogg' : 'webm';
+                        let audioPayload = new Blob(chunks, { type: mimeType || 'audio/webm' });
+                        let filename = `recording.${ext}`;
+
+                        if (mimeType.includes('webm') || mimeType.includes('opus')) {
+                            try {
+                                const { convertWebmToWav } = await import('../services/audioUtils');
+                                audioPayload = await convertWebmToWav(audioPayload);
+                                filename = 'recording.wav';
+                            } catch (e) {
+                                console.error('[TranslateStream] WebM to WAV codec failure:', e);
+                            }
+                        }
+
                         const fd = new FormData();
-                        fd.append('audio', audioBlob, 'recording.webm');
+                        fd.append('audio', audioPayload, filename);
+                        if (sourceLang && sourceLang !== 'auto') {
+                            fd.append('language', sourceLang);
+                        }
                         const sttResult = await sttListen(fd);
                         const transcript = sttResult.text || '';
                         const detectedLang = sttResult.language || sourceLang;

@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evenomics — How Your Money Works on EVE</title>
+    <meta name="description" content="See exactly where your $10 goes. A plain-English guide to how EVE's creator economy, module marketplace, and free OS layer work together.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ═══════════════════════════════════════════
+           DESIGN SYSTEM
+           ═══════════════════════════════════════════ */
+        :root {
+            --bg: #060608;
+            --bg-2: #0c0c10;
+            --surface: #111118;
+            --surface-2: #1a1a24;
+            --surface-3: #22222e;
+            --border: rgba(47,184,133,0.10);
+            --border-2: rgba(47,184,133,0.20);
+            --text: #e8e8ed;
+            --text-muted: #8a8a9a;
+            --text-dim: #555566;
+            --emerald: #2fb885;
+            --emerald-glow: rgba(47,184,133,0.15);
+            --gold: #d4a84b;
+            --gold-glow: rgba(212,168,75,0.12);
+            --green: #44ff88;
+            --green-glow: rgba(68,255,136,0.10);
+            --blue: #4488ff;
+            --red: #ff4466;
+            --section-gap: clamp(4rem, 8vw, 7rem);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ─── Layout ─── */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 clamp(1.2rem, 4vw, 2.5rem); }
+        section { padding: var(--section-gap) 0; position: relative; }
+
+        /* ─── Typography ─── */
+        .eyebrow {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--emerald); margin-bottom: 0.6rem;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem); font-weight: 800; line-height: 1.15;
+            margin-bottom: 0.6rem;
+        }
+        .section-title span {
+            background: linear-gradient(135deg, #2fb885 0%, #2fb4a5 40%, #d4a84b 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-sub {
+            font-size: clamp(0.95rem, 2vw, 1.1rem); color: var(--text-muted);
+            max-width: 600px; line-height: 1.6;
+        }
+
+        /* ─── Dividers ─── */
+        .divider {
+            height: 1px; border: none; margin: 0;
+            background: linear-gradient(90deg, transparent, var(--border-2), transparent);
+        }
+
+        /* ─── Scroll reveal ─── */
+        .reveal {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ═══════════════════════════════════════════
+           STICKY NAV
+           ═══════════════════════════════════════════ */
+        .sticky-nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(6,6,8,0.85);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+        }
+        .sticky-nav-inner {
+            max-width: 1000px; margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 2.5rem);
+            display: flex; align-items: center; gap: 0.2rem;
+            overflow-x: auto; -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .sticky-nav-inner::-webkit-scrollbar { display: none; }
+        .sticky-nav-inner .nav-logo {
+            font-size: 0.72rem; font-weight: 700; color: var(--emerald);
+            white-space: nowrap; margin-right: 0.8rem; flex-shrink: 0;
+            letter-spacing: 0.08em; text-transform: uppercase;
+        }
+        .nav-link {
+            padding: 0.7rem 0.7rem; font-size: 0.68rem; font-weight: 500;
+            color: var(--text-dim); text-decoration: none; white-space: nowrap;
+            border-bottom: 2px solid transparent; transition: color 0.25s, border-color 0.25s;
+            flex-shrink: 0;
+        }
+        .nav-link:hover { color: var(--text-muted); }
+        .nav-link.active {
+            color: var(--emerald); border-bottom-color: var(--emerald);
+        }
+        body { padding-top: 2.6rem; scroll-padding-top: 3.2rem; }
+
+        @media (max-width: 768px) {
+            .nav-link { padding: 0.6rem 0.5rem; font-size: 0.62rem; }
+            .sticky-nav-inner .nav-logo { font-size: 0.65rem; margin-right: 0.4rem; }
+        }
+
+        /* ═══════════════════════════════════════════
+           SECTION 1: HERO
+           ═══════════════════════════════════════════ */
+        .hero {
+            min-height: 85vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; position: relative; overflow: hidden;
+            padding-top: 3rem; padding-bottom: 3rem;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(47,184,133,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 40% at 30% 60%, rgba(212,168,75,0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.4rem 1rem; border-radius: 100px;
+            background: var(--emerald-glow); border: 1px solid rgba(47,184,133,0.25);
+            font-size: 0.72rem; font-weight: 600; color: var(--emerald);
+            margin-bottom: 1.5rem;
+        }
+        .hero-badge .dot {
+            width: 6px; height: 6px; border-radius: 50%; background: var(--emerald);
+            animation: pulse-dot 2s infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(47,184,133,0.4); }
+            50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(47,184,133,0); }
+        }
+        .hero h1 {
+            font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 900; line-height: 1.08;
+            margin-bottom: 1.2rem; letter-spacing: -0.02em;
+        }
+        .hero h1 span {
+            background: linear-gradient(135deg, #2fb885, #2fb4a5, #68d4ab, #d4a84b);
+            background-size: 200% 200%; animation: gradient-shift 6s ease infinite;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .hero-sub {
+            font-size: clamp(1rem, 2.2vw, 1.25rem); color: var(--text-muted);
+            max-width: 560px; margin: 0 auto 2rem; line-height: 1.65;
+        }
+        .hero-stats {
+            display: flex; gap: 2.5rem; justify-content: center; flex-wrap: wrap;
+        }
+        .hero-stat { text-align: center; }
+        .hero-stat .val {
+            font-size: 1.8rem; font-weight: 800;
+        }
+        .hero-stat .lbl {
+            font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase;
+            letter-spacing: 0.1em; margin-top: 0.15rem;
+        }
+
+        /* ═══════════════════════════════════════════
+           SECTION 2: THE FREE LAYER
+           ═══════════════════════════════════════════ */
+        .free-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.8rem; margin-top: 2rem;
+        }
+        .free-card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 14px; padding: 1.2rem 1rem; position: relative;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        .free-card:hover {
+            border-color: var(--emerald); transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(47,184,133,0.08);
+        }
+        .free-card .fc-icon { font-size: 1.5rem; margin-bottom: 0.6rem; }
+        .free-card .fc-name { font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem; }
+        .free-card .fc-desc { font-size: 0.72rem; color: var(--text-muted); line-height: 1.5; }
+        .free-card .fc-badge {
+            position: absolute; top: 0.8rem; right: 0.8rem;
+            font-size: 0.55rem; font-weight: 700; color: var(--green);
+            background: rgba(68,255,136,0.08); padding: 0.15rem 0.5rem;
+            border-radius: 100px; border: 1px solid rgba(68,255,136,0.15);
+        }
+        .free-callout {
+            text-align: center; margin-top: 2rem; padding: 1.2rem;
+            background: linear-gradient(135deg, rgba(47,184,133,0.06), rgba(212,168,75,0.04));
+            border: 1px solid var(--border); border-radius: 14px;
+            font-size: 0.9rem; color: var(--text-muted);
+        }
+        .free-callout strong { color: var(--emerald); }
+
+        /* ═══════════════════════════════════════════
+           SECTION 3: THE $10 SOCIAL LAYER
+           ═══════════════════════════════════════════ */
+        .money-flow {
+            display: flex; flex-direction: column; align-items: center;
+            gap: 0.4rem; margin: 2.5rem 0 2rem; position: relative;
+        }
+        .flow-step {
+            display: flex; align-items: center; justify-content: center;
+            gap: 0.8rem; width: 100%;
+        }
+        .flow-node-main {
+            background: var(--surface); border: 1px solid var(--border-2);
+            border-radius: 14px; padding: 1rem 1.4rem; text-align: center;
+            min-width: 160px; position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .flow-node-main:hover {
+            transform: scale(1.03); box-shadow: 0 4px 20px rgba(47,184,133,0.1);
+        }
+        .flow-node-main.you {
+            border-color: rgba(68,255,136,0.3);
+            background: linear-gradient(135deg, var(--surface), rgba(68,255,136,0.04));
+        }
+        .flow-node-main.pool {
+            border-color: rgba(47,184,133,0.4);
+            background: linear-gradient(135deg, var(--surface), rgba(47,184,133,0.06));
+            padding: 1.3rem 2rem;
+        }
+        .flow-node-main.platform {
+            border-color: rgba(255,68,102,0.2);
+            background: linear-gradient(135deg, var(--surface), rgba(255,68,102,0.03));
+            min-width: 100px; padding: 0.7rem 1rem;
+        }
+        .flow-node-main .fn-amount {
+            font-size: 1.5rem; font-weight: 800;
+        }
+        .flow-node-main.pool .fn-amount { font-size: 1.8rem; }
+        .flow-node-main .fn-label {
+            font-size: 0.7rem; color: var(--text-muted); margin-top: 0.15rem;
+        }
+        .flow-arrow {
+            color: var(--text-dim); font-size: 1.4rem; line-height: 1;
+            animation: arrow-pulse 2s ease infinite;
+        }
+        .flow-arrow.down { display: block; text-align: center; }
+        @keyframes arrow-pulse {
+            0%, 100% { opacity: 0.3; } 50% { opacity: 1; }
+        }
+        .flow-split {
+            display: flex; align-items: flex-start; justify-content: center;
+            gap: 2rem; width: 100%; flex-wrap: wrap;
+        }
+        .flow-split-line {
+            display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+        }
+        .flow-pct { font-size: 0.65rem; color: var(--text-dim); font-weight: 600; }
+
+        .social-features {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.6rem; margin-top: 2rem;
+        }
+        .social-feat {
+            display: flex; align-items: center; gap: 0.7rem;
+            padding: 0.8rem 1rem; background: var(--surface);
+            border: 1px solid var(--border); border-radius: 10px;
+            font-size: 0.8rem; color: var(--text-muted);
+            transition: border-color 0.3s;
+        }
+        .social-feat:hover { border-color: var(--emerald); }
+        .social-feat .check { color: var(--green); font-weight: 700; font-size: 1rem; flex-shrink: 0; }
+
+        /* ─── Flow recipients row ─── */
+        .flow-recipients {
+            display: flex; gap: 1.5rem; justify-content: center;
+            flex-wrap: wrap; margin-top: 0.5rem;
+        }
+        .flow-recipient {
+            display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+        }
+        .flow-recipient .fr-icon { font-size: 1.6rem; }
+        .flow-recipient .fr-label { font-size: 0.65rem; color: var(--text-muted); }
+
+        /* ═══════════════════════════════════════════
+           SECTION 3.5: AMPLIFIED ENGAGEMENT
+           ═══════════════════════════════════════════ */
+        .amplify-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+            margin-top: 2rem; align-items: start;
+        }
+        .amplify-visual {
+            display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+        }
+        .amplify-compare {
+            display: flex; gap: 1.5rem; justify-content: center; align-items: flex-end;
+            flex-wrap: wrap;
+        }
+        .amplify-bar {
+            display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+        }
+        .amplify-bar .ab-fill {
+            width: 60px; border-radius: 8px 8px 4px 4px;
+            transition: height 0.5s ease;
+        }
+        .amplify-bar .ab-label {
+            font-size: 0.65rem; color: var(--text-dim); text-align: center;
+            max-width: 80px;
+        }
+        .amplify-bar .ab-value {
+            font-size: 0.9rem; font-weight: 700;
+        }
+        .amplify-how {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 14px; padding: 1.5rem;
+        }
+        .amplify-how h3 {
+            font-size: 0.95rem; font-weight: 700; margin-bottom: 1rem; color: var(--text);
+        }
+        .amplify-step {
+            display: flex; gap: 0.8rem; margin-bottom: 1rem; align-items: flex-start;
+        }
+        .amplify-step:last-child { margin-bottom: 0; }
+        .amplify-step .as-num {
+            flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem; font-weight: 700; margin-top: 0.1rem;
+        }
+        .amplify-step .as-num.gold {
+            background: var(--gold-glow); border: 1px solid rgba(212,168,75,0.3); color: var(--gold);
+        }
+        .amplify-step .as-num.green {
+            background: var(--green-glow); border: 1px solid rgba(68,255,136,0.2); color: var(--green);
+        }
+        .amplify-step .as-num.emerald {
+            background: var(--emerald-glow); border: 1px solid rgba(47,184,133,0.3); color: var(--emerald);
+        }
+        .amplify-step .as-text {
+            font-size: 0.85rem; color: var(--text-muted); line-height: 1.55;
+        }
+        .amplify-step .as-text strong { color: var(--text); font-weight: 600; }
+        .amplify-example {
+            display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; justify-content: center;
+        }
+        .amplify-card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 12px; padding: 1rem 1.2rem; text-align: center;
+            flex: 1; min-width: 140px; max-width: 200px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .amplify-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+        .amplify-card .ac-icon { font-size: 1.3rem; margin-bottom: 0.3rem; }
+        .amplify-card .ac-label { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.15rem; }
+        .amplify-card .ac-weight { font-size: 1.4rem; font-weight: 800; }
+        .amplify-card .ac-desc { font-size: 0.62rem; color: var(--text-dim); margin-top: 0.2rem; }
+        .amplify-callout {
+            text-align: center; margin-top: 1.5rem; padding: 1rem 1.2rem;
+            background: linear-gradient(135deg, rgba(212,168,75,0.06), rgba(47,184,133,0.04));
+            border: 1px solid rgba(212,168,75,0.15); border-radius: 14px;
+            font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;
+        }
+        .amplify-callout strong { color: var(--gold); }
+        .amplify-callout em { color: var(--emerald); font-style: normal; font-weight: 600; }
+
+        @media (max-width: 768px) {
+            .amplify-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ═══════════════════════════════════════════
+           SECTION 4: HOW CREATORS EARN
+           ═══════════════════════════════════════════ */
+        .calc-layout {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+            margin-top: 2rem; align-items: start;
+        }
+        .calc-panel {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 14px; padding: 1.5rem;
+        }
+        .calc-panel h3 {
+            font-size: 0.8rem; font-weight: 600; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.2rem;
+        }
+        .slider-group { margin-bottom: 1.2rem; }
+        .slider-group:last-of-type { margin-bottom: 0; }
+        .slider-label {
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem;
+        }
+        .slider-label strong { color: var(--emerald); font-weight: 700; font-size: 0.9rem; }
+        input[type="range"] {
+            width: 100%; height: 6px; border-radius: 3px;
+            background: var(--surface-2); -webkit-appearance: none; cursor: pointer;
+            outline: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%;
+            background: var(--emerald); cursor: pointer;
+            box-shadow: 0 0 10px rgba(47,184,133,0.3);
+            transition: box-shadow 0.2s;
+        }
+        input[type="range"]::-webkit-slider-thumb:hover {
+            box-shadow: 0 0 16px rgba(47,184,133,0.5);
+        }
+        .result-card {
+            background: var(--surface); border: 1px solid var(--border-2);
+            border-radius: 14px; padding: 1.5rem; text-align: center;
+        }
+        .result-card .result-label {
+            font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase;
+            letter-spacing: 0.1em; margin-bottom: 0.3rem;
+        }
+        .result-card .result-value {
+            font-size: 2.5rem; font-weight: 800; line-height: 1.1;
+        }
+        .result-card .result-sub {
+            font-size: 0.78rem; color: var(--text-muted); margin-top: 0.4rem;
+        }
+        .result-row {
+            display: flex; gap: 1rem; margin-top: 1rem; justify-content: center;
+        }
+        .result-mini {
+            text-align: center; flex: 1;
+            background: var(--surface-2); border-radius: 10px; padding: 0.8rem;
+        }
+        .result-mini .rm-val { font-size: 1.1rem; font-weight: 700; }
+        .result-mini .rm-lbl { font-size: 0.6rem; color: var(--text-dim); margin-top: 0.1rem; }
+
+        .analogy {
+            margin-top: 1.5rem; padding: 1rem 1.2rem;
+            background: linear-gradient(135deg, rgba(47,184,133,0.05), rgba(212,168,75,0.03));
+            border: 1px solid var(--border); border-radius: 12px;
+            font-size: 0.82rem; color: var(--text-muted); line-height: 1.6;
+            font-style: italic;
+        }
+        .analogy::before { content: '💡 '; font-style: normal; }
+
+        /* ═══════════════════════════════════════════
+           SECTION 5: HOW BUILDERS EARN
+           ═══════════════════════════════════════════ */
+        .builder-flow {
+            display: flex; flex-direction: column; align-items: center;
+            gap: 0.6rem; margin: 2rem 0;
+        }
+        .builder-tier {
+            display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap;
+        }
+        .builder-node {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 12px; padding: 1rem 1.2rem; text-align: center;
+            min-width: 140px; transition: transform 0.3s, border-color 0.3s;
+        }
+        .builder-node:hover { transform: translateY(-2px); border-color: var(--gold); }
+        .builder-node.origin {
+            border-color: rgba(212,168,75,0.4);
+            background: linear-gradient(135deg, var(--surface), rgba(212,168,75,0.06));
+            padding: 1.2rem 1.6rem;
+        }
+        .builder-node .bn-name { font-size: 0.78rem; font-weight: 600; }
+        .builder-node .bn-price { font-size: 1.1rem; font-weight: 800; color: var(--gold); margin-top: 0.15rem; }
+        .builder-node .bn-detail { font-size: 0.62rem; color: var(--text-dim); margin-top: 0.1rem; }
+        .builder-node .bn-royalty { font-size: 0.68rem; color: var(--green); font-weight: 600; margin-top: 0.3rem; }
+
+        .builder-stats {
+            display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        .builder-stat {
+            text-align: center; background: var(--surface); border: 1px solid var(--border);
+            border-radius: 12px; padding: 1rem 1.5rem; min-width: 150px;
+        }
+        .builder-stat .bs-val { font-size: 1.6rem; font-weight: 800; }
+        .builder-stat .bs-lbl {
+            font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase;
+            letter-spacing: 0.08em; margin-top: 0.15rem;
+        }
+
+        /* ═══════════════════════════════════════════
+           SECTION 6: COMPARISON TABLE
+           ═══════════════════════════════════════════ */
+        .compare-wrapper { margin-top: 2rem; overflow-x: auto; }
+        .compare-table {
+            width: 100%; border-collapse: collapse; font-size: 0.82rem;
+            min-width: 600px;
+        }
+        .compare-table th {
+            padding: 0.8rem 0.6rem; text-align: center;
+            font-weight: 600; font-size: 0.72rem; text-transform: uppercase;
+            letter-spacing: 0.08em; color: var(--text-dim);
+            border-bottom: 1px solid var(--border-2);
+        }
+        .compare-table th:first-child { text-align: left; }
+        .compare-table th.eve-col {
+            color: var(--emerald); background: rgba(47,184,133,0.04);
+            border-radius: 10px 10px 0 0;
+        }
+        .compare-table td {
+            padding: 0.7rem 0.6rem; text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .compare-table td:first-child {
+            text-align: left; color: var(--text-muted); font-weight: 500;
+        }
+        .compare-table td.eve-col { background: rgba(47,184,133,0.04); }
+        .compare-table .bad { color: var(--red); }
+        .compare-table .ok { color: var(--gold); }
+        .compare-table .good { color: var(--green); font-weight: 700; }
+        .compare-table tr:last-child td.eve-col { border-radius: 0 0 10px 10px; }
+        .compare-table tr:hover td { background: rgba(255,255,255,0.015); }
+        .compare-table tr:hover td.eve-col { background: rgba(47,184,133,0.07); }
+
+        .savings-calculator {
+            display: flex; align-items: center; gap: 2rem;
+            margin-top: 2rem; padding: 1.5rem;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 14px; flex-wrap: wrap; justify-content: center;
+        }
+        .savings-slider { flex: 1; min-width: 250px; }
+        .savings-result { text-align: center; min-width: 180px; }
+        .savings-result .sr-val { font-size: 2.2rem; font-weight: 800; color: var(--green); }
+        .savings-result .sr-lbl { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+        /* ═══════════════════════════════════════════
+           SECTION 7: BOTTOM LINE
+           ═══════════════════════════════════════════ */
+        .bottomline {
+            text-align: center; padding: 5rem 0 4rem;
+        }
+        .tldr {
+            max-width: 700px; margin: 2rem auto 0;
+            background: linear-gradient(135deg, rgba(47,184,133,0.06), rgba(212,168,75,0.04));
+            border: 1px solid var(--border-2); border-radius: 16px;
+            padding: 2rem 2rem; text-align: left;
+        }
+        .tldr h3 {
+            font-size: 0.75rem; font-weight: 700; color: var(--emerald);
+            text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem;
+        }
+        .tldr-item {
+            display: flex; align-items: flex-start; gap: 0.6rem;
+            margin-bottom: 0.8rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.55;
+        }
+        .tldr-item:last-child { margin-bottom: 0; }
+        .tldr-item .ti-num {
+            flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+            background: var(--emerald-glow); border: 1px solid rgba(47,184,133,0.3);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.6rem; font-weight: 700; color: var(--emerald);
+            margin-top: 0.15rem;
+        }
+        .tldr-item strong { color: var(--text); font-weight: 600; }
+
+        .cta-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            margin-top: 2rem; padding: 0.8rem 1.8rem;
+            background: linear-gradient(135deg, var(--emerald), #2fb4a5);
+            color: #fff; font-weight: 700; font-size: 0.9rem;
+            text-decoration: none; border-radius: 100px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(47,184,133,0.3);
+        }
+        .cta-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(47,184,133,0.4);
+        }
+
+        .footer {
+            text-align: center; padding: 2rem 0; color: var(--text-dim);
+            font-size: 0.68rem; border-top: 1px solid var(--border);
+        }
+        .footer a { color: var(--emerald); text-decoration: none; }
+
+        /* ═══════════════════════════════════════════
+           ANIMATED COUNTER
+           ═══════════════════════════════════════════ */
+        .counter[data-target] {
+            display: inline-block;
+        }
+
+        /* ═══════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .calc-layout { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-stats { gap: 1.5rem; }
+            .hero-stat .val { font-size: 1.4rem; }
+            .free-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+            .flow-split { gap: 1rem; }
+            .builder-stats { gap: 0.8rem; }
+            .savings-calculator { flex-direction: column; }
+            .compare-wrapper { margin-left: -1rem; margin-right: -1rem; padding: 0 1rem; }
+        }
+
+        @media (max-width: 480px) {
+            .free-grid { grid-template-columns: 1fr; }
+            .social-features { grid-template-columns: 1fr; }
+            .flow-split { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     STICKY NAVIGATION
+     ═══════════════════════════════════════════ -->
+<nav class="sticky-nav" id="stickyNav">
+    <div class="sticky-nav-inner">
+        <span class="nav-logo">Evenomics</span>
+        <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+        <a href="#free-layer" class="nav-link" data-section="free-layer">Free Layer</a>
+        <a href="#social-layer" class="nav-link" data-section="social-layer">$10 Social</a>
+        <a href="#amplified-engagement" class="nav-link" data-section="amplified-engagement">Amplified</a>
+        <a href="#creator-earnings" class="nav-link" data-section="creator-earnings">Creators</a>
+        <a href="#builder-earnings" class="nav-link" data-section="builder-earnings">Builders</a>
+        <a href="#comparison" class="nav-link" data-section="comparison">Compare</a>
+        <a href="#bottom-line" class="nav-link" data-section="bottom-line">TL;DR</a>
+    </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 1: HERO
+     ═══════════════════════════════════════════ -->
+<section class="hero" id="hero">
+    <div class="container">
+        <div class="reveal">
+            <div class="hero-badge"><span class="dot"></span> Evenomics</div>
+        </div>
+        <h1 class="reveal reveal-delay-1">A platform where<br><span>your money works for you</span></h1>
+        <p class="hero-sub reveal reveal-delay-2">
+            No ads. No data harvesting. No hidden fees.<br>
+            Here's exactly where every dollar goes — and how it comes back.
+        </p>
+        <div class="hero-stats reveal reveal-delay-3">
+            <div class="hero-stat">
+                <div class="val" style="color: var(--green)">$0</div>
+                <div class="lbl">Core OS cost</div>
+            </div>
+            <div class="hero-stat">
+                <div class="val" style="color: var(--emerald)">$10<span style="font-size:0.8rem;opacity:0.6">/mo</span></div>
+                <div class="lbl">Social layer</div>
+            </div>
+            <div class="hero-stat">
+                <div class="val" style="color: var(--gold)">93%</div>
+                <div class="lbl">Goes to you</div>
+            </div>
+            <div class="hero-stat">
+                <div class="val" style="color: var(--red)">7%</div>
+                <div class="lbl">Platform keeps</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════
+     SECTION 2: THE FREE LAYER
+     ═══════════════════════════════════════════ -->
+<section id="free-layer">
+    <div class="container">
+        <div class="eyebrow reveal">What you get for free</div>
+        <h2 class="section-title reveal">A complete operating system. <span>$0. Forever.</span></h2>
+        <p class="section-sub reveal">Before we talk about the $10 social layer — here's what EVE gives you for absolutely nothing. No trial. No catch. No "free tier with limits."</p>
+
+        <div class="free-grid">
+            <div class="free-card reveal">
+                <div class="fc-icon">🤖</div>
+                <div class="fc-name">Your Personal AI</div>
+                <div class="fc-desc">A local AI that learns you over time. Private. Gets smarter daily. Never sends your data anywhere.</div>
+                <div class="fc-badge">FREE</div>
+            </div>
+            <div class="free-card reveal reveal-delay-1">
+                <div class="fc-icon">🎨</div>
+                <div class="fc-name">Creative Suite</div>
+                <div class="fc-desc">Flow Studio, 3D editor, code graph IDE, visual programming — the tools you'd normally pay hundreds for.</div>
+                <div class="fc-badge">FREE</div>
+            </div>
+            <div class="free-card reveal reveal-delay-2">
+                <div class="fc-icon">🗣️</div>
+                <div class="fc-name">Voice & Audio</div>
+                <div class="fc-desc">Speech-to-text, text-to-speech, voice commands. All processed locally on your machine.</div>
+                <div class="fc-badge">FREE</div>
+            </div>
+            <div class="free-card reveal reveal-delay-3">
+                <div class="fc-icon">🖼️</div>
+                <div class="fc-name">Image Generation</div>
+                <div class="fc-desc">Stable Diffusion on your device. No cloud dependency. No censorship. No per-image fees.</div>
+                <div class="fc-badge">FREE</div>
+            </div>
+            <div class="free-card reveal">
+                <div class="fc-icon">🏥</div>
+                <div class="fc-name">Medical Tools</div>
+                <div class="fc-desc">Patient monitoring, telehealth, HIPAA-compliant workflows. Local-first for total privacy.</div>
+                <div class="fc-badge">FREE</div>
+            </div>
+            <div class="free-card reveal reveal-delay-1">
+                <div class="fc-icon">🥽</div>
+                <div class="fc-name">VR Experiences</div>
+                <div class="fc-desc">Spatial computing, VRM companions, immersive environments. All built in.</div>
+                <div class="fc-badge">FREE</div>
+            </div>
+            <div class="free-card reveal reveal-delay-2">
+                <div class="fc-icon">🛠️</div>
+                <div class="fc-name">Developer Portal</div>
+                <div class="fc-desc">Build, test, and publish modules. Full IDE included. Everything you need to create and sell.</div>
+                <div class="fc-badge">FREE</div>
+            </div>
+            <div class="free-card reveal reveal-delay-3">
+                <div class="fc-icon">🔒</div>
+                <div class="fc-name">Total Privacy</div>
+                <div class="fc-desc">No tracking. No ads. No data harvesting. Everything stays on your device. Period.</div>
+                <div class="fc-badge">FREE</div>
+            </div>
+            <div class="free-card reveal reveal-delay-4">
+                <div class="fc-icon">⭐</div>
+                <div class="fc-name">Marketplace Access</div>
+                <div class="fc-desc">Browse and install thousands of community modules. Tools, integrations, and more.</div>
+                <div class="fc-badge">FREE</div>
+            </div>
+        </div>
+
+        <div class="free-callout reveal">
+            <strong>All of this is yours. Forever. $0.</strong> — The social layer ($10/mo) is the only thing that costs anything.
+        </div>
+    </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════
+     SECTION 3: THE $10 SOCIAL LAYER
+     ═══════════════════════════════════════════ -->
+<section id="social-layer">
+    <div class="container">
+        <div class="eyebrow reveal">The social layer</div>
+        <h2 class="section-title reveal">Where does <span>your $10</span> go?</h2>
+        <p class="section-sub reveal">Every subscription flows into one shared pool — released to the community daily. Your engagement decides who gets paid.</p>
+
+        <!-- Money Flow Diagram -->
+        <div class="money-flow reveal">
+            <!-- Step 1: You pay -->
+            <div class="flow-step">
+                <div class="flow-node-main you">
+                    <div class="fn-amount" style="color: var(--text)">$10<span style="font-size:0.7rem;opacity:0.5">/mo</span></div>
+                    <div class="fn-label">Your subscription</div>
+                </div>
+            </div>
+
+            <div class="flow-arrow down">↓</div>
+
+            <!-- Step 2: Split -->
+            <div class="flow-split">
+                <div class="flow-split-line">
+                    <div class="flow-pct">93% — $9.30</div>
+                    <div class="flow-arrow down">↓</div>
+                    <div class="flow-node-main pool">
+                        <div class="fn-amount" style="color: var(--emerald)">Community Pool</div>
+                        <div class="fn-label">Distributed to creators every day</div>
+                    </div>
+                </div>
+                <div class="flow-split-line">
+                    <div class="flow-pct">7% — $0.70</div>
+                    <div class="flow-arrow down">↓</div>
+                    <div class="flow-node-main platform">
+                        <div class="fn-amount" style="color: var(--red); font-size: 1rem;">Platform</div>
+                        <div class="fn-label">Keeps the lights on</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-arrow down">↓</div>
+
+            <!-- Step 3: Recipients -->
+            <div class="flow-recipients">
+                <div class="flow-recipient">
+                    <div class="fr-icon">🎬</div>
+                    <div class="fr-label">Creators you enjoy</div>
+                </div>
+                <div class="flow-recipient">
+                    <div class="fr-icon">🛠️</div>
+                    <div class="fr-label">Builders of tools you use</div>
+                </div>
+                <div class="flow-recipient">
+                    <div class="fr-icon">🏢</div>
+                    <div class="fr-label">Businesses add to the pool too</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="section-sub reveal" style="text-align: center; margin: 0 auto;">
+            Your likes, comments, and shares are your votes. They directly determine which creators earn from the pool each day.
+        </p>
+
+        <div class="social-features reveal">
+            <div class="social-feat"><span class="check">✓</span> Access all creator content</div>
+            <div class="social-feat"><span class="check">✓</span> No ads, ever</div>
+            <div class="social-feat"><span class="check">✓</span> No algorithmic manipulation</div>
+            <div class="social-feat"><span class="check">✓</span> Your engagement pays creators directly</div>
+            <div class="social-feat"><span class="check">✓</span> Export your data anytime</div>
+            <div class="social-feat"><span class="check">✓</span> No tracking or profiling</div>
+        </div>
+
+        <div class="analogy reveal">
+            Think of it like a shared tip jar. Everyone puts in $10. Every day the jar is emptied and split among the creators who made the best content that day — and <em>you</em> decide "best" with your engagement.
+        </div>
+    </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════
+     SECTION 3.5: AMPLIFIED ENGAGEMENT
+     ═══════════════════════════════════════════ -->
+<section id="amplified-engagement">
+    <div class="container">
+        <div class="eyebrow reveal">For businesses & supporters</div>
+        <h2 class="section-title reveal">Put in more, <span>weigh more</span></h2>
+        <p class="section-sub reveal">Anyone — a business, a brand, or just someone who believes in the platform — can contribute beyond the $10 subscription. In return, their engagement carries more weight.</p>
+
+        <div class="amplify-grid">
+            <div class="amplify-how reveal">
+                <h3>How it works</h3>
+                <div class="amplify-step">
+                    <span class="as-num gold">1</span>
+                    <div class="as-text"><strong>Contribute extra.</strong> Put additional money into the community pool beyond your $10/month — $100, $1,000, $10,000, whatever you choose.</div>
+                </div>
+                <div class="amplify-step">
+                    <span class="as-num green">2</span>
+                    <div class="as-text"><strong>Your engagement amplifies.</strong> A regular subscriber's like = 1 view. A supporter's like might equal 3 views, 5 views, or more — proportional to their contribution.</div>
+                </div>
+                <div class="amplify-step">
+                    <span class="as-num emerald">3</span>
+                    <div class="as-text"><strong>Creators you engage with rise.</strong> Because your engagement carries more weight, the creators whose content you like, comment on, or share earn a bigger slice of the daily pool.</div>
+                </div>
+            </div>
+
+            <div class="amplify-visual reveal reveal-delay-1">
+                <div style="text-align: center; margin-bottom: 0.5rem;">
+                    <div style="font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em;">Engagement weight per interaction</div>
+                </div>
+                <div class="amplify-compare">
+                    <div class="amplify-bar">
+                        <div class="ab-value" style="color: var(--text-muted)">1x</div>
+                        <div class="ab-fill" style="height: 50px; background: var(--surface-3);"></div>
+                        <div class="ab-label">Regular subscriber</div>
+                    </div>
+                    <div class="amplify-bar">
+                        <div class="ab-value" style="color: var(--gold)">3x</div>
+                        <div class="ab-fill" style="height: 100px; background: linear-gradient(to top, rgba(212,168,75,0.3), rgba(212,168,75,0.6));"></div>
+                        <div class="ab-label">Small supporter</div>
+                    </div>
+                    <div class="amplify-bar">
+                        <div class="ab-value" style="color: var(--gold)">5x</div>
+                        <div class="ab-fill" style="height: 150px; background: linear-gradient(to top, rgba(212,168,75,0.4), rgba(212,168,75,0.8));"></div>
+                        <div class="ab-label">Medium supporter</div>
+                    </div>
+                    <div class="amplify-bar">
+                        <div class="ab-value" style="color: var(--green)">10x</div>
+                        <div class="ab-fill" style="height: 220px; background: linear-gradient(to top, rgba(68,255,136,0.3), rgba(68,255,136,0.7));"></div>
+                        <div class="ab-label">Major supporter</div>
+                    </div>
+                </div>
+
+                <div class="amplify-example">
+                    <div class="amplify-card">
+                        <div class="ac-icon">👤</div>
+                        <div class="ac-label">Subscriber likes a post</div>
+                        <div class="ac-weight" style="color: var(--text-muted)">= 1 view</div>
+                        <div class="ac-desc">$10/mo subscription</div>
+                    </div>
+                    <div class="amplify-card">
+                        <div class="ac-icon">🏢</div>
+                        <div class="ac-label">Supporter likes a post</div>
+                        <div class="ac-weight" style="color: var(--gold)">= 5 views</div>
+                        <div class="ac-desc">$10/mo + extra contribution</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="amplify-callout reveal">
+            <strong>This isn't advertising.</strong> There are no contracts, no #ad disclosures, no sponsorship deals. Supporters simply engage with content they genuinely like — their engagement just carries more weight. Creators rise on merit, <em>amplified by real support</em>.
+        </div>
+
+        <div class="analogy reveal">
+            Think of it like a concert. Everyone in the audience can clap. But a supporter in the front row? Their clap echoes louder. The performer doesn't know they're getting paid more — they just know the crowd loves them. The best performers get the biggest crowds, naturally.
+        </div>
+    </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════
+     SECTION 4: HOW CREATORS EARN
+     ═══════════════════════════════════════════ -->
+<section id="creator-earnings">
+    <div class="container">
+        <div class="eyebrow reveal">For creators</div>
+        <h2 class="section-title reveal">More content + more engagement = <span>bigger share</span></h2>
+        <p class="section-sub reveal">No contracts. No sponsorship negotiations. Just create, engage, and earn your slice of the daily pool.</p>
+
+        <div class="calc-layout">
+            <div class="calc-panel reveal">
+                <h3>Adjust the scenario</h3>
+                <div class="slider-group">
+                    <div class="slider-label">People on the platform <strong id="vCreatorUsers">10,000</strong></div>
+                    <input type="range" id="rCreatorUsers" min="1000" max="100000" value="10000" step="1000">
+                </div>
+                <div class="slider-group">
+                    <div class="slider-label">Your posts this month <strong id="vCreatorPosts">10</strong></div>
+                    <input type="range" id="rCreatorPosts" min="1" max="50" value="10">
+                </div>
+                <div class="slider-group">
+                    <div class="slider-label">Avg engagement per post <strong id="vCreatorEngage">200</strong></div>
+                    <input type="range" id="rCreatorEngage" min="1" max="5000" value="200" step="10">
+                </div>
+            </div>
+
+            <div class="reveal reveal-delay-1" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div class="result-card">
+                    <div class="result-label">Your weekly earnings</div>
+                    <div class="result-value" style="color: var(--green)" id="vCreatorWeekly">$4.34</div>
+                    <div class="result-sub">from a <strong id="vCreatorPool" style="color: var(--emerald)">$3,100</strong>/day pool</div>
+                </div>
+                <div class="result-row">
+                    <div class="result-mini">
+                        <div class="rm-val" style="color: var(--emerald)" id="vCreatorDaily">$0.62</div>
+                        <div class="rm-lbl">Daily</div>
+                    </div>
+                    <div class="result-mini">
+                        <div class="rm-val" style="color: var(--emerald)" id="vCreatorMonthly">$19</div>
+                        <div class="rm-lbl">Monthly</div>
+                    </div>
+                    <div class="result-mini">
+                        <div class="rm-val" style="color: var(--gold)" id="vCreatorVsAvg">2.0x</div>
+                        <div class="rm-lbl">vs Average Creator</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="analogy reveal">
+            The pool grows with every new subscriber. At 10,000 users, the daily pool is over $3,000. At 100,000 users, it's over $30,000/day. The earlier you start creating, the bigger your share as the platform grows.
+        </div>
+    </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════
+     SECTION 5: HOW BUILDERS EARN
+     ═══════════════════════════════════════════ -->
+<section id="builder-earnings">
+    <div class="container">
+        <div class="eyebrow reveal">For builders</div>
+        <h2 class="section-title reveal">Build once. <span>Earn every download.</span></h2>
+        <p class="section-sub reveal">Your module lives in the Exchange. Every device that installs it pays your price. You keep 93% — and if someone builds on your work, you earn royalties forever.</p>
+
+        <div class="calc-layout">
+            <div class="calc-panel reveal">
+                <h3>Your module</h3>
+                <div class="slider-group">
+                    <div class="slider-label">Downloads this month <strong id="vBuilderDownloads">100</strong></div>
+                    <input type="range" id="rBuilderDownloads" min="1" max="5000" value="100" step="10">
+                </div>
+                <div class="slider-group">
+                    <div class="slider-label">Module price <strong id="vBuilderPrice">$25</strong></div>
+                    <input type="range" id="rBuilderPrice" min="1" max="200" value="25" step="1">
+                </div>
+            </div>
+
+            <div class="reveal reveal-delay-1" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div class="result-card">
+                    <div class="result-label">Your monthly revenue</div>
+                    <div class="result-value" style="color: var(--green)" id="vBuilderRevenue">$2,325</div>
+                    <div class="result-sub">after the 7% platform fee</div>
+                </div>
+                <div class="result-row">
+                    <div class="result-mini">
+                        <div class="rm-val" style="color: var(--green)" id="vBuilderYours">$2,325</div>
+                        <div class="rm-lbl">You keep (93%)</div>
+                    </div>
+                    <div class="result-mini">
+                        <div class="rm-val" style="color: var(--red)" id="vBuilderPlatform">$175</div>
+                        <div class="rm-lbl">Platform (7%)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cascading Royalties Visual -->
+        <div style="margin-top: 3rem;">
+            <h3 class="reveal" style="text-align: center; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem;">Your work compounds</h3>
+            <p class="reveal" style="text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">When others remix or build on your module, you earn cascading royalties — on every downstream sale.</p>
+
+            <div class="builder-flow reveal">
+                <div class="builder-tier">
+                    <div class="builder-node origin">
+                        <div class="bn-name">Your Module</div>
+                        <div class="bn-price">$25</div>
+                        <div class="bn-detail">100 downloads/mo</div>
+                    </div>
+                </div>
+                <div class="flow-arrow down" style="font-size: 1.2rem;">↓ ↓ ↓</div>
+                <div class="builder-tier">
+                    <div class="builder-node">
+                        <div class="bn-name">Remix A</div>
+                        <div class="bn-price">$40</div>
+                        <div class="bn-detail">80 downloads</div>
+                        <div class="bn-royalty">↑ $446 to you</div>
+                    </div>
+                    <div class="builder-node">
+                        <div class="bn-name">Remix B</div>
+                        <div class="bn-price">$30</div>
+                        <div class="bn-detail">120 downloads</div>
+                        <div class="bn-royalty">↑ $502 to you</div>
+                    </div>
+                </div>
+                <div class="flow-arrow down" style="font-size: 1.2rem;">↓ ↓</div>
+                <div class="builder-tier">
+                    <div class="builder-node">
+                        <div class="bn-name">Remix C</div>
+                        <div class="bn-price">$50</div>
+                        <div class="bn-detail">60 downloads</div>
+                        <div class="bn-royalty">↑ $418 to you</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="builder-stats reveal">
+                <div class="builder-stat">
+                    <div class="bs-val" style="color: var(--gold)">$2,325</div>
+                    <div class="bs-lbl">Direct Sales</div>
+                </div>
+                <div class="builder-stat">
+                    <div class="bs-val" style="color: var(--green)">+$1,366</div>
+                    <div class="bs-lbl">Downstream Royalties</div>
+                </div>
+                <div class="builder-stat">
+                    <div class="bs-val" style="color: var(--emerald)">$3,691<span style="font-size:0.7rem;opacity:0.6">/mo</span></div>
+                    <div class="bs-lbl">Total Passive Income</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="analogy reveal">
+            Per-device licensing. No SaaS. No cloud share. Build a module once, price it yourself, and earn every time someone installs it — plus royalties when others build on your work.
+        </div>
+    </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════
+     SECTION 6: WHY EVE IS DIFFERENT
+     ═══════════════════════════════════════════ -->
+<section id="comparison">
+    <div class="container">
+        <div class="eyebrow reveal">The difference</div>
+        <h2 class="section-title reveal">Why EVE is <span>different</span></h2>
+        <p class="section-sub reveal">You're not cheaper — you're more profitable. Ownership + transparency + low fees = you keep more.</p>
+
+        <div class="compare-wrapper reveal">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>YouTube</th>
+                        <th>TikTok</th>
+                        <th>OnlyFans</th>
+                        <th>Twitch</th>
+                        <th class="eve-col">EVE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Platform take</td>
+                        <td class="bad">45%</td>
+                        <td class="bad">50%</td>
+                        <td class="bad">20%</td>
+                        <td class="bad">50%</td>
+                        <td class="good eve-col">7%</td>
+                    </tr>
+                    <tr>
+                        <td>Own your audience</td>
+                        <td class="bad">No</td>
+                        <td class="bad">No</td>
+                        <td class="bad">No</td>
+                        <td class="bad">No</td>
+                        <td class="good eve-col">Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Export subscribers</td>
+                        <td class="bad">No</td>
+                        <td class="bad">No</td>
+                        <td class="bad">No</td>
+                        <td class="bad">No</td>
+                        <td class="good eve-col">Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Payout speed</td>
+                        <td class="ok">30 days</td>
+                        <td class="ok">30 days</td>
+                        <td class="ok">7 days</td>
+                        <td class="ok">15 days</td>
+                        <td class="good eve-col">Instant</td>
+                    </tr>
+                    <tr>
+                        <td>Exclusivity required</td>
+                        <td class="ok">No</td>
+                        <td class="ok">No</td>
+                        <td class="bad">Often</td>
+                        <td class="bad">Yes</td>
+                        <td class="good eve-col">Never</td>
+                    </tr>
+                    <tr>
+                        <td>Algorithm transparency</td>
+                        <td class="bad">None</td>
+                        <td class="bad">None</td>
+                        <td class="ok">Some</td>
+                        <td class="bad">None</td>
+                        <td class="good eve-col">Full</td>
+                    </tr>
+                    <tr>
+                        <td>Set your own pricing</td>
+                        <td class="bad">No</td>
+                        <td class="bad">No</td>
+                        <td class="good">Yes</td>
+                        <td class="ok">Limited</td>
+                        <td class="good eve-col">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Savings Calculator -->
+        <div class="savings-calculator reveal">
+            <div class="savings-slider">
+                <div class="slider-label">If you earn monthly <strong id="vSavingsRev">$5,000</strong></div>
+                <input type="range" id="rSavingsRev" min="100" max="50000" value="5000" step="100">
+            </div>
+            <div class="savings-result">
+                <div class="sr-val" id="vSavingsAmount">+$23,400</div>
+                <div class="sr-lbl">more in your pocket per year on EVE<br>vs. the average platform</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════
+     SECTION 7: THE BOTTOM LINE
+     ═══════════════════════════════════════════ -->
+<section class="bottomline" id="bottom-line">
+    <div class="container">
+        <div class="eyebrow reveal">The bottom line</div>
+        <h2 class="section-title reveal" style="text-align: center;">Your money. <span>Your community.</span></h2>
+
+        <div class="tldr reveal">
+            <h3>TL;DR</h3>
+            <div class="tldr-item">
+                <span class="ti-num">1</span>
+                <span><strong>The entire OS is free.</strong> AI, creative tools, medical tools, VR, privacy — all $0, forever.</span>
+            </div>
+            <div class="tldr-item">
+                <span class="ti-num">2</span>
+                <span><strong>The social layer costs $10/month.</strong> That's the only paid thing. No upsells. No tiers.</span>
+            </div>
+            <div class="tldr-item">
+                <span class="ti-num">3</span>
+                <span><strong>93% goes to the community.</strong> Your subscription enters a shared pool distributed to creators daily.</span>
+            </div>
+            <div class="tldr-item">
+                <span class="ti-num">4</span>
+                <span><strong>Your engagement is your vote.</strong> Likes, comments, shares — they decide who earns.</span>
+            </div>
+            <div class="tldr-item">
+                <span class="ti-num">5</span>
+                <span><strong>Supporters amplify the pool.</strong> Businesses and individuals can contribute extra money. Their engagement carries more weight — boosting the creators they love, organically.</span>
+            </div>
+            <div class="tldr-item">
+                <span class="ti-num">6</span>
+                <span><strong>Builders keep 93% of every module sale</strong> — plus cascading royalties when others build on their work.</span>
+            </div>
+            <div class="tldr-item">
+                <span class="ti-num">7</span>
+                <span><strong>The platform keeps just 7%.</strong> Compare that to YouTube (45%), TikTok (50%), or Twitch (50%).</span>
+            </div>
+        </div>
+
+        <a href="https://7hermeticloops.com" class="cta-link reveal" target="_blank" rel="noopener">
+            Visit the Exchange →
+        </a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div>Hermetic Labs — EVE OS</div>
+        <div style="margin-top: 0.3rem; color: var(--text-dim);">
+            Money can buy exposure attempts, not guaranteed survival.
+            Your content lives or dies by real engagement.
+        </div>
+    </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════════════ -->
+<script>
+// ─── Constants ───
+const CUT = 0.07;
+const DAYS = 30;
+const FEE = 10;
+const AVG_POSTS = 5;
+const AVG_ENGAGE = 100;
+
+// ─── Formatters ───
+function fmt(n) {
+    if (Math.abs(n) >= 1e6) return '$' + (n / 1e6).toFixed(1) + 'M';
+    if (Math.abs(n) >= 10000) return '$' + (n / 1000).toFixed(1) + 'K';
+    if (Math.abs(n) >= 1000) return '$' + Math.round(n).toLocaleString();
+    if (Math.abs(n) >= 100) return '$' + Math.round(n);
+    return '$' + n.toFixed(2);
+}
+
+// ─── Economics Engine ───
+function dailyPool(users, biz) {
+    return ((users * FEE * (1 - CUT)) / DAYS) + ((biz || 0) / DAYS);
+}
+
+function assumedBiz(users) {
+    return users < 500 ? 0 : Math.pow(users / 1000, 1.5) * 300;
+}
+
+function creatorShare(users, posts, engage) {
+    const totalEngagement = users * AVG_POSTS * AVG_ENGAGE;
+    const yourEngagement = posts * engage;
+    const adjusted = totalEngagement - (AVG_POSTS * AVG_ENGAGE) + yourEngagement;
+    return adjusted > 0 ? yourEngagement / adjusted : 0;
+}
+
+// ═══════════════════════════════════════════
+//  SCROLL REVEAL
+// ═══════════════════════════════════════════
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ═══════════════════════════════════════════
+//  CREATOR EARNINGS CALCULATOR
+// ═══════════════════════════════════════════
+const rCreatorUsers = document.getElementById('rCreatorUsers');
+const rCreatorPosts = document.getElementById('rCreatorPosts');
+const rCreatorEngage = document.getElementById('rCreatorEngage');
+
+function updateCreatorCalc() {
+    const users = +rCreatorUsers.value;
+    const posts = +rCreatorPosts.value;
+    const engage = +rCreatorEngage.value;
+
+    const biz = assumedBiz(users);
+    const dp = dailyPool(users, biz);
+    const share = creatorShare(users, posts, engage);
+    const daily = dp * share;
+    const weekly = daily * 7;
+    const monthly = daily * 30;
+
+    // Average creator share for comparison
+    const avgShare = creatorShare(users, AVG_POSTS, AVG_ENGAGE);
+    const avgDaily = dp * avgShare;
+    const multiplier = avgDaily > 0 ? daily / avgDaily : 0;
+
+    document.getElementById('vCreatorUsers').textContent = users.toLocaleString();
+    document.getElementById('vCreatorPosts').textContent = posts;
+    document.getElementById('vCreatorEngage').textContent = engage.toLocaleString();
+    document.getElementById('vCreatorWeekly').textContent = fmt(weekly);
+    document.getElementById('vCreatorPool').textContent = fmt(dp);
+    document.getElementById('vCreatorDaily').textContent = fmt(daily);
+    document.getElementById('vCreatorMonthly').textContent = fmt(monthly);
+    document.getElementById('vCreatorVsAvg').textContent = multiplier.toFixed(1) + 'x';
+}
+
+rCreatorUsers.addEventListener('input', updateCreatorCalc);
+rCreatorPosts.addEventListener('input', updateCreatorCalc);
+rCreatorEngage.addEventListener('input', updateCreatorCalc);
+
+// ═══════════════════════════════════════════
+//  BUILDER REVENUE CALCULATOR
+// ═══════════════════════════════════════════
+const rBuilderDownloads = document.getElementById('rBuilderDownloads');
+const rBuilderPrice = document.getElementById('rBuilderPrice');
+
+function updateBuilderCalc() {
+    const downloads = +rBuilderDownloads.value;
+    const price = +rBuilderPrice.value;
+    const gross = downloads * price;
+    const yours = gross * (1 - CUT);
+    const platform = gross * CUT;
+
+    document.getElementById('vBuilderDownloads').textContent = downloads.toLocaleString();
+    document.getElementById('vBuilderPrice').textContent = '$' + price;
+    document.getElementById('vBuilderRevenue').textContent = fmt(yours);
+    document.getElementById('vBuilderYours').textContent = fmt(yours);
+    document.getElementById('vBuilderPlatform').textContent = fmt(platform);
+}
+
+rBuilderDownloads.addEventListener('input', updateBuilderCalc);
+rBuilderPrice.addEventListener('input', updateBuilderCalc);
+
+// ═══════════════════════════════════════════
+//  SAVINGS CALCULATOR
+// ═══════════════════════════════════════════
+const rSavingsRev = document.getElementById('rSavingsRev');
+
+function updateSavingsCalc() {
+    const rev = +rSavingsRev.value;
+    const avgTake = 0.41; // average of YouTube, TikTok, OnlyFans, Twitch
+    const eveTake = CUT;
+    const annualSavings = (rev * (avgTake - eveTake)) * 12;
+
+    document.getElementById('vSavingsRev').textContent = fmt(rev);
+    document.getElementById('vSavingsAmount').textContent = '+' + fmt(annualSavings);
+}
+
+rSavingsRev.addEventListener('input', updateSavingsCalc);
+
+// ═══════════════════════════════════════════
+//  STICKY NAV — Active link highlighting
+// ═══════════════════════════════════════════
+const navLinks = document.querySelectorAll('.nav-link[data-section]');
+const sectionEls = Array.from(navLinks).map(link => ({
+    link,
+    section: document.getElementById(link.dataset.section)
+})).filter(item => item.section);
+
+let scrollTicking = false;
+function updateActiveNav() {
+    const scrollY = window.scrollY + 80; // offset for sticky nav height
+    let current = sectionEls[0];
+
+    for (const item of sectionEls) {
+        if (item.section.offsetTop <= scrollY) {
+            current = item;
+        }
+    }
+
+    navLinks.forEach(l => l.classList.remove('active'));
+    if (current) {
+        current.link.classList.add('active');
+        current.link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+    scrollTicking = false;
+}
+
+window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+        requestAnimationFrame(updateActiveNav);
+        scrollTicking = true;
+    }
+}, { passive: true });
+
+// Run once on load
+updateActiveNav();
+
+// ═══════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════
+updateCreatorCalc();
+updateBuilderCalc();
+updateSavingsCalc();
+</script>
+</body>
+</html>

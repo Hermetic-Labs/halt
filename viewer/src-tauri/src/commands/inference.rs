@@ -26,6 +26,8 @@ pub struct InferenceRequest {
     pub persona: String,
     #[serde(default)]
     pub stream: bool,
+    #[serde(default)]
+    pub image_b64: Option<String>,
 }
 
 fn default_max_tokens() -> u32 {
@@ -62,10 +64,10 @@ fn build_prompt(req: &InferenceRequest) -> String {
     };
 
     if system.is_empty() {
-        req.prompt.clone()
+        format!("<start_of_turn>user\n{}<end_of_turn>\n<start_of_turn>model\n", req.prompt)
     } else {
         format!(
-            "[INST] <<SYS>>\n{}\n<</SYS>>\n\n{} [/INST]",
+            "<start_of_turn>user\nSYSTEM: {}\n\n{}<end_of_turn>\n<start_of_turn>model\n",
             system, req.prompt
         )
     }
@@ -122,53 +124,101 @@ pub fn inference_complete(request: InferenceRequest) -> Result<InferenceResponse
             .unwrap_or("unknown")
             .to_string();
 
-        let m = llm::get_model()?;
-        let backend = llm::LLAMA_BACKEND.get().ok_or("Llama Backend missing")?;
-        let mut ctx_params = llama_cpp_2::context::params::LlamaContextParams::default();
-        ctx_params = ctx_params.with_n_ctx(Some(std::num::NonZeroU32::new(8192).unwrap()));
-        let mut ctx = m
-            .new_context(backend, ctx_params)
-            .map_err(|e| format!("Ctx err: {}", e))?;
+        if let Some(ref image_b64) = request.image_b64 {
+            if !image_b64.is_empty() {
+                log::info!("Routing multimodal inference to sidecar at :7782...");
+                let client = reqwest::blocking::Client::builder()
+                    .timeout(std::time::Duration::from_secs(120))
+                    .build()
+                    .unwrap_or_else(|_| reqwest::blocking::Client::new());
 
-        let tokens_list = m
-            .str_to_token(&full_prompt, llama_cpp_2::model::AddBos::Always)
-            .map_err(|e| format!("Tokenize err: {}", e))?;
+                let response = client
+                    .post("http://127.0.0.1:7782/embed")
+                    .json(&serde_json::json!({
+                        "prompt": full_prompt,
+                        "image_base64": image_b64
+                    }))
+                    .send()
+                    .map_err(|e| format!("Vision network failed: {}", e))?;
 
-        let mut batch = llama_cpp_2::llama_batch::LlamaBatch::new(512, 1);
-        let last_index = tokens_list.len() - 1;
-        for (i, token) in tokens_list.into_iter().enumerate() {
-            let is_last = i == last_index;
-            batch.add(token, i as i32, &[0], is_last).unwrap();
+                let json: serde_json::Value = response.json().map_err(|e| format!("Vision JSON parse: {}", e))?;
+                
+                if let Some(err) = json.get("error").and_then(|e| e.as_str()) {
+                    return Err(format!("Vision error: {}", err));
+                }
+                
+                let result_text = json["text"].as_str().unwrap_or("").to_string();
+                let n_past = json["n_past"].as_i64().unwrap_or(0) as u32;
+                
+                return Ok(InferenceResponse {
+                    text: result_text,
+                    tokens_generated: n_past,
+                    model: "halt-vision (sidecar)".to_string(),
+                });
+            }
         }
-        ctx.decode(&mut batch)
-            .map_err(|e| format!("Decode err: {}", e))?;
 
-        let mut n_cur = batch.n_tokens();
+        let mut n_cur = 0;
+        let mut batch = llama_cpp_2::llama_batch::LlamaBatch::new(512, 1);
         let mut result_text = String::new();
         let mut decoder = encoding_rs::UTF_8.new_decoder();
+        let start_time = std::time::Instant::now();
 
-        while n_cur <= request.max_tokens as i32 {
-            if STOP_REQUESTED.load(Ordering::Relaxed) {
-                log::info!("Inference stopped by user");
-                break;
-            }
-            let mut sampler = llama_cpp_2::sampling::LlamaSampler::greedy();
-            let new_token_id = sampler.sample(&ctx, batch.n_tokens() - 1);
-
-            if new_token_id == m.token_eos() {
-                break;
-            }
-
-            if let Ok(piece) = m.token_to_piece(new_token_id, &mut decoder, true, None) {
-                result_text.push_str(&piece);
-            }
-
-            batch.clear();
-            batch.add(new_token_id, n_cur, &[0], true).unwrap();
-            ctx.decode(&mut batch)
+        llm::with_model(|m| {
+            let backend = llm::LLAMA_BACKEND.get().ok_or("Llama Backend missing")?;
+            let mut ctx_params = llama_cpp_2::context::params::LlamaContextParams::default();
+            ctx_params = ctx_params.with_n_ctx(Some(std::num::NonZeroU32::new(8192).unwrap()));
+            let mut ctx = m.new_context(backend, ctx_params)
                 .map_err(|e| format!("Ctx error: {}", e))?;
-            n_cur += 1;
-        }
+
+            let tokens_list = match m.str_to_token(&full_prompt, llama_cpp_2::model::AddBos::Always) {
+                Ok(t) => t,
+                Err(e) => return Err(format!("Tokenize err: {}", e)),
+            };
+
+            let last_index = tokens_list.len() - 1;
+            for (i, token) in tokens_list.into_iter().enumerate() {
+                let is_last = i == last_index;
+                batch.add(token, n_cur + i as i32, &[0], is_last).unwrap();
+            }
+            if let Err(e) = ctx.decode(&mut batch) {
+                return Err(format!("Decode err: {}", e));
+            }
+
+            n_cur += batch.n_tokens();
+
+            while n_cur <= request.max_tokens as i32 {
+                if STOP_REQUESTED.load(Ordering::Relaxed) {
+                    log::info!("Inference stopped by user");
+                    break;
+                }
+                let mut sampler = llama_cpp_2::sampling::LlamaSampler::greedy();
+                let new_token_id = sampler.sample(&ctx, batch.n_tokens() - 1);
+
+                if new_token_id == m.token_eos() {
+                    break;
+                }
+
+                if let Ok(piece) = m.token_to_piece(new_token_id, &mut decoder, true, None) {
+                    let trimmed = piece.trim();
+                    if trimmed == "<|eot_id|>" || trimmed == "<end_of_turn>" || trimmed == "</s>" || trimmed == "<eos>" {
+                        break;
+                    }
+                    result_text.push_str(&piece);
+                }
+
+                batch.clear();
+                batch.add(new_token_id, n_cur, &[0], true).unwrap();
+                if let Err(e) = ctx.decode(&mut batch) {
+                    return Err(format!("Ctx error: {}", e));
+                }
+                n_cur += 1;
+            }
+            Ok(())
+        })??;
+
+        let elapsed = start_time.elapsed().as_secs_f32();
+        log::info!("[Inference] Finished generation in {:.2}s", elapsed);
 
         Ok(InferenceResponse {
             text: result_text,
@@ -203,52 +253,147 @@ pub async fn inference_stream(
         .unwrap_or("unknown")
         .to_string();
 
-    let m = llm::get_model()?;
-    let backend = llm::LLAMA_BACKEND.get().ok_or("Llama Backend missing")?;
-    let mut ctx_params = llama_cpp_2::context::params::LlamaContextParams::default();
-    ctx_params = ctx_params.with_n_ctx(Some(std::num::NonZeroU32::new(8192).unwrap()));
-    let mut ctx = m
-        .new_context(backend, ctx_params)
-        .map_err(|e| format!("Ctx error: {}", e))?;
+    if let Some(ref image_b64) = request.image_b64 {
+        if !image_b64.is_empty() {
+            log::info!("Streaming: Routing multimodal inference to sidecar at :7782...");
+            
+            let client = reqwest::Client::builder()
+                .timeout(std::time::Duration::from_secs(120))
+                .build()
+                .unwrap_or_else(|_| reqwest::Client::new());
 
-    let tokens_list = m
-        .str_to_token(&full_prompt, llama_cpp_2::model::AddBos::Always)
-        .map_err(|e| format!("Tokenize err: {}", e))?;
+            let response = client
+                .post("http://127.0.0.1:7782/embed")
+                .json(&serde_json::json!({
+                    "prompt": full_prompt,
+                    "image_base64": image_b64
+                }))
+                .send()
+                .await
+                .map_err(|e| format!("Vision sidecar network failed: {}", e))?;
 
-    let mut batch = llama_cpp_2::llama_batch::LlamaBatch::new(512, 1);
-    let last_index = tokens_list.len() - 1;
-    for (i, token) in tokens_list.into_iter().enumerate() {
-        let is_last = i == last_index;
-        batch.add(token, i as i32, &[0], is_last).unwrap();
+            let json: serde_json::Value = response.json().await.map_err(|e| format!("Vision JSON parse: {}", e))?;
+            
+            if let Some(err) = json.get("error").and_then(|e| e.as_str()) {
+                INFERENCE_BUSY.store(false, Ordering::SeqCst);
+                return Err(format!("Vision error: {}", err));
+            }
+            
+            let result_text = json["text"].as_str().unwrap_or("").to_string();
+            
+            // Quickly stream it to UI without artificial slow-downs. (True streaming is done on text inference).
+            for piece in result_text.split_whitespace() {
+                if STOP_REQUESTED.load(Ordering::Relaxed) { break; }
+                let _ = app.emit("inference-token", serde_json::json!({"token": format!("{} ", piece)}));
+            }
+            
+            let _ = app.emit("inference-token", serde_json::json!({
+                "token": "",
+                "done": true,
+                "model": "halt-vision (sidecar)",
+            }));
+
+            INFERENCE_BUSY.store(false, Ordering::SeqCst);
+            return Ok(serde_json::json!({
+                "status": "complete",
+                "model": "halt-vision (sidecar)",
+            }));
+        }
     }
-    ctx.decode(&mut batch)
-        .map_err(|e| format!("Decode err: {}", e))?;
 
-    let mut n_cur = batch.n_tokens();
-    let mut decoder = encoding_rs::UTF_8.new_decoder();
+    let (tx, mut rx) = tokio::sync::mpsc::unbounded_channel::<Result<String, String>>();
+    let full_prompt_clone = full_prompt.clone();
+    let max_tokens = request.max_tokens as i32;
 
-    while n_cur <= request.max_tokens as i32 {
-        if STOP_REQUESTED.load(Ordering::Relaxed) {
-            log::info!("Streaming inference stopped by user");
-            break;
+    std::thread::spawn(move || {
+        let res = llm::with_model(|m| {
+            let backend = llm::LLAMA_BACKEND.get().ok_or("Llama Backend missing")?;
+            let mut ctx_params = llama_cpp_2::context::params::LlamaContextParams::default();
+            ctx_params = ctx_params.with_n_ctx(Some(std::num::NonZeroU32::new(8192).unwrap()));
+            let mut ctx = m.new_context(backend, ctx_params).map_err(|e| format!("Ctx error: {}", e))?;
+
+            let mut n_cur = 0;
+            let mut batch = llama_cpp_2::llama_batch::LlamaBatch::new(512, 1);
+            
+            let tokens_list = match m.str_to_token(&full_prompt_clone, llama_cpp_2::model::AddBos::Always) {
+                Ok(t) => t,
+                Err(e) => { let _ = tx.send(Err(format!("Tokenize err: {}", e))); return Ok(()); }
+            };
+
+            let last_index = tokens_list.len() - 1;
+            for (i, token) in tokens_list.into_iter().enumerate() {
+                let is_last = i == last_index;
+                batch.add(token, n_cur + i as i32, &[0], is_last).unwrap();
+            }
+            if let Err(e) = ctx.decode(&mut batch) {
+                let _ = tx.send(Err(format!("Decode err: {}", e))); return Ok(());
+            }
+
+            n_cur += batch.n_tokens();
+
+            let mut decoder = encoding_rs::UTF_8.new_decoder();
+
+            while n_cur <= max_tokens {
+                if STOP_REQUESTED.load(Ordering::Relaxed) {
+                    break;
+                }
+                let mut sampler = llama_cpp_2::sampling::LlamaSampler::greedy();
+                let new_token_id = sampler.sample(&ctx, batch.n_tokens() - 1);
+
+                if new_token_id == m.token_eos() {
+                    break;
+                }
+
+                if let Ok(piece) = m.token_to_piece(new_token_id, &mut decoder, true, None) {
+                    let trimmed = piece.trim();
+                    if trimmed == "<|eot_id|>" || trimmed == "<end_of_turn>" || trimmed == "</s>" || trimmed == "<eos>" {
+                        break;
+                    }
+                    if !piece.is_empty() && (piece.contains("<|eot_id|>") || piece.contains("<end_of_turn>")) {
+                        break;
+                    }
+                    if tx.send(Ok(piece)).is_err() {
+                        break;
+                    }
+                }
+
+                batch.clear();
+                batch.add(new_token_id, n_cur, &[0], true).unwrap();
+                if let Err(e) = ctx.decode(&mut batch) {
+                    let _ = tx.send(Err(format!("Ctx error: {}", e))); return Ok(());
+                }
+                n_cur += 1;
+            }
+            let _ = tx.send(Ok("".to_string())); // Signal completion
+            Ok::<(), String>(())
+        });
+
+        if let Err(e) = res {
+            log::error!("Inference context lock failed: {}", e);
         }
-        let mut sampler = llama_cpp_2::sampling::LlamaSampler::greedy();
-        let new_token_id = sampler.sample(&ctx, batch.n_tokens() - 1);
+    });
 
-        if new_token_id == m.token_eos() {
-            break;
+    let start_time = std::time::Instant::now();
+    let mut generated = 0;
+
+    while let Some(res) = rx.recv().await {
+        match res {
+            Ok(piece) => {
+                if piece.is_empty() {
+                    break; // Completed
+                }
+                generated += 1;
+                let _ = app.emit("inference-token", serde_json::json!({"token": piece}));
+            }
+            Err(e) => {
+                INFERENCE_BUSY.store(false, Ordering::SeqCst);
+                return Err(e);
+            }
         }
-
-        if let Ok(piece) = m.token_to_piece(new_token_id, &mut decoder, true, None) {
-            let _ = app.emit("inference-token", serde_json::json!({"token": piece}));
-        }
-
-        batch.clear();
-        batch.add(new_token_id, n_cur, &[0], true).unwrap();
-        ctx.decode(&mut batch)
-            .map_err(|e| format!("Ctx error: {}", e))?;
-        n_cur += 1;
     }
+
+    let elapsed = start_time.elapsed().as_secs_f32();
+    log::info!("[Inference] Streamed {} tokens in {:.2}s ({:.2} tok/s)", generated, elapsed, generated as f32 / elapsed);
 
     let _ = app.emit(
         "inference-token",

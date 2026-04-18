@@ -14,6 +14,7 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { getSharedAudioContext } from './useTTS';
 import { isNative, sttListen, translateText, ttsSynthesize } from '../services/api';
+import { convertWebmToWav } from '../services/audioUtils';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -63,6 +64,8 @@ export function useTranslateLive() {
     const sessionIdRef = useRef('');
     const playingCountRef = useRef(0);
     const isTranslatingRef = useRef(false);
+    const nativeStartRecorderRef = useRef<(() => void) | null>(null);
+    const isStoppedRef = useRef(false);
     
     // Toggle for TTS audio (allows user to mute live speech parsing)
     const muteTTSRef = useRef(false);
@@ -108,7 +111,21 @@ export function useTranslateLive() {
 
     const tryResumeRecording = useCallback(() => {
         if (!isTranslatingRef.current && playingCountRef.current === 0) {
-            if (inputWsRef.current?.readyState === WebSocket.OPEN && streamRef.current) {
+            if (isStoppedRef.current) {
+                if (isNative) {
+                    cleanup();
+                    setState('idle');
+                }
+                return;
+            }
+            if (isNative) {
+                if (nativeStartRecorderRef.current && streamRef.current) {
+                    if (mediaRecRef.current && mediaRecRef.current.state !== 'inactive') {
+                        mediaRecRef.current.stop();
+                    }
+                    nativeStartRecorderRef.current();
+                }
+            } else if (inputWsRef.current?.readyState === WebSocket.OPEN && streamRef.current) {
                 // Ensure old instance is cleaned up correctly
                 if (mediaRecRef.current && mediaRecRef.current.state !== 'inactive') {
                     mediaRecRef.current.stop();
@@ -209,6 +226,7 @@ export function useTranslateLive() {
             if (dbfs > SILENCE_THRESHOLD) {
                 // Sound detected
                 if (!isSpeaking) {
+                    console.log(`[VAD] Speech started (Init dBFS: ${dbfs.toFixed(1)})`);
                     isSpeaking = true;
                     speechStart = now;
                 }
@@ -221,8 +239,12 @@ export function useTranslateLive() {
                     } else if (now - silenceStart >= SILENCE_DURATION_MS) {
                         // Pause detected — flush if we had enough speech
                         const duration = now - speechStart;
+                        console.log(`[VAD] Silence cut. Speech lasted: ${duration}ms, cutoff after ${now - silenceStart}ms silence. (dBFS: ${dbfs.toFixed(1)})`);
                         if (duration >= MIN_SPEECH_DURATION_MS) {
+                            console.log(`[VAD] Duration > ${MIN_SPEECH_DURATION_MS}ms. Flushing segment to backend...`);
                             flushSegment();
+                        } else {
+                            console.log(`[VAD] Duration < ${MIN_SPEECH_DURATION_MS}ms. Dropping mic segment as noise.`);
                         }
                         isSpeaking = false;
                         silenceStart = 0;
@@ -267,7 +289,7 @@ export function useTranslateLive() {
 
     // ── Start live translation ───────────────────────────────────────────────
 
-    const start = useCallback(async (targetLang: string, sourceLang = 'auto') => {
+    const start = useCallback(async (targetLang: string, sourceLang = 'auto', customStream?: MediaStream) => {
         // Shield the active hardware stream from the mechanical safety teardown to prevent device locks
         const hotStream = streamRef.current;
         streamRef.current = null;
@@ -278,6 +300,7 @@ export function useTranslateLive() {
             streamRef.current = hotStream;
         }
 
+        isStoppedRef.current = false;
         isTranslatingRef.current = false;
         setIsTranslating(false);
         playingCountRef.current = 0;
@@ -289,12 +312,19 @@ export function useTranslateLive() {
         const sessionId = crypto.randomUUID();
         sessionIdRef.current = sessionId;
 
+        if (customStream) {
+            streamRef.current = customStream;
+            keepMicAliveRef.current = true;
+        }
+
         // ── Native (Tauri) path: VAD + sttListen → translateText → ttsSynthesize chain ──
         if (isNative) {
             try {
+                console.log(`[STT] Initializing native mic path... targetLang=${targetLang}, sourceLang=${sourceLang}`);
                 // Get mic
                 let stream = streamRef.current;
                 if (!stream || stream.getTracks().length === 0 || stream.getTracks()[0].readyState === 'ended') {
+                    console.log(`[STT] Requesting getUserMedia...`);
                     stream = await navigator.mediaDevices.getUserMedia({ audio: true });
                     streamRef.current = stream;
                 }
@@ -322,13 +352,23 @@ export function useTranslateLive() {
 
                             // 1. STT
                             const audioBlob = new Blob(chunks, { type: mimeType || 'audio/webm' });
+                            const wavBlob = await convertWebmToWav(audioBlob);
+                            console.log(`[STT Seg ${currentSegId}] Sending ${wavBlob.size} bytes (WAV converted) to native STT handler...`);
+                            
                             const fd = new FormData();
-                            fd.append('audio', audioBlob, 'recording.webm');
+                            fd.append('audio', wavBlob, 'recording.wav');
+                            if (sourceLang && sourceLang !== 'auto') {
+                                fd.append('language', sourceLang);
+                            }
+                            
+                            const sttStartTime = Date.now();
                             const sttResult = await sttListen(fd);
                             const transcript = sttResult.text || '';
                             const detectedLang = sttResult.language || sourceLang;
+                            console.log(`[STT Seg ${currentSegId}] Result (${Date.now() - sttStartTime}ms): "${transcript}" [lang: ${detectedLang}]`);
 
                             if (!transcript.trim()) {
+                                console.warn(`[STT Seg ${currentSegId}] Backend returned empty string. Segment dropped.`);
                                 isTranslatingRef.current = false;
                                 setIsTranslating(false);
                                 tryResumeRecording();
@@ -346,12 +386,15 @@ export function useTranslateLive() {
                             }]);
 
                             // 2. Translate
+                            console.log(`[Translate Seg ${currentSegId}] Requesting translation for "${transcript}" (source: ${detectedLang}, target: ${targetLang})...`);
+                            const trStartTime = Date.now();
                             const trResult = await translateText(
                                 transcript,
                                 detectedLang === 'auto' ? 'en' : detectedLang,
                                 targetLang
                             );
                             const translation = trResult.translated || transcript;
+                            console.log(`[Translate Seg ${currentSegId}] Translated (${Date.now() - trStartTime}ms): "${translation}"`);
 
                             setSegments(prev => prev.map(s =>
                                 s.segmentId === currentSegId
@@ -361,9 +404,12 @@ export function useTranslateLive() {
 
                             // 3. TTS (if not muted)
                             if (!muteTTSRef.current) {
+                                console.log(`[TTS Seg ${currentSegId}] Requesting TTS for "${translation}" [lang: ${targetLang}]...`);
+                                const ttsStartTime = Date.now();
                                 const ttsRes = await ttsSynthesize(translation, undefined, 1.0, targetLang);
                                 if (ttsRes.ok) {
                                     const ttsData = await ttsRes.json();
+                                    console.log(`[TTS Seg ${currentSegId}] Received audio payload (${Date.now() - ttsStartTime}ms). Decoding...`);
                                     if (ttsData.audio_base64) {
                                         const b64 = ttsData.audio_base64.includes(',')
                                             ? ttsData.audio_base64.split(',')[1]
@@ -371,9 +417,16 @@ export function useTranslateLive() {
                                         const bin = atob(b64);
                                         const buf = new Uint8Array(bin.length);
                                         for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+                                        console.log(`[TTS Seg ${currentSegId}] Queuing audio chunk for playback.`);
                                         await playChunk(buf.buffer);
+                                    } else {
+                                        console.warn(`[TTS Seg ${currentSegId}] Audio payload was empty or failed to decode.`);
                                     }
+                                } else {
+                                    console.error(`[TTS Seg ${currentSegId}] HTTP Error: ${ttsRes.status} ${ttsRes.statusText}`);
                                 }
+                            } else {
+                                console.log(`[TTS Seg ${currentSegId}] Skipped (muted).`);
                             }
 
                             // Mark segment done
@@ -393,6 +446,8 @@ export function useTranslateLive() {
                     try { mr.start(); } catch { /* ignore */ }
                 };
 
+                // Store reference for auto-resumption
+                nativeStartRecorderRef.current = startSegmentRecorder;
 
                 // Start first segment recorder
                 startSegmentRecorder();
@@ -528,6 +583,7 @@ export function useTranslateLive() {
     // ── Stop live translation ────────────────────────────────────────────────
 
     const stop = useCallback((keepMicAlive = false) => {
+        isStoppedRef.current = true;
         if (keepMicAlive) {
             keepMicAliveRef.current = true;
         }
@@ -583,6 +639,7 @@ export function useTranslateLive() {
         start, stop, cancel,
         isListening: state !== 'idle' && state !== 'error' && !isPlayingTTS && !isTranslating, 
         isActive: state !== 'idle',
+        isTranslating,
         isMuted, toggleMute
     };
 }

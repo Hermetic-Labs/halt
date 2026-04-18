@@ -3,6 +3,7 @@ import { useT } from '../services/i18n';
 import { useTTS } from '../hooks/useTTS';
 import TranslatorPanel from './TranslatorPanel';
 import { isNative, translateText, translateBatch, sttListen } from '../services/api';
+import { convertWebmToWav } from '../services/audioUtils';
 import './TriagePanel.css';
 
 interface Message {
@@ -226,6 +227,12 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
             return '';
         }).trim();
 
+        // Handle unclosed <think>/<thought> tags while streaming
+        mainContent = mainContent.replace(/<(?:think|thought)>([\s\S]*)$/gi, (_, content) => {
+            reasoning = (reasoning + '\n' + content).trim();
+            return '';
+        }).trim();
+
         if (reasoning) {
             reasoning = reasoning.replace(/^Query:\s*.*$/gm, '').trim();
         }
@@ -413,7 +420,8 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                         max_tokens: deepAnalysis ? 4096 : 2048,
                         temperature: deepAnalysis ? 0.4 : 0.7,
                         persona: '',
-                        stream: true
+                        stream: true,
+                        image_b64: imageToSend || undefined
                     }
                 });
                 
@@ -452,7 +460,7 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                         try {
                             const d = JSON.parse(line.slice(6));
                             if (d.type === 'queued') {
-                                setStreamingText(`\u23f3 In queue (position ${d.position})${d.active_user ? ` -- ${d.active_user} is generating...` : '...'}`);
+                                setStreamingText(`In queue (position ${d.position})${d.active_user ? ` -- ${d.active_user} is generating...` : '...'}`);
                             } else if (d.type === 'token') {
                                 full += d.token;
                                 setStreamingText(full);
@@ -471,7 +479,7 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
 
         } catch (e) {
             const errMsg = (e as Error).message || 'Unknown error';
-            setMessages(prev => [...prev, { role: 'assistant', content: `\u26a0\ufe0f ${t('triage.error_prefix', 'Error')}: ${errMsg}` }]);
+            setMessages(prev => [...prev, { role: 'assistant', content: `[Error] ${t('triage.error_prefix', 'Error')}: ${errMsg}` }]);
             setStreamingText('');
         } finally {
             setIsSending(false);
@@ -485,7 +493,7 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                 mediaRecRef.current.stop();
             }
             setIsRecording(false);
-            setSttStatus('\u25cf transcribing...');
+            setSttStatus('transcribing...');
             return;
         }
 
@@ -513,8 +521,8 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
 
                 if (blob.size === 0) {
                     console.warn('[STT] Empty recording blob');
-                    setSttStatus('\u25cf no audio captured');
-                    setTimeout(() => setSttStatus('\u25cf ready'), 3000);
+                    setSttStatus('no audio captured');
+                    setTimeout(() => setSttStatus('ready'), 3000);
                     return;
                 }
 
@@ -523,21 +531,30 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                           : actualMime.includes('aac') ? '.aac'
                           : '.webm';
 
-                const fd = new FormData();
-                fd.append('audio', blob, `recording${ext}`);
                 try {
+                    let audioPayload = blob;
+                    let filename = `recording${ext}`;
+                    
+                    if (actualMime.includes('webm') || actualMime.includes('opus')) {
+                        audioPayload = await convertWebmToWav(blob);
+                        filename = 'recording.wav';
+                    }
+
+                    const fd = new FormData();
+                    fd.append('audio', audioPayload, filename);
+                    
                     const d = await sttListen(fd);
                     const txt = (d.text || '').trim();
                     if (txt) {
                         setInput(prev => prev ? prev + ' ' + txt : txt);
                     } else {
                         console.warn('[STT] Server returned empty text', d);
-                        setSttStatus('\u25cf no speech detected');
-                        setTimeout(() => setSttStatus('\u25cf ready'), 3000);
+                        setSttStatus('no speech detected');
+                        setTimeout(() => setSttStatus('ready'), 3000);
                         return;
                     }
-                    setSttStatus(`\u25cf transcribed (${d.language || 'auto'})`);
-                    setTimeout(() => setSttStatus('\u25cf ready'), 3000);
+                    setSttStatus(`transcribed (${d.language || 'auto'})`);
+                    setTimeout(() => setSttStatus('ready'), 3000);
                 } catch (e) {
                     console.error('[STT] Fetch failed:', e);
                     setSttStatus(`STT failed: ${(e as Error).message}`);
@@ -547,11 +564,11 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
 
             mr.start(250);
             setIsRecording(true);
-            setSttStatus('\u25cf recording...');
+            setSttStatus('recording...');
         } catch (e) {
             console.error('[STT] Mic error:', e);
             setSttStatus(`Mic error: ${(e as Error).message}`);
-            setTimeout(() => setSttStatus('\u25cf ready'), 3000);
+            setTimeout(() => setSttStatus('ready'), 3000);
         }
     };
 
@@ -564,16 +581,16 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                     className="triage-close-btn"
                     onClick={() => setShowThreadList(s => !s)}
                     title={t('triage.chat_history', 'Chat history')}
-                    style={{ fontSize: 14 }}
-                >{'\u2630'}</button>
+                    style={{ fontSize: 13, fontWeight: 600, padding: '0 8px' }}
+                >Threads</button>
 
                 {/* Translator launch button */}
                 <button
                     className="triage-close-btn"
                     onClick={() => setShowTranslator(true)}
                     title={t('triage.translator', 'Translator')}
-                    style={{ fontSize: 14 }}
-                >{'\ud83c\udf10'}</button>
+                    style={{ fontSize: 13, fontWeight: 600, padding: '0 8px' }}
+                >Translate</button>
 
                 {/* Deep Analysis toggle */}
                 <div
@@ -582,7 +599,7 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                     onClick={() => setDeepAnalysis(prev => !prev)}
                 >
                     <span className={`triage-pill ${deepAnalysis ? 'on' : ''}`} />
-                    <span>{deepAnalysis ? '\ud83d\udd2c Deep' : '\u26a1 Quick'}</span>
+                    <span>{deepAnalysis ? 'Deep' : 'Quick'}</span>
                 </div>
 
                 <div style={{ flex: 1 }} />
@@ -599,11 +616,11 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                             Object.keys(triageTranslationCache).forEach(k => delete triageTranslationCache[k]);
                         }}
                         title={t('triage.clear_chat', 'Clear chat')}
-                        style={{ fontSize: 14 }}
-                    >{'\ud83d\uddd1'}</button>
+                        style={{ fontSize: 13, fontWeight: 600, padding: '0 8px' }}
+                    >Clear</button>
                 )}
 
-                <button className="triage-close-btn" onClick={onClose}>{'\u00d7'}</button>
+                <button className="triage-close-btn" style={{ fontWeight: 600 }} onClick={onClose}>X</button>
             </header>
 
             {/* Translator overlay */}
@@ -622,7 +639,7 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                         overflow: 'hidden',
                     }}>
                         <div style={{ padding: '12px 14px', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--text)' }}>{'\ud83d\udcda'} {t('triage.chat_history', 'Chat History')}</span>
+                            <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--text)' }}>History</span>
                             <button
                                 onClick={newThread}
                                 style={{ padding: '4px 10px', fontSize: 11, background: '#3fb95022', border: '1px solid #3fb95044', borderRadius: 4, color: '#3fb950', cursor: 'pointer', fontWeight: 600 }}
@@ -647,12 +664,12 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                                     </div>
                                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 4 }}>
                                         <span style={{ fontSize: 10, color: 'var(--text-faint)' }}>
-                                            {th.messages.length} msgs {'\u00b7'} {new Date(th.timestamp).toLocaleDateString()}
+                                            {th.messages.length} msgs - {new Date(th.timestamp).toLocaleDateString()}
                                         </span>
                                         <button
                                             onClick={e => { e.stopPropagation(); deleteThread(th.id); }}
-                                            style={{ background: 'none', border: 'none', color: 'var(--text-faint)', cursor: 'pointer', fontSize: 12, opacity: 0.5, padding: '0 4px' }}
-                                        >{'\u00d7'}</button>
+                                            style={{ background: 'none', border: 'none', color: 'var(--text-faint)', cursor: 'pointer', fontSize: 12, opacity: 0.5, padding: '0 4px', fontWeight: 600 }}
+                                        >X</button>
                                     </div>
                                 </div>
                             ))}
@@ -711,7 +728,7 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                                 style={{ marginTop: 8 }}
                                 disabled={playingMsgIndex !== null && playingMsgIndex !== i}
                             >
-                                {playingMsgIndex === i ? '\u25fc Stop' : '\u25b6 Speak'}
+                                {playingMsgIndex === i ? 'Stop' : 'Speak'}
                             </button>
                         )}
                     </div>
@@ -737,8 +754,28 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                 {streamingText && (
                     <div className="triage-row assistant">
                         <div className="triage-lbl">TRIAGE AI</div>
-                        <div className="triage-bubble assistant">
+                        <div className="triage-bubble assistant" style={{ position: 'relative' }}>
                             {renderMd(streamingText)}
+                            <button
+                                onClick={async () => {
+                                    if (isNative) {
+                                        const { invoke } = await import('@tauri-apps/api/core');
+                                        await invoke('inference_stop');
+                                    }
+                                    // Soft local break to detach UI instantly
+                                    setIsSending(false);
+                                }}
+                                style={{
+                                    position: 'absolute', bottom: -32, right: 0,
+                                    background: 'rgba(255, 70, 70, 0.08)', color: '#e74c3c',
+                                    border: '1px solid rgba(231, 76, 60, 0.3)', borderRadius: 16,
+                                    padding: '4px 14px', fontSize: 11, fontWeight: 600, cursor: 'pointer',
+                                    display: 'flex', alignItems: 'center', gap: 6,
+                                    transition: 'all 0.2s ease',
+                                }}
+                            >
+                                <span style={{ fontSize: 13, fontWeight: 800 }}>[ ]</span> Stop Generation
+                            </button>
                         </div>
                     </div>
                 )}
@@ -749,7 +786,7 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                 {pendingImage && (
                     <div className="triage-image-preview">
                         <img src={pendingImage} alt="Preview" />
-                        <button className="triage-image-remove" onClick={() => setPendingImage(null)} title="Remove image">{'\u00d7'}</button>
+                        <button className="triage-image-remove" onClick={() => setPendingImage(null)} title="Remove image" style={{ fontWeight: 600 }}>X</button>
                     </div>
                 )}
                 <div className="triage-input-row">
@@ -757,8 +794,9 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                         className={`triage-mic-btn ${isRecording ? 'rec' : ''} triage-mic-desktop-only`}
                         onClick={handleMic}
                         title={t('triage.voice_input', 'Voice input')}
+                        style={{ fontWeight: 600, fontSize: 12 }}
                     >
-                        {isRecording ? '\u23f9' : '\ud83c\udf99'}
+                        {isRecording ? 'Stop' : 'Mic'}
                     </button>
                     <button
                         className={`triage-attach-btn ${pendingImage ? 'active' : ''}`}

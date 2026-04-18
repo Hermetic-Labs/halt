@@ -3,8 +3,8 @@
  */
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { RosterMember, CallType } from '../types/comms';
-import { isNative, sttListen, translateText } from '../services/api';
-
+// Removed unused api imports
+import { useTranslateLive } from './useTranslateLive';
 
 const RTC_CONFIG: RTCConfiguration = {
     iceServers: [{ urls: 'stun:stun.l.google.com:19302' }],
@@ -365,14 +365,12 @@ export function useWebRTC(userName: string, userRole: string) {
     // Keep ref in sync so ontrack (in createPeerConnection) can call it
     useEffect(() => { setupAudioAnalyserRef.current = setupAudioAnalyser; }, [setupAudioAnalyser]);
 
-    // ── Live Call Transcription (via /call-translate/ws) ─────────────────────
+    // ── Live Call Transcription (via useTranslateLive) ─────────────────────
 
-    const [subtitleText, setSubtitleText] = useState('');
     const [transcribing, setTranscribing] = useState(false);
     const [transcribeLang, setTranscribeLang] = useState('en');
-    const transcribeWsRef = useRef<WebSocket | null>(null);
-    const transcribeRecorderRef = useRef<MediaRecorder | null>(null);
-    const transcribeIntervalRef = useRef<number | null>(null);
+    
+    const live = useTranslateLive();
 
     const startTranscription = useCallback((targetLang?: string) => {
         const stream = remoteStreamRef.current;
@@ -383,155 +381,28 @@ export function useWebRTC(userName: string, userRole: string) {
         const lang = targetLang || transcribeLang;
         setTranscribing(true);
 
-        // ── Native path: record remote audio chunks → sttListen → translateText ──
-        if (isNative) {
-            const audioStream = new MediaStream(stream.getAudioTracks());
-            const mimeType = MediaRecorder.isTypeSupported('audio/webm;codecs=opus')
-                ? 'audio/webm;codecs=opus' : 'audio/webm';
-            const recorder = new MediaRecorder(audioStream, { mimeType });
-            transcribeRecorderRef.current = recorder;
-            const nativeChunks: Blob[] = [];
-            recorder.ondataavailable = (e) => { if (e.data.size > 0) nativeChunks.push(e.data); };
-            recorder.start(500);
-            transcribeIntervalRef.current = window.setInterval(async () => {
-                if (nativeChunks.length === 0) return;
-                const grabbed = nativeChunks.splice(0);
-                const blob = new Blob(grabbed, { type: mimeType });
-                if (blob.size < 1000) return;
-                try {
-                    const fd = new FormData();
-                    fd.append('audio', blob, 'chunk.webm');
-                    const stt = await sttListen(fd);
-                    const txt = stt.text?.trim();
-                    if (!txt) return;
-                    setSubtitleText(txt);
-                    if (lang !== 'en') {
-                        const tr = await translateText(txt, 'auto', lang);
-                        if (tr.translated) setSubtitleText(prev => prev ? `${prev}\n→ ${tr.translated}` : `→ ${tr.translated}`);
-                    }
-                    setTimeout(() => setSubtitleText(prev => prev?.startsWith(txt) ? '' : prev), 6000);
-                } catch { /* non-fatal */ }
-            }, 4000);
-            return;
-        }
-
-        // Open a single long-lived WebSocket for the entire call
-        const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-        const ws = new WebSocket(`${protocol}//${window.location.host}/call-translate/ws`);
-        transcribeWsRef.current = ws;
-
-        const audioChunksRef: Blob[] = [];
-
-        ws.onopen = () => {
-            // Send config
-            ws.send(JSON.stringify({
-                target_lang: lang,
-                source_lang: 'auto',
-                mode: 'subtitles', // subtitles-only (no Kokoro TTS)
-                speed: 1.0,
-            }));
-            console.log('[Transcribe] Connected to /call-translate/ws');
-        };
-
-        ws.onmessage = (event) => {
-            if (typeof event.data === 'string') {
-                try {
-                    const msg = JSON.parse(event.data);
-                    if (msg.type === 'transcript' && msg.text?.trim()) {
-                        setSubtitleText(msg.text.trim());
-                        setTimeout(() => setSubtitleText(prev =>
-                            prev === msg.text.trim() ? '' : prev), 6000);
-                    } else if (msg.type === 'translation' && msg.text?.trim()) {
-                        setSubtitleText(prev =>
-                            prev ? `${prev}\n→ ${msg.text.trim()}` : `→ ${msg.text.trim()}`);
-                    } else if (msg.type === 'error') {
-                        console.warn('[Transcribe] Server error (non-fatal):', msg.error);
-                    }
-                } catch { /* ignore parse errors */ }
-            }
-            // Ignore binary (TTS audio chunks) — subtitles only mode
-        };
-
-        ws.onerror = () => {
-            console.warn('[Transcribe] WS error');
-        };
-
-        ws.onclose = () => {
-            console.log('[Transcribe] WS closed');
-        };
-
-        // Create MediaRecorder on remote stream audio
-        const audioStream = new MediaStream(stream.getAudioTracks());
-        const mimeType = MediaRecorder.isTypeSupported('audio/webm;codecs=opus')
-            ? 'audio/webm;codecs=opus' : 'audio/webm';
-        const recorder = new MediaRecorder(audioStream, { mimeType });
-        transcribeRecorderRef.current = recorder;
-
-        recorder.ondataavailable = (e) => {
-            if (e.data.size > 0) audioChunksRef.push(e.data);
-        };
-        recorder.start(500); // chunk every 500ms
-
-        // Every 4 seconds, flush accumulated audio to the long-lived WS
-        const flush = async () => {
-            if (audioChunksRef.length === 0) return;
-            if (!ws || ws.readyState !== WebSocket.OPEN) return;
-
-            const chunks = audioChunksRef.splice(0);
-            const blob = new Blob(chunks, { type: mimeType });
-            if (blob.size < 1000) return; // skip silence
-
-            try {
-                const buf = await blob.arrayBuffer();
-                ws.send(buf);
-                ws.send(JSON.stringify({ type: 'end_chunk' }));
-            } catch (err) {
-                console.error('[Transcribe] Send error:', err);
-            }
-        };
-
-        transcribeIntervalRef.current = window.setInterval(flush, 4000);
-        console.log('[Transcribe] Started live transcription');
-    }, [transcribeLang]);
+        // Mute incoming peer audio so the local Kokoro TTS pipeline can speak cleanly
+        if (remoteAudioRef.current) remoteAudioRef.current.muted = true;
+        
+        live.start(lang, 'auto', stream);
+    }, [transcribeLang, live]);
 
     const stopTranscription = useCallback(() => {
         setTranscribing(false);
-        if (transcribeRecorderRef.current && transcribeRecorderRef.current.state !== 'inactive') {
-            transcribeRecorderRef.current.stop();
-        }
-        transcribeRecorderRef.current = null;
-        if (transcribeIntervalRef.current) {
-            clearInterval(transcribeIntervalRef.current);
-            transcribeIntervalRef.current = null;
-        }
-        if (transcribeWsRef.current) {
-            try {
-                transcribeWsRef.current.send(JSON.stringify({ type: 'end_session' }));
-            } catch { /* already closed */ }
-            transcribeWsRef.current.close();
-            transcribeWsRef.current = null;
-        }
-        setSubtitleText('');
+        live.cancel();
+        
+        // Restore remote audio when translation overlay goes down
+        if (remoteAudioRef.current) remoteAudioRef.current.muted = false;
         console.log('[Transcribe] Stopped');
-    }, []);
+    }, [live]);
 
     // Auto-cleanup when call ends
     useEffect(() => {
         if (!callActive) return;
         return () => {
             // Stop transcription
-            if (transcribeRecorderRef.current && transcribeRecorderRef.current.state !== 'inactive') {
-                transcribeRecorderRef.current.stop();
-            }
-            transcribeRecorderRef.current = null;
-            if (transcribeIntervalRef.current) {
-                clearInterval(transcribeIntervalRef.current);
-                transcribeIntervalRef.current = null;
-            }
-            if (transcribeWsRef.current) {
-                transcribeWsRef.current.close();
-                transcribeWsRef.current = null;
-            }
+            live.cancel();
+            
             // Stop audio analyser
             if (levelIntervalRef.current) {
                 clearInterval(levelIntervalRef.current);
@@ -544,7 +415,33 @@ export function useWebRTC(userName: string, userRole: string) {
             analyserRef.current = null;
             setRemoteAudioLevel(0);
         };
-    }, [callActive]);
+    }, [callActive, live]);
+
+    const activeSeg = live.segments.length > 0 ? live.segments[live.segments.length - 1] : null;
+    let newSubtitleText = '';
+    if (live.activeTranscript) {
+        newSubtitleText = live.activeTranscript;
+    } else if (activeSeg) {
+        // Translation overrides transcript if available
+        if (activeSeg.translation) newSubtitleText = activeSeg.translation;
+        else if (activeSeg.transcript) newSubtitleText = activeSeg.transcript;
+    }
+
+    // 10s Subtitle Fader queue (safe render derivation rule)
+    const [subtitleText, setSubtitleText] = useState('');
+    const [prevSubText, setPrevSubText] = useState('');
+
+    if (newSubtitleText !== prevSubText) {
+        setPrevSubText(newSubtitleText);
+        setSubtitleText(newSubtitleText);
+    }
+
+    useEffect(() => {
+        if (subtitleText) {
+            const tm = setTimeout(() => setSubtitleText(''), 10000); // 10s fade
+            return () => clearTimeout(tm);
+        }
+    }, [subtitleText]);
 
     return {
         callActive, callTarget, callType, callMuted, callDuration,

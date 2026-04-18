@@ -15,7 +15,7 @@
  *   3. Data model parity — the Rust structs match the Python Pydantic models
  */
 
-/* eslint-disable @typescript-eslint/no-require-imports */
+
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -177,7 +177,7 @@ function main() {
   } else {
     console.log('🔴 PARITY GAPS DETECTED — Review above.\n');
   }
-  // eslint-disable-next-line no-process-exit
+
   process.exit(passed ? 0 : 1);
 }
 

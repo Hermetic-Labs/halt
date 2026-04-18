@@ -168,11 +168,10 @@ async fn translate_text_handler(Json(body): Json<Value>) -> impl IntoResponse {
         source: body["source"].as_str().unwrap_or("en").to_string(),
         target: body["target"].as_str().unwrap_or("en").to_string(),
     };
-    let result = tokio::task::spawn_blocking(move || translate::translate_text(req)).await;
-    match result {
-        Ok(Ok(r)) => Json(serde_json::to_value(r).unwrap_or_default()),
-        Ok(Err(e)) => Json(serde_json::json!({"error": e})),
-        Err(e) => Json(serde_json::json!({"error": format!("Task: {}", e)})),
+    
+    match translate::translate_text(req).await {
+        Ok(r) => Json(serde_json::to_value(r).unwrap_or_default()),
+        Err(e) => Json(serde_json::json!({"error": e})),
     }
 }
 
@@ -190,11 +189,10 @@ async fn translate_batch_handler(Json(body): Json<Value>) -> impl IntoResponse {
         source: body["source"].as_str().unwrap_or("en").to_string(),
         target: body["target"].as_str().unwrap_or("en").to_string(),
     };
-    let result = tokio::task::spawn_blocking(move || translate::translate_batch(req)).await;
-    match result {
-        Ok(Ok(r)) => Json(serde_json::to_value(r).unwrap_or_default()),
-        Ok(Err(e)) => Json(serde_json::json!({"error": e})),
-        Err(e) => Json(serde_json::json!({"error": format!("Task: {}", e)})),
+    
+    match translate::translate_batch(req).await {
+        Ok(r) => Json(serde_json::to_value(r).unwrap_or_default()),
+        Err(e) => Json(serde_json::json!({"error": e})),
     }
 }
 
@@ -260,7 +258,7 @@ async fn stt_health_handler() -> impl IntoResponse {
 async fn stt_listen_handler(body: axum::body::Bytes) -> impl IntoResponse {
     let audio = body.to_vec();
     let result = tokio::task::spawn_blocking(move || {
-        stt::stt_listen(audio, Some("en".to_string()))
+        stt::stt_listen_raw(audio, Some("en".to_string()))
     }).await;
     match result {
         Ok(Ok(r)) => Json(serde_json::to_value(r).unwrap_or_default()),
@@ -383,6 +381,9 @@ async fn mesh_emergency_handler(Json(body): Json<Value>) -> impl IntoResponse {
         sender_name: body["sender_name"].as_str().unwrap_or("").to_string(),
         notes: body["notes"].as_str().unwrap_or("").to_string(),
         sound: body["sound"].as_str().unwrap_or("").to_string(),
+        audio_base64: body["audio_base64"].as_str().unwrap_or("").to_string(),
+        message: body["message"].as_str().unwrap_or("").to_string(),
+        translations: body["translations"].as_object().cloned().unwrap_or_default(),
     };
     let result = tokio::task::spawn_blocking(move || alerts::mesh_emergency(req)).await;
     match result {

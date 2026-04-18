@@ -137,7 +137,7 @@
   "comms.my_messages": "My Messages",
   "comms.send": "Send",
   "comms.message_placeholder": "Type a message...",
-  "comms.voice_call": "Voice",
+  "comms.voice_call": "Voice Call",
   "comms.video_call": "Video",
   "comms.call": "Call",
   "comms.end_call": "End Call",
@@ -1035,7 +1035,6 @@
   "lookup.available": "patients available",
   "lookup.matching": "matching",
   "lookup.loading": "Loading patients...",
-
   "triage.processing": "Processing...",
   "triage.empty_response": "The AI model did not return a response. This can happen when the model is still loading or the request was too complex. Please try again.",
   "triage.error_prefix": "Error",
@@ -1055,7 +1054,6 @@
   "triage.ready": "ready",
   "triage.no_speech": "no speech detected",
   "triage.msgs_count": "{n} msgs",
-
   "inv.action_consumed": "Took",
   "inv.action_restocked": "Added",
   "inv.activity_log": "Activity Log",
@@ -1067,13 +1065,11 @@
   "inv.time_minutes_ago": "{n}m ago",
   "inv.time_hours_ago": "{n}h ago",
   "inv.time_days_ago": "{n}d ago",
-
   "discharge.title": "Discharge Summary",
   "discharge.scan_instructions": "Scan the QR code below for your medical records",
   "discharge.provider_name": "Provider",
   "discharge.discharged_at": "Discharged",
   "discharge.follow_up": "Follow-up Instructions",
-
   "translator.title": "Translator",
   "translator.speaker": "{lang} Speaker",
   "translator.replay": "Replay",
@@ -1098,7 +1094,6 @@
   "translator.status_error": "Error",
   "translator.status_listening_live": "Listening (live)...",
   "translator.status_processing": "Processing...",
-
   "comms.translate_room": "Translation Room",
   "comms.type_to_translate": "Type to translate...",
   "comms.stop": "Stop",
@@ -1108,8 +1103,6 @@
   "comms.replay_announcement": "Replay announcement",
   "comms.announcement_prefix": "ANNOUNCEMENT",
   "comms.emergency_prefix": "EMERGENCY",
-  "comms.voice_call": "Voice Call",
-
   "network.created_by": "Created by Hermetic Labs LLC",
   "network.create_mesh_desc": "Create a new mesh as the leader",
   "network.rejoin_mesh_desc": "Rejoin an existing mesh",
@@ -1121,7 +1114,6 @@
   "network.model_voice": "Voice (Kokoro TTS)",
   "network.model_stt": "Speech-to-Text (Whisper)",
   "network.model_translation": "Translation (NLLB)",
-
   "comms.chats": "Chats",
   "comms.message_board": "Message Board",
   "comms.people": "People",
@@ -1131,10 +1123,29 @@
   "comms.hide_threads": "Hide threads",
   "comms.show_threads": "Show threads",
   "comms.attach": "Attach file",
-
   "network.volunteer": "Volunteer",
   "network.paramedic": "Paramedic",
   "network.surgeon": "Surgeon",
   "network.pharmacist": "Pharmacist",
-  "network.triage_officer": "Triage Officer"
+  "network.triage_officer": "Triage Officer",
+  "dist.title": "Model Packs",
+  "dist.subtitle": "Download AI models for offline use",
+  "dist.all_installed": "All Installed",
+  "dist.install_all": "Install Full Suite",
+  "dist.downloading": "Installing...",
+  "dist.downloading_btn": "...",
+  "dist.verifying": "Verifying...",
+  "dist.extracting": "Extracting...",
+  "dist.installed": "Installed",
+  "dist.download": "Download",
+  "dist.available": "Available",
+  "pack.voice.label": "Voice",
+  "pack.voice.desc": "Text-to-Speech (Kokoro ONNX)",
+  "pack.stt.label": "Speech-to-Text",
+  "pack.stt.desc": "Whisper transcription",
+  "pack.translation.label": "Translation",
+  "pack.translation.desc": "NLLB-200 multilingual",
+  "pack.ai.label": "AI Assistant",
+  "pack.ai.desc": "MedGemma 1.5 medical reasoning",
+  "dist.installed_badge": "Installed ✅"
 }

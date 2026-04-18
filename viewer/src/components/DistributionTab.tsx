@@ -319,7 +319,7 @@ export default function DistributionTab() {
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--text)' }}>
-                    {meta.label}
+                    {t(`pack.${packId}.label`, meta.label)}
                   </span>
                   {info.installed ? (
                     <span style={{
@@ -331,7 +331,7 @@ export default function DistributionTab() {
                       fontSize: 10,
                       fontWeight: 600,
                     }}>
-                      Installed ✅
+                      {t('dist.installed_badge', 'Installed ✅')}
                     </span>
                   ) : (
                     <span style={{
@@ -343,12 +343,12 @@ export default function DistributionTab() {
                       fontSize: 10,
                       fontWeight: 600,
                     }}>
-                      Available
+                      {t('dist.available', 'Available')}
                     </span>
                   )}
                 </div>
                 <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 2 }}>
-                  {meta.desc} · {info.size_mb} MB
+                  {t(`pack.${packId}.desc`, meta.desc)} · {info.size_mb} MB
                 </div>
               </div>
 

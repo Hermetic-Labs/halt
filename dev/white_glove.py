@@ -324,114 +324,75 @@ def lint_python(fix=False, strict=False):
 
 
 def lint_javascript():
-    """Run ESLint with strict config via npx. No permanent install."""
-    files = find_files([".js"])
-    section_header("📜", "JAVASCRIPT — ESLint (strict)", len(files))
+    """Run ESLint and TypeScript checks natively via npm in the viewer project."""
+    viewer_dir = REPO_ROOT / "viewer"
+    section_header("📜", "JAVASCRIPT / TYPESCRIPT — Lint & Type Check", 2)
 
-    if not files:
-        print("    No JavaScript files found.")
+    if not viewer_dir.exists():
+        print("    No viewer directory found. Skipping.")
         return 0
 
-    # Write a temporary flat config for ESLint
-    eslint_config = REPO_ROOT / "eslint.config.mjs"
-    config_content = """\
-import js from "@eslint/js";
-export default [
-    js.configs.recommended,
-    {
-        languageOptions: {
-            ecmaVersion: 2022,
-            sourceType: "commonjs",
-            globals: {
-                require: "readonly",
-                module: "readonly",
-                exports: "readonly",
-                process: "readonly",
-                __dirname: "readonly",
-                __filename: "readonly",
-                console: "readonly",
-                setTimeout: "readonly",
-                clearTimeout: "readonly",
-                setInterval: "readonly",
-                clearInterval: "readonly",
-                Buffer: "readonly",
-                URL: "readonly",
-                global: "readonly",
-            },
-        },
-        rules: {
-            "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
-            "no-console": "off",
-            "eqeqeq": ["error", "always"],
-            "no-var": "error",
-            "prefer-const": "warn",
-            "no-throw-literal": "error",
-            "no-shadow": "warn",
-            "no-redeclare": "error",
-            "no-duplicate-imports": "error",
-            "consistent-return": "warn",
-            "curly": ["warn", "multi-line"],
-            "default-case": "warn",
-            "dot-notation": "warn",
-            "no-eval": "error",
-            "no-implied-eval": "error",
-            "no-new-func": "error",
-            "no-return-await": "warn",
-            "no-self-compare": "error",
-            "no-useless-concat": "warn",
-            "no-useless-return": "warn",
-            "prefer-template": "warn",
-            "radix": "error",
-            "yoda": "warn",
-            "no-lonely-if": "warn",
-            "no-unneeded-ternary": "warn",
-            "prefer-arrow-callback": "warn",
-            "no-empty-function": "warn",
-            "no-implicit-coercion": "warn",
-            "no-multi-assign": "warn",
-            "no-nested-ternary": "warn",
-            "no-new-wrappers": "error",
-            "no-proto": "error",
-            "no-sequences": "error",
-            "no-void": "error",
-            "prefer-rest-params": "error",
-            "prefer-spread": "error",
-            "symbol-description": "warn",
-        },
-    },
-];
-"""
-    config_existed = eslint_config.exists()
-    if not config_existed:
-        eslint_config.write_text(config_content, encoding="utf-8")
+    total_issues = 0
 
-    file_args = [rel_path(f) for f in files]
+    def run_tool_in_viewer(cmd, label):
+        """Helper to run command specifically in the viewer directory."""
+        try:
+            result = subprocess.run(
+                cmd,
+                capture_output=True,
+                text=True,
+                cwd=str(viewer_dir),
+                shell=True,
+                timeout=120,
+            )
+            return result.returncode, result.stdout or "", result.stderr or ""
+        except Exception as e:
+            return -1, "", f"{label} execution failed: {e}"
 
-    try:
-        cmd = ["npx", "-y", "eslint@latest"] + file_args
-        code, out, err = run_tool(cmd, label="eslint")
-
-        issues = 0
-        combined = (out + err).strip()
-        if combined:
-            for line in combined.splitlines():
-                # Skip npx noise
-                if "npm warn" in line.lower() or "need to install" in line.lower():
-                    continue
+    # ── ESLint Check ──
+    print("    ── ESLint Rule Check ──")
+    cmd_eslint = ["npm", "run", "lint"]
+    code, out, err = run_tool_in_viewer(cmd_eslint, label="npm run lint")
+    
+    combined = (out + err).strip()
+    if combined:
+        for line in combined.splitlines():
+            # Filter noise
+            lower_line = line.lower()
+            if "npm warn" in lower_line or "need to install" in lower_line or "> viewer" in line or "> eslint" in lower_line:
+                continue
+            if line.strip():
                 print(f"    {line}")
-                if "warning" in line.lower() or "error" in line.lower():
-                    # Count lines that contain actual issue indicators
-                    if ":" in line and ("warning" in line or "error" in line):
-                        issues += 1
+                if "error" in lower_line or "warning" in lower_line:
+                    if ":" in line or "problem" in lower_line:
+                        total_issues += 1
 
-        if issues == 0 and code == 0:
-            print("    ✓  All JavaScript files pristine")
+    if code == 0:
+        print("    ✓ ESLint pristine")
 
-        return issues
-    finally:
-        # Clean up temp config if we created it
-        if not config_existed and eslint_config.exists():
-            eslint_config.unlink()
+    # ── TypeScript Check ──
+    print()
+    print("    ── TypeScript Strict Type Check ──")
+    cmd_tsc = ["npx", "-y", "tsc", "--noEmit"]
+    code_tsc, out_tsc, err_tsc = run_tool_in_viewer(cmd_tsc, label="tsc --noEmit")
+    
+    combined_tsc = (out_tsc + err_tsc).strip()
+    if combined_tsc:
+        for line in combined_tsc.splitlines():
+            if line.strip():
+                print(f"    {line}")
+                # TSC outputs errors starting with file paths or 'error TS...'
+                if "error TS" in line or "error" in line.lower():
+                    total_issues += 1
+
+    if code_tsc == 0:
+        print("    ✓ TypeScript typings pristine")
+
+    if total_issues == 0 and code == 0 and code_tsc == 0:
+        print()
+        print("    ✓  All JavaScript & TypeScript components pristine!")
+
+    return total_issues
 
 
 # ═════════════════════════════════════════════════════════════════════════════
@@ -963,7 +924,7 @@ def benchmark_models():
         
     print()
     print("  [2] Starting Python FastAPI Fallback Benchmark...")
-    api_dir = str(REPO_ROOT / "api")
+    api_dir = str(REPO_ROOT / "triage")
     import socket, urllib.request
     
     port = 7799

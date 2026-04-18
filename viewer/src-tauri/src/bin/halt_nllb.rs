@@ -106,7 +106,9 @@ fn translate_sync(text: &str, source: &str, target: &str) -> Result<TranslateRes
         ..Default::default()
     };
 
-    let sources = vec![text.to_string()];
+    // Prepend the source language token to anchor the NLLB encoder
+    let anchored_source = format!("{} {}", src_tag, text);
+    let sources = vec![anchored_source];
     let target_prefix = vec![vec![tgt_tag.clone()]];
 
     let results = translator.translate_batch_with_target_prefix(

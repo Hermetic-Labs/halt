@@ -24,8 +24,21 @@ pub fn stt_health() -> serde_json::Value {
 /// Transcribe audio bytes to text.
 /// The frontend sends the audio as a Vec<u8> (WebM/WAV blob).
 /// Proxied to halt-whisper subprocess on port 7780.
+use base64::{Engine as _, engine::general_purpose::STANDARD};
+
 #[tauri::command]
 pub fn stt_listen(
+    audio_data_b64: String,
+    language: Option<String>,
+) -> Result<TranscriptionResult, String> {
+    let audio_data = STANDARD.decode(&audio_data_b64)
+        .map_err(|e| format!("STT Payload Decode Error: {}", e))?;
+    
+    stt_listen_raw(audio_data, language)
+}
+
+/// Internal pipeline core taking raw binary buffers.
+pub fn stt_listen_raw(
     audio_data: Vec<u8>,
     language: Option<String>,
 ) -> Result<TranscriptionResult, String> {

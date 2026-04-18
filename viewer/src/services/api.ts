@@ -143,7 +143,7 @@ export { httpCall, BASE };
  * - Tauri store: absolute URL to native HTTP server on :7779
  */
 export function resolveUrl(path: string): string {
-  if (isNative) return `http://127.0.0.1:7779${path}`;
+  if (isNative) return `http://127.0.0.1:7778${path}`;
   return path;
 }
 
@@ -154,7 +154,7 @@ export async function translateText(
   text: string, source: string, target: string,
 ): Promise<{ translated: string }> {
   if (isNative) {
-    const r = await nativeCall<{ translated: string }>('translate_text', { text, source, target });
+    const r = await nativeCall<{ translated: string }>('translate_text', { request: { text, source, target } });
     if (r) return r;
   }
   const res = await fetch(resolveUrl('/api/translate'), {
@@ -171,7 +171,7 @@ export async function translateBatch(
   texts: string[], source: string, target: string,
 ): Promise<{ translations: string[] }> {
   if (isNative) {
-    const r = await nativeCall<{ translations: string[] }>('translate_batch', { texts, source, target });
+    const r = await nativeCall<{ translations: string[] }>('translate_batch', { request: { texts, source, target } });
     if (r) return r;
   }
   const res = await fetch(resolveUrl('/api/translate/batch'), {
@@ -222,23 +222,38 @@ export async function ttsSynthesizeMulti(
   });
 }
 
-/** Speech-to-text — accepts FormData with audio file. */
 export async function sttListen(formData: FormData): Promise<{ text: string; language?: string }> {
-  if (isNative) {
-    // Convert FormData audio blob to base64 for Rust invoke
-    const audioFile = formData.get('audio') as File | Blob | null;
-    if (audioFile) {
-      const buf = await audioFile.arrayBuffer();
-      const bytes = new Uint8Array(buf);
-      let binary = '';
-      for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
-      const b64 = btoa(binary);
-      const r = await nativeCall<{ text: string; language?: string }>(
-        'stt_listen', { audio_base64: b64, mime_type: audioFile.type || 'audio/webm' },
-      );
-      if (r) return r;
-    }
+  const audioFile = formData.get('audio') as File | Blob | null;
+  const language = formData.get('language') as string | null;
+
+  if (isNative && audioFile) {
+    const base64Data = await new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const dataUrl = reader.result as string;
+        resolve(dataUrl.includes(',') ? dataUrl.split(',')[1] : dataUrl);
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(audioFile);
+    });
+
+    const r = await nativeCall<{ text: string; language?: string }>(
+      'stt_listen', { audioDataB64: base64Data, language: language || undefined },
+    );
+    if (r) return r;
   }
+
+  if (audioFile) {
+    const langQuery = language ? `?lang=${encodeURIComponent(language)}` : '';
+    const res = await fetch(resolveUrl(`/stt/listen${langQuery}`), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/octet-stream' },
+      body: audioFile,
+    });
+    if (!res.ok) throw new Error(`STT HTTP fallback failed: ${res.status}`);
+    return res.json();
+  }
+
   const res = await fetch(resolveUrl('/stt/listen'), { method: 'POST', body: formData });
   if (!res.ok) throw new Error(`STT failed: ${res.status}`);
   return res.json();

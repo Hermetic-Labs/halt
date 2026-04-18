@@ -52,9 +52,10 @@ async fn health_handler() -> Json<serde_json::Value> {
     Json(serde_json::json!({"ready": ready, "service": "halt-whisper"}))
 }
 
-async fn listen_handler(body: axum::body::Bytes) -> Json<serde_json::Value> {
+async fn listen_handler(axum::extract::Query(params): axum::extract::Query<std::collections::HashMap<String, String>>, body: axum::body::Bytes) -> Json<serde_json::Value> {
+    let lang = params.get("lang").cloned().unwrap_or_else(|| "en".to_string());
     let result = tokio::task::spawn_blocking(move || {
-        transcribe(&body, "en")
+        transcribe(&body, &lang)
     }).await;
 
     match result {

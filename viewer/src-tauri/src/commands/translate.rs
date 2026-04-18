@@ -52,18 +52,42 @@ pub fn translate_status() -> Value {
 }
 
 #[tauri::command]
-pub fn translate_text(request: TranslateRequest) -> Result<TranslateResponse, String> {
-    let translated = nllb::translate(&request.text, &request.source, &request.target)?;
+pub async fn translate_text(request: TranslateRequest) -> Result<TranslateResponse, String> {
+    log::info!("[api::translate_text] Received native command request: source={} target={}", request.source, request.target);
+    let source_clone = request.source.clone();
+    let target_clone = request.target.clone();
+
+    let text_len = request.text.len();
+    let translated = tauri::async_runtime::spawn_blocking(move || {
+        log::debug!("[api::translate_text] Delegating to blocking nllb::translate...");
+        nllb::translate(&request.text, &request.source, &request.target)
+    })
+    .await;
+    
+    log::info!("[api::translate_text] Threadpool join complete. Formatting result...");
+    let translated = match translated {
+        Ok(res) => res.map_err(|e| format!("NLLB native translate failed: {}", e))?,
+        Err(e) => {
+            log::error!("[api::translate_text] Blocking task pool panicked: {}", e);
+            return Err(format!("Task paniced: {}", e));
+        }
+    };
+
+    log::info!("[api::translate_text] Fully resolved. Dispatched translation of length {}.", translated.len());
+
     Ok(TranslateResponse {
         translated,
-        source: request.source,
-        target: request.target,
+        source: source_clone,
+        target: target_clone,
     })
 }
 
 #[tauri::command]
-pub fn translate_batch(request: BatchTranslateRequest) -> Result<BatchTranslateResponse, String> {
-    let translations: Vec<String> = {
+pub async fn translate_batch(request: BatchTranslateRequest) -> Result<BatchTranslateResponse, String> {
+    let source_clone = request.source.clone();
+    let target_clone = request.target.clone();
+
+    let translations: Vec<String> = tauri::async_runtime::spawn_blocking(move || {
         #[cfg(feature = "native_ml")]
         {
             use rayon::prelude::*;
@@ -82,11 +106,13 @@ pub fn translate_batch(request: BatchTranslateRequest) -> Result<BatchTranslateR
                 .map(|t| nllb::translate(t, &request.source, &request.target).unwrap_or_else(|_| t.clone()))
                 .collect()
         }
-    };
+    })
+    .await
+    .map_err(|e| format!("Task paniced: {}", e))?;
 
     Ok(BatchTranslateResponse {
         translations,
-        source: request.source,
-        target: request.target,
+        source: source_clone,
+        target: target_clone,
     })
 }

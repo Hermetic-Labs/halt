@@ -8,7 +8,7 @@ import { useT } from '../services/i18n';
 import { normalizeToEnglish } from '../services/i18nDynamic';
 import { useLanguageArray, AVAILABLE_LANGS } from '../hooks/useLanguageArray';
 import { api, apiMutate, translateText, ttsSynthesizeMulti } from '../services/api';
-
+import { SKILL_OPTIONS } from '../types';
 // ── Types ────────────────────────────────────────────────────────────────────
 
 interface MeshTask {
@@ -90,7 +90,7 @@ export default function TaskBoard() {
     const [alertSent, setAlertSent] = useState<string | null>(null);
     const [showEmergency, setShowEmergency] = useState(false);
     const [wards, setWards] = useState<{ id: string; name: string }[]>([]);
-    const [emergencyForm, setEmergencyForm] = useState({ ward: '', bed: '', categories: [] as string[], notes: '' });
+    const [emergencyForm, setEmergencyForm] = useState({ ward: '', bed: '', categories: [] as string[], action: '', skills: [] as string[], notes: '' });
     const [showAnnouncement, setShowAnnouncement] = useState(false);
     const [announcementMsg, setAnnouncementMsg] = useState('');
     const [isGenerating, setIsGenerating] = useState(false);
@@ -151,7 +151,7 @@ export default function TaskBoard() {
             body.escalate_at = new Date(Date.now() + mins * 60000).toISOString();
         }
         try {
-            await apiMutate('create_task', '/tasks', body, {
+            await apiMutate('create_task', '/tasks', { task: body }, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
             });
@@ -222,13 +222,46 @@ export default function TaskBoard() {
         const ac = new AbortController();
         abortCtlRef.current = ac;
         try {
-            // Compose canonical English text
-            const catText = emergencyForm.categories.map(c => c.replace('_', ' ').toUpperCase()).join(', ');
-            let wardBed = emergencyForm.ward ? ` — Ward: ${emergencyForm.ward}` : '';
-            if (emergencyForm.bed) wardBed += ` Bed: ${emergencyForm.bed}`;
-            const rawText = emergencyForm.notes
-                ? `Emergency. ${catText}${wardBed}. ${emergencyForm.notes}`
-                : `Emergency. ${catText}${wardBed}`;
+            // Translate UI categories to vocalized roles
+            const roleMap: Record<string, string> = {
+                all_hands: "All available responders",
+                expediters: "Any available expediters",
+                inventory: "Inventory and supply team members",
+                bed_assist: "The bed assist team",
+                doctors: "All available doctors",
+                intake: "Intake processing staff",
+                volunteers: "Any available volunteers"
+            };
+            
+            const selectedRoles = emergencyForm.categories.map(c => roleMap[c] || c.replace('_', ' '));
+            let rolesText = "";
+            if (selectedRoles.length === 1) rolesText = selectedRoles[0];
+            else if (selectedRoles.length === 2) rolesText = selectedRoles.join(" and ");
+            else if (selectedRoles.length > 2) rolesText = selectedRoles.slice(0, -1).join(", ") + ", and " + selectedRoles[selectedRoles.length - 1];
+
+            if (emergencyForm.skills.length > 0) {
+                rolesText += ` with ${emergencyForm.skills.join(" and ")} experience`;
+            }
+
+            let locationText = "";
+            if (emergencyForm.ward) {
+                locationText = emergencyForm.action ? ` ${emergencyForm.action.toLowerCase()} ward ${emergencyForm.ward}` : ` please report to ward ${emergencyForm.ward}`;
+                if (emergencyForm.bed) {
+                    locationText += `, bed ${emergencyForm.bed}`;
+                }
+            } else if (emergencyForm.action) {
+                locationText = ` ${emergencyForm.action.toLowerCase()} the triage center`; 
+            } else {
+                locationText = " please standby for instructions";
+            }
+
+            let notesText = ".";
+            if (emergencyForm.notes) {
+                notesText = `. ${emergencyForm.notes}`;
+            }
+
+            // Compose canonical English text as a natural sentence for NLLB translation
+            const rawText = `Emergency alert. ${rolesText}${locationText}${notesText}`;
 
             // Normalize to English if sender is non-English
             const { english: englishText } = userLang !== 'en'
@@ -267,12 +300,11 @@ export default function TaskBoard() {
             try {
                 const ttsRes = await ttsSynthesizeMulti(ttsSegments, 1.0);
                 if (ttsRes.ok) {
-                    const blob = await ttsRes.blob();
-                    const buf = await blob.arrayBuffer();
-                    const bytes = new Uint8Array(buf);
-                    let binary = '';
-                    for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
-                    audio_b64 = btoa(binary);
+                    const data = await ttsRes.json();
+                    if (data.audio_base64) {
+                        const b64str = data.audio_base64 as string;
+                        audio_b64 = b64str.includes(',') ? b64str.split(',')[1] : b64str;
+                    }
                 }
             } catch { /* TTS unavailable — broadcast text only */ }
 
@@ -284,6 +316,7 @@ export default function TaskBoard() {
                 categories_text: emergencyForm.categories.map(c => c.replace('_', ' ').toUpperCase()).join(', '),
                 sender_name: userName,
                 notes: emergencyForm.notes,
+                message: englishText,
                 audio_base64: audio_b64,
                 translations,
                 sound: '',
@@ -294,7 +327,7 @@ export default function TaskBoard() {
             });
 
             setShowEmergency(false);
-            setEmergencyForm({ ward: '', bed: '', categories: [], notes: '' });
+            setEmergencyForm({ ward: '', bed: '', categories: [], action: '', skills: [], notes: '' });
         } catch {
             // Cancelled or network error
         } finally {
@@ -357,12 +390,11 @@ export default function TaskBoard() {
             try {
                 const ttsRes = await ttsSynthesizeMulti(ttsSegments, 1.0);
                 if (ttsRes.ok) {
-                    const blob = await ttsRes.blob();
-                    const buf = await blob.arrayBuffer();
-                    const bytes = new Uint8Array(buf);
-                    let binary = '';
-                    for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
-                    audio_b64 = btoa(binary);
+                    const data = await ttsRes.json();
+                    if (data.audio_base64) {
+                        const b64str = data.audio_base64 as string;
+                        audio_b64 = b64str.includes(',') ? b64str.split(',')[1] : b64str;
+                    }
                 }
             } catch { /* TTS unavailable — broadcast text only */ }
 
@@ -590,6 +622,15 @@ export default function TaskBoard() {
                             <input className="if-input" placeholder={tr('tasks.bed_placeholder')} value={emergencyForm.bed} onChange={e => setEmergencyForm(f => ({ ...f, bed: e.target.value }))} style={{ width: 80 }} />
                         </div>
 
+                        <div style={{ display: 'flex', gap: 10, marginBottom: 12 }}>
+                            <select className="if-input" value={emergencyForm.action} onChange={e => setEmergencyForm(f => ({ ...f, action: e.target.value }))} style={{ flex: 1 }}>
+                                <option value="">Please report to (Default)</option>
+                                <option value="Standby outside">Standby outside</option>
+                                <option value="Immediate evacuation from">Immediate evacuation from</option>
+                                <option value="Secure the area near">Secure the area near</option>
+                            </select>
+                        </div>
+
                         <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 600, marginBottom: 8 }}>{tr('tasks.response_required')}</div>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 14 }}>
                             {[
@@ -615,10 +656,45 @@ export default function TaskBoard() {
                             ))}
                         </div>
 
+                        <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 600, marginBottom: 8 }}>Required Skills</div>
+                        <div style={{ display: 'flex', gap: 8, marginBottom: emergencyForm.skills.length > 0 ? 8 : 14 }}>
+                            <select className="if-input" style={{ flex: 1 }}
+                                value=""
+                                onChange={(e) => {
+                                    const val = e.target.value;
+                                    if (val && !emergencyForm.skills.includes(val)) {
+                                        setEmergencyForm(f => ({ ...f, skills: [...f.skills, val] }));
+                                    }
+                                }}
+                            >
+                                <option value="" disabled>Add a required skill...</option>
+                                {SKILL_OPTIONS.filter(s => !emergencyForm.skills.includes(s)).map(skill => (
+                                    <option key={skill} value={skill}>{skill}</option>
+                                ))}
+                            </select>
+                        </div>
+                        {emergencyForm.skills.length > 0 && (
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 14 }}>
+                                {emergencyForm.skills.map(skill => (
+                                    <label key={skill} style={{
+                                        display: 'flex', alignItems: 'center', gap: 6, padding: '4px 10px',
+                                        background: '#3498db22',
+                                        border: `1px solid #3498db`,
+                                        borderRadius: 6, cursor: 'pointer', fontSize: 11, color: '#3498db'
+                                    }}>
+                                        <input type="checkbox" checked onChange={() => {
+                                            setEmergencyForm(f => ({ ...f, skills: f.skills.filter(s => s !== skill) }));
+                                        }} style={{ display: 'none' }} />
+                                        × {skill}
+                                    </label>
+                                ))}
+                            </div>
+                        )}
+
                         <input className="if-input" placeholder={tr('tasks.notes_placeholder')} value={emergencyForm.notes} onChange={e => setEmergencyForm(f => ({ ...f, notes: e.target.value }))} style={{ marginBottom: 12 }} />
 
                         <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 600, marginBottom: 6 }}>{tr('tasks.broadcast_languages', 'Broadcast Languages')}</div>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginBottom: 16 }}>
+                        <div className="custom-scrollbar" style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginBottom: 16, maxHeight: '90px', overflowY: 'auto', paddingRight: '4px' }}>
                             {AVAILABLE_LANGS.map(l => (
                                 <button key={l.code} onClick={() => toggleLang(l.code)} style={{ padding: '3px 8px', fontSize: 10, borderRadius: 4, border: `1px solid ${activeLangs.includes(l.code) ? '#e74c3c' : '#333'}`, background: activeLangs.includes(l.code) ? '#e74c3c22' : '#111', color: activeLangs.includes(l.code) ? '#e74c3c' : '#666', cursor: 'pointer', fontWeight: activeLangs.includes(l.code) ? 600 : 400 }}>{l.label}</button>
                             ))}

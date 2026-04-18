@@ -66,7 +66,7 @@ export default function ChatMessage({ msg, isMe, roster, formatTime, allMessages
             })
             .catch(() => {});
         return () => { cancelled = true; };
-    }, [msg.id, msg.message, userLang, shouldTranslate]);
+    }, [msg.id, msg.message, userLang, shouldTranslate, msg.translations]);
 
     // Close emoji picker on outside click
     useEffect(() => {
