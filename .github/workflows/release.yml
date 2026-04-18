@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - pipeline-sandbox
     tags:
       - 'v*'
   workflow_dispatch:
