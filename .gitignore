@@ -18,7 +18,7 @@
 
 # ── Large assets (downloaded from R2 via dev/setup.py, NOT in git) ────────────
 # These are dev-only — the built app on R2 already bundles everything.
-models/
+/models/
 runtime/
 
 # ── Built distributions (Cloudflare R2, not Git) ─────────────────────────────
