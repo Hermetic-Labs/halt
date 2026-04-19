@@ -31,6 +31,7 @@ jobs:
           echo "LIBCLANG_PATH=$(brew --prefix llvm)/lib" >> $GITHUB_ENV
           echo "LLVM_CONFIG_PATH=$(brew --prefix llvm)/bin/llvm-config" >> $GITHUB_ENV
           echo "MACOSX_DEPLOYMENT_TARGET=10.15" >> $GITHUB_ENV
+          echo "CXXFLAGS=-D_LIBCPP_DISABLE_AVAILABILITY" >> $GITHUB_ENV
 
       - name: Install Frontend Dependencies
         working-directory: viewer
@@ -72,6 +73,7 @@ jobs:
           echo "LIBCLANG_PATH=$(brew --prefix llvm)/lib" >> $GITHUB_ENV
           echo "LLVM_CONFIG_PATH=$(brew --prefix llvm)/bin/llvm-config" >> $GITHUB_ENV
           echo "MACOSX_DEPLOYMENT_TARGET=10.15" >> $GITHUB_ENV
+          echo "CXXFLAGS=-D_LIBCPP_DISABLE_AVAILABILITY" >> $GITHUB_ENV
 
       - name: Install Frontend Dependencies
         working-directory: viewer
@@ -107,7 +109,6 @@ jobs:
 
       - name: Install LLVM/Clang (Windows)
         run: |
-          choco install llvm -y
           echo "LIBCLANG_PATH=C:\Program Files\LLVM\bin" >> $GITHUB_ENV
           echo "CMAKE_GENERATOR=Visual Studio 17 2022" >> $GITHUB_ENV
 
@@ -168,6 +169,7 @@ jobs:
           echo "LIBCLANG_PATH=$(brew --prefix llvm)/lib" >> $GITHUB_ENV
           echo "LLVM_CONFIG_PATH=$(brew --prefix llvm)/bin/llvm-config" >> $GITHUB_ENV
           echo "MACOSX_DEPLOYMENT_TARGET=10.15" >> $GITHUB_ENV
+          echo "CXXFLAGS=-D_LIBCPP_DISABLE_AVAILABILITY" >> $GITHUB_ENV
 
       - name: Install Apple Certificates and Profiles
         env:
