@@ -44,11 +44,18 @@ jobs:
 
       - name: Install LLVM/Clang (Windows)
         if: matrix.platform == 'windows-latest'
-        run: choco install llvm -y
+        run: |
+          choco install llvm -y
+          echo "LIBCLANG_PATH=C:\Program Files\LLVM\lib" >> $GITHUB_ENV
+          echo "CMAKE_GENERATOR=Visual Studio 17 2022" >> $GITHUB_ENV
 
       - name: Install LLVM/Clang (macOS)
         if: matrix.platform == 'macos-latest'
-        run: brew install llvm
+        run: |
+          brew install llvm
+          echo "LIBCLANG_PATH=$(brew --prefix llvm)/lib" >> $GITHUB_ENV
+          echo "LLVM_CONFIG_PATH=$(brew --prefix llvm)/bin/llvm-config" >> $GITHUB_ENV
+          echo "MACOSX_DEPLOYMENT_TARGET=10.15" >> $GITHUB_ENV
 
       - name: Install Frontend Dependencies
         working-directory: viewer
