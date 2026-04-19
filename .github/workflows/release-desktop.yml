@@ -117,6 +117,7 @@ jobs:
       - name: Install LLVM/Clang (Windows)
         run: |
           echo "LIBCLANG_PATH=C:\Program Files\LLVM\bin" >> $GITHUB_ENV
+          echo "CMAKE_GENERATOR=Visual Studio 17 2022" >> $GITHUB_ENV
 
       - name: Install Frontend Dependencies
         working-directory: viewer
@@ -128,7 +129,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
-          RUSTFLAGS: "-C target-feature=+crt-static"
         with:
           projectPath: viewer
           tagName: app-v__VERSION__
