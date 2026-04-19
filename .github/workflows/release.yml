@@ -9,19 +9,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - halt_platform: "macos-latest"
-            args: "--target aarch64-apple-darwin"
-          - halt_platform: "macos-latest"
-            args: "--target x86_64-apple-darwin"
-          - halt_platform: "windows-latest"
-            args: "--bundles msi"
-
-    runs-on: ${{ matrix.halt_platform }}
+  release_mac_arm:
+    runs-on: macos-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,17 +23,9 @@ jobs:
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
         with:
-          targets: ${{ matrix.halt_platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
-
-      - name: Install LLVM/Clang (Windows)
-        if: matrix.halt_platform == 'windows-latest'
-        run: |
-          choco install llvm -y
-          echo "LIBCLANG_PATH=C:\Program Files\LLVM\bin" >> $GITHUB_ENV
-          echo "CMAKE_GENERATOR=Visual Studio 17 2022" >> $GITHUB_ENV
+          targets: aarch64-apple-darwin,x86_64-apple-darwin
 
       - name: Install LLVM/Clang (macOS)
-        if: matrix.halt_platform == 'macos-latest'
         run: |
           brew install llvm
           echo "LIBCLANG_PATH=$(brew --prefix llvm)/lib" >> $GITHUB_ENV
@@ -67,18 +48,94 @@ jobs:
           releaseName: "HALT Triage App v__VERSION__"
           releaseDraft: true
           prerelease: false
-          args: ${{ matrix.args }} --features native_ml
+          args: --target aarch64-apple-darwin --features native_ml
+
+  release_mac_intel:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin,x86_64-apple-darwin
+
+      - name: Install LLVM/Clang (macOS)
+        run: |
+          brew install llvm
+          echo "LIBCLANG_PATH=$(brew --prefix llvm)/lib" >> $GITHUB_ENV
+          echo "LLVM_CONFIG_PATH=$(brew --prefix llvm)/bin/llvm-config" >> $GITHUB_ENV
+          echo "MACOSX_DEPLOYMENT_TARGET=10.15" >> $GITHUB_ENV
+
+      - name: Install Frontend Dependencies
+        working-directory: viewer
+        run: npm ci
+
+      - name: Build Tauri App
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
+        with:
+          projectPath: viewer
+          tagName: app-v__VERSION__
+          releaseName: "HALT Triage App v__VERSION__"
+          releaseDraft: true
+          prerelease: false
+          args: --target x86_64-apple-darwin --features native_ml
+
+  release_windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install LLVM/Clang (Windows)
+        run: |
+          choco install llvm -y
+          echo "LIBCLANG_PATH=C:\Program Files\LLVM\bin" >> $GITHUB_ENV
+          echo "CMAKE_GENERATOR=Visual Studio 17 2022" >> $GITHUB_ENV
+
+      - name: Install Frontend Dependencies
+        working-directory: viewer
+        run: npm ci
+
+      - name: Build Tauri App
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
+        with:
+          projectPath: viewer
+          tagName: app-v__VERSION__
+          releaseName: "HALT Triage App v__VERSION__"
+          releaseDraft: true
+          prerelease: false
+          args: --bundles msi --features native_ml
 
       - name: Setup Microsoft Store CLI
-        if: matrix.halt_platform == 'windows-latest'
         uses: microsoft/setup-msstore-cli@v1
 
       - name: Package MSIX for Store
-        if: matrix.halt_platform == 'windows-latest'
         run: python dev/build_and_deploy.py --msix --zip-only --no-bump
 
       - name: Publish to Microsoft Store
-        if: matrix.halt_platform == 'windows-latest'
         env:
           TENANT_ID: ${{ secrets.STORE_TENANT_ID }}
           CLIENT_ID: ${{ secrets.STORE_CLIENT_ID }}
@@ -119,12 +176,10 @@ jobs:
           BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
           KEYCHAIN_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Create variables
           CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
           PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
           KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
 
-          # Import certificate and provisioning profile using Python to ensure robust decoding (ignoring headers/newlines)
           python3 -c "import base64, os, re; \
             cert = os.environ['BUILD_CERTIFICATE_BASE64']; \
             pp = os.environ['BUILD_PROVISION_PROFILE_BASE64']; \
@@ -135,16 +190,13 @@ jobs:
             open('$CERTIFICATE_PATH', 'wb').write(base64.b64decode(cert)); \
             open('$PP_PATH', 'wb').write(base64.b64decode(pp))"
 
-          # Create temporary keychain
           security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
           security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
 
-          # Import certificate to keychain
           security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
           security list-keychain -d user -s $KEYCHAIN_PATH
 
-          # Apply provisioning profile
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
