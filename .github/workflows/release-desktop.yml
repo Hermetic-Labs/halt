@@ -124,6 +124,8 @@ jobs:
         working-directory: viewer
         run: npm ci
 
+
+
       - name: Build Tauri App
         uses: tauri-apps/tauri-action@v0
         env:
@@ -142,6 +144,8 @@ jobs:
         uses: microsoft/setup-msstore-cli@v1
 
       - name: Package MSIX for Store
+        env:
+          PYTHONUTF8: "1"
         run: python dev/build_and_deploy.py --msix --zip-only --no-bump
 
       - name: Publish to Microsoft Store
