@@ -53,7 +53,7 @@ jobs:
           args: --target aarch64-apple-darwin --features native_ml
 
   release_mac_intel:
-    runs-on: macos-latest
+    runs-on: macos-13
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -150,6 +150,7 @@ jobs:
           msstore submission publish $env:APP_ID --package-path "builds/*.msix"
 
   ios:
+    if: false
     runs-on: macos-latest
     steps:
       - name: Checkout repository
