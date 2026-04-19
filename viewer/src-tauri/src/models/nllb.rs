@@ -45,7 +45,7 @@ fn has_nllb_model() -> bool {
 pub fn ensure_loaded() -> Result<PathBuf, String> {
     log::info!("[nllb::ensure] Check starting. Current NLLB_READY flag: {}", NLLB_READY.load(Ordering::SeqCst));
     if NLLB_READY.load(Ordering::SeqCst) {
-        return Ok(PathBuf::from("halt-nllb:7781"));
+        return Ok(PathBuf::from("halt_nllb:7781"));
     }
 
     if !has_nllb_model() {
@@ -57,7 +57,7 @@ pub fn ensure_loaded() -> Result<PathBuf, String> {
     if check_health() {
         log::info!("[nllb::ensure] Externally spawned halt-nllb detected on port 7781! Bypassing spawn.");
         NLLB_READY.store(true, Ordering::SeqCst);
-        return Ok(PathBuf::from("halt-nllb:7781"));
+        return Ok(PathBuf::from("halt_nllb:7781"));
     }
 
     log::info!("[nllb::ensure] Spawning or verifying subprocess...");
@@ -70,7 +70,7 @@ pub fn ensure_loaded() -> Result<PathBuf, String> {
         if check_health() {
             log::info!("[nllb::ensure] Health check PASSED on attempt {}", i);
             NLLB_READY.store(true, Ordering::SeqCst);
-            return Ok(PathBuf::from("halt-nllb:7781"));
+            return Ok(PathBuf::from("halt_nllb:7781"));
         }
         
         // Ensure child hasn't died
@@ -78,7 +78,7 @@ pub fn ensure_loaded() -> Result<PathBuf, String> {
             if let Some(ref mut child) = *guard {
                 if let Ok(Some(status)) = child.try_wait() {
                     log::error!("[nllb::ensure] Child process died prematurely with status {}", status);
-                    return Err(format!("halt-nllb subprocess exited prematurely: {}", status));
+                    return Err(format!("halt_nllb subprocess exited prematurely: {}", status));
                 }
             }
         } else {
@@ -90,7 +90,7 @@ pub fn ensure_loaded() -> Result<PathBuf, String> {
         }
     }
 
-    Err("halt-nllb subprocess did not become ready within 30s".to_string())
+    Err("halt_nllb subprocess did not become ready within 30s".to_string())
 }
 
 fn spawn_subprocess() -> Result<(), String> {
@@ -106,7 +106,7 @@ fn spawn_subprocess() -> Result<(), String> {
 
     let exe = std::env::current_exe().map_err(|e| e.to_string())?;
     let exe_dir = exe.parent().unwrap_or(std::path::Path::new("."));
-    let bin_name = if cfg!(windows) { "halt-nllb.exe" } else { "halt-nllb" };
+    let bin_name = if cfg!(windows) { "halt_nllb.exe" } else { "halt_nllb" };
 
     let candidates = [
         exe_dir.join(bin_name),
@@ -115,7 +115,7 @@ fn spawn_subprocess() -> Result<(), String> {
     ];
     let nllb_exe = candidates.iter().find(|p| p.exists())
         .ok_or_else(|| format!(
-            "halt-nllb binary not found. Build with: cargo build --bin halt-nllb --release --features nllb_translate"
+            "halt_nllb binary not found. Build with: cargo build --bin halt-nllb --release --features nllb_translate"
         ))?.clone();
 
     log::info!("[nllb] Spawning subprocess: {}", nllb_exe.display());

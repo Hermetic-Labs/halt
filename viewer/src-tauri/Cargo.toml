@@ -84,17 +84,17 @@ optional = true
 version = "0.3"
 
 [[bin]]
-name = "halt-whisper"
+name = "halt_whisper"
 path = "src/bin/halt_whisper.rs"
 required-features = ["whisper_stt"]
 
 [[bin]]
-name = "halt-nllb"
+name = "halt_nllb"
 path = "src/bin/halt_nllb.rs"
 required-features = ["nllb_translate"]
 
 [[bin]]
-name = "halt-vision"
+name = "halt_vision"
 path = "src/bin/halt_vision.rs"
 required-features = ["native_ml"]
 
