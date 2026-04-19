@@ -32,7 +32,7 @@ jobs:
           echo "LLVM_CONFIG_PATH=$(brew --prefix llvm)/bin/llvm-config" >> $GITHUB_ENV
           echo "MACOSX_DEPLOYMENT_TARGET=10.15" >> $GITHUB_ENV
           echo "CXXFLAGS=-D_LIBCPP_DISABLE_AVAILABILITY" >> $GITHUB_ENV
-          echo "AR=$(brew --prefix llvm)/bin/llvm-ar" >> $GITHUB_ENV
+          echo "CMAKE_OSX_ARCHITECTURES=arm64" >> $GITHUB_ENV
 
       - name: Install Frontend Dependencies
         working-directory: viewer
@@ -75,6 +75,7 @@ jobs:
           echo "LLVM_CONFIG_PATH=$(brew --prefix llvm)/bin/llvm-config" >> $GITHUB_ENV
           echo "MACOSX_DEPLOYMENT_TARGET=10.15" >> $GITHUB_ENV
           echo "CXXFLAGS=-D_LIBCPP_DISABLE_AVAILABILITY" >> $GITHUB_ENV
+          echo "CMAKE_OSX_ARCHITECTURES=x86_64" >> $GITHUB_ENV
 
       - name: Install Frontend Dependencies
         working-directory: viewer
@@ -112,7 +113,6 @@ jobs:
         run: |
           echo "LIBCLANG_PATH=C:\Program Files\LLVM\bin" >> $GITHUB_ENV
           echo "CMAKE_GENERATOR=Visual Studio 17 2022" >> $GITHUB_ENV
-          echo "RUSTFLAGS=-C target-feature=-crt-static" >> $GITHUB_ENV
 
       - name: Install Frontend Dependencies
         working-directory: viewer
@@ -172,7 +172,6 @@ jobs:
           echo "LLVM_CONFIG_PATH=$(brew --prefix llvm)/bin/llvm-config" >> $GITHUB_ENV
           echo "MACOSX_DEPLOYMENT_TARGET=10.15" >> $GITHUB_ENV
           echo "CXXFLAGS=-D_LIBCPP_DISABLE_AVAILABILITY" >> $GITHUB_ENV
-          echo "AR=$(brew --prefix llvm)/bin/llvm-ar" >> $GITHUB_ENV
 
       - name: Install Apple Certificates and Profiles
         env:
