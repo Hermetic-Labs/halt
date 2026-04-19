@@ -641,7 +641,7 @@ fn main() {
         // https://github.com/rust-lang/cmake-rs/issues/240
         // For now explicitly reinject the optimization flags that a CMake Release build is expected to have on in this scenario.
         // This fixes CPU inference performance when part of a Rust debug build.
-        for flag in &["/O2", "/DNDEBUG", "/Ob2", "/GS-"] {
+        for flag in &["/O2", "/DNDEBUG", "/Ob2", "/GS"] {
             config.cflag(flag);
             config.cxxflag(flag);
         }
@@ -848,7 +848,7 @@ fn main() {
 
         if matches!(target_os, TargetOs::Windows(WindowsVariant::Msvc)) {
             mtmd_build.flag("/std:c++17");
-            mtmd_build.flag("/GS-");
+            mtmd_build.flag("/GS");
         }
 
         // When static-stdcxx is enabled on Android, suppress the cc crate's automatic
