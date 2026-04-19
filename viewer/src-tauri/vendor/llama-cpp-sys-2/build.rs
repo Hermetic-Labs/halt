@@ -647,7 +647,9 @@ fn main() {
         }
     }
 
-    config.static_crt(static_crt);
+    // CRT linkage is controlled exclusively by Rust's -C target-feature=crt-static.
+    // Do NOT call config.static_crt() here — it conflicts with Rust's linker expectations.
+    // config.static_crt(static_crt);
 
     if matches!(target_os, TargetOs::Android) {
         if cfg!(feature = "shared-stdcxx") && cfg!(feature = "static-stdcxx") {
@@ -1031,16 +1033,9 @@ fn main() {
     match target_os {
         TargetOs::Windows(WindowsVariant::Msvc) => {
             println!("cargo:rustc-link-lib=advapi32");
-            let crt_static = env::var("CARGO_CFG_TARGET_FEATURE")
-                .unwrap_or_default()
-                .contains("crt-static");
-            if cfg!(debug_assertions) {
-                if crt_static {
-                    println!("cargo:rustc-link-lib=libcmtd");
-                } else {
-                    println!("cargo:rustc-link-lib=dylib=msvcrtd");
-                }
-            }
+            // CRT linkage is handled by Rust — do NOT inject libcmtd or msvcrtd manually.
+            // The previous code here caused static/dynamic CRT splits that produced
+            // LNK2001 errors for __guard_dispatch_icall_fptr, __GSHandlerCheck_SEH, etc.
         }
         TargetOs::Linux => {
             println!("cargo:rustc-link-lib=dylib=stdc++");
