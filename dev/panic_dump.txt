@@ -1,0 +1,24 @@
+=== PANIC DETECTED ===
+panicked at src\commands\tts.rs:109:26:
+byte index 60 is not a char boundary; it is inside 'க' (bytes 59..62) of `இது வெறுப்பை நிறுத்துகிறது என்று நம்புகிறேன்.`
+=== PANIC DETECTED ===
+panicked at library\core\src\panicking.rs:225:5:
+panic in a function that cannot unwind
+=== PANIC DETECTED ===
+panicked at src\commands\tts.rs:109:26:
+byte index 60 is not a char boundary; it is inside 'ح' (bytes 59..61) of `آمل أن يساعد هذا الناس في جميع أنحاء العالم.`
+=== PANIC DETECTED ===
+panicked at library\core\src\panicking.rs:225:5:
+panic in a function that cannot unwind
+=== PANIC DETECTED ===
+panicked at src\commands\tts.rs:109:26:
+byte index 60 is not a char boundary; it is inside 'ح' (bytes 59..61) of `آمل أن يساعد هذا الناس في جميع أنحاء العالم.`
+=== PANIC DETECTED ===
+panicked at library\core\src\panicking.rs:225:5:
+panic in a function that cannot unwind
+=== PANIC DETECTED ===
+panicked at src\commands\tts.rs:109:26:
+byte index 60 is not a char boundary; it is inside 'ق' (bytes 59..61) of `لذلك لا أفهم كلمة واحدة من هذه القذارة، ولكنها تبدو جميلة.`
+=== PANIC DETECTED ===
+panicked at library\core\src\panicking.rs:225:5:
+panic in a function that cannot unwind

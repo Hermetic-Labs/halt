@@ -65,6 +65,18 @@ let _msgId = 0;
 
 export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
     const { t, lang } = useT();
+    
+    // Natively resolves the selected language code into the medic's current UI language string
+    // e.g. If system is English, 'ar' -> "Arabic". If system is Chinese, 'ar' -> "阿拉伯语"
+    const getReadableName = useCallback((code: string) => {
+        try {
+            const locale = (lang && lang.trim()) ? lang : (navigator.language || 'en');
+            return new Intl.DisplayNames([locale], { type: 'language' }).of(code) || code.toUpperCase();
+        } catch {
+            return code.toUpperCase();
+        }
+    }, [lang]);
+
     const leftLang = LANGUAGES.find(l => l.code === lang?.split('-')[0])?.code || 'en';
     const [rightLang, setRightLang] = useState(leftLang === 'en' ? 'es' : 'en');
     const [activeSide, setActiveSide] = useState<'left' | 'right'>('left');
@@ -167,6 +179,13 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                     mr.onstop = async () => {
                         stream.getTracks().forEach(t => t.stop());
                         const blob = new Blob(chunks, { type: mimeType || 'audio/webm' });
+                        
+                        // Check empty/corrupt chunks
+                        if (blob.size < 100) {
+                            console.warn(`[Manual STT] Chunk too small (${blob.size} bytes). Dropping to avoid decoder crash.`);
+                            setSttBusy(false);
+                            return;
+                        }
                         
                         // Visual feedback handled automatically by 'sttBusy' pulsing waveform
                         try {
@@ -452,18 +471,7 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                                     direction: ['ar', 'he', 'fa', 'ur', 'ps'].includes(msg.lang) ? 'rtl' : 'ltr',
                                 }}>
                                     {msg.text}
-                                    {msg.originalText && (
-                                        <div style={{
-                                            marginTop: 6, paddingTop: 6,
-                                            borderTop: `1px solid ${isLeft ? 'rgba(88,166,255,0.12)' : 'rgba(63,185,80,0.12)'}`,
-                                            fontSize: 12, color: '#6e7681', fontStyle: 'italic',
-                                            direction: ['ar', 'he', 'fa', 'ur', 'ps'].includes(
-                                                isLeft ? rightLang : leftLang
-                                            ) ? 'rtl' : 'ltr',
-                                        }}>
-                                            {msg.originalText}
-                                        </div>
-                                    )}
+                                    {/* Line segment and original text stripped natively */}
                                 </div>
                                 <button
                                     onClick={() => handleReplay(msg)}
@@ -551,15 +559,7 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                             transition: 'all 0.3s',
                         }}>
                             {seg.translation || '...'}
-                            {seg.transcript && (
-                                <div style={{
-                                    marginTop: 6, paddingTop: 6,
-                                    borderTop: '1px solid rgba(210,168,60,0.15)',
-                                    fontSize: 12, color: '#6e7681', fontStyle: 'italic',
-                                }}>
-                                    {seg.transcript}
-                                </div>
-                            )}
+                            {/* Live segment divider and original text stripped natively */}
                         </div>
                     </div>
                 ))}
@@ -716,6 +716,9 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                         >
                             {langName(leftLang)} (System)
                         </div>
+                        <div style={{ fontSize: 10, color: '#8b949e', textAlign: 'center', opacity: 0.8, marginTop: 2 }}>
+                            {getReadableName(leftLang)}
+                        </div>
                     </div>
 
                     {/* Direction arrow */}
@@ -768,6 +771,9 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                                 <option key={l.code} value={l.code}>{l.name}</option>
                             ))}
                         </select>
+                        <div style={{ fontSize: 10, color: '#8b949e', textAlign: 'center', opacity: 0.8, marginTop: 2 }}>
+                            {getReadableName(rightLang)}
+                        </div>
                     </div>
                 </div>
 

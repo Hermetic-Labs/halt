@@ -33,6 +33,13 @@ pub fn ensure_loaded() -> Result<PathBuf, String> {
         return Ok(PathBuf::from("halt_whisper:7780"));
     }
 
+    // Check if an external whisper process is already running (e.g. spawned by start_rust.bat)
+    if check_health() {
+        log::info!("[whisper] External subprocess already running on port {}", WHISPER_PORT);
+        WHISPER_READY.store(true, Ordering::SeqCst);
+        return Ok(PathBuf::from("halt_whisper:7780"));
+    }
+
     if !has_ggml_model() {
         return Err("No ggml Whisper model found in MODELS_DIR".to_string());
     }

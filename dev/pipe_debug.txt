@@ -1,0 +1,2 @@
+Pipe hit for lang: arUsing espeak bin: espeak-ng
+Process succeeded: true, stdout len: 19050

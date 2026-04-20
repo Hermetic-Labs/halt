@@ -64,6 +64,9 @@ export function useWebRTC(userName: string, userRole: string) {
             console.log('[WebRTC] ICE state:', pc.iceConnectionState);
             if (pc.iceConnectionState === 'failed' || pc.iceConnectionState === 'disconnected') {
                 console.warn('[WebRTC] Connection lost');
+                window.dispatchEvent(new CustomEvent('eve-call-signal', {
+                    detail: { type: 'call_end' }
+                }));
             }
         };
 

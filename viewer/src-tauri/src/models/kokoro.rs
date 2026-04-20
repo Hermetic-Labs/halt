@@ -32,22 +32,65 @@ struct KokoroState {
     voice_data: HashMap<String, Vec<f32>>,
 }
 
-/// Voice mapping — direct translation of LANG_VOICE_MAP from tts.py.
-/// Maps language codes to Kokoro voice IDs.
+/// Voice mapping — maps language codes to closest Kokoro voice.
+/// Native voices: en=af_heart, es=ef_dora, fr=ff_siwis, ja=jf_alpha,
+/// zh=zf_xiaobei, hi=hf_alpha, it=if_sara, pt=pf_dora.
+/// All others mapped to their closest linguistic cousin.
 pub fn voice_map() -> HashMap<&'static str, &'static str> {
     let mut m = HashMap::new();
+    // ── Native voices ──
     m.insert("en", "af_heart");
     m.insert("es", "ef_dora");
     m.insert("fr", "ff_siwis");
     m.insert("ja", "jf_alpha");
-    m.insert("ko", "af_heart"); // fallback
     m.insert("zh", "zf_xiaobei");
     m.insert("hi", "hf_alpha");
     m.insert("it", "if_sara");
     m.insert("pt", "pf_dora");
-    m.insert("de", "af_heart"); // fallback
-    m.insert("ar", "af_heart"); // fallback
-    m.insert("ru", "af_heart"); // fallback
+    // ── CJK cousins → Chinese voice ──
+    m.insert("ko", "zf_xiaobei");
+    // ── Tonal SE Asian → Chinese voice ──
+    m.insert("th", "zf_xiaobei");
+    m.insert("vi", "zf_xiaobei");
+    m.insert("km", "zf_xiaobei");
+    m.insert("my", "zf_xiaobei");
+    // ── Arabic script / Middle Eastern → Hindi voice ──
+    m.insert("ar", "hf_alpha");
+    m.insert("ur", "hf_alpha");
+    m.insert("fa", "hf_alpha");
+    m.insert("ps", "hf_alpha");
+    m.insert("ku", "hf_alpha");
+    m.insert("he", "hf_alpha");
+    // ── Indic languages → Hindi voice ──
+    m.insert("bn", "hf_alpha");
+    m.insert("mr", "hf_alpha");
+    m.insert("ta", "hf_alpha");
+    m.insert("te", "hf_alpha");
+    // ── Romance cousins ──
+    m.insert("la", "if_sara");      // Latin → Italian
+    m.insert("tl", "ef_dora");      // Tagalog → Spanish (colonial influence)
+    // ── Germanic → English ──
+    m.insert("de", "af_heart");
+    m.insert("nl", "af_heart");
+    // ── Slavic → French (closest European prosody) ──
+    m.insert("ru", "ff_siwis");
+    m.insert("uk", "ff_siwis");
+    m.insert("pl", "ff_siwis");
+    // ── African → English ──
+    m.insert("sw", "af_heart");
+    m.insert("ha", "af_heart");
+    m.insert("ig", "af_heart");
+    m.insert("yo", "af_heart");
+    m.insert("zu", "af_heart");
+    m.insert("xh", "af_heart");
+    m.insert("am", "hf_alpha");     // Amharic → Hindi (Semitic cousin)
+    m.insert("mg", "ff_siwis");     // Malagasy → French (Francophone)
+    m.insert("so", "hf_alpha");     // Somali → Hindi (Afro-Asiatic)
+    // ── Indonesian/Malay → Spanish (syllable-timed) ──
+    m.insert("id", "ef_dora");
+    m.insert("jw", "ef_dora");      // Javanese
+    // ── Turkish → Italian (vowel harmony) ──
+    m.insert("tr", "if_sara");
     m
 }
 

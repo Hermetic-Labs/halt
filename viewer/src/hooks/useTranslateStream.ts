@@ -143,12 +143,14 @@ export function useTranslateStream() {
                         let filename = `recording.${ext}`;
 
                         if (mimeType.includes('webm') || mimeType.includes('opus')) {
-                            try {
-                                const { convertWebmToWav } = await import('../services/audioUtils');
-                                audioPayload = await convertWebmToWav(audioPayload);
-                                filename = 'recording.wav';
-                            } catch (e) {
-                                console.error('[TranslateStream] WebM to WAV codec failure:', e);
+                            if (audioPayload.size > 100) {
+                                try {
+                                    const { convertWebmToWav } = await import('../services/audioUtils');
+                                    audioPayload = await convertWebmToWav(audioPayload);
+                                    filename = 'recording.wav';
+                                } catch (e) {
+                                    console.error('[TranslateStream] WebM to WAV codec failure:', e);
+                                }
                             }
                         }
 
@@ -208,12 +210,10 @@ export function useTranslateStream() {
                                 const b64 = ttsData.audio_base64.includes(',')
                                     ? ttsData.audio_base64.split(',')[1]
                                     : ttsData.audio_base64;
-                                const bin = atob(b64);
-                                const buf = new Uint8Array(bin.length);
-                                for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+                                const buf = await fetch(`data:audio/wav;base64,${b64}`).then(r => r.arrayBuffer());
 
                                 if (!audioCtxRef.current) audioCtxRef.current = new AudioContext();
-                                await playBufferedAudio([buf.buffer], audioCtxRef.current);
+                                await playBufferedAudio([buf], audioCtxRef.current);
                             }
                         }
 

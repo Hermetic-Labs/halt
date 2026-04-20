@@ -51,7 +51,7 @@ fn with_state<F, R>(f: F) -> R
 where
     F: FnOnce(&mut MeshState) -> R,
 {
-    let mut guard = MESH_STATE.lock().unwrap();
+    let mut guard = MESH_STATE.lock().unwrap_or_else(|p| p.into_inner());
     if guard.is_none() {
         *guard = Some(MeshState::new());
     }

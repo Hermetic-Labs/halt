@@ -57,6 +57,7 @@ EXCLUDED_DIRS = {
     ".idea",
     ".gemini",
     "builds",
+    "target",
     "dist",
     "__fresh_test__",
     "site",

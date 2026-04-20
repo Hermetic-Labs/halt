@@ -108,6 +108,37 @@ export function useTranslateLive() {
 
         try { mr.start(); } catch { /* ignore */ }
     }, []);
+    // ── Cleanup ──────────────────────────────────────────────────────────────
+
+    const cleanup = useCallback(() => {
+        if (checkIntervalRef.current) {
+            clearInterval(checkIntervalRef.current);
+            checkIntervalRef.current = null;
+        }
+        if (mediaRecRef.current && mediaRecRef.current.state !== 'inactive') {
+            mediaRecRef.current.stop();
+        }
+        mediaRecRef.current = null;
+        if (streamRef.current && !keepMicAliveRef.current) {
+            streamRef.current.getTracks().forEach(t => t.stop());
+            streamRef.current = null;
+        }
+        if (audioCtxRef.current) {
+            // Do NOT close the shared AudioContext
+            audioCtxRef.current = null;
+        }
+        if (inputWsRef.current && inputWsRef.current.readyState <= 1) {
+            inputWsRef.current.close();
+        }
+        inputWsRef.current = null;
+        if (outputWsRef.current && outputWsRef.current.readyState <= 1) {
+            outputWsRef.current.close();
+        }
+        outputWsRef.current = null;
+        audioChunksRef.current = [];
+        keepMicAliveRef.current = false;
+    }, []);
+
 
     const tryResumeRecording = useCallback(() => {
         if (!isTranslatingRef.current && playingCountRef.current === 0) {
@@ -134,7 +165,7 @@ export function useTranslateLive() {
                 startMicRecorder();
             }
         }
-    }, [startMicRecorder]);
+    }, [cleanup, startMicRecorder]);
 
     // ── Gapless WAV playback ─────────────────────────────────────────────────
 
@@ -256,37 +287,6 @@ export function useTranslateLive() {
         checkIntervalRef.current = setInterval(check, ANALYSER_INTERVAL_MS);
     }, [flushSegment]);
 
-    // ── Cleanup ──────────────────────────────────────────────────────────────
-
-    const cleanup = useCallback(() => {
-        if (checkIntervalRef.current) {
-            clearInterval(checkIntervalRef.current);
-            checkIntervalRef.current = null;
-        }
-        if (mediaRecRef.current && mediaRecRef.current.state !== 'inactive') {
-            mediaRecRef.current.stop();
-        }
-        mediaRecRef.current = null;
-        if (streamRef.current && !keepMicAliveRef.current) {
-            streamRef.current.getTracks().forEach(t => t.stop());
-            streamRef.current = null;
-        }
-        if (audioCtxRef.current) {
-            // Do NOT close the shared AudioContext
-            audioCtxRef.current = null;
-        }
-        if (inputWsRef.current && inputWsRef.current.readyState <= 1) {
-            inputWsRef.current.close();
-        }
-        inputWsRef.current = null;
-        if (outputWsRef.current && outputWsRef.current.readyState <= 1) {
-            outputWsRef.current.close();
-        }
-        outputWsRef.current = null;
-        audioChunksRef.current = [];
-        keepMicAliveRef.current = false;
-    }, []);
-
     // ── Start live translation ───────────────────────────────────────────────
 
     const start = useCallback(async (targetLang: string, sourceLang = 'auto', customStream?: MediaStream) => {
@@ -352,6 +352,16 @@ export function useTranslateLive() {
 
                             // 1. STT
                             const audioBlob = new Blob(chunks, { type: mimeType || 'audio/webm' });
+                            
+                            // Check for corrupted or non-existent chunks to prevent fatal decode exceptions
+                            if (audioBlob.size < 100) {
+                                console.log(`[STT Seg ${currentSegId}] Chunk size ${audioBlob.size} bytes is anomalously small. Dropping safely.`);
+                                isTranslatingRef.current = false;
+                                setIsTranslating(false);
+                                tryResumeRecording();
+                                return;
+                            }
+                            
                             const wavBlob = await convertWebmToWav(audioBlob);
                             console.log(`[STT Seg ${currentSegId}] Sending ${wavBlob.size} bytes (WAV converted) to native STT handler...`);
                             
@@ -414,11 +424,9 @@ export function useTranslateLive() {
                                         const b64 = ttsData.audio_base64.includes(',')
                                             ? ttsData.audio_base64.split(',')[1]
                                             : ttsData.audio_base64;
-                                        const bin = atob(b64);
-                                        const buf = new Uint8Array(bin.length);
-                                        for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+                                        const buf = await fetch(`data:audio/wav;base64,${b64}`).then(r => r.arrayBuffer());
                                         console.log(`[TTS Seg ${currentSegId}] Queuing audio chunk for playback.`);
-                                        await playChunk(buf.buffer);
+                                        await playChunk(buf);
                                     } else {
                                         console.warn(`[TTS Seg ${currentSegId}] Audio payload was empty or failed to decode.`);
                                     }

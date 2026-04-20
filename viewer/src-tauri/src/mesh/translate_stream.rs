@@ -46,7 +46,7 @@ fn with_sessions<F, R>(f: F) -> R
 where
     F: FnOnce(&mut HashMap<String, Vec<SegmentResult>>) -> R,
 {
-    let mut guard = SESSIONS.lock().unwrap();
+    let mut guard = SESSIONS.lock().unwrap_or_else(|p| p.into_inner());
     if guard.is_none() {
         *guard = Some(HashMap::new());
     }
@@ -93,19 +93,20 @@ fn pipeline_translate(text: &str, source_lang: &str, target_lang: &str) -> (Stri
 fn pipeline_tts(text: &str, lang: &str, speed: f32) -> Result<Vec<u8>, String> {
     use crate::models::phonemizer;
 
-    if TTS_BUSY.swap(true, Ordering::SeqCst) {
-        return Err("TTS engine is busy".to_string());
-    }
+    let _guard = crate::commands::tts::TtsLockGuard::try_acquire()?;
 
     let result = (|| {
         let (_model, _voices) = kokoro::ensure_loaded()?;
         let map = kokoro::voice_map();
         let voice = map.get(lang).copied().unwrap_or("af_heart");
 
+        // Preprocess: translate non-Latin scripts to English for espeak-ng
+        let (processed_text, effective_lang) = crate::commands::tts::preprocess_text(text, lang);
+
         // Phonemize properly (matching tts.rs)
-        let tokens = phonemizer::text_to_tokens(text, lang).unwrap_or_else(|e| {
-            log::warn!("[pipeline_tts] Phonemization failed: {}", e);
-            vec![0; text.len().max(1)]
+        let tokens = phonemizer::text_to_tokens(&processed_text, &effective_lang).unwrap_or_else(|e| {
+            log::warn!("[pipeline_tts] Phonemization failed, using safe fallback: {}", e);
+            vec![0; processed_text.len().min(50).max(10)]
         });
 
         // Real voice style from voices-v1.0.bin
@@ -116,13 +117,29 @@ fn pipeline_tts(text: &str, lang: &str, speed: f32) -> Result<Vec<u8>, String> {
 
         let session = kokoro::get_session()?;
 
+        let t_tokens = ort::value::Tensor::from_array(
+            ndarray::Array1::from_vec(tokens.clone())
+                .into_shape_with_order((1, tokens.len()))
+                .map_err(|e| format!("Tokens shape err: {}", e))?
+        ).map_err(|e| format!("Tokens tensor err: {}", e))?;
+
+        let t_style = ort::value::Tensor::from_array(
+            ndarray::Array1::from_vec(style)
+                .into_shape_with_order((1, 256))
+                .map_err(|e| format!("Style shape err: {}", e))?
+        ).map_err(|e| format!("Style tensor err: {}", e))?;
+
+        let t_speed = ort::value::Tensor::from_array(
+            ndarray::Array1::from_vec(vec![speed])
+        ).map_err(|e| format!("Speed tensor err: {}", e))?;
+
         let input_values = ort::inputs![
-            "tokens" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(tokens.clone()).into_shape_with_order((1, tokens.len())).unwrap()).unwrap(),
-            "style" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(style).into_shape_with_order((1, 256)).unwrap()).unwrap(),
-            "speed" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(vec![speed])).unwrap(),
+            "tokens" => t_tokens,
+            "style" => t_style,
+            "speed" => t_speed,
         ];
 
-        let mut session = session.lock().unwrap();
+        let mut session = session.lock().map_err(|e| format!("Session lock poisoned: {}", e))?;
         let outputs = session
             .run(input_values)
             .map_err(|e| format!("ORT Run err: {}", e))?;
@@ -154,7 +171,6 @@ fn pipeline_tts(text: &str, lang: &str, speed: f32) -> Result<Vec<u8>, String> {
         Ok(buf)
     })();
 
-    TTS_BUSY.store(false, Ordering::SeqCst);
     result
 }
 
@@ -221,8 +237,7 @@ pub fn translate_stream_oneshot(
         pipeline_translate(&transcript, &detected_lang, &request.target_lang);
 
     // 3. TTS
-    let audio_bytes =
-        pipeline_tts(&translation, &request.target_lang, request.speed).unwrap_or_default();
+    let audio_bytes = pipeline_tts(&translation, &request.target_lang, request.speed)?;
     let audio_b64 = if audio_bytes.is_empty() {
         String::new()
     } else {
@@ -303,8 +318,19 @@ pub async fn translate_stream_live(
         }),
     );
 
-    let audio_bytes =
-        pipeline_tts(&translation, &request.target_lang, request.speed).unwrap_or_default();
+    let audio_bytes = match pipeline_tts(&translation, &request.target_lang, request.speed) {
+        Ok(bytes) => bytes,
+        Err(e) => {
+            log::error!("TTS pipeline failed: {}", e);
+            let _ = app.emit(
+                "translate-stream-event",
+                serde_json::json!({
+                    "type": "error", "message": format!("Kokoro TTS Error: {}", e)
+                }),
+            );
+            return Err(e); // Abort stream and notify backend/frontend explicitly
+        }
+    };
 
     // Emit done
     let _ = app.emit(
@@ -353,8 +379,7 @@ pub fn translate_live_segment(request: LiveSegmentRequest) -> Result<Value, Stri
         pipeline_translate(&transcript, &detected_lang, &request.target_lang);
 
     // TTS
-    let audio_bytes =
-        pipeline_tts(&translation, &request.target_lang, request.speed).unwrap_or_default();
+    let audio_bytes = pipeline_tts(&translation, &request.target_lang, request.speed)?;
     let audio_b64 = if audio_bytes.is_empty() {
         String::new()
     } else {

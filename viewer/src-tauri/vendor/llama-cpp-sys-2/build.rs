@@ -218,7 +218,7 @@ fn main() {
         .map(|v| v == "1")
         .unwrap_or(build_shared_libs);
     let profile = env::var("LLAMA_LIB_PROFILE").unwrap_or("Release".to_string());
-    let static_crt = env::var("LLAMA_STATIC_CRT")
+    let _static_crt = env::var("LLAMA_STATIC_CRT")
         .map(|v| v == "1")
         .unwrap_or(false);
 
