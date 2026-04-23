@@ -106,7 +106,7 @@ pub fn tts_synthesize(request: SynthesizeRequest) -> Result<SynthesizeResponse, 
 
     let result = (|| {
         log::info!("[TTS] Starting synthesis: text='{}', voice='{}', lang='{}', speed={}", 
-            &request.text[..request.text.len().min(60)], request.voice, request.lang, request.speed);
+            request.text.chars().take(60).collect::<String>(), request.voice, request.lang, request.speed);
 
         let (_model, _voices) = kokoro::ensure_loaded()?;
         log::info!("[TTS] Model loaded OK");
@@ -124,7 +124,8 @@ pub fn tts_synthesize(request: SynthesizeRequest) -> Result<SynthesizeResponse, 
         log::info!("[TTS] Voice resolved: {}", _voice);
 
         let (text, effective_lang) = preprocess_text(&request.text, &request.lang);
-        log::info!("[TTS] Preprocessed text (lang {}→{}): '{}'", &request.lang, &effective_lang, &text[..text.len().min(80)]);
+        let safe_text = text.chars().take(80).collect::<String>();
+        log::info!("[TTS] Preprocessed text (lang {}→{}): '{}'", &request.lang, &effective_lang, safe_text);
 
         // Phonemize: text → espeak-ng IPA → Kokoro token IDs
         let tokens = phonemizer::text_to_tokens(&text, &effective_lang).unwrap_or_else(|e| {
@@ -290,7 +291,7 @@ pub fn preprocess_text(text: &str, lang: &str) -> (String, String) {
         if !romanized.trim().is_empty() {
             log::info!(
                 "[TTS preprocess] Transliterated unsupported script (lang={}): '{}' → '{}'",
-                lang, &processed[..processed.len().min(40)], &romanized[..romanized.len().min(60)]
+                lang, processed.chars().take(40).collect::<String>(), romanized.chars().take(60).collect::<String>()
             );
             processed = romanized;
         }
@@ -307,10 +308,10 @@ pub fn preprocess_text(text: &str, lang: &str) -> (String, String) {
 /// Languages lacking espeak-ng profiles that will crash into letter-spelling.
 fn needs_romanization(lang: &str) -> bool {
     matches!(lang,
-        "ku" | "ps" |                  // Unsupported Arabic scripts
-        "tl" | "jw" |                  // SEA fallbacks
-        "ig" | "yo" | "zu" | "xh" |    // African fallbacks
-        "ha" | "mg" | "so"
+        "ja" |                         // Japanese (Kanji/Hiragana bypasses katakana_to_romaji and crashes espeak-ng)
+        "tl" | "jw" |                  // SEA fallbacks (no native espeak voice, mapped to en-us)
+        "ig" | "yo" | "zu" | "xh" |    // African fallbacks (no native espeak voice, mapped to en-us)
+        "mg"                           // Malagasy fallback
     )
 }
 

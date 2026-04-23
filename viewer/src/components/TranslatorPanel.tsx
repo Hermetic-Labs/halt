@@ -23,27 +23,27 @@ const LANGUAGES: { code: string; name: string }[] = [
     { code: 'fa', name: 'فارسی' },
     { code: 'fr', name: 'Français' },
     { code: 'hi', name: 'हिन्दी' },
+    { code: 'ha', name: 'Hausa' },
+    { code: 'he', name: 'עברית' },
+    { code: 'id', name: 'Bahasa Indonesia' },
+    { code: 'it', name: 'Italiano' },
     { code: 'ja', name: '日本語' },
     { code: 'ko', name: '한국어' },
+    { code: 'ku', name: 'Kurdî' },
+    { code: 'nl', name: 'Nederlands' },
+    { code: 'pl', name: 'Polski' },
+    { code: 'ps', name: 'پښتو' },
     { code: 'pt', name: 'Português' },
     { code: 'ru', name: 'Русский' },
+    { code: 'so', name: 'Soomaali' },
     { code: 'sw', name: 'Kiswahili' },
-    { code: 'zh', name: '中文' },
-    { code: 'he', name: 'עברית' },
-    { code: 'it', name: 'Italiano' },
-    { code: 'nl', name: 'Nederlands' },
+    { code: 'ta', name: 'தமிழ்' },
+    { code: 'th', name: 'ไทย' },
     { code: 'tr', name: 'Türkçe' },
     { code: 'uk', name: 'Українська' },
     { code: 'ur', name: 'اردو' },
     { code: 'vi', name: 'Tiếng Việt' },
-    { code: 'th', name: 'ไทย' },
-    { code: 'id', name: 'Bahasa Indonesia' },
-    { code: 'pl', name: 'Polski' },
-    { code: 'ta', name: 'தமிழ்' },
-    { code: 'so', name: 'Soomaali' },
-    { code: 'ha', name: 'Hausa' },
-    { code: 'ps', name: 'پښتو' },
-    { code: 'ku', name: 'Kurdî' },
+    { code: 'zh', name: '中文' },
 ];
 
 import { convertWebmToWav } from '../services/audioUtils';
@@ -246,11 +246,24 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
         setTextBusy(true);
         try {
             const d = await translateText(text, sourceLang, targetLang);
+            console.log('[Manual Translate] 📥 NLLB Payload Received via JS Bridge:', JSON.stringify(d));
+            
+            // Fallback mapping in case of interface mismatch
+            let resolvedText = d.translated;
+            if (!resolvedText || resolvedText.trim() === '') {
+                console.warn('[Manual Translate] ⚠️ WARNING: Payload missing .translated parameter. Attempting extraction...', d);
+                // @ts-expect-error - Handle possible API shape mismatches structurally
+                resolvedText = d.translation || d.text || JSON.stringify(d);
+            }
+
             const newMsg: ChatMessage = {
                 id: ++_msgId, side: activeSide,
-                text: d.translated, lang: targetLang,
+                text: resolvedText, lang: targetLang,
                 originalText: text, timestamp: Date.now(),
             };
+            
+            console.log('[Manual Translate] 🚀 Mount ChatMessage:', JSON.stringify(newMsg));
+            
             setChatMessages(prev => [...prev, newMsg]);
             setTextInput('');
             if (autoPlayRef.current) handleReplay(newMsg);

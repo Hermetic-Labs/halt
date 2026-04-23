@@ -48,7 +48,7 @@ fn render_qr_data_uri(url: &str) -> String {
         Err(e) => {
             log::warn!(
                 "QR generation failed for '{}': {}",
-                &url[..url.len().min(60)],
+                url.chars().take(60).collect::<String>(),
                 e
             );
             String::new()

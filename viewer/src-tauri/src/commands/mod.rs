@@ -3,6 +3,7 @@
 //! Each submodule corresponds to a Python route module.
 //! Commands are registered in lib.rs via `tauri::Builder::invoke_handler()`.
 
+pub mod diagnostics;
 pub mod distribution;
 pub mod export;
 pub mod health;

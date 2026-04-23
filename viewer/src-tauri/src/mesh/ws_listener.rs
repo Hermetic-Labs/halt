@@ -125,14 +125,7 @@ async fn handle_connection(
         let _ = ws_sender.lock().await.send(Message::Text(json)).await;
     }
 
-    // Broadcast client_joined
-    let join_msg = serde_json::json!({
-        "type": "client_joined",
-        "client_id": &client_id,
-        "name": "Volunteer",
-        "clients": clients.read().await.len(),
-    });
-    broadcast(&clients, &join_msg, Some(&client_id)).await;
+    // Wait for set_name message before broadcasting client_joined
 
     // Message loop
     loop {
@@ -185,6 +178,15 @@ async fn handle_connection(
                             .unwrap_or("responder");
                         server::register_client(&client_id, name, role);
                         log::info!("Mesh WS: {} set name='{}' role='{}'", client_id, name, role);
+
+                        // Broadcast client_joined now that we know their actual name
+                        let join_msg = serde_json::json!({
+                            "type": "client_joined",
+                            "client_id": &client_id,
+                            "name": name,
+                            "clients": clients.read().await.len(),
+                        });
+                        broadcast(&clients, &join_msg, Some(&client_id)).await;
                     }
 
                     "patient_updated" | "patient_created" => {

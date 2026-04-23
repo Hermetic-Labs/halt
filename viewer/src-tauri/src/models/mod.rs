@@ -8,5 +8,6 @@ pub mod llm;
 pub mod llava;
 pub mod nllb;
 pub mod phonemizer;
+pub mod phoneme_compiler;
 pub mod whisper;
 

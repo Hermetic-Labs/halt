@@ -134,6 +134,10 @@ pub fn run() {
             mesh::translate_stream::translate_live_health,
             mesh::translate_stream::translate_live_end,
             mesh::translate_stream::call_translate_chunk,
+            
+            // Layer 6: Platform Telemetry & Diagnostics
+            commands::diagnostics::run_neural_sweep,
+            commands::diagnostics::run_language_probe,
         ])
         .setup(|app| {
             // Auto-generate/refresh SSL certs for current LAN IP

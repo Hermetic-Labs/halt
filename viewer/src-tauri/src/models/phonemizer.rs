@@ -14,7 +14,7 @@ use std::sync::OnceLock;
 
 /// Kokoro phoneme vocabulary — maps IPA characters to token IDs.
 /// Extracted from Kokoro-82M config.json (178 tokens).
-fn vocab() -> &'static HashMap<char, i64> {
+pub fn vocab() -> &'static HashMap<char, i64> {
     static VOCAB: OnceLock<HashMap<char, i64>> = OnceLock::new();
     VOCAB.get_or_init(|| {
         let mut m = HashMap::new();
@@ -146,19 +146,48 @@ fn preprocess_text(text: &str, _lang: &str) -> String {
 /// Map UI language code → espeak-ng voice code.
 fn espeak_voice(lang: &str) -> &'static str {
     match lang {
+        // Base Western
         "en" => "en-us",
         "es" => "es",
         "fr" => "fr-fr",
-        "hi" => "hi",
+        "de" => "de",
         "it" => "it",
         "pt" => "pt-br",
+        "nl" => "nl",
+        
+        // Asian
         "zh" => "cmn",
-        "ja" => "en-us", // Japanese Romaji handled via Kokoro's native english model usually
-        "ar" => "ar",
-        "ru" => "ru",
-        "fa" => "fa",
+        "ja" => "en-us", // Japanese Romaji handled via Kokoro's english base usually
         "ko" => "ko",
-        "de" => "de",
+        "th" => "th",
+        "vi" => "vi",
+        
+        // Middle Eastern
+        "ar" => "ar",
+        "fa" => "fa",
+        "ur" => "ur",
+        "ps" => "ps",  // Pashto (uses Arabic script)
+        "ku" => "ku",  // Kurdish
+        "he" => "he",  // Hebrew
+        
+        // Indic
+        "hi" => "hi",
+        "ta" => "ta",
+        "bn" => "bn",
+        
+        // Eastern Euro / Cyrillic
+        "ru" => "ru",
+        "uk" => "uk",
+        "pl" => "pl",
+        "tr" => "tr",
+        
+        // African / Other
+        "sw" => "sw",
+        "ha" => "ha",
+        "so" => "so",
+        "am" => "am",
+        "id" => "id",
+        
         _ => "en-us",
     }
 }
@@ -192,21 +221,34 @@ pub fn text_to_ipa(raw_text: &str, lang: &str) -> Result<String, String> {
     let voice = espeak_voice(lang);
     let text = preprocess_text(raw_text, lang);
 
-    use std::io::Write;
-    let mut child = Command::new(&espeak)
-        .args(["-v", voice, "--ipa", "-q"])
-        .stdin(std::process::Stdio::piped())
-        .stdout(std::process::Stdio::piped())
-        .stderr(std::process::Stdio::piped())
-        .spawn()
-        .map_err(|e| format!("espeak-ng failed to spawn: {}", e))?;
+    // Resolve the espeak-ng-data directory next to the binary
+    let espeak_path = std::path::Path::new(&espeak);
+    let data_dir = espeak_path.parent()
+        .map(|p| p.join("espeak-ng-data"))
+        .unwrap_or_default();
 
-    if let Some(mut stdin) = child.stdin.take() {
-        stdin.write_all(text.as_bytes()).map_err(|e| format!("espeak-ng stdin write failed: {}", e))?;
+    // Write text to a temp file — stdin piping corrupts non-Latin scripts on Windows.
+    let temp_dir = std::env::temp_dir();
+    let temp_file = temp_dir.join("halt_espeak_input.txt");
+    std::fs::write(&temp_file, text.as_bytes())
+        .map_err(|e| format!("Failed to write espeak temp file: {}", e))?;
+
+    let mut cmd = Command::new(&espeak);
+    cmd.args(["-v", voice, "--ipa", "-q", "-f"])
+       .arg(&temp_file)
+       .stdout(std::process::Stdio::piped())
+       .stderr(std::process::Stdio::piped());
+
+    // Point espeak-ng to its bundled data directory
+    if data_dir.exists() {
+        cmd.arg(format!("--path={}", data_dir.to_string_lossy()));
     }
 
-    let output = child.wait_with_output()
+    let output = cmd.output()
         .map_err(|e| format!("espeak-ng failed to execute: {}", e))?;
+
+    // Clean up temp file (best-effort)
+    let _ = std::fs::remove_file(&temp_file);
 
     if !output.status.success() {
         let stderr = String::from_utf8_lossy(&output.stderr);
@@ -214,7 +256,7 @@ pub fn text_to_ipa(raw_text: &str, lang: &str) -> Result<String, String> {
     }
 
     let ipa = String::from_utf8_lossy(&output.stdout).trim().to_string();
-    log::debug!("espeak-ng [{}]: '{}' → '{}'", voice, &text[..text.len().min(60)], &ipa[..ipa.len().min(80)]);
+    log::debug!("espeak-ng [{}]: '{}' → '{}'", voice, text.chars().take(60).collect::<String>(), ipa.chars().take(80).collect::<String>());
     Ok(ipa)
 }
 
@@ -238,18 +280,7 @@ pub fn text_to_tokens(text: &str, lang: &str) -> Result<Vec<i64>, String> {
         }
     }
 
-    let ipa = ipa_raw_clean
-        .replace('g', "ɡ")   // standard g -> script ɡ
-        .replace('ħ', "h")   // Arabic voiceless pharyngeal fricative -> h
-        .replace('ʕ', "ʔ")   // Arabic voiced pharyngeal fricative -> glottal stop
-        .replace("dʒ", "ʤ")  // Affricates
-        .replace("tʃ", "ʧ")
-        .replace("ts", "ʦ")
-        .replace("dz", "ʣ")
-        .replace("tɕ", "ʨ")
-        .replace("dʑ", "ʥ")
-        .replace('ˤ', "")    // Remove unsupported pharyngealization markers
-        .replace('̃', "");    // Remove unsupported nasalization waves
+    let ipa = crate::models::phoneme_compiler::compile(&ipa_raw_clean, lang);
 
     let v = vocab();
 
@@ -285,7 +316,7 @@ pub fn text_to_tokens(text: &str, lang: &str) -> Result<Vec<i64>, String> {
     if tokens.len() <= 2 {
         return Err(format!(
             "No phoneme tokens produced. IPA was: '{}'",
-            &ipa[..ipa.len().min(80)]
+            ipa.chars().take(80).collect::<String>()
         ));
     }
 
