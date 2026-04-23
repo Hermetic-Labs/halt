@@ -49,7 +49,7 @@ struct TranscriptionResult {
 
 async fn health_handler() -> Json<serde_json::Value> {
     let ready = WHISPER_CTX.get().is_some();
-    Json(serde_json::json!({"ready": ready, "service": "halt-whisper"}))
+    Json(serde_json::json!({"ready": ready, "service": "halt_whisper"}))
 }
 
 async fn listen_handler(axum::extract::Query(params): axum::extract::Query<std::collections::HashMap<String, String>>, body: axum::body::Bytes) -> Json<serde_json::Value> {

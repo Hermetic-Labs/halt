@@ -81,7 +81,7 @@ fn get_or_load() -> Result<(), String> {
 
 async fn health_handler() -> Json<serde_json::Value> {
     let ready = VISION.get().is_some();
-    Json(serde_json::json!({"ready": ready, "service": "halt-vision"}))
+    Json(serde_json::json!({"ready": ready, "service": "halt_vision"}))
 }
 
 #[derive(Deserialize)]

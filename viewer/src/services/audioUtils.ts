@@ -1,5 +1,6 @@
 export async function convertWebmToWav(webmBlob: Blob): Promise<Blob> {
-    const audioCtx = new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
+    const OfflineCtx = window.OfflineAudioContext || (window as unknown as { webkitOfflineAudioContext: typeof OfflineAudioContext }).webkitOfflineAudioContext;
+    const audioCtx = new OfflineCtx(1, 1, 48000);
     const arrayBuffer = await webmBlob.arrayBuffer();
     const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
     
@@ -42,8 +43,7 @@ export async function convertWebmToWav(webmBlob: Blob): Promise<Blob> {
         offset++;
     }
 
-    // Ensure we close the temporary context to prevent memory leaks
-    if (audioCtx.state !== 'closed') audioCtx.close();
-    
+    // Return the blob
+
     return new Blob([buffer], { type: 'audio/wav' });
 }

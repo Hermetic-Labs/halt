@@ -34,6 +34,7 @@ import NetworkTab from './components/NetworkTab';
 import TriagePanel from './components/TriagePanel';
 import DistributionTab from './components/DistributionTab';
 import PublicLookup from './components/PublicLookup';
+import { NeuralScanReport } from './components/NeuralScanReport';
 import { useWebRTC } from './hooks/useWebRTC';
 import { api, isNative, resolveUrl } from './services/api';
 
@@ -487,6 +488,7 @@ function AppInner(p: any) {
   const { lowPower, batteryLevel, toggleLowPower } = usePower();
   const { lang, t, loading: langLoading } = useT();
   const [showTriage, setShowTriage] = useState(false);
+  const [showNeuralScan, setShowNeuralScan] = useState(false);
 
   const [lookupQR, setLookupQR] = useState<{ url: string; qr_image: string | null } | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -500,8 +502,6 @@ function AppInner(p: any) {
     endCall, toggleMute,
     videoRefCallback, remoteVideoRefCallback,
     fmtDuration, remoteAudioLevel,
-    subtitleText, transcribing,
-    startTranscription, stopTranscription,
   } = webRTC;
 
   // ── Notification badges (unread messages & tasks) ──
@@ -624,6 +624,17 @@ function AppInner(p: any) {
                 marginLeft: 4, flexShrink: 0, transition: 'all 0.15s',
               }}
             ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={showTriage ? '#58a6ff' : '#6e7681'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
+            <button
+              onClick={() => setShowNeuralScan(true)}
+              title="Neural Diagnostics"
+              style={{
+                background: showNeuralScan ? '#8b5cf615' : 'transparent',
+                border: showNeuralScan ? '1px solid #8b5cf633' : '1px solid transparent',
+                borderRadius: 6, padding: '5px 7px', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                marginLeft: 4, flexShrink: 0, transition: 'all 0.15s',
+              }}
+            ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={showNeuralScan ? '#8b5cf6' : '#6e7681'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></button>
             <span className="topbar-sep" />
             <span className="topbar-sep" />
 
@@ -688,7 +699,7 @@ function AppInner(p: any) {
 
           {/* Communications */}
           {tab === 'comms' && (
-            <div style={fullTab}><CommsPanel /></div>
+            <div style={fullTab}><CommsPanel webRTC={webRTC} /></div>
           )}
 
           {/* ═══ Global Call Overlay — renders on ANY tab ═══════════════ */}
@@ -744,31 +755,7 @@ function AppInner(p: any) {
                   <button onClick={endCall} title="End Call" style={{ width: 52, height: 52, borderRadius: '50%', background: '#e74c3c', border: '2px solid #e74c3c', color: '#fff', fontSize: 20, fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     ✕
                   </button>
-                  <button
-                    onClick={() => transcribing ? stopTranscription() : startTranscription()}
-                    title={transcribing ? 'Stop Subtitles' : 'Live Subtitles'}
-                    style={{
-                      width: 52, height: 52, borderRadius: '50%',
-                      background: transcribing ? '#50C87822' : '#ffffff15',
-                      border: `2px solid ${transcribing ? '#50C878' : '#555'}`,
-                      color: transcribing ? '#50C878' : '#fff',
-                      fontSize: 20, cursor: 'pointer',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    }}
-                  >🌐</button>
                 </div>
-                {/* Subtitle Bar */}
-                {subtitleText && (
-                  <div style={{
-                    padding: '10px 20px', background: 'rgba(0,0,0,0.85)',
-                    borderTop: '1px solid #333', textAlign: 'center',
-                    fontSize: 14, lineHeight: 1.5, color: '#fff',
-                    fontFamily: 'var(--font-sans)', whiteSpace: 'pre-wrap',
-                    animation: 'fadeIn 0.3s ease',
-                  }}>
-                    {subtitleText}
-                  </div>
-                )}
               </div>
             </div>
           )}
@@ -797,7 +784,7 @@ function AppInner(p: any) {
             <div style={fullTab}><InventoryTab /></div>
           )}
 
-
+          {showNeuralScan && <NeuralScanReport onClose={() => setShowNeuralScan(false)} />}
 
           {/* ── SETTINGS PAGE (always mounted — keeps WS alive) ────────────── */}
           <div style={{ ...fullTab, overflowY: 'auto', padding: 0, display: tab === 'settings' ? undefined : 'none' }}>

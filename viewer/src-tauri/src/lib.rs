@@ -1,27 +1,31 @@
 #![allow(dead_code, unused_variables, unused_imports, suspicious_double_ref_op)]
-mod commands;
+pub mod commands;
 mod config;
 mod http_server;
 mod mesh;
-mod models;
+pub mod models;
 mod storage;
 
 use tauri::RunEvent;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
-    // Suppress Windows debug CRT assertions (dialog popups) in dev builds.
-    // Both whisper.cpp and llama.cpp statically link ggml, causing file handle
-    // conflicts in the debug CRT. Release builds are unaffected.
-    #[cfg(all(debug_assertions, target_os = "windows"))]
-    unsafe {
-        // _CrtSetReportMode(_CRT_ASSERT, _CRTDBG_MODE_DEBUG) — log to debugger, don't popup
-        extern "C" {
-            fn _CrtSetReportMode(report_type: i32, report_mode: i32) -> i32;
+    // ── NATIVE PANIC TRAP ──
+    std::panic::set_hook(Box::new(|info| {
+        use std::io::Write;
+        if let Ok(mut file) = std::fs::OpenOptions::new()
+            .create(true)
+            .append(true)
+            .open("C:\\Halt\\dev\\panic_dump.txt")
+        {
+            let _ = writeln!(file, "=== PANIC DETECTED ===");
+            let _ = writeln!(file, "{}", info);
         }
-        _CrtSetReportMode(2, 2); // _CRT_ASSERT=2, _CRTDBG_MODE_DEBUG=2
-    }
+        eprintln!("=== PANIC DETECTED ===");
+        eprintln!("{}", info);
+    }));
 
+    // (Debug CRT handles and dialog popups no longer conflict since NLLB runs out-of-process)
     // Ensure data directories exist on startup
     storage::ensure_dirs();
 
@@ -130,6 +134,10 @@ pub fn run() {
             mesh::translate_stream::translate_live_health,
             mesh::translate_stream::translate_live_end,
             mesh::translate_stream::call_translate_chunk,
+            
+            // Layer 6: Platform Telemetry & Diagnostics
+            commands::diagnostics::run_neural_sweep,
+            commands::diagnostics::run_language_probe,
         ])
         .setup(|app| {
             // Auto-generate/refresh SSL certs for current LAN IP

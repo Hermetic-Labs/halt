@@ -47,8 +47,9 @@ pub fn stt_listen_raw(
     let (text, detected_lang, duration) = whisper::transcribe(&audio_data, &lang)?;
 
     if !text.is_empty() {
+        let safe_text = text.chars().take(80).collect::<String>();
         log::info!("[STT] Transcribed {:.1}s → '{}' (lang={})",
-            duration, &text[..text.len().min(80)], detected_lang);
+            duration, safe_text, detected_lang);
     }
 
     Ok(TranscriptionResult {

@@ -11,7 +11,7 @@ rust-version = "1.77.2"
 
 [lib]
 name = "app_lib"
-crate-type = ["staticlib", "cdylib", "rlib"]
+crate-type = ["staticlib", "rlib"]
 
 [build-dependencies]
 tauri-build = { version = "2.5.6", features = [] }
@@ -45,6 +45,8 @@ tokio-tungstenite = "0.24"
 axum = "0.8"
 tower-http = { version = "0.6", features = ["cors", "fs"] }
 once_cell = "1.21.4"
+unicode-normalization = "0.1.25"
+any_ascii = "0.3.3"
 
 [features]
 default = ["native_ml"]
@@ -84,17 +86,17 @@ optional = true
 version = "0.3"
 
 [[bin]]
-name = "halt-whisper"
+name = "halt_whisper"
 path = "src/bin/halt_whisper.rs"
 required-features = ["whisper_stt"]
 
 [[bin]]
-name = "halt-nllb"
+name = "halt_nllb"
 path = "src/bin/halt_nllb.rs"
 required-features = ["nllb_translate"]
 
 [[bin]]
-name = "halt-vision"
+name = "halt_vision"
 path = "src/bin/halt_vision.rs"
 required-features = ["native_ml"]
 

@@ -153,7 +153,7 @@ pub fn inference_complete(request: InferenceRequest) -> Result<InferenceResponse
                 return Ok(InferenceResponse {
                     text: result_text,
                     tokens_generated: n_past,
-                    model: "halt-vision (sidecar)".to_string(),
+                    model: "halt_vision (sidecar)".to_string(),
                 });
             }
         }
@@ -290,13 +290,13 @@ pub async fn inference_stream(
             let _ = app.emit("inference-token", serde_json::json!({
                 "token": "",
                 "done": true,
-                "model": "halt-vision (sidecar)",
+                "model": "halt_vision (sidecar)",
             }));
 
             INFERENCE_BUSY.store(false, Ordering::SeqCst);
             return Ok(serde_json::json!({
                 "status": "complete",
-                "model": "halt-vision (sidecar)",
+                "model": "halt_vision (sidecar)",
             }));
         }
     }

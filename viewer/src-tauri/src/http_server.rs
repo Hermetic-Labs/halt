@@ -63,6 +63,9 @@ pub fn build_router() -> Router {
         .route("/api/setup/status", get(setup_status_handler))
         // ── Roster ────────────────────────────────────────────
         .route("/api/roster", get(roster_list_handler))
+        .route("/api/roster", post(roster_add_handler))
+        .route("/api/roster/{id}", put(roster_update_handler))
+        .route("/api/roster/{id}", delete(roster_delete_handler))
         // ── Tasks ─────────────────────────────────────────────
         .route("/api/tasks", get(tasks_list_handler))
         // ── Inventory ─────────────────────────────────────────
@@ -299,6 +302,30 @@ async fn roster_list_handler() -> impl IntoResponse {
     Json(serde_json::to_value(roster::list_roster()).unwrap_or_default())
 }
 
+async fn roster_add_handler(Json(member): Json<crate::commands::roster::RosterMember>) -> impl IntoResponse {
+    match roster::add_roster_member(member) {
+        Ok(r) => Json(serde_json::to_value(r).unwrap_or_default()),
+        Err(e) => Json(serde_json::json!({"error": e})),
+    }
+}
+
+async fn roster_update_handler(
+    axum::extract::Path(id): axum::extract::Path<String>,
+    Json(member): Json<crate::commands::roster::RosterMember>,
+) -> impl IntoResponse {
+    match roster::update_roster_member(id, member) {
+        Ok(r) => Json(serde_json::to_value(r).unwrap_or_default()),
+        Err(e) => Json(serde_json::json!({"error": e})),
+    }
+}
+
+async fn roster_delete_handler(axum::extract::Path(id): axum::extract::Path<String>) -> impl IntoResponse {
+    match roster::delete_roster_member(id) {
+        Ok(r) => Json(r),
+        Err(e) => Json(serde_json::json!({"error": e})),
+    }
+}
+
 // ── Tasks ─────────────────────────────────────────────────────────────────────
 
 async fn tasks_list_handler() -> impl IntoResponse {
@@ -341,8 +368,8 @@ async fn chat_send_handler(Json(body): Json<Value>) -> impl IntoResponse {
         timestamp: String::new(),
         reactions: serde_json::Map::new(),
         translations: serde_json::Map::new(),
-        attachment: String::new(),
-        reply_to: String::new(),
+        attachment: body["attachment"].as_str().unwrap_or("").to_string(),
+        reply_to: body["reply_to"].as_str().unwrap_or("").to_string(),
     };
     match crate::mesh::chat::send_chat(msg) {
         Ok(r) => Json(serde_json::to_value(r).unwrap_or_default()),

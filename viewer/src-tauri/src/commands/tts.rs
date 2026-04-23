@@ -20,6 +20,22 @@ use std::sync::atomic::{AtomicBool, Ordering};
 /// ONNX session access.
 pub static TTS_BUSY: AtomicBool = AtomicBool::new(false);
 
+pub struct TtsLockGuard;
+impl TtsLockGuard {
+    pub fn try_acquire() -> Result<Self, String> {
+        if TTS_BUSY.swap(true, Ordering::SeqCst) {
+            Err("TTS engine is busy".to_string())
+        } else {
+            Ok(Self)
+        }
+    }
+}
+impl Drop for TtsLockGuard {
+    fn drop(&mut self) {
+        TTS_BUSY.store(false, Ordering::SeqCst);
+    }
+}
+
 #[derive(Debug, Deserialize)]
 pub struct SynthesizeRequest {
     pub text: String,
@@ -86,13 +102,11 @@ pub fn tts_queue_status() -> Value {
 /// Single-language synthesis.
 #[tauri::command]
 pub fn tts_synthesize(request: SynthesizeRequest) -> Result<SynthesizeResponse, String> {
-    if TTS_BUSY.swap(true, Ordering::SeqCst) {
-        return Err("TTS engine is busy".to_string());
-    }
+    let _guard = TtsLockGuard::try_acquire()?;
 
     let result = (|| {
         log::info!("[TTS] Starting synthesis: text='{}', voice='{}', lang='{}', speed={}", 
-            &request.text[..request.text.len().min(60)], request.voice, request.lang, request.speed);
+            request.text.chars().take(60).collect::<String>(), request.voice, request.lang, request.speed);
 
         let (_model, _voices) = kokoro::ensure_loaded()?;
         log::info!("[TTS] Model loaded OK");
@@ -109,13 +123,14 @@ pub fn tts_synthesize(request: SynthesizeRequest) -> Result<SynthesizeResponse, 
         };
         log::info!("[TTS] Voice resolved: {}", _voice);
 
-        let text = preprocess_text(&request.text, &request.lang);
-        log::info!("[TTS] Preprocessed text: '{}'", &text[..text.len().min(80)]);
+        let (text, effective_lang) = preprocess_text(&request.text, &request.lang);
+        let safe_text = text.chars().take(80).collect::<String>();
+        log::info!("[TTS] Preprocessed text (lang {}→{}): '{}'", &request.lang, &effective_lang, safe_text);
 
         // Phonemize: text → espeak-ng IPA → Kokoro token IDs
-        let tokens = phonemizer::text_to_tokens(&text, &request.lang).unwrap_or_else(|e| {
-            log::warn!("[TTS] Phonemization failed, using fallback: {}", e);
-            vec![0; text.len().max(1)] // fallback: placeholder tokens
+        let tokens = phonemizer::text_to_tokens(&text, &effective_lang).unwrap_or_else(|e| {
+            log::warn!("[TTS] Phonemization failed, using safe fallback: {}", e);
+            vec![0; text.len().min(50).max(10)]
         });
         log::info!("[TTS] Phonemized: {} tokens", tokens.len());
 
@@ -131,14 +146,30 @@ pub fn tts_synthesize(request: SynthesizeRequest) -> Result<SynthesizeResponse, 
         let session = kokoro::get_session()?;
         log::info!("[TTS] Building input tensors (tokens={}, style={}, speed={})...", tokens.len(), style.len(), speed);
 
+        let t_tokens = ort::value::Tensor::from_array(
+            ndarray::Array1::from_vec(tokens.clone())
+                .into_shape_with_order((1, tokens.len()))
+                .map_err(|e| format!("Tokens shape err: {}", e))?
+        ).map_err(|e| format!("Tokens tensor err: {}", e))?;
+
+        let t_style = ort::value::Tensor::from_array(
+            ndarray::Array1::from_vec(style)
+                .into_shape_with_order((1, 256))
+                .map_err(|e| format!("Style shape err: {}", e))?
+        ).map_err(|e| format!("Style tensor err: {}", e))?;
+
+        let t_speed = ort::value::Tensor::from_array(
+            ndarray::Array1::from_vec(vec![speed])
+        ).map_err(|e| format!("Speed tensor err: {}", e))?;
+
         let input_values = ort::inputs![
-            "tokens" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(tokens.clone()).into_shape_with_order((1, tokens.len())).unwrap()).unwrap(),
-            "style" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(style).into_shape_with_order((1, 256)).unwrap()).unwrap(),
-            "speed" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(vec![speed])).unwrap(),
+            "tokens" => t_tokens,
+            "style" => t_style,
+            "speed" => t_speed,
         ];
 
         log::info!("[TTS] Running ORT inference...");
-        let mut session = session.lock().unwrap();
+        let mut session = session.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
         let outputs = session
             .run(input_values)
             .map_err(|e| format!("ORT Run error: {}", e))?;
@@ -160,7 +191,6 @@ pub fn tts_synthesize(request: SynthesizeRequest) -> Result<SynthesizeResponse, 
         })
     })();
 
-    TTS_BUSY.store(false, Ordering::SeqCst);
     result
 }
 
@@ -168,9 +198,7 @@ pub fn tts_synthesize(request: SynthesizeRequest) -> Result<SynthesizeResponse, 
 /// Direct translation of `/tts/synthesize-multi` endpoint.
 #[tauri::command]
 pub fn tts_synthesize_multi(request: MultiSynthRequest) -> Result<SynthesizeResponse, String> {
-    if TTS_BUSY.swap(true, Ordering::SeqCst) {
-        return Err("TTS engine is busy".to_string());
-    }
+    let _guard = TtsLockGuard::try_acquire()?;
 
     let result = (|| {
         let (_model, _voices) = kokoro::ensure_loaded()?;
@@ -181,25 +209,41 @@ pub fn tts_synthesize_multi(request: MultiSynthRequest) -> Result<SynthesizeResp
 
         for seg in &request.segments {
             let _voice = map.get(seg.lang.as_str()).copied().unwrap_or("af_heart");
-            let text = preprocess_text(&seg.text, &seg.lang);
+            let (text, effective_lang) = preprocess_text(&seg.text, &seg.lang);
 
             // Phonemize per-segment
-            let tokens = phonemizer::text_to_tokens(&text, &seg.lang).unwrap_or_else(|e| {
-                log::warn!("Phonemization failed for segment: {}", e);
-                vec![0; text.len().max(1)]
+            let tokens = phonemizer::text_to_tokens(&text, &effective_lang).unwrap_or_else(|e| {
+                log::warn!("Phonemization failed for segment, using safe fallback: {}", e);
+                vec![0; text.len().min(50).max(10)]
             });
             let style = kokoro::get_voice_style(_voice, tokens.len()).unwrap_or_else(|e| {
                 log::warn!("[TTS-multi] Voice style failed ({}), using zeros", e);
                 vec![0.0f32; 256]
             });
 
+            let t_tokens = ort::value::Tensor::from_array(
+                ndarray::Array1::from_vec(tokens.clone())
+                    .into_shape_with_order((1, tokens.len()))
+                    .map_err(|e| format!("Tokens shape err: {}", e))?
+            ).map_err(|e| format!("Tokens tensor err: {}", e))?;
+
+            let t_style = ort::value::Tensor::from_array(
+                ndarray::Array1::from_vec(style)
+                    .into_shape_with_order((1, 256))
+                    .map_err(|e| format!("Style shape err: {}", e))?
+            ).map_err(|e| format!("Style tensor err: {}", e))?;
+
+            let t_speed = ort::value::Tensor::from_array(
+                ndarray::Array1::from_vec(vec![request.speed])
+            ).map_err(|e| format!("Speed tensor err: {}", e))?;
+
             let input_values = ort::inputs![
-                "tokens" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(tokens.clone()).into_shape_with_order((1, tokens.len())).unwrap()).unwrap(),
-                "style" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(style).into_shape_with_order((1, 256)).unwrap()).unwrap(),
-                "speed" => ort::value::Tensor::from_array(ndarray::Array1::from_vec(vec![request.speed])).unwrap(),
+                "tokens" => t_tokens,
+                "style" => t_style,
+                "speed" => t_speed,
             ];
 
-            let mut session_lock = session.lock().unwrap();
+            let mut session_lock = session.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
             let outputs = session_lock
                 .run(input_values)
                 .map_err(|e| format!("ORT Run error: {}", e))?;
@@ -222,25 +266,53 @@ pub fn tts_synthesize_multi(request: MultiSynthRequest) -> Result<SynthesizeResp
         })
     })();
 
-    TTS_BUSY.store(false, Ordering::SeqCst);
     result
 }
 
-/// Preprocess text for TTS — handles Japanese romaji conversion.
-/// Direct translation of `_to_romaji()` and `_preprocess()` from tts.py.
-fn preprocess_text(text: &str, lang: &str) -> String {
+/// Preprocess text for TTS — handles script conversion so espeak-ng always
+/// receives Latin-readable text for unsupported languages.
+///
+/// Returns (processed_text, effective_lang).
+pub fn preprocess_text(text: &str, lang: &str) -> (String, String) {
     let mut processed = if lang == "ja" {
         katakana_to_romaji(text)
     } else {
         text.to_string()
     };
 
-    // Trim to max 1000 chars per segment (Kokoro limit)
-    if processed.len() > 1000 {
-        processed.truncate(1000);
+    let effective_lang = lang.to_string();
+
+    // Only romanize languages that espeak-ng completely chokes on.
+    // Native voices (zh, ar, hi, ru, ko, th) handle raw utf-8 perfectly!
+    // But unsupported languages (ku, ps, yo, ig) cause espeak to literally
+    // spell out raw unicode character names "Arabic letter Seen, etc".
+    if needs_romanization(lang) && !processed.is_empty() {
+        let romanized = any_ascii::any_ascii(&processed);
+        if !romanized.trim().is_empty() {
+            log::info!(
+                "[TTS preprocess] Transliterated unsupported script (lang={}): '{}' → '{}'",
+                lang, processed.chars().take(40).collect::<String>(), romanized.chars().take(60).collect::<String>()
+            );
+            processed = romanized;
+        }
     }
 
-    processed
+    // Trim to max 1000 chars per segment safely (Kokoro limit)
+    if processed.chars().count() > 1000 {
+        processed = processed.chars().take(1000).collect();
+    }
+
+    (processed, effective_lang)
+}
+
+/// Languages lacking espeak-ng profiles that will crash into letter-spelling.
+fn needs_romanization(lang: &str) -> bool {
+    matches!(lang,
+        "ja" |                         // Japanese (Kanji/Hiragana bypasses katakana_to_romaji and crashes espeak-ng)
+        "tl" | "jw" |                  // SEA fallbacks (no native espeak voice, mapped to en-us)
+        "ig" | "yo" | "zu" | "xh" |    // African fallbacks (no native espeak voice, mapped to en-us)
+        "mg"                           // Malagasy fallback
+    )
 }
 
 /// Convert katakana to romaji for Kokoro TTS.

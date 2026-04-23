@@ -220,11 +220,102 @@ def layer3_and_4_live_diagnostics():
     if not any_live:
         print("\n    ... All services safely sleeping. (Layer 4 Probes skipped).")
 
+def layer5_neural_diagnostics():
+    import subprocess
+    print("\n  [Layer 5] Neural Pipeline Subsystems (Native Rust TTS Sweep)")
+    print("  ─────────────────────────────────────────────────────────")
+    
+    # Locate src-tauri bin directory
+    tauri_dir = REPO_ROOT / "viewer" / "src-tauri"
+    if not tauri_dir.exists():
+        print("    [!] Cannot locate src-tauri. Skipping Layer 5.")
+        return
+
+    print("    [>] Booting native panic-catch boundary: 'cargo run --bin halt_neural_scan' ...\n")
+    try:
+        # Execute the cargo binary natively mapping stdout
+        process = subprocess.Popen(
+            ["cargo", "run", "--bin", "halt_neural_scan", "--release"],
+            cwd=str(tauri_dir),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            encoding="utf-8",
+            errors="replace"
+        )
+        
+        for line in process.stdout:
+            # Clean up the cargo build output noise
+            clean_line = line.strip()
+            if not clean_line or clean_line.startswith("Compiling") or clean_line.startswith("Finished") or clean_line.startswith("Running"):
+                continue
+            print(f"    {clean_line}")
+            
+        process.wait()
+        if process.returncode != 0:
+            print(f"\n    [!] Native binary exited with code {process.returncode}")
+        else:
+            print("\n    ✓ Native Neural Sweep Completed successfully.")
+
+    except Exception as e:
+        print(f"    [!] Failed to invoke cargo: {e}")
+
+def layer6_topical_profiler():
+    import subprocess, time, sys
+    print("\n  [Layer 6] Topical Layer Profiler (GUI Tracing)")
+    print("  ─────────────────────────────────────────────────────────")
+    print("  [>] Injecting RUST_BACKTRACE=full & RUST_LOG=trace...")
+    print("  [>] Booting GUI application natively...")
+    print("  [!] INSTRUCTION: Provide the input that causes the complete crash.")
+    print("  [!] The profiler is now capturing all output to 'dev/topical_crash_dump.log'...")
+    
+    viewer_dir = REPO_ROOT / "viewer"
+    env = os.environ.copy()
+    env["RUST_BACKTRACE"] = "full"
+    env["RUST_LOG"] = "info,halt_triage=trace,halt_whisper=trace"
+    
+    # We use shell=True on Windows to correctly parse the npm command
+    shell_flag = sys.platform == "win32"
+    
+    try:
+        with open(SCRIPT_DIR / "topical_crash_dump.log", "w", encoding="utf-8") as dump:
+            process = subprocess.Popen(
+                ["npm", "run", "tauri", "dev"],
+                cwd=str(viewer_dir),
+                env=env,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                shell=shell_flag
+            )
+            
+            for line in process.stdout:
+                sys.stdout.write(line)
+                dump.write(line)
+                dump.flush()
+                # Highlight panics heavily
+                if "thread" in line and "panicked at" in line:
+                    print("\n  [!!!] CRITICAL PANIC CAUGHT ON STREAM [!!!]")
+                    
+            process.wait()
+            print(f"\n  [>] Profiler session ended. Exit code: {process.returncode}")
+            print("  [>] Data has been secured in dev/topical_crash_dump.log")
+            
+    except Exception as e:
+        print(f"  [!] Profiler failed to attach: {e}")
+
 if __name__ == "__main__":
     banner()
-    layer1_codebase_sweep()
-    layer2_strict_constraint_mold()
-    layer3_and_4_live_diagnostics()
-    print()
-    print("  [Brain Scan Complete]")
-    print()
+    import sys
+    if "--profiler" in sys.argv:
+        layer6_topical_profiler()
+    else:
+        layer1_codebase_sweep()
+        layer2_strict_constraint_mold()
+        layer3_and_4_live_diagnostics()
+        layer5_neural_diagnostics()
+        print()
+        print("  [Brain Scan Complete]")
+        print()

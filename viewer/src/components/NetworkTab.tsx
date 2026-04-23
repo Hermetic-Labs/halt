@@ -5,6 +5,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import SiteMap from './SiteMap';
+import { getSharedAudioContext } from '../hooks/useTTS';
 
 import { useT } from '../services/i18n';
 import { normalizeToEnglish } from '../services/i18nDynamic';
@@ -263,7 +264,7 @@ type NetworkMode = 'setup' | 'confirming' | 'leader' | 'client';
 
 const WS_BASE = isNative
     ? 'ws://127.0.0.1:7779'
-    : `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}`;
+    : `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.hostname}:7779`;
 const PING_INTERVAL = 5000;
 const POLL_INTERVAL = 3000;
 const RECONNECT_DELAY = 5000; // 5s between reconnect attempts
@@ -484,7 +485,7 @@ export default function NetworkTab() {
         }
         try {
             const memberPayload = { name: memberName, role: newMember.role, skills: selectedSkills };
-            await apiMutate('add_roster_member', '/roster', memberPayload, {
+            await apiMutate('add_roster_member', '/roster', { member: memberPayload }, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(memberPayload),
             });
@@ -501,7 +502,7 @@ export default function NetworkTab() {
 
     const removeMember = async (id: string) => {
         try {
-            await apiMutate('delete_roster_member', `/roster/${id}`, { id }, { method: 'DELETE' });
+            await apiMutate('delete_roster_member', `/roster/${id}`, { member_id: id, memberId: id }, { method: 'DELETE' });
             fetchRoster();
         } catch { /* offline */ }
     };
@@ -689,12 +690,26 @@ export default function NetworkTab() {
                         if (aOverlay.parentNode) dismissAOverlay();
                     });
                 } else if (msg.type === 'broadcast_audio') {
-                    // Server-synthesized TTS audio — play immediately on all devices
+                    // Server-synthesized TTS audio — play immediately via Web Audio API (bypasses Safari background constraints)
                     try {
-                        const audio = new Audio(`data:audio/wav;base64,${msg.audio_base64 || msg.audio_b64}`);
-                        audio.volume = 1.0;
-                        audio.play().catch(() => {});
-                    } catch { /* no audio support */ }
+                        const b64 = msg.audio_base64 || msg.audio_b64;
+                        if (!b64) return;
+                        const data = b64.includes(',') ? b64.split(',')[1] : b64;
+                        fetch(`data:audio/wav;base64,${data}`)
+                            .then(r => r.arrayBuffer())
+                            .then(async buf => {
+                                const ctx = getSharedAudioContext();
+                                const decoded = await ctx.decodeAudioData(buf);
+                                const src = ctx.createBufferSource();
+                                src.buffer = decoded;
+                                src.connect(ctx.destination);
+                                if (ctx.state === 'suspended') {
+                                    await ctx.resume().catch(() => {});
+                                }
+                                src.start();
+                            })
+                            .catch(() => {});
+                    } catch { /* */ }
                 } else if (msg.type === 'alert') {
                     const myName = localStorage.getItem('eve-mesh-name') || '';
                     const myMode = localStorage.getItem('eve-mesh-mode') || '';
@@ -707,7 +722,7 @@ export default function NetworkTab() {
                             audio.play().catch(() => { });
                         } catch { /* no audio */ }
                         const banner = document.createElement('div');
-                        banner.style.cssText = `position:fixed;top:60px;left:50%;transform:translateX(-50%);z-index:10000;background:${msg.priority === 'critical' ? '#e74c3c' : msg.priority === 'urgent' ? '#f0a500' : '#3fb950'};color:#000;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:600;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.4);animation:slideIn 0.4s ease;max-width:90%;`;
+                        banner.style.cssText = `position:fixed;top:calc(env(safe-area-inset-top, 60px) + 16px);left:50%;transform:translateX(-50%);z-index:10000;background:${msg.priority === 'critical' ? '#e74c3c' : msg.priority === 'urgent' ? '#f0a500' : '#3fb950'};color:#000;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:600;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.4);animation:slideIn 0.4s ease;max-width:90%;`;
                         banner.innerHTML = `<strong>ALERT${msg.sender_name ? ' from ' + msg.sender_name : ''}${msg.target_name ? ' → ' + msg.target_name : ''}</strong><br/>${msg.message}`;
                         document.body.appendChild(banner);
                         setTimeout(() => { banner.style.opacity = '0'; banner.style.transition = 'opacity 0.5s'; setTimeout(() => banner.remove(), 600); }, 6000);
@@ -943,7 +958,7 @@ export default function NetworkTab() {
         // Only clients register in the roster — the leader manages it, not in it
         if (!asLeader) {
             const selfPayload = { id: cid, name: userName, role: userRole, skills: [], status: 'online', assigned_task: '', notes: '' };
-            apiMutate('add_roster_member', '/roster', selfPayload, {
+            apiMutate('add_roster_member', '/roster', { member: selfPayload }, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(selfPayload),
@@ -982,11 +997,21 @@ export default function NetworkTab() {
         fetchRoster();
         // After a brief confirmation display, transition to final mode
         const timer = setTimeout(() => {
+            // If joining via QR, ensure we tell the backend roster we are now online
+            // This updates the 'pending' status set by the leader to 'online' and syncs our ID
+            if (pendingMode === 'client') {
+                const selfPayload = { id: clientId, name: userName, role: userRole, skills: [], status: 'online', assigned_task: '', notes: '' };
+                apiMutate('add_roster_member', '/roster', { member: selfPayload }, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(selfPayload),
+                }).catch(() => {});
+            }
             setMode(pendingMode);
             localStorage.setItem('eve-mesh-mode', pendingMode);
         }, 2000);
         return () => clearTimeout(timer);
-    }, [mode, pendingMode, connectWS, fetchClients, fetchRoster]);
+    }, [mode, pendingMode, connectWS, fetchClients, fetchRoster, clientId, userName, userRole]);
 
     const handleDisconnect = () => {
         disconnectWS();
@@ -1090,7 +1115,8 @@ export default function NetworkTab() {
 
     // ── Helpers ───────────────────────────────────────────────────────────────
 
-    const activeClients = clients.filter(c => c.online && !c.stale);
+    // Active clients are whatever the backend currently tracks as alive
+    const activeClients = clients;
 
     // Enrich roster with live WebSocket connection status
     const activeClientNames = new Set(activeClients.map(c => c.name.toLowerCase().trim()));

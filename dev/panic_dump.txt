@@ -1,0 +1,300 @@
+=== PANIC DETECTED ===
+panicked at src\commands\tts.rs:109:26:
+byte index 60 is not a char boundary; it is inside 'க' (bytes 59..62) of `இது வெறுப்பை நிறுத்துகிறது என்று நம்புகிறேன்.`
+=== PANIC DETECTED ===
+panicked at library\core\src\panicking.rs:225:5:
+panic in a function that cannot unwind
+=== PANIC DETECTED ===
+panicked at src\commands\tts.rs:109:26:
+byte index 60 is not a char boundary; it is inside 'ح' (bytes 59..61) of `آمل أن يساعد هذا الناس في جميع أنحاء العالم.`
+=== PANIC DETECTED ===
+panicked at library\core\src\panicking.rs:225:5:
+panic in a function that cannot unwind
+=== PANIC DETECTED ===
+panicked at src\commands\tts.rs:109:26:
+byte index 60 is not a char boundary; it is inside 'ح' (bytes 59..61) of `آمل أن يساعد هذا الناس في جميع أنحاء العالم.`
+=== PANIC DETECTED ===
+panicked at library\core\src\panicking.rs:225:5:
+panic in a function that cannot unwind
+=== PANIC DETECTED ===
+panicked at src\commands\tts.rs:109:26:
+byte index 60 is not a char boundary; it is inside 'ق' (bytes 59..61) of `لذلك لا أفهم كلمة واحدة من هذه القذارة، ولكنها تبدو جميلة.`
+=== PANIC DETECTED ===
+panicked at library\core\src\panicking.rs:225:5:
+panic in a function that cannot unwind
+=== PANIC DETECTED ===
+panicked at src\commands\tts.rs:109:26:
+byte index 60 is not a char boundary; it is inside 'ي' (bytes 59..61) of `"المجد الأكبر في الحياة لا يكمن في عدم السقوط أبداً، بل في الارتفاع في كل مرة نسقط فيها".`
+=== PANIC DETECTED ===
+panicked at library\core\src\panicking.rs:225:5:
+panic in a function that cannot unwind
+=== PANIC DETECTED ===
+panicked at src\commands\tts.rs:109:26:
+byte index 60 is not a char boundary; it is inside 'ي' (bytes 59..61) of `"المجد الأكبر في الحياة لا يكمن في عدم السقوط أبداً، بل في الارتفاع في كل مرة نسقط فيها".`
+=== PANIC DETECTED ===
+panicked at library\core\src\panicking.rs:225:5:
+panic in a function that cannot unwind
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at src\lib.rs:176:26:
+Failed to bind HTTP server: Os { code: 10048, kind: AddrInUse, message: "Only one usage of each socket address (protocol/network address/port) is normally permitted." }
+=== PANIC DETECTED ===
+panicked at src\lib.rs:176:26:
+Failed to bind HTTP server: Os { code: 10048, kind: AddrInUse, message: "Only one usage of each socket address (protocol/network address/port) is normally permitted." }
+=== PANIC DETECTED ===
+panicked at src\lib.rs:176:26:
+Failed to bind HTTP server: Os { code: 10048, kind: AddrInUse, message: "Only one usage of each socket address (protocol/network address/port) is normally permitted." }
+=== PANIC DETECTED ===
+panicked at src\commands\tts.rs:109:26:
+byte index 60 is not a char boundary; it is inside 'र' (bytes 59..62) of `अब तक यह स्थिति बरकरार रही है।`
+=== PANIC DETECTED ===
+panicked at library\core\src\panicking.rs:225:5:
+panic in a function that cannot unwind
+=== PANIC DETECTED ===
+panicked at src\commands\tts.rs:294:33:
+byte index 40 is not a char boundary; it is inside 'م' (bytes 39..41) of `زه له تاسو سره مینه لرم.`
+=== PANIC DETECTED ===
+panicked at library\core\src\panicking.rs:225:5:
+panic in a function that cannot unwind
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at C:\Users\Bless\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.51.1\src\runtime\blocking\shutdown.rs:51:21:
+Cannot drop a runtime in a context where blocking is not allowed. This happens when a runtime is dropped from within an asynchronous context.
+=== PANIC DETECTED ===
+panicked at src\http_server.rs:67:10:
+Path segments must not start with `:`. For capture groups, use `{capture}`. If you meant to literally match a segment starting with a colon, call `without_v07_checks` on the router.
+=== PANIC DETECTED ===
+panicked at src\http_server.rs:67:10:
+Path segments must not start with `:`. For capture groups, use `{capture}`. If you meant to literally match a segment starting with a colon, call `without_v07_checks` on the router.

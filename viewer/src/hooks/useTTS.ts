@@ -216,10 +216,8 @@ export function useTTS() {
                             if (!audioCtxRef.current) break;
                             if (res && res.audio_base64) {
                                 const b64 = res.audio_base64.split(',')[1];
-                                const bin = atob(b64);
-                                const buf = new Uint8Array(bin.length);
-                                for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
-                                await playChunk(buf.buffer);
+                                const buf = await fetch(`data:audio/wav;base64,${b64}`).then(r => r.arrayBuffer());
+                                await playChunk(buf);
                             }
                         } catch (e) {
                             console.error('[TTS native error]', e);

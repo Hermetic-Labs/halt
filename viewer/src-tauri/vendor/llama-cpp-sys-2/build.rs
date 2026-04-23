@@ -218,7 +218,7 @@ fn main() {
         .map(|v| v == "1")
         .unwrap_or(build_shared_libs);
     let profile = env::var("LLAMA_LIB_PROFILE").unwrap_or("Release".to_string());
-    let static_crt = env::var("LLAMA_STATIC_CRT")
+    let _static_crt = env::var("LLAMA_STATIC_CRT")
         .map(|v| v == "1")
         .unwrap_or(false);
 
@@ -641,13 +641,15 @@ fn main() {
         // https://github.com/rust-lang/cmake-rs/issues/240
         // For now explicitly reinject the optimization flags that a CMake Release build is expected to have on in this scenario.
         // This fixes CPU inference performance when part of a Rust debug build.
-        for flag in &["/O2", "/DNDEBUG", "/Ob2", "/GS-"] {
+        for flag in &["/O2", "/DNDEBUG", "/Ob2", "/GS"] {
             config.cflag(flag);
             config.cxxflag(flag);
         }
     }
 
-    config.static_crt(static_crt);
+    // CRT linkage is controlled exclusively by Rust's -C target-feature=crt-static.
+    // Do NOT call config.static_crt() here — it conflicts with Rust's linker expectations.
+    // config.static_crt(static_crt);
 
     if matches!(target_os, TargetOs::Android) {
         if cfg!(feature = "shared-stdcxx") && cfg!(feature = "static-stdcxx") {
@@ -848,7 +850,7 @@ fn main() {
 
         if matches!(target_os, TargetOs::Windows(WindowsVariant::Msvc)) {
             mtmd_build.flag("/std:c++17");
-            mtmd_build.flag("/GS-");
+            mtmd_build.flag("/GS");
         }
 
         // When static-stdcxx is enabled on Android, suppress the cc crate's automatic
@@ -1031,16 +1033,9 @@ fn main() {
     match target_os {
         TargetOs::Windows(WindowsVariant::Msvc) => {
             println!("cargo:rustc-link-lib=advapi32");
-            let crt_static = env::var("CARGO_CFG_TARGET_FEATURE")
-                .unwrap_or_default()
-                .contains("crt-static");
-            if cfg!(debug_assertions) {
-                if crt_static {
-                    println!("cargo:rustc-link-lib=libcmtd");
-                } else {
-                    println!("cargo:rustc-link-lib=dylib=msvcrtd");
-                }
-            }
+            // CRT linkage is handled by Rust — do NOT inject libcmtd or msvcrtd manually.
+            // The previous code here caused static/dynamic CRT splits that produced
+            // LNK2001 errors for __guard_dispatch_icall_fptr, __GSHandlerCheck_SEH, etc.
         }
         TargetOs::Linux => {
             println!("cargo:rustc-link-lib=dylib=stdc++");
@@ -1089,7 +1084,7 @@ fn main() {
             let dst = target_dir.join(filename);
             debug_log!("HARD LINK {} TO {}", asset.display(), dst.display());
             if !dst.exists() {
-                std::fs::hard_link(asset.clone(), dst).unwrap();
+                std::fs::copy(asset.clone(), dst).unwrap();
             }
 
             // Copy DLLs to examples as well
@@ -1097,7 +1092,7 @@ fn main() {
                 let dst = target_dir.join("examples").join(filename);
                 debug_log!("HARD LINK {} TO {}", asset.display(), dst.display());
                 if !dst.exists() {
-                    std::fs::hard_link(asset.clone(), dst).unwrap();
+                    std::fs::copy(asset.clone(), dst).unwrap();
                 }
             }
 
@@ -1105,7 +1100,7 @@ fn main() {
             let dst = target_dir.join("deps").join(filename);
             debug_log!("HARD LINK {} TO {}", asset.display(), dst.display());
             if !dst.exists() {
-                std::fs::hard_link(asset.clone(), dst).unwrap();
+                std::fs::copy(asset.clone(), dst).unwrap();
             }
         }
     }

@@ -122,7 +122,7 @@ export function useChat({ userName, userRole, lang, isLeader, callActive }: UseC
                 target_name: targetContact,
                 ...(replyTo ? { reply_to: replyTo } : {}),
             };
-            const entry = await apiMutate<ChatMsg>('send_chat', '/mesh/chat', chatPayload, {
+            const entry = await apiMutate<ChatMsg>('send_chat', '/mesh/chat', { msg: chatPayload }, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(chatPayload),

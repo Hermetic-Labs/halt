@@ -79,7 +79,7 @@ struct TranslateResponse {
 
 async fn health_handler() -> Json<serde_json::Value> {
     let ready = TRANSLATOR.get().is_some();
-    Json(serde_json::json!({"ready": ready, "service": "halt-nllb"}))
+    Json(serde_json::json!({"ready": ready, "service": "halt_nllb"}))
 }
 
 async fn translate_handler(Json(req): Json<TranslateRequest>) -> Json<serde_json::Value> {

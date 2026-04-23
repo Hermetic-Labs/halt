@@ -23,27 +23,27 @@ const LANGUAGES: { code: string; name: string }[] = [
     { code: 'fa', name: 'فارسی' },
     { code: 'fr', name: 'Français' },
     { code: 'hi', name: 'हिन्दी' },
+    { code: 'ha', name: 'Hausa' },
+    { code: 'he', name: 'עברית' },
+    { code: 'id', name: 'Bahasa Indonesia' },
+    { code: 'it', name: 'Italiano' },
     { code: 'ja', name: '日本語' },
     { code: 'ko', name: '한국어' },
+    { code: 'ku', name: 'Kurdî' },
+    { code: 'nl', name: 'Nederlands' },
+    { code: 'pl', name: 'Polski' },
+    { code: 'ps', name: 'پښتو' },
     { code: 'pt', name: 'Português' },
     { code: 'ru', name: 'Русский' },
+    { code: 'so', name: 'Soomaali' },
     { code: 'sw', name: 'Kiswahili' },
-    { code: 'zh', name: '中文' },
-    { code: 'he', name: 'עברית' },
-    { code: 'it', name: 'Italiano' },
-    { code: 'nl', name: 'Nederlands' },
+    { code: 'ta', name: 'தமிழ்' },
+    { code: 'th', name: 'ไทย' },
     { code: 'tr', name: 'Türkçe' },
     { code: 'uk', name: 'Українська' },
     { code: 'ur', name: 'اردو' },
     { code: 'vi', name: 'Tiếng Việt' },
-    { code: 'th', name: 'ไทย' },
-    { code: 'id', name: 'Bahasa Indonesia' },
-    { code: 'pl', name: 'Polski' },
-    { code: 'ta', name: 'தமிழ்' },
-    { code: 'so', name: 'Soomaali' },
-    { code: 'ha', name: 'Hausa' },
-    { code: 'ps', name: 'پښتو' },
-    { code: 'ku', name: 'Kurdî' },
+    { code: 'zh', name: '中文' },
 ];
 
 import { convertWebmToWav } from '../services/audioUtils';
@@ -65,6 +65,18 @@ let _msgId = 0;
 
 export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
     const { t, lang } = useT();
+    
+    // Natively resolves the selected language code into the medic's current UI language string
+    // e.g. If system is English, 'ar' -> "Arabic". If system is Chinese, 'ar' -> "阿拉伯语"
+    const getReadableName = useCallback((code: string) => {
+        try {
+            const locale = (lang && lang.trim()) ? lang : (navigator.language || 'en');
+            return new Intl.DisplayNames([locale], { type: 'language' }).of(code) || code.toUpperCase();
+        } catch {
+            return code.toUpperCase();
+        }
+    }, [lang]);
+
     const leftLang = LANGUAGES.find(l => l.code === lang?.split('-')[0])?.code || 'en';
     const [rightLang, setRightLang] = useState(leftLang === 'en' ? 'es' : 'en');
     const [activeSide, setActiveSide] = useState<'left' | 'right'>('left');
@@ -168,6 +180,13 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                         stream.getTracks().forEach(t => t.stop());
                         const blob = new Blob(chunks, { type: mimeType || 'audio/webm' });
                         
+                        // Check empty/corrupt chunks
+                        if (blob.size < 100) {
+                            console.warn(`[Manual STT] Chunk too small (${blob.size} bytes). Dropping to avoid decoder crash.`);
+                            setSttBusy(false);
+                            return;
+                        }
+                        
                         // Visual feedback handled automatically by 'sttBusy' pulsing waveform
                         try {
                             setSttBusy(false);
@@ -227,11 +246,24 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
         setTextBusy(true);
         try {
             const d = await translateText(text, sourceLang, targetLang);
+            console.log('[Manual Translate] 📥 NLLB Payload Received via JS Bridge:', JSON.stringify(d));
+            
+            // Fallback mapping in case of interface mismatch
+            let resolvedText = d.translated;
+            if (!resolvedText || resolvedText.trim() === '') {
+                console.warn('[Manual Translate] ⚠️ WARNING: Payload missing .translated parameter. Attempting extraction...', d);
+                // @ts-expect-error - Handle possible API shape mismatches structurally
+                resolvedText = d.translation || d.text || JSON.stringify(d);
+            }
+
             const newMsg: ChatMessage = {
                 id: ++_msgId, side: activeSide,
-                text: d.translated, lang: targetLang,
+                text: resolvedText, lang: targetLang,
                 originalText: text, timestamp: Date.now(),
             };
+            
+            console.log('[Manual Translate] 🚀 Mount ChatMessage:', JSON.stringify(newMsg));
+            
             setChatMessages(prev => [...prev, newMsg]);
             setTextInput('');
             if (autoPlayRef.current) handleReplay(newMsg);
@@ -452,18 +484,7 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                                     direction: ['ar', 'he', 'fa', 'ur', 'ps'].includes(msg.lang) ? 'rtl' : 'ltr',
                                 }}>
                                     {msg.text}
-                                    {msg.originalText && (
-                                        <div style={{
-                                            marginTop: 6, paddingTop: 6,
-                                            borderTop: `1px solid ${isLeft ? 'rgba(88,166,255,0.12)' : 'rgba(63,185,80,0.12)'}`,
-                                            fontSize: 12, color: '#6e7681', fontStyle: 'italic',
-                                            direction: ['ar', 'he', 'fa', 'ur', 'ps'].includes(
-                                                isLeft ? rightLang : leftLang
-                                            ) ? 'rtl' : 'ltr',
-                                        }}>
-                                            {msg.originalText}
-                                        </div>
-                                    )}
+                                    {/* Line segment and original text stripped natively */}
                                 </div>
                                 <button
                                     onClick={() => handleReplay(msg)}
@@ -551,15 +572,7 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                             transition: 'all 0.3s',
                         }}>
                             {seg.translation || '...'}
-                            {seg.transcript && (
-                                <div style={{
-                                    marginTop: 6, paddingTop: 6,
-                                    borderTop: '1px solid rgba(210,168,60,0.15)',
-                                    fontSize: 12, color: '#6e7681', fontStyle: 'italic',
-                                }}>
-                                    {seg.transcript}
-                                </div>
-                            )}
+                            {/* Live segment divider and original text stripped natively */}
                         </div>
                     </div>
                 ))}
@@ -716,6 +729,9 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                         >
                             {langName(leftLang)} (System)
                         </div>
+                        <div style={{ fontSize: 10, color: '#8b949e', textAlign: 'center', opacity: 0.8, marginTop: 2 }}>
+                            {getReadableName(leftLang)}
+                        </div>
                     </div>
 
                     {/* Direction arrow */}
@@ -768,6 +784,9 @@ export default function TranslatorPanel({ onClose }: { onClose: () => void }) {
                                 <option key={l.code} value={l.code}>{l.name}</option>
                             ))}
                         </select>
+                        <div style={{ fontSize: 10, color: '#8b949e', textAlign: 'center', opacity: 0.8, marginTop: 2 }}>
+                            {getReadableName(rightLang)}
+                        </div>
                     </div>
                 </div>
 

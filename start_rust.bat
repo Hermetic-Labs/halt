@@ -117,6 +117,9 @@ if not exist "%VISION_BIN%" (
 
 :: -- Launch ML sidecars in visible windows --------------------
 echo.
+echo    Spawning Whisper STT (Port 7780)...
+start "HALT-WHISPER [7780]" cmd /k "set HALT_MODELS_DIR=%HALT_MODELS_DIR%& %WHISPER_BIN%"
+
 echo    Spawning NLLB Tracker CLI (Port 7781)...
 start "HALT-NLLB [7781]" cmd /k "set HALT_MODELS_DIR=%HALT_MODELS_DIR%& %NLLB_BIN%"
 

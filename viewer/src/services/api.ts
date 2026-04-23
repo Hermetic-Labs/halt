@@ -76,7 +76,7 @@ export async function nativeCall<T>(command: string, args?: Record<string, unkno
  * HTTP fetch against the Python backend (existing behavior).
  */
 async function httpCall<T>(path: string, options?: RequestInit): Promise<T> {
-  const res = await fetch(`${BASE}${path}`, {
+  const res = await fetch(resolveUrl(`${BASE}${path}`), {
     headers: { 'Content-Type': 'application/json' },
     ...options,
   });
@@ -257,4 +257,44 @@ export async function sttListen(formData: FormData): Promise<{ text: string; lan
   const res = await fetch(resolveUrl('/stt/listen'), { method: 'POST', body: formData });
   if (!res.ok) throw new Error(`STT failed: ${res.status}`);
   return res.json();
+}
+
+/** Neural Sweep Diagnostic Interface mapped to backend `models::diagnostics` */
+export interface SweepResult {
+  target: string;
+  bcp47: string;
+  nllb_status: boolean;
+  nllb_output: string;
+  nllb_char_count: number;
+  translation_error?: string;
+  expected_char_count: number;
+  mapping_match: boolean;
+  phonemizer_status: boolean;
+  phonemizer_ipa?: string;
+  phonemizer_compiled_ipa?: string;
+  phonemizer_tokens: number;
+  phonemizer_error?: string;
+  tts_status: boolean;
+  audio_length: number;
+  tts_error?: string;
+}
+
+export async function runNeuralSweep(): Promise<SweepResult[]> {
+  if (isNative) {
+    const r = await nativeCall<SweepResult[]>('run_neural_sweep');
+    if (r) return r;
+  }
+  
+  const res = await fetch(resolveUrl('/api/diagnostics/neural_sweep'));
+  if (!res.ok) throw new Error(`neural sweep failed: ${res.status}`);
+  return res.json();
+}
+
+export async function runLanguageProbe(text: string, ui_code: string): Promise<SweepResult> {
+  if (isNative) {
+    const tauri = await import('@tauri-apps/api/core');
+    return tauri.invoke<SweepResult>('run_language_probe', { text, uiCode: ui_code });
+  }
+  
+  throw new Error("HTTP fallback not wired for language probe bypass sandbox");
 }

@@ -81,22 +81,36 @@ pub fn send_chat(mut msg: ChatMessage) -> Result<ChatMessage, String> {
         msg.timestamp = chrono::Local::now().to_rfc3339();
     }
 
-    // Fan-out translations (background — non-blocking)
+    // Spawn background fan-out translations so we don't block the HTTP/Tauri thread
     if !msg.message.is_empty() {
-        let source_lang = detect_language_hint(&msg.message);
-        let lang_map = nllb::lang_map();
-        let mut translations = serde_json::Map::new();
+        let msg_clone = msg.clone();
+        std::thread::spawn(move || {
+            let source_lang = detect_language_hint(&msg_clone.message);
+            let lang_map = nllb::lang_map();
+            let mut translations = serde_json::Map::new();
 
-        for lang in lang_map.keys() {
-            if *lang != source_lang {
-                if let Ok(translated) = nllb::translate(&msg.message, source_lang, lang) {
-                    if translated != msg.message {
-                        translations.insert(lang.to_string(), Value::String(translated));
+            for lang in lang_map.keys() {
+                if *lang != source_lang {
+                    if let Ok(translated) = nllb::translate(&msg_clone.message, source_lang, lang) {
+                        if translated != msg_clone.message {
+                            translations.insert(lang.to_string(), Value::String(translated));
+                        }
                     }
                 }
             }
-        }
-        msg.translations = translations;
+            
+            // Only update database if we actually translated anything
+            if !translations.is_empty() {
+                let mut messages = load_chat();
+                if let Some(existing) = messages.iter_mut().find(|m| m.get("id").and_then(|v| v.as_str()) == Some(&msg_clone.id)) {
+                    if let Some(obj) = existing.as_object_mut() {
+                        obj.insert("translations".to_string(), Value::Object(translations));
+                    }
+                }
+                let _ = save_chat(&messages);
+                // Note: We don't broadcast the translations update right now, clients will get it on next fetch.
+            }
+        });
     }
 
     let mut messages = load_chat();

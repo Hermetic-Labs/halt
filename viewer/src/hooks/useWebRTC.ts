@@ -4,7 +4,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { RosterMember, CallType } from '../types/comms';
 // Removed unused api imports
-import { useTranslateLive } from './useTranslateLive';
+// Removed legacy useTranslateLive
 
 const RTC_CONFIG: RTCConfiguration = {
     iceServers: [{ urls: 'stun:stun.l.google.com:19302' }],
@@ -26,6 +26,8 @@ export function useWebRTC(userName: string, userRole: string) {
     const remoteAudioRef = useRef<HTMLAudioElement | null>(null);
     const remoteVideoRef = useRef<HTMLVideoElement | null>(null);
     const pendingIceCandidatesRef = useRef<RTCIceCandidateInit[]>([]);
+    const dataChannelRef = useRef<RTCDataChannel | null>(null);
+    const [incomingPayload, setIncomingPayload] = useState<{text: string, lang: string, timestamp: number} | null>(null);
 
     // Refs to avoid stale closures in the signal listener
     const callTypeRef = useRef<CallType>('voice');
@@ -56,6 +58,24 @@ export function useWebRTC(userName: string, userRole: string) {
         peerConnectionRef.current = pc;
         pendingIceCandidatesRef.current = [];
 
+        // Symmetrical DataChannel (negotiated: true avoids the need for ondatachannel logic)
+        try {
+            const dc = pc.createDataChannel('translate_channel', { negotiated: true, id: 0 });
+            dc.onmessage = (e) => {
+                try {
+                    const payload = JSON.parse(e.data);
+                    if (payload.type === 'translation') {
+                        setIncomingPayload({ text: payload.text, lang: payload.lang, timestamp: Date.now() });
+                    }
+                } catch (err) {
+                    console.error('[WebRTC] DataChannel parse error', err);
+                }
+            };
+            dataChannelRef.current = dc;
+        } catch (err) {
+            console.error('[WebRTC] Failed to create DataChannel', err);
+        }
+
         pc.onicecandidate = (e) => {
             if (e.candidate) sendWebRTC('webrtc_ice', targetName, { candidate: e.candidate.toJSON() });
         };
@@ -64,6 +84,9 @@ export function useWebRTC(userName: string, userRole: string) {
             console.log('[WebRTC] ICE state:', pc.iceConnectionState);
             if (pc.iceConnectionState === 'failed' || pc.iceConnectionState === 'disconnected') {
                 console.warn('[WebRTC] Connection lost');
+                window.dispatchEvent(new CustomEvent('eve-call-signal', {
+                    detail: { type: 'call_end' }
+                }));
             }
         };
 
@@ -105,6 +128,10 @@ export function useWebRTC(userName: string, userRole: string) {
         if (peerConnectionRef.current) {
             peerConnectionRef.current.close();
             peerConnectionRef.current = null;
+        }
+        if (dataChannelRef.current) {
+            dataChannelRef.current.close();
+            dataChannelRef.current = null;
         }
         remoteStreamRef.current = null;
         pendingIceCandidatesRef.current = [];
@@ -178,6 +205,21 @@ export function useWebRTC(userName: string, userRole: string) {
         if (localStreamRef.current) {
             localStreamRef.current.getAudioTracks().forEach(t => { t.enabled = !t.enabled; });
             setCallMuted(m => !m);
+        }
+    }, []);
+
+    const setLocalMicMuted = useCallback((muted: boolean) => {
+        if (localStreamRef.current) {
+            localStreamRef.current.getAudioTracks().forEach(t => { t.enabled = !muted; });
+            setCallMuted(muted);
+        }
+    }, []);
+
+    const sendTranslationPayload = useCallback((text: string, lang: string) => {
+        if (dataChannelRef.current?.readyState === 'open') {
+            dataChannelRef.current.send(JSON.stringify({ type: 'translation', text, lang }));
+        } else {
+            console.warn('[WebRTC] DataChannel not open, cannot send translation');
         }
     }, []);
 
@@ -365,93 +407,18 @@ export function useWebRTC(userName: string, userRole: string) {
     // Keep ref in sync so ontrack (in createPeerConnection) can call it
     useEffect(() => { setupAudioAnalyserRef.current = setupAudioAnalyser; }, [setupAudioAnalyser]);
 
-    // ── Live Call Transcription (via useTranslateLive) ─────────────────────
 
-    const [transcribing, setTranscribing] = useState(false);
-    const [transcribeLang, setTranscribeLang] = useState('en');
-    
-    const live = useTranslateLive();
-
-    const startTranscription = useCallback((targetLang?: string) => {
-        const stream = remoteStreamRef.current;
-        if (!stream || stream.getAudioTracks().length === 0) {
-            console.warn('[Transcribe] No remote audio tracks available');
-            return;
-        }
-        const lang = targetLang || transcribeLang;
-        setTranscribing(true);
-
-        // Mute incoming peer audio so the local Kokoro TTS pipeline can speak cleanly
-        if (remoteAudioRef.current) remoteAudioRef.current.muted = true;
-        
-        live.start(lang, 'auto', stream);
-    }, [transcribeLang, live]);
-
-    const stopTranscription = useCallback(() => {
-        setTranscribing(false);
-        live.cancel();
-        
-        // Restore remote audio when translation overlay goes down
-        if (remoteAudioRef.current) remoteAudioRef.current.muted = false;
-        console.log('[Transcribe] Stopped');
-    }, [live]);
-
-    // Auto-cleanup when call ends
-    useEffect(() => {
-        if (!callActive) return;
-        return () => {
-            // Stop transcription
-            live.cancel();
-            
-            // Stop audio analyser
-            if (levelIntervalRef.current) {
-                clearInterval(levelIntervalRef.current);
-                levelIntervalRef.current = null;
-            }
-            if (audioCtxRef.current) {
-                audioCtxRef.current.close().catch(() => { });
-                audioCtxRef.current = null;
-            }
-            analyserRef.current = null;
-            setRemoteAudioLevel(0);
-        };
-    }, [callActive, live]);
-
-    const activeSeg = live.segments.length > 0 ? live.segments[live.segments.length - 1] : null;
-    let newSubtitleText = '';
-    if (live.activeTranscript) {
-        newSubtitleText = live.activeTranscript;
-    } else if (activeSeg) {
-        // Translation overrides transcript if available
-        if (activeSeg.translation) newSubtitleText = activeSeg.translation;
-        else if (activeSeg.transcript) newSubtitleText = activeSeg.transcript;
-    }
-
-    // 10s Subtitle Fader queue (safe render derivation rule)
-    const [subtitleText, setSubtitleText] = useState('');
-    const [prevSubText, setPrevSubText] = useState('');
-
-    if (newSubtitleText !== prevSubText) {
-        setPrevSubText(newSubtitleText);
-        setSubtitleText(newSubtitleText);
-    }
-
-    useEffect(() => {
-        if (subtitleText) {
-            const tm = setTimeout(() => setSubtitleText(''), 10000); // 10s fade
-            return () => clearTimeout(tm);
-        }
-    }, [subtitleText]);
 
     return {
         callActive, callTarget, callType, callMuted, callDuration,
-        startCall, endCall, toggleMute,
+        startCall, endCall, toggleMute, setLocalMicMuted,
         videoRefCallback, remoteVideoRefCallback,
         fmtDuration,
         // Audio level
         remoteAudioLevel,
-        // Live transcription
-        subtitleText, transcribing, transcribeLang, setTranscribeLang,
-        startTranscription, stopTranscription,
+        // DataChannel (New Sender-Side)
+        incomingPayload, sendTranslationPayload,
+        // Expose remote audio ref to allow manual muting by CommsPanel
+        remoteAudioRef,
     };
 }

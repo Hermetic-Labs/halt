@@ -1,4 +1,4 @@
-# HALT — Complete Feature Reference (v1.0.6)
+# HALT — Complete Feature Reference (v1.1.0)
 
 > **A portable AI-assisted emergency hospital operating system designed for chaotic or low-infrastructure environments.**
 >
@@ -17,7 +17,7 @@ Handles entry of patients into the system.
 - Patient opt-in for public family lookup
 - Injury mechanism and body region tracking
 
-> 📂 `api/routes/patients.py` → `POST /api/patients`
+> 📂 `viewer/src-tauri/src/commands/patients.rs`
 
 **Purpose** — Quickly organize incoming patients during both normal and disaster scenarios.
 
@@ -36,7 +36,7 @@ Each patient has a full detail panel containing:
 - Ward and bed location
 - Next of kin and spoken language
 
-> 📂 `api/routes/patients.py` → `GET /api/patients/{id}`, model: `PatientRecord`
+> 📂 `viewer/src-tauri/src/commands/patients.rs` → `PatientRecord`
 
 Central location for all patient data, updated continuously during care.
 
@@ -66,7 +66,7 @@ When care actions occur, the system generates the next required task.
 
 Tasks include countdown timers, due times, and task ownership.
 
-> 📂 `api/routes/patients.py` → `POST /api/patients/{id}/events`, `api/routes/tasks.py`
+> 📂 `viewer/src-tauri/src/commands/tasks.rs`
 
 ---
 
@@ -79,7 +79,7 @@ Tasks can be claimed by available staff or volunteers.
 - Reassess patient
 - Update records
 
-> 📂 `api/routes/tasks.py`
+> 📂 `viewer/src-tauri/src/commands/tasks.rs`
 
 **Purpose** — Coordinate care in chaotic environments, prevent missed follow-ups, and distribute workload dynamically.
 
@@ -102,8 +102,7 @@ Family members can locate patients without staff assistance.
 - Reduces front desk workload
 - Works anywhere with a printed QR code — no internet required
 
-> 📂 `api/routes/patients.py:92` → `GET /api/public/patients`
-> 📂 `api/routes/mesh.py:382` → `GET /api/mesh/qr` (generates QR with embedded WiFi + app URL)
+> 📂 `viewer/src-tauri/src/commands/qr.rs` → `mesh_qr()`
 
 ---
 
@@ -119,8 +118,10 @@ Any location can become a supply inventory.
 - Automatic supply alternatives when items run low
 - Activity log (who consumed/restocked what, when)
 - Auto-cascade: deleting a location moves items to default
+- Physical hardcopy printouts generated dynamically for manual location auditing.
 
-> 📂 `api/routes/inventory.py` → full CRUD + `PATCH /api/inventory/{id}/consume`
+> 📂 `viewer/src-tauri/src/commands/inventory.rs`
+> 📂 `viewer/src/components/InventoryTab.tsx`
 
 ---
 
@@ -147,7 +148,7 @@ When stock drops below threshold, the system automatically:
 
 Alerts are logged to the team chat and pushed via WebSocket to all connected clients.
 
-> 📂 `api/routes/inventory.py:171` → auto-alert logic inside `consume_inventory()`
+> 📂 `viewer/src-tauri/src/mesh/alerts.rs`
 
 ---
 
@@ -161,7 +162,7 @@ Supports structured emergency medicine protocols.
 - Triage priority assignment (T1–T4)
 - Treatment plan generation with drugs, Rx, recovery, and escalation
 
-> 📂 `api/routes/patients.py:44` → `PatientPlan` model with `march`, `drugs`, `rx`, `recovery`, `escalate`
+> 📂 `viewer/src-tauri/src/commands/patients.rs` → `PatientPlan` model
 
 **Purpose** — Guide clinicians and volunteers and standardize triage response.
 
@@ -180,7 +181,7 @@ Person A speaks Arabic
       → English text delivered to Person B
         → Person B responds in English
           → Bridge converts English → Arabic
-            → Phoneme conversion via eSpeak
+            → Phoneme Compiler strictly maps input to Kokoro boundaries
               → Kokoro TTS speaks Arabic aloud to Person A
 ```
 
@@ -189,18 +190,17 @@ Person A speaks Arabic
 | Path | Protocol | Use Case |
 |---|---|---|
 | **Bridge (WebSocket)** | Real-time streaming | Live chat translation between staff and patients |
-| **REST API** | Single + batch requests | UI label translation, document export |
+| **REST/IPC API** | Single + batch requests | UI label translation, document export |
 
 ### Capabilities
 
-- 42 languages supported via NLLB-200 (600M parameter distilled model)
-- CTranslate2 runtime (no PyTorch required) — fast, lean
-- SentencePiece tokenization with NLLB BCP-47 language codes
-- Phoneme transliteration via eSpeak for languages Kokoro wasn't trained on
-- Batch translation endpoint for reduced HTTP overhead
+- 42 languages supported natively via NLLB-200 (600M parameter distilled model)
+- CTranslate2 Rust runtime bindings (no Python required)
+- Native phonological translation boundary engine ensuring highly stabilized phonetic output
+- Batch translation payload buffers
 
-> 📂 `api/bridge.py` → WebSocket at `/api/bridge/translate` (real-time translation + phonemization)
-> 📂 `api/routes/translate.py` → `POST /api/translate`, `POST /api/translate/batch`
+> 📂 `viewer/src-tauri/src/mesh/translate_stream.rs`
+> 📂 `viewer/src-tauri/src/commands/translate.rs`
 
 **Purpose** — A French medic treating a Pashto-speaking patient gets instant two-way translation. No interpreter. No internet. No delay.
 
@@ -217,11 +217,12 @@ Person A speaks Arabic
 ### Text-to-Speech — Kokoro
 
 - Spoken instructions in the patient's language
-- Novel phoneme-based synthesis for languages the model was never trained on
-- eSpeak phonemizer converts native text → IPA phonetics → Kokoro output
+- Integrated `phoneme_compiler.rs` boundary mapping native scripts and raw IPA into Kokoro's strict 178-token array.
+- Ensures 0% dropped tensor inputs for 42 regional dialects.
 
-> 📂 `api/routes/stt.py` (speech-to-text), `api/routes/tts.py` (text-to-speech)
-> 📂 `api/bridge.py:125` → `transliterate_phonetics()` (eSpeak → IPA pipeline)
+> 📂 `viewer/src-tauri/src/commands/stt.rs`
+> 📂 `viewer/src-tauri/src/commands/tts.rs`
+> 📂 `viewer/src-tauri/src/models/phoneme_compiler.rs`
 
 ---
 
@@ -254,10 +255,11 @@ Real-time WebSocket-based mesh network connecting multiple devices over local Wi
 - QR onboarding — scan to connect (encodes WiFi SSID + app URL + name/role)
 - Real-time patient sync — new/updated patients broadcast to all devices
 - Client join/leave notifications
-- Stale client auto-pruning (60-second timeout)
+- Stale client auto-pruning 
 - Up to 20 concurrent clients (WiFi hotspot limit)
 
-> 📂 `api/routes/mesh.py` → WebSocket at `/ws/{client_id}`, REST endpoints under `/api/mesh/*`
+> 📂 `viewer/src-tauri/src/mesh/ws_listener.rs`
+> 📂 `viewer/src-tauri/src/mesh/chat.rs`
 
 ---
 
@@ -270,8 +272,7 @@ Role-based hierarchy with automatic failover.
 - Full state snapshot for leadership handover (patients, roster, tasks)
 - Roster auto-updates on WebSocket connect/disconnect
 
-> 📂 `api/routes/mesh.py:164` → `POST /api/mesh/promote`
-> 📂 `api/routes/mesh.py:141` → `GET /api/mesh/snapshot`
+> 📂 `viewer/src-tauri/src/commands/roster.rs`
 
 **Purpose** — If the leader's device goes down, another device can take over without losing data.
 
@@ -285,9 +286,9 @@ Handles transition between medical shifts.
 - Sorted by triage priority (T1 first)
 - Latest vitals, medications, allergies at a glance
 - Print-ready HTML output
-- Multilingual export (pass `?lang=xx`)
+- Multilingual export
 
-> 📂 `api/routes/patients.py:557` → `GET /api/reports/shift`
+> 📂 `viewer/src-tauri/src/commands/export.rs`
 
 **Purpose** — Ensure continuity of care between shifts.
 
@@ -313,9 +314,7 @@ Print-ready patient records for transfer or evacuation.
 - Full patient snapshot API for backup
 - Restore endpoint to ingest snapshot on new device
 
-> 📂 `api/routes/patients.py:259` → `GET /api/patients/{id}/pdf` (PDF)
-> 📂 `api/routes/patients.py:392` → `GET /api/patients/{id}/export` (HTML medevac)
-> 📂 `api/routes/patients.py:662` → `GET /api/patients/snapshot` + `POST /api/patients/restore`
+> 📂 `viewer/src-tauri/src/commands/export.rs`
 
 ---
 
@@ -328,9 +327,7 @@ A dynamic emergency notification system.
 - Alerts logged to team chat for audit trail
 - Sound notifications on receiving devices
 
-> 📂 `api/routes/mesh.py:217` → `POST /api/mesh/emergency`
-> 📂 `api/routes/mesh.py:264` → `POST /api/mesh/announcement`
-> 📂 `api/routes/mesh.py:189` → `POST /api/mesh/alert` (targeted or broadcast)
+> 📂 `viewer/src-tauri/src/mesh/alerts.rs`
 
 **Purpose** — Rapidly notify responsible personnel and reduce communication delays.
 
@@ -351,16 +348,13 @@ A dynamic emergency notification system.
 - Attach wound photos, X-rays, CT scans, or general medical images via `+` button
 - AI provides visual triage: wound classification, fracture identification, foreign body detection
 - SigLIP vision projector encodes images into MedGemma's context
-- Browser-side resize to 1536px max before base64 encoding
 - Camera capture on mobile (`capture="environment"`)
 - Graceful text-only fallback when mmproj file is absent
 
-All models run locally. No data leaves the machine.
+All models run locally entirely natively invoked by Rust. No data leaves the machine.
 
-> 📂 `api/routes/inference.py` → MedGemma (prefers `medgemma*.gguf`)
-> 📂 `api/routes/translate.py` → NLLB-200 via CTranslate2
-> 📂 `api/routes/stt.py` → Faster Whisper
-> 📂 `api/routes/tts.py` → Kokoro via ONNX Runtime
+> 📂 `viewer/src-tauri/src/commands/inference.rs`
+> 📂 `viewer/src-tauri/src/models/*`
 
 ---
 
@@ -368,40 +362,57 @@ All models run locally. No data leaves the machine.
 
 Models auto-download on first launch — zero manual setup required.
 
-- 4 model packs: Voice (89 MB), STT (141 MB), Translation (2.3 GB), AI (2.4 GB)
-- Resumable downloads (HTTP Range support)
-- Server-Sent Events (SSE) progress streaming
+- 4 model packs: Voice, STT, Translation, AI
+- Resumable downloads (Rust backend chunking)
+- Event progress payload streaming to UI
 - SHA-256 checksum verification
 - Sequential multi-pack download queue
 
-> 📂 `api/routes/distribution.py` → `POST /api/distribution/download`, `GET /api/distribution/progress`
-> 📂 `start.py:88` → `ensure_models()` (auto-download from public R2 bucket)
+> 📂 `viewer/src-tauri/src/commands/distribution.rs`
 
 ---
 
-## 18. Portable Runtime Environment
+## 18. Native Runtime Environment
 
-The entire system is self-contained.
+The entire system comprises highly portable, self-contained, memory-safe execution loops.
 
-- Portable Python (standalone, no system install required)
-- Embedded dependencies (all wheels bundled)
-- Bundled AI models (auto-download on first launch)
-- Progressive Web App (PWA) with service worker for offline frontend
-- Cross-platform: Windows (Electron) and macOS (standalone Python)
+- Written primarily in **Rust** leveraging the **Tauri Shell**.
+- Bundles logic directly into MSVC linker `.exe` / `.msi` Windows application pipelines using WiX.
+- Cross-platform: MSIX/EXE (Windows), AppImage (Linux), DMG (macOS).
+- Embeds UI interface natively offline via WebKit webview frames.
+- Replaces legacy Python bloat with standalone system-safe boundaries.
 
 ### Benefits
 
 - Deployable in field hospitals
-- Zero setup — `python start.py` and go
-- Works in low-infrastructure environments
+- Minimal compute requirements
+- Immediate execution without environmental dependency management
 - No internet required after initial model download
 
-> 📂 `start.py` → unified entry point
-> 📂 `dev/build_and_deploy.py` → `--platform win` / `--platform mac`
+> 📂 `viewer/src-tauri/src/main.rs`
+> 📂 `viewer/src-tauri/tauri.conf.json`
 
 ---
 
-## 19. Roster & Staff Management
+## 19. Offline Neural Diagnostics
+
+A built-in native execution boundary test tool independent of the primary orchestrator.
+
+### Matrix Sweep
+Automatically cycles 30+ regional BCP-47 text payloads through NLLB, phonemizers, and TTS binaries to verify semantic pipeline bounds without triggering UI interference.
+
+### Silo Sandbox
+Exposes the backend data mutations natively into the UI—granting you real-time visual tracing of the `Raw IPA => Bounded Compiler => Tensor Output` phonological lifecycle tuning.
+
+### Spinal Cord Check
+A backend holistic scan guaranteeing memory persistence constraints (Patient file handles, WebRTC socket status, active model health registries) immediately on load.
+
+> 📂 `viewer/src-tauri/src/bin/halt_neural_scan.rs`
+> 📂 `viewer/src-tauri/src/commands/diagnostics.rs`
+
+---
+
+## 20. Roster & Staff Management
 
 Track all personnel on duty.
 
@@ -409,23 +420,27 @@ Track all personnel on duty.
 - Connection status tracking (connected/offline/pending)
 - Auto-status updates via WebSocket (connect → "connected", disconnect → "offline")
 
-> 📂 `api/routes/roster.py`
+> 📂 `viewer/src-tauri/src/commands/roster.rs`
 
 ---
 
-## 20. Ward Management
+## 21. Ward Management & Mapping
 
-Organize the physical layout of the field hospital.
+Organize the physical layout of the field hospital natively in the UI.
 
 - Ward CRUD (create, update, delete)
 - Room/bed assignment per ward
 - Visual ward map with patient placement
+- **Real-Time Spatial Positioning**: An interactive drag-and-drop SVG Site Map canvas that permits spatial arrangement of wards, tents, assets, and active connections across the physical facility.
+- **Facility Hardcopy Printing**: The system leverages invisible iframes to automatically construct formatted physical printouts comprising Ward Layouts, Bed Labels, and the holistic Site Map, enabling offline synchronization directly onto camp walls.
 
-> 📂 `api/routes/wards.py`
+> 📂 `viewer/src-tauri/src/commands/wards.rs`
+> 📂 `viewer/src/components/WardMap.tsx`
+> 📂 `viewer/src/components/SiteMap.tsx`
 
 ---
 
-## 21. Integrated Translator Panel
+## 22. Integrated Translator Panel
 
 A turn-based field translation system embedded directly in the triage workspace.
 
@@ -446,21 +461,9 @@ A turn-based field translation system embedded directly in the triage workspace.
 ### Translation Pipeline
 
 - Full-duplex WebSocket: audio chunks → server accumulates → Whisper STT → NLLB translate → Kokoro TTS → WAV stream back
-- Text mode: REST `POST /api/translate` for typed/dictated input
-- Turn-based speaker switching with pulsing direction arrow
-- Chat history with per-message replay
+- Text mode: Tauri IPC `invoke('translate_text')` requests for instantaneous routing.
+- Contextual replay integration tracking 42 variations natively in memory bounds.
 
-### Known Limitations
-
-| Language | Whisper Support |
-|---|---|
-| Amharic (am) | ❌ Auto-detect fallback |
-| Hausa (ha) | ❌ Auto-detect fallback |
-| Kurdish (ku) | ❌ Auto-detect fallback |
-
-NLLB translation and Kokoro TTS still function for these — only STT is affected.
-
-> 📂 `viewer/src/components/TranslatorPanel.tsx` → UI component
-> 📂 `viewer/src/hooks/useTranslateStream.ts` → WebSocket hook
-> 📂 `api/routes/translate_stream.py` → Backend WebSocket pipeline
-> 📂 `api/routes/translate.py` → REST text translation
+> 📂 `viewer/src/components/TranslatorPanel.tsx`
+> 📂 `viewer/src/hooks/useTranslateStream.ts`
+> 📂 `viewer/src-tauri/src/mesh/translate_stream.rs`

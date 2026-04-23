@@ -32,22 +32,64 @@ struct KokoroState {
     voice_data: HashMap<String, Vec<f32>>,
 }
 
-/// Voice mapping — direct translation of LANG_VOICE_MAP from tts.py.
-/// Maps language codes to Kokoro voice IDs.
+/// Voice mapping — maps language codes to closest Kokoro voice.
+/// Native voices: en=af_heart, es=ef_dora, fr=ff_siwis, ja=jf_alpha,
+/// zh=zf_xiaobei, hi=hf_alpha, it=if_sara, pt=pf_dora.
+/// All others mapped to their closest linguistic cousin.
 pub fn voice_map() -> HashMap<&'static str, &'static str> {
     let mut m = HashMap::new();
-    m.insert("en", "af_heart");
-    m.insert("es", "ef_dora");
-    m.insert("fr", "ff_siwis");
-    m.insert("ja", "jf_alpha");
-    m.insert("ko", "af_heart"); // fallback
-    m.insert("zh", "zf_xiaobei");
-    m.insert("hi", "hf_alpha");
-    m.insert("it", "if_sara");
-    m.insert("pt", "pf_dora");
-    m.insert("de", "af_heart"); // fallback
-    m.insert("ar", "af_heart"); // fallback
-    m.insert("ru", "af_heart"); // fallback
+    // ── Native voices (male where available) ──
+    m.insert("en", "am_adam");
+    m.insert("es", "em_alex");
+    m.insert("fr", "ff_siwis");       // No French male available
+    m.insert("ja", "jm_kumo");
+    m.insert("zh", "zm_yunjian");
+    m.insert("hi", "hm_omega");
+    m.insert("it", "im_nicola");
+    m.insert("pt", "pm_alex");
+    // ── CJK / Tonal → Chinese male ──
+    m.insert("ko", "zm_yunjian");
+    m.insert("th", "zm_yunjian");
+    m.insert("vi", "zm_yunjian");
+    m.insert("km", "zm_yunjian");
+    m.insert("my", "zm_yunjian");
+    // ── Arabic script / Middle Eastern → Hindi male (Indo-Iranian cousin) ──
+    m.insert("ar", "hm_omega");
+    m.insert("ur", "hm_omega");        // Urdu IS Hindi, just Arabic script
+    m.insert("fa", "hm_omega");        // Persian — Indo-Iranian
+    m.insert("ps", "hm_omega");        // Pashto — Indo-Iranian
+    m.insert("ku", "hm_omega");        // Kurdish — Indo-Iranian
+    m.insert("he", "hm_omega");        // Hebrew — Semitic, best available
+    // ── Indic languages → Hindi male ──
+    m.insert("bn", "hm_omega");        // Bengali
+    m.insert("mr", "hm_omega");        // Marathi
+    m.insert("ta", "hm_omega");        // Tamil
+    m.insert("te", "hm_omega");        // Telugu
+    // ── Romance cousins ──
+    m.insert("la", "im_nicola");       // Latin → Italian
+    m.insert("tl", "em_alex");         // Tagalog → Spanish (colonial)
+    // ── Germanic → British male ──
+    m.insert("de", "bm_george");
+    m.insert("nl", "bm_george");
+    // ── Slavic → British male (closest stress-timed European) ──
+    m.insert("ru", "bm_george");
+    m.insert("uk", "bm_george");
+    m.insert("pl", "bm_george");
+    // ── Turkic → Italian male (vowel harmony) ──
+    m.insert("tr", "im_nicola");
+    // ── African ──
+    m.insert("sw", "am_adam");         // Swahili → American male
+    m.insert("ha", "am_adam");         // Hausa
+    m.insert("ig", "am_adam");         // Igbo
+    m.insert("yo", "am_adam");         // Yoruba
+    m.insert("zu", "am_adam");         // Zulu
+    m.insert("xh", "am_adam");         // Xhosa
+    m.insert("am", "hm_omega");       // Amharic → Hindi male (Semitic cousin)
+    m.insert("so", "hm_omega");       // Somali → Hindi male (Afro-Asiatic)
+    m.insert("mg", "ff_siwis");       // Malagasy → French (Francophone)
+    // ── Indonesian/Malay → Spanish male (syllable-timed) ──
+    m.insert("id", "em_alex");
+    m.insert("jw", "em_alex");         // Javanese
     m
 }
 

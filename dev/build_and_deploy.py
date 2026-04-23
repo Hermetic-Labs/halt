@@ -358,6 +358,7 @@ def stage_macos(version):
         (REPO_ROOT / "models", stage_dir / "models"),
         (REPO_ROOT / "runtime", stage_dir / "runtime"),
         (REPO_ROOT / "assets", stage_dir / "assets"),
+        (REPO_ROOT / "viewer" / "src-tauri" / "icons", stage_dir / "icons"),
     ]
 
     for src, dst in copies:
@@ -383,6 +384,27 @@ def stage_macos(version):
         shutil.rmtree(p, ignore_errors=True)
     for p in stage_dir.rglob("*.pyc"):
         p.unlink(missing_ok=True)
+
+    # Generate comprehensive git metadata for Apple deployment
+    print("  [META]    Extracting build metadata from Git...")
+    try:
+        def get_git(cmd_arg):
+            return subprocess.check_output(["git"] + cmd_arg, cwd=str(REPO_ROOT)).decode("utf-8").strip()
+
+        meta = {
+            "version": version,
+            "commit": get_git(["rev-parse", "HEAD"]),
+            "branch": get_git(["rev-parse", "--abbrev-ref", "HEAD"]),
+            "author": get_git(["log", "-1", "--format=%an <%ae>"]),
+            "date": get_git(["log", "-1", "--format=%cd"]),
+            "platform": "macOS",
+            "arch": detect_mac_arch(),
+        }
+        meta_path = stage_dir / "build_metadata.json"
+        meta_path.write_text(json.dumps(meta, indent=2))
+        print("            Metadata written to build_metadata.json")
+    except Exception as e:
+        print(f"            [WARN] Could not extract git metadata: {e}")
 
     print(f"  [OK]      macOS bundle staged: {stage_dir}")
     return stage_dir

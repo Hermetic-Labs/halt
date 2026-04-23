@@ -30,7 +30,14 @@ fn has_ggml_model() -> bool {
 /// Spawn the halt-whisper subprocess if not already running.
 pub fn ensure_loaded() -> Result<PathBuf, String> {
     if WHISPER_READY.load(Ordering::SeqCst) {
-        return Ok(PathBuf::from("halt-whisper:7780"));
+        return Ok(PathBuf::from("halt_whisper:7780"));
+    }
+
+    // Check if an external whisper process is already running (e.g. spawned by start_rust.bat)
+    if check_health() {
+        log::info!("[whisper] External subprocess already running on port {}", WHISPER_PORT);
+        WHISPER_READY.store(true, Ordering::SeqCst);
+        return Ok(PathBuf::from("halt_whisper:7780"));
     }
 
     if !has_ggml_model() {
@@ -44,14 +51,14 @@ pub fn ensure_loaded() -> Result<PathBuf, String> {
         std::thread::sleep(std::time::Duration::from_millis(500));
         if check_health() {
             WHISPER_READY.store(true, Ordering::SeqCst);
-            return Ok(PathBuf::from("halt-whisper:7780"));
+            return Ok(PathBuf::from("halt_whisper:7780"));
         }
         if i % 10 == 0 {
             log::info!("[whisper] Waiting for halt-whisper subprocess... ({}s)", i / 2);
         }
     }
 
-    Err("halt-whisper subprocess did not become ready within 30s".to_string())
+    Err("halt_whisper subprocess did not become ready within 30s".to_string())
 }
 
 fn spawn_subprocess() -> Result<(), String> {
@@ -73,7 +80,7 @@ fn spawn_subprocess() -> Result<(), String> {
     // Find the halt-whisper binary next to the main executable
     let exe = std::env::current_exe().map_err(|e| e.to_string())?;
     let exe_dir = exe.parent().unwrap_or(std::path::Path::new("."));
-    let bin_name = if cfg!(windows) { "halt-whisper.exe" } else { "halt-whisper" };
+    let bin_name = if cfg!(windows) { "halt_whisper.exe" } else { "halt_whisper" };
 
     // Search: same dir as main exe, then release, then debug
     let candidates = [
@@ -83,7 +90,7 @@ fn spawn_subprocess() -> Result<(), String> {
     ];
     let whisper_exe = candidates.iter().find(|p| p.exists())
         .ok_or_else(|| format!(
-            "halt-whisper binary not found. Build with: cargo build --bin halt-whisper --release --features whisper_stt"
+            "halt_whisper binary not found. Build with: cargo build --bin halt-whisper --release --features whisper_stt"
         ))?.clone();
 
     log::info!("[whisper] Spawning subprocess: {}", whisper_exe.display());

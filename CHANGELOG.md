@@ -4,6 +4,15 @@ All notable changes to HALT will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.1.1] — 2026-04-23
+
+### Stabilized
+- **Mesh Connectivity**: Enforced deterministic routing for mobile fallbacks to ensure external network clients target port 7779 seamlessly.
+- **Roster & QR Onboarding**: Eradicated "Volunteer" race conditions and payload formatting mismatches, ensuring instant, green-dot UI synchronization globally across the mesh upon QR scan.
+- **Cross-Platform Audio**: Refactored Mesh Announcement audio pipelines leveraging the Web Audio API (`AudioContext`), bypassing iOS Safari background execution restrictions for 100% alert delivery.
+- **WebRTC Collisions**: Consolidated the `useWebRTC` execution bounds into a root application singleton, preventing simultaneous dual-negotiation races during mobile call-acceptance.
+- **Mobile UI Constraints**: Upgraded active call overlays and alert banners with `env(safe-area-inset)` dynamic margins to prevent OS-level notch and home-indicator occlusion.
+
 ## [1.1.0] — 2026-04-15
 
 ### Single Binary Architecture — Python Sidecar Eliminated 🦀
