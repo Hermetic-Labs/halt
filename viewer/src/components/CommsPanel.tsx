@@ -11,8 +11,9 @@ import ThreadList from './comms/ThreadList';
 import { apiMutate, ttsSynthesize } from '../services/api';
 import { useTranslateLiveCall } from '../hooks/useTranslateLiveCall';
 import { getSharedAudioContext } from '../hooks/useTTS';
+import { useWebRTC } from '../hooks/useWebRTC';
 
-export default function CommsPanel({ webRTC }: { webRTC: any }) {
+export default function CommsPanel({ webRTC }: { webRTC: ReturnType<typeof useWebRTC> }) {
     const { t, lang } = useT();
     const userName = localStorage.getItem('eve-mesh-name') || 'Unknown';
     const userRole = localStorage.getItem('eve-mesh-role') || 'responder';
