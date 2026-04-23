@@ -46,12 +46,8 @@ jobs:
           python3 -c "import base64, os, re; \
             cert = os.environ['BUILD_CERTIFICATE_BASE64']; \
             pp = os.environ['BUILD_PROVISION_PROFILE_BASE64']; \
-            print(f'Original cert length: {len(cert)}'); \
-            print(f'Original pp length: {len(pp)}'); \
             cert = re.sub(r'-----.*?-----|\s+', '', cert); \
             pp = re.sub(r'-----.*?-----|\s+', '', pp); \
-            print(f'Cleaned cert length: {len(cert)}'); \
-            print(f'Cleaned pp length: {len(pp)}'); \
             cert += '=' * ((4 - len(cert) % 4) % 4); \
             pp += '=' * ((4 - len(pp) % 4) % 4); \
             open('$CERTIFICATE_PATH', 'wb').write(base64.b64decode(cert)); \
