@@ -43,26 +43,30 @@ jobs:
           PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
           KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
 
-          python3 -c "import base64, os, re, sys; \
-            print('\n[LOG] Starting Certificate Decoding...'); \
-            cert = os.environ.get('BUILD_CERTIFICATE_BASE64', ''); \
-            pp = os.environ.get('BUILD_PROVISION_PROFILE_BASE64', ''); \
-            if not cert: \
-                print('[ERROR] IOS_P12_BASE64 secret is completely empty!'); \
-                sys.exit(1); \
-            print(f'[DEBUG] Raw cert length: {len(cert)}'); \
-            cert = re.sub(r'-----.*?-----|\s+', '', cert); \
-            pp = re.sub(r'-----.*?-----|\s+', '', pp); \
-            cert += '=' * ((4 - len(cert) % 4) % 4); \
-            pp += '=' * ((4 - len(pp) % 4) % 4); \
-            print(f'[DEBUG] Cleaned cert length: {len(cert)}'); \
-            try: \
-                open('$CERTIFICATE_PATH', 'wb').write(base64.b64decode(cert, validate=True)); \
-                open('$PP_PATH', 'wb').write(base64.b64decode(pp)); \
-                print('[DEBUG] Successfully decoded base64 to binary files.'); \
-            except Exception as e: \
-                print(f'[CRITICAL ERROR] Python Base64 Decoding Failed: {e}'); \
-                sys.exit(1)"
+          export CERTIFICATE_PATH
+          export PP_PATH
+          python3 - <<'EOF'
+import base64, os, re, sys
+print('\n[LOG] Starting Certificate Decoding...')
+cert = os.environ.get('BUILD_CERTIFICATE_BASE64', '')
+pp = os.environ.get('BUILD_PROVISION_PROFILE_BASE64', '')
+if not cert:
+    print('[ERROR] IOS_P12_BASE64 secret is completely empty!')
+    sys.exit(1)
+print(f'[DEBUG] Raw cert length: {len(cert)}')
+cert = re.sub(r'-----.*?-----|\s+', '', cert)
+pp = re.sub(r'-----.*?-----|\s+', '', pp)
+cert += '=' * ((4 - len(cert) % 4) % 4)
+pp += '=' * ((4 - len(pp) % 4) % 4)
+print(f'[DEBUG] Cleaned cert length: {len(cert)}')
+try:
+    open(os.environ['CERTIFICATE_PATH'], 'wb').write(base64.b64decode(cert, validate=True))
+    open(os.environ['PP_PATH'], 'wb').write(base64.b64decode(pp))
+    print('[DEBUG] Successfully decoded base64 to binary files.')
+except Exception as e:
+    print(f'[CRITICAL ERROR] Python Base64 Decoding Failed: {e}')
+    sys.exit(1)
+EOF
 
           echo "Creating temporary keychain..."
           security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
