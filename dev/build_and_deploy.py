@@ -921,21 +921,30 @@ def build_msix(version):
 
     # ── Locate the built Tauri executable ─────────────────────────────────
     c_drive_target = Path(os.path.expanduser("~/Halt-Tauri-Target"))
-    # Tauri names the exe from Cargo.toml [package].name, with hyphens → hyphens
-    tauri_exe = c_drive_target / "release" / "HALT.exe"
-    if not tauri_exe.exists():
-        tauri_exe = c_drive_target / "release" / "halt-triage.exe"
-    if not tauri_exe.exists():
+    default_target = REPO_ROOT / "viewer" / "src-tauri" / "target"
+    
+    tauri_exe = None
+    for target_dir in [c_drive_target, default_target]:
+        candidate = target_dir / "release" / "HALT.exe"
+        if candidate.exists():
+            tauri_exe = candidate
+            break
+        candidate = target_dir / "release" / "halt-triage.exe"
+        if candidate.exists():
+            tauri_exe = candidate
+            break
         # Also check for any .exe in the release dir that might be our binary
-        candidates = list((c_drive_target / "release").glob("halt*.exe"))
+        candidates = list((target_dir / "release").glob("halt*.exe"))
         if candidates:
             tauri_exe = candidates[0]
+            break
 
-    if not tauri_exe.exists():
-        print(f"  [ERROR]   HALT.exe not found at {c_drive_target / 'release'}")
+    if tauri_exe is None or not tauri_exe.exists():
+        print(f"  [ERROR]   HALT.exe not found in {c_drive_target} or {default_target}")
         print("            Run a Tauri build first: python build_and_deploy.py --no-bump")
         return None
     print(f"            EXE: {tauri_exe} ({tauri_exe.stat().st_size / (1024**2):.1f} MB)")
+    release_dir = tauri_exe.parent
 
     # ── Prepare MSIX staging directory ────────────────────────────────────
     msix_stage = BUILDS_DIR / "msix-stage"
@@ -948,12 +957,12 @@ def build_msix(version):
     shutil.copy2(tauri_exe, msix_stage / "HALT.exe")
 
     # Copy WebView2Loader if present (Tauri dependency)
-    wv2_loader = c_drive_target / "release" / "WebView2Loader.dll"
+    wv2_loader = release_dir / "WebView2Loader.dll"
     if wv2_loader.exists():
         shutil.copy2(wv2_loader, msix_stage / "WebView2Loader.dll")
 
     # Copy any additional DLLs from the release dir
-    for dll in (c_drive_target / "release").glob("*.dll"):
+    for dll in release_dir.glob("*.dll"):
         dest = msix_stage / dll.name
         if not dest.exists():
             shutil.copy2(dll, dest)
@@ -1275,9 +1284,13 @@ def main():
                         print("  ║   re-uploaded to R2                   ║")
                         print("  ╚═══════════════════════════════════════╝")
                     sys.exit(0 if success else 1)
-                print(f"  [ERROR]   No build folder found. Tried: {[str(c) for c in candidates]}")
-                sys.exit(1)
-            print(f"  [SKIP]    Using existing build: {source_dir}")
+                if not args.msix:
+                    print(f"  [ERROR]   No build folder found. Tried: {[str(c) for c in candidates]}")
+                    sys.exit(1)
+                else:
+                    print(f"  [WARN]    No build folder found for zip, but proceeding to MSIX packaging.")
+            else:
+                print(f"  [SKIP]    Using existing build: {source_dir}")
         else:
             source_dir = build_tauri(version)
             if source_dir is None:
@@ -1287,7 +1300,10 @@ def main():
                     sys.exit(1)
 
     # ── Zip ───────────────────────────────────────────────────────────────
-    zip_path = zip_distribution(source_dir, version, platform_name)
+    if source_dir is not None:
+        zip_path = zip_distribution(source_dir, version, platform_name)
+    else:
+        zip_path = None
 
     # ── Git Release ───────────────────────────────────────────────────────
     if args.release:
