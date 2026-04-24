@@ -162,6 +162,13 @@ git push origin v1.0.8
 
 > **Note:** The `windows-latest` cloud builders completely bypass local `os error 4551` constraints when packaging the `.msix` Windows App containers, compiling natively securely across MS + Mac architecture without relying on local machine dependencies.
 
+### 🛡️ Hermetic Builds
+
+HALT's CI/CD infrastructure strictly adheres to the principle of **Hermetic Builds**. This means our pipelines intentionally bypass unreliable third-party CDNs and pre-compiled external binaries. Instead, we compile deeply-integrated AI dependencies (like ONNX Runtime and `llama.cpp`) entirely from source using strictly defined local toolchains (like `llvm-ar`).
+
+* **What it means for the repo:** The CI/CD pipelines are 100% deterministic and self-contained. A build will never spontaneously fail tomorrow just because an open-source mirror server went down today.
+* **What it means for build speeds:** We purposefully trade raw build speed (adding ~20-30 minutes of heavy C++ compilation per CI run) for absolute, unbreakable reliability. In a system built for conflict zones, infrastructure resilience always takes priority over convenience.
+
 ### Output
 
 | Artifact | Path |
