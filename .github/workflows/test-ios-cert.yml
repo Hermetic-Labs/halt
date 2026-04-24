@@ -1,0 +1,35 @@
+name: Test iOS Certificate Secret
+on:
+  workflow_dispatch:
+
+jobs:
+  test_cert:
+    runs-on: macos-latest
+    steps:
+      - name: Inject and Test Apple Certificate
+        env:
+          BUILD_CERTIFICATE_BASE64: ${{ secrets.IOS_P12_BASE64 }}
+          P12_PASSWORD: ${{ secrets.IOS_P12_PASSWORD }}
+          KEYCHAIN_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
+          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+
+          echo "Decoding Base64 Secret..."
+          python3 -c "import base64, os, re; \
+            cert = os.environ['BUILD_CERTIFICATE_BASE64']; \
+            print(f'\n[DEBUG] Raw cert length: {len(cert)}'); \
+            cert = re.sub(r'-----.*?-----|\s+', '', cert); \
+            cert += '=' * ((4 - len(cert) % 4) % 4); \
+            print(f'[DEBUG] Clean cert length: {len(cert)} (Divisible by 4? {len(cert)%4==0})'); \
+            open('$CERTIFICATE_PATH', 'wb').write(base64.b64decode(cert))"
+
+          echo "Creating temporary keychain..."
+          security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+
+          echo "Testing Certificate Import..."
+          security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+          
+          echo "✅ SUCCESS! The certificate is perfectly valid and successfully unlocked!"
