@@ -31,8 +31,11 @@ jobs:
           echo "LLVM_CONFIG_PATH=$(brew --prefix llvm)/bin/llvm-config" >> $GITHUB_ENV
           echo "MACOSX_DEPLOYMENT_TARGET=10.15" >> $GITHUB_ENV
           echo "CXXFLAGS=-D_LIBCPP_DISABLE_AVAILABILITY" >> $GITHUB_ENV
-          echo "AR=$(brew --prefix llvm)/bin/llvm-ar" >> $GITHUB_ENV
-          echo "RANLIB=$(brew --prefix llvm)/bin/llvm-ranlib" >> $GITHUB_ENV
+          
+          # Bruteforce workaround for Apple's ar not supporting -D flag in CMake iOS cross-compilation
+          XCODE_PATH=$(xcode-select -p)
+          sudo rm -f $XCODE_PATH/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar
+          sudo ln -s $(brew --prefix llvm)/bin/llvm-ar $XCODE_PATH/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar
 
       - name: Install Apple Certificates and Profiles
         env:
