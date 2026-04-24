@@ -28,8 +28,8 @@ from pathlib import Path
 # ── Paths (all relative to repo root) ────────────────────────────────────────
 SCRIPT_DIR = Path(__file__).parent.resolve()
 REPO_ROOT = SCRIPT_DIR.parent
-ELECTRON_DIR = REPO_ROOT / "dev" / "electron-launcher"
-PKG_JSON = ELECTRON_DIR / "package.json"
+VIEWER_PKG_JSON = REPO_ROOT / "viewer" / "package.json"
+TAURI_CONF_JSON = REPO_ROOT / "viewer" / "src-tauri" / "tauri.conf.json"
 BUILDS_DIR = REPO_ROOT / "builds"
 
 # ── R2 Configuration (from environment — never commit secrets) ────────────────
@@ -49,14 +49,14 @@ def banner():
 
 
 def read_version():
-    """Read current version from electron-launcher package.json."""
-    pkg = json.loads(PKG_JSON.read_text(encoding="utf-8"))
+    """Read current version from viewer/package.json."""
+    pkg = json.loads(VIEWER_PKG_JSON.read_text(encoding="utf-8"))
     return pkg["version"]
 
 
 def bump_version(level="patch"):
-    """Bump version in package.json. Preserves pre-release suffix (e.g. -alpha)."""
-    pkg = json.loads(PKG_JSON.read_text(encoding="utf-8"))
+    """Bump version in viewer/package.json and tauri.conf.json."""
+    pkg = json.loads(VIEWER_PKG_JSON.read_text(encoding="utf-8"))
     old_version = pkg["version"]
 
     # Separate pre-release suffix (e.g. '1.0.1-alpha' → '1.0.1', '-alpha')
@@ -73,84 +73,21 @@ def bump_version(level="patch"):
         parts = [parts[0], parts[1], parts[2] + 1]
 
     new_version = ".".join(str(p) for p in parts) + suffix
+    
+    # Update viewer/package.json
     pkg["version"] = new_version
-    PKG_JSON.write_text(json.dumps(pkg, indent=4) + "\n", encoding="utf-8")
+    VIEWER_PKG_JSON.write_text(json.dumps(pkg, indent=2) + "\n", encoding="utf-8")
+    
+    # Update tauri.conf.json
+    if TAURI_CONF_JSON.exists():
+        tauri_conf = json.loads(TAURI_CONF_JSON.read_text(encoding="utf-8"))
+        tauri_conf["version"] = new_version
+        TAURI_CONF_JSON.write_text(json.dumps(tauri_conf, indent=2) + "\n", encoding="utf-8")
 
     print(f"  [VERSION] {old_version} → {new_version}")
     return new_version
 
 
-def stage_app(version):
-    """
-    Stage the app source into the electron-launcher directory structure
-    so electron-builder can package it. Mirrors the resources/app/ layout
-    that the production build uses.
-    """
-    stage_dir = ELECTRON_DIR / "app-stage"
-
-    print("  [STAGE]   Preparing app bundle...")
-
-    # Clean previous stage
-    if stage_dir.exists():
-        shutil.rmtree(stage_dir)
-    stage_dir.mkdir()
-
-    # Build frontend from source (viewer/src → viewer/dist)
-    viewer_src = REPO_ROOT / "viewer" / "src"
-    viewer_pkg = REPO_ROOT / "viewer" / "package.json"
-    if viewer_src.exists() and viewer_pkg.exists():
-        npm_cmd = "npm.cmd" if sys.platform == "win32" else "npm"
-        viewer_dir = REPO_ROOT / "viewer"
-
-        # Ensure node_modules are installed (uses lock file + offline cache if air-gapped)
-        if not (viewer_dir / "node_modules").exists():
-            print("  [BUILD]   Installing frontend dependencies (npm install)...")
-            result = subprocess.run(
-                [npm_cmd, "install"],
-                cwd=viewer_dir,
-                capture_output=True,
-                text=True,
-            )
-            if result.returncode != 0:
-                print(f"            [ERROR] npm install failed:\n{result.stderr}")
-                sys.exit(1)
-
-        print("  [BUILD]   Building frontend (npm run build)...")
-        result = subprocess.run([npm_cmd, "run", "build"], cwd=viewer_dir)
-        if result.returncode != 0:
-            print("            [ERROR] Frontend build failed (see output above)")
-            sys.exit(1)
-        print("  [OK]      Frontend built")
-    else:
-        print("            [INFO] No viewer source found, using existing dist/")
-
-    # Copy directories into stage.
-    # NOTE: viewer/ — only ship the compiled dist/, NOT src/node_modules/configs.
-    # Full source lives in git; only the production build goes into the Electron package.
-    # triage/ has ~44K raw ICD-10 source files already compiled
-    # into viewer/dist/data/conditions-index.json. We don't ship this raw source data.
-    copies = [
-        (REPO_ROOT / "api", stage_dir / "api"),
-        (REPO_ROOT / "electron", stage_dir / "electron"),
-        (REPO_ROOT / "viewer" / "dist", stage_dir / "viewer" / "dist"),
-        (REPO_ROOT / "models", stage_dir / "models"),
-        (REPO_ROOT / "runtime", stage_dir / "runtime"),
-    ]
-
-    for src, dst in copies:
-        if src.exists():
-            print(f"            copying {src.name}/...")
-            shutil.copytree(src, dst, dirs_exist_ok=True)
-        else:
-            print(f"            [WARN] {src.name}/ not found, skipping")
-
-    # Copy start.py
-    start_py = REPO_ROOT / "start.py"
-    if start_py.exists():
-        shutil.copy2(start_py, stage_dir / "start.py")
-
-    print("  [OK]      App staged")
-    return stage_dir
 
 
 def build_tauri(version):
@@ -1259,7 +1196,6 @@ def main():
         if args.zip_only:
             # Look for existing build output in the standard locations
             candidates = [
-                ELECTRON_DIR / "dist" / "win-unpacked",  # electron-builder output
                 BUILDS_DIR / f"HALT-v{version}-Windows",  # staged build folder
                 REPO_ROOT / f"HALT-v{version}",  # legacy folder name
             ]
