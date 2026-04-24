@@ -57,7 +57,14 @@ jobs:
           security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
 
-          security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+          echo "Converting legacy P12 to modern AES-256 P12 to bypass macOS 15 crypto restrictions..."
+          /opt/homebrew/opt/openssl@3/bin/openssl pkcs12 -in $CERTIFICATE_PATH -nodes -passin "pass:$P12_PASSWORD" -out $RUNNER_TEMP/temp.pem -legacy || openssl pkcs12 -in $CERTIFICATE_PATH -nodes -passin "pass:$P12_PASSWORD" -out $RUNNER_TEMP/temp.pem
+          openssl pkcs12 -export -in $RUNNER_TEMP/temp.pem -out $CERTIFICATE_PATH.modern.p12 -passout "pass:$P12_PASSWORD" -keypbe AES-256-CBC -certpbe AES-256-CBC
+          rm -f $RUNNER_TEMP/temp.pem
+          CERTIFICATE_PATH=$CERTIFICATE_PATH.modern.p12
+
+          echo "Importing PKCS12 Certificate into Keychain..."
+          security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH || { echo "[ERROR] Security Import Failed! The .p12 file is corrupt or the password is wrong."; exit 1; }
           security list-keychain -d user -s $KEYCHAIN_PATH
 
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
