@@ -89,6 +89,13 @@ jobs:
         working-directory: viewer
         run: npm ci && npm run build
 
+      - name: Force Cargo Env (Bypass Xcode Sandbox)
+        working-directory: viewer/src-tauri
+        run: |
+          mkdir -p .cargo
+          echo "[env]" >> .cargo/config.toml
+          echo "ORT_STRATEGY = "compile"" >> .cargo/config.toml
+
       - name: Tauri iOS Build
         working-directory: viewer
         env:
