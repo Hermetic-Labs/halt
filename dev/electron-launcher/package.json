@@ -1,6 +1,6 @@
 {
     "name": "halt-medical-triage",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "HALT Desktop Launcher - Hermetic Anonymous Local Triage",
     "main": "main.js",
     "author": "Hermetic Labs",
