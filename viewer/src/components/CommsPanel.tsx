@@ -13,6 +13,7 @@ import { useTranslateLiveCall } from '../hooks/useTranslateLiveCall';
 import { getSharedAudioContext } from '../hooks/useTTS';
 import { useWebRTC } from '../hooks/useWebRTC';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function CommsPanel({ webRTC }: { webRTC: ReturnType<typeof useWebRTC> }) {
     const { t, lang } = useT();
     const userName = localStorage.getItem('eve-mesh-name') || 'Unknown';
