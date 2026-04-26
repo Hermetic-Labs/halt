@@ -90,6 +90,7 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
     const [triageTranslations, setTriageTranslations] = useState<Record<string, string>>({});
     const [isTriageTranslating, setIsTriageTranslating] = useState(false);
     const triageTranslatingRef = useRef(false);
+    const [isModelLoading, setIsModelLoading] = useState(false);
 
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const mediaRecRef = useRef<MediaRecorder | null>(null);
@@ -99,6 +100,23 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [messages, streamingText]);
+
+    // Poll model loading status
+    useEffect(() => {
+        let timer: number;
+        if (isSending && !streamingText) {
+            timer = window.setInterval(async () => {
+                if (isNative) {
+                    const { invoke } = await import('@tauri-apps/api/core');
+                    const status = await invoke<{ loading: boolean }>('inference_queue_status').catch(() => null);
+                    if (status) setIsModelLoading(status.loading);
+                }
+            }, 500);
+        } else {
+            setIsModelLoading(false);
+        }
+        return () => window.clearInterval(timer);
+    }, [isSending, streamingText]);
 
     // ── Auto-translate assistant messages ─────────────────────────────────────
     const prevTriageLangRef = useRef(lang);
@@ -421,7 +439,8 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                         temperature: deepAnalysis ? 0.4 : 0.7,
                         persona: '',
                         stream: true,
-                        image_b64: imageToSend || undefined
+                        image_b64: imageToSend || undefined,
+                        model_id: "medgemma"
                     }
                 });
                 
@@ -819,8 +838,14 @@ export default function TriagePanel({ onClose }: { onClose: () => void }) {
                         className="triage-send-btn"
                         onClick={handleSend}
                         disabled={(!input.trim() && !pendingImage) || isSending}
+                        style={{ display: 'flex', alignItems: 'center', gap: 6 }}
                     >
-                        Send
+                        {isSending && isModelLoading ? (
+                            <>
+                                <div style={{ width: 12, height: 12, border: '2px solid #fff4', borderTopColor: '#fff', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
+                                Loading...
+                            </>
+                        ) : 'Send'}
                     </button>
                 </div>
             </footer>

@@ -35,6 +35,7 @@ import TriagePanel from './components/TriagePanel';
 import DistributionTab from './components/DistributionTab';
 import PublicLookup from './components/PublicLookup';
 import { NeuralScanReport } from './components/NeuralScanReport';
+import { ChildrensTab } from './components/ChildrensTab';
 import { useWebRTC } from './hooks/useWebRTC';
 import { api, isNative, resolveUrl } from './services/api';
 
@@ -48,7 +49,7 @@ import './index.css';
 // ─────────────────────────────────────────────────────────────────────
 
 /** Tab identifiers — used for state and conditional rendering */
-type Tab = 'tasks' | 'comms' | 'intake' | 'ward' | 'inventory' | 'settings';
+type Tab = 'tasks' | 'comms' | 'intake' | 'ward' | 'inventory' | 'settings' | 'childrens';
 
 /** Supported languages — en + 40 translation targets */
 const LANGUAGES: { code: string; name: string }[] = [
@@ -489,6 +490,7 @@ function AppInner(p: any) {
   const { lang, t, loading: langLoading } = useT();
   const [showTriage, setShowTriage] = useState(false);
   const [showNeuralScan, setShowNeuralScan] = useState(false);
+  const [showChildrensTab, setShowChildrensTab] = useState(() => localStorage.getItem('eve-childrens-tab') === 'true');
 
   const [lookupQR, setLookupQR] = useState<{ url: string; qr_image: string | null } | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -567,6 +569,7 @@ function AppInner(p: any) {
             </div>
           )}
           {/* ── Topbar ──────────────────────────────────────────── */}
+          {tab !== 'childrens' && (
           <header className="topbar">
             {/* Hamburger — mobile only */}
             <button
@@ -624,17 +627,19 @@ function AppInner(p: any) {
                 marginLeft: 4, flexShrink: 0, transition: 'all 0.15s',
               }}
             ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={showTriage ? '#58a6ff' : '#6e7681'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
-            <button
-              onClick={() => setShowNeuralScan(true)}
-              title="Neural Diagnostics"
-              style={{
-                background: showNeuralScan ? '#8b5cf615' : 'transparent',
-                border: showNeuralScan ? '1px solid #8b5cf633' : '1px solid transparent',
-                borderRadius: 6, padding: '5px 7px', cursor: 'pointer',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                marginLeft: 4, flexShrink: 0, transition: 'all 0.15s',
-              }}
-            ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={showNeuralScan ? '#8b5cf6' : '#6e7681'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></button>
+            {showChildrensTab && (
+              <button
+                onClick={() => setTab('childrens')}
+                title="Children's Tab"
+                style={{
+                  background: tab === 'childrens' ? '#f368e015' : 'transparent',
+                  border: tab === 'childrens' ? '1px solid #f368e033' : '1px solid transparent',
+                  borderRadius: 6, padding: '5px 7px', cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  marginLeft: 4, flexShrink: 0, transition: 'all 0.15s',
+                }}
+              ><span style={{ fontSize: 16 }}>🧸</span></button>
+            )}
             <span className="topbar-sep" />
             <span className="topbar-sep" />
 
@@ -660,6 +665,7 @@ function AppInner(p: any) {
               <button onClick={toggleLowPower} style={{ padding: '2px 8px', background: 'var(--surface2)', border: '1px solid var(--border)', borderRadius: 4, color: 'var(--text-dim)', fontSize: 11, cursor: 'pointer', marginLeft: 8 }}>{Math.round(batteryLevel * 100)}%</button>
             )}
           </header>
+          )}
 
           {/* ── Mobile Nav Drawer ───────────────────────────────── */}
           {mobileMenuOpen && (
@@ -782,6 +788,11 @@ function AppInner(p: any) {
           {/* Inventory */}
           {tab === 'inventory' && (
             <div style={fullTab}><InventoryTab /></div>
+          )}
+
+          {/* Childrens Tab */}
+          {tab === 'childrens' && (
+            <div style={fullTab}><ChildrensTab onClose={() => setTab('tasks')} /></div>
           )}
 
           {showNeuralScan && <NeuralScanReport onClose={() => setShowNeuralScan(false)} />}
@@ -999,6 +1010,42 @@ function AppInner(p: any) {
                       <option key={l.code} value={l.code}>{l.name}</option>
                     ))}
                   </select>
+                </div>
+
+                {/* ── Advanced Features ────────────────────────────── */}
+                <div style={{ background: 'var(--surface)', borderRadius: 10, border: '1px solid var(--border)', padding: '14px 20px' }}>
+                  <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 600, marginBottom: 12 }}>Advanced Features</div>
+                  
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 0', borderBottom: '1px solid var(--border)' }}>
+                    <div>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--text)' }}>Children's Safe Runner Tab</div>
+                      <div style={{ fontSize: 11, color: 'var(--text-faint)' }}>Enable an infinite runner game with MedGemma voice piping to ease stress during intake.</div>
+                    </div>
+                    <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+                      <input 
+                        type="checkbox" 
+                        checked={showChildrensTab} 
+                        onChange={(e) => {
+                          const val = e.target.checked;
+                          setShowChildrensTab(val);
+                          localStorage.setItem('eve-childrens-tab', val ? 'true' : 'false');
+                          if (!val && tab === 'childrens') setTab('tasks');
+                        }} 
+                        style={{ width: 18, height: 18, cursor: 'pointer' }}
+                      />
+                    </label>
+                  </div>
+                  
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0 4px' }}>
+                    <div>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--text)' }}>Neural Diagnostics</div>
+                      <div style={{ fontSize: 11, color: 'var(--text-faint)' }}>Run system-wide neural and language probes.</div>
+                    </div>
+                    <button 
+                      onClick={() => setShowNeuralScan(true)}
+                      style={{ padding: '6px 12px', background: '#8b5cf622', color: '#8b5cf6', border: '1px solid #8b5cf655', borderRadius: 6, cursor: 'pointer', fontSize: 12, fontWeight: 600 }}
+                    >Launch Sweep</button>
+                  </div>
                 </div>
 
                 {/* ── Family Lookup QR ─────────────────────────────── */}

@@ -231,7 +231,7 @@ pub fn run() {
 
                 // 4. LLM (llama.cpp — load last, its ggml poisons the CRT for other C libs)
                 safe_load("llm", || {
-                    match models::llm::ensure_loaded() {
+                    match models::llm::ensure_loaded("medgemma") {
                         Ok(_) => log::info!("[warmup] LLM loaded"),
                         Err(e) => log::warn!("[warmup] LLM unavailable: {}", e),
                     }
@@ -261,7 +261,7 @@ pub fn run() {
 pub fn benchmark_llm() {
     println!("Starting Rust native_ml benchmark...");
     let start = std::time::Instant::now();
-    match models::llm::ensure_loaded() {
+    match models::llm::ensure_loaded("medgemma") {
         Ok(_) => {
             let load_time = start.elapsed().as_secs_f32();
             println!("Model loaded in {:.2}s", load_time);
@@ -274,6 +274,7 @@ pub fn benchmark_llm() {
                 persona: "".to_string(),
                 stream: false,
                 image_b64: None,
+                model_id: "medgemma".to_string(),
             };
 
             let inf_start = std::time::Instant::now();

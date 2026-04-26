@@ -28,6 +28,12 @@ pub struct InferenceRequest {
     pub stream: bool,
     #[serde(default)]
     pub image_b64: Option<String>,
+    #[serde(default = "default_model_id")]
+    pub model_id: String,
+}
+
+fn default_model_id() -> String {
+    "medgemma".to_string()
 }
 
 fn default_max_tokens() -> u32 {
@@ -75,7 +81,7 @@ fn build_prompt(req: &InferenceRequest) -> String {
 
 #[tauri::command]
 pub fn list_models() -> Value {
-    let model_path = llm::ensure_loaded().ok();
+    let model_path = llm::ensure_loaded("medgemma").ok();
     let model_name = model_path
         .as_ref()
         .and_then(|p: &std::path::PathBuf| p.file_name())
@@ -95,6 +101,8 @@ pub fn inference_queue_status() -> Value {
     serde_json::json!({
         "busy": INFERENCE_BUSY.load(Ordering::Relaxed),
         "model_loaded": llm::is_loaded(),
+        "loading": llm::MODEL_LOADING.load(Ordering::Relaxed),
+        "active_model": llm::active_model_id(),
     })
 }
 
@@ -115,7 +123,7 @@ pub fn inference_complete(request: InferenceRequest) -> Result<InferenceResponse
     STOP_REQUESTED.store(false, Ordering::SeqCst);
 
     let result = (|| {
-        let model_path = llm::ensure_loaded()?;
+        let model_path = llm::ensure_loaded(&request.model_id)?;
         let full_prompt = build_prompt(&request);
 
         let model_name = model_path
@@ -164,7 +172,7 @@ pub fn inference_complete(request: InferenceRequest) -> Result<InferenceResponse
         let mut decoder = encoding_rs::UTF_8.new_decoder();
         let start_time = std::time::Instant::now();
 
-        llm::with_model(|m| {
+        llm::with_model(&request.model_id, |m| {
             let backend = llm::LLAMA_BACKEND.get().ok_or("Llama Backend missing")?;
             let mut ctx_params = llama_cpp_2::context::params::LlamaContextParams::default();
             ctx_params = ctx_params.with_n_ctx(Some(std::num::NonZeroU32::new(8192).unwrap()));
@@ -245,7 +253,7 @@ pub async fn inference_stream(
     }
     STOP_REQUESTED.store(false, Ordering::SeqCst);
 
-    let model_path = llm::ensure_loaded()?;
+    let model_path = llm::ensure_loaded(&request.model_id)?;
     let full_prompt = build_prompt(&request);
     let model_name = model_path
         .file_name()
@@ -304,9 +312,10 @@ pub async fn inference_stream(
     let (tx, mut rx) = tokio::sync::mpsc::unbounded_channel::<Result<String, String>>();
     let full_prompt_clone = full_prompt.clone();
     let max_tokens = request.max_tokens as i32;
+    let req_model_id = request.model_id.clone();
 
     std::thread::spawn(move || {
-        let res = llm::with_model(|m| {
+        let res = llm::with_model(&req_model_id, |m| {
             let backend = llm::LLAMA_BACKEND.get().ok_or("Llama Backend missing")?;
             let mut ctx_params = llama_cpp_2::context::params::LlamaContextParams::default();
             ctx_params = ctx_params.with_n_ctx(Some(std::num::NonZeroU32::new(8192).unwrap()));

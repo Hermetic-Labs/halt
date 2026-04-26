@@ -702,7 +702,14 @@ export default function TaskBoard() {
 
                         <div style={{ display: 'flex', gap: 10 }}>
                             <button onClick={() => { abortCtlRef.current?.abort(); setShowEmergency(false); }} style={{ flex: 1, padding: '10px', background: 'transparent', border: '1px solid #444', borderRadius: 8, color: '#888', fontSize: 13, cursor: 'pointer' }}>{tr('tasks.cancel')}</button>
-                            <button onClick={sendEmergency} disabled={emergencyForm.categories.length === 0 || isGenerating} style={{ flex: 2, padding: '10px', background: isGenerating ? '#333' : '#e74c3c', border: 'none', borderRadius: 8, color: isGenerating ? '#e74c3c' : '#fff', fontWeight: 700, fontSize: 13, cursor: 'pointer', opacity: emergencyForm.categories.length > 0 ? 1 : 0.4 }}>{isGenerating ? tr('tasks.generating') : tr('tasks.broadcast_emergency')}</button>
+                            <button onClick={sendEmergency} disabled={emergencyForm.categories.length === 0 || isGenerating} style={{ flex: 2, padding: '10px', background: isGenerating ? '#333' : '#e74c3c', border: 'none', borderRadius: 8, color: isGenerating ? '#e74c3c' : '#fff', fontWeight: 700, fontSize: 13, cursor: 'pointer', opacity: emergencyForm.categories.length > 0 ? 1 : 0.4 }}>
+                                {isGenerating ? (
+                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+                                        <div style={{ width: 12, height: 12, border: '2px solid #e74c3c44', borderTopColor: '#e74c3c', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
+                                        {tr('tasks.loading_models', 'Loading Models...')}
+                                    </div>
+                                ) : tr('tasks.broadcast_emergency')}
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -733,7 +740,14 @@ export default function TaskBoard() {
 
                         <div style={{ display: 'flex', gap: 10 }}>
                             <button onClick={() => { abortCtlRef.current?.abort(); setShowAnnouncement(false); setAnnouncementMsg(''); }} style={{ flex: 1, padding: '10px', background: 'transparent', border: '1px solid #444', borderRadius: 8, color: '#888', fontSize: 13, cursor: 'pointer' }}>{tr('tasks.cancel')}</button>
-                            <button onClick={sendAnnouncement} disabled={!announcementMsg.trim() || isGenerating} style={{ flex: 2, padding: '10px', background: isGenerating ? '#333' : '#f0a500', border: 'none', borderRadius: 8, color: isGenerating ? '#f0a500' : '#000', fontWeight: 700, fontSize: 13, cursor: 'pointer', opacity: announcementMsg.trim() ? 1 : 0.4 }}>{isGenerating ? tr('tasks.generating') : tr('tasks.broadcast_announcement')}</button>
+                            <button onClick={sendAnnouncement} disabled={!announcementMsg.trim() || isGenerating} style={{ flex: 2, padding: '10px', background: isGenerating ? '#333' : '#f0a500', border: 'none', borderRadius: 8, color: isGenerating ? '#f0a500' : '#000', fontWeight: 700, fontSize: 13, cursor: 'pointer', opacity: announcementMsg.trim() ? 1 : 0.4 }}>
+                                {isGenerating ? (
+                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+                                        <div style={{ width: 12, height: 12, border: '2px solid #f0a50044', borderTopColor: '#f0a500', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
+                                        {tr('tasks.loading_models', 'Loading Models...')}
+                                    </div>
+                                ) : tr('tasks.broadcast_announcement')}
+                            </button>
                         </div>
                     </div>
                 </div>
